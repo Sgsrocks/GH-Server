@@ -3895,6 +3895,12 @@ public class NPCHandler {
 			npcs[i].randomWalk = false;
 			npcs[i].facePlayer(player.getIndex());
 		}
+		if ((player.absX == npcs[i].absX-1 && player.absY == npcs[i].absY+1) || (player.absX == npcs[i].absX-1 && player.absY == npcs[i].absY-1)
+				|| (player.absX == npcs[i].absX+1 && player.absY == npcs[i].absY-1) || (player.absX == npcs[i].absX+1 && player.absY == npcs[i].absY+1)){
+			stepAway2(player,i);
+			npcs[i].randomWalk = false;
+			npcs[i].facePlayer(player.getIndex());
+		}
 
 		if (npcs[i].getDistance(playerX, playerY) <= distance)
 			return;
@@ -3913,7 +3919,17 @@ public class NPCHandler {
 			npcs[i].underAttack = false;
 		}
 	}
+	public void stepAway2(Player player, int i) {
+		int[][] points = { { -1, 0 }, { 1, 0 }, { 0, -1 }, { 0, 1 } };
 
+		for (int[] k : points) {
+			int dir = NPCClipping.getDirection(k[0], k[1]);
+			if (NPCDumbPathFinder.canMoveTo(npcs[i], dir)) {
+				NPCDumbPathFinder.walkTowards(npcs[i], npcs[i].absX > player.absX ? player.absX-1 : player.absX+1 ,npcs[i].absY > player.absY ? player.absY+1 : player.absY-1);
+				break;
+			}
+		}
+	}
 	public void loadSpell(Player player, int i) {
 		int chance = 0;
 		switch (npcs[i].npcType) {
