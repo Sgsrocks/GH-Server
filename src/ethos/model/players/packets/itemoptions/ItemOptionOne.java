@@ -97,16 +97,25 @@ public class ItemOptionOne implements PacketType {
     }
 
     public void plantMithrilSeed(Player c) {
-        position[0] = c.absX;
-        position[1] = c.absY;
-        lastPlantedFlower = randomFlower();
-        GlobalObject object1 = new GlobalObject(lastPlantedFlower, position[0], position[1], c.getHeight(), 3, 10, 120, -1);
-        Server.getGlobalObjects().add(object1);
-        c.getPA().walkTo(1, 0);
-        c.turnPlayerTo(position[0] -1, position[1]);
-        c.sendMessage("You planted a flower!");
-        plantingMithrilSeeds = true;
-        c.getItems().deleteItem(299, c.getItems().getItemSlot(299), 1);
+        if (System.currentTimeMillis() - c.diceDelay >= 2000) { // time between plants.
+            position[0] = c.absX;
+            position[1] = c.absY;
+            lastPlantedFlower = randomFlower();
+            if (!Server.getGlobalObjects().anyExists(position[0], position[1], c.getHeight())) { // Checks if there are NO objects under the player
+                GlobalObject object1 = new GlobalObject(lastPlantedFlower, position[0], position[1], c.getHeight(), 3, 10, 120, -1);
+                Server.getGlobalObjects().add(object1);
+                c.getPA().walkTo(1, 0);
+                c.turnPlayerTo(position[0] - 1, position[1]);
+                c.sendMessage("You planted a flower!");
+                plantingMithrilSeeds = true;
+                c.getItems().deleteItem(299, c.getItems().getItemSlot(299), 1);
+                c.diceDelay = System.currentTimeMillis();
+            } else if (Server.getGlobalObjects().anyExists(position[0], position[1], c.getHeight())) { // Checks if there are objects under the player
+                c.sendMessage("You can plant on top of this. Please Move");
+            } else {
+                c.sendMessage("You must wait 2 seconds to plant another flower."); // Message for when you attempt to plant before the timer is finished
+            }
+        }
     }
     public static void plantMithrilSeedRigged(Player c,int flowerId) {
         position[0] = c.absX;
