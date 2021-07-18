@@ -1,0 +1,8 @@
+experience-amount=0
+experience-timer=0
+minigame-amount=100000
+minigame-timer=0
+drops-amount=1000000
+drops-timer=0
+pk-amount=750000
+pk-timer=0

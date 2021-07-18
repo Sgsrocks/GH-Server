@@ -1,0 +1,36 @@
+<component name="libraryTable">
+  <library name="deps">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/deps/json-lib-2.4-jdk15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/guava-18.0-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/gson-2.2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/slf4j-nop.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/mysql.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/mchange-commons-java-0.2.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/commons-io-2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/c3p0-0.9.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/commons-lang3-3.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/slf4j.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/json-simple-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/jython.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/log4j-1.2.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/mvgate3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/commons-compress-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/everythingrs-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/guava-18.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/GTLVote.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/jsoup-1.9.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/jna.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/xstream.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/jsoup-1.9.2-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/Motivote-server.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/poi.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/platform.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/netty.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/oshi-core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/deps/c3p0-0.9.5-pre10.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

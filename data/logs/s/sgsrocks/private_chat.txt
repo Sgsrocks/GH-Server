@@ -1,0 +1,42 @@
+[01/19/2021 23:01:17] Recipient = justin, message = Hey ill work on thar later lmap
+----------------------------------------------
+[01/19/2021 23:01:22] Recipient = justin, message = Got to fix the items
+----------------------------------------------
+[01/28/2021 20:50:07] Recipient = Justin, message = U found me lmao\
+----------------------------------------------
+[01/29/2021 13:20:12] Recipient = I bort it, message = Fixing ir rn
+----------------------------------------------
+[01/29/2021 13:24:44] Recipient = i bort it, message = Try the command again
+----------------------------------------------
+[01/29/2021 13:35:21] Recipient = i bort it, message = Try the command
+----------------------------------------------
+[01/29/2021 13:36:42] Recipient = i bort it, message = Fuck i forgot to change sometoing in the command
+----------------------------------------------
+[01/29/2021 13:40:46] Recipient = i bort it, message = Try the command
+----------------------------------------------
+[01/29/2021 13:41:47] Recipient = i bort it, message = Fuck i forgot about that lmao one sec
+----------------------------------------------
+[01/29/2021 14:11:29] Recipient = i bort it, message = Some npcs at home has shops
+----------------------------------------------
+[01/29/2021 14:21:20] Recipient = i bort it, message = Added one of thse at thieve
+----------------------------------------------
+[01/29/2021 14:29:12] Recipient = i bort it, message = Try looking in towns
+----------------------------------------------
+[01/29/2021 14:29:16] Recipient = i bort it, message = For shops
+----------------------------------------------
+[01/29/2021 14:29:27] Recipient = i bort it, message = City teleport at home
+----------------------------------------------
+[01/29/2021 14:29:32] Recipient = i bort it, message = The wizard
+----------------------------------------------
+[01/29/2021 14:30:46] Recipient = i bort it, message = Nvm npcs at varrock are fucked up
+----------------------------------------------
+[01/29/2021 14:31:04] Recipient = i bort it, message = They chabged ids luje 180's
+----------------------------------------------
+[01/29/2021 14:31:10] Recipient = i bort it, message = The spawns are before that
+----------------------------------------------
+[01/29/2021 14:31:26] Recipient = i bort it, message = One sec
+----------------------------------------------
+[01/29/2021 14:49:56] Recipient = i bort it, message = Go to varrock i changed the spawns to the other file
+----------------------------------------------
+[01/29/2021 21:32:08] Recipient = Justin, message = Building something
+----------------------------------------------

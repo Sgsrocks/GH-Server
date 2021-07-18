@@ -1,0 +1,1 @@
+package ethos.model.players.skills.cooking;

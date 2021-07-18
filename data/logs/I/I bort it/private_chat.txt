@@ -1,0 +1,18 @@
+[01/29/2021 13:19:56] Recipient = sgsrocks, message = Command doesn't work
+----------------------------------------------
+[01/29/2021 13:25:22] Recipient = sgsrocks, message = Still doesn't, ::home is better than wherever it is we originally spaw
+----------------------------------------------
+[01/29/2021 13:25:25] Recipient = sgsrocks, message = Spawn
+----------------------------------------------
+[01/29/2021 13:25:38] Recipient = sgsrocks, message = That place where we first log in, is confusing
+----------------------------------------------
+[01/29/2021 13:41:12] Recipient = sgsrocks, message = Works, but your house is locked
+----------------------------------------------
+[01/29/2021 14:11:51] Recipient = sgsrocks, message = Suggested men should be added to thiev area so we can get 25 to thiev stalls
+----------------------------------------------
+[01/29/2021 14:30:40] Recipient = sgsrocks, message = Ok
+----------------------------------------------
+[01/29/2021 14:42:03] Recipient = sgsrocks, message = I can't trade horvik now?
+----------------------------------------------
+[01/29/2021 14:50:01] Recipient = sgsrocks, message = Ok
+----------------------------------------------
