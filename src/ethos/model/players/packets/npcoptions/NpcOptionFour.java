@@ -1,5 +1,6 @@
 package ethos.model.players.packets.npcoptions;
 
+import ethos.Config;
 import ethos.Server;
 import ethos.model.content.achievement_diary.fremennik.FremennikDiaryEntry;
 import ethos.model.players.Player;
@@ -48,7 +49,7 @@ public class NpcOptionFour {
 			break;
 			
 		case 1501:
-			player.getShops().openShop(23);
+			player.getShops().openShop(Config.ALECKS_HUNTER_EMPORIUM);
 			break;
 
 		case 315:

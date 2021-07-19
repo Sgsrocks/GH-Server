@@ -61,6 +61,18 @@ public class NpcOptionTwo {
 				player.canChangeAppearance = true;
 			}
 			break;
+			case 3247:
+				player.getShops().openShop(Config.MAGIC_GUILD_STORE_RUNES_AND_STAVES);
+				break;
+			case 3249:
+				player.getShops().openShop(Config.MAGIC_GUILD_STORE_MYSTIC_ROBES);
+				break;
+			case 1502:
+				player.getShops().openShop(Config.LEON_PROTOTYPE_CROSSBOWS);
+				break;
+			case 8685:
+				player.getShops().openShop(Config.FRENITAS_COOKERY_SHOP);
+				break;
 		case 6562:
 			player.getShops().openShop(Config.PROSPECTOR_PERCYS_NUGGET_SHOP);
 			break;
@@ -210,18 +222,6 @@ public class NpcOptionTwo {
 		case 7690:
 			player.getInfernoMinigame().gamble();
 			break;
-		case 8036:
-			player.getShops().openShop(123);
-			break;
-		case 8037:
-			player.getShops().openShop(124);
-			break;
-		case 7951:
-			player.getShops().openShop(125);
-			break;
-		case 1056:
-			player.getShops().openShop(7);
-			break;
 		case 1909:
 			player.getDH().sendDialogues(901, 1909);
 			break;
@@ -229,9 +229,7 @@ public class NpcOptionTwo {
 				player.getPA().showInterface(51000);
 				player.getTeleport().selection(player, 0);
 				break;
-			case 2989:
-				player.getShops().openShop(120);
-				break;
+
 
 		case 3307:
 			player.getPA().showInterface(37700);
@@ -293,9 +291,6 @@ public class NpcOptionTwo {
 			}
 			break;
 
-		case 4407:
-			player.getShops().openShop(19);
-			break;
 
 		case 2040:
 			if (player.getZulrahLostItems().size() > 0) {
@@ -365,17 +360,8 @@ public class NpcOptionTwo {
 				player.getDH().sendDialogues(3304, player.npcType);
 			}
 			break;
-		case 5919: // Grace
-			player.getShops().openShop(18);
-			break;
 		case 311:
 			player.getDH().sendDialogues(661, 311);
-			break;
-		case 4423: // Jossik
-			player.getShops().openShop(13);
-			break;
-		case 6747:
-			player.getShops().openShop(77);
 			break;
 		case 2184:
 			player.getShops().openShop(Config.TZHAAR_HUR_LEKS_ORE_AND_GEM_STORE);
@@ -405,9 +391,6 @@ public class NpcOptionTwo {
 					3);
 			player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.TRAVEL_JATIZSO);
 			break;
-		case 3894:
-			player.getShops().openShop(26);
-			break;
 		case 3078:
 			player.getThieving().steal(Pickpocket.MAN, NPCHandler.npcs[player.rememberNpcIndex]);
 			break;
@@ -423,12 +406,6 @@ public class NpcOptionTwo {
 		case 3257:
 			player.getThieving().steal(Pickpocket.FARMER, NPCHandler.npcs[player.rememberNpcIndex]);
 			break;
-		case 637:
-			player.getShops().openShop(6);
-			break;
-		case 3219:
-			player.getShops().openShop(113);
-			break;
 		case 534:
 			if (Boundary.isIn(player, Boundary.VARROCK_BOUNDARY)) {
 				player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.DRESS_FOR_SUCESS);
@@ -439,27 +416,12 @@ public class NpcOptionTwo {
 		case 4625:
 			player.getShops().openShop(Config.DONATOR_SHOP);
 			break;
-			
-		case 732:
-			player.getShops().openShop(16);
-			break;
-		case 5809:
-			player.getShops().openShop(20);
-			break;
-		case 315:
-			player.getShops().openShop(80);
-			break;
-		case 6599:
-			player.getShops().openShop(79);
-			break;
+
 		case 3341:
 			PlayerAssistant.refreshSpecialAndHealth(player);
 			break;
 		case 403:
 			player.getDH().sendDialogues(12001, -1);
-			break;
-		case 3216:
-			player.getShops().openShop(8);
 			break;
 		case 2578:
 			player.getDH().sendDialogues(2400, -1);
@@ -487,13 +449,6 @@ public class NpcOptionTwo {
 		case 334: // NET+HARPOON
 			Fishing.attemptdata(player, 10);
 			break;
-		case 532:
-			player.getShops().openShop(47);
-			break;
-		case 1599:
-			player.getShops().openShop(10);
-			player.sendMessage("You currently have @red@" + player.getSlayer().getPoints() + " @bla@slayer points.");
-			break;
 		case 953: // Banker
 		case 2574: // Banker
 		case 166: // Gnome Banker
@@ -520,27 +475,6 @@ public class NpcOptionTwo {
 			player.getPA().openUpBank();
 			break;
 
-		case 1785:
-			player.getShops().openShop(8);
-			break;
-
-		case 3218:// magic supplies
-			player.getShops().openShop(6);
-			break;
-		case 3217:// range supplies
-			player.getShops().openShop(48);
-			break;
-		case 3796:
-			player.getShops().openShop(6);
-			break;
-
-		case 1860:
-			player.getShops().openShop(6);
-			break;
-
-		case 519:
-			player.getShops().openShop(7);
-			break;
 
 		case 548:
 			player.getDH().sendDialogues(69, player.npcType);
@@ -571,13 +505,6 @@ public class NpcOptionTwo {
 			} else {
 				player.sendMessage("You must be an Iron Man to access this shop.");
 			}
-			break;
-		case 507:
-			player.getShops().openShop(2);
-			break;
-
-		case 528:
-			player.getShops().openShop(9);
 			break;
 
 		}

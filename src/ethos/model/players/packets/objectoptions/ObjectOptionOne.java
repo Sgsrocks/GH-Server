@@ -458,6 +458,15 @@ public class ObjectOptionOne {
 		case 15477:
 			c.start(new PortalDialogue());
 			break;
+			case 2156:
+				c.getPA().startTeleport(3112,3169,0, "modern", false);
+				break;
+			case 2157:
+				c.getPA().startTeleport(2907,3340,0, "modern", false);
+				break;
+			case 2158:
+				c.getPA().startTeleport(2702,3397,0, "modern", false);
+				break;
 		case 17100:
 		case 17009:
 			for(int i = 0; i < SecondFloorSos.length; i++) {

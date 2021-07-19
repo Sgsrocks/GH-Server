@@ -7,6 +7,7 @@ import ethos.definitions.NPCCacheDefinition;
 import ethos.event.CycleEvent;
 import ethos.event.CycleEventContainer;
 import ethos.event.CycleEventHandler;
+import ethos.model.content.dialogue.impl.BankerDialogue;
 import ethos.model.items.ItemAssistant;
 import ethos.model.npcs.NPCHandler;
 import ethos.model.npcs.bosses.vorkath.Vorkath;
@@ -269,6 +270,13 @@ public class ClickNPC implements PacketType {
 					}
 				}, 1);
 				return;
+			}
+			if(NPCCacheDefinition.forID(c.npcClickIndex).getName().equalsIgnoreCase("banker")) {
+				if (c.goodDistance(NPCHandler.npcs[c.npcClickIndex].getX(), NPCHandler.npcs[c.npcClickIndex].getY(),
+						c.getX(), c.getY(), 5)) {
+					c.start(new BankerDialogue());
+					return;
+				}
 			}
 			if (c.goodDistance(NPCHandler.npcs[c.npcClickIndex].getX(), NPCHandler.npcs[c.npcClickIndex].getY(),
 					c.getX(), c.getY(), NPCHandler.npcs[c.npcClickIndex].getSize())) {

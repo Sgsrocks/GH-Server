@@ -75,13 +75,11 @@ public class NpcOptionOne {
 		if(player.getRights().contains(Right.OWNER)) {
 			player.sendMessage("Npc click 1: "+npcType);
 		}
-		if(NPCCacheDefinition.forID(npcType).getName().equalsIgnoreCase("banker")) {
-			if(player.goodDistance(Server.npcHandler.npcs[npcType].absX, Server.npcHandler.npcs[npcType].absY, player.absX, player.absY, 2)) {
-			player.start(new BankerDialogue());
-			return;
-			}
-		}
 		switch (npcType) {
+			case 2897:
+			case 2898:
+				player.start(new BankerDialogue());
+				break;
 		case 9336:
 			player.start(new TraderCrewMemberMale());
 			break;

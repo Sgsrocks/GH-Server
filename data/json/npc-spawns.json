@@ -51634,5 +51634,29 @@
     "attack":0,
     "defence":0,
     "name":"Dusuri"
+  },
+  {
+    "npcId":3249,
+    "xPos":2596,
+    "yPos":3089,
+    "height":1,
+    "walkType":1,
+    "health":0,
+    "maxHit":0,
+    "attack":0,
+    "defence":0,
+    "name":"Wizard Sinina"
+  },
+  {
+    "npcId":3247,
+    "xPos":2594,
+    "yPos":3087,
+    "height":1,
+    "walkType":1,
+    "health":0,
+    "maxHit":0,
+    "attack":0,
+    "defence":0,
+    "name":"Wizard Akutha"
   }
 ]
