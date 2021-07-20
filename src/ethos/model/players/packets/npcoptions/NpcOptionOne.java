@@ -86,6 +86,10 @@ public class NpcOptionOne {
 		case 9360:
 			player.start(new TraderCrewMemberFemale());
 			break;
+			case 6071:
+				player.sendMessage("Not added yet.");
+				//player.getShops().openShop(Config.RAN);
+				break;
 		case 1603:
 			player.getDH().sendDialogues(150, npcType);
 			break;

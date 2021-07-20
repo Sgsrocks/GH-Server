@@ -61,6 +61,18 @@ public class NpcOptionTwo {
 				player.canChangeAppearance = true;
 			}
 			break;
+			case 6059:
+				player.getShops().openShop(Config.AARONS_ARCHERY_APPENDAGES);
+				break;
+			case 6060:
+				player.getShops().openShop(Config.DARGAUDS_BOWS_AND_ARROWS);
+				break;
+			case 6069:
+				player.getShops().openShop(Config.AUTHENTIC_THROWING_WEAPONS);
+				break;
+			case 7798:
+				player.getShops().openShop(Config.GAIUS_TWO_HANDED_SHOP);
+				break;
 			case 3247:
 				player.getShops().openShop(Config.MAGIC_GUILD_STORE_RUNES_AND_STAVES);
 				break;
