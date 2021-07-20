@@ -298,3 +298,15 @@
 "defence":0,
 "name":\"Wizard Akutha\"
 },
+{
+"npcId":6069,
+"xPos":2663,
+"yPos":3420,
+"height":0,
+"walkType":0,
+"health":0,
+"maxHit":0,
+"attack":0,
+"defence":0,
+"name":\"Tribal Weapon Salesman\"
+},

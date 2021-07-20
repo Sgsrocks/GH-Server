@@ -271,13 +271,6 @@ public class ClickNPC implements PacketType {
 				}, 1);
 				return;
 			}
-			if(NPCCacheDefinition.forID(c.npcClickIndex).getName().equalsIgnoreCase("banker")) {
-				if (c.goodDistance(NPCHandler.npcs[c.npcClickIndex].getX(), NPCHandler.npcs[c.npcClickIndex].getY(),
-						c.getX(), c.getY(), 5)) {
-					c.start(new BankerDialogue());
-					return;
-				}
-			}
 			if (c.goodDistance(NPCHandler.npcs[c.npcClickIndex].getX(), NPCHandler.npcs[c.npcClickIndex].getY(),
 					c.getX(), c.getY(), NPCHandler.npcs[c.npcClickIndex].getSize())) {
 				c.turnPlayerTo(NPCHandler.npcs[c.npcClickIndex].getX(), NPCHandler.npcs[c.npcClickIndex].getY());

@@ -61,6 +61,32 @@ public class NpcOptionTwo {
 				player.canChangeAppearance = true;
 			}
 			break;
+			case 8722:
+				player.getShops().openShop(Config.ARDOUGNE_SILVER_STALL);
+				break;
+			case 8681:
+				player.getShops().openShop(Config.ZENESHAS_PLATE_MAIL_BODY_SHOP);
+				break;
+			case 8682:
+			case 8683:
+				player.getShops().openShop(Config.AEMADS_ADVENTURING_SUPPLIES);
+				break;
+			case 8724:
+			case 8725:
+				player.getShops().openShop(Config.ARDOUGNE_BAKERS_STALL);
+				break;
+			case 8723:
+				player.getShops().openShop(Config.ARDOUGNE_GEM_STALL);
+				break;
+			case 8727:
+				player.getShops().openShop(Config.ARDOUGNE_FUR_STALL);
+				break;
+			case 8726:
+				player.getShops().openShop(Config.ARDOUGNE_SPICE_STALL);
+				break;
+			case 503:
+				player.getShops().openShop(Config.RICHARDS_FARMING_SHOP);
+				break;
 			case 6059:
 				player.getShops().openShop(Config.AARONS_ARCHERY_APPENDAGES);
 				break;
