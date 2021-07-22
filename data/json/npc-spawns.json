@@ -51646,5 +51646,53 @@
     "attack":0,
     "defence":0,
     "name":"Wizard Akutha"
+  },
+  {
+    "npcId":1358,
+    "xPos":2673,
+    "yPos":3150,
+    "height":0,
+    "walkType":0,
+    "health":0,
+    "maxHit":0,
+    "attack":0,
+    "defence":0,
+    "name":"Tindel Marchant"
+  },
+  {
+    "npcId":10707,
+    "xPos":2667,
+    "yPos":3163,
+    "height":0,
+    "walkType":0,
+    "health":0,
+    "maxHit":0,
+    "attack":0,
+    "defence":0,
+    "name":"Murphy"
+  },
+  {
+    "npcId":2888,
+    "xPos":2656,
+    "yPos":3152,
+    "height":0,
+    "walkType":0,
+    "health":0,
+    "maxHit":0,
+    "attack":0,
+    "defence":0,
+    "name":"Shop keeper"
+  },
+  {
+    "npcId":5721,
+    "xPos":2440,
+    "yPos":3089,
+    "height":0,
+    "walkType":0,
+    "health":0,
+    "maxHit":0,
+    "attack":0,
+    "defence":0,
+    "name":"Lanthus"
   }
 ]

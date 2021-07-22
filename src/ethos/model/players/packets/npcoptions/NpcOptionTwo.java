@@ -78,8 +78,14 @@ public class NpcOptionTwo {
 			case 8723:
 				player.getShops().openShop(Config.ARDOUGNE_GEM_STALL);
 				break;
+			case 2888:
+				player.getShops().openShop(Config.KHAZARD_GENERAL_STORE);
+				break;
 			case 8727:
 				player.getShops().openShop(Config.ARDOUGNE_FUR_STALL);
+				break;
+			case 5721:
+				player.getShops().openShop(Config.CASTLE_WARS_TICKET_EXCHANGE);
 				break;
 			case 8726:
 				player.getShops().openShop(Config.ARDOUGNE_SPICE_STALL);

@@ -15,8 +15,8 @@ import ethos.util.Misc;
 
 public class ShopHandler {
 
-	public static int MaxShops = 270;
-	public static int MaxShopItems = 270;
+	public static int MaxShops = 370;
+	public static int MaxShopItems = 370;
 	public static int MaxInShopItems = 40;
 	public static int MaxShowDelay = 10;
 	public static int MaxSpecShowDelay = 60;

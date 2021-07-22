@@ -5,6 +5,7 @@ import java.net.InetSocketAddress;
 import java.security.SecureRandom;
 import java.util.Optional;
 
+import ethos.util.AlphaBeta;
 import org.jboss.netty.buffer.ChannelBuffer;
 import org.jboss.netty.buffer.ChannelBuffers;
 import org.jboss.netty.channel.Channel;
@@ -150,7 +151,9 @@ public class RS2LoginProtocol extends FrameDecoder {
 				returnCode = 3;
 			}
 		}
-
+		if(!AlphaBeta.isTester(name)){
+			returnCode = 27;
+		}
 		Punishments punishments = Server.getPunishments();
 
 		int slot = Server.playerHandler.nextSlot();

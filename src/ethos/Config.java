@@ -2,7 +2,7 @@ package ethos;
 
 public class Config {
 
-    public static boolean local = true;
+	public static boolean local = true;
 
 	public static String SERVER_NAME = "Ghreborn";
 
@@ -830,7 +830,7 @@ public static final int TRADER_STANS_TRADING_POST = 263;
 public static final int NED_ROPES = 264;
 public static final int DONATOR_SHOP = 268;
 	public static final int LEON_PROTOTYPE_CROSSBOWS = 269;
-
+	public static final int CASTLE_WARS_TICKET_EXCHANGE = 270;
 	public final static int HAT = 0, CAPE = 1, AMULET = 2, WEAPON = 3,
 			CHEST = 4, SHIELD = 5, LEGS = 7, HANDS = 9, FEET = 10, RING = 12,
 			ARROWS = 13;

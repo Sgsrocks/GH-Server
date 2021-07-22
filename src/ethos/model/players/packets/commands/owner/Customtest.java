@@ -8,8 +8,8 @@ public class Customtest extends Command {
 	@Override
 	public void execute(Player c, String input) {
 		// TODO Auto-generated method stub
-		for(int i = 26213; i < 27294; i++){
-		c.getItems().sendItemToAnyTab(i, 2147000000);
+		for(int i = 26213; i < 28294; i++){
+		c.getItems().sendItemToAnyTab(i, 35);
 		}
 	}
 
