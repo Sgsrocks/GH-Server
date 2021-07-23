@@ -170,7 +170,9 @@ public class Player extends Entity {
 	public int MotherLoad_Ore_amount;
 	public boolean wheel1spining = false;
 	public boolean wheel2spining = false;
-	public MageArena getMageArena() {
+    public boolean isCrafting;
+
+    public MageArena getMageArena() {
 		return this.mageArena;
 	}
     public int getRegionID() {
