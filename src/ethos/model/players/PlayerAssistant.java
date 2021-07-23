@@ -317,6 +317,30 @@ public class PlayerAssistant {
 		stream.writeByte(index);
 		c.flushOutStream();
 	}
+	public void sendUpdateItems(int frame, GameItem[] items) {
+		c.getOutStream().createFrameVarSizeWord(53);
+		c.getOutStream().writeWord(frame);
+		c.getOutStream().writeWord(items.length);
+		GameItem[] var6 = items;
+		for (int i = 0; i < items.length; i++) {
+			GameItem item = var6[i];
+			if (item == null) {
+				c.getOutStream().writeByte(0);
+				c.getOutStream().writeWordBigEndianA(0);
+			} else {
+				if (item.getAmount() > 254) {
+					c.getOutStream().writeByte(255);
+					c.getOutStream().writeDWord_v2(item.getAmount());
+				} else {
+					c.getOutStream().writeByte(item.getAmount());
+				}
+
+				c.getOutStream().writeWordBigEndianA(item.getId());
+			}
+		}
+		c.getOutStream().endFrameVarSizeWord();
+		c.flushOutStream();
+	}
 
 	public static void sendItems(Player player, int componentId, List<GameItem> items, int capacity) {
 		if (player == null || player.getOutStream() == null) {

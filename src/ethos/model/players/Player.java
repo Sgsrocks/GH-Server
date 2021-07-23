@@ -171,8 +171,9 @@ public class Player extends Entity {
 	public boolean wheel1spining = false;
 	public boolean wheel2spining = false;
     public boolean isCrafting;
+	public boolean tempBoolean;
 
-    public MageArena getMageArena() {
+	public MageArena getMageArena() {
 		return this.mageArena;
 	}
     public int getRegionID() {
