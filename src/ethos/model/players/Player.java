@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 import ethos.model.content.*;
 import ethos.model.content.n_tp.TeleportInterface;
 import ethos.model.players.combat.monsterhunt.MonsterHunt;
+import ethos.model.players.skills.farming.ToolLeprechaun;
 import org.jboss.netty.buffer.ChannelBuffers;
 import org.jboss.netty.channel.Channel;
 
@@ -172,6 +173,7 @@ public class Player extends Entity {
 	public boolean wheel2spining = false;
     public boolean isCrafting;
 	public boolean tempBoolean;
+	private ToolLeprechaun toolLeprechaun;
 
 	public MageArena getMageArena() {
 		return this.mageArena;
@@ -865,6 +867,10 @@ public class Player extends Entity {
 		session.write(packet);
 		outStream.currentOffset = 0;
 
+	}
+
+	public ToolLeprechaun getToolLeprechaun() {
+		return toolLeprechaun;
 	}
 
 	public class TinterfaceText {

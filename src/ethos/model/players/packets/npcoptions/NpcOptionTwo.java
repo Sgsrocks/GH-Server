@@ -19,6 +19,7 @@ import ethos.model.players.PlayerAssistant;
 import ethos.model.players.PlayerAssistant.PointExchange;
 import ethos.model.players.skills.Fishing;
 import ethos.model.players.skills.agility.AgilityHandler;
+import ethos.model.players.skills.farming.ToolLeprechaun;
 import ethos.model.players.skills.thieving.Thieving.Pickpocket;
 
 /*
@@ -83,6 +84,9 @@ public class NpcOptionTwo {
 				break;
 			case 8727:
 				player.getShops().openShop(Config.ARDOUGNE_FUR_STALL);
+				break;
+			case 0:
+				player.getToolLeprechaun().loadInterfaces();
 				break;
 			case 5721:
 				player.getShops().openShop(Config.CASTLE_WARS_TICKET_EXCHANGE);
