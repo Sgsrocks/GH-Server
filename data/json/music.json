@@ -55,7 +55,93 @@
 		"frame": 38842,
 		"button": 16245
 	},
-			{
+	{
+		"region": 12589,
+		"name": "Scarab",
+		"song": 352,
+		"frame": 38455,
+		"button": 150055
+	},
+	{
+		"region": 12845,
+		"name": "Scarab",
+		"song": 352,
+		"frame": 38455,
+		"button": 150055
+	},
+	{
+		"region": 13101,
+		"name": "Scarab",
+		"song": 352,
+		"frame": 38455,
+		"button": 150055
+	},
+	{
+		"region": 12588,
+		"name": "Scarab",
+		"song": 352,
+		"frame": 38455,
+		"button": 150055
+	},
+	{
+		"region": 12332,
+		"name": "Scarab",
+		"song": 352,
+		"frame": 38455,
+		"button": 150055
+	},
+	{
+		"region": 12587,
+		"name": "Scarab",
+		"song": 352,
+		"frame": 38455,
+		"button": 150055
+	},
+	{
+		"region": 12844,
+		"name": "City of the Dead",
+		"song": 383,
+		"frame": 38454,
+		"button": 150054
+	},
+	{
+		"region": 12843,
+		"name": "City of the Dead",
+		"song": 383,
+		"frame": 38454,
+		"button": 150054
+	},
+
+	{
+		"region": 13099,
+		"name": "City of the Dead",
+		"song": 383,
+		"frame": 38454,
+		"button": 150054
+	},
+	{
+		"region": 13100,
+		"name": "Sphinx",
+		"song": 387,
+		"frame": 38456,
+		"button": 150056
+	},
+	{
+		"region": 13356,
+		"name": "Pharaoh's Tomb",
+		"song": 505,
+		"frame": 38525,
+		"button": 150125
+	},
+	{
+		"region": 13358,
+		"name": "Dynasty",
+		"song": 351,
+		"frame": 38444,
+		"button": 150044
+	},
+
+	{
 		"region": 13108,
 		"name": "Still Night",
 		"song": 111,
@@ -186,7 +272,126 @@
 		"name": "Emperor",
 		"song": 138,
 		"frame": 38314,
-		"button": 17089
+		"button": 149170
+	},
+	{
+		"region": 13104,
+		"name": "Egypt",
+		"song": 69,
+		"frame": 38201,
+		"button": 149057
+	},
+	{
+		"region": 13103,
+		"name": "Desert Voyage",
+		"song": 174,
+		"frame": 38197,
+		"button": 149053
+	},
+	{
+		"region": 13102,
+		"name": "Desert Voyage",
+		"song": 174,
+		"frame": 38197,
+		"button": 149053
+	},
+	{
+		"region": 13359,
+		"name": "Desert Voyage",
+		"song": 174,
+		"frame": 38197,
+		"button": 149053
+	},
+	{
+		"region": 12848,
+		"name": "Arabian 3",
+		"song": 124,
+		"frame": 38170,
+		"button": 149026
+	},
+	{
+		"region": 12591,
+		"name": "The Desert",
+		"song": 79,
+		"frame": 38281,
+		"button": 149137
+	},
+	{
+		"region": 12590,
+		"name": "Bandit Camp",
+		"song": 263,
+		"frame": 38374,
+		"button": 149230
+	},
+	{
+		"region": 12846,
+		"name": "Sunburn",
+		"song": 267,
+		"frame": 38373,
+		"button": 149229
+	},
+	{
+		"region": 13357,
+		"name": "Sunburn",
+		"song": 267,
+		"frame": 38373,
+		"button": 149229
+	},
+	{
+		"region": 13613,
+		"name": "Over to Nardah",
+		"song": 447,
+		"frame": 38514,
+		"button": 150114
+	},
+	{
+		"region": 13614,
+		"name": "Desert Heat",
+		"song": 465,
+		"frame": 38512,
+		"button": 150112
+	},
+	{
+		"region": 13615,
+		"name": "Desert Heat",
+		"song": 465,
+		"frame": 38512,
+		"button": 150112
+	},
+	{
+		"region": 13616,
+		"name": "The Golem",
+		"song": 377,
+		"frame": 38446,
+		"button": 150046
+	},
+	{
+		"region": 13872,
+		"name": "The Golem",
+		"song": 377,
+		"frame": 38446,
+		"button": 150046
+	},
+	{
+		"region": 13617,
+		"name": "The Golem",
+		"song": 377,
+		"frame": 38446,
+		"button": 150046
+	},
+	{
+		"region": 12847,
+		"name": "The Desert",
+		"song": 79,
+		"frame": 38281,
+		"button": 149137
+	},
+	{
+		"region": 13360,
+		"name": "Egypt",
+		"song": 69,
+		"frame": 38201,
+		"button":  149057
 	},
 		{
 		"region": 12086,

@@ -14,6 +14,7 @@ import ethos.model.npcs.NPC;
  */
 public class Boundary {
 
+
 	int minX, minY, highX, highY;
 	int height;
 
@@ -238,8 +239,25 @@ public class Boundary {
 	public static final Boundary RAID_F1 = new Boundary(3295, 5152, 3359, 5407, 1);
 	public static final Boundary RAID_F2 = new Boundary(3295, 5152, 3359, 5407, 2);
 	public static final Boundary RAID_F3 = new Boundary(3295, 5152, 3359, 5407, 3);
-	
-	
+
+	//desert
+	public static final Boundary DESERT = new Boundary(3137, 3517, 2747, 3130, 0);
+	//desert - no heat
+	public static final Boundary NARDAH = new Boundary(3392, 3455, 2876, 2940);
+	public static final Boundary BANDIT_CAMP = new Boundary(3151, 3192, 2963, 2986);
+	public static final Boundary MINING_CAMP = new Boundary(3267, 3311, 3000, 3043);
+	public static final Boundary BEDABIN = new Boundary(3160, 3187, 3015, 3046);
+	public static final Boundary UZER = new Boundary(3462, 3503, 3068, 3109);
+	public static final Boundary AGILITY_PYRAMID = new Boundary(3329, 3391, 2812, 2855);
+	public static final Boundary PYRAMID = new Boundary(3217, 3250, 2881, 2908);
+	public static final Boundary SOPHANEM = new Boundary(3273, 3323, 2749, 2806);
+	public static final Boundary MENAPHOS = new Boundary(3200, 3266, 2749, 2806);
+	public static final Boundary POLLIVNEACH = new Boundary(3329, 3377, 2936, 3002);
+	public static final Boundary SHANTAY_PASS = new Boundary(3298, 3312, 3304, 3303);
+
+	public static final Boundary[] NO_HEAT = {NARDAH, BANDIT_CAMP, MINING_CAMP, BEDABIN, UZER, AGILITY_PYRAMID, PYRAMID, SOPHANEM, MENAPHOS, POLLIVNEACH, SHANTAY_PASS};
+
+
 	/**
 	 * 
 	 * RAIDS ENTIRE AREA 

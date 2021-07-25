@@ -436,462 +436,154 @@ public class NPCHandler {
 
 		if (Boundary.isIn(npcs[i], Boundary.WILDERNESS_UNDERGROUND)) {
 			return true;
-			
+
 		}
-		
+
 		if (npcs[i].inRevs()) {
 			return true;
-			
+
 		}
 		if(Boundary.isIn(npcs[i], Boundary.REV_CAVE)) {
 			return true;
 		}
-		
-		
-		if (searching) {
-			switch (i) {
-			case 5916:
-			case 690:
-			case 963:
-			case 965:
-			case 955:
-			case 957:
-			case 959:
-			case 5867:
-			case 5868:
-			case 5869:
-			case 2042:
-			case 239:
-			case 7413:
-			case 1739:
-			case 1740:
-			case 1741:
-			case 1742:
-			case 2044:
-			case 2043:
-			case 465:
-			case 8030:
-			case 8031:
-				case 7706:
-			case Zulrah.SNAKELING:
-			case 5054:
-			case 6611:
-			case 6612:
-			case 6610:
-			case 494:
-			case 5535:
-			case 2550:
-			case 2551:
-			case 50:
-			case 28:
-			case 2552:
-			case 6609:
-			case 2553:
-			case 2558:
-			case 2559:
-			case 3169:
-			case 2561:
-			case 2562:
-			case 2563:
-			case 2564:
-			case 2565:
-			case 5947:
-			case 5961:
-			case 2265:
-			case 2266:
-			case 2267:
-			case 2035:
-			case 5779:
-			case 291:
-			case 435:
-			case 135:
-			case 7276:
-			case 5944: // Rock lobster
-
-				// Godwars
-			case 3138:
-			case 2205:
-			case 2206:
-			case 2207:
-			case 2208:
-			case 2209:
-			case 2211:
-			case 2212:
-			case 2215:
-			case 2216:
-			case 2217:
-			case 2218:
-			case 2233:
-			case 2234:
-			case 2235:
-			case 2237:
-			case 2242:
-			case 2243:
-			case 2244:
-			case 2245:
-			case 3129:
-			case 3130:
-			case 3131:
-			case 3132:
-			case 3133:
-			case 3134:
-			case 3135:
-			case 3137:
-			case 3139:
-			case 3140:
-			case 3141:
-			case 3159:
-			case 3160:
-			case 3161:
-			case 3162:
-			case 3163:
-			case 3164:
-			case 3165:
-			case 3166:
-			case 3167:
-			case 3168:
-			case 3174:
-
-				// Barrows tunnel monsters
-			case 1678:
-			case 1679:
-			case 1683:
-			case 1684:
-			case 1685:
-
-			case Skotizo.SKOTIZO_ID:
-			case Skotizo.REANIMATED_DEMON:
-			case Skotizo.DARK_ANKOU:
-				// GWD
-			case 6230:
-			case 6231:
-			case 6229:
-			case 6232:
-			case 6240:
-			case 6241:
-			case 6242:
-			case 6233:
-			case 6234:
-			case 6243:
-			case 6244:
-			case 6245:
-			case 6246:
-			case 6238:
-			case 6239:
-			case 6625:
-			case 122:// Npcs That Give BandosKC
-			case 6278:
-			case 6277:
-			case 6276:
-			case 6283:
-			case 6282:
-			case 6281:
-			case 6280:
-			case 6279:
-			case 6271:
-			case 6272:
-			case 6273:
-			case 6274:
-			case 6269:
-			case 6270:
-			case 6268:
-			case 6221:
-			case 6219:
-			case 6220:
-			case 6217:
-			case 6216:
-			case 6215:
-			case 6214:
-			case 6213:
-			case 6212:
-			case 6211:
-			case 6218:
-			case 6275:
-			case 6257:// Npcs That Give SaraKC
-			case 6255:
-			case 6256:
-			case 6259:
-			case 6254:
-			case 1689:
-			case 1694:
-			case 1699:
-			case 1704:
-			case 1709:
-			case 1714:
-			case 1724:
-			case 1734:
-			case 6914: // Lizardman, Lizardman brute
-			case 6915:
-			case 6916:
-			case 6917:
-			case 6918:
-			case 6919:
-			case 6766:
-			case 7573:
-			case 7617: // Tekton magers
-			case 7544: // Tekton
-			case 7604: // Skeletal mystic
-			case 7605: // Skeletal mystic
-			case 7606: // Skeletal mystic
-			case 7585: //
-				case 7554:
-			case 7563: // muttadiles
-			case 5129:
-			case 4922:
-			case 7931://start rev caves
-			case 7932:
-			case 7933:
-			case 7934:
-			case 7935:
-			case 7936:
-			case 7937:
-			case 7938:
-			case 7939:
-			case 7940:
-			case 259://end rev caves
-
+		if (npcs[i].inRevs() && npcs[i].getHealth().getMaximum() > 0)
+			return true;
+		if (npcs[i].inWild() && npcs[i].getHealth().getMaximum() > 0)
+			return true;
+		if (npcs[i].inRaids() && npcs[i].getHealth().getMaximum() > 0)
+			return true;
+		switch(i){
+			case 2205://Commander Zilyana
+			case 2206://Starlight
+			case 2207://Growler
+			case 2208://Bree
+			case 2209://Saradomin priest
+			case 2210://Spiritual warrior
+			case 2211://Spiritual ranger
+			case 2212://Spiritual mage
+			case 2213://Knight of Saradomin
+			case 2214://Knight of Saradomin
+			case 2215://General Graardor
+			case 2216://Sergeant Strongstack
+			case 2217://Sergeant Steelwill
+			case 2218://Sergeant Grimspike
+			case 2233://Ogre
+			case 2234://Jogre
+			case 2235://Cyclops
+			case 2236://Cyclops
+			case 2237://Ork
+			case 2238://Ork
+			case 2239://Ork
+			case 2240://Ork
+			case 2241://Hobgoblin
+			case 2242://Spiritual ranger
+			case 2243://Spiritual warrior
+			case 2244://Spiritual mage
+			case 2245://Goblin
+			case 2246://Goblin
+			case 2247://Goblin
+			case 2248://Goblin
+			case 2249://Goblin
+			case 2265://Dagannoth Supreme
+			case 2266://Dagannoth Prime
+			case 2267://Dagannoth Rex
+			case 239://King Black Dragon
+			case 240://Black demon
+			case 241://Baby blue dragon
+			case 242://Baby blue dragon
+			case 243://Baby blue dragon
+			case 244://Baby red dragon
+			case 245://Baby red dragon
+			case 246://Baby red dragon
+			case 247://Red dragon
+			case 248://Red dragon
+			case 249://Red dragon
+			case 250://Red dragon
+			case 251://Red dragon
+			case 252://Black dragon
+			case 253://Black dragon
+			case 254://Black dragon
+			case 255://Black dragon
+			case 256://Black dragon
+			case 257://Black dragon
+			case 258://Black dragon
+			case 259://Black dragon
+			case 260://Green dragon
+			case 261://Green dragon
+			case 262://Green dragon
+			case 263://Green dragon
+			case 264://Green dragon
+			case 265://Blue dragon
+			case 266://Blue dragon
+			case 267://Blue dragon
+			case 268://Blue dragon
+			case 269://Blue dragon
+			case 270://Bronze dragon
+			case 271://Bronze dragon
+			case 272://Iron dragon
+			case 273://Iron dragon
+			case 274://Steel dragon
+			case 275://Steel dragon
+			case 465://Skeletal Wyvern
+			case 466://Skeletal Wyvern
+			case 467://Skeletal Wyvern
+			case 468://Skeletal Wyvern
+			case 955://Kalphite Worker
+			case 956://Kalphite Worker
+			case 957://Kalphite Soldier
+			case 958://Kalphite Soldier
+			case 959://Kalphite Guardian
+			case 960://Kalphite Guardian
+			case 961://Kalphite Worker
+			case 962://Kalphite Guardian
+			case 963://Kalphite Queen
+			case 3129://K'ril Tsutsaroth
+			case 3130://Tstanon Karlak
+			case 3131://Zakl'n Gritch
+			case 3132://Balfrug Kreeyath
+			case 3133://Hellhound
+			case 3134://Imp
+			case 3135://Werewolf
+			case 3136://Werewolf
+			case 3137://Feral Vampyre
+			case 3138://Bloodveld
+			case 3139://Pyrefiend
+			case 3140://Icefiend
+			case 3141://Gorak
+			case 3159://Spiritual warrior
+			case 3160://Spiritual ranger
+			case 3161://Spiritual mage
+			case 3162://Kree'arra
+			case 3163://Wingman Skree
+			case 3164://Flockleader Geerin
+			case 3165://Flight Kilisa
+			case 3166://Spiritual warrior
+			case 3167://Spiritual ranger
+			case 3168://Spiritual mage
+			case 3169://Aviansie
+			case 3170://Aviansie
+			case 3171://Aviansie
+			case 3172://Aviansie
+			case 3173://Aviansie
+			case 3174://Aviansie
+			case 3175://Aviansie
+			case 3176://Aviansie
+			case 3177://Aviansie
+			case 3178://Aviansie
+			case 3179://Aviansie
+			case 3180://Aviansie
+			case 3181://Aviansie
+			case 3182://Aviansie
+			case 3183://Aviansie
+			case 2916://Waterfiend
+			case 2917://Waterfiend
+			case 2918://Brutal green dragon
+			case 2919://Mithril dragon
+			case 2920://Confused barbarian
+			case 2921://Lost barbarian
 				return true;
-			case 1524:
-			case 6600:
-			case 6601:
-			case 7553:
-			case 7555:
-			case 6602:
-			case 1049:
-			case 6617:
-			case 6620:
-				return false;
-			}
-		} else {
-			switch (npcs[i].npcType) {
-			case 5916:
-			case 690:
-			case 963:
-			case 965:
-			case 955:
-			case 957:
-			case 959:
-			case 5867:
-			case 5868:
-			case 5869:
-			case 2042:
-			case 239:
-			case 7413:
-			case 1739:
-			case 1740:
-			case 1741:
-			case 1742:
-			case 2044:
-			case 2043:
-			case 465:
-			case Zulrah.SNAKELING:
-			case 5054:
-			case 6611:
-			case 6612:
-			case 6610:
-			case 494:
-			case 5535:
-			case 2550:
-			case 2551:
-			case 50:
-			case 28:
-			case 2552:
-			case 6609:
-			case 2553:
-			case 2558:
-			case 2559:
-			case 3169:
-			case 2561:
-			case 2562:
-			case 2563:
-			case 2564:
-			case 2565:
-			case 5947:
-			case 5961:
-			case 2265:
-			case 2266:
-			case 2267:
-			case 2035:
-			case 5779:
-			case 291:
-			case 435:
-			case 135:
-			case 484:
-			case 7276:
-			case 5944: // Rock lobster
-
-				// Godwars
-			case 3138:
-			case 2205:
-			case 2206:
-			case 2207:
-			case 2208:
-			case 2209:
-			case 2211:
-			case 2212:
-			case 2215:
-			case 2216:
-			case 2217:
-			case 2218:
-			case 2233:
-			case 2234:
-			case 2235:
-			case 2237:
-			case 2242:
-			case 2243:
-			case 2244:
-			case 2245:
-			case 3129:
-			case 3130:
-			case 3131:
-			case 3132:
-			case 3133:
-			case 3134:
-			case 3135:
-			case 3137:
-			case 3139:
-			case 3140:
-			case 3141:
-			case 3159:
-			case 3160:
-			case 3161:
-			case 3162:
-			case 3163:
-			case 3164:
-			case 3165:
-			case 3166:
-			case 3167:
-			case 3168:
-			case 3174:
-
-			case Skotizo.SKOTIZO_ID:
-			case Skotizo.REANIMATED_DEMON:
-			case Skotizo.DARK_ANKOU:
-
-				// Barrows tunnel monsters
-			case 1678:
-			case 1679:
-			case 1683:
-			case 1684:
-			case 1685:
-				// GWD
-			case 6230:
-			case 6231:
-			case 6229:
-			case 6232:
-			case 6240:
-			case 6241:
-			case 6242:
-			case 6233:
-			case 6234:
-			case 6243:
-			case 6244:
-			case 6245:
-			case 6246:
-			case 6238:
-			case 6239:
-			case 6625:
-			case 122:// Npcs That Give BandosKC
-			case 6278:
-			case 6277:
-			case 6276:
-			case 6283:
-			case 6282:
-			case 6281:
-			case 6280:
-			case 6279:
-			case 6271:
-			case 6272:
-			case 6273:
-			case 6274:
-			case 6269:
-			case 6270:
-			case 6268:
-			case 6221:
-			case 6219:
-			case 6220:
-			case 6217:
-			case 6216:
-			case 6215:
-			case 6214:
-			case 6213:
-			case 6212:
-			case 6211:
-			case 6218:
-			case 6275:
-			case 6257:// Npcs That Give SaraKC
-			case 6255:
-			case 6256:
-			case 6259:
-			case 6254:
-			case 1689:
-			case 1694:
-			case 1699:
-			case 1704:
-			case 1709:
-			case 1714:
-			case 1724:
-			case 1734:
-			case 6914: // Lizardman, Lizardman brute
-			case 6915:
-			case 6916:
-			case 6917:
-			case 6918:
-			case 6919:
-			case 6766:
-			case 7573:
-			case 7617: // Tekton magers
-			case 7544: // Tekton
-			case 7604: // Skeletal mystic
-			case 7605: // Skeletal mystic
-			case 7606: // Skeletal mystic
-			case 5129:
-			case 4922:
-			case 7388: // Start of superior
-			case 7389:
-			case 7390:
-			case 7391:
-			case 7392:
-			case 7393:
-			case 7394:
-			case 7395:
-			case 7396:
-			case 7397:
-			case 7398:
-			case 7399:
-			case 7400:
-			case 7401:
-			case 7402:
-			case 7403:
-			case 7404:
-			case 7405:
-			case 7406:
-			case 7407:
-			case 7409:
-			case 7410:
-			case 7411: // end of superior
-				return true;
-			case 1524:
-			case 6600:
-			case 6601:
-			case 6602:
-			case 1049:
-			case 6617:
-			case 6620:
-				return false;
-
-			case 8028:
-			case 8061:
-				return true;
-			}
-			if (npcs[i].inRevs() && npcs[i].getHealth().getMaximum() > 0)
-				return true;
-			if (npcs[i].inWild() && npcs[i].getHealth().getMaximum() > 0)
-				return true;
-			if (npcs[i].inRaids() && npcs[i].getHealth().getMaximum() > 0)
-				return true;
-			return isFightCaveNpc(i);
 		}
+
 		return false;
 	}
 

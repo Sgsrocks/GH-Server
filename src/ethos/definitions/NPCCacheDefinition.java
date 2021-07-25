@@ -103,14 +103,14 @@ public class NPCCacheDefinition {
             if(opcode == 14)
                 walkIndex = str.readUnsignedWord();
             else
-			if(opcode == 17)
-			{
-				walkIndex = str.readUnsignedWord();
-				str.readUnsignedWord();
-				str.readUnsignedWord();
-				str.readUnsignedWord();
-			} else
-            if(opcode >= 30 && opcode < 40)
+			if(opcode == 17) {
+                walkIndex = str.readUnsignedWord();
+                str.readUnsignedWord();
+                str.readUnsignedWord();
+                str.readUnsignedWord();
+            } else if(opcode == 18) {
+                Category = str.readUnsignedWord();
+			} else if(opcode >= 30 && opcode < 40)
             {
                 if(actions == null)
                     actions = new String[10];
@@ -129,21 +129,21 @@ public class NPCCacheDefinition {
                         str.readUnsignedWord();
                 }
             } else
+                if(opcode == 41)
+                {
+                    int k = str.readSignedByte();
+                    for(int k1 = 0; k1 < k; k1++)
+                    {
+                        str.readUnsignedWord();
+                        str.readUnsignedWord();
+                    }
+                } else
             if(opcode == 60)
             {
                 int l = str.readUnsignedByte();
                 for (int l1 = 0; l1 < l; l1++)
                     str.readUnsignedWord();
             } else
-            if(opcode == 90)
-                str.readUnsignedWord();
-            else
-            if(opcode == 91)
-                str.readUnsignedWord();
-            else
-            if(opcode == 92)
-                str.readUnsignedWord();
-            else
             if(opcode == 93) {
             } else
             if(opcode == 95)
@@ -169,16 +169,36 @@ public class NPCCacheDefinition {
             if(opcode == 103)
                 str.readUnsignedWord();
             else
-            if(opcode == 106)
-            {
-                str.readUnsignedWord();
-                str.readUnsignedWord();
-                int i1 = str.readUnsignedByte();
-                for (int i2 = 0; i2 <= i1; i2++) {
-                    str.readUnsignedWord();
+            if(opcode == 106 || opcode == 118) {
+                int varbit = str.readUnsignedWord();
+
+                if (varbit == 65535) {
+                    varbit = -1;
                 }
+
+                int varp = str.readUnsignedWord();
+
+                if (varp == 65535) {
+                    varp = -1;
+                }
+
+                int value = -1;
+
+                if (opcode == 118) {
+                    value = str.readUnsignedWord();
+                }
+                int len = str.readUnsignedByte();
+                morphisms = new int[len + 2];
+                for (int i = 0; i <= len; i++) {
+                    morphisms[i] = str.readUnsignedWord();
+                    if (morphisms[i] == 65535) {
+                        morphisms[i] = -1;
+                    }
+                }
+                morphisms[len + 1] = value;
+            } else if (opcode == 109) {
             } else
-            if(opcode == 107) {
+            if(opcode == 107 || opcode == 111) {
             
             }
         } while(true);
@@ -188,6 +208,7 @@ public class NPCCacheDefinition {
     {
         boundDim = 1;
         type = -1L;
+        Category = -1;
     }
     
     /**
@@ -275,7 +296,9 @@ public class NPCCacheDefinition {
     private int walkIndex;
     private int health;
     private int size = 1;
+    public int morphisms[];
     public int combatLevel;
+    private int Category;
     private String examine;
 
 }

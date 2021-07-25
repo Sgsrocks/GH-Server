@@ -19,7 +19,10 @@ import ethos.model.players.Player;
  */
 public class Item {
 
-	/**
+	public final static int HAT = 0, CAPE = 1, AMULET = 2, WEAPON = 3,
+			CHEST = 4, SHIELD = 5, LEGS = 7, HANDS = 9, FEET = 10, RING = 12,
+			ARROWS = 13, ITEM_LIMIT = 15000, MAX_ITEM_AMOUNT = Integer.MAX_VALUE;
+    /**
 	 * Server cape IDs.
 	 */
 	public static int capes[] = { 22109, 2731, 2677, 2683, 2680, 2701, 2686, 2689, 2692, 2737, 2734, 2716, 2728, 2695, 2713,

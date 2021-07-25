@@ -85,6 +85,21 @@ public class NpcOptionTwo {
 			case 8727:
 				player.getShops().openShop(Config.ARDOUGNE_FUR_STALL);
 				break;
+			case 14:
+				player.getShops().openShop(Config.ROMETTIS_FINE_FASHIONS);
+				break;
+			case 16:
+				player.getShops().openShop(Config.FUNCHS_FINE_GROCERIES);
+				break;
+            case 4642:
+            	player.getShops().openShop(Config.SHANTAY_PASS_SHOP);
+            	break;
+			case 12:
+				player.getShops().openShop(Config.GRAND_TREE_GROCERIES);
+				break;
+			case 6532:
+				player.getShops().openShop(Config.BLURBERRY_BAR);
+				break;
 			case 0:
 				player.getToolLeprechaun().loadInterfaces();
 				break;

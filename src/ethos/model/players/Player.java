@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 import ethos.model.content.*;
 import ethos.model.content.n_tp.TeleportInterface;
+import ethos.model.content.traveling.DesertHeat;
 import ethos.model.players.combat.monsterhunt.MonsterHunt;
 import ethos.model.players.skills.farming.ToolLeprechaun;
 import org.jboss.netty.buffer.ChannelBuffers;
@@ -173,7 +174,8 @@ public class Player extends Entity {
 	public boolean wheel2spining = false;
     public boolean isCrafting;
 	public boolean tempBoolean;
-	private ToolLeprechaun toolLeprechaun;
+    public long lastDesert;
+    private ToolLeprechaun toolLeprechaun;
 
 	public MageArena getMageArena() {
 		return this.mageArena;
@@ -1832,7 +1834,9 @@ public class Player extends Entity {
 
 	public void process() {
 		farming.farmingProcess();
-
+		if (Boundary.isIn(this, Boundary.DESERT) && heightLevel == 0) {
+			DesertHeat.callHeat(this);
+		}
 
 		if (isRunning && runEnergy <= 0) {
 			isRunning = false;
