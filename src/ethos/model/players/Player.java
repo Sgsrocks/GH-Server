@@ -175,7 +175,8 @@ public class Player extends Entity {
     public boolean isCrafting;
 	public boolean tempBoolean;
     public long lastDesert;
-    private ToolLeprechaun toolLeprechaun;
+	public boolean desertWarning;
+	private ToolLeprechaun toolLeprechaun;
 
 	public MageArena getMageArena() {
 		return this.mageArena;

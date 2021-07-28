@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 
 import javax.swing.text.html.parser.Entity;
 
+import ethos.model.content.Sawmill;
 import ethos.model.players.*;
 import org.apache.commons.lang3.text.WordUtils;
 
@@ -200,6 +201,7 @@ public class ClickingButtons implements PacketType {
 		c.getFletching().select(actionButtonId);
 		GlassBlowing.glassBlowing(c, actionButtonId);
 		PlayerEmotes.performEmote(c, actionButtonId);
+		Sawmill.HandleBottons(c, actionButtonId);
 		ethos.model.players.skills.magic.EnchantBoits.EnchantButton(c, actionButtonId);
 		// int[] teleportButtons = { 4140, 4143, 4146, 4150, 6004, 6005, 29031,
 		// 50235, 50245, 50253, 51005, 51013, 51023, 51031, 51039,

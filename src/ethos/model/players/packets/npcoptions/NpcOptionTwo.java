@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import ethos.Config;
 import ethos.Server;
+import ethos.model.content.Sawmill;
 import ethos.model.content.achievement_diary.desert.DesertDiaryEntry;
 import ethos.model.content.achievement_diary.fremennik.FremennikDiaryEntry;
 import ethos.model.content.achievement_diary.karamja.KaramjaDiaryEntry;
@@ -62,6 +63,9 @@ public class NpcOptionTwo {
 				player.canChangeAppearance = true;
 			}
 			break;
+			case 3101:
+				Sawmill.OpemSawMill(player);
+				break;
 			case 8722:
 				player.getShops().openShop(Config.ARDOUGNE_SILVER_STALL);
 				break;
