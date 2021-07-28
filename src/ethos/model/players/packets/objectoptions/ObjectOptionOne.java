@@ -23,6 +23,7 @@ import ethos.model.content.achievement_diary.morytania.MorytaniaDiaryEntry;
 import ethos.model.content.achievement_diary.varrock.VarrockDiaryEntry;
 import ethos.model.content.achievement_diary.wilderness.WildernessDiaryEntry;
 import ethos.model.content.dialogue.DialogueManager;
+import ethos.model.content.dialogue.impl.RockDialogue;
 import ethos.model.content.godwars.God;
 import ethos.model.content.random.Balloons;
 import ethos.model.content.random.PartyRoom;
@@ -656,28 +657,18 @@ public class ObjectOptionOne {
 		case 34544:
 			if(c.getX() == 1301 && c.getY() == 10206 && c.getHeight() == 0){
 			c.getPA().movePlayer(1303, 10206, 0);
-			} else if(c.getX() == 1301 && c.getY() == 10205 && c.getHeight() == 0){
+		} else if(c.getX() == 1301 && c.getY() == 10205 && c.getHeight() == 0) {
 			c.getPA().movePlayer(1303, 10205, 0);
-			} else if(c.getX() == 1303 && c.getY() == 10205 && c.getHeight() == 0){
-			c.getPA().movePlayer(1301, 10205, 0);
-			} else if(c.getX() == 1303 && c.getY() == 10206 && c.getHeight() == 0){
-			c.getPA().movePlayer(1301, 10206, 0);
-			} else if(c.getX() == 1311 && c.getY() == 10214 && c.getHeight() == 0){
-			c.getPA().movePlayer(1311, 10216, 0);
-			} else if(c.getX() == 1312 && c.getY() == 10214 && c.getHeight() == 0){
-			c.getPA().movePlayer(1312, 10216, 0);
 			} else if(c.getX() == 1311 && c.getY() == 10216 && c.getHeight() == 0){
-			c.getPA().movePlayer(1311, 10214, 0);
+				c.getPA().movePlayer(1311, 10214, 0);
 			} else if(c.getX() == 1312 && c.getY() == 10216 && c.getHeight() == 0){
-			c.getPA().movePlayer(1312, 10214, 0);
-			} else if(c.getX() == 1320 && c.getY() == 10206 && c.getHeight() == 0){
-			c.getPA().movePlayer(1322, 10206, 0);
-			} else if(c.getX() == 1322 && c.getY() == 10206 && c.getHeight() == 0){
-			c.getPA().movePlayer(1320, 10206, 0);
-			} else if(c.getX() == 1320 && c.getY() == 10205 && c.getHeight() == 0){
-			c.getPA().movePlayer(1322, 10205, 0);
+				c.getPA().movePlayer(1312, 10214, 0);
 			} else if(c.getX() == 1322 && c.getY() == 10205 && c.getHeight() == 0){
-			c.getPA().movePlayer(1320, 10205, 0);
+				c.getPA().movePlayer(1320, 10205, 0);
+			} else if(c.getX() == 1322 && c.getY() == 10206 && c.getHeight() == 0){
+				c.getPA().movePlayer(1320, 10206, 0);
+			} else {
+				c.start(new RockDialogue());
 			}
 			break;
 		case 5492:

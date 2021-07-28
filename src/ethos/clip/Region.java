@@ -1053,6 +1053,9 @@ public class Region {
 			xLength = def.yLength();
 			yLength = def.xLength();
 		}
+		if ((def != null ? def.name : null) != null && def.name.toLowerCase().equalsIgnoreCase("large door") && def.actions[0].toLowerCase().contains("open")) {
+		//	System.out.println(objectId+" "+x+" "+y+" "+direction+" "+height);
+				}
 		if (type == 22) {
 			if (def.hasActions() && def.aBoolean767()) {
 				addClipping(x, y, height, 0x200000);
@@ -1256,7 +1259,6 @@ public class Region {
 					height--;
 				}
 				if (height >= 0 && height <= 3) {
-					//System.out.println("Adding "+objectId+" at "+ absX + localX);
 					addObject(objectId, absX + localX, absY + localY, height, type, direction);
 					addWorldObject(objectId, absX + localX, absY + localY, height, direction);
 				}
