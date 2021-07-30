@@ -301,7 +301,7 @@ public class PlayerAssistant {
 	/**
 	 * Changes the main displaying sprite on an interface. The index represents the
 	 * location of the new sprite in the index of the sprite array.
-	 * 
+	 *
 	 * @param componentId
 	 *            the interface
 	 * @param index
@@ -1398,7 +1398,7 @@ public class PlayerAssistant {
 		c.outStream.endFrameVarSizeWord();
 	}
 
-	public void openUpBank() {		
+	public void openUpBank() {
 		c.getPA().sendChangeSprite(58014, c.placeHolders ? (byte) 1 : (byte) 0);
 		if (c.viewingLootBag || c.addingItemsToLootBag || c.viewingRunePouch) {
 			c.sendMessage("You should stop what you are doing before opening the bank.");
@@ -1461,8 +1461,8 @@ public class PlayerAssistant {
 			c.getOutStream().writeWord(5063);
 			c.flushOutStream();
 		}
-		
-		
+
+
 	}
 
 	public boolean viewingOtherBank;
@@ -2255,7 +2255,7 @@ public class PlayerAssistant {
 
 	/**
 	 * Teleporting
-	 * 
+	 *
 	 * @param homeTeleport
 	 *            TODO
 	 **/
@@ -2735,6 +2735,72 @@ public class PlayerAssistant {
 		}
 		if (c.getSkotizo() != null) {
 			InstancedAreaManager.getSingleton().disposeOf(c.getSkotizo());
+		}
+	}
+	public void gloryTeleport(int x, int y, int height, String teleportType) {
+		if (Server.getMultiplayerSessionListener().inAnySession(c)) {
+			c.sendMessage("You cannot teleport until you finish what you're doing.");
+			return;
+		}
+		if (c.inClanWars() || c.inClanWarsSafe()) {
+			c.sendMessage("@cr10@You can not teleport from here, speak to the doomsayer to leave.");
+			return;
+		}
+		if (System.currentTimeMillis() - c.lastSpear < 3000) {
+			c.sendMessage("You are stunned and can not teleport!");
+			return;
+		}
+		if (c.morphed) {
+			c.sendMessage("You cannot do this now.");
+			return;
+		}
+		if (c.getHouse() != null && c.inConstruction() && !(x >= 16 && x <= 55 && y >= 16 && y <= 55)) {
+			c.getHouse().leave(c);
+		}
+		if (Boundary.isIn(c, Boundary.RAIDS)) {
+			c.getPotions().resetOverload();
+		}
+		if (Boundary.isIn(c, Boundary.LIGHTHOUSE)) {
+			c.sendMessage("You cannot teleport from here, use the ladder.");
+			return;
+		}
+		if (Boundary.isIn(c, Boundary.RFD)) {
+			c.sendMessage("You cannot teleport from here, use the portal.");
+			return;
+		}
+		if (System.currentTimeMillis() - c.teleBlockDelay < c.teleBlockLength) {
+			c.sendMessage("You are teleblocked and can't teleport.");
+			return;
+		}
+		if (Boundary.isIn(c, Boundary.FIGHT_CAVE)) {
+			c.sendMessage("You cannot teleport out of fight caves.");
+			return;
+		}
+		if (Boundary.isIn(c, Boundary.ICE_PATH) || Boundary.isIn(c, Boundary.ICE_PATH_TOP) && c.heightLevel > 0) {
+			c.sendMessage("The cold from the ice-path is preventing you from teleporting.");
+			return;
+		}
+		if (Lowpkarena.getState(c) != null || Highpkarena.getState(c) != null) {
+			c.sendMessage("You can't teleport from a Pk event!");
+			return;
+		}
+		if (c.isDead) {
+			return;
+		}
+		if (!c.isDead && c.teleTimer == 0) {
+			c.stopMovement();
+			closeAllWindows();
+			c.teleX = x;
+			c.teleY = y;
+			c.npcIndex = 0;
+			c.playerIndex = 0;
+			c.faceUpdate(0);
+			c.teleHeight = height;
+			c.startAnimation(714);
+			c.teleTimer = 11;
+			c.teleGfx = 308;
+			c.teleEndAnimation = 715;
+			//c.isTeleporting = true;
 		}
 	}
 
@@ -3677,14 +3743,14 @@ public class PlayerAssistant {
 			PlayerHandler.executeGlobalMessage(
 					"@red@" + Misc.capitalize(c.playerName) + " has reached 200M XP in " + s.toString() + "!");
 		}
-		if(skill == Skill.DEFENCE.getId() 
-				|| skill == Skill.STRENGTH.getId() 
-				|| skill == Skill.ATTACK.getId() 
+		if(skill == Skill.DEFENCE.getId()
+				|| skill == Skill.STRENGTH.getId()
+				|| skill == Skill.ATTACK.getId()
 				|| skill == Skill.RANGED.getId()
 				|| skill == Skill.HITPOINTS.getId()
-				|| skill == Skill.MAGIC.getId() 
+				|| skill == Skill.MAGIC.getId()
 				) {
-			
+
 			amount *= 4;
 			/*if(c.playerLevel[skill] < 10)
 				amount *= 3.0;
@@ -3736,7 +3802,7 @@ public class PlayerAssistant {
 
 	/**
 	 * Show an arrow icon on the selected player.
-	 * 
+	 *
 	 * @Param i - Either 0 or 1; 1 is arrow, 0 is none.
 	 * @Param j - The player/Npc that the arrow will be displayed above.
 	 * @Param k - Keep this set as 0
@@ -3944,7 +4010,7 @@ public class PlayerAssistant {
 			c.getItems().addItem(3041, 5);
 			c.getItems().addItem(2445, 5);
 			c.getItems().addItem(2435, 5);
-			
+
 			c.getItems().wearItem(6109, 1, c.playerHat);
 			c.getItems().wearItem(6107, 1, c.playerChest);
 			c.getItems().wearItem(6108, 1, c.playerLegs);
@@ -4482,8 +4548,10 @@ public class PlayerAssistant {
 		}
 	}
 
-	/**
-	 * 
+
+
+    /**
+	 *
 	 * @author Jason MacKeigan (http://www.rune-server.org/members/jason)
 	 * @date Sep 26, 2014, 12:57:42 PM
 	 */
@@ -4495,7 +4563,7 @@ public class PlayerAssistant {
 	 * Exchanges all items in the player owners inventory to a specific to whatever
 	 * the exchange specifies. Its up to the switch statement to make the
 	 * conversion.
-	 * 
+	 *
 	 * @param pointVar
 	 *            the point exchange we're trying to make
 	 * @param itemId
@@ -4543,14 +4611,14 @@ public class PlayerAssistant {
 	}
 
 	/**
-     * Sends some information to the client about screen fading. 
+     * Sends some information to the client about screen fading.
      * @param text        the text that will be displayed in the center of the screen
-     * @param state        the state should be either 0, -1, or 1. 
+     * @param state        the state should be either 0, -1, or 1.
      * @param seconds    the amount of time in seconds it takes for the fade
      * to transition.
      * <p>
      * If the state is -1 then the screen fades from black to transparent.
-     * When the state is +1 the screen fades from transparent to black. If 
+     * When the state is +1 the screen fades from transparent to black. If
      * the state is 0 all drawing is stopped.
      */
     public void sendScreenFade(String text, int state, int seconds) {
@@ -4566,8 +4634,8 @@ public class PlayerAssistant {
         c.getOutStream().writeByte(seconds);
         c.getOutStream().endFrameVarSize();
     }
-	
-	
+
+
 
 	public void stillCamera(int x, int y, int height, int speed, int angle) {
 		c.outStream.createFrame(177);

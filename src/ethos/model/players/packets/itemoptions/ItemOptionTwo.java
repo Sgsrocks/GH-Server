@@ -10,6 +10,7 @@ import ethos.model.content.teleportation.TeleportTablets;
 import ethos.model.items.ItemAssistant;
 import ethos.model.items.ItemDefinition;
 import ethos.model.items.impl.HandleEmpty;
+import ethos.model.items.impl.Teles;
 import ethos.model.items.item_combinations.Godswords;
 import ethos.model.multiplayer_session.MultiplayerSessionFinalizeType;
 import ethos.model.multiplayer_session.MultiplayerSessionStage;
@@ -76,7 +77,14 @@ public class ItemOptionTwo implements PacketType {
 			player.javelinHeads = false;
 			player.sendMessage("Your Amethyst method is now Arrowtips!");
 			break;
-			
+
+			case 1712:
+			case 1710:
+			case 1708:
+			case 1706:
+				player.itemUsing = itemId;
+				Teles.useAOG(player);
+				break;
 		case 9781: // Crafting Cape tele boii
 			player.getPA().startTeleport(2936, 3283, 0, "modern", false);
 			break;

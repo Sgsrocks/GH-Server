@@ -1341,7 +1341,24 @@ public class NPCHandler {
 						npcs[i].forceChat("Sell your PvM items here for a limited time!");
 					}
 				}
-
+				if(npcs[i].npcType == 1306){
+					if(Misc.random(50) == 2){
+						npcs[i].requestTransform(1307);
+						npcs[i].animNumber = 1161;
+						npcs[i].forceChat("Ahah!!");
+						npcs[i].animUpdateRequired = true;
+						npcs[i].gfx0(110);
+					}
+				}
+				if(npcs[i].npcType == 1307){
+					if(Misc.random(50) == 2){
+						npcs[i].requestTransform(1306);
+						npcs[i].animNumber = 1161;
+						npcs[i].forceChat("Ahah!!");
+						npcs[i].animUpdateRequired = true;
+						npcs[i].gfx0(110);
+					}
+				}
 				if (npcs[i].npcType == 306) {
 					if (Misc.random(50) == 3) {
 						npcs[i].forceChat("Speak to me if you wish to learn more about this land!");

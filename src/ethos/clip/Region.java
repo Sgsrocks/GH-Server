@@ -1053,8 +1053,8 @@ public class Region {
 			xLength = def.yLength();
 			yLength = def.xLength();
 		}
-		if ((def != null ? def.name : null) != null && def.name.toLowerCase().equalsIgnoreCase("large door") && def.actions[0].toLowerCase().contains("open")) {
-		//	System.out.println(objectId+" "+x+" "+y+" "+direction+" "+height);
+		if ((def != null ? def.name : null) != null && def.name.toLowerCase().equalsIgnoreCase("magic tree") && def.actions[0].toLowerCase().contains("chop")) {
+			System.out.println(objectId+" "+x+" "+y+" "+direction+" "+height);
 				}
 		if (type == 22) {
 			if (def.hasActions() && def.aBoolean767()) {

@@ -3480,6 +3480,8 @@ public class Player extends Entity {
 		}
 		if (Boundary.isIn(this, Boundary.SAFEPK))
 			return true;
+		if (Boundary.isIn(this, Boundary.FEROX_ENCLAVE))
+			return false;
 		if (Boundary.isIn(this, Boundary.WILDERNESS_PARAMETERS)) {
 			return true;
 		}
@@ -3565,7 +3567,9 @@ public class Player extends Entity {
 				|| Boundary.isIn(this, Boundary.ICE_DEMON) || Boundary.isIn(this, Boundary.CATACOMBS)) {
 			return true;
 		}
-
+		if(Boundary.isIn(this, Boundary.FEROX_ENCLAVE)){
+			return false;
+		}
 		if (Boundary.isIn(this, Boundary.KALPHITE_QUEEN) && heightLevel == 0) {
 			return true;
 		}

@@ -7,6 +7,7 @@ import ethos.Server;
 import ethos.model.content.RunePouch;
 import ethos.model.content.teleportation.TeleportTablets;
 import ethos.model.items.Item;
+import ethos.model.items.impl.Teles;
 import ethos.model.multiplayer_session.MultiplayerSessionFinalizeType;
 import ethos.model.multiplayer_session.MultiplayerSessionStage;
 import ethos.model.multiplayer_session.MultiplayerSessionType;
@@ -204,17 +205,6 @@ public class ItemOptionThree implements PacketType {
 				c.sendMessage("You unload the pipe.");
 			}
 			break;
-		case 2552:
-		case 2554:
-		case 2556:
-		case 2558:
-		case 2560:
-		case 2562:
-		case 2564:
-		case 2566:
-			 //c.getPA().ROD();
-			c.getPA().spellTeleport(3304, 3130, 0, false);
-			break;
 		case 11968:
 		case 11970:
 		case 11105:
@@ -225,29 +215,25 @@ public class ItemOptionThree implements PacketType {
 			c.isOperate = true;
 			c.itemUsing = itemId;
 			break;
-		case 1712:
-			c.getPA().handleGlory(itemId);
-			c.isOperate = true;
-			c.itemUsing = itemId;
-			break;
+			case 1712:
+			case 1710:
+			case 1708:
+			case 1706:
+				c.itemUsing = itemId;
+				Teles.useAOG(c);
+				break;
+			case 2552:
+			case 2554:
+			case 2556:
+			case 2558:
+			case 2560:
+			case 2562:
+			case 2564:
+			case 2566:
+				c.itemUsing = itemId;
+				Teles.useROD(c);
+				break;
 
-		case 1710:
-			c.getPA().handleGlory(itemId);
-			c.itemUsing = itemId;
-			c.isOperate = true;
-			break;
-
-		case 1708:
-			c.getPA().handleGlory(itemId);
-			c.itemUsing = itemId;
-			c.isOperate = true;
-			break;
-
-		case 1706:
-			c.getPA().handleGlory(itemId);
-			c.itemUsing = itemId;
-			c.isOperate = true;
-			break;
 			
 		case 19639:
 		case 19641:

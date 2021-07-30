@@ -306,7 +306,16 @@ public class Boundary {
 		    new Boundary(1258, 10162, 1378, 10263, 1),
 		    new Boundary(1259, 10177, 1362, 10231, 2)
 	};
-	
+	public static final Boundary[] FEROX_ENCLAVE = {
+			new Boundary(3123, 3622, 3144, 3632),
+			new Boundary(3125, 3617, 3144, 3621),
+			new Boundary(3124, 3633, 3145, 3639),
+			new Boundary(3145, 3627, 3154, 3632),
+			new Boundary(3146, 3633, 3154, 3646),
+			new Boundary(3155, 3640, 3155, 3646),
+			new Boundary(3138, 3640, 3145, 3645),
+			new Boundary(3155, 3627, 3160, 3633)
+	};
 	public static final Boundary SKOTIZO_BOSSROOM = new Boundary(1678, 9870, 1714, 9905);
 	
 	public static final Boundary BANDOS_GODWARS = new Boundary(2864, 5351, 2876, 5369);

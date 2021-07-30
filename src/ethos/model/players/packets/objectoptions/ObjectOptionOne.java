@@ -24,6 +24,7 @@ import ethos.model.content.achievement_diary.varrock.VarrockDiaryEntry;
 import ethos.model.content.achievement_diary.wilderness.WildernessDiaryEntry;
 import ethos.model.content.dialogue.DialogueManager;
 import ethos.model.content.dialogue.impl.RockDialogue;
+import ethos.model.content.dialogue.impl.bosses.ZulrahDialogue;
 import ethos.model.content.godwars.God;
 import ethos.model.content.random.Balloons;
 import ethos.model.content.random.PartyRoom;
@@ -942,7 +943,7 @@ public class ObjectOptionOne {
 			break;
 			
 		case 10068:
-			c.getDH().sendDialogues(637, 2040);
+			c.start(new ZulrahDialogue());
 			break;
 		case 12941:
 			PlayerAssistant.refreshSpecialAndHealth(c);

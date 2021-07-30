@@ -14,6 +14,7 @@ import ethos.model.multiplayer_session.MultiplayerSessionType;
 import ethos.model.multiplayer_session.duel.DuelSession;
 import ethos.model.players.Boundary;
 import ethos.model.players.Player;
+import ethos.util.Misc;
 
 /**
  * Performing player available animations
@@ -95,7 +96,9 @@ public class PlayerEmotes {
 		FLAP(150222, 4280, -1),
 		SLAP_HEAD(150223, 4275, -1),
 		STOMP(150221,  1745, -1),
-		IDEA(150220,  4276, 712);
+		IDEA(150220,  4276, 712),
+		ZOMBIE_HAND(150224, 1708, 320),
+		PREMIER_SHEILD(151016, 7751, 1412+ Misc.random(2));
 		
 		private int button;
 		private int animation;

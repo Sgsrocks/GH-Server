@@ -1,5 +1,6 @@
 package ethos.model.players.packets;
 
+import ethos.model.items.impl.Teles;
 import org.apache.commons.lang3.text.WordUtils;
 
 import ethos.Config;
@@ -284,21 +285,8 @@ public class OperateItem implements PacketType {
 				case 1710:
 				case 1708:
 				case 1706:
-					switch (slot) {
-					case 1:
-						c.getPA().startTeleport(3087, 3493, 0, "glory",false);
-
-						break;
-					case 2:
-						c.getPA().startTeleport(2925, 3173, 0, "glory",false);
-						break;
-					case 3:
-						c.getPA().startTeleport(3079, 3250, 0, "glory",false);
-						break;
-					case 4:
-						c.getPA().startTeleport(3293, 3176, 0,"glory", false);
-						break;
-					}
+					c.itemUsing = itemId;
+					Teles.useAOG(c);
 					break;
 
 				case 11864:
