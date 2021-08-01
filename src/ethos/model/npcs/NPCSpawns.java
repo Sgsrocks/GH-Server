@@ -73,7 +73,7 @@ public class NPCSpawns {
 	 */
 	private int defence;
 
-
+	private int combatLevel;
 
 	/**
 	 * Extra info I added so you can tell where the npc is spawned.
@@ -81,7 +81,7 @@ public class NPCSpawns {
 	private String name;
 
 	public NPCSpawns(int npcid, int xPos, int yPos, int height, int walkType, int health, int maxHit, int attack,
-			int defence, String name) {
+			int defence, int combatLevel,  String name) {
 		this.npcId = npcid;
 		this.xPos = xPos;
 		this.yPos = yPos;
@@ -91,12 +91,13 @@ public class NPCSpawns {
 		this.maxHit = maxHit;
 		this.attack = attack;
 		this.defence = defence;
+		this.combatLevel = combatLevel;
 		this.name = name;
 	}
 
 	public static NPCSpawns defaultNPC() {
 		try {
-			NPCSpawns npc = new NPCSpawns(0, 0, 0, 0, 0, 0, 0, 0, 0, "New NPC");
+			NPCSpawns npc = new NPCSpawns(0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  "New NPC");
 			npc.setName("New NPC");
 			System.out.println("NPC Made!");
 			return npc;
@@ -212,6 +213,10 @@ public class NPCSpawns {
 		return defence;
 	}
 
+	/**
+	 * @return combatLevel
+	 */
+	public int getCombatLevel() { return combatLevel;}
 	/**
 	 * @return name
 	 */

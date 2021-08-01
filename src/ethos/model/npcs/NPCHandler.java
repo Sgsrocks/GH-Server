@@ -178,7 +178,6 @@ public class NPCHandler {
                         newNPC(npc.getNpcId(), npc.getXPos(), npc.getYPos(),npc.getHeight(),
                                                 npc.getWalkType(), npc.getHealth(), npc.getMaxHit(), npc.getAttack(),
                                                 npc.getDefence());
-
                 }
                 return true;
         }catch(Exception e){
