@@ -16,147 +16,196 @@ import ethos.model.players.mode.ModeType;
 import ethos.model.players.skills.SkillHandler;
 import ethos.util.Misc;
 
-public class Runecrafting extends SkillHandler {
-	
-	private enum RUNECRAFTING_DATA {
-		AIR(25378, 556, 5, new int[] { 1, 11, 22, 33, 44, 55, 66, 77, 88, 99 }, 25000, 20667), 
-		MIND(25379, 558, 5.5, new int[] { 2, 14, 28, 42, 56, 70, 84, 98 }, 24500, 20669), 
-		WATER(25376, 555, 6, new int[] { 5, 19, 38, 57, 76, 88, 99 }, 24000, 20671), 
-		MIST(-1, -1, 8, new int[] { 6 }, 15, -1), 
-		EARTH(24972, 557, 6.5, new int[] { 9, 26, 52, 78, 88, 96 }, 23500, 20673), 
-		DUST(-1, -1, 8.3, new int[] { 10 }, 15, -1), 
-		MUD(-1, -1, 9.3, new int[] { 13 }, 15, -1), 
-		FIRE(24971, 554, 7, new int[] { 14, 35, 70, 85, 95 }, 23000, 20665), 
-		SMOKE(-1, -1, 8.5, new int[] { 15 }, 15, -1), 
-		STEAM(-1, -1, 9.3, new int[] { 19 }, 15, -1), 
-		BODY(24973, 559, 7.5, new int[] { 20, 46, 75, 92 }, 22500, 20675), 
-		LAVA(-1, -1, 10, new int[] { 23 }, 15, -1), 
-		COSMIC(24974, 564, 8, new int[] { 27, 59, 78 }, 22000, 20677), 
-		CHAOS(24976, 562, 8.5, new int[] { 35, 74, 86 }, 21500, 20679), 
-		ASTRAL(14911, 9075, 8.7, new int[] { 40, 82 }, 21000, 20689), 
-		NATURE(24975, 561, 9, new int[] { 44, 91, 95 }, 20000, 20681), 
-		LAW(25034, 563, 9.5, new int[] { 54, 79, 93 }, 19500, 20683), 
-		DEATH(25035, 560, 10, new int[] { 65, 84, 96 }, 19000, 20685), 
-		BLOOD(25380, 565, 10.5, new int[] { 77, 89, 94 }, 18800, 20691), 
-		SOUL(25377, 566, 12, new int[] { 90, 95, 99 }, 18000, 20687);
+public class Runecrafting {
 
-		private int objectId, runeId, petChance, petId;
-		private double experience;
-		private int[] multiplier;
+	private final Player c;
 
-		public int getObjectId() {
-			return objectId;
-		}
+	public Runecrafting(Player player) {
+		this.c = player;
+	}
 
-		public int getRuneId() {
-			return runeId;
+	public static void locate(Player c, int xPos, int yPos) {
+		String X = "";
+		String Y = "";
+		if (c.absX >= xPos) {
+			X = "west";
 		}
+		if (c.absY > yPos) {
+			Y = "south";
+		}
+		if (c.absX < xPos) {
+			X = "east";
+		}
+		if (c.absY <= yPos) {
+			Y = "north";
+		}
+		c.sendMessage("You need to travel " + Y + "-" + X + ".");
+	}
 
-		public int getPetChance() {
-			return petChance;
-		}
-
-		public int getPetId() {
-			return petId;
-		}
-		
-		public double getExperience() {
-			return experience;
-		}
-		
-		public int getLevelRequirement() {
-			return multiplier[0];
-		}
-
-		RUNECRAFTING_DATA(int objectId, int runeId, double experience, int[] multiplier, int petChance, int petId) {
-			this.objectId = objectId;
-			this.runeId = runeId;
-			this.experience = experience;
-			this.multiplier = multiplier;
-			this.petChance = petChance;
-			this.petId = petId;
-		}
+	public final static int RC_DATA[][] = {
+			{ 1438, 5527, 2478}, // air
+			{ 1448, 5529, 2479 }, // mind
+			{ 1444, 5531, 2480 }, // water
+			{ 1440, 5535, 2481 }, // earth
+			{ 1442, 5537, 2482 }, // fire
+			{ 1446, 5533, 2483 }, // body
+			{ 1454, 5539, 2484 }, // cosmic
+			{ 1452, 5543, 2487 }, // chaos
+			{ 1462, 5541, 2486 }, // nature
+			{ 1458, 5545, 2485 }, // law
+			{ 1456, 5547, 2488 }, // death
 	};
-	
-	public static void execute(Player player, int objectId) {
-		for (RUNECRAFTING_DATA data : RUNECRAFTING_DATA.values()) {
-			
-			String name = data.name().toLowerCase().replaceAll("_", " ");
-			if (data.getObjectId() == objectId) {
-				if (!hasRequiredLevel(player, 20, data.getLevelRequirement(), "runecrafting", "craft these runes")) {
-					return;
-				}
-				if (!player.getItems().playerHasItem(1436) && !player.getItems().playerHasItem(7936)) {
-					player.sendMessage("You need some essence to craft runes!");
-					return;
-				}
-				int multiplier = 1;
-				for (int multiply = 0; multiply < data.multiplier.length; multiply++) {
-					if (player.playerLevel[20] >= data.multiplier[multiply]) {
-						multiplier = multiply + 1;
-					}
-				}
-				int count = player.getItems().getItemAmount(7936) + player.getItems().getItemAmount(1436);
-				int essence = player.getItems().getItemAmount(7936) + player.getItems().getItemAmount(1436);
-				int multiply = essence *= multiplier;
-				if (name.equals("water")) {
-					player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.CRAFT_WATER);
-				}
-				if (name.equals("death")) {
-					player.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.CRAFT_DEATH);
-				}
-				if (name.equals("mind")) {
-					if (multiply > 100) {
-						player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.CRAFT_MIND);
-					}
-				}
-				if (name.equals("cosmic")) {
-					if (multiply > 56) {
-						player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.CRAFT_COSMIC);
-					}
-				}
-				if (name.equals("earth")) {
-					if (multiply > 150) {
-						player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.ALOT_OF_EARTH);
-					}
-					player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.EARTH_RUNES);
-				}
-				if (name.equals("nature")) {
-					if (multiply > 50) {
-						player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.CRAFT_NATURES);
-					}
-					DailyTasks.increase(player, PossibleTasks.NATURE_RUNES);
-				}
-				if (name.equals("law"))
-					DailyTasks.increase(player, PossibleTasks.LAW_RUNES);
-				/*if (name.equals("astral")) {
-					if (multiply > 50) {
-						player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.CRAFT_ASTRAL);
-					}
-				}*/
-				player.getItems().deleteItem2(7936, essence);
-				player.getItems().deleteItem2(1436, essence);
-				player.gfx100(186);
-				player.startAnimation(791);
-				double percentOfXp = data.getExperience() * count * 2.5;
-				player.getPA().addSkillXP((int) (((double) (data.getExperience()) * count) * (player.getMode().getType().equals(ModeType.OSRS) ? 3 : Config.RUNECRAFTING_EXPERIENCE) + (player.getItems().isWearingItem(20008) ? percentOfXp : 0)), 20, true);
-				player.getItems().addItem(data.getRuneId(), multiply);
-				player.sendMessage("You bind the temple's power into " + essence + " " + name + " runes.");
-				player.getPA().requestUpdates();
-				
-					boolean hasGuardian = IntStream.range(20665, 20691).anyMatch(id -> player.getItems().getItemCount(id) > 0);
-					boolean hasGuardianItem = IntStream.range(20665, 20691).anyMatch(id -> player.getItems().playerHasItem(id));
-					if (hasGuardianItem) {
-						IntStream.range(20665, 20691).forEach(id -> player.getItems().deleteItem(id, 1));
-						player.getItems().addItem(data.getPetId(), 1);
-					}
-					if (!hasGuardian) {
-					if (Misc.random(data.getPetChance()) == 18) {
-						PlayerHandler.executeGlobalMessage("[<col=CC0000>News</col>] @cr20@ <col=255>" + player.playerName + "</col> successfully crafted a <col=CC0000>Rift guardian</col> pet!");
-						player.getItems().addItemUnderAnyCircumstance(data.getPetId(), 1);
-					}
+
+	private enum Altars {
+		AIR_ALTAR(2452, new int[] { 1438, 5527 }, new int[] { 2842, 4829 }),
+		MIND_ALTAR(2453, new int[] { 1448, 5529 }, new int[] { 2793, 4828 }),
+		WATER_ALTAR(2454, new int[] { 1444, 5531 }, new int[] { 2713, 4836 }),
+		EARTH_ALTAR(2455, new int[] { 1440, 5535 }, new int[] { 2655, 4831 }),
+		FIRE_ALTAR(2456, new int[] { 1442, 5537 }, new int[] { 2577, 4845 }),
+		BODY_ALTAR(2457, new int[] { 1446, 5533 }, new int[] { 2521, 4834 }),
+		COSMIC_ALTAR(2458, new int[] { 1454, 5539 }, new int[] { 2162, 4833 }),
+		CHAOS_ALTAR(2461, new int[] { 1452, 5543 }, new int[] { 2268, 4842 }),
+		NATURE_ALTAR(2460, new int[] { 1462, 5541 }, new int[] { 2400, 4835 }),
+		LAW_ALTAR(2459, new int[] { 1458, 5545 }, new int[] { 2464, 4819 }),
+		DEATH_ALTAR(2462, new int[] { 1456, 5547 }, new int[] { 2208, 4831 });
+
+		int objId;
+		int[] keys, loc;
+
+		private Altars(int objId, int[] keys, int[] loc) {
+			this.objId = objId;
+			this.loc = loc;
+			this.keys = keys;
+		}
+
+		private int getObj() {
+			return objId;
+		}
+
+		private int[] getKeys() {
+			return keys;
+		}
+
+		private int[] getNewLoc() {
+			return loc;
+		}
+	}
+
+	public void enterAltar(int objId, int itemUse) {
+		Altars a = forAltar(objId);
+		if (a != null) {
+			if (a.getKeys()[1] == c.playerEquipment[c.playerHat] || a.getKeys()[0] == itemUse) {
+				c.getPlayerAssistant().movePlayer(a.getNewLoc()[0], a.getNewLoc()[1], 0);
+				c.sendMessage("You enter the mysterious ruins.");
+			} else {
+				c.sendMessage("Nothing interesting happens.");
+			}
+		}
+	}
+
+	private enum Altar_Data {
+		AIR(34760, 1, 6, 556, new int[][] { { 11, 2 }, { 22, 3 }, { 33, 4 }, { 44, 5 }, { 55, 6 }, { 66, 7 }, { 77, 8 }, { 88, 9 }, { 99, 9 } }),
+		MIND(34761, 5, 6, 558, new int[][] { { 14, 2 }, { 28, 3 }, { 42, 4 }, { 56, 5 }, { 70, 6 }, { 84, 7 }, { 98, 8 } }),
+		WATER(34762, 9, 7, 555, new int[][] { { 19, 2 }, { 38, 3 }, { 57, 4 }, { 76, 5 }, { 95, 6 } }),
+		EARTH(34763, 9, 7, 557, new int[][] { { 26, 2 }, { 52, 3 }, { 78, 4 } }),
+		FIRE(34764, 14, 7, 554, new int[][] { { 26, 2 }, { 52, 3 }, { 78, 4 } }),
+		BODY(34765, 20, 8, 559, new int[][] { { 35, 2 }, { 70, 3 } }),
+		COSMIC(34766, 27, 9, 564, new int[][] { { 59, 2 } }),
+		CHAOS(34769, 35, 9, 562, new int[][] { { 74, 2 } }),
+		NATURE(34768, 44, 10, 561, new int[][] { { 91, 2 } }),
+		LAW(34767, 54, 11, 563, new int[][] {}),
+		DEATH(34770, 65, 13, 560, new int[][] {}),
+		BLOOD(2489, 77, 15, 565, new int[][] {}),
+		SOUL(2490, 90, 17, 566, new int[][] {}),
+		ASTRAL(17010, 40, 10, 9075, new int[][] { { 82, 2 } });
+
+		int altarID, levelReq, xp, rewardedRune;
+		int[][] multiRunes;
+
+		private Altar_Data(int altarID, int levelReq, int xp, int rewardedRune, int[][] multiRunes) {
+			this.altarID = altarID;
+			this.levelReq = levelReq;
+			this.xp = xp;
+			this.rewardedRune = rewardedRune;
+			this.multiRunes = multiRunes;
+		}
+	}
+
+	public Altar_Data forObj(int obj) {
+		for (Altar_Data ad : Altar_Data.values()) {
+			if (ad.altarID == obj) {
+				return ad;
+			}
+		}
+		return null;
+	}
+
+	int objId;
+	int[] keys, loc;
+
+	public Altars forAltar(int id) {
+		for (Altars a : Altars.values()) {
+			if (a.getObj() == id) {
+				return a;
+			}
+		}
+		return null;
+	}
+
+	public boolean craftRunes(int obj) {
+		Altar_Data ad = forObj(obj);
+		if (ad != null) {
+			//RandomEventHandler.addRandom(c);
+			if (!SkillHandler.RUNECRAFTING) {
+				c.sendMessage("This skill is currently disabled.");
+				return false;
+			}
+			if (c.playerLevel[c.playerRunecrafting] >= ad.levelReq) {
+				getMultiSupport(obj);
+				c.startAnimation(791);
+				c.gfx100(186);
+				//c.getPacketSender().sendSound(SoundList.RUNECRAFTING, 100, 0);
+			} else {
+				c.sendMessage("You need a runecrafting level of at least " + ad.levelReq + " to make runes here.");
+			}
+		}
+		return false;
+	}
+
+	public void getMultiSupport(int obj) {
+		Altar_Data ad = forObj(obj);
+		if (ad != null) {
+			int amount = c.getItems().getItemAmount(7936), amount2 = c.getItems().getItemAmount(1436);
+			if (amount2 > 0 && amount > 0) {
+				c.getItems().deleteItem2(7936, c.getItems().getItemAmount(7936));
+				c.getItems().addItem(ad.rewardedRune, amount * (getMultiplier(ad) <= 1 ? 1 : getMultiplier(ad)));
+				c.getPlayerAssistant().addSkillXP(ad.xp * amount, c.playerRunecrafting);
+				c.getItems().deleteItem2(1436, c.getItems().getItemAmount(1436));
+				c.getItems().addItem(ad.rewardedRune, amount2 * (getMultiplier(ad) <= 1 ? 1 : getMultiplier(ad)));
+				c.getPlayerAssistant().addSkillXP(ad.xp * amount2, c.playerRunecrafting);
+			} else if (amount > 0) {
+				c.getItems().deleteItem2(7936, c.getItems().getItemAmount(7936));
+				c.getItems().addItem(ad.rewardedRune, amount * (getMultiplier(ad) <= 1 ? 1 : getMultiplier(ad)));
+				c.getPlayerAssistant().addSkillXP(ad.xp * amount, c.playerRunecrafting);
+			} else if (amount2 > 0) {
+				c.getItems().deleteItem2(1436, c.getItems().getItemAmount(1436));
+				c.getItems().addItem(ad.rewardedRune, amount2 * (getMultiplier(ad) <= 1 ? 1 : getMultiplier(ad)));
+				c.getPlayerAssistant().addSkillXP(ad.xp * amount2, c.playerRunecrafting);
+			} else {
+				c.sendMessage("You don't have any essence left.");
+			}
+		}
+	}
+
+	public int getMultiplier(Altar_Data ad) {
+		int temp = 1;
+		for (int[] multiRune : ad.multiRunes) {
+			for (int j = 0; j < multiRune.length; j++) {
+				if (c.playerLevel[c.playerRunecrafting] >= multiRune[0]) {
+					temp++;
 				}
 			}
 		}
+		return temp;
 	}
 }

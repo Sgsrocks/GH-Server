@@ -158,7 +158,7 @@ public class NPCHandler {
 		loadNPCList("./data/cfg/npc_config.cfg");
 		//loadAutoSpawn("./data/cfg/spawn_config.cfg");
 		loadNPCSizes("./data/cfg/npc_sizes.txt");
-		NPCStats.setDefailtStats(this);
+		//NPCStats.setDefailtStats(this);
 		loadAutoSpawn();
 		startGame();
 	}
@@ -178,6 +178,7 @@ public class NPCHandler {
                         newNPC(npc.getNpcId(), npc.getXPos(), npc.getYPos(),npc.getHeight(),
                                                 npc.getWalkType(), npc.getHealth(), npc.getMaxHit(), npc.getAttack(),
                                                 npc.getDefence());
+
                 }
                 return true;
         }catch(Exception e){
@@ -208,6 +209,8 @@ public class NPCHandler {
 				out.write("\"attack\":"+NPCStats.npcStats[npcType][1]+",");
 				out.newLine();
 				out.write("\"defence\":"+NPCStats.npcStats[npcType][2]+",");
+				out.newLine();
+				out.write("\"combatLevel\":"+NPCCacheDefinition.forID(npcType).getCombatLevel()+",");
 				out.newLine();
 				out.write("\"name\":\\\""+NPCCacheDefinition.forID(npcType).getName()+"\\\"");
 				out.newLine();
@@ -452,7 +455,7 @@ public class NPCHandler {
 			return true;
 		if (npcs[i].inRaids() && npcs[i].getHealth().getMaximum() > 0)
 			return true;
-		switch(i){
+		switch(npcs[i].npcType){
 			case 2205://Commander Zilyana
 			case 2206://Starlight
 			case 2207://Growler
@@ -1339,6 +1342,22 @@ public class NPCHandler {
 					if (Misc.random(30) == 3) {
 						npcs[i].updateRequired = true;
 						npcs[i].forceChat("Sell your PvM items here for a limited time!");
+					}
+				}
+
+				if (npcs[i].npcType == 2786 || npcs[i].npcType== 2787 || npcs[i].npcType == 2788 || npcs[i].npcType == 2788) {
+					if (Misc.random(20) == 4) {
+						npcs[i].forceChat("Baa!");
+					}
+				}
+				if (npcs[i].npcType == 2790 || npcs[i].npcType == 2791 || npcs[i].npcType == 2792 || npcs[i].npcType == 2793 || npcs[i].npcType == 2794 || npcs[i].npcType == 2795) {
+					if (Misc.random(30) == 4) {
+						npcs[i].forceChat("Moo");
+					}
+				}
+				if (npcs[i].npcType == 1838 || npcs[i].npcType == 1839) {
+					if (Misc.random(30) == 6) {
+						npcs[i].forceChat("Quack!");
 					}
 				}
 				if(npcs[i].npcType == 1306){
@@ -5872,6 +5891,7 @@ public class NPCHandler {
 		}
 		return NPCDefinitions.getDefinitions()[npcId].getNpcHealth();
 
+
 	}
 
 	public String getNpcListName(int npcId) {
@@ -6167,7 +6187,7 @@ public class NPCHandler {
 				}
 			}
 		}
-		return 0;
+		return NPCCacheDefinition.forID(npcs[npcType].npcType).getCombatLevel();
 	}
 
 }

@@ -16,6 +16,7 @@ import ethos.model.content.n_tp.TeleportInterface;
 import ethos.model.content.traveling.DesertHeat;
 import ethos.model.players.combat.monsterhunt.MonsterHunt;
 import ethos.model.players.skills.farming.ToolLeprechaun;
+import ethos.model.players.skills.runecrafting.Tiaras;
 import org.jboss.netty.buffer.ChannelBuffers;
 import org.jboss.netty.channel.Channel;
 
@@ -176,6 +177,10 @@ public class Player extends Entity {
 	public boolean tempBoolean;
     public long lastDesert;
 	public boolean desertWarning;
+	public int randomActions;
+	public boolean randomEventsEnabled = true;
+	public boolean chickenSpawned;
+	public boolean hasSandwhichLady;
 	private ToolLeprechaun toolLeprechaun;
 
 	public MageArena getMageArena() {
@@ -426,7 +431,7 @@ public class Player extends Entity {
 	private TeleportHandler teleportHandler = new TeleportHandler(this);
 	private TeleportTabTeleHandler handleTeleport = new TeleportTabTeleHandler(this);
 	private Slayer slayer;
-	private Runecrafting runecrafting = new Runecrafting();
+	private Runecrafting runecrafting = new Runecrafting(this);
 	private AgilityHandler agilityHandler = new AgilityHandler();
 	private PointItems pointItems = new PointItems(this);
 	private GnomeAgility gnomeAgility = new GnomeAgility();
@@ -874,6 +879,17 @@ public class Player extends Entity {
 
 	public ToolLeprechaun getToolLeprechaun() {
 		return toolLeprechaun;
+	}
+
+	public boolean inFightCaves() {
+		return absX >= 2360 && absX <= 2445 && absY >= 5045 && absY <= 5125;
+	}
+
+	public boolean playerIsBusy() {
+		if (isShopping || inTrade || isBanking) {
+			return true;
+		}
+		return false;
 	}
 
 	public class TinterfaceText {
@@ -1331,7 +1347,7 @@ public class Player extends Entity {
 			outStream.writeByte(0);
 			getFriends().sendList();
 			getIgnores().sendList();
-
+			Tiaras.handleTiara(this, Item.HAT);
 			getItems().addSpecialBar(playerEquipment[playerWeapon]);
 			saveTimer = Config.SAVE_TIMER;
 			saveCharacter = true;

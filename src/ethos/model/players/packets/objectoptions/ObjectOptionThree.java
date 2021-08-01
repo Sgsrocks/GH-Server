@@ -2,6 +2,7 @@ package ethos.model.players.packets.objectoptions;
 
 import ethos.Server;
 import ethos.clip.ObjectDef;
+import ethos.clip.Region;
 import ethos.model.content.tradingpost.Listing;
 import ethos.model.players.Player;
 import ethos.model.players.Right;
@@ -15,6 +16,9 @@ public class ObjectOptionThree {
 
 	public static void handleOption(final Player c, int objectType, int obX, int obY) {
 		if (Server.getMultiplayerSessionListener().inAnySession(c)) {
+			return;
+		}
+		if (!Region.objectExists(objectType, obX, obY, c.heightLevel)) {
 			return;
 		}
 		c.clickObjectType = 0;

@@ -24,6 +24,7 @@ import ethos.model.players.combat.Degrade;
 import ethos.model.players.skills.hunter.impling.Impling;
 import ethos.model.players.skills.runecrafting.Pouches;
 import ethos.model.players.skills.runecrafting.Pouches.Pouch;
+import ethos.model.players.skills.runecrafting.Runecrafting;
 import ethos.util.Misc;
 
 /**
@@ -70,7 +71,6 @@ public class ItemOptionTwo implements PacketType {
 			return;
 		}
 		switch (itemId) {
-
 		case 21347:
 			player.boltTips = false;
 			player.arrowTips = true;

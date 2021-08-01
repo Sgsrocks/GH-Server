@@ -5,6 +5,7 @@ import java.util.stream.IntStream;
 import ethos.Config;
 import ethos.Server;
 import ethos.clip.ObjectDef;
+import ethos.clip.Region;
 import ethos.clip.doors.DoorDefinition;
 import ethos.clip.doors.DoorHandler;
 import ethos.event.CycleEvent;
@@ -77,6 +78,7 @@ import ethos.model.players.skills.agility.AgilityHandler;
 import ethos.model.players.skills.construction.PortalDialogue;
 import ethos.model.players.skills.crafting.JewelryMaking;
 import ethos.model.players.skills.hunter.Hunter;
+import ethos.model.players.skills.runecrafting.RuneCraftingActions;
 import ethos.model.players.skills.runecrafting.Runecrafting;
 import ethos.model.players.skills.woodcutting.Tree;
 import ethos.model.players.skills.woodcutting.Woodcutting;
@@ -116,6 +118,9 @@ public class ObjectOptionOne {
 			return;
 		}
 		if (c.teleTimer > 0) {
+			return;
+		}
+		if (!Region.objectExists(objectType, obX, obY, c.heightLevel)) {
 			return;
 		}
 		GlobalObject object = new GlobalObject(objectType, obX, obY, c.heightLevel);
@@ -348,7 +353,7 @@ public class ObjectOptionOne {
 				}
 			}
 		}
-		if(def.name.toLowerCase().equals("entrance")) {
+		if((def!=null ? def.name : null)!= null && def.name.toLowerCase().equals("entrance")) {
 			if(def.actions[0].toLowerCase().equals("climb-down")) {
 				if(obX == 3081 && obY == 3420) { // custom locations
 					c.getPA().movePlayer(1859, 5243, 0);
@@ -368,8 +373,8 @@ public class ObjectOptionOne {
 		}
 		c.getMining().mine(objectType, new Location3D(obX, obY, c.heightLevel));
 		Obelisks.get().activate(c, objectType);
-		Runecrafting.execute(c, objectType);
 		SingleGates.useSingleGate(c, objectType);
+		RuneCraftingActions.handleRuneCrafting(c, objectType);
 		DoubleGates.useDoubleGate(c, objectType);
 		Location3D location = new Location3D(obX, obY, c.heightLevel);
 		if (objectType >= 26281 && objectType <= 26290) {
@@ -386,7 +391,6 @@ public class ObjectOptionOne {
 		if (c.getRights().isOrInherits(Right.OWNER))
 			c.sendMessage("Clicked Object Option 1:  "+objectType+"");
 		switch (objectType) {
-
 		case 2670:
 			Desert.cutCactus(c, Desert.getCacCutter(c), objectType,
 					obX, obY);

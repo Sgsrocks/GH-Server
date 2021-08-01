@@ -355,6 +355,8 @@ public class ItemCacheDefinition {
                 secondaryMaleHeadPiece = buffer.readUnsignedWord();
             } else if (opcode == 93) {
                 secondaryFemaleHeadPiece = buffer.readUnsignedWord();
+            } else if (opcode == 94){
+                    buffer.readUnsignedWord();
             } else if (opcode == 95) {
                 spriteCameraYaw = buffer.readUnsignedWord();
             } else if (opcode == 97) {

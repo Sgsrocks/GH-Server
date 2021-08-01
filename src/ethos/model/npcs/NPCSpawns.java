@@ -73,6 +73,8 @@ public class NPCSpawns {
 	 */
 	private int defence;
 
+
+
 	/**
 	 * Extra info I added so you can tell where the npc is spawned.
 	 */

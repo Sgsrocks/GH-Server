@@ -21,7 +21,7 @@ import ethos.model.players.PlayerAssistant.PointExchange;
 import ethos.model.players.skills.Fishing;
 import ethos.model.players.skills.agility.AgilityHandler;
 import ethos.model.players.skills.farming.ToolLeprechaun;
-import ethos.model.players.skills.thieving.Thieving.Pickpocket;
+import ethos.model.players.skills.thieving.Pickpocket;
 
 /*
  * @author Matt
@@ -44,6 +44,12 @@ public class NpcOptionTwo {
 		 */
 		// if (PetHandler.talktoPet(player, npcType))
 		// return;
+		if (Pickpocket.isNPC(player, npcType)) {
+			if(Pickpocket.getOptionForNpcId(player, npcType) == "second") {
+				Pickpocket.attemptPickpocket(player, npcType);
+				return;
+			}
+		}
 		if (PetHandler.isPet(npcType)) {
 			if (PetHandler.getOptionForNpcId(npcType) == "second") {
 				if (PetHandler.pickupPet(player, npcType, true))
@@ -459,20 +465,7 @@ public class NpcOptionTwo {
 			player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.TRAVEL_JATIZSO);
 			break;
 		case 3078:
-			player.getThieving().steal(Pickpocket.MAN, NPCHandler.npcs[player.rememberNpcIndex]);
-			break;
-		case 3550:
-			player.getThieving().steal(Pickpocket.MENAPHITE_THUG, NPCHandler.npcs[player.rememberNpcIndex]);
-			break;
-		case 6094:
-			player.getThieving().steal(Pickpocket.GNOME, NPCHandler.npcs[player.rememberNpcIndex]);
-			break;
-		case 3106:
-			player.getThieving().steal(Pickpocket.HERO, NPCHandler.npcs[player.rememberNpcIndex]);
-			break;
-		case 3257:
-			player.getThieving().steal(Pickpocket.FARMER, NPCHandler.npcs[player.rememberNpcIndex]);
-			break;
+
 		case 534:
 			if (Boundary.isIn(player, Boundary.VARROCK_BOUNDARY)) {
 				player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.DRESS_FOR_SUCESS);

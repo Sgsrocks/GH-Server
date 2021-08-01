@@ -41,7 +41,7 @@ import ethos.model.players.skills.agility.AgilityHandler;
 import ethos.model.players.skills.crafting.Tanning;
 import ethos.model.players.skills.hunter.impling.Impling;
 import ethos.model.players.skills.mining.Mineral;
-import ethos.model.players.skills.thieving.Thieving.Pickpocket;
+import ethos.model.players.skills.thieving.Pickpocket;
 import ethos.util.Location3D;
 import ethos.model.players.Boundary;
 /*
@@ -67,6 +67,12 @@ public class NpcOptionOne {
 			if (Objects.equals(PetHandler.getOptionForNpcId(npcType), "first")) {
 				if (PetHandler.pickupPet(player, npcType, true))
 					return;
+			}
+		}
+		if (Pickpocket.isNPC(player, npcType)) {
+			if(Pickpocket.getOptionForNpcId(player, npcType) == "first") {
+				Pickpocket.attemptPickpocket(player, npcType);
+				return;
 			}
 		}
 		if (Server.getHolidayController().clickNpc(player, 1, npcType)) {

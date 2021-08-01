@@ -61,6 +61,24 @@ public class ItemOptionThree implements PacketType {
 			return;
 		}
 		switch (itemId) {
+			case 1438:// Air Talisman
+				c.getRunecrafting().locate(c, 2985, 3292);
+				break;
+			case 1440:// Earth Talisman
+				c.getRunecrafting().locate(c, 3306, 3474);
+				break;
+			case 1442:// Fire Talisman
+				c.getRunecrafting().locate(c, 3313, 3255);
+				break;
+			case 1444:// Water Talisman
+				c.getRunecrafting().locate(c, 3185, 3165);
+				break;
+			case 1446:// Body Talisman
+				c.getRunecrafting().locate(c, 3053, 3445);
+				break;
+			case 1448:// Mind Talisman
+				c.getRunecrafting().locate(c, 2982, 3514);
+				break;
 		case 21347:
 			c.boltTips = false;
 			c.arrowTips = false;

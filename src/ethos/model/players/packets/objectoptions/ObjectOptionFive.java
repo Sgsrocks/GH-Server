@@ -1,6 +1,7 @@
 package ethos.model.players.packets.objectoptions;
 
 import ethos.Server;
+import ethos.clip.Region;
 import ethos.model.players.Player;
 import ethos.model.players.Right;
 import ethos.model.players.skills.construction.Construction;
@@ -9,6 +10,9 @@ public class ObjectOptionFive {
 	
 	public static void handleOption(final Player c, int objectType, int obX, int obY) {
 		if (Server.getMultiplayerSessionListener().inAnySession(c)) {
+			return;
+		}
+		if (!Region.objectExists(objectType, obX, obY, c.heightLevel)) {
 			return;
 		}
 		c.getPA().resetVariables();

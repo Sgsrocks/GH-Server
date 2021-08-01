@@ -1038,6 +1038,19 @@ public class Region {
 			}
 		}
 	}
+	public static boolean objectExists(int id, int x, int y, int z) {
+		Region r = getRegion(x, y);
+		List<WorldObject> objects = worldObjects.get(r.getId());
+		for (WorldObject object : objects) {
+			if (object == null) {
+				continue;
+			}
+			if (object.getId() == id && object.getX() == x && object.getY() == y && object.getHeight() == z) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 	public static void addObject(int objectId, int x, int y, int height, int type, int direction) {
 		ObjectDef def = ObjectDef.getObjectDef(objectId);
@@ -1054,7 +1067,7 @@ public class Region {
 			yLength = def.xLength();
 		}
 		if ((def != null ? def.name : null) != null && def.name.toLowerCase().equalsIgnoreCase("magic tree") && def.actions[0].toLowerCase().contains("chop")) {
-			System.out.println(objectId+" "+x+" "+y+" "+direction+" "+height);
+			///System.out.println(objectId+" "+x+" "+y+" "+direction+" "+height);
 				}
 		if (type == 22) {
 			if (def.hasActions() && def.aBoolean767()) {

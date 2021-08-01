@@ -3869,6 +3869,23 @@ public class PlayerAssistant {
 		sendFrame126("@or1@Western", 29489);
 		sendFrame126("@or1@Wilderness", 29490);
 	}
+	public void handleTiara() {
+		int[] tiaras = { 5527, 5529, 5531, 5535, 5537, 5533, 5539, 5543, 5541, 5545, 5547 };
+		int[] config = { 607 };
+		if (c.wearId >= tiaras[0] && c.wearId <= tiaras[10]) {
+			for (int i = 0; i < tiaras.length; i++) {
+				if (c.wearId == tiaras[i]) {
+					int tempInt = 1;
+					int loc = i;
+					while (loc > 0) {
+						tempInt *= 2;
+						loc--;
+					}
+						c.getPA().setConfig(config[i], tempInt);
+				}
+			}
+		}
+	}
 	public void handleGlory(int gloryId) {
 		if (Server.getMultiplayerSessionListener().inAnySession(c)) {
 			c.sendMessage("You cannot do that right now.");

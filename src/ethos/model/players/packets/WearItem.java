@@ -106,6 +106,7 @@ public class WearItem implements PacketType {
 		}
 		
 		if (!Server.getMultiplayerSessionListener().inSession(c, MultiplayerSessionType.TRADE)) {
+			c.getPlayerAssistant().handleTiara();
 			c.getItems().wearItem(wearId, c.wearSlot);
 		}
 	}

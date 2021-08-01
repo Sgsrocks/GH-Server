@@ -156,7 +156,10 @@ public class MeleeData {
 			c.playerTurn90CCWIndex = 1208;
 			return;
 		}
-		
+		if (weaponName.contains("scythe of vitur")) {
+			c.playerStandIndex = 8057;
+			return;
+		}
 		if (weaponName.contains("zamorakian")) {
 			c.playerStandIndex = 1662;
 			c.playerWalkIndex = 1663;
@@ -177,9 +180,13 @@ public class MeleeData {
 			c.playerRunIndex = 1661;
 			break;
 		case 22978: //Dhunter Lance
-			c.playerStandIndex = 809;
-			c.playerWalkIndex = 1146;
-			c.playerRunIndex = 1210;
+			c.playerStandIndex = 813;
+			c.playerWalkIndex = 1205;
+			c.playerRunIndex = 2563;
+			c.playerTurnIndex = 1209;
+			c.playerTurn180Index = 1206;
+			c.playerTurn90CWIndex = 1207;
+			c.playerTurn90CCWIndex = 1208;
 			break;
 		case 22324: //Grhazi Rapier
 		c.playerStandIndex = 809;
@@ -280,9 +287,7 @@ public class MeleeData {
 			return 8145;
 		}
 		if (weaponName.contains("scythe of vitur")) {
-			c.gfx100(478);
-			c.doubleHit = true;
-			return 1203;
+			return 8056;
 		}
 		if (weaponName.contains("bulwark")) {
 			return 7511;
@@ -439,6 +444,9 @@ public class MeleeData {
 			return 7517;
 		if (shield.contains("whip")) {
 			return 1659;
+		}
+		if (weapon.contains("scythe of vitur")) {
+			return 435;
 		}
 		switch (c.playerEquipment[c.playerWeapon]) {
 		case 1734:

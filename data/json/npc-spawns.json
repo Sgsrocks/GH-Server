@@ -22933,8 +22933,8 @@
 },
 {
 "npcId":2813,
-"xPos":3208,
-"yPos":3242,
+"xPos":3211,
+"yPos":3249,
 "height":0,
 "walkType":1,
 "health":0,
@@ -22970,7 +22970,7 @@
 {
 "npcId":2814,
 "xPos":3212,
-"yPos":3241,
+"yPos":3246,
 "height":0,
 "walkType":1,
 "health":0,
