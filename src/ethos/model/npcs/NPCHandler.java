@@ -178,6 +178,7 @@ public class NPCHandler {
                         newNPC(npc.getNpcId(), npc.getXPos(), npc.getYPos(),npc.getHeight(),
                                                 npc.getWalkType(), npc.getHealth(), npc.getMaxHit(), npc.getAttack(),
                                                 npc.getDefence());
+
                 }
                 return true;
         }catch(Exception e){
@@ -1719,20 +1720,29 @@ public class NPCHandler {
 
 					if (npcs[i].walkingType >= 0) {
 						switch (npcs[i].walkingType) {
-						case 5:
-							npcs[i].turnNpc(npcs[i].absX - 1, npcs[i].absY);
-							break;
-						case 4:
-							npcs[i].turnNpc(npcs[i].absX + 1, npcs[i].absY);
-							break;
-						case 3:
-							npcs[i].turnNpc(npcs[i].absX, npcs[i].absY - 1);
-							break;
-						case 2:
-							npcs[i].turnNpc(npcs[i].absX, npcs[i].absY + 1);
-							break;
+							case 5:
+								npcs[i].turnNpc(npcs[i].absX-1, npcs[i].absY);
+								break;
+
+							case 4:
+								npcs[i].turnNpc(npcs[i].absX+1, npcs[i].absY);
+								break;
+
+							case 3:
+								npcs[i].turnNpc(npcs[i].absX, npcs[i].absY-1);
+								break;
+							case 2:
+								npcs[i].turnNpc(npcs[i].absX, npcs[i].absY+1);
+								break;
+
+							default:
+								if (npcs[i].walkingType >= 0) {
+									npcs[i].turnNpc(npcs[i].absX, npcs[i].absY); //makes it when npcs move they dont turn back to one direction
+								}
+								break;
 						}
-					}
+
+						}
 
 					if (npcs[i].walkingType == 1 && (!npcs[i].underAttack) && !npcs[i].walkingHome) {
 						if (System.currentTimeMillis() - npcs[i].getLastRandomWalk() > npcs[i].getRandomWalkDelay()) {
