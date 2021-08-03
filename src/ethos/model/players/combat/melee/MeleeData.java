@@ -347,6 +347,19 @@ public class MeleeData {
 					return 390;
 			}
 		}
+
+		if (weaponName.contains("scimitar")) {
+			switch (c.fightMode) {
+				case 0:// attack
+					return 390;
+				case 2:// str
+					return 390;
+				case 1:// def
+					return 390;
+				case 3:// crush
+					return 386;
+			}
+		}
 		if (weaponName.contains("axe")) {
 			switch (c.fightMode) {
 				case 0:// attack
@@ -369,6 +382,18 @@ public class MeleeData {
 				return 7046;
 			case 3:// crush
 				return 7046;
+			}
+		}
+		if (weaponName.contains("mace")) {
+			switch (c.fightMode) {
+				case 0:// attack
+					return 401;
+				case 2:// str
+					return 401;
+				case 1:// def
+					return 401;
+				case 3:// crush
+					return 400;
 			}
 		}
 		if (weaponName.contains("dharok")) {
