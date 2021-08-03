@@ -88,9 +88,13 @@ public class MeleeData {
 		}
 		
 		if (weaponName.contains("halberd") || weaponName.contains("banner") || weaponName.contains("hasta") || weaponName.contains("spear") || weaponName.contains("guthan") || weaponName.contains("sceptre")) {
-			c.playerStandIndex = 809;
-			c.playerWalkIndex = 1146;
+			c.playerStandIndex = 813;
+			c.playerWalkIndex = 1205;
 			c.playerRunIndex = 1210;
+			c.playerTurnIndex = 1208;
+			c.playerTurn180Index = 1207;
+			c.playerTurn90CWIndex = 1206;
+			c.playerTurn90CCWIndex = 1209;
 			return;
 		}
 		if (weaponName.contains("sled")) {
@@ -332,7 +336,28 @@ public class MeleeData {
 			return c.fightMode == 1 ? 3295 : c.fightMode == 0 || c.fightMode == 2 ? 3297 : 3294;
 		}
 		if (weaponName.contains("dagger")) {
-			return 412;
+			switch (c.fightMode) {
+				case 0:// attack
+					return 386;
+				case 2:// str
+					return 386;
+				case 1:// def
+					return 386;
+				case 3:// crush
+					return 390;
+			}
+		}
+		if (weaponName.contains("axe")) {
+			switch (c.fightMode) {
+				case 0:// attack
+					return 395;
+				case 2:// str
+					return 395;
+				case 1:// def
+					return 395;
+				case 3:// crush
+					return 401;
+			}
 		}
 		if (weaponName.contains("2h sword") || weaponName.contains("godsword") || weaponName.contains("aradomin sword") || weaponName.contains("blessed sword") || weaponName.contains("large spade")) {
 			switch (c.fightMode) {
@@ -359,7 +384,16 @@ public class MeleeData {
 			}
 		}
 		if (weaponName.contains("sword") && !weaponName.contains("training")) {
-			return 451;
+			switch (c.fightMode) {
+				case 0:// attack
+					return 386;
+				case 2:// str
+					return 386;
+				case 1:// def
+					return 386;
+				case 3:// crush
+					return 390;
+			}
 		}
 		if (weaponName.contains("karil")) {
 			return 2075;
