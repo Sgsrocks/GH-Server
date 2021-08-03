@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="408f6966-0e02-4abc-8420-8c51facc39c1" name="Default Changelist" comment="fixed some weapon animations." />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1vu06Ftg1U2QBs1PPAX7YQPZVBO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ethos.model.content.randomevents" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ethos.model.minigames.gauntlet" />
+      <recent name="ethos.model.content.dialogue.impl.teleports" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.SpawnDumper">
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ethos.Server" />
+      <module name="Ghreborn-Server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ethos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpawnDumper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ethos.model.tools.SpawnDumper" />
+      <module name="Ghreborn-Server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ethos.model.tools.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Server" />
+        <item itemvalue="Application.SpawnDumper" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="408f6966-0e02-4abc-8420-8c51facc39c1" name="Default Changelist" comment="" />
+      <created>1627396489724</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1627396489724</updated>
+    </task>
+    <task id="LOCAL-00001" summary="added spawns for zeah, also some other zones on the world map.">
+      <created>1627495137771</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1627495137771</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Updated the doors to osrs data :P">
+      <created>1627513157660</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1627513157660</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Updated the doors to osrs data :P">
+      <created>1627608544964</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1627608544964</updated>
+    </task>
+    <task id="LOCAL-00004" summary="reworked runecrafting also fixed the fishing spots from moving">
+      <created>1627856424453</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1627856424453</updated>
+    </task>
+    <task id="LOCAL-00005" summary="reworked runecrafting also fixed the fishing spots from moving">
+      <created>1627856555401</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1627856555401</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added combatlevel to spawn loader.">
+      <created>1627858160019</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1627858160019</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fixed npc facing, also worked on the h.a.m lair.">
+      <created>1627865175114</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1627865175114</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added Keldagrim spawns">
+      <created>1627960821460</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1627960821460</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fixed some weapon animations.">
+      <created>1627963139396</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1627963139396</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fixed some weapon animations.">
+      <created>1627964166968</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1627964166968</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fixed some weapon animations.">
+      <created>1627964430773</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1627964430773</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fixed some weapon animations.">
+      <created>1627964633128</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1627964633128</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added spawns for zeah, also some other zones on the world map." />
+    <MESSAGE value="Updated the doors to osrs data :P" />
+    <MESSAGE value="reworked runecrafting also fixed the fishing spots from moving" />
+    <MESSAGE value="added combatlevel to spawn loader." />
+    <MESSAGE value="fixed npc facing, also worked on the h.a.m lair." />
+    <MESSAGE value="added Keldagrim spawns" />
+    <MESSAGE value="fixed some weapon animations." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed some weapon animations." />
+  </component>
+</project>
