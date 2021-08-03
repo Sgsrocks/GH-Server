@@ -33,7 +33,17 @@ public class Pickpocket extends SkillHandler {
                 {995, 9},
                 {5318, 4},
         }, "second"),
-        HAM_FEMALE(new int[]{2541, 2540}, 15, 18.5, 2, 4, new int[][]{
+        HAM_FEMALE(new int[]{2541}, 15, 18.5, 2, 4, new int[][]{
+                {995, 2, 19},
+                {4302, 1},
+                {4304, 1},
+                {4298, 1},
+                {4308, 1},
+                {4300, 1},
+                {4310, 1},
+                {4306, 1},
+        }, "first"),
+        HAM_MALE(new int[] { 2540 }, 20, 22.5, 2, 4, new int[][]{
                 {995, 2, 19},
                 {4302, 1},
                 {4304, 1},

@@ -98,7 +98,7 @@ public class PlayerEmotes {
 		STOMP(150221,  1745, -1),
 		IDEA(150220,  4276, 712),
 		ZOMBIE_HAND(150224, 1708, 320),
-		PREMIER_SHEILD(151016, 7751, 1412+ Misc.random(2));
+		PREMIER_SHEILD(151016, 7751, -1);
 		
 		private int button;
 		private int animation;
@@ -144,7 +144,18 @@ public class PlayerEmotes {
 					}
 				}
 				player.startAnimation(animation.getAnimation());
-				player.gfx0(animation.getGraphic());
+				if(animation.getButton() == 151016){
+					int random = Misc.random(3);
+					if(random == 0) {
+						player.gfx0(1412);
+					} else if(random == 1) {
+						player.gfx0(1413);
+					} else if(random == 2) {
+						player.gfx0(1414);
+					}
+				} else {
+					player.gfx0(animation.getGraphic());
+				}
 				player.lastPerformedEmote = System.currentTimeMillis();
 				player.sendMessage("Performing emote: " + name + ".");
 				player.stopMovement();

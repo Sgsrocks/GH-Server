@@ -1218,7 +1218,9 @@ public class SkillInterfaces {
 			menuLine("70", "Paladin", 3255, 15);
 			menuLine("75", "Gnome", 3257, 16);
 			menuLine("80", "Hero", 3259, 17);
-			menuLine("85", "Elf", 6105, 18);
+			menuLine("82", "Vyre", 24702, 18);
+			menuLine("85", "Elf", 6105, 19);
+			menuLine("90", "TzHaar", 21278, 20);
 			optionTab("Thieving", "Pickpocket", "Pickpocket", "Stalls", "Chests", "Milestones", "", "", "", "", "", "", "", "", "");
 		}
 

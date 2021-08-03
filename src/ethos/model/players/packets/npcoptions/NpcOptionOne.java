@@ -10,6 +10,7 @@ import ethos.model.content.achievement_diary.fremennik.FremennikDiaryEntry;
 import ethos.model.content.achievement_diary.kandarin.KandarinDiaryEntry;
 import ethos.model.content.achievement_diary.varrock.VarrockDiaryEntry;
 import ethos.model.content.dialogue.impl.BankerDialogue;
+import ethos.model.content.dialogue.impl.Lumbridge.*;
 import ethos.model.content.dialogue.impl.ManandWomanDialogue;
 import ethos.model.content.dialogue.impl.TraderCrewMemberFemale;
 import ethos.model.content.dialogue.impl.TraderCrewMemberMale;
@@ -19,14 +20,6 @@ import ethos.model.content.dialogue.impl.Falador.FaladorShopKeeperDialogue;
 import ethos.model.content.dialogue.impl.Falador.HerquinDialogue;
 import ethos.model.content.dialogue.impl.Falador.SquireDialogue;
 import ethos.model.content.dialogue.impl.Falador.ThurgoDialogue;
-import ethos.model.content.dialogue.impl.Lumbridge.BobDialogue;
-import ethos.model.content.dialogue.impl.Lumbridge.CooksDialogue;
-import ethos.model.content.dialogue.impl.Lumbridge.DoomsayerDialogue;
-import ethos.model.content.dialogue.impl.Lumbridge.HansDialogue;
-import ethos.model.content.dialogue.impl.Lumbridge.Lumbridge_guide_Dialogue;
-import ethos.model.content.dialogue.impl.Lumbridge.LumbyShopKeeperDialogue;
-import ethos.model.content.dialogue.impl.Lumbridge.Melee_combat_tutorDialogue;
-import ethos.model.content.dialogue.impl.Lumbridge.ShearedRamDialogue;
 import ethos.model.content.dialogue.impl.Varrock.ReldoDIalogue;
 import ethos.model.content.dialogue.impl.slayer.DuradelDialogue;
 import ethos.model.holiday.halloween.HalloweenRandomOrder;
@@ -85,6 +78,9 @@ public class NpcOptionOne {
 			case 2897:
 			case 2898:
 				player.start(new BankerDialogue());
+				break;
+			case 3226:
+				player.start(new WoodsmanTutorDialogue());
 				break;
 		case 9336:
 			player.start(new TraderCrewMemberMale());

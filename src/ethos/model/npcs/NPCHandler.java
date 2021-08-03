@@ -1383,6 +1383,32 @@ public class NPCHandler {
 						npcs[i].forceChat("Speak to me if you wish to learn more about this land!");
 					}
 				}
+				if (npcs[i].npcType ==  2539) {
+					if (Misc.random(20) == 4) {
+						int i2 = Misc.random(10);
+						if(i2 == 0) {
+							npcs[i].forceChat("We are the righteous ones in his eyes alone.");
+						} else if(i2  == 1){
+							npcs[i].forceChat("Let them not infest our cities and towns...");
+						} else if(i2  == 2){
+							npcs[i].forceChat("And lo, we become the power, indeed the force to stop these monsters in their tracks.");
+						} else if(i2  == 3){
+							npcs[i].forceChat("Verily I urge you, my friends to take up your spades and farm your farms to feed our people in this blessed sanctuary.");
+						} else if(i2  == 4){
+							npcs[i].forceChat("If thine monsters visage does frighten thee, then tear it off I say... tear it off!");
+						} else if(i2  == 5){
+							npcs[i].forceChat("For Saradomin will guide our sword arms and smash the enemies of humans till their bones become dust.");
+						} else if(i2  == 6){
+							npcs[i].forceChat("And let us smite these monsters unto their deaths..");
+						} else if(i2  == 7){
+							npcs[i].forceChat("For they are not the chosen ones in Saradomin's eyes.");
+						} else if(i2  == 8){
+							npcs[i].forceChat("Where do we go for safety from these monsters... here, with our brethren!");
+						} else if(i2  == 9){
+							npcs[i].forceChat("And let there be no cave or shelter for their spawn until the end of days.");
+						}
+					}
+				}
 
 				// /**
 				// * Tekton walking
