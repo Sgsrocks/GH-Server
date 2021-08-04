@@ -22,6 +22,7 @@ import ethos.model.content.dialogue.impl.Falador.SquireDialogue;
 import ethos.model.content.dialogue.impl.Falador.ThurgoDialogue;
 import ethos.model.content.dialogue.impl.Varrock.ReldoDIalogue;
 import ethos.model.content.dialogue.impl.slayer.DuradelDialogue;
+import ethos.model.content.dialogue.impl.wizard_tower.MizgagDialogue;
 import ethos.model.holiday.halloween.HalloweenRandomOrder;
 import ethos.model.npcs.NPC;
 import ethos.model.npcs.NPCHandler;
@@ -78,6 +79,9 @@ public class NpcOptionOne {
 			case 2897:
 			case 2898:
 				player.start(new BankerDialogue());
+				break;
+			case 5005:
+				player.start(new MizgagDialogue());
 				break;
 			case 3226:
 				player.start(new WoodsmanTutorDialogue());

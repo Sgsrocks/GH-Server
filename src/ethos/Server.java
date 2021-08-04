@@ -238,8 +238,8 @@ public class Server {
 			events.submit(new BonusXPEvent());
             //Cache.load();
 			Listing.loadNextSale();
-			Wogw.init();
-			bxp.init();
+			//Wogw.init();
+			//bxp.init();
 			ItemDefinition.load();
 			DoorDefinition.load();
 			GodwarsEquipment.load();

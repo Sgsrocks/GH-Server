@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="408f6966-0e02-4abc-8420-8c51facc39c1" name="Default Changelist" comment="removed old donation/highscores files">
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/dialogue/impl/wizard_tower/MizgagDialogue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Spawn.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spawn.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cfg/spawn_config.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/data/cfg/spawn_config.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/json/npc-spawns.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/json/npc-spawns.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/logs/s/sgsrocks/command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/s/sgsrocks/command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/wogw.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/wogw.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/npcoptions/NpcOptionOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/npcoptions/NpcOptionOne.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
