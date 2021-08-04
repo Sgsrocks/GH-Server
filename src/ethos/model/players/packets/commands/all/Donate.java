@@ -4,7 +4,6 @@ import java.sql.*;
 import java.util.Optional;
 
 
-import ethos.database.DonationHandler;
 import ethos.model.players.Player;
 import ethos.model.players.packets.commands.Command;
 

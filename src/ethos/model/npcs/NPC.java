@@ -3,8 +3,12 @@ package ethos.model.npcs;
 import java.awt.Point;
 
 import ethos.Server;
+import ethos.event.CycleEvent;
+import ethos.event.CycleEventContainer;
+import ethos.event.CycleEventHandler;
 import ethos.model.entity.Entity;
 import ethos.model.entity.HealthStatus;
+import ethos.model.items.ItemAssistant;
 import ethos.model.npcs.bosses.zulrah.Zulrah;
 import ethos.model.players.Boundary;
 import ethos.model.players.Player;
@@ -35,7 +39,7 @@ public class NPC extends Entity {
 
 	public long lastRandomlySelectedPlayer = System.currentTimeMillis();
 
-	private boolean transformUpdateRequired;
+	private boolean transformUpdateRequired,  isTransformed = false;
 	int transformId;
 	public Location3D targetedLocation;
 
@@ -85,7 +89,38 @@ public class NPC extends Entity {
 		actionTimer = 0;
 		randomWalk = true;
 	}
+	public void shearSheep(Player player, int itemNeeded, int itemGiven, int animation, final int currentId, final int newId, int transformTime) {
+		if (!player.getItems().playerHasItem(itemNeeded)) {
+			player.sendMessage("You need " + ItemAssistant.getItemName(itemNeeded).toLowerCase() + " to do that.");
+			return;
+		}
+		if (transformId == newId) {
+			player.sendMessage("This sheep has already been shorn.");
+			return;
+		}
+		if (NPCHandler.npcs[npcId].isTransformed) {
+			return;
+		}
+		if (animation > 0) {
+			player.startAnimation(animation);
+		}
+		requestTransform(newId);
+		player.getItems().addItem(itemGiven, 1);
+		player.sendMessage("You get some " + ItemAssistant.getItemName(itemGiven).toLowerCase() + ".");
+		CycleEventHandler.getSingleton().addEvent(player, new CycleEvent() {
 
+			@Override
+			public void execute(CycleEventContainer container) {
+				requestTransform(currentId);
+				container.stop();
+			}
+
+			@Override
+			public void stop() {
+				NPCHandler.npcs[npcId].isTransformed = false;
+			}
+		}, transformTime);
+	}
 	public Position getPosition() {
 		return new Position(absX, absY, heightLevel);
 	}

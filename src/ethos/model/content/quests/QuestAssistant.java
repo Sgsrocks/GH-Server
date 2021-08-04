@@ -297,6 +297,9 @@ public class QuestAssistant {
 		case 28167:
 			RuneMysteries.showInformation(player);
 			break;
+			case 28176:
+				SheepShearer.showInformation(player);
+				break;
 			
 		default:
 			if (Quests.forButton(buttonId) != null) {

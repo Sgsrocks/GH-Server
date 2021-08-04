@@ -7,6 +7,18 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="deps" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/deps" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/deps" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/deps" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/deps" recursive="false" type="SOURCES" />
+      </library>
+    </orderEntry>
   </component>
 </module>

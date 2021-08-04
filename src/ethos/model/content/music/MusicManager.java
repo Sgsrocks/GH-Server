@@ -105,7 +105,7 @@ public class MusicManager {
 			music = MusicLoader.forSong(2);
 			player.getPA().playMusic(music.getSong());
 			player.getPA().sendFrame126(music.getName(), 38573);
-			if(player.playerName.equalsIgnoreCase("Sgsrocks")){
+			if(player.debugMessage){
 			player.sendMessage("Music isn't added into this region yet! Region = "+ player.getRegionId());
 			}
 			return;

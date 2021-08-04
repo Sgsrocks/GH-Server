@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="408f6966-0e02-4abc-8420-8c51facc39c1" name="Default Changelist" comment="fixed some weapon animations." />
+    <list default="true" id="408f6966-0e02-4abc-8420-8c51facc39c1" name="Default Changelist" comment="fixed some weapon animations.">
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/quests/impl/SheepShearer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/players/skills/agility/impl/rooftop/RooftopPrifddinas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ghreborn-Server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Ghreborn-Server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Spawn.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spawn.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cfg/spawn_config.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/data/cfg/spawn_config.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/json/npc-spawns.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/json/npc-spawns.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/logs/s/sgsrocks/command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/s/sgsrocks/command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/logs/s/sgsrocks/public_chat.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/s/sgsrocks/public_chat.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/Highscores/Highscores.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/database/DonationHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/database/Placeholder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/database/impl/Database.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/database/impl/Donation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/database/impl/VoteDB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/content/music/MusicManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/music/MusicManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/content/quests/QuestAssistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/quests/QuestAssistant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/content/quests/impl/CooksAssistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/quests/impl/CooksAssistant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/content/region/music/MusicLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/content/region/music/MusicManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/items/UseItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/items/UseItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/npcs/NPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/npcs/NPC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/ItemOnNpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/ItemOnNpc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/admin/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/admin/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/all/Donate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/all/Donate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Getpass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Getpass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Kill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Kill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/objectoptions/ObjectOptionOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/objectoptions/ObjectOptionOne.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +57,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Ghreborn-Server.iml" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -36,7 +71,7 @@
       <recent name="ethos.model.content.dialogue.impl.teleports" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SpawnDumper">
+  <component name="RunManager" selected="Application.Server">
     <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ethos.Server" />
       <module name="Ghreborn-Server" />
@@ -163,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627964633128</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fixed some weapon animations.">
+      <created>1627965013243</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1627965013244</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

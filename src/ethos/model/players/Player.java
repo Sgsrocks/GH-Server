@@ -15,6 +15,7 @@ import ethos.model.content.*;
 import ethos.model.content.n_tp.TeleportInterface;
 import ethos.model.content.traveling.DesertHeat;
 import ethos.model.players.combat.monsterhunt.MonsterHunt;
+import ethos.model.players.skills.agility.impl.rooftop.*;
 import ethos.model.players.skills.farming.ToolLeprechaun;
 import ethos.model.players.skills.runecrafting.Tiaras;
 import org.jboss.netty.buffer.ChannelBuffers;
@@ -130,10 +131,6 @@ import ethos.model.players.skills.agility.impl.GnomeAgility;
 import ethos.model.players.skills.agility.impl.Lighthouse;
 import ethos.model.players.skills.agility.impl.Shortcuts;
 import ethos.model.players.skills.agility.impl.WildernessAgility;
-import ethos.model.players.skills.agility.impl.rooftop.RooftopArdougne;
-import ethos.model.players.skills.agility.impl.rooftop.RooftopFalador;
-import ethos.model.players.skills.agility.impl.rooftop.RooftopSeers;
-import ethos.model.players.skills.agility.impl.rooftop.RooftopVarrock;
 import ethos.model.players.skills.construction.House;
 import ethos.model.players.skills.construction.Room;
 import ethos.model.players.skills.cooking.Cooking;
@@ -442,6 +439,7 @@ public class Player extends Entity {
 	private RooftopVarrock rooftopVarrock = new RooftopVarrock();
 	private RooftopArdougne rooftopArdougne = new RooftopArdougne();
 	private BarbarianAgility barbarianAgility = new BarbarianAgility();
+	private RooftopPrifddinas rooftopPrifddinas = new RooftopPrifddinas();
 	private Lighthouse lighthouse = new Lighthouse();
 	private Agility agility = new Agility(this);
 	private Cooking cooking = new Cooking();
@@ -2433,7 +2431,9 @@ public class Player extends Entity {
 	public BarbarianAgility getBarbarianAgility() {
 		return barbarianAgility;
 	}
-
+	public RooftopPrifddinas getRooftopPrifddinas() {
+		return rooftopPrifddinas;
+	}
 	public AgilityHandler getAgilityHandler() {
 		return agilityHandler;
 	}

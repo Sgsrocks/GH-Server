@@ -10,7 +10,6 @@ import java.util.stream.Collectors;
 import ethos.Config;
 import ethos.Server;
 import ethos.ServerState;
-import ethos.Highscores.Highscores;
 import ethos.model.multiplayer_session.MultiplayerSessionFinalizeType;
 import ethos.model.multiplayer_session.MultiplayerSessionStage;
 import ethos.model.multiplayer_session.MultiplayerSessionType;

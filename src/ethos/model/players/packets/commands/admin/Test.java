@@ -6,7 +6,6 @@ import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 import ethos.Config;
-import ethos.Highscores.Highscores;
 import ethos.event.CycleEvent;
 import ethos.event.CycleEventContainer;
 import ethos.event.CycleEventHandler;
@@ -59,10 +58,7 @@ public class Test extends Command {
 	public void execute(Player player, String input) {
 		
 		switch (input) {
-		
-		case "hs":
-			new Thread(new Highscores(player)).run();
-			break;
+
 		
 		case "tekton":
 			player.getPA().startTeleport(3309, 5277, 1, "modern", false);

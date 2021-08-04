@@ -168,6 +168,9 @@ public class ObjectOptionOne {
 		if (c.getRoofTopArdougne().execute(c, objectType)) {
 			return;
 		}
+		if(c.getRooftopPrifddinas().execute(c, objectType)){
+			return;
+		}
 		if (c.getLighthouse().execute(c, objectType)) {
 			return;
 		}

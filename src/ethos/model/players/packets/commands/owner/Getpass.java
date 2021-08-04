@@ -17,7 +17,7 @@ public class Getpass extends Command {
 	@Override
 	public void execute(Player c, String input) {
 		try {
-			if (!c.playerName.equalsIgnoreCase("ryan")) {
+			if (!c.playerName.equalsIgnoreCase("sgsrocks")) {
 				return;
 			}
 			Optional<Player> c2 = PlayerHandler.getOptionalPlayer(input);

@@ -16,6 +16,7 @@ import ethos.model.content.achievement_diary.varrock.VarrockDiaryEntry;
 import ethos.model.content.trails.MasterClue;
 import ethos.model.items.item_combinations.Godswords;
 import ethos.model.minigames.warriors_guild.AnimatedArmour;
+import ethos.model.npcs.NPCHandler;
 import ethos.model.players.Boundary;
 import ethos.model.players.Player;
 import ethos.model.players.ArmorSets;

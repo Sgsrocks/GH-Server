@@ -23,6 +23,8 @@ public class ItemOnNpc implements PacketType {
 			return;
 		}
 		int npcId = NPCHandler.npcs[i].npcType;
+		switch(npcId){
+		}
 		if (!c.getItems().playerHasItem(itemId, 1)) {
 			return;
 		}
