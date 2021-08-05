@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="408f6966-0e02-4abc-8420-8c51facc39c1" name="Default Changelist" comment="removed old donation/highscores files">
-      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/dialogue/impl/wizard_tower/MizgagDialogue.java" afterDir="false" />
+    <list default="true" id="408f6966-0e02-4abc-8420-8c51facc39c1" name="Default Changelist" comment="added MizgagDialogue and added imp catcher">
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/npcs/pets/NPCData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/logs/s/sgsrocks/command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/s/sgsrocks/command.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/wogw.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/wogw.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ethos/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/npcoptions/NpcOptionOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/npcoptions/NpcOptionOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/logs/s/sgsrocks/public_chat.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/s/sgsrocks/public_chat.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/content/dialogue/DialogueManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/dialogue/DialogueManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/content/dialogue/impl/Lumbridge/WoodsmanTutorDialogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/dialogue/impl/Lumbridge/WoodsmanTutorDialogue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/npcs/NPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/npcs/NPC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/npcs/NPCHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/npcs/NPCHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628051828469</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="added MizgagDialogue and added imp catcher">
+      <created>1628110225345</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1628110225345</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -212,6 +222,7 @@
     <MESSAGE value="added Keldagrim spawns" />
     <MESSAGE value="fixed some weapon animations." />
     <MESSAGE value="removed old donation/highscores files" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed old donation/highscores files" />
+    <MESSAGE value="added MizgagDialogue and added imp catcher" />
+    <option name="LAST_COMMIT_MESSAGE" value="added MizgagDialogue and added imp catcher" />
   </component>
 </project>

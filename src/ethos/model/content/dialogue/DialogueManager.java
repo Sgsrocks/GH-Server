@@ -12,6 +12,15 @@ public class DialogueManager {
     	player.getPA().sendFrame246(6236, 170, item2);
 		player.getPA().sendChatInterface(6231);
 	}
+	public static void sendItem4(Player player, String text1, String text2, String text3, String text4,  int item1, int item2) {
+		player.getPA().sendFrame126(text1, 38859);
+		player.getPA().sendFrame126(text2, 38860);
+		player.getPA().sendFrame126(text3, 38864);
+		player.getPA().sendFrame126(text4, 38865);
+		player.getPA().sendFrame246(38862, 170, item1);
+		player.getPA().sendFrame246(38863, 170, item2);
+		player.getPA().sendChatInterface(38858);
+	}
     
     public static void sendItem2zoom(Player player, String text1, String text2, int item1, int item2) {
     	player.getPA().sendFrame126(text1, 6232);

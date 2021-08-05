@@ -38,8 +38,9 @@ public class NPC extends Entity {
 	public boolean teleporting = false;
 
 	public long lastRandomlySelectedPlayer = System.currentTimeMillis();
+    public int masterId;
 
-	private boolean transformUpdateRequired,  isTransformed = false;
+    private boolean transformUpdateRequired,  isTransformed = false;
 	int transformId;
 	public Location3D targetedLocation;
 
@@ -52,7 +53,7 @@ public class NPC extends Entity {
 
 	public CombatType attackType;
 
-	public int projectileId, endGfx, spawnedBy, hitDelayTimer, hitDiff, animNumber, actionTimer, enemyX, enemyY;
+	public int projectileId, endGfx, spawnedBy, hitDelayTimer, hitDiff, animNumber, actionTimer, enemyX, enemyY, size;
 	public boolean applyDead, isDead, needRespawn, respawns;
 	public boolean walkingHome, underAttack;
 	public int freezeTimer, attackTimer, killerId, killedBy, oldIndex, underAttackBy;

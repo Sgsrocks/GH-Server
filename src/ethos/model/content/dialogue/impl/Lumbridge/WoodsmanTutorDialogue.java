@@ -38,7 +38,7 @@ public class WoodsmanTutorDialogue extends Dialogue {
                 setNext(6);
                 break;
             case DialogueConstants.OPTIONS_5_1:
-                DialogueManager.sendItem2(getPlayer(), "Almost every tree can be chopped down. Normal logs will be produced by chopping 'Trees' and Oak logs will come from chopping 'Oak Trees'", " You can find Oak trees in amongst normal trees scatterd about the", 1511, 1521);
+                DialogueManager.sendItem4(getPlayer(), "Almost every tree can be chopped down. Normal logs", "will be produced by chopping 'Trees' and Oak logs will", "come from chopping 'Oak Trees' You can find Oak", "trees in amongst normal trees scatterd about the", 1511, 1521);
                 break;
         }
         return false;

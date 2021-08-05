@@ -4,7 +4,7 @@ public class Config {
 
 	public static boolean local = true;
 
-	public static String SERVER_NAME = "Ghreborn";
+	public static String SERVER_NAME = "GodzHell";
 
 	public static int PLAYERMODIFIER = 0;
 
