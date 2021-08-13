@@ -205,11 +205,11 @@ public class NPCHandler {
 				out.newLine();
 				out.write("\"health\":"+HP+",");
 				out.newLine();
-				out.write("\"maxHit\":"+NPCStats.npcStats[npcType][0]+",");
+				out.write("\"maxHit\":"+maxHit+",");
 				out.newLine();
-				out.write("\"attack\":"+NPCStats.npcStats[npcType][1]+",");
+				out.write("\"attack\":"+attack+",");
 				out.newLine();
-				out.write("\"defence\":"+NPCStats.npcStats[npcType][2]+",");
+				out.write("\"defence\":"+defence+",");
 				out.newLine();
 				out.write("\"combatLevel\":"+NPCCacheDefinition.forID(npcType).getCombatLevel()+",");
 				out.newLine();
@@ -1254,11 +1254,9 @@ public class NPCHandler {
 		newNPC.walkingType = WalkingType;
 		newNPC.getHealth().setMaximum(HP);
 		newNPC.getHealth().reset();
-		if(NPCStats.npcStats[npcType][0] != 0 || NPCStats.npcStats[npcType][1] != 0 || NPCStats.npcStats[npcType][2] != 0) {
-		newNPC.maxHit = NPCStats.npcStats[npcType][0];
-		newNPC.attack = NPCStats.npcStats[npcType][1];
-		newNPC.defence = NPCStats.npcStats[npcType][2];
-		}
+		newNPC.maxHit = maxHit;
+		newNPC.attack = attack;
+		newNPC.defence = defence;
 		newNPC.resetDamageTaken();
 		npcs[slot] = newNPC;
 	}
@@ -1836,6 +1834,7 @@ public class NPCHandler {
 								}
 							}, 9);
 						}
+
 						if (npcs[i].npcType == 6618) {
 							npcs[i].forceChat("Ow!");
 						}
@@ -1941,6 +1940,51 @@ public class NPCHandler {
 							Player killer = PlayerHandler.players[npcs[i].killedBy];
 							killer.getRaids().raidLeader.getRaids().handleMobDeath(npcs[i].npcType);
 						}
+						if(npcs[i].npcType == 2534) {
+							if(Boundary.isIn(npcs[i], Boundary.partyhatmini)) {
+								Player c = PlayerHandler.players[npcs[i].killedBy];
+								c.Ghostkills += 1;
+								//c.sendMessage("Ghost test");
+							}
+						}
+						if(npcs[i].npcType == 2145) {
+							if(Boundary.isIn(npcs[i], Boundary.partyhatmini)) {
+								Player c = PlayerHandler.players[npcs[i].killedBy];
+								c.Druidkills += 1;
+								//c.sendMessage("Druid test");
+							}
+						}
+						if(npcs[i].npcType == 7878) {
+							if(Boundary.isIn(npcs[i], Boundary.partyhatmini)) {
+								Player c = PlayerHandler.players[npcs[i].killedBy];
+								c.Giantkills += 1;
+								//c.sendMessage("Giant Test");
+							}
+						}
+                        if(npcs[i].npcType == 2006) {
+							if(Boundary.isIn(npcs[i], Boundary.partyhatmini)) {
+                                Player c = PlayerHandler.players[npcs[i].killedBy];
+                                c.Demonkills += 1;
+                                c.sendMessage("Good! Now kill the General!");
+                                c.getPA().movePlayer(1327, 9132, 0);
+                            }
+                        }
+                        if(npcs[i].npcType == 1213) {
+							if(Boundary.isIn(npcs[i], Boundary.partyhatmini)) {
+                                Player c = PlayerHandler.players[npcs[i].killedBy];
+                                c.Generalkills += 1;
+                                c.sendMessage("Wow, you have made it this far! Kill Him to beat the Mini game!");
+                                c.getPA().movePlayer(1280, 9154, 0);
+                            }
+                        }
+                        if(npcs[i].npcType == 6382) {
+							if(Boundary.isIn(npcs[i], Boundary.partyhatmini)) {
+								Player c = PlayerHandler.players[npcs[i].killedBy];
+								c.JDemonkills += 1;
+								c.sendMessage("You finished the Mini game! Click on the Chest to claim your reward!");
+								c.getPA().movePlayer(1287, 9110, 0);
+							}
+                        }
 						appendBossKC(i);
 						appendKillCount(i);
 						handleGodwarsDeath(npc);
@@ -3408,7 +3452,7 @@ public class NPCHandler {
 					&& (System.currentTimeMillis() - c.getLastIncentive()) < TimeUnit.DAYS.toMillis(1)) {
 				amountOfDrops++;
 			}
-			ethos.model.npcs.newdrops.DropHandler.create(c, npcs[i], location);
+			//ethos.model.npcs.newdrops.DropHandler.create(c, npcs[i], location);
 			Server.getDropManager().create(c, npcs[i], location, amountOfDrops);
 			if (NPCDefinitions.get(npcs[i].npcType).getNpcCombat() >= 100) {
 				c.getNpcDeathTracker().add(NPCDefinitions.get(npcs[i].npcType).getNpcName());

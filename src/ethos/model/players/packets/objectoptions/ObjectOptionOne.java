@@ -72,6 +72,7 @@ import ethos.model.players.packets.objectoptions.impl.DarkAltar;
 import ethos.model.players.packets.objectoptions.impl.Overseer;
 import ethos.model.players.packets.objectoptions.impl.RaidObjects;
 import ethos.model.players.packets.objectoptions.impl.TrainCart;
+import ethos.model.players.skills.Fishing;
 import ethos.model.players.skills.FlaxPicking;
 import ethos.model.players.skills.Skill;
 import ethos.model.players.skills.agility.AgilityHandler;
@@ -120,6 +121,10 @@ public class ObjectOptionOne {
 		if (c.teleTimer > 0) {
 			return;
 		}
+		if (c.getRaids().handleObjectClick(c,objectType)) {
+			return;
+		}
+		RaidObjects.clickObject1(c, objectType, obX, obY);
 		if (!Region.objectExists(objectType, obX, obY, c.heightLevel)) {
 			return;
 		}
@@ -132,7 +137,6 @@ public class ObjectOptionOne {
 		c.boneOnAltar = false;
 		Tree tree = Tree.forObject(objectType);
 
-		RaidObjects.clickObject1(c, objectType, obX, obY);
 		if (tree != null) {
 			Woodcutting.getInstance().chop(c, objectType, obX, obY);
 			return;
@@ -172,6 +176,9 @@ public class ObjectOptionOne {
 			return;
 		}
 		if (c.getLighthouse().execute(c, objectType)) {
+			return;
+		}
+		if(c.getPartyHat().execute(c, objectType)){
 			return;
 		}
 		if (objectType >= 115 && objectType <= 121) {
@@ -330,7 +337,26 @@ public class ObjectOptionOne {
 					c.getPA().movePlayer(3104, 3161, 1);
 					return;
 				}
-				if(c.getX() < 6400 && (c.heightLevel & 3) == 0) {
+
+                if(obX == 3557 && obY == 9718 && c.getHeight() == 3){
+                    c.getPA().movePlayer(3575, 3298, 0);
+                }
+				if(obX == 3534 && obY == 9705 && c.getHeight() == 3){
+					c.getPA().movePlayer(3575, 3282, 0);
+				}
+				if(obX == 3546 && obY == 9685 && c.getHeight() == 3){
+					c.getPA().movePlayer(3565, 3276, 0);
+				}
+				if(obX == 3565 && obY == 9683 && c.heightLevel == 3){
+					c.getPA().movePlayer(3553, 3282, 0);
+				}
+				if(obX == 3578 && obY == 9703 && c.heightLevel == 3){
+					c.getPA().movePlayer(3555, 3297, 0);
+				}
+				if(obX == 3558 && obY == 9703 && c.heightLevel == 3){
+					c.getPA().movePlayer(3565, 3289, 0);
+				}
+				if(c.getY() > 6400 && (c.heightLevel & 3) == 0) {
 					c.getPA().movePlayer(c.getX(), c.getY()-6400, c.heightLevel);
 					return;
 				} else {
@@ -387,9 +413,6 @@ public class ObjectOptionOne {
 			if (Doors.getSingleton().handleDoor(objectType, obX, obY, c.heightLevel)) {
 			}
 		}
-		if (c.getRaids().handleObjectClick(c,objectType)) {
-			return;
-		}
 		
 		if (c.getRights().isOrInherits(Right.OWNER))
 			c.sendMessage("Clicked Object Option 1:  "+objectType+"");
@@ -407,6 +430,75 @@ public class ObjectOptionOne {
 					Server.npcHandler.spawnNpc(c, 6564, 3748, 5671, 0, 0, 0, 0, 0, 0, false, false);
 				} else {
 					c.sendMessage("You need pay-dirt.");
+				}
+				break;
+			case 29747:
+			case 29748:
+				Raids.lightBrazer(c, objectType, obX, obY);
+				break;
+			case 674://bronze axe in raids
+				if (!c.getItems().playerHasItem(303)) {
+					c.getItems().addItem(303, 1);
+					c.sendMessage("@red@You find a Small Fishing Net on the ground.");
+				}
+				break;
+			case 31862://bronze axe in raids
+				if (!c.getItems().playerHasItem(1351)) {
+					c.getItems().addItem(1351, 1);
+					c.sendMessage("@red@You find a Bronze Axe on the ground.");
+				}
+				break;
+			case 31634://Tinderbox in raids
+				if (!c.getItems().playerHasItem(590)) {
+					c.getItems().addItem(590, 1);
+					c.sendMessage("@red@You find a Tinderbox on the ground.");
+				}
+				break;
+			case 29771://Farming tools in raids
+				if (c.getItems().freeSlots() <= 3) {
+					c.sendMessage("@red@You need 4 free spaces to collect these tools.");
+					return;
+				}
+				if (c.getItems().freeSlots() >= 4) {
+					c.getItems().addItem(5341, 1);
+					c.getItems().addItem(5343, 1);
+					c.getItems().addItem(5340, 1);
+					c.getItems().addItem(6032, 1);
+					c.sendMessage("@red@You collect from farming tools from the ground.");
+				}
+				break;
+			case 29772://Tree that gives vials in raids
+				c.getItems().addItem(20800, 1);
+				c.sendMessage("@red@You carefully pull an Empty Gourd vial from the tree.");
+				break;
+			case 29742: //Chests inside the raids thieving room
+				if (System.currentTimeMillis() < 500 * 3) {
+					return;
+				}
+				if (c.playerLevel[Skill.THIEVING.getId()] >= 72) {
+					c.startAnimation(881);
+					if (Misc.random(32) == 26) {
+						c.getItems().addItem(20895, 1);
+						c.sendMessage("@red@You find an ancient book in the chest. After reading it you are able to pass through the room.");
+					}
+				}
+				else {
+					c.sendMessage("You need a thieving level of 72 or higher to steal from this chest!");
+					return;
+				}
+				break;
+			case 29889: // Raids fishing spot
+				if (c.playerLevel[Skill.THIEVING.getId()] >= 1 && c.playerLevel[Skill.THIEVING.getId()] <= 29) {
+					Fishing.attemptdata(c, 20);
+				}
+				if (c.playerLevel[Skill.THIEVING.getId()] >= 30 && c.playerLevel[Skill.THIEVING.getId()] <= 59) {
+					Fishing.attemptdata(c, 21);
+				}
+				if (c.playerLevel[Skill.THIEVING.getId()] >= 60 && c.playerLevel[Skill.THIEVING.getId()] <= 89) {
+					Fishing.attemptdata(c, 22);
+				}
+				if (c.playerLevel[Skill.THIEVING.getId()] >= 90) {
+					Fishing.attemptdata(c, 23);
 				}
 				break;
 		case 26670:

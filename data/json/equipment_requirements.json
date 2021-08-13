@@ -9,6 +9,15 @@
     ]
   },
   {
+    "id": 10828,
+    "requirements": [
+      {
+        "level": 55,
+        "skill": "DEFENCE"
+      }
+    ]
+  },
+  {
     "id": 803,
     "requirements": [
       {

@@ -1,16 +1,23 @@
-package ethos.model.content;
+package ethos.model.content.MysteryBoxs;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Random;
 
+import ethos.definitions.ItemCacheDefinition;
 import ethos.event.CycleEvent;
 import ethos.event.CycleEventContainer;
 import ethos.event.CycleEventHandler;
+import ethos.model.content.MysteryBoxs.UltraMysteryBox.Rarity;
 import ethos.model.items.GameItem;
 import ethos.model.items.ItemAssistant;
 import ethos.model.players.Player;
 import ethos.model.players.PlayerHandler;
-import ethos.model.players.skills.hunter.impling.ItemRarity;
 import ethos.util.Misc;
+
 
 /**
  * Revamped a simple means of receiving a random item based on chance.
@@ -18,7 +25,7 @@ import ethos.util.Misc;
  * @author Jason MacKeigan
  * @date Oct 29, 2014, 1:43:44 PM
  */
-public class MysteryBox extends CycleEvent {
+public class MysteryBox {
 
     /**
      * The item id of the mystery box required to trigger the event
@@ -227,78 +234,169 @@ public class MysteryBox extends CycleEvent {
     }
 
     /**
-     * Opens a mystery box if possible, and ultimately triggers and event, if possible.
-     */
-    public void open() {
-        if (System.currentTimeMillis() - player.lastMysteryBox < 150 * 4) {
-            return;
-        }
-        if (player.getItems().freeSlots() < 2) {
-            player.sendMessage("You need atleast two free slots to open a mystery box.");
-            return;
-        }
-        if (!player.getItems().playerHasItem(MYSTERY_BOX)) {
-            player.sendMessage("You need a mystery box to do this.");
-            return;
-        }
-        player.getItems().deleteItem(MYSTERY_BOX, 1);
-        player.lastMysteryBox = System.currentTimeMillis();
-        CycleEventHandler.getSingleton().stopEvents(this);
-        CycleEventHandler.getSingleton().addEvent(this, this, 2);
-    }
+	 * Can the player open the mystery box
+	 */
+	private boolean canMysteryBox = true;
+	
+	/**
+	 * The prize received
+	 */
+	private int mysteryPrize;
 
-    /**
-     * Executes the event for receiving the mystery box
-     */
-    @Override
-    public void execute(CycleEventContainer container) {
-        if (player.disconnected || Objects.isNull(player)) {
-            container.stop();
-            return;
-        }
-        int coins = 200_000 + Misc.random(1_500_000);
-        int coinsDouble = 200_000 + Misc.random(1_500_000);
-        int random = Misc.random(200);
-        List<GameItem> itemList = random < 105 ? items.get(Rarity.COMMON) : random >= 105 && random <= 190 ? items.get(Rarity.UNCOMMON) : items.get(Rarity.RARE);
-        GameItem item = Misc.getRandomItem(itemList);
-        GameItem itemDouble = Misc.getRandomItem(itemList);
+	private int mysteryAmount;
+	
+	private int spinNum = 0;
+	
+	/**
+	 * The chance to obtain the item
+	 */
+	private int random;
+	
+	private final int INTERFACE_ID = 47000;
+	private final int ITEM_FRAME = 47101;
+	
+	/**
+	 * The rarity of the reward
+	 */
+	private Rarity rewardRarity;
 
-        if (Misc.random(200) == 2 && player.getItems().getItemCount(19730, true) == 0 && player.summonId != 19730) {
-            PlayerHandler.executeGlobalMessage("@red@" + player.playerName
-                    + " has found a Bloodhound!");
-            player.getItems().addItemUnderAnyCircumstance(19730, 1);
-        }
+	/**
+	 * Represents the rarity of a certain list of items
+	 */
+	enum Rarity {
+		UNCOMMON("<col=005eff>"),
+		COMMON("<col=336600>"),
+		RARE("<col=B80000>");
+		
+		private String color;
+		
+		Rarity(String color) {
+			this.color = color;
+		}
+		
+		public String getColor() {
+			return color;
+		}
+		
+	    public static Rarity forId(int id) {
+	        for (Rarity tier : Rarity.values()) {
+	            if (tier.ordinal() == id)
+	                return tier;
+	        }
+	        return null;
+	    }
+	}
+	
+	public void spin() {
+		// Server side checks for spin
+		if (!canMysteryBox) {
+			player.sendMessage("Please finish your current spin.");
+			return;
+		}
+		if (!player.getItems().playerHasItem(MYSTERY_BOX)) {
+			player.sendMessage("You require a mystery box to do this.");
+			return;
+		}
 
-        if (Misc.random(10) == 0) {
-            player.getItems().addItem(995, coins + coinsDouble);
-            player.getItems().addItem(item.getId(), item.getAmount());
-            player.getItems().addItem(itemDouble.getId(), itemDouble.getAmount());
-            player.sendMessage("You receive " + item.getAmount() + " x " + ItemAssistant.getItemName(item.getId()) + ", and "
-                    + Misc.insertCommas(Integer.toString(coins)) + " coins.");
-            player.sendMessage("You receive " + itemDouble.getAmount() + " x " + ItemAssistant.getItemName(itemDouble.getId()) + ", and "
-                    + Misc.insertCommas(Integer.toString(coins)) + " coins.");
-           
-        } else {
-            player.getItems().addItem(995, coins);
-            player.getItems().addItem(item.getId(), item.getAmount());
-            player.sendMessage("You receive " + item.getAmount() + " x " + ItemAssistant.getItemName(item.getId()) + ", and "
-                    + Misc.insertCommas(Integer.toString(coins)) + " coins.");
-            for(Map.Entry<Rarity, List<GameItem>> gift : items.entrySet())
-                for(GameItem gift_item : gift.getValue())
-                    if(gift_item == item)
-                        if(gift.getKey() == Rarity.RARE)
-                            PlayerHandler.executeGlobalMessage(
-                                    "@red@" + Misc.capitalize(player.playerName) + " received a rare item: "
-                                            + (item.getAmount() > 1 ? (item.getAmount() + "x ") : ItemAssistant.getItemName(item.getId()) + " from a mystery box."));
-        }
-        container.stop();
-    }
+		// Delete box
+		player.getItems().deleteItem(MYSTERY_BOX, 1);
+		// Initiate spin
+		player.sendMessage(":resetBox");
+		for (int i=0; i<66; i++){
+			player.getPA().mysteryBoxItemOnInterface(-1, 1, ITEM_FRAME, i);
+		}
+		spinNum = 0;
+		player.sendMessage(":spin");
+		process();
+	}
+	
+	public void process() {
+		// Reset prize
+		mysteryPrize = -1;
 
-    /**
-     * Represents the rarity of a certain list of items
-     */
-    enum Rarity {
-        UNCOMMON, COMMON, RARE
-    }
+		mysteryAmount = -1;
+		// Can't spin when already in progress
+		canMysteryBox = false;
+		
+		random = Misc.random(100);
+		List<GameItem> itemList = random < 40 ? items.get(Rarity.COMMON) : random >= 40 && random <= 95 ? items.get(Rarity.UNCOMMON) : items.get(Rarity.RARE);
+		rewardRarity = random < 40 ? Rarity.COMMON : random >= 40 && random <= 95 ? Rarity.UNCOMMON : Rarity.RARE;
+		
+		GameItem item = Misc.getRandomItem(itemList);
 
+		mysteryPrize = item.getId();
+
+		mysteryAmount = item.getAmount();
+
+		// Send items to interface
+		// Move non-prize items client side if you would like to reduce server load
+		if (spinNum == 0) {
+			for (int i=0; i<66; i++){
+				Rarity notPrizeRarity = Rarity.values()[new Random().nextInt(Rarity.values().length)];
+				GameItem NotPrize =Misc.getRandomItem(items.get(notPrizeRarity));
+				final int NOT_PRIZE_ID = NotPrize.getId();
+				final int NOT_PRIZE_AMOUNT = NotPrize.getAmount();
+				sendItem(i, 55, mysteryPrize, NOT_PRIZE_ID,1);
+			}
+		} else {
+			for (int i=spinNum*50 + 16; i<spinNum*50 + 66; i++){
+				Rarity notPrizeRarity = Rarity.values()[new Random().nextInt(Rarity.values().length)];	
+				final int NOT_PRIZE_ID = Misc.getRandomItem(items.get(notPrizeRarity)).getId();
+				sendItem(i, (spinNum+1)*50 + 5, mysteryPrize, NOT_PRIZE_ID, mysteryAmount);
+			}
+		}
+		spinNum++;
+	}
+	
+	public void reward() {
+		if (mysteryPrize == -1) {
+			return;
+		}
+		
+		//player.boxCurrentlyUsing = -1;
+		
+		player.getItems().addItemUnderAnyCircumstance(mysteryPrize, mysteryAmount);
+		
+		// Reward text colour
+		String tier = rewardRarity.getColor();
+		
+		// Reward message
+		String name = ItemCacheDefinition.forID(mysteryPrize).getName();
+		if (name.substring(name.length() - 1).equals("s")) {
+			player.sendMessage("Congratulations, you have won " + tier + name + "@bla@!");
+		}
+		else {
+			player.sendMessage("Congratulations, you have won a " + tier + name + "@bla@!");
+		}
+		
+		if (random > 95) {
+			PlayerHandler.executeGlobalMessage("[<col=CC0000>Normal</col>] <col=255>" + Misc.formatPlayerName(player.playerName)
+					+ "</col> hit the jackpot and got a <col=CC0000>"+name+"</col> !");
+		}
+		
+		// Can now spin again
+		canMysteryBox = true;
+	}
+	
+	public void sendItem(int i, int prizeSlot, int PRIZE_ID, int NOT_PRIZE_ID, int amount) {
+		if (i == prizeSlot) {
+			player.getPA().mysteryBoxItemOnInterface(PRIZE_ID, amount, ITEM_FRAME, i);
+		}
+		else {
+			player.getPA().mysteryBoxItemOnInterface(NOT_PRIZE_ID, amount, ITEM_FRAME, i);
+		}
+	}
+	
+	public void openInterface() {
+		player.boxCurrentlyUsing = MYSTERY_BOX;
+		// Reset interface
+		player.sendMessage(":resetBox");
+		for (int i=0; i<66; i++){
+			player.getPA().mysteryBoxItemOnInterface(-1, 1, ITEM_FRAME, i);
+		}
+		spinNum = 0;
+		// Open
+		player.getPA().sendString("Mystery Box", 47002);
+		player.getPA().showInterface(INTERFACE_ID);
+	}
 }

@@ -1,4 +1,4 @@
-package ethos.model.content;
+package ethos.model.content.MysteryBoxs;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -7,12 +7,8 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Random;
 
-import ethos.event.CycleEvent;
-import ethos.event.CycleEventContainer;
-import ethos.event.CycleEventHandler;
+import ethos.definitions.ItemCacheDefinition;
 import ethos.model.items.GameItem;
-import ethos.model.items.ItemAssistant;
-import ethos.model.items.ItemDefinition;
 import ethos.model.players.Player;
 import ethos.model.players.PlayerHandler;
 import ethos.util.Misc;
@@ -23,12 +19,12 @@ import ethos.util.Misc;
  * @author Jason MacKeigan
  * @date Oct 29, 2014, 1:43:44 PM
  */
-public class UltraMysteryBox {
+public class CommonMysteryBox {
 
 	/**
 	 * The item id of the mystery box required to trigger the event
 	 */
-	public static final int MYSTERY_BOX = 13346;
+	public static final int MYSTERY_BOX = 26823;
 
 	/**
 	 * A map containing a List of {@link GameItem}'s that contain items relevant to their rarity.
@@ -41,101 +37,55 @@ public class UltraMysteryBox {
 	static {
 		items.put(Rarity.COMMON, 
 			Arrays.asList(
-				new GameItem(4716),
-				new GameItem(4724),
-				new GameItem(4745),
-				new GameItem(4753),
-				new GameItem(4708),
-				new GameItem(4732),
-				new GameItem(4720),
-				new GameItem(4728),
-				new GameItem(4749),
-				new GameItem(4757),
-				new GameItem(4712),
-				new GameItem(4736),
-				new GameItem(4722),
-				new GameItem(4730),
-				new GameItem(4751),
-				new GameItem(4759),
-				new GameItem(4714),
-				new GameItem(4738),
-				new GameItem(4718),
-				new GameItem(4726),
-				new GameItem(4747),
-				new GameItem(4755),
-				new GameItem(4710),
-				new GameItem(4734),
-				new GameItem(11804),
-				new GameItem(11808),
-				new GameItem(11806),
-				new GameItem(6585),
-				new GameItem(13229),
-				new GameItem(13227),
-				new GameItem(13231),
-				new GameItem(4225),
-				new GameItem(11838),
-				new GameItem(21298),
-				new GameItem(21301),
-				new GameItem(21298),
-				new GameItem(21304),
-				new GameItem(11771),
-				new GameItem(11770),
-				new GameItem(11773),
-				new GameItem(11772),
-				new GameItem(2577),
-				new GameItem(19550, 1))
+					new GameItem(11865),
+					new GameItem(19641),
+					new GameItem(19645),
+					new GameItem(19649),
+					new GameItem(1038),
+					new GameItem(1037),
+					new GameItem(1040),
+					new GameItem(1042),
+					new GameItem(1044),
+					new GameItem(1046))
 		);
 		
 	items.put(Rarity.UNCOMMON,
 			Arrays.asList(
-					new GameItem(12006),
-					new GameItem(19481),
-					new GameItem(12929),
-					new GameItem(13198),
-					new GameItem(13196),
-					new GameItem(19547),
-					new GameItem(19544),
-					new GameItem(12900),
-					new GameItem(11785),
-					new GameItem(21012),
-					new GameItem(11785),
-					new GameItem(11283),
-					new GameItem(13271),
-					new GameItem(21633),
-					new GameItem(11832),
-					new GameItem(11834),
-					new GameItem(11828),
-					new GameItem(11830),
-					new GameItem(11802),
-					new GameItem(21003),
-					new GameItem(19553))
+					new GameItem(1048),
+					new GameItem(1050),
+					new GameItem(1053),
+					new GameItem(1055),
+					new GameItem(1057),
+					new GameItem(2633),
+					new GameItem(2635),
+					new GameItem(2637),
+					new GameItem(2639),
+					new GameItem(2641),
+					new GameItem(2643),
+					new GameItem(2651),
+					new GameItem(3481),
+					new GameItem(3483),
+					new GameItem(3485))
 	);
 		
 		items.put(Rarity.RARE,
 				Arrays.asList(
-						new GameItem(20997),
-						new GameItem(1038),
-						new GameItem(1040),
-						new GameItem(1042),
-						new GameItem(1044),
-						new GameItem(1046),
-						new GameItem(1048),
-						new GameItem(11862),
-						new GameItem(11863),
-						new GameItem(12399),
-						new GameItem(20784),
-						new GameItem(12817),
-						new GameItem(13343),
-						new GameItem(13344),
-						new GameItem(11847),
-						new GameItem(11863),
-						new GameItem(5521),
-						new GameItem(9104),
-						new GameItem(1053),
-						new GameItem(1055),
-						new GameItem(1057),
-						new GameItem(1050),
-						new GameItem(9959, 1)));
+
+						new GameItem(3486),
+						new GameItem(3488),
+						new GameItem(26272),
+						new GameItem(26273),
+						new GameItem(20000),
+						new GameItem(12785),
+						new GameItem(23330),
+						new GameItem(23332),
+						new GameItem(23334),
+						new GameItem(23188),
+						new GameItem(23191),
+						new GameItem(23194),
+						new GameItem(23197),
+						new GameItem(23200),
+						new GameItem(23203)));
 	}
 
 	/**
@@ -148,14 +98,14 @@ public class UltraMysteryBox {
 	 * 
 	 * @param player the player
 	 */
-	public UltraMysteryBox(Player player) {
+	public CommonMysteryBox(Player player) {
 		this.player = player;
 	}
 
 	/**
 	 * Can the player open the mystery box
 	 */
-	//private boolean canMysteryBox = true;
+	private boolean canMysteryBox = true;
 	
 	/**
 	 * The prize received
@@ -208,7 +158,7 @@ public class UltraMysteryBox {
 	
 	public void spin() {
 		// Server side checks for spin
-		if (!player.canMysteryBox) {
+		if (!canMysteryBox) {
 			player.sendMessage("Please finish your current spin.");
 			return;
 		}
@@ -235,7 +185,7 @@ public class UltraMysteryBox {
 
 		mysteryAmount = -1;
 		// Can't spin when already in progress
-		player.canMysteryBox = false;
+		canMysteryBox = false;
 		
 		random = Misc.random(100);
 		List<GameItem> itemList = random < 40 ? items.get(Rarity.COMMON) : random >= 40 && random <= 95 ? items.get(Rarity.UNCOMMON) : items.get(Rarity.RARE);
@@ -280,7 +230,7 @@ public class UltraMysteryBox {
 		String tier = rewardRarity.getColor();
 		
 		// Reward message
-		String name = ItemDefinition.forId(mysteryPrize).getName();
+		String name = ItemCacheDefinition.forID(mysteryPrize).getName();
 		if (name.substring(name.length() - 1).equals("s")) {
 			player.sendMessage("Congratulations, you have won " + tier + name + "@bla@!");
 		}
@@ -289,12 +239,12 @@ public class UltraMysteryBox {
 		}
 		
 		if (random > 95) {
-			PlayerHandler.executeGlobalMessage("[<col=CC0000>Ultra</col>] <col=255>" + Misc.formatPlayerName(player.playerName)
+			PlayerHandler.executeGlobalMessage("[<col=CC0000>Common</col>] <col=255>" + Misc.formatPlayerName(player.playerName)
 					+ "</col> hit the jackpot and got a <col=CC0000>"+name+"</col> !");
 		}
 		
 		// Can now spin again
-		player.canMysteryBox = true;
+		canMysteryBox = true;
 	}
 	
 	public void sendItem(int i, int prizeSlot, int PRIZE_ID, int NOT_PRIZE_ID, int amount) {
@@ -315,7 +265,7 @@ public class UltraMysteryBox {
 		}
 		spinNum = 0;
 		// Open
-		player.getPA().sendString("Ultra Mystery Box", 47002);
+		player.getPA().sendString("Common Mystery Box", 47002);
 		player.getPA().showInterface(INTERFACE_ID);
 	}
 

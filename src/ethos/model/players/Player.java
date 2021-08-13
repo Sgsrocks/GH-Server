@@ -12,8 +12,10 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.TimeUnit;
 
 import ethos.model.content.*;
+import ethos.model.content.MysteryBoxs.*;
 import ethos.model.content.n_tp.TeleportInterface;
 import ethos.model.content.traveling.DesertHeat;
+import ethos.model.minigames.Partyhat;
 import ethos.model.players.combat.monsterhunt.MonsterHunt;
 import ethos.model.players.skills.agility.impl.rooftop.*;
 import ethos.model.players.skills.farming.ToolLeprechaun;
@@ -24,7 +26,6 @@ import org.jboss.netty.channel.Channel;
 import ethos.Config;
 import ethos.PlayersOnline;
 import ethos.Server;
-import ethos.Highscores.*;
 import ethos.event.CycleEventHandler;
 import ethos.event.Event;
 import ethos.event.impl.IronmanRevertEvent;
@@ -178,11 +179,23 @@ public class Player extends Entity {
 	public boolean randomEventsEnabled = true;
 	public boolean chickenSpawned;
 	public boolean hasSandwhichLady;
-	private ToolLeprechaun toolLeprechaun;
+    public int JDemonkills;
+	public int Demonkills;
+	public int Generalkills;
+	public int Druidkills;
+	public int Ghostkills;
+	public int Giantkills;
+    public boolean doinguri = false;
+
+    private ToolLeprechaun toolLeprechaun;
 
 	public MageArena getMageArena() {
 		return this.mageArena;
 	}
+	public Partyhat getPartyHat() {
+		return partyhat;
+	}
+	private Partyhat partyhat = new Partyhat();
     public int getRegionID() {
         return ((getLocalX() << 8) + getLocalY());
     }
@@ -347,7 +360,7 @@ public class Player extends Entity {
 	private PrestigeSkills prestigeskills = new PrestigeSkills(this);
 	private LootingBag lootingBag = new LootingBag(this);
 	private SafeBox safeBox = new SafeBox(this);
-
+	private DrCapeMysteryBox drcapemysteryBox = new DrCapeMysteryBox(this);
 	public RechargeItems getRechargeItems() {
 		return rechargeItems;
 	}
@@ -357,7 +370,26 @@ public class Player extends Entity {
 	public UltraMysteryBox getUltraMysteryBox() {
 		return ultraMysteryBox;
 	}
+	private UncommonMysteryBox uncommonMysteryBox = new UncommonMysteryBox(this);
 
+	public UncommonMysteryBox getUncommonMysteryBox() {
+		return uncommonMysteryBox;
+	}
+	private CommonMysteryBox commonMysteryBox = new CommonMysteryBox(this);
+
+	public CommonMysteryBox getCommonMysteryBox() {
+		return commonMysteryBox;
+	}
+	private RareMysteryBox rareMysteryBox = new RareMysteryBox(this);
+
+	public RareMysteryBox getRareMysteryBox() {
+		return rareMysteryBox;
+	}
+	private SuperRareMysteryBox superrareMysteryBox = new SuperRareMysteryBox(this);
+
+	public SuperRareMysteryBox getSuperRareMysteryBox() {
+		return superrareMysteryBox;
+	}
 	public TeleportType teleportType;
 	public int teleSelected = 0;
 	public int teleTabSelected = 0;
@@ -1221,7 +1253,7 @@ public class Player extends Entity {
 			 * Welcome messages
 			 */
 			sendMessage("Welcome to " + Config.SERVER_NAME + ".");
-			sendMessage("@dre@Update: Galvek, Rune Dragons, and Various Bug Fixes!");
+			sendMessage("@dre@Update: Added the partyhat mini game! do ::partyhat to try it.");
 			sendMessage("@dre@Check out the new content!");
 			if (getSlayer().superiorSpawned) {
 				getSlayer().superiorSpawned = false;
@@ -2733,7 +2765,9 @@ public class Player extends Entity {
 	public MysteryBox getMysteryBox() {
 		return mysteryBox;
 	}
-
+	public DrCapeMysteryBox getDrCapeMysteryBox() {
+		return drcapemysteryBox;
+	}
 	public HourlyRewardBox getHourlyRewardBox() {
 		return hourlyRewardBox;
 	}

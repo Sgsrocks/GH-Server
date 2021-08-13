@@ -317,6 +317,42 @@ public class ItemOptionOne implements PacketType {
                  
              }
                 break;
+            case 26826:
+                if (c.getItems().playerHasItem(26826)) {
+                    c.getUltraMysteryBox().openInterface();
+                    return;
+                }
+                break;
+            case 27326:
+                if(c.getItems().playerHasItem(27326)){
+                    c.getDrCapeMysteryBox().openInterface();
+                    return;
+                }
+                break;
+            case 26822:
+                if (c.getItems().playerHasItem(26822)) {
+                    c.getUncommonMysteryBox().openInterface();
+                    return;
+                }
+                break;
+            case 26823:
+                if (c.getItems().playerHasItem(26823)) {
+                    c.getCommonMysteryBox().openInterface();
+                    return;
+                }
+                break;
+            case 26824:
+                if (c.getItems().playerHasItem(26824)) {
+                    c.getRareMysteryBox().openInterface();
+                    return;
+                }
+                break;
+            case 26825:
+                if (c.getItems().playerHasItem(26825)) {
+                    c.getSuperRareMysteryBox().openInterface();
+                    return;
+                }
+                break;
         }
 
         if (itemId == 2678) {
@@ -508,7 +544,7 @@ public class ItemOptionOne implements PacketType {
 		/* Mystery box */
         if (itemId == 6199)
             if (c.getItems().playerHasItem(6199)) {
-                c.getMysteryBox().open();
+                c.getMysteryBox().openInterface();
                 return;
             }
         if (itemId == 11739)
@@ -516,6 +552,7 @@ public class ItemOptionOne implements PacketType {
                 c.getHourlyRewardBox().open();
                 return;
             }
+
         if (itemId == 405) //Pvm Casket
             if (c.getItems().playerHasItem(405)) {
                 c.getPvmCasket().open();

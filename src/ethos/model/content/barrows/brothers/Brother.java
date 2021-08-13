@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import ethos.Server;
 import ethos.model.content.barrows.BrotherEvent;
 import ethos.model.content.barrows.RewardItem;
+import ethos.model.content.dialogue.impl.BarrowsDialogue;
 import ethos.model.npcs.NPC;
 import ethos.model.players.Boundary;
 import ethos.model.players.Coordinate;
@@ -34,7 +35,7 @@ public abstract class Brother {
 
 	public void handleSpawn() {
 		if (finalBrother) {
-			player.getDH().sendDialogues(2900, 2026);
+			player.start(new BarrowsDialogue());
 		} else {
 			spawnBrother();
 		}

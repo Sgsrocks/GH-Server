@@ -15,7 +15,7 @@ import ethos.model.players.PlayerHandler;
 import ethos.model.players.skills.SkillHandler;
 import ethos.model.players.skills.cooking.Cooking;
 import ethos.util.Misc;
-import ethos.model.content.UltraMysteryBox;;
+;
 
 /**
  * Walking packet
@@ -36,7 +36,9 @@ public class Walking implements PacketType {
 			c.sendMessage("You cannot walk until your roll has finished.");
 			return;
 		}
-		
+		if(c.doinguri){
+			return;
+		}
 		if (!c.inWild() && c.teleBlockLength > 0) {
 			c.getPA().resetTb();
 		}

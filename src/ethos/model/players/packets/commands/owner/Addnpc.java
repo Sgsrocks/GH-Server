@@ -19,7 +19,7 @@ public class Addnpc extends Command {
 		int newNPC = Integer.parseInt(input);
 		if (newNPC > 0) {
 			
-			//Server.npcHandler.addNPC(newNPC, c.absX, c.absY, c.heightLevel, 0, NPCDefinitions.get(newNPC).getNpcHealth(), NPCStats.npcStats[newNPC][0], NPCStats.npcStats[newNPC][1], NPCStats.npcStats[newNPC][2]);
+			Server.npcHandler.addNPC(newNPC, c.absX, c.absY, c.heightLevel, 0, NPCDefinitions.get(newNPC).getNpcHealth(), NPCStats.npcStats[newNPC][0], NPCStats.npcStats[newNPC][1], NPCStats.npcStats[newNPC][2]);
 			c.sendMessage("You added a Npc.");
 		} else {
 			c.sendMessage("No such NPC.");

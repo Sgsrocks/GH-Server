@@ -1,5 +1,6 @@
 package ethos.model.npcs.animations;
 
+import ethos.definitions.NPCCacheDefinition;
 import ethos.model.minigames.warriors_guild.AnimatedArmour;
 import ethos.model.npcs.NPCHandler;
 import ethos.model.npcs.bosses.skotizo.Skotizo;
@@ -11,6 +12,12 @@ public class DeathAnimation extends NPCHandler {
 	public static int handleEmote(int i) {
 		if (AnimatedArmour.isAnimatedArmourNpc(npcs[i].npcType)) {
 			return 836;
+		}
+		switch(NPCCacheDefinition.forID(NPCHandler.npcs[i].npcType).getName().toLowerCase()) {
+			case "ghost":
+				return 5534;
+			case "undead druid":
+				return 5569;
 		}
 		switch (npcs[i].npcType) {
 			                                                                         //Inferno Npcs

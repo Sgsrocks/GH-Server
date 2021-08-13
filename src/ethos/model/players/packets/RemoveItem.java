@@ -46,8 +46,30 @@ public class RemoveItem implements PacketType {
 		switch (interfaceId) {
 			case 41609:
 				switch(c.boxCurrentlyUsing) {
-					case 13346: //ultra rare
+					case 26826: //ultra rare
 						c.getUltraMysteryBox().reward();
+						break;
+					case 26822:
+						c.getUncommonMysteryBox().reward();
+						break;
+
+					case 26964:
+						//c.getRareKey().reward();
+						break;
+					case 27326:
+						c.getDrCapeMysteryBox().reward();
+						break;
+					case 26823:
+						c.getCommonMysteryBox().reward();
+						break;
+					case 26824:
+						c.getRareMysteryBox().reward();
+						break;
+					case 26825:
+						c.getSuperRareMysteryBox().reward();
+						break;
+					case 6199:
+						c.getMysteryBox().reward();
 						break;
 				}
 				break;

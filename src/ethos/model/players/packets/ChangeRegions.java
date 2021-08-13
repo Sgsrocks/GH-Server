@@ -17,7 +17,7 @@ public class ChangeRegions implements PacketType {
 	public void processPacket(Player c, int packetType, int packetSize) {
 		Server.itemHandler.reloadItems(c);
 		Server.objectHandler.updateObjects(c);//testing
-		//Doors.getSingleton().load();
+		Doors.getSingleton().load();
 		DoubleDoors.getSingleton().load();
 		Server.getGlobalObjects().updateRegionObjects(c);
 		GlobalDropsHandler.reset(c);

@@ -1,5 +1,6 @@
 package ethos.model.npcs.animations;
 
+import ethos.definitions.NPCCacheDefinition;
 import ethos.model.minigames.warriors_guild.AnimatedArmour;
 import ethos.model.npcs.NPCHandler;
 import ethos.model.npcs.bosses.skotizo.Skotizo;
@@ -16,6 +17,12 @@ public class AttackAnimation extends NPCHandler {
 	public static int handleEmote(int i) {
 		if (AnimatedArmour.isAnimatedArmourNpc(npcs[i].npcType)) {
 			return 412;
+		}
+		switch(NPCCacheDefinition.forID(NPCHandler.npcs[i].npcType).getName().toLowerCase()) {
+			case "ghost":
+				return 5532;
+			case "undead druid":
+				return 5567;
 		}
 		switch (NPCHandler.npcs[i].npcType) {
 			//Inferno Npcs
@@ -202,9 +209,6 @@ public class AttackAnimation extends NPCHandler {
 		case 6616:
 		case 6617:
 			return 6254;
-		case 1277:
-		case 2527: // Ghosts
-			return 5540;
 		case 2528:
 		case 2529:
 		case 2530:

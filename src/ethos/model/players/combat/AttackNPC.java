@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+import ethos.definitions.NPCCacheDefinition;
 import org.apache.commons.lang3.RandomUtils;
 
 import ethos.Config;
@@ -1126,7 +1127,7 @@ public class AttackNPC {
 			return;
 		}
 		NPC npc = NPCHandler.npcs[i];
-		Optional<Task> task = SlayerMaster.get(npc.getName().replaceAll("_", " "));
+		Optional<Task> task = SlayerMaster.get(NPCCacheDefinition.forID(npc.npcType).getName().replaceAll("_", " "));
 		if (task.isPresent()) {
 			int level = task.get().getLevel();
 			if (c.playerLevel[Skill.SLAYER.getId()] < task.get().getLevel()) {

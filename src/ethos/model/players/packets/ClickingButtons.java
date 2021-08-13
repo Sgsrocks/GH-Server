@@ -582,8 +582,29 @@ public class ClickingButtons implements PacketType {
 			break;
 			case 183156:
 				switch(c.boxCurrentlyUsing) {
-					case 13346: //ultra rare
+					case 26826: //ultra rare
 						c.getUltraMysteryBox().spin();
+						break;
+					case 27326:
+						c.getDrCapeMysteryBox().spin();
+						break;
+					case 26822:
+						c.getUncommonMysteryBox().spin();
+						break;
+					case 26823:
+						c.getCommonMysteryBox().spin();
+						break;
+					case 26824:
+						c.getRareMysteryBox().spin();
+						break;
+					case 26825:
+						c.getSuperRareMysteryBox().spin();
+						break;
+					case 26964:
+					//	c.getRareKey().spin();
+						break;
+					case 6199:
+						c.getMysteryBox().spin();
 						break;
 				}
 				break;

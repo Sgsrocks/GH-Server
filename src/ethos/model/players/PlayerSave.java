@@ -387,6 +387,18 @@ public class PlayerSave {
 						p.didYouKnow = Boolean.parseBoolean(token2);
 					} else if (token.equals("raidPoints")) {
 						p.setRaidPoints(Integer.parseInt(token2));
+					} else if(token.equals("JDemonkills")) {
+						p.JDemonkills = Integer.parseInt(token2);
+					} else if(token.equals("Demonkills")) {
+						p.Demonkills = Integer.parseInt(token2);
+					} else if(token.equals("Generalkills")) {
+						p.Generalkills = Integer.parseInt(token2);
+					} else if(token.equals("Druidkills")) {
+						p.Druidkills = Integer.parseInt(token2);
+					} else if(token.equals("Ghostkills")) {
+						p.Ghostkills = Integer.parseInt(token2);
+					} else if(token.equals("Giantkills")) {
+						p.Giantkills = Integer.parseInt(token2);
 					} else if (token.equals("maRound")) {
 						p.maRound = (Integer.parseInt(token2));
 					} else if (token.equals("raidCount")) {
@@ -1413,6 +1425,18 @@ public class PlayerSave {
 			characterfile.write("lootvalue = " + p.lootValue);
 			characterfile.newLine();
 			characterfile.write("raidPoints = " + p.getRaidPoints());
+			characterfile.newLine();
+			characterfile.write("JDemonkills = " + p.JDemonkills);
+			characterfile.newLine();
+			characterfile.write("Demonkills = " + p.Demonkills);
+			characterfile.newLine();
+			characterfile.write("Generalkills = " + p.Generalkills);
+			characterfile.newLine();
+			characterfile.write("Druidkills = " + p.Druidkills);
+			characterfile.newLine();
+			characterfile.write("Ghostkills = " + p.Ghostkills);
+			characterfile.newLine();
+			characterfile.write("Giantkills = " + p.Giantkills);
 			characterfile.newLine();
 			characterfile.write("trivia-points = " + p.getTriviaPoints());
 			characterfile.newLine();

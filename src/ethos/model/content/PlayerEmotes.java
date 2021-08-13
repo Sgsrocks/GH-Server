@@ -5,6 +5,9 @@ import java.util.Map;
 import java.util.Objects;
 
 import ethos.Server;
+import ethos.event.CycleEvent;
+import ethos.event.CycleEventContainer;
+import ethos.event.CycleEventHandler;
 import ethos.model.content.achievement_diary.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
 import ethos.model.content.achievement_diary.varrock.VarrockDiaryEntry;
 import ethos.model.items.GameItem;
@@ -12,6 +15,7 @@ import ethos.model.multiplayer_session.MultiplayerSessionFinalizeType;
 import ethos.model.multiplayer_session.MultiplayerSessionStage;
 import ethos.model.multiplayer_session.MultiplayerSessionType;
 import ethos.model.multiplayer_session.duel.DuelSession;
+import ethos.model.npcs.NPCHandler;
 import ethos.model.players.Boundary;
 import ethos.model.players.Player;
 import ethos.util.Misc;
@@ -98,6 +102,10 @@ public class PlayerEmotes {
 		STOMP(150221,  1745, -1),
 		IDEA(150220,  4276, 712),
 		ZOMBIE_HAND(150224, 1708, 320),
+		SMOOTH_DANCE(151014, 7533 , -1),
+		CRAZY_DANCE(151015, -1, -1),
+		AIR_GUITAR(151012, 4751, 1239),
+		URI_TRANSFORM(151013, -1, -1),
 		PREMIER_SHEILD(151016, 7751, -1);
 		
 		private int button;
@@ -134,7 +142,7 @@ public class PlayerEmotes {
 			if (animation.getButton() == button) {
 				if (System.currentTimeMillis() - player.lastPerformedEmote < 3500)
 					return;			
-				if (animation.getButton() == 166) {
+				if (animation.getButton() == 150192) {
 					if (Boundary.isIn(player, Boundary.VARROCK_BOUNDARY)) {
 						player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.BECOME_A_DANCER);
 					}
@@ -143,9 +151,68 @@ public class PlayerEmotes {
 						return;
 					}
 				}
-				player.startAnimation(animation.getAnimation());
+				if(animation.getButton() == 151013){
+					CycleEventHandler.getSingleton().addEvent(player, new CycleEvent() {
+						int time = 0;
+						@Override
+						public void execute(CycleEventContainer container) {
+
+							if(time == 1){
+								player.doinguri = true;
+								player.gfx100(86);
+								player.npcId2 = 7313;
+								player.isNpc = true;
+								player.updateRequired = true;
+								player.appearanceUpdateRequired = true;
+							}
+							if(time == 3){
+								player.startAnimation(7278);
+								player.gfx0(1306);
+							}
+							if(time == 12){
+								player.startAnimation(4069);
+							}
+							if(time == 14){
+								player.startAnimation(4731);
+								player.gfx0(678);
+							}
+							if(time == 15){
+								player.isNpc = false;
+								player.updateRequired = true;
+								player.appearanceUpdateRequired = true;
+								player.gfx100(86);
+								player.stopAnimation();
+								player.getPA().requestUpdates();
+							}
+							if (player == null || time >= 15) {
+								if(player.doinguri) {
+									container.stop();
+									return;
+								}
+							}
+							if (time >= 0) {
+								time++;
+							}
+						}
+
+						@Override
+						public void stop() {
+							player.doinguri = false;
+						}
+					}, 1);
+				}
+				if(animation.getButton() == 151015){
+					int random = Misc.random(1);
+					if(random == 0) {
+						player.startAnimation(7536);
+					} else if(random == 1) {
+						player.startAnimation(7537);
+					}
+				}else {
+					player.startAnimation(animation.getAnimation());
+				}
 				if(animation.getButton() == 151016){
-					int random = Misc.random(3);
+					int random = Misc.random(2);
 					if(random == 0) {
 						player.gfx0(1412);
 					} else if(random == 1) {

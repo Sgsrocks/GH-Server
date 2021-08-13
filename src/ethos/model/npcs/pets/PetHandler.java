@@ -360,6 +360,12 @@ public class PetHandler {
                 8337,
                 "",
                 -1,
+                "second"),
+        SRARACHA(
+                23495,
+                2143,
+                "",
+                -1,
                 "second");
 
         private final int itemId;

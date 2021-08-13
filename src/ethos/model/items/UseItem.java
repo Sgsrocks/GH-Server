@@ -133,6 +133,14 @@ public class UseItem {
 		}
 
 		switch (objectID) {
+			case 29878://Geyser in raids used to fill up vials
+				if (itemId == 20800) {
+					//int amount = c.getItems().getItemAmount(20800);
+					c.getItems().deleteItem(20800, 1);
+					c.getItems().addItem(20801, 1);
+					c.sendMessage("@red@You carefully fill the Empty Gourd vial with water from the Geyser.");
+				}
+				break;
 			case 10082:
 			case 16469:
 			case 2030: //Allows for ores to be used on the furnace instead of going though the interface.
@@ -180,10 +188,7 @@ public class UseItem {
 				c.sendMessage("@cr10@Attempting to remove object..");
 			}
 			break;
-		
-		case 29878:
-			WellOfGoodWillObject.handleInteraction(c, itemId);
-			break;
+
 		
 		case 27029:
 			if (itemId == 13273) {

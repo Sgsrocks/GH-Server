@@ -230,7 +230,7 @@ public class Boundary {
 	public static final Boundary SAFEPKMULTI = new Boundary(3090, 3525, 3109, 3536);
 	
 	public static final Boundary SAFEPKSAFE = new Boundary(3068, 3516, 3109, 3536);
-	
+    public static final Boundary partyhatmini = new Boundary(1216, 9022, 1343, 9214);
 	public static final Boundary SAFEPK = new Boundary(3068, 3525, 3109, 3536);
 	/**
 	 * Raids bosses

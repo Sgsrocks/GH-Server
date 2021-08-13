@@ -167,7 +167,7 @@ public class Item {
 	 * Headgear that covers your head but not your face.
 	 */
 	private static String[] fullhat = { "splitbark helm", "mystic", "black mask", "highwayman mask", "mime mask",
-			"facemask", "ironman helm", "grim reaper", "imp mask", "mage hat", "med helm", "coif",
+			"facemask", "faceguard", "ironman helm", "grim reaper", "imp mask", "mage hat", "med helm", "coif",
 			"Dharok's helm", "hood", "Initiate helm", "Coif", "Helm of neitiznot", "Armadyl helmet", "Berserker helm",
 			"Archer helm", "Farseer helm", "Warrior helm", "Void", "reindeer", "cowl", "Void ranger helm",
 			"Blacksmith's_helm", "black mask", "kandarin headgear", "Robin hood hat",
@@ -388,7 +388,7 @@ public class Item {
 				"cavalier", "full helm", "tiara", "helmet", "Hat", "ears",
 				"partyhat", "helm(t)", "helm(g)", "beret", "facemask",
 				"sallet", "hat(g)", "hat(t)", "bandana", "Helm", "mitre",
-				"Mitre", "afro", "skull", "Crown", "Royal crown" ,"Star-face", "Giant boot", "Headless head", "prospector helmet"};
+				"Mitre", "afro", "faceguard","skull", "Crown", "Royal crown" ,"Star-face", "Giant boot", "Headless head", "prospector helmet"};
 		String item = getItemName(itemId);
 		if (item == null) {
 			return false;

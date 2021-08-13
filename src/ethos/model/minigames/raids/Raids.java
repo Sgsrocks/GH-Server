@@ -2,11 +2,14 @@ package ethos.model.minigames.raids;
 
 import ethos.Server;
 import ethos.clip.doors.Location;
+import ethos.model.content.achievement.AchievementType;
+import ethos.model.content.achievement.Achievements;
 import ethos.model.items.Item;
 import ethos.model.items.ItemDefinition;
 import ethos.model.npcs.NPCDef;
 import ethos.model.npcs.NPCDefinitions;
 import ethos.model.npcs.NPCHandler;
+import ethos.model.players.Boundary;
 import ethos.model.players.Player;
 import ethos.model.players.PlayerHandler;
 import ethos.util.Misc;
@@ -75,6 +78,7 @@ public class Raids {
 	public boolean vanguard = false;
 	public boolean ice = false;
 	public boolean chest = false;
+	public boolean skilling = false;
 	public boolean mystic = false;
 	public boolean tekton = false;
 	public boolean mutta = false;
@@ -83,6 +87,54 @@ public class Raids {
 	public boolean olmDead = false;
 	public boolean rightHand = false;
 	public boolean leftHand = false;
+	public int activeBraziers;
+	public boolean brazier1 = false;
+	public boolean brazier2 = false;
+	public boolean brazier3 = false;
+	public boolean brazier4 = false;
+
+	/**
+	 *Handles special attacks of Ice Demon and Olm (Acid pool and Ice Storm)
+	 * @return
+	 */
+	public boolean isInAcid() {
+		return Server.getGlobalObjects().get(30032, player.getX(), player.getY(), player.getHeight()) != null;
+	}
+
+	public boolean isInStorm() {
+		return Server.getGlobalObjects().get(29876, player.getX(), player.getY(), player.getHeight()) != null;
+	}
+
+	public void createStorm() {
+		GlobalObject object = new GlobalObject(29876, player.getX(), player.getY(), player.getHeight(), 3, 10, 50, -1);
+		Server.getGlobalObjects().add(object);
+	}
+
+	public void createAcidPool() {
+		GlobalObject object = new GlobalObject(30032, player.getX(), player.getY(), player.getHeight(), 3, 10, 50, -1);
+		Server.getGlobalObjects().add(object);
+	}
+
+	/**
+	 * Braziers
+	 * @param value
+	 */
+	public void lightBrazier1(boolean value) {
+		this.brazier1 = value;
+	}
+	public void lightBrazier2(boolean value) {
+		this.brazier2 = value;
+	}
+	public void lightBrazier3(boolean value) {
+		this.brazier3 = value;
+	}
+	public void lightBrazier4(boolean value) {
+		this.brazier4 = value;
+	}
+
+	public boolean isBraziersLit() {
+		return brazier1 && brazier2 && brazier3 && brazier4 && brazier4;
+	}
 
 	/**
 	 * The door location of the current paths
@@ -179,6 +231,7 @@ public class Raids {
 		//SCAVENGER_ROOM_2("scavenger",1,new Location(3343,5217,1)),
 		//ARCHERS_AND_MAGERS("archer",1,0,new Location(3309,5340,1)),
 		MUTTADILE("muttadile",1,0,new Location(3311,5309,1)),
+		//SKILLING("skilling",1,0,new Location(3311,5442)),
 		TEKTON("tekton",1,0,new Location(3310,5277,1)),
 		ENERGY_ROOM("energy",1,0,new Location(3275,5159)),
 		OLM_ROOM_WAIT("olm_wait",1,0,new Location(3232,5721)),
@@ -188,6 +241,7 @@ public class Raids {
 		MUTTADILE_2("muttadile",1,1,new Location(3311,5309,1)),
 		VASA_NISTIRIO_2("vasa",1,1,new Location(3312,5279)),
 		VANGUARDS_2("vanguard",1,1,new Location(3312,5311)),
+		//SKILLING_2("skilling",1,1,new Location(3311,5442)),
 		ICE_DEMON_2("ice",1,1,new Location(3313,5346)),
 		//ARCHERS_AND_MAGERS_2("archer",1,1,new Location(3309,5340,1)),
 		CHEST_ROOM_2("chest",1,1,new Location(3311,5374)),
@@ -250,6 +304,39 @@ public class Raids {
 		player.getPA().sendFrame126("Total: @whi@"+groupPoints,17502);
 		player.getPA().sendFrame126(player.playerName+": @whi@"+raidPoints,17503);
 	}
+
+	public static void lightBrazer(Player player, int id, int objX, int objY) {
+		Player raidLeader = player.getRaids().raidLeader;
+
+		if (raidLeader == null) {
+			return;
+		}
+
+		if (!player.getItems().playerHasItem(20799, 1)) {
+			player.sendMessage("You need some kindling to light this brazier!");
+			return;
+		}
+
+		int height = raidLeader.getIndex()*4;
+
+		Server.getGlobalObjects().replace(
+				new GlobalObject(29747, objX, objY, height, 0, 10, 200, -1),
+				new GlobalObject(29748, objX, objY, height, 0, 10, 200, 29747));
+
+		player.getItems().deleteItem(20799, 1);
+
+		if (objX == 3307 && objY == 5368)
+			raidLeader.getRaids().lightBrazier1(true);
+		if (objX == 3309 && objY == 5365)
+			raidLeader.getRaids().lightBrazier2(true);
+		if (objX == 3312 && objY == 5365)
+			raidLeader.getRaids().lightBrazier3(true);
+		if (objX == 3314 && objY == 5368)
+			raidLeader.getRaids().lightBrazier4(true);
+
+		raidLeader.sendMessage("Someone has lit one of the braziers!");
+	}
+
 	/**
 	 * Kill all spawns for the raid leader if left
 	 * @param player
@@ -257,6 +344,7 @@ public class Raids {
 	public void killAllSpawns(Player player) {
 		NPCHandler.kill(394, player.getRaids().getHeight(player.getRaids().raidLeader)); // banker
 		NPCHandler.kill(3341, player.getRaids().getHeight(player.getRaids().raidLeader)); //healer
+		NPCHandler.kill(3258, player.getRaids().getHeight(player.getRaids().raidLeader)); // master farmer
 		NPCHandler.kill(7563, player.getRaids().getHeight(player.getRaids().raidLeader));
 		NPCHandler.kill(7566, player.getRaids().getHeight(player.getRaids().raidLeader));
 		NPCHandler.kill(7585, player.getRaids().getHeight(player.getRaids().raidLeader));
@@ -294,8 +382,9 @@ public class Raids {
 		player.sendMessage("@red@You have left the Chambers of Xeric.");
 		player.getPA().movePlayer(1245, 3561, 0);
 		killAllSpawns(player);
-		roomNames=null;
-		roomPaths=null;
+		roomNames = new ArrayList<String>();
+		roomPaths= new ArrayList<Location>();
+		activeBraziers = 0;
 		currentRoom = 0;
 		mobAmount=0;
 		reachedRoom = 0;
@@ -305,6 +394,7 @@ public class Raids {
 		vanguard = false;
 		ice = false;
 		chest = false;
+		skilling = false;
 		mystic = false;
 		tekton = false;
 		mutta = false;
@@ -336,6 +426,7 @@ public class Raids {
 			return;
 		}
 
+		activeBraziers = 0;
 		raidLeader=player;
 		int path1 = 1;
 		int way1=Misc.random(1);
@@ -379,6 +470,30 @@ public class Raids {
 			giveRareReward();
 		}else {
 			giveCommonReward();
+		}
+		if (player.raidCount == 24) {
+			player.getItems().addItemUnderAnyCircumstance(22388, 1);
+			player.getItems().addItemUnderAnyCircumstance(22380, 1);
+		}
+		if (player.raidCount == 49) {
+			player.getItems().addItemUnderAnyCircumstance(22390, 1);
+		}
+		if (player.raidCount == 74) {
+			player.getItems().addItemUnderAnyCircumstance(22392, 1);
+			player.getItems().addItemUnderAnyCircumstance(22384, 1);
+		}
+		if (player.raidCount == 99) {
+			player.getItems().addItemUnderAnyCircumstance(22394, 1);
+		}
+		if (player.raidCount == 149) {
+			player.getItems().addItemUnderAnyCircumstance(22396, 1);
+			player.getItems().addItemUnderAnyCircumstance(22376, 1);
+		}
+		if (player.raidCount == 199) {
+			player.getItems().addItemUnderAnyCircumstance(22382, 1);
+		}
+		if (player.raidCount == 249) {
+			player.getItems().addItemUnderAnyCircumstance(22378, 1);
 		}
 	}
 
@@ -523,9 +638,9 @@ public class Raids {
 					if (!p.inRaids()) {
 						continue;
 					}
-						p.getRaids().giveReward();
-
+					p.getRaids().giveReward();
 					p.raidCount+=1;
+					//Achievements.increase(player, AchievementType.RAIDS, 1);
 					p.getPA().movePlayer(1255,3562,0);
 					p.sendMessage("@red@Congratulations you have defeated The Great Olm and completed the raid!");
 					p.sendMessage("@red@You have completed "+p.raidCount+" raids." );
@@ -535,12 +650,14 @@ public class Raids {
 					p.getRaids().currentRoom = 0;
 					p.getRaids().mobAmount=0;
 					p.getRaids().reachedRoom = 0;
+					p.getRaids().activeBraziers = 0;
 					p.getRaids().raidLeader=null;
 					p.getRaids().lizards = false;
 					p.getRaids().vasa = false;
 					p.getRaids().vanguard = false;
 					p.getRaids().ice = false;
 					p.getRaids().chest = false;
+					p.getRaids().skilling = false;
 					p.getRaids().mystic = false;
 					p.getRaids().tekton = false;
 					p.getRaids().mutta = false;
@@ -569,10 +686,10 @@ public class Raids {
 				}
 				return;
 		}
-	//	int randomPoints = Misc.random(500);
-	//	player.getRaids().addPoints(randomPoints);
-	//	player.sendMessage("@red@You receive "+randomPoints+" points from killing this monster.");
-	//	player.sendMessage("@red@You now have "+player.raidPoints+" points.");
+		//	int randomPoints = Misc.random(500);
+		//	player.getRaids().addPoints(randomPoints);
+		//	player.sendMessage("@red@You receive "+randomPoints+" points from killing this monster.");
+		//	player.sendMessage("@red@You now have "+player.raidPoints+" points.");
 		if(player.getRaids().raidLeader.getRaids().mobAmount <= 0) {
 			player.sendMessage("@red@The room has been cleared and you are free to pass.");
 		}else {
@@ -581,6 +698,7 @@ public class Raids {
 		//player.sendMessage("test");
 		player.getRaids().updateRaidPoints();
 	}
+
 	/**
 	 * Spawns npc for the current room
 	 * @param currentRoom The room
@@ -595,14 +713,47 @@ public class Raids {
 					return;
 				}
 				if(path == 0) {
-					NPCHandler.spawn(7573, 3274, 5262, height, 1, 350, 25, 300, 300,true);
-					NPCHandler.spawn(7573, 3282, 5266, height, 1, 350, 25, 300, 300,true);
-					NPCHandler.spawn(7573, 3275, 5269, height, 1, 350, 25, 300, 300,true);
+					if (player.clan.activeMembers.size() == 1)  {
+						NPCHandler.spawn(7573, 3274, 5262, height, 1, 350, 25, 300, 300,true);
+						NPCHandler.spawn(7573, 3282, 5266, height, 1, 350, 25, 300, 300,true);
+						NPCHandler.spawn(7573, 3275, 5269, height, 1, 350, 25, 300, 300,true);
+					} else if (player.clan.activeMembers.size() <= 3 ) {
+						NPCHandler.spawn(7573, 3274, 5262, height, 1, (int) (350 * 1.10), (int) (25 * 1.10), (int) (300 * 1.10), (int) (300 * 1.10),true);
+						NPCHandler.spawn(7573, 3282, 5266, height, 1, (int) (350 * 1.10), (int) (25 * 1.10), (int) (300 * 1.10), (int) (300 * 1.10),true);
+						NPCHandler.spawn(7573, 3275, 5269, height, 1, (int) (350 * 1.10), (int) (25 * 1.10), (int) (300 * 1.10), (int) (300 * 1.10),true);
+					} else if (player.clan.activeMembers.size() <= 5 ) {
+						NPCHandler.spawn(7573, 3274, 5262, height, 1, (int) (350 * 1.20), (int) (25 * 1.20), (int) (300 * 1.20), (int) (300 * 1.20),true);
+						NPCHandler.spawn(7573, 3282, 5266, height, 1, (int) (350 * 1.20), (int) (25 * 1.20), (int) (300 * 1.20), (int) (300 * 1.20),true);
+						NPCHandler.spawn(7573, 3275, 5269, height, 1, (int) (350 * 1.20), (int) (25 * 1.20), (int) (300 * 1.20), (int) (300 * 1.20),true);
+					} else if (player.clan.activeMembers.size() >= 6 ) {
+						NPCHandler.spawn(7573, 3274, 5262, height, 1, (int) (350 * 1.32), (int) (25 * 1.32), (int) (300 * 1.32), (int) (300 * 1.32),true);
+						NPCHandler.spawn(7573, 3282, 5266, height, 1, (int) (350 * 1.32), (int) (25 * 1.32), (int) (300 * 1.32), (int) (300 * 1.32),true);
+						NPCHandler.spawn(7573, 3275, 5269, height, 1, (int) (350 * 1.32), (int) (25 * 1.32), (int) (300 * 1.32), (int) (300 * 1.32),true);
+					}
 				}else {
-					NPCHandler.spawn(7573, 3307,5265, height, 1, 350, 25, 300, 300,true);
-					NPCHandler.spawn(7573, 3314,5265, height, 1, 350, 25, 300, 300,true);
-					NPCHandler.spawn(7573, 3314,5261, height, 1, 350, 25, 300, 300,true);
+					if (player.clan.activeMembers.size() == 1)  {
+						NPCHandler.spawn(7573, 3307, 5265, height, 1, 350, 25, 300, 300,true);
+						NPCHandler.spawn(7573, 3314,5265, height, 1, 350, 25, 300, 300,true);
+						NPCHandler.spawn(7573, 3314,5261, height, 1, 350, 25, 300, 300,true);
+					} else if (player.clan.activeMembers.size() <= 3) {
+						NPCHandler.spawn(7573, 3307,5265, height, 1, (int) (350 * 1.10), (int) (25 * 1.10), (int) (300 * 1.10), (int) (300 * 1.10),true);
+						NPCHandler.spawn(7573, 3314,5265, height, 1, (int) (350 * 1.10), (int) (25 * 1.10), (int) (300 * 1.10), (int) (300 * 1.10),true);
+						NPCHandler.spawn(7573, 3314,5261, height, 1, (int) (350 * 1.10), (int) (25 * 1.10), (int) (300 * 1.10), (int) (300 * 1.10),true);
+					} else if (player.clan.activeMembers.size() <= 5 ) {
+						NPCHandler.spawn(7573, 3307,5265, height, 1, (int) (350 * 1.20), (int) (25 * 1.20), (int) (300 * 1.20), (int) (300 * 1.20),true);
+						NPCHandler.spawn(7573, 3314,5265, height, 1, (int) (350 * 1.20), (int) (25 * 1.20), (int) (300 * 1.20), (int) (300 * 1.20),true);
+						NPCHandler.spawn(7573, 3314,5261, height, 1, (int) (350 * 1.20), (int) (25 * 1.20), (int) (300 * 1.20), (int) (300 * 1.20),true);
+					} else if (player.clan.activeMembers.size() >= 7 ) {
+						NPCHandler.spawn(7573, 3307,5265, height, 1, (int) (350 * 1.32), (int) (25 * 1.32), (int) (300 * 1.32), (int) (300 * 1.32),true);
+						NPCHandler.spawn(7573, 3314,5265, height, 1, (int) (350 * 1.32), (int) (25 * 1.32), (int) (300 * 1.32), (int) (300 * 1.32),true);
+						NPCHandler.spawn(7573, 3314,5261, height, 1, (int) (350 * 1.32), (int) (25 * 1.32), (int) (300 * 1.32), (int) (300 * 1.32),true);
+					}
+
+					//NPCHandler.spawn(7573, 3307,5265, height, 1, 350, 25, 300, 300,true);
+					//NPCHandler.spawn(7573, 3314,5265, height, 1, 350, 25, 300, 300,true);
+					//NPCHandler.spawn(7573, 3314,5261, height, 1, 350, 25, 300, 300,true);
 				}
+
 				lizards = true;
 				mobAmount+=3;
 				break;
@@ -611,10 +762,26 @@ public class Raids {
 					return;
 				}
 				if(path == 0) {
-					NPCHandler.spawn(7566, 3280,5295, height, -1, 650, 25, 250, 300,true);
-					mobAmount+=1;
+					if (player.clan.activeMembers.size() == 1)  {
+						NPCHandler.spawn(7566, 3280,5295, height, -1, 650, 25, 250, 300,true);
+					} else if (player.clan.activeMembers.size() <= 3 ) {
+						NPCHandler.spawn(7566, 3280,5295, height, -1, (int) (650 * 1.10), (int) (25 * 1.10), (int) (250 * 1.10), (int) (300 * 1.10),true);
+					} else if (player.clan.activeMembers.size() <= 5 ) {
+						NPCHandler.spawn(7566, 3280,5295, height, -1, (int) (650 * 1.20), (int) (25 * 1.20), (int) (250 * 1.20), (int) (300 * 1.20),true);
+					} else if (player.clan.activeMembers.size() >= 6 ) {
+						NPCHandler.spawn(7566, 3280,5295, height, -1, (int) (650 * 1.32), (int) (25 * 1.32), (int) (250 * 1.32), (int) (300 * 1.32),true);
+					}
 				}else {
-					NPCHandler.spawn(7566, 3311,5295, height, -1, 650, 25, 250, 300,true);
+					if (player.clan.activeMembers.size() == 1)  {
+						NPCHandler.spawn(7566, 3311,5295, height, -1, 650, 25, 250, 300,true);
+					} else if (player.clan.activeMembers.size() <= 3 ) {
+						NPCHandler.spawn(7566, 3311,5295, height, -1, (int) (650 * 1.10), (int) (25 * 1.10), (int) (250 * 1.10), (int) (300 * 1.10),true);
+					} else if (player.clan.activeMembers.size() <= 5 ) {
+						NPCHandler.spawn(7566, 3311,5295, height, -1, (int) (650 * 1.20), (int) (25 * 1.20), (int) (250 * 1.20), (int) (300 * 1.20),true);
+					} else if (player.clan.activeMembers.size() >= 6 ) {
+						NPCHandler.spawn(7566, 3311,5295, height, -1, (int) (650 * 1.32), (int) (25 * 1.32), (int) (250 * 1.32), (int) (300 * 1.32),true);
+					}
+					//NPCHandler.spawn(7566, 3311,5295, height, -1, 650, 25, 250, 300,true);
 				}
 				vasa = true;
 				mobAmount+=1;
@@ -624,13 +791,47 @@ public class Raids {
 					return;
 				}
 				if(path == 0) {
-					NPCHandler.spawn(7527, 3277,5326, height, -1, 300, 25, 140, 200,true); // melee vanguard
-					NPCHandler.spawn(7528, 3277,5332, height, -1, 300, 25, 140, 200,true); // range vanguard
-					NPCHandler.spawn(7529, 3285,5329, height, -1, 300, 25, 140, 200,true); // magic vanguard
+					if (player.clan.activeMembers.size() == 1)  {
+						NPCHandler.spawn(7527, 3277,5326, height, -1, 300, 25, 140, 200,true); // melee vanguard
+						NPCHandler.spawn(7528, 3277,5332, height, -1, 300, 25, 140, 200,true); // range vanguard
+						NPCHandler.spawn(7529, 3285,5329, height, -1, 300, 25, 140, 200,true); // magic vanguard
+					} else if (player.clan.activeMembers.size() <= 3 ) {
+						NPCHandler.spawn(7527, 3277,5326, height, -1, (int) (300 * 1.10), (int) (25 * 1.10), (int) (140 * 1.10), (int) (200 * 1.10),true); // melee vanguard
+						NPCHandler.spawn(7528, 3277,5332, height, -1, (int) (300 * 1.10), (int) (25 * 1.10), (int) (140 * 1.10), (int) (200 * 1.10),true); // melee vanguard
+						NPCHandler.spawn(7529, 3285,5329, height, -1, (int) (300 * 1.10), (int) (25 * 1.10), (int) (140 * 1.10), (int) (200 * 1.10),true); // melee vanguard
+					} else if (player.clan.activeMembers.size() <= 5 ) {
+						NPCHandler.spawn(7527, 3277,5326, height, -1, (int) (300 * 1.20), (int) (25 * 1.20), (int) (140 * 1.20), (int) (200 * 1.20),true); // melee vanguard
+						NPCHandler.spawn(7528, 3277,5332, height, -1, (int) (300 * 1.20), (int) (25 * 1.20), (int) (140 * 1.20), (int) (200 * 1.20),true); // melee vanguard
+						NPCHandler.spawn(7529, 3285,5329, height, -1, (int) (300 * 1.20), (int) (25 * 1.20), (int) (140 * 1.20), (int) (200 * 1.20),true); // melee vanguard
+					} else if (player.clan.activeMembers.size() >= 6 ) {
+						NPCHandler.spawn(7527, 3277,5326, height, -1, (int) (300 * 1.32), (int) (25 * 1.32), (int) (140 * 1.32), (int) (200 * 1.32),true); // melee vanguard
+						NPCHandler.spawn(7528, 3277,5332, height, -1, (int) (300 * 1.32), (int) (25 * 1.32), (int) (140 * 1.32), (int) (200 * 1.32),true); // melee vanguard
+						NPCHandler.spawn(7529, 3285,5329, height, -1, (int) (300 * 1.32), (int) (25 * 1.32), (int) (140 * 1.32), (int) (200 * 1.32),true); // melee vanguard
+					}
+					//NPCHandler.spawn(7527, 3277,5326, height, -1, 300, 25, 140, 200,true); // melee vanguard
+					//NPCHandler.spawn(7528, 3277,5332, height, -1, 300, 25, 140, 200,true); // range vanguard
+					//NPCHandler.spawn(7529, 3285,5329, height, -1, 300, 25, 140, 200,true); // magic vanguard
 				}else {
-					NPCHandler.spawn(7527, 3310,5324, height, -1, 300, 25, 140, 200,true); // melee vanguard
-					NPCHandler.spawn(7528, 3310,5331, height, -1, 300, 25, 140, 200,true); // range vanguard
-					NPCHandler.spawn(7529, 3316,5331, height, -1, 300, 25, 140, 200,true);// magic vanguard
+					if (player.clan.activeMembers.size() == 1)  {
+						NPCHandler.spawn(7527, 3310,5324, height, -1, 300, 25, 140, 200,true); // melee vanguard
+						NPCHandler.spawn(7528, 3310,5331, height, -1, 300, 25, 140, 200,true); // range vanguard
+						NPCHandler.spawn(7529, 3316,5331, height, -1, 300, 25, 140, 200,true); // magic vanguard
+					} else if (player.clan.activeMembers.size() <= 3 ) {
+						NPCHandler.spawn(7527, 3310,5324, height, -1, (int) (300 * 1.10), (int) (25 * 1.10), (int) (140 * 1.10), (int) (200 * 1.10),true); // melee vanguard
+						NPCHandler.spawn(7528, 3310,5331, height, -1, (int) (300 * 1.10), (int) (25 * 1.10), (int) (140 * 1.10), (int) (200 * 1.10),true); // melee vanguard
+						NPCHandler.spawn(7529, 3316,5331, height, -1, (int) (300 * 1.10), (int) (25 * 1.10), (int) (140 * 1.10), (int) (200 * 1.10),true); // melee vanguard
+					} else if (player.clan.activeMembers.size() <= 5 ) {
+						NPCHandler.spawn(7527, 3310,5324, height, -1, (int) (300 * 1.20), (int) (25 * 1.20), (int) (140 * 1.20), (int) (200 * 1.20),true); // melee vanguard
+						NPCHandler.spawn(7528, 3310,5331, height, -1, (int) (300 * 1.20), (int) (25 * 1.20), (int) (140 * 1.20), (int) (200 * 1.20),true); // melee vanguard
+						NPCHandler.spawn(7529, 3316,5331, height, -1, (int) (300 * 1.20), (int) (25 * 1.20), (int) (140 * 1.20), (int) (200 * 1.20),true); // melee vanguard
+					} else if (player.clan.activeMembers.size() >= 6 ) {
+						NPCHandler.spawn(7527, 3310,5324, height, -1, (int) (300 * 1.32), (int) (25 * 1.32), (int) (140 * 1.32), (int) (200 * 1.32),true); // melee vanguard
+						NPCHandler.spawn(7528, 3310,5331, height, -1, (int) (300 * 1.32), (int) (25 * 1.32), (int) (140 * 1.32), (int) (200 * 1.32),true); // melee vanguard
+						NPCHandler.spawn(7529, 3316,5331, height, -1, (int) (300 * 1.32), (int) (25 * 1.32), (int) (140 * 1.32), (int) (200 * 1.32),true); // melee vanguard
+					}
+					//NPCHandler.spawn(7527, 3310,5324, height, -1, 300, 25, 140, 200,true); // melee vanguard
+					//NPCHandler.spawn(7528, 3310,5331, height, -1, 300, 25, 140, 200,true); // range vanguard
+					//NPCHandler.spawn(7529, 3316,5331, height, -1, 300, 25, 140, 200,true);// magic vanguard
 				}
 				vanguard = true;
 				mobAmount+=3;
@@ -640,14 +841,36 @@ public class Raids {
 					return;
 				}
 				if(path == 0) {
-					NPCHandler.spawn(7585, 3273,5365, height, -1, 750, 45, 350, 300,true);
+					if (player.clan.activeMembers.size() == 1)  {
+						NPCHandler.spawn(7585, 3273,5365, height, -1, 750, 45, 350, 300,true);
+					} else if (player.clan.activeMembers.size() <= 3 ) {
+						NPCHandler.spawn(7585, 3273,5365, height, -1, (int)(750 * 1.10), (int)(45 * 1.10), (int)(350 * 1.10), (int)(300 * 1.10),true);
+					} else if (player.clan.activeMembers.size() <= 5 ) {
+						NPCHandler.spawn(7585, 3273,5365, height, -1, (int)(750 * 1.20), (int)(45 * 1.20), (int)(350 * 1.20), (int)(300 * 1.20),true);
+					} else if (player.clan.activeMembers.size() >= 6 ) {
+						NPCHandler.spawn(7585, 3273,5365, height, -1, (int)(750 * 1.32), (int)(45 * 1.32), (int)(350 * 1.32), (int)(300 * 1.32),true);
+					}
+					//NPCHandler.spawn(7585, 3273,5365, height, -1, 750, 45, 350, 300,true);
 				}else {
-					NPCHandler.spawn(7585, 3310,5367, height, -1, 750, 45, 350, 300,true);
+					if (player.clan.activeMembers.size() == 1)  {
+						NPCHandler.spawn(7585, 3310,5367, height, -1, 750, 45, 350, 300,true);
+					} else if (player.clan.activeMembers.size() <= 3 ) {
+						NPCHandler.spawn(7585, 3310,5367, height, -1, (int)(750 * 1.10), (int)(45 * 1.10), (int)(350 * 1.10), (int)(300 * 1.10),true);
+					} else if (player.clan.activeMembers.size() <= 5 ) {
+						NPCHandler.spawn(7585, 3310,5367, height, -1, (int)(750 * 1.20), (int)(45 * 1.20), (int)(350 * 1.20), (int)(300 * 1.20),true);
+					} else if (player.clan.activeMembers.size() >= 6 ) {
+						NPCHandler.spawn(7585, 3310,5367, height, -1, (int)(750 * 1.32), (int)(45 * 1.32), (int)(350 * 1.32), (int)(300 * 1.32),true);
+					}
+					//NPCHandler.spawn(7585, 3310,5367, height, -1, 750, 45, 350, 300,true);
 				}
 				ice = true;
 				mobAmount+=1;
 				break;
 			case "chest":
+
+				break;
+			case "skilling":
+				NPCHandler.spawn(3258, 3318,5454, height, 1, -1, -1, -1, -1,false);
 
 				break;
 			case "scavenger":
@@ -658,13 +881,47 @@ public class Raids {
 					return;
 				}
 				if(path == 0) {
-					NPCHandler.spawn(7604, 3279,5271, height+1, -1, 250, 25, 400, 250,true);
-					NPCHandler.spawn(7605, 3290,5268, height+1, -1, 250, 25, 500, 250,true);
-					NPCHandler.spawn(7606, 3279,5264, height+1, -1, 250, 25, 400, 250,true);
+					if (player.clan.activeMembers.size() == 1)  {
+						NPCHandler.spawn(7604, 3279,5271, height+1, -1, 250, 25, 400, 250,true);
+						NPCHandler.spawn(7605, 3290,5268, height+1, -1, 250, 25, 500, 250,true);
+						NPCHandler.spawn(7606, 3279,5264, height+1, -1, 250, 25, 400, 250,true);
+					} else if (player.clan.activeMembers.size() <= 3 ) {
+						NPCHandler.spawn(7604, 3279,5271, height+1, -1, (int)(250 * 1.05), (int) (25 * 1.05), (int) (400 * 1.05), (int) (250 * 1.05),true);
+						NPCHandler.spawn(7605, 3290,5268, height+1, -1, (int)(250 * 1.05), (int) (25 * 1.05), (int) (400 * 1.05), (int) (250 * 1.05),true);
+						NPCHandler.spawn(7606, 3279,5264, height+1, -1, (int)(250 * 1.05), (int) (25 * 1.05), (int) (400 * 1.05), (int) (250 * 1.05),true);
+					} else if (player.clan.activeMembers.size() <= 5 ) {
+						NPCHandler.spawn(7604, 3279,5271, height+1, -1, (int)(250 * 1.10), (int) (25 * 1.10), (int) (400 * 1.10), (int) (250 * 1.10),true);
+						NPCHandler.spawn(7605, 3290,5268, height+1, -1, (int)(250 * 1.10), (int) (25 * 1.10), (int) (400 * 1.10), (int) (250 * 1.10),true);
+						NPCHandler.spawn(7606, 3279,5264, height+1, -1, (int)(250 * 1.10), (int) (25 * 1.10), (int) (400 * 1.10), (int) (250 * 1.10),true);
+					} else if (player.clan.activeMembers.size() >= 6 ) {
+						NPCHandler.spawn(7604, 3279,5271, height+1, -1, (int)(250 * 1.20), (int) (25 * 1.20), (int) (400 * 1.20), (int) (250 * 1.20),true);
+						NPCHandler.spawn(7605, 3290,5268, height+1, -1, (int)(250 * 1.20), (int) (25 * 1.20), (int) (400 * 1.20), (int) (250 * 1.20),true);
+						NPCHandler.spawn(7606, 3279,5264, height+1, -1, (int)(250 * 1.20), (int) (25 * 1.20), (int) (400 * 1.20), (int) (250 * 1.20),true);
+					}
+					//NPCHandler.spawn(7604, 3279,5271, height+1, -1, 250, 25, 400, 250,true);
+					//NPCHandler.spawn(7605, 3290,5268, height+1, -1, 250, 25, 500, 250,true);
+					//NPCHandler.spawn(7606, 3279,5264, height+1, -1, 250, 25, 400, 250,true);
 				}else {
-					NPCHandler.spawn(7604, 3318,5262,height+1, -1, 250, 25, 400, 250,true);
-					NPCHandler.spawn(7605, 3307,5258, height+1, -1, 250, 25, 500, 250,true);
-					NPCHandler.spawn(7606, 3301,5262, height+1, -1, 250, 25, 400, 250,true);
+					if (player.clan.activeMembers.size() == 1)  {
+						NPCHandler.spawn(7604, 3318,5262, height+1, -1, 250, 25, 400, 250,true);
+						NPCHandler.spawn(7605, 3307,5258, height+1, -1, 250, 25, 500, 250,true);
+						NPCHandler.spawn(7606, 3301,5262, height+1, -1, 250, 25, 400, 250,true);
+					} else if (player.clan.activeMembers.size() <= 3 ) {
+						NPCHandler.spawn(7604, 3318,5262, height+1, -1, (int)(250 * 1.05), (int) (25 * 1.05), (int) (400 * 1.05), (int) (250 * 1.05),true);
+						NPCHandler.spawn(7605, 3307,5258, height+1, -1, (int)(250 * 1.05), (int) (25 * 1.05), (int) (400 * 1.05), (int) (250 * 1.05),true);
+						NPCHandler.spawn(7606, 3301,5262, height+1, -1, (int)(250 * 1.05), (int) (25 * 1.05), (int) (400 * 1.05), (int) (250 * 1.05),true);
+					} else if (player.clan.activeMembers.size() <= 5 ) {
+						NPCHandler.spawn(7604, 3318,5262, height+1, -1, (int)(250 * 1.10), (int) (25 * 1.10), (int) (400 * 1.10), (int) (250 * 1.10),true);
+						NPCHandler.spawn(7605, 3307,5258, height+1, -1, (int)(250 * 1.10), (int) (25 * 1.10), (int) (400 * 1.10), (int) (250 * 1.10),true);
+						NPCHandler.spawn(7606, 3301,5262, height+1, -1, (int)(250 * 1.10), (int) (25 * 1.10), (int) (400 * 1.10), (int) (250 * 1.10),true);
+					} else if (player.clan.activeMembers.size() >= 6 ) {
+						NPCHandler.spawn(7604, 3318,5262, height+1, -1, (int)(250 * 1.20), (int) (25 * 1.20), (int) (400 * 1.20), (int) (250 * 1.20),true);
+						NPCHandler.spawn(7605, 3307,5258, height+1, -1, (int)(250 * 1.20), (int) (25 * 1.20), (int) (400 * 1.20), (int) (250 * 1.20),true);
+						NPCHandler.spawn(7606, 3301,5262, height+1, -1, (int)(250 * 1.20), (int) (25 * 1.20), (int) (400 * 1.20), (int) (250 * 1.20),true);
+					}
+					//NPCHandler.spawn(7604, 3318,5262,height+1, -1, 250, 25, 400, 250,true);
+					//NPCHandler.spawn(7605, 3307,5258, height+1, -1, 250, 25, 500, 250,true);
+					//NPCHandler.spawn(7606, 3301,5262, height+1, -1, 250, 25, 400, 250,true);
 				}
 				mobAmount+=3;
 				mystic = true;
@@ -674,9 +931,27 @@ public class Raids {
 					return;
 				}
 				if(path == 0) {
-					NPCHandler.spawn(7544, 3280,5295, height+1, -1, 1200, 45, 450, 300,true);
+					if (player.clan.activeMembers.size() == 1)  {
+						NPCHandler.spawn(7544, 3280,5295, height+1, -1, 1200, 45, 450, 300,true);
+					} else if (player.clan.activeMembers.size() <= 3 ) {
+						NPCHandler.spawn(7544, 3280,5295, height+1, -1, (int) (1200 * 1.05), (int) (45 * 1.05), (int) (450 * 1.05), (int) (300 * 1.05),true);
+					} else if (player.clan.activeMembers.size() <= 5 ) {
+						NPCHandler.spawn(7544, 3280,5295, height+1, -1, (int) (1200 * 1.10), (int) (45 * 1.10), (int) (450 * 1.10), (int) (300 * 1.10),true);
+					} else if (player.clan.activeMembers.size() >= 6 ) {
+						NPCHandler.spawn(7544, 3280,5295, height+1, -1, (int) (1200 * 1.20), (int) (45 * 1.20), (int) (450 * 1.20), (int) (300 * 1.20),true);
+					}
+					//NPCHandler.spawn(7544, 3280,5295, height+1, -1, 1200, 45, 450, 300,true);
 				}else {
-					NPCHandler.spawn(7544, 3310, 5293, height+1, -1, 1200, 45, 450, 300,true);
+					if (player.clan.activeMembers.size() == 1)  {
+						NPCHandler.spawn(7544, 3310, 5293, height+1, -1, 1200, 45, 450, 300,true);
+					} else if (player.clan.activeMembers.size() <= 3 ) {
+						NPCHandler.spawn(7544, 3310, 5293, height+1, -1, (int) (1200 * 1.05), (int) (45 * 1.05), (int) (450 * 1.05), (int) (300 * 1.05),true);
+					} else if (player.clan.activeMembers.size() <= 5 ) {
+						NPCHandler.spawn(7544, 3310, 5293, height+1, -1, (int) (1200 * 1.10), (int) (45 * 1.10), (int) (450 * 1.10), (int) (300 * 1.10),true);
+					} else if (player.clan.activeMembers.size() >= 6 ) {
+						NPCHandler.spawn(7544, 3310, 5293, height+1, -1, (int) (1200 * 1.20), (int) (45 * 1.20), (int) (450 * 1.20), (int) (300 * 1.20),true);
+					}
+					//NPCHandler.spawn(7544, 3310, 5293, height+1, -1, 1200, 45, 450, 300,true);
 				}
 				mobAmount+=1;
 				tekton = true;
@@ -686,9 +961,27 @@ public class Raids {
 					return;
 				}
 				if(path == 0) {
-					NPCHandler.spawn(7563, 3276,5331, height + 1, 1, 750, 25, 400, 400,true);
+					if (player.clan.activeMembers.size() == 1)  {
+						NPCHandler.spawn(7563, 3276,5331, height + 1, 1, 750, 25, 400, 400,true);
+					} else if (player.clan.activeMembers.size() <= 3 ) {
+						NPCHandler.spawn(7563, 3276,5331, height + 1, 1, (int)(750 * 1.10), (int)(25 * 1.10), (int)(400 * 1.10), (int)(400 * 1.10),true);
+					} else if (player.clan.activeMembers.size() <= 5 ) {
+						NPCHandler.spawn(7563, 3276,5331, height + 1, 1, (int)(750 * 1.20), (int)(25 * 1.20), (int)(400 * 1.20), (int)(400 * 1.20),true);
+					} else if (player.clan.activeMembers.size() >= 6 ) {
+						NPCHandler.spawn(7563, 3276,5331, height + 1, 1, (int)(750 * 1.32), (int)(25 * 1.32), (int)(400 * 1.32), (int)(400 * 1.32),true);
+					}
+					//	NPCHandler.spawn(7563, 3276,5331, height + 1, 1, 750, 25, 400, 400,true);
 				}else {
-					NPCHandler.spawn(7563, 3308,5331, height + 1, 1, 750, 25, 400, 400,true);
+					if (player.clan.activeMembers.size() == 1)  {
+						NPCHandler.spawn(7563, 3308,5331, height + 1, 1, 750, 25, 400, 400,true);
+					} else if (player.clan.activeMembers.size() <= 3 ) {
+						NPCHandler.spawn(7563, 3308,5331, height + 1, 1, (int)(750 * 1.10), (int)(25 * 1.10), (int)(400 * 1.10), (int)(400 * 1.10),true);
+					} else if (player.clan.activeMembers.size() <= 5 ) {
+						NPCHandler.spawn(7563, 3308,5331, height + 1, 1, (int)(750 * 1.20), (int)(25 * 1.20), (int)(400 * 1.20), (int)(400 * 1.20),true);
+					} else if (player.clan.activeMembers.size() >= 6 ) {
+						NPCHandler.spawn(7563, 3308,5331, height + 1, 1, (int)(750 * 1.32), (int)(25 * 1.32), (int)(400 * 1.32), (int)(400 * 1.32),true);
+					}
+					//NPCHandler.spawn(7563, 3308,5331, height + 1, 1, 750, 25, 400, 400,true);
 				}
 				mobAmount+=1;
 				mutta = true;
@@ -725,9 +1018,26 @@ public class Raids {
 				if(olm) {
 					return;
 				}
-				NPCHandler.spawn(7553, 3223, 5733, height, -1, 500, 33, 272, 272,false); // left claw
-				NPCHandler.spawn(7554, 3223, 5737, height, -1, 1600, 33, 272, 272,true); // olm head
-				NPCHandler.spawn(7555, 3223, 5742, height, -1, 500, 33, 272, 272,false); // right claw
+				if (player.clan.activeMembers.size() == 1)  {
+					NPCHandler.spawn(7553, 3223, 5733, height, -1, 500, 33, 272, 272,false); // left claw
+					NPCHandler.spawn(7554, 3223, 5737, height, -1, 1600, 33, 272, 272,true); // olm head
+					NPCHandler.spawn(7555, 3223, 5742, height, -1, 500, 33, 272, 272,false); // right claw
+				} else if (player.clan.activeMembers.size() <= 3 ) {
+					NPCHandler.spawn(7553, 3223, 5733, height, -1, (int) (500 * 1.10), (int) (33 * 1.10), (int) (272 * 1.10), (int) (272 * 1.10),false); // left claw
+					NPCHandler.spawn(7554, 3223, 5737, height, -1, (int) (1600 * 1.10), (int) (33 * 1.10), (int) (272 * 1.10), (int) (272 * 1.10),false); // olm head
+					NPCHandler.spawn(7555, 3223, 5742, height, -1, (int) (500 * 1.10), (int) (33 * 1.10), (int) (272 * 1.10), (int) (272 * 1.10),false); // right claw
+				} else if (player.clan.activeMembers.size() <= 5 ) {
+					NPCHandler.spawn(7553, 3223, 5733, height, -1, (int) (500 * 1.20), (int) (33 * 1.20), (int) (272 * 1.20), (int) (272 * 1.20),false); // left claw
+					NPCHandler.spawn(7554, 3223, 5737, height, -1, (int) (1600 * 1.20), (int) (33 * 1.20), (int) (272 * 1.20), (int) (272 * 1.20),false); // olm head
+					NPCHandler.spawn(7555, 3223, 5742, height, -1, (int) (500 * 1.20), (int) (33 * 1.20), (int) (272 * 1.20), (int) (272 * 1.20),false); // right claw
+				} else if (player.clan.activeMembers.size() >= 6 ) {
+					NPCHandler.spawn(7553, 3223, 5733, height, -1, (int) (500 * 1.30), (int) (33 * 1.30), (int) (272 * 1.30), (int) (272 * 1.30),false); // left claw
+					NPCHandler.spawn(7554, 3223, 5737, height, -1, (int) (1600 * 1.30), (int) (33 * 1.30), (int) (272 * 1.30), (int) (272 * 1.30),false); // olm head
+					NPCHandler.spawn(7555, 3223, 5742, height, -1, (int) (500 * 1.30), (int) (33 * 1.30), (int) (272 * 1.30), (int) (272 * 1.30),false); // right claw
+				}
+				//NPCHandler.spawn(7553, 3223, 5733, height, -1, 500, 33, 272, 272,false); // left claw
+				//NPCHandler.spawn(7554, 3223, 5737, height, -1, 1600, 33, 272, 272,true); // olm head
+				//NPCHandler.spawn(7555, 3223, 5742, height, -1, 500, 33, 272, 272,false); // right claw
 
 				Server.getGlobalObjects().add(new GlobalObject(29884, 3220, 5743, getHeight(player), 3, 10));
 				Server.getGlobalObjects().add(new GlobalObject(29887, 3220, 5733, getHeight(player), 3, 10));
@@ -766,21 +1076,100 @@ public class Raids {
 	 */
 	public boolean handleObjectClick(Player player, int objectId) {
 		switch(objectId) {
-			case 29789:
+			//case 29789:
 			case 29734:
 			case 29879:
 				player.getRaids().nextRoom();
+				return true;
+			case 29789:
+				if (player.objectX == 3318 && player.objectY == 5400) { // thieving room exit to Mages
+					if (!player.getItems().playerHasItem(20895, 1)) {
+						player.sendMessage("@red@You need the Vanguard Judgement book!");
+						return true;
+					}
+				}
+				if (player.objectX == 3318 && player.objectY == 5400) { // thieving room exit to Mages
+					if (player.getItems().playerHasItem(20895, 1)) {
+						player.getRaids().nextRoom();
+						player.getItems().deleteItem(20895, 1);
+						player.sendMessage("@red@You are permitted to pass through but the book vanishes..");
+					}
+					return true;
+				}
+				if (player.objectX != 3318 && player.objectY != 5400) {
+					player.getRaids().nextRoom();
+				}
 				return true;
 			case 29777:
 				player.getRaids().startRaid();
 				return true;
 			case 30066:
+				if (player.specRestore > 0) {
+					int seconds = ((int)Math.floor(player.specRestore * 0.6));
+					player.sendMessage("@red@You have to wait another " + seconds + " seconds to use the energy well.");
+					return true;
+				}
 
+				player.specRestore = 120;
+				player.specAmount = 10.0;
+				player.getItems().addSpecialBar(player.playerEquipment[player.playerWeapon]);
+				player.playerLevel[5] = player.getPA().getLevelForXP(player.playerXP[5]);
+				player.getHealth().removeAllStatuses();
+				player.getHealth().reset();
+				player.getPA().refreshSkill(5);
+				player.sendMessage("@red@You touch the energy well");
 				return true;
 
 			case 29778:
-				player.getRaids().leaveGame(player);
-				break;
+				if (!player.clan.isFounder(player.playerName)) {
+					player.getRaids().roomNames = new ArrayList<String>();
+					player.getRaids().roomPaths= new ArrayList<Location>();
+					player.getRaids().currentRoom = 0;
+					player.getRaids().mobAmount=0;
+					player.getRaids().reachedRoom = 0;
+					player.getRaids().activeBraziers = 0;
+					player.getRaids().raidLeader=null;
+					player.getPA().movePlayer(1245, 3561, 0);
+					player.sendMessage("@red@You abandon your team and leave the raid.");
+					return true;
+				}
+				if (player.clan.isFounder(player.playerName)) {
+					for (String username : player.clan.activeMembers) {
+						Player p = PlayerHandler.getPlayer(username);
+						if (p == null) {
+							continue;
+						}
+						if (Boundary.isIn(p, Boundary.RAIDS) || (Boundary.isIn(p, Boundary.OLM))) {
+							p.getPA().movePlayer(1255,3562,0);
+							p.getRaids().roomNames = new ArrayList<String>();
+							p.getRaids().roomPaths= new ArrayList<Location>();
+							p.getRaids().currentRoom = 0;
+							p.getRaids().mobAmount=0;
+							p.getRaids().reachedRoom = 0;
+							p.getRaids().activeBraziers = 0;
+							p.getRaids().raidLeader=null;
+							p.getRaids().lizards = false;
+							p.getRaids().vasa = false;
+							p.getRaids().vanguard = false;
+							p.getRaids().ice = false;
+							p.getRaids().chest = false;
+							p.getRaids().skilling = false;
+							p.getRaids().mystic = false;
+							p.getRaids().tekton = false;
+							p.getRaids().mutta = false;
+							p.getRaids().archers = false;
+							p.getRaids().olm = false;
+							p.getRaids().olmDead = false;
+							p.getRaids().rightHand = false;
+							p.getRaids().leftHand = false;
+							p.getRaids().updateRaidPoints();
+							p.sendMessage("@red@The leader of the clan has ended the raid!");
+						}
+					}
+					//	player.getRaids().leaveGame(player);
+					//player.sendMessage("@red@You have ended the raid.");
+				}
+				return true;
 
 			case 30028:
 				player.getPA().showInterface(57000);
@@ -794,12 +1183,12 @@ public class Raids {
 	public void nextRoom() {
 		//player.sendMessage("nextroom1");
 		if(player.getRaids().raidLeader.playerName != player.playerName) {
-				if (player.getRaids().currentRoom + 1 > player.getRaids().raidLeader.getRaids().reachedRoom && currentRoom != 0) {
-					if (player.getRaids().raidLeader.getRaids().mobAmount > 0 && player.getRaids().currentRoom == player.getRaids().raidLeader.getRaids().currentRoom) {
-						player.sendMessage("@red@Please defeat all the monsters before going to the next room.");
-						return;
-					}
+			if (player.getRaids().currentRoom + 1 > player.getRaids().raidLeader.getRaids().reachedRoom && currentRoom != 0) {
+				if (player.getRaids().raidLeader.getRaids().mobAmount > 0 && player.getRaids().currentRoom == player.getRaids().raidLeader.getRaids().currentRoom) {
+					player.sendMessage("@red@Please defeat all the monsters before going to the next room.");
+					return;
 				}
+			}
 
 		}else{
 			if (player.getRaids().currentRoom == player.getRaids().raidLeader.getRaids().reachedRoom) {
@@ -812,17 +1201,17 @@ public class Raids {
 
 		//player.sendMessage("nextroom2");
 		/**
-		if(player.getRaids().raidLeader.playerName != player.playerName) {
-			if(player.getRaids().currentRoom + 1 < player.getRaids().raidLeader.getRaids().reachedRoom){
-				return;
-			}
-		}
+		 if(player.getRaids().raidLeader.playerName != player.playerName) {
+		 if(player.getRaids().currentRoom + 1 < player.getRaids().raidLeader.getRaids().reachedRoom){
+		 return;
+		 }
+		 }
 
-		if(player.getRaids().raidLeader.getRaids().mobAmount > 0 && currentRoom != 0 && player.getRaids().currentRoom < player.getRaids().raidLeader.getRaids().reachedRoom) {
-			player.sendMessage("@red@Please defeat all the monsters before going to the next room.");
-			return;
-		}
-**/
+		 if(player.getRaids().raidLeader.getRaids().mobAmount > 0 && currentRoom != 0 && player.getRaids().currentRoom < player.getRaids().raidLeader.getRaids().reachedRoom) {
+		 player.sendMessage("@red@Please defeat all the monsters before going to the next room.");
+		 return;
+		 }
+		 **/
 
 
 		//player.sendMessage("nextroom3");

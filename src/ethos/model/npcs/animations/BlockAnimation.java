@@ -1,11 +1,19 @@
 package ethos.model.npcs.animations;
 
 import ethos.Server;
+import ethos.definitions.NPCCacheDefinition;
+import ethos.model.npcs.NPCHandler;
 import ethos.model.npcs.bosses.skotizo.Skotizo;
 
 public class BlockAnimation {
 
 	public static int handleEmote(int i) {
+		switch(NPCCacheDefinition.forID(NPCHandler.npcs[i].npcType).getName().toLowerCase()) {
+			case "ghost":
+				return 5535;
+			case "undead druid":
+				return 5574;
+		}
 		switch (Server.npcHandler.getNPCs()[i].npcType) {
 			//Inferno Npcs
 			case 7691:

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ethos.Server;
+import ethos.definitions.NPCCacheDefinition;
 import ethos.model.content.achievement.Achievements.Achievement;
 import ethos.model.npcs.NPC;
 import ethos.model.players.Player;
@@ -176,7 +177,7 @@ public class AchievementHandler {
     }
 
     public void kill(NPC npc) {
-        String name = Server.npcHandler.getNpcListName(npc.npcType);
+        String name = NPCCacheDefinition.forID(npc.npcType).getName();
         if (name.length() <= 0) {
             return;
         } else {
