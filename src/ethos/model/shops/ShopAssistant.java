@@ -190,6 +190,8 @@ public class ShopAssistant {
 			c.sendMessage(ItemAssistant.getItemName(removeId) + ": currently costs " + ShopValue + " tokkul" + ShopAdd);
 		} else if(c.myShopId == Config.TZHAAR_HUR_TELS_EQUIPMENT_STORE) {
 			c.sendMessage(ItemAssistant.getItemName(removeId) + ": currently costs " + ShopValue + " tokkul" + ShopAdd);
+		} else if(c.myShopId == Config.TZHAAR_HUR_ZALS_EQUIPMENT_STORE) {
+			c.sendMessage(ItemAssistant.getItemName(removeId) + ": currently costs " + ShopValue + " tokkul" + ShopAdd);
 		} else if(c.myShopId == Config.DONATOR_SHOP) {
 			c.sendMessage(ItemAssistant.getItemName(removeId) + ": currently costs " + ShopValue + " Donator Money" + ShopAdd);
 		
@@ -1312,7 +1314,7 @@ public class ShopAssistant {
 				c.sendMessage(ItemAssistant.getItemName(removeId) + ": shop will buy for " + ShopValue + " Golden Nuggets" + ShopAdd);
 			} else if (c.myShopId == 116) {
 				c.sendMessage(ItemAssistant.getItemName(removeId) + ": shop will buy for " + ((int) Math.ceil((getSpecialItemValue(removeId) * 0.60)) + " blood money"));
-			}  else if (c.myShopId == Config.TZHAAR_HUR_LEKS_ORE_AND_GEM_STORE ||  c.myShopId == Config.TZHAAR_HUR_LEKS_ORE_AND_GEM_STORE ||  c.myShopId == Config.TZHAAR_HUR_TELS_EQUIPMENT_STORE) {
+			}  else if (c.myShopId == Config.TZHAAR_HUR_LEKS_ORE_AND_GEM_STORE ||  c.myShopId == Config.TZHAAR_HUR_LEKS_ORE_AND_GEM_STORE ||  c.myShopId == Config.TZHAAR_HUR_TELS_EQUIPMENT_STORE || c.myShopId == Config.TZHAAR_HUR_ZALS_EQUIPMENT_STORE) {
 				c.sendMessage(ItemAssistant.getItemName(removeId) + ": shop will buy for " + ShopValue + " tokkul" + ShopAdd);
 			}  else if (c.myShopId == Config.DONATOR_SHOP) {
 				c.sendMessage(ItemAssistant.getItemName(removeId) + ": shop will buy for " + ShopValue + " Donator Money" + ShopAdd);
@@ -1414,6 +1416,15 @@ public class ShopAssistant {
 			c.sendMessage("You don't have enough space in your inventory.");
 			return false;
 		}
+	} else if (c.myShopId == Config.TZHAAR_HUR_ZALS_EQUIPMENT_STORE) {
+			if(c.getItems().freeSlots() > 0 || c.getItems().playerHasItem(6529, 1)) {
+				c.getItems().deleteItem2(itemID, amount);
+				c.getItems().addItem(6529, price);
+				addShopItem(itemID, amount);
+			} else {
+				c.sendMessage("You don't have enough space in your inventory.");
+				return false;
+			}
 	} else if (c.myShopId == Config.DONATOR_SHOP) {
 		if(c.getItems().freeSlots() > 0 || c.getItems().playerHasItem(27316, 1)) {
 			c.getItems().deleteItem2(itemID, amount);
@@ -1530,6 +1541,7 @@ public class ShopAssistant {
 							c.myShopId != Config.TZHAAR_HUR_LEKS_ORE_AND_GEM_STORE &&
 							c.myShopId != Config.TZHAAR_MEJ_ROHS_RUNE_STORE &&
 							c.myShopId != Config.TZHAAR_HUR_TELS_EQUIPMENT_STORE &&
+							c.myShopId != Config.TZHAAR_HUR_ZALS_EQUIPMENT_STORE &&
 							c.myShopId != Config.DONATOR_SHOP) {
 						c.sendMessage("You don't have enough coins.");
 						break;
@@ -1543,6 +1555,10 @@ public class ShopAssistant {
 						break;
 					}					
 					if (Slot1 == -1 && c.myShopId == Config.TZHAAR_HUR_TELS_EQUIPMENT_STORE) {
+						c.sendMessage("You don't have enough Tokkul.");
+						break;
+					}
+					if (Slot1 == -1 && c.myShopId == Config.TZHAAR_HUR_ZALS_EQUIPMENT_STORE) {
 						c.sendMessage("You don't have enough Tokkul.");
 						break;
 					}
@@ -1648,7 +1664,52 @@ public class ShopAssistant {
 							c.sendMessage("You don't have enough Tokkul.");
 							break;
 						}
-					} 
+					}
+					else if (c.myShopId == Config.TZHAAR_HUR_ZALS_EQUIPMENT_STORE	) {
+						if (c.playerItemsN[Slot1] >= TotPrice3) {
+							if (c.getItems().freeSlots() > 0) {
+								if (Item.itemStackable[itemID] && c.getItems().playerHasItem(6529, TotPrice3*amount)) {
+									if (Server.shopHandler.ShopItemsN[c.myShopId][fromSlot] < amount) {
+										amount = Server.shopHandler.ShopItemsN[c.myShopId][fromSlot];
+									}
+									c.getItems().deleteItem(6529, c.getItems().getItemSlot(6529), TotPrice3*amount);
+									c.getItems().addItem(itemID, amount);
+									Server.shopHandler.ShopItemsN[c.myShopId][fromSlot] -= amount;
+									Server.shopHandler.ShopItemsDelay[c.myShopId][fromSlot] = 0;
+									Server.shopHandler.ShopItemsRestock[c.myShopId][fromSlot] = System.currentTimeMillis();
+									c.getItems().resetItems(3823);
+									resetShop(c.myShopId);
+									updatePlayerShop();
+									return false;
+								}
+								if (Item.itemStackable[itemID] && !c.getItems().playerHasItem(6529, TotPrice3*amount)) {
+									int itemAmount = c.playerItemsN[c.getItems().getItemSlot(6529)]/TotPrice3;
+									c.getItems().deleteItem(6529, c.getItems().getItemSlot(6529), TotPrice3*itemAmount);
+									c.getItems().addItem(itemID, itemAmount);
+									Server.shopHandler.ShopItemsN[c.myShopId][fromSlot] -= itemAmount;
+									Server.shopHandler.ShopItemsDelay[c.myShopId][fromSlot] = 0;
+									c.getItems().resetItems(3823);
+									resetShop(c.myShopId);
+									updatePlayerShop();
+									return false;
+								}
+								c.getItems().deleteItem(6529, c.getItems().getItemSlot(6529),
+										TotPrice3);
+								c.getItems().addItem(itemID, 1);
+								ShopHandler.ShopItemsN[c.myShopId][fromSlot] -= 1;
+								ShopHandler.ShopItemsDelay[c.myShopId][fromSlot] = 0;
+								if ((fromSlot + 1) > ShopHandler.ShopItemsStandard[c.myShopId]) {
+									ShopHandler.ShopItems[c.myShopId][fromSlot] = 0;
+								}
+							} else {
+								c.sendMessage("You don't have enough space in your inventory.");
+								break;
+							}
+						} else {
+							c.sendMessage("You don't have enough Tokkul.");
+							break;
+						}
+					}
 					else if (c.myShopId == Config.TZHAAR_HUR_LEKS_ORE_AND_GEM_STORE) {
 						if (c.playerItemsN[Slot1] >= TotPrice3) {
 							if (c.getItems().freeSlots() > 0) {

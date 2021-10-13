@@ -49,7 +49,13 @@ public class RS2LoginProtocol extends FrameDecoder {
 			if (buffer.readableBytes() < 2)
 				return null;
 			int request = buffer.readUnsignedByte();
+			if(request == 67){
+				channel.disconnect();
+				channel.close();
+				return null;
+			}
 			if (request != 14) {
+				System.out.println("Ip. "+channel.getRemoteAddress());
 				System.out.println("Invalid login request: " + request);
 				channel.close();
 				return null;

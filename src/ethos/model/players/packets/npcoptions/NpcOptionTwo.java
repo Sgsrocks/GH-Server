@@ -72,6 +72,12 @@ public class NpcOptionTwo {
 			case 3101:
 				Sawmill.OpemSawMill(player);
 				break;
+			case 7688:
+				player.getShops().openShop(Config.TZHAAR_HUR_ZALS_EQUIPMENT_STORE);
+				break;
+			case 1884:
+				player.getShops().openShop(Config.NEITIZNOT_SUPPLIES);
+				break;
 			case 8722:
 				player.getShops().openShop(Config.ARDOUGNE_SILVER_STALL);
 				break;

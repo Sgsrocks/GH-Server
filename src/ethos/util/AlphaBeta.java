@@ -17,7 +17,7 @@ public class AlphaBeta {
     static {
         testers.addAll(Arrays.asList(
                 "sgsrocks", "twistndshout", "swoc", "lp316", "sethg", "198078", "mitch", "navis", "tristorm", "thomasw28", "smackdown", "hyrulekid17", "sphynxmods", "sphynx", "zezima", "christian", "Italianboy", "dev snow", "rabea", "angar"
-                , "spadow", "marty", "albion", "anum", "father", "docdeadly2", "super", "pink piggy", "justyzz", "justin", "admin bort", "dev snow", "jbogle", "halo", "sixxor2", "super", "someonelse13", "rico", "villain", "jayarrowz"));
+                , "spadow", "marty", "albion", "anum", "father", "docdeadly2", "super", "pink piggy", "justyzz", "justin", "admin bort", "dev snow", "jbogle", "halo", "sixxor2", "super", "someonelse13", "rico", "villain", "jayarrowz","woman", "mark"));
     }
 
     public static boolean isTester(String name) {

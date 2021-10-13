@@ -417,6 +417,16 @@ public class ObjectOptionOne {
 		if (c.getRights().isOrInherits(Right.OWNER))
 			c.sendMessage("Clicked Object Option 1:  "+objectType+"");
 		switch (objectType) {
+			case 1579:
+
+				break;
+			case 21600:
+				if(c.getX() == 2326 && c.getY() == 3802) {
+					c.getPA().movePlayer(2326, 3801, 0);
+				} else if(c.getX() == 2326 && c.getY() == 3801) {
+					c.getPA().movePlayer(2326, 3802, 0);
+				}
+				break;
 		case 2670:
 			Desert.cutCactus(c, Desert.getCacCutter(c), objectType,
 					obX, obY);
