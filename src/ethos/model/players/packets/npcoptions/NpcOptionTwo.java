@@ -72,6 +72,42 @@ public class NpcOptionTwo {
 			case 3101:
 				Sawmill.OpemSawMill(player);
 				break;
+			case 3935:
+				player.getShops().openShop(Config.SKULGRIMENS_BATTLE_GEAR);
+				break;
+			case 3947:
+				player.getShops().openShop(Config.FREMENNIK_FISH_MONGER);
+				break;
+			case 3894:
+				player.getShops().openShop(Config.SIGMUND_THE_MERCHANT);
+				break;
+			case 3948:
+				player.getShops().openShop(Config.FREMENNIK_FUR_TRADER);
+				break;
+			case 3933:
+				player.getShops().openShop(Config.YRSAS_ACCOUTREMENTS);
+				break;
+			case 679:
+				player.getShops().openShop(Config.RASOLO_THE_WANDERING_MERCHANT);
+				break;
+			case 3688:
+				player.getShops().openShop(Config.ISLAND_FISHMONGER);
+				break;
+			case 3689:
+				player.getShops().openShop(Config.GREENGROCER_OF_MISCELLANIA);
+				break;
+			case 1079:
+				player.getShops().openShop(Config.MISCELLANIAN_CLOTHES_SHOP);
+				break;
+			case 1081:
+				player.getShops().openShop(Config.MISCELLANIAN_FOOD_SHOP);
+				break;
+			case 1080:
+				player.getShops().openShop(Config.MISCELLANIAN_GENERAL_STORE);
+				break;
+			case 2784:
+				player.getShops().openShop(Config.CROSSBOW_SHOP2);
+				break;
 			case 7688:
 				player.getShops().openShop(Config.TZHAAR_HUR_ZALS_EQUIPMENT_STORE);
 				break;

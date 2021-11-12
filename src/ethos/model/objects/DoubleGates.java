@@ -92,20 +92,26 @@ public class DoubleGates extends GateHandler {
 				handleGate(player, 12987, 12986, 3211, 3261, 3212, 3261, 3213, 3262, 3213, 3261, 1);
 			}
 			break;
-			case 11766:
+			case 1727:
 			if (player.objectX > 3310 && player.objectX < 3313 && player.absY != 3333) {
-				handleSpecialGate(player, 1596, 1597, 3311, 3331, 3311, 3332, 3312, 3331, 3312, 3332, 3);
+				handleSpecialGate(player, 1571, 1572, 3311, 3331, 3311, 3332, 3312, 3331, 3312, 3332, 3);
 			} else if (player.objectY > 3318 && player.objectY < 3321 && player.absX != 2935 && player.absX != 2932) {
-				handleSpecialGate(player, 1596, 1597, 2934, 3319, 2933, 3319, 2934, 3320, 2933, 3320, 0);
+				handleSpecialGate(player, 1571, 1572, 2934, 3319, 2933, 3319, 2934, 3320, 2933, 3320, 0);
 			} else if (player.objectX > 3130 && player.objectX < 3133) {
-				handleSpecialGate(player, 1596, 1597, 3131, 9918, 3132, 9918, 3131, 9917, 3132, 9917, 6);
+				handleSpecialGate(player, 1571, 1572, 3131, 9918, 3132, 9918, 3131, 9917, 3132, 9917, 6);
 			} else if (player.objectY > 3181 && player.objectY < 3184) {
-				handleSpecialGate(player, 1596, 1597, 2815, 3182, 2815, 3183, 2816, 3182, 2816, 3183, 3);
+				handleSpecialGate(player, 1571, 1572, 2815, 3182, 2815, 3183, 2816, 3182, 2816, 3183, 3);
 			} else if (player.objectY > 3449 && player.objectY < 3452) {
-				handleSpecialGate(player, 1596, 1597, 2936, 3451, 2936, 3450, 2935, 3451, 2935, 3450, 7);
+				handleSpecialGate(player, 1571, 1572, 2936, 3451, 2936, 3450, 2935, 3451, 2935, 3450, 7);
 			}
 			break;
-			case 11767:
+			
+            case 11767:
+				if (player.objectX > 3310 && player.objectX < 3313 && player.absY != 3333) {
+					handleSpecialGate(player, 1597, 1596, 3311, 3332, 3311, 3331, 3312, 3332, 3312, 3331, 1);
+				}
+                break;
+			case 1728:
 			if (player.objectX > 3310 && player.objectX < 3313 && player.absY != 3333) {
 				handleSpecialGate(player, 1597, 1596, 3311, 3332, 3311, 3331, 3312, 3332, 3312, 3331, 1);
 			} else if (player.objectY > 3318 && player.objectY < 3321 && player.absX != 2935 && player.absX != 2932) {

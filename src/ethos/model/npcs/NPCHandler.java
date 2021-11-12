@@ -1284,7 +1284,6 @@ public class NPCHandler {
 		newNPCList.setNpcHealth(HP);
 		NPCDefinitions.getDefinitions()[npcType] = newNPCList;
 	}
-
 	public int olmStage;
 
 	/**
@@ -1301,6 +1300,7 @@ public class NPCHandler {
 				NPC npc = npcs[i];
 				int type = npcs[i].npcType;
 				Player slaveOwner = (PlayerHandler.players[npcs[i].summonedBy]);
+				Player client =  PlayerHandler.players[getCloseRandomPlayer(i)];
 				if (npcs[i] != null && slaveOwner == null && npcs[i].summoner) {
 					npcs[i].absX = 0;
 					npcs[i].absY = 0;
@@ -1368,6 +1368,13 @@ public class NPCHandler {
 						npcs[i].gfx0(110);
 					}
 				}
+				if (npcs[i].npcType == 280) {
+					if (Misc.random(50) == 2) {
+						npcs[i].forceChat(Config.UPDATE_MESSAGE);
+						npcs[i].animUpdateRequired = true;
+						npcs[i].animNumber = 6865;
+					}
+				}
 				if(npcs[i].npcType == 1307){
 					if(Misc.random(50) == 2){
 						npcs[i].requestTransform(1306);
@@ -1375,6 +1382,20 @@ public class NPCHandler {
 						npcs[i].forceChat("Ahah!!");
 						npcs[i].animUpdateRequired = true;
 						npcs[i].gfx0(110);
+					}
+				}
+				if(npcs[i].npcType == 103) {
+					int player1 = getCloseRandomPlayer(i);
+					if (player1 > 0) {
+						npcs[i].requestTransform(102);
+						npcs[i].walkingType = 1;
+					}
+				}
+				if(npcs[i].npcType == 101) {
+					int player1 = getCloseRandomPlayer(i);
+					if (player1 > 0) {
+						npcs[i].requestTransform(100);
+						npcs[i].walkingType = 1;
 					}
 				}
 				if (npcs[i].npcType == 306) {

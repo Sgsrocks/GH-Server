@@ -24,12 +24,12 @@ import ethos.model.players.Position;
 public class ShootingStar {
 
 	private static final int TIME = 1800000;
-	public static int MAXIMUM_MINING_AMOUNT = 0;
+	public static int MAXIMUM_MINING_AMOUNT = 250;
 	
 	private static Stopwatch timer = new Stopwatch().reset();
 	public static CrashedStar CRASHED_STAR = null;
 	private static LocationData LAST_LOCATION = null;
-	static final int STAR_IDS =  41223+Misc.random(6);
+	static final int STAR_IDS =  41223;
 	static GlobalObject star;
 	
 	public static class CrashedStar {

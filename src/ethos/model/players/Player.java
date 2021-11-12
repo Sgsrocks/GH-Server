@@ -186,6 +186,7 @@ public class Player extends Entity {
 	public int Ghostkills;
 	public int Giantkills;
     public boolean doinguri = false;
+    public long clickDelay;
 
     private ToolLeprechaun toolLeprechaun;
 
@@ -1881,6 +1882,7 @@ public class Player extends Entity {
 
 	public void process() {
 		farming.farmingProcess();
+		ShootingStar.spawnStar();
 		if (Boundary.isIn(this, Boundary.DESERT) && heightLevel == 0) {
 			DesertHeat.callHeat(this);
 		}

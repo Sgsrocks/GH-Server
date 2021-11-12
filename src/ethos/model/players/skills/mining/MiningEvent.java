@@ -132,7 +132,7 @@ public class MiningEvent extends Event<Player> {
 		}
 		if (objectId > 0) {
 			if (Server.getGlobalObjects().exists(Mineral.EMPTY_VEIN, location.getX(), location.getY(), location.getZ()) && mineral.isDepletable()) {
-				attachment.sendMessage("This vein contains no more minerals.");
+				//attachment.sendMessage("This vein contains no more minerals.");
 				stop();
 				return;
 			}
@@ -164,16 +164,21 @@ public class MiningEvent extends Event<Player> {
 			return;
 		}
 		if (mineral.isDepletable()) {
-			if (RandomUtils.nextInt(0, mineral.getDepletionProbability()) == 0
-					|| mineral.getDepletionProbability() == 0) {
 				if (objectId > 0) {
 					Server.getGlobalObjects().add(new GlobalObject(Mineral.EMPTY_VEIN, location.getX(), location.getY(),
-							location.getZ(), 0, 10, mineral.getRespawnRate(), objectId));
+							location.getZ(), 1, 10, mineral.getRespawnRate(), objectId));
 				} else {
 					npc.isDead = true;
 					npc.actionTimer = 0;
 					npc.needRespawn = false;
 				}
+		}
+		if (objectId == 41223) {
+			if(ShootingStar.CRASHED_STAR == null || ShootingStar.CRASHED_STAR.getStarObject().getPickAmount() >= ShootingStar.MAXIMUM_MINING_AMOUNT) {
+				attachment.getSkilling().stop();
+				return;
+			} else {
+				ShootingStar.CRASHED_STAR.getStarObject().incrementPickAmount();
 			}
 		}
 		attachment.turnPlayerTo(location.getX(), location.getY());
@@ -259,16 +264,17 @@ public class MiningEvent extends Event<Player> {
 					attachment.getRechargeItems().hasItem(13107) && Misc.random(4) == 2 ? 2 : 1;
 		if (!(mineral.getBarName().contains("star"))) {
 			attachment.getItems().addItem(mineral.getMineralReturn().generate(), amount);
+			attachment.sendMessage("You manage to mine some "+mineral.name().toLowerCase()+" ore.");
 		} else {
-			if(ShootingStar.MAXIMUM_MINING_AMOUNT >= 250){
+			if(ShootingStar.MAXIMUM_MINING_AMOUNT == 0){
 				attachment.sendMessage("The Star run out of star dust.");
 				ShootingStar.despawn(false);
-				ShootingStar.MAXIMUM_MINING_AMOUNT = 0;
+				ShootingStar.MAXIMUM_MINING_AMOUNT = 250;
 				stop();
 				return;
 			}
 			attachment.getItems().addItem(25527, 1);
-			ShootingStar.MAXIMUM_MINING_AMOUNT += 1;
+			ShootingStar.MAXIMUM_MINING_AMOUNT -= 1;
 			attachment.sendMessage(""+ShootingStar.MAXIMUM_MINING_AMOUNT);
 			if (Misc.random(200) == 5) {
 				attachment.sendMessage("You received Star fragment while mining the star!");

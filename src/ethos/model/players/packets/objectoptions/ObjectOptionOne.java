@@ -195,7 +195,7 @@ public class ObjectOptionOne {
 					c.getPA().movePlayer(3209, 9617, 0);
 					return;
 				}
-				if(c.getX() < 6400 && (c.heightLevel & 3) == 0) {
+				if(c.getY() < 6400 && (c.heightLevel & 3) == 0) {
 					c.getPA().movePlayer(c.getX(), c.getY()+6400, c.heightLevel);
 					return;
 				} else {
@@ -276,7 +276,7 @@ public class ObjectOptionOne {
 					Ladders.climbLadder(c, 3210, 3216, 0);
 					return;
 				}
-				if(c.getX() > 6400) {
+				if(c.getY() > 6400) {
 					Ladders.climbLadder(c, c.getX(), c.getY()-6400, c.heightLevel);
 					return;
 				} else {
@@ -318,7 +318,7 @@ public class ObjectOptionOne {
 					Ladders.climbLadder(c,1560, 2830, 0);
 					return;
 				}
-				if(c.getX() < 6400 && (c.heightLevel & 3) == 0) {
+				if(c.getY() < 6400 && (c.heightLevel & 3) == 0) {
 					Ladders.climbLadder(c, c.getX(), c.getY()+6400, c.heightLevel);
 					return;
 				} else {
@@ -373,8 +373,8 @@ public class ObjectOptionOne {
 					c.getPA().movePlayer(c.getX()-3, c.getY()+6400, c.heightLevel);
 					return;
 				}
-				if(c.getX() > 6400) {
-					c.getPA().movePlayer(c.getX(), c.getY()-6400, c.heightLevel);
+				if(c.getY() < 6400 && (c.heightLevel & 3) == 0) {
+					c.getPA().movePlayer(c.getX(), c.getY()+6400, c.heightLevel);
 					return;
 				} else {
 					c.getPA().movePlayer(c.absX, c.absY, c.heightLevel-1);
@@ -426,6 +426,24 @@ public class ObjectOptionOne {
 				} else if(c.getX() == 2326 && c.getY() == 3801) {
 					c.getPA().movePlayer(2326, 3802, 0);
 				}
+				break;
+			case 5998:
+				c.getPA().movePlayer(2780, 10161, 0);
+				break;
+			case 5973:
+				c.getPA().movePlayer(2838, 10124, 0);
+				break;
+			case 5008:
+					c.getPA().movePlayer(2773, 10162, 0);
+				break;
+			case 5014:
+				c.getPA().movePlayer(2730, 3713, 0);
+				break;
+			case 5013:
+				c.getPA().movePlayer(2797, 3719, 0);
+				break;
+			case 5012:
+				c.getPA().movePlayer(2799, 10134, 0);
 				break;
 		case 2670:
 			Desert.cutCactus(c, Desert.getCacCutter(c), objectType,

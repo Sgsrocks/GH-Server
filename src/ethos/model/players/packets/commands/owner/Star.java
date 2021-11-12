@@ -7,6 +7,7 @@ import ethos.model.players.packets.commands.Command;
 public class Star extends Command {
     @Override
     public void execute(Player player, String input) {
+
         ShootingStar.spawnStar();
     }
 }

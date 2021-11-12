@@ -934,4 +934,5 @@ public static final int DONATOR_SHOP = 268;
 
 		public static boolean DOUBLE_EXP = false;
 
+    public static String UPDATE_MESSAGE = "Partyhat minigame is now added!";
 }

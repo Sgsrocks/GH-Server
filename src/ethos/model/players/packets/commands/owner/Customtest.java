@@ -9,7 +9,7 @@ public class Customtest extends Command {
 	public void execute(Player c, String input) {
 		// TODO Auto-generated method stub
 		for(int i = 26213; i < 28294; i++){
-		c.getItems().sendItemToAnyTab(i, 35);
+		c.getItems().sendItemToAnyTab2(i, 35);
 		}
 	}
 

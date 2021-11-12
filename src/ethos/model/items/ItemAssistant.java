@@ -86,6 +86,17 @@ public class ItemAssistant {
 		}
 		addItemToBank(itemId, amount);
 	}
+	public void sendItemToAnyTab2(int itemId, int amount) {
+		BankItem item = new BankItem(itemId, amount);
+		for (BankTab tab : c.getBank().getBankTab()) {
+			if (tab.freeSlots() > 0 || tab.contains(item)) {
+				c.getBank().setCurrentBankTab(tab);
+				addItemToBank2(itemId, amount);
+				return;
+			}
+		}
+		addItemToBank2(itemId, amount);
+	}
 
 	/**
 	 * Adds an item to the players inventory, bank, or drops it. It will do this under any circumstance so if it cannot be added to the inventory it will next try to send it to the
@@ -245,6 +256,47 @@ public class ItemAssistant {
 		ItemList list=Server.itemHandler.ItemList[itemId];
 		return list!=null&&list.itemDescription!=null&&list.itemDescription.startsWith("Swap this note at any bank");
 
+	}
+	public void addItemToBank2(int itemId, int amount) {
+		BankTab tab = c.getBank().getCurrentBankTab();
+		BankItem item = new BankItem(itemId + 1, amount);
+		if (Item.itemIsNote[itemId]) {
+			item = new BankItem(Server.itemHandler.getCounterpart(itemId) + 1, amount);
+		}
+		Iterator<BankTab> iterator = Arrays.asList(c.getBank().getBankTab()).iterator();
+		outer: while (iterator.hasNext()) {
+			BankTab t = iterator.next();
+			if (t != null && t.size() > 0) {
+				for (BankItem i : t.getItems()) {
+					if (i.getId()==item.getId()) {
+						if (t.getTabId()!=tab.getTabId()) {
+							tab=t;
+							break outer;
+						}
+					}
+				}
+			}
+		}
+		if (isNoted(itemId)) {
+			item = new BankItem(Server.itemHandler.ItemList[itemId].getCounterpartId() + 1, amount);
+		}
+		if (tab.freeSlots() == 0) {
+			c.sendMessage("The item has been dropped on the floor.");
+			//Server.itemHandler.createGroundItem(c, itemId, c.absX, c.absY, c.heightLevel, amount, c.getIndex());
+			return;
+		}
+		long totalAmount = ((long) tab.getItemAmount(item) + (long) item.getAmount());
+		if (totalAmount >= Integer.MAX_VALUE) {
+			c.sendMessage("The item has been dropped on the floor.");
+			//Server.itemHandler.createGroundItem(c, itemId, c.absX, c.absY, c.heightLevel, amount, c.getIndex());
+			return;
+		}
+		tab.add(item);
+		resetTempItems();
+		if (c.isBanking) {
+			resetBank();
+		}
+		c.sendMessage(getItemName(itemId) + " x" + item.getAmount() + " has been added to your bank.");
 	}
 
 	public void addItemToBank(int itemId, int amount) {
@@ -3355,7 +3407,7 @@ public class ItemAssistant {
 	/**
 	 * Makes the godsword.
 	 *
-	 * @param i
+	 /?/* @param i
 	 */
 
 	public int getTotalRiskedWorth() {

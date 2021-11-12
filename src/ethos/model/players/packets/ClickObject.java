@@ -1,8 +1,12 @@
 package ethos.model.players.packets;
 
 import java.util.Objects;
+import java.util.Optional;
+import java.util.function.Consumer;
 
 import ethos.Server;
+import ethos.clip.Region;
+import ethos.clip.WorldObject;
 import ethos.event.CycleEvent;
 import ethos.event.CycleEventContainer;
 import ethos.event.CycleEventHandler;
@@ -272,6 +276,7 @@ public class ClickObject implements PacketType {
 				c.sendMessage("Welcome to Barrows");
 				break;
 				case 31561:
+				case 5014:
 					c.objectDistance=2;
 					break;
 			case 1733:

@@ -21,6 +21,7 @@ import ethos.model.content.dialogue.impl.Falador.HerquinDialogue;
 import ethos.model.content.dialogue.impl.Falador.SquireDialogue;
 import ethos.model.content.dialogue.impl.Falador.ThurgoDialogue;
 import ethos.model.content.dialogue.impl.Varrock.ReldoDIalogue;
+import ethos.model.content.dialogue.impl.Yanille.FrenitaDIalogue;
 import ethos.model.content.dialogue.impl.slayer.DuradelDialogue;
 import ethos.model.content.dialogue.impl.wizard_tower.MizgagDialogue;
 import ethos.model.holiday.halloween.HalloweenRandomOrder;
@@ -89,6 +90,9 @@ public class NpcOptionOne {
 		case 9336:
 			player.start(new TraderCrewMemberMale());
 			break;
+			case 8685:
+				player.start(new FrenitaDIalogue());
+				break;
 		case 9360:
 			player.start(new TraderCrewMemberFemale());
 			break;

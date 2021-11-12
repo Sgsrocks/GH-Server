@@ -154,9 +154,9 @@ public class RS2LoginProtocol extends FrameDecoder {
 		if (!PlayerSave.playerExists(name)) {
 			String lowercaseName = name.toLowerCase();
 		}
-		if(!AlphaBeta.isTester(name)){
-			returnCode = 27;
-		}
+	//	if(!AlphaBeta.isTester(name)){
+		//	returnCode = 27;
+		//}
 		Punishments punishments = Server.getPunishments();
 
 		int slot = Server.playerHandler.nextSlot();

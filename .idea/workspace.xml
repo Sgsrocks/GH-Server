@@ -1,40 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="GH-Server:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="408f6966-0e02-4abc-8420-8c51facc39c1" name="Default Changelist" comment="added 200 data.">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/saves/characters/spadow.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map_index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/GH_Server_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/dialogue/impl/Yanille/FrenitaDIalogue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ghreborn-Server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GH-Server.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spawn.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spawn.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cache/areas.dat" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/areas.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cache/areas.idx" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/areas.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cache/flo.dat" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/flo.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cache/loc.dat" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/loc.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cache/loc.idx" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/loc.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cache/npc.dat" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/npc.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cache/npc.idx" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/npc.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cache/obj.dat" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/obj.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cache/obj.idx" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/obj.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cache/seq.dat" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/seq.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cache/spotanim.dat" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/spotanim.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cache/varbit.dat" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/varbit.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cfg/shop_config.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/data/cfg/shop_config.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/cfg/spawn_config.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/data/cfg/spawn_config.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/json/npc-spawns.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/json/npc-spawns.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/json/npc_droptable.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/json/npc_droptable.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/logs/s/Spadow/command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/s/Spadow/command.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/logs/s/Spadow/public_chat.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/s/Spadow/public_chat.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/logs/s/sgsrocks/change_ip_address.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/s/sgsrocks/change_ip_address.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/logs/s/sgsrocks/command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/s/sgsrocks/command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/logs/s/sgsrocks/dc_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/s/sgsrocks/dc_log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/logs/s/sgsrocks/public_chat.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/s/sgsrocks/public_chat.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/saves/characters/sgsrocks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/saves/characters/sgsrocks.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/content/ShootingStar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/ShootingStar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/items/ItemAssistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/items/ItemAssistant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/npcs/NPCHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/npcs/NPCHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/objects/DoubleGates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/objects/DoubleGates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/ClickObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/ClickObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Customtest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Customtest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Star.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Star.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/npcoptions/NpcOptionOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/npcoptions/NpcOptionOne.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/npcoptions/NpcOptionTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/npcoptions/NpcOptionTwo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/objectoptions/ObjectOptionOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/objectoptions/ObjectOptionOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ethos/model/shops/ShopAssistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/shops/ShopAssistant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/mining/MiningEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/skills/mining/MiningEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ethos/net/login/RS2LoginProtocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/net/login/RS2LoginProtocol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ethos/util/AlphaBeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/util/AlphaBeta.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,8 +59,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Ghreborn-Server.iml" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/data" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
