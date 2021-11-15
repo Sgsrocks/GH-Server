@@ -23,9 +23,9 @@ import ethos.model.players.Boundary;
 import ethos.model.players.Player;
 import ethos.model.players.PlayerHandler;
 import ethos.model.players.mode.ModeType;
-import ethos.model.players.skills.Skill;
-import ethos.model.players.skills.prayer.Bone;
-import ethos.model.players.skills.prayer.Prayer;
+import ethos.model.content.skills.Skill;
+import ethos.model.content.skills.prayer.Bone;
+import ethos.model.content.skills.prayer.Prayer;
 import ethos.model.shops.ShopAssistant;
 import ethos.util.Misc;
 

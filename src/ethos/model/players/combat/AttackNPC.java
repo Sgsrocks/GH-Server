@@ -40,12 +40,12 @@ import ethos.model.players.combat.magic.MagicData;
 import ethos.model.players.combat.range.RangeData;
 import ethos.model.players.combat.range.RangeExtras;
 import ethos.model.players.mode.ModeType;
-import ethos.model.players.skills.Skill;
-import ethos.model.players.skills.herblore.PoisonedWeapon;
-import ethos.model.players.skills.herblore.PoisonedWeapon.PoisonLevel;
-import ethos.model.players.skills.mining.Pickaxe;
-import ethos.model.players.skills.slayer.SlayerMaster;
-import ethos.model.players.skills.slayer.Task;
+import ethos.model.content.skills.Skill;
+import ethos.model.content.skills.herblore.PoisonedWeapon;
+import ethos.model.content.skills.herblore.PoisonedWeapon.PoisonLevel;
+import ethos.model.content.skills.mining.Pickaxe;
+import ethos.model.content.skills.slayer.SlayerMaster;
+import ethos.model.content.skills.slayer.Task;
 import ethos.util.Misc;
 
 public class AttackNPC {

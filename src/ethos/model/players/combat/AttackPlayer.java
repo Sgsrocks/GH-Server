@@ -7,8 +7,6 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.lang3.ArrayUtils;
-
 import ethos.Config;
 import ethos.Server;
 import ethos.clip.PathChecker;
@@ -37,8 +35,8 @@ import ethos.model.players.combat.range.RangeData;
 import ethos.model.players.combat.range.RangeExtras;
 import ethos.model.players.combat.specials.Shove;
 import ethos.model.players.mode.ModeType;
-import ethos.model.players.skills.Skill;
-import ethos.model.players.skills.herblore.PoisonedWeapon;
+import ethos.model.content.skills.Skill;
+import ethos.model.content.skills.herblore.PoisonedWeapon;
 import ethos.util.Misc;
 
 public class AttackPlayer {

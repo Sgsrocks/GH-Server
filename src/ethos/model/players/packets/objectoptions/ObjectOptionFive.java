@@ -4,7 +4,7 @@ import ethos.Server;
 import ethos.clip.Region;
 import ethos.model.players.Player;
 import ethos.model.players.Right;
-import ethos.model.players.skills.construction.Construction;
+import ethos.model.content.skills.construction.Construction;
 import ethos.util.Misc;
 
 public class ObjectOptionFive {

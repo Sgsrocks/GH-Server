@@ -3,7 +3,6 @@ package ethos.model.players.packets.itemoptions;
 import java.util.Objects;
 import java.util.Optional;
 
-import ethos.Config;
 import ethos.Server;
 import ethos.model.content.DiceHandler;
 import ethos.model.content.Packs;
@@ -22,20 +21,18 @@ import ethos.model.multiplayer_session.duel.DuelSessionRules.Rule;
 import ethos.model.players.*;
 import ethos.model.players.combat.Hitmark;
 import ethos.model.players.combat.magic.NonCombatSpells;
-import ethos.model.players.skills.agility.AgilityHandler;
-import ethos.model.players.skills.hunter.Hunter;
-import ethos.model.players.skills.hunter.trap.impl.BirdSnare;
-import ethos.model.players.skills.hunter.trap.impl.BoxTrap;
-import ethos.model.players.skills.prayer.Bone;
-import ethos.model.players.skills.prayer.Prayer;
-import ethos.model.players.skills.runecrafting.Pouches;
-import ethos.model.players.skills.runecrafting.Pouches.Pouch;
+import ethos.model.content.skills.hunter.Hunter;
+import ethos.model.content.skills.hunter.trap.impl.BirdSnare;
+import ethos.model.content.skills.hunter.trap.impl.BoxTrap;
+import ethos.model.content.skills.prayer.Bone;
+import ethos.model.content.skills.prayer.Prayer;
+import ethos.model.content.skills.runecrafting.Pouches;
+import ethos.model.content.skills.runecrafting.Pouches.Pouch;
 import ethos.util.Misc;
 import ethos.world.objects.GlobalObject;
-import ethos.model.content.achievement_diary.ardougne.*;
+
 import static ethos.model.content.DiceHandler.DICING_AREA;
-import ethos.model.content.Dwarfcannon;
-import ethos.model.content.GalvekBag;
+
 /**
  * Clicking an item, bury bone, eat food etc
  **/

@@ -10,8 +10,8 @@ import ethos.model.multiplayer_session.MultiplayerSessionType;
 import ethos.model.multiplayer_session.duel.DuelSession;
 import ethos.model.players.PacketType;
 import ethos.model.players.Player;
-import ethos.model.players.skills.runecrafting.Pouches;
-import ethos.model.players.skills.runecrafting.Pouches.Pouch;
+import ethos.model.content.skills.runecrafting.Pouches;
+import ethos.model.content.skills.runecrafting.Pouches.Pouch;
 
 /**
  * Wear Item

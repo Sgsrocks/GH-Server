@@ -4,7 +4,7 @@ import ethos.model.entity.Entity;
 import ethos.model.players.Player;
 import ethos.model.players.combat.Damage;
 import ethos.model.players.combat.Special;
-import ethos.model.players.skills.Skill;
+import ethos.model.content.skills.Skill;
 
 public class DragonHarpoon extends Special {
 	public DragonHarpoon() {

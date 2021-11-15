@@ -6,9 +6,9 @@ import ethos.model.content.dialogue.Dialogue;
 import ethos.model.content.dialogue.DialogueConstants;
 import ethos.model.content.dialogue.DialogueManager;
 import ethos.model.content.dialogue.Emotion;
-import ethos.model.players.skills.Skill;
-import ethos.model.players.skills.slayer.SlayerMaster;
-import ethos.model.players.skills.slayer.Task;
+import ethos.model.content.skills.Skill;
+import ethos.model.content.skills.slayer.SlayerMaster;
+import ethos.model.content.skills.slayer.Task;
 
 public class DuradelDialogue extends Dialogue {
 

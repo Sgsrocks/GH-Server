@@ -36,9 +36,9 @@ import ethos.model.players.combat.Degrade;
 import ethos.model.players.combat.Degrade.DegradableItem;
 import ethos.model.players.combat.pkdistrict.District;
 import ethos.model.players.mode.ModeType;
-import ethos.model.players.skills.Skill;
-import ethos.model.players.skills.slayer.SlayerMaster;
-import ethos.model.players.skills.slayer.Task;
+import ethos.model.content.skills.Skill;
+import ethos.model.content.skills.slayer.SlayerMaster;
+import ethos.model.content.skills.slayer.Task;
 import ethos.server.data.SerializablePair;
 import ethos.util.Misc;
 

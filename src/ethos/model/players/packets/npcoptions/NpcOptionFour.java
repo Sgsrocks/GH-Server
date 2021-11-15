@@ -4,7 +4,7 @@ import ethos.Config;
 import ethos.Server;
 import ethos.model.content.achievement_diary.fremennik.FremennikDiaryEntry;
 import ethos.model.players.Player;
-import ethos.model.players.skills.agility.AgilityHandler;
+import ethos.model.content.skills.agility.AgilityHandler;
 
 /*
  * @author Matt

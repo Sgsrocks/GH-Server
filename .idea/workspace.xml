@@ -6,33 +6,228 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="408f6966-0e02-4abc-8420-8c51facc39c1" name="Default Changelist" comment="added 200 data.">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/GH_Server_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/dialogue/impl/Yanille/FrenitaDIalogue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+    <list default="true" id="408f6966-0e02-4abc-8420-8c51facc39c1" name="Default Changelist" comment="more skilling stuff redone and added">
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/Fishing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/SkillHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/Skilling.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/agility/impl/rooftop/RooftopDraynor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/agility/impl/rooftop/RooftopFalador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/agility/impl/rooftop/RooftopSeers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/rooms/Combat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/rooms/FormalGarden.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/rooms/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/rooms/JunctionDungeon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/rooms/Oubiliette.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/rooms/QuestHall.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/rooms/SkillHall.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/rooms/StairsDungeon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/rooms/TreasureRoom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/cooking/Potatoes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/cooking/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/smithing/Smelting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/smithing/Smithing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/smithing/SmithingInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Spawn.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spawn.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cfg/spawn_config.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/data/cfg/spawn_config.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/json/npc-spawns.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/json/npc-spawns.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/logs/s/sgsrocks/change_ip_address.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/s/sgsrocks/change_ip_address.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/logs/s/sgsrocks/command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/s/sgsrocks/command.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/logs/s/sgsrocks/dc_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/s/sgsrocks/dc_log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/logs/s/sgsrocks/public_chat.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/s/sgsrocks/public_chat.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/saves/characters/sgsrocks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/saves/characters/sgsrocks.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ethos/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/event/impl/RunEnergyEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/event/impl/RunEnergyEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ethos/model/content/ShootingStar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/ShootingStar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/content/dialogue/impl/slayer/DuradelDialogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/dialogue/impl/slayer/DuradelDialogue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/content/trails/MasterClue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/trails/MasterClue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/items/GameItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/items/GameItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ethos/model/items/ItemAssistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/items/ItemAssistant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/items/UseItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/items/UseItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/minigames/pest_control/PestControlRewards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/minigames/pest_control/PestControlRewards.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ethos/model/npcs/NPCHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/npcs/NPCHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ethos/model/objects/DoubleGates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/objects/DoubleGates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/npcs/drops/DropManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/npcs/drops/DropManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/objects/Doors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/objects/Doors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/DialogueHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/DialogueHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ethos/model/players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/PlayerAssistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/PlayerAssistant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/PlayerSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/PlayerSave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/Requirement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/Requirement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/combat/AttackNPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/combat/AttackNPC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/combat/AttackPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/combat/AttackPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/combat/range/RangeData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/combat/range/RangeData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/combat/specials/DragonHarpoon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/combat/specials/DragonHarpoon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/combat/specials/SaradominGodsword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/combat/specials/SaradominGodsword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/Bank10.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/Bank10.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/Bank5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/Bank5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/BankX2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/BankX2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/ClickObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/ClickObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Customtest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Customtest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Star.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Star.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/ClickingButtons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/ClickingButtons.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/InputField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/InputField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/MagicOnObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/MagicOnObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/RemoveItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/RemoveItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/Walking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/Walking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/WearItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/WearItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/action/JoinChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/action/JoinChat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/action/ReceiveString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/action/ReceiveString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/admin/Poh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/admin/Poh.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/admin/Pohenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/admin/Pohenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/admin/Pohenterb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/admin/Pohenterb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/admin/Pohjoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/admin/Pohjoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/admin/Pohload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/admin/Pohload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/all/Pohjoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/all/Pohjoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Poh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Poh.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Pohenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Pohenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Pohenterb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Pohenterb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Pohjoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Pohjoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Pohload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/commands/owner/Pohload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/itemoptions/ItemOptionOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/itemoptions/ItemOptionOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/itemoptions/ItemOptionTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/itemoptions/ItemOptionTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/npcoptions/NpcOptionFour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/npcoptions/NpcOptionFour.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/npcoptions/NpcOptionOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/npcoptions/NpcOptionOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/npcoptions/NpcOptionThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/npcoptions/NpcOptionThree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/npcoptions/NpcOptionTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/npcoptions/NpcOptionTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/objectoptions/ObjectOptionFive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/objectoptions/ObjectOptionFive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/objectoptions/ObjectOptionFour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/objectoptions/ObjectOptionFour.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/objectoptions/ObjectOptionOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/objectoptions/ObjectOptionOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/mining/MiningEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/skills/mining/MiningEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ethos/net/login/RS2LoginProtocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/net/login/RS2LoginProtocol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/objectoptions/ObjectOptionTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/objectoptions/ObjectOptionTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/packets/objectoptions/impl/TrainCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/players/packets/objectoptions/impl/TrainCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/Agility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/Agility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/BowStringing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/BowStringing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/FireHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/FireHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/Fishing.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/FlaxPicking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/FlaxPicking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/LogData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/LogData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/Skill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/SkillHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/SkillInterfaces.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/SkillInterfaces.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/Skilling.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/Smelting.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/Smithing.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/SmithingInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/StringingData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/StringingData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/TabletCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/TabletCreation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/agility/AgilityHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/agility/AgilityHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/agility/MarkOfGrace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/agility/MarkOfGrace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/agility/impl/BarbarianAgility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/agility/impl/BarbarianAgility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/agility/impl/GnomeAgility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/agility/impl/GnomeAgility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/agility/impl/Lighthouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/agility/impl/Lighthouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/agility/impl/Shortcuts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/agility/impl/Shortcuts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/agility/impl/WildernessAgility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/agility/impl/WildernessAgility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/agility/impl/rooftop/RooftopArdougne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/agility/impl/rooftop/RooftopArdougne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/agility/impl/rooftop/RooftopFalador.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/agility/impl/rooftop/RooftopPrifddinas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/agility/impl/rooftop/RooftopPrifddinas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/agility/impl/rooftop/RooftopSeers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/agility/impl/rooftop/RooftopVarrock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/agility/impl/rooftop/RooftopVarrock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/Buildable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/Buildable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/Construction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/Construction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/House.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/Objects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/Objects.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/PortalDialogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/PortalDialogue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/RoomDialogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/RoomDialogue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/RoomDialogue2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/RoomDialogue2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/RoomInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/RoomInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/RoomObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/RoomObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/Rooms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/Rooms.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/rooms/AchievementGallery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/rooms/AchievementGallery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/rooms/Bedroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/rooms/Bedroom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/rooms/Chapel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/rooms/Chapel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/rooms/Combat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/rooms/CorridorDungeon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/rooms/CorridorDungeon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/rooms/CostumeRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/rooms/CostumeRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/rooms/Default.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/rooms/Default.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/rooms/Dining.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/rooms/Dining.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/rooms/FormalGarden.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/rooms/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/rooms/Garden.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/rooms/Garden.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/rooms/JunctionDungeon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/rooms/Kitchen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/rooms/Kitchen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/rooms/Oubiliette.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/rooms/Parlour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/rooms/Parlour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/rooms/PortalChamber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/rooms/PortalChamber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/rooms/PortalNexus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/rooms/PortalNexus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/rooms/QuestHall.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/rooms/SkillHall.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/rooms/StairsDungeon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/rooms/Study.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/rooms/Study.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/rooms/Throne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/rooms/Throne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/rooms/TreasureRoom.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/construction/rooms/Workshop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/construction/rooms/Workshop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/cooking/Cooking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/cooking/Cooking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/cooking/DairyChurn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/cooking/DairyChurn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/cooking/Potatoes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/cooking/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/crafting/BattlestaveMaking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/crafting/BattlestaveMaking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/crafting/BraceletMaking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/crafting/BraceletMaking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/crafting/Crafting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/crafting/Crafting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/crafting/CraftingData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/crafting/CraftingData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/crafting/Enchantment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/crafting/Enchantment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/crafting/GlassBlowing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/crafting/GlassBlowing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/crafting/GlassData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/crafting/GlassData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/crafting/JewelryMaking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/crafting/JewelryMaking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/crafting/LeatherMaking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/crafting/LeatherMaking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/crafting/OrbCharging.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/crafting/OrbCharging.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/crafting/SpinMaterial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/crafting/SpinMaterial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/crafting/Tanning.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/crafting/Tanning.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/farming/Farming.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/farming/Farming.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/farming/FarmingCompostEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/farming/FarmingCompostEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/farming/FarmingConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/farming/FarmingConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/farming/FarmingHerb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/farming/FarmingHerb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/farming/ToolLeprechaun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/farming/ToolLeprechaun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/firemake/Firemaking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/firemake/Firemaking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/firemake/LogData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/firemake/LogData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/fletching/FletchLogEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/fletching/FletchLogEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/fletching/FletchableArrow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/fletching/FletchableArrow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/fletching/FletchableBolt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/fletching/FletchableBolt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/fletching/FletchableBow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/fletching/FletchableBow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/fletching/FletchableCrossbow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/fletching/FletchableCrossbow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/fletching/FletchableDart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/fletching/FletchableDart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/fletching/FletchableGem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/fletching/FletchableGem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/fletching/FletchableJavelin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/fletching/FletchableJavelin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/fletching/FletchableLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/fletching/FletchableLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/fletching/FletchableLogGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/fletching/FletchableLogGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/fletching/FletchableUnfinishedBolt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/fletching/FletchableUnfinishedBolt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/fletching/Fletching.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/fletching/Fletching.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/fletching/StringBowEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/fletching/StringBowEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/fletching/StringCrossbowEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/fletching/StringCrossbowEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/herblore/Crushable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/herblore/Crushable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/herblore/Herb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/herblore/Herb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/herblore/Herblore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/herblore/Herblore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/herblore/PoisonedWeapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/herblore/PoisonedWeapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/herblore/Potion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/herblore/Potion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/herblore/PotionData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/herblore/PotionData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/herblore/UnfCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/herblore/UnfCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/hunter/Hunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/hunter/Hunter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/hunter/impling/Impling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/hunter/impling/Impling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/hunter/impling/ImplingData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/hunter/impling/ImplingData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/hunter/impling/ItemRarity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/hunter/impling/ItemRarity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/hunter/impling/PuroPuro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/hunter/impling/PuroPuro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/hunter/trap/Trap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/hunter/trap/Trap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/hunter/trap/TrapProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/hunter/trap/TrapProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/hunter/trap/TrapTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/hunter/trap/TrapTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/hunter/trap/impl/BirdSnare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/hunter/trap/impl/BirdSnare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/hunter/trap/impl/BoxTrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/hunter/trap/impl/BoxTrap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/magic/EnchantBoits.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/magic/EnchantBoits.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/mining/Mineral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/mining/Mineral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/mining/MineralReturn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/mining/MineralReturn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/mining/Mining.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/mining/Mining.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/mining/MiningEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/mining/MiningEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/mining/MotherLode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/mining/MotherLode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/mining/Pickaxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/mining/Pickaxe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/prayer/Bone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/prayer/Bone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/prayer/Prayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/prayer/Prayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/runecrafting/Pouches.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/runecrafting/Pouches.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/runecrafting/RuneCraftingActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/runecrafting/RuneCraftingActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/runecrafting/Runecrafting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/runecrafting/Runecrafting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/runecrafting/Tiaras.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/runecrafting/Tiaras.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/slayer/Slayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/slayer/Slayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/slayer/SlayerMaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/slayer/SlayerMaster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/slayer/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/slayer/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/smithing/SilverCrafting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/smithing/SilverCrafting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/smithing/Superheat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/smithing/Superheat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/thieving/Pickpocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/thieving/Pickpocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/thieving/Thieving.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/thieving/Thieving.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/woodcutting/Hatchet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/woodcutting/Hatchet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/woodcutting/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/woodcutting/Tree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/woodcutting/Woodcutting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/woodcutting/Woodcutting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/model/players/skills/woodcutting/WoodcuttingEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/model/content/skills/woodcutting/WoodcuttingEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ethos/world/ItemHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethos/world/ItemHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/CopyOfTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/CopyOfTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,13 +254,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/data" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Server Tools/RSGD/decompiled/SnowWipe" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="ethos.model.content.skills" />
       <recent name="ethos.model.content.randomevents" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -222,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628110225345</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fixed shooting stars, added more shops. and fixed some npc stats">
+      <created>1636676849047</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1636676849047</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -255,15 +459,22 @@
     <MESSAGE value="added MizgagDialogue and added imp catcher" />
     <MESSAGE value="added more tzhaar's shops got more spawns for the regions i was missing for the overworld" />
     <MESSAGE value="added 200 data." />
-    <option name="LAST_COMMIT_MESSAGE" value="added 200 data." />
+    <MESSAGE value="fixed shooting stars, added more shops. and fixed some npc stats" />
+    <MESSAGE value="more skilling stuff redone and added" />
+    <option name="LAST_COMMIT_MESSAGE" value="more skilling stuff redone and added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ethos/model/players/packets/ClickingButtons.java</url>
-          <line>584</line>
+          <line>575</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ethos/model/content/skills/smithing/Smelting.java</url>
+          <line>134</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

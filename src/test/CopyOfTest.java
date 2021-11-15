@@ -9,8 +9,8 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 
 import ethos.model.items.ItemDefinition;
-import ethos.model.players.skills.herblore.PoisonedWeapon;
-import ethos.model.players.skills.herblore.PoisonedWeapon.PoisonLevel;
+import ethos.model.content.skills.herblore.PoisonedWeapon;
+import ethos.model.content.skills.herblore.PoisonedWeapon.PoisonLevel;
 
 import java.util.Optional;
 

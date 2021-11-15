@@ -1,6 +1,5 @@
 package ethos.model.players.packets.objectoptions;
 
-import ethos.Config;
 import ethos.Server;
 import ethos.clip.ObjectDef;
 import ethos.clip.Region;
@@ -8,8 +7,8 @@ import ethos.model.objects.functions.Pickable;
 import ethos.model.players.Player;
 import ethos.model.players.Right;
 import ethos.model.players.packets.objectoptions.impl.DarkAltar;
-import ethos.model.players.skills.FlaxPicking;
-import ethos.model.players.skills.thieving.Thieving.Stall;
+import ethos.model.content.skills.FlaxPicking;
+import ethos.model.content.skills.thieving.Thieving.Stall;
 import ethos.util.Location3D;
 import ethos.util.Misc;
 

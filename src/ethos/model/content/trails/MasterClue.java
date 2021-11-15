@@ -1,7 +1,7 @@
 package ethos.model.content.trails;
 
 import ethos.model.players.Player;
-import ethos.model.players.skills.Skill;
+import ethos.model.content.skills.Skill;
 import ethos.util.Misc;
 
 public class MasterClue {

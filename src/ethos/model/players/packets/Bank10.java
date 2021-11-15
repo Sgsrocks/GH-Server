@@ -13,8 +13,8 @@ import ethos.model.multiplayer_session.duel.DuelSession;
 import ethos.model.multiplayer_session.trade.TradeSession;
 import ethos.model.players.PacketType;
 import ethos.model.players.Player;
-import ethos.model.players.skills.Smithing;
-import ethos.model.players.skills.crafting.JewelryMaking;
+import ethos.model.content.skills.smithing.Smithing;
+import ethos.model.content.skills.crafting.JewelryMaking;
 
 /**
  * Bank 10 Items

@@ -14,17 +14,16 @@ import java.util.concurrent.TimeUnit;
 import ethos.model.content.*;
 import ethos.model.content.MysteryBoxs.*;
 import ethos.model.content.n_tp.TeleportInterface;
+import ethos.model.content.skills.smithing.SmithingInterface;
 import ethos.model.content.traveling.DesertHeat;
 import ethos.model.minigames.Partyhat;
-import ethos.model.players.combat.monsterhunt.MonsterHunt;
-import ethos.model.players.skills.agility.impl.rooftop.*;
-import ethos.model.players.skills.farming.ToolLeprechaun;
-import ethos.model.players.skills.runecrafting.Tiaras;
+import ethos.model.content.skills.agility.impl.rooftop.*;
+import ethos.model.content.skills.farming.ToolLeprechaun;
+import ethos.model.content.skills.runecrafting.Tiaras;
 import org.jboss.netty.buffer.ChannelBuffers;
 import org.jboss.netty.channel.Channel;
 
 import ethos.Config;
-import ethos.PlayersOnline;
 import ethos.Server;
 import ethos.event.CycleEventHandler;
 import ethos.event.Event;
@@ -106,7 +105,6 @@ import ethos.model.npcs.bosses.skotizo.Skotizo;
 import ethos.model.npcs.bosses.skotizo.SkotizoLostItems;
 import ethos.model.npcs.bosses.vorkath.Vorkath;
 import ethos.model.npcs.bosses.vorkath.VorkathInstance;
-import ethos.model.npcs.bosses.vorkath.VorkathLostItems;
 import ethos.model.npcs.bosses.zulrah.Zulrah;
 import ethos.model.npcs.bosses.zulrah.ZulrahLostItems;
 import ethos.model.npcs.instance.InstanceSoloFight;
@@ -120,31 +118,31 @@ import ethos.model.players.combat.magic.MagicData;
 import ethos.model.players.combat.melee.QuickPrayers;
 import ethos.model.players.mode.Mode;
 import ethos.model.players.mode.ModeType;
-import ethos.model.players.skills.Agility;
-import ethos.model.players.skills.SkillInterfaces;
-import ethos.model.players.skills.Skilling;
-import ethos.model.players.skills.Smelting;
-import ethos.model.players.skills.Smithing;
-import ethos.model.players.skills.SmithingInterface;
-import ethos.model.players.skills.agility.AgilityHandler;
-import ethos.model.players.skills.agility.impl.BarbarianAgility;
-import ethos.model.players.skills.agility.impl.GnomeAgility;
-import ethos.model.players.skills.agility.impl.Lighthouse;
-import ethos.model.players.skills.agility.impl.Shortcuts;
-import ethos.model.players.skills.agility.impl.WildernessAgility;
-import ethos.model.players.skills.construction.House;
-import ethos.model.players.skills.construction.Room;
-import ethos.model.players.skills.cooking.Cooking;
-import ethos.model.players.skills.crafting.Crafting;
-import ethos.model.players.skills.farming.Farming;
-import ethos.model.players.skills.fletching.Fletching;
-import ethos.model.players.skills.herblore.Herblore;
-import ethos.model.players.skills.hunter.Hunter;
-import ethos.model.players.skills.mining.Mining;
-import ethos.model.players.skills.prayer.Prayer;
-import ethos.model.players.skills.runecrafting.Runecrafting;
-import ethos.model.players.skills.slayer.Slayer;
-import ethos.model.players.skills.thieving.Thieving;
+import ethos.model.content.skills.Agility;
+import ethos.model.content.skills.SkillInterfaces;
+import ethos.model.content.skills.Skilling;
+import ethos.model.content.skills.smithing.Smelting;
+import ethos.model.content.skills.smithing.Smithing;
+import ethos.model.content.skills.smithing.SmithingInterface;
+import ethos.model.content.skills.agility.AgilityHandler;
+import ethos.model.content.skills.agility.impl.BarbarianAgility;
+import ethos.model.content.skills.agility.impl.GnomeAgility;
+import ethos.model.content.skills.agility.impl.Lighthouse;
+import ethos.model.content.skills.agility.impl.Shortcuts;
+import ethos.model.content.skills.agility.impl.WildernessAgility;
+import ethos.model.content.skills.construction.House;
+import ethos.model.content.skills.construction.Room;
+import ethos.model.content.skills.cooking.Cooking;
+import ethos.model.content.skills.crafting.Crafting;
+import ethos.model.content.skills.farming.Farming;
+import ethos.model.content.skills.fletching.Fletching;
+import ethos.model.content.skills.herblore.Herblore;
+import ethos.model.content.skills.hunter.Hunter;
+import ethos.model.content.skills.mining.Mining;
+import ethos.model.content.skills.prayer.Prayer;
+import ethos.model.content.skills.runecrafting.Runecrafting;
+import ethos.model.content.skills.slayer.Slayer;
+import ethos.model.content.skills.thieving.Thieving;
 import ethos.model.shops.ShopAssistant;
 import ethos.net.Packet;
 import ethos.net.Packet.Type;
@@ -155,6 +153,7 @@ import ethos.util.Stopwatch;
 import ethos.util.Stream;
 import ethos.world.Clan;
 import ethos.model.content.teleportation.*;
+
 public class Player extends Entity {
 
 	public Vorkath vorkath;
@@ -187,8 +186,9 @@ public class Player extends Entity {
 	public int Giantkills;
     public boolean doinguri = false;
     public long clickDelay;
+	public int smithingCounter;
 
-    private ToolLeprechaun toolLeprechaun;
+	private ToolLeprechaun toolLeprechaun;
 
 	public MageArena getMageArena() {
 		return this.mageArena;
@@ -473,6 +473,7 @@ public class Player extends Entity {
 	private RooftopArdougne rooftopArdougne = new RooftopArdougne();
 	private BarbarianAgility barbarianAgility = new BarbarianAgility();
 	private RooftopPrifddinas rooftopPrifddinas = new RooftopPrifddinas();
+	private RooftopDraynor rooftopDraynor = new RooftopDraynor();
 	private Lighthouse lighthouse = new Lighthouse();
 	private Agility agility = new Agility(this);
 	private Cooking cooking = new Cooking();
@@ -2456,6 +2457,11 @@ public class Player extends Entity {
 
 	public RooftopArdougne getRoofTopArdougne() {
 		return rooftopArdougne;
+	}
+
+
+	public RooftopDraynor getRoofTopDraynor() {
+		return this.rooftopDraynor;
 	}
 
 	public Lighthouse getLighthouse() {

@@ -20,7 +20,7 @@ import ethos.model.multiplayer_session.trade.TradeSession;
 import ethos.model.players.PacketType;
 import ethos.model.players.Player;
 import ethos.model.players.PlayerHandler;
-import ethos.model.players.skills.TabletCreation;
+import ethos.model.content.skills.TabletCreation;
 
 /**
  * Bank X Items

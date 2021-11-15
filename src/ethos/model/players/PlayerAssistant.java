@@ -11,8 +11,6 @@ import java.util.Optional;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-import ethos.clip.ObjectDef;
-import ethos.model.npcs.bosses.vorkath.Vorkath;
 import ethos.model.npcs.bosses.vorkath.VorkathInstance;
 
 import org.apache.commons.lang3.ArrayUtils;
@@ -29,7 +27,6 @@ import ethos.event.impl.WheatPortalEvent;
 import ethos.model.content.RunePouch;
 import ethos.model.content.LootingBag.LootingBag;
 import ethos.model.content.achievement_diary.wilderness.WildernessDiaryEntry;
-import ethos.model.content.bonus.DoubleExperience;
 import ethos.model.content.instances.InstancedArea;
 import ethos.model.content.instances.InstancedAreaManager;
 import ethos.model.content.kill_streaks.Killstreak;
@@ -65,17 +62,16 @@ import ethos.model.players.combat.effects.DragonfireShieldEffect;
 import ethos.model.players.combat.magic.MagicData;
 import ethos.model.players.combat.magic.NonCombatSpells;
 import ethos.model.players.mode.ModeType;
-import ethos.model.players.skills.Fishing;
-import ethos.model.players.skills.Skill;
-import ethos.model.players.skills.SkillHandler;
-import ethos.model.players.skills.Smelting;
-import ethos.model.players.skills.Smelting.Bars;
-import ethos.model.players.skills.cooking.Cooking;
-import ethos.model.players.skills.crafting.CraftingData;
-import ethos.model.players.skills.crafting.Enchantment;
-import ethos.model.players.skills.mining.Mineral;
-import ethos.model.players.skills.slayer.Task;
-import ethos.model.players.skills.woodcutting.Tree;
+import ethos.model.content.skills.Skill;
+import ethos.model.content.skills.SkillHandler;
+import ethos.model.content.skills.Fishing;
+import ethos.model.content.skills.smithing.Smelting;
+import ethos.model.content.skills.smithing.Smelting.Bars;
+import ethos.model.content.skills.crafting.CraftingData;
+import ethos.model.content.skills.crafting.Enchantment;
+import ethos.model.content.skills.mining.Mineral;
+import ethos.model.content.skills.slayer.Task;
+import ethos.model.content.skills.woodcutting.Tree;
 import ethos.model.shops.ShopAssistant;
 import ethos.net.outgoing.messages.ComponentVisibility;
 import ethos.util.Misc;
@@ -4565,6 +4561,9 @@ public class PlayerAssistant {
 		}
 	}
 
+	public void stopSkilling() {
+		Server.getEventHandler().stop(c, "skilling");
+	}
 
 
     /**

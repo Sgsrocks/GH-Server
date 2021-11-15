@@ -41,7 +41,7 @@ public class ShootingStar {
 		
 		private GlobalObject starObject;
 		private LocationData starLocation;
-		
+
 		public GlobalObject getStarObject() {
 			return starObject;
 		}
@@ -67,7 +67,8 @@ public class ShootingStar {
 		LOCATION_11(new Position(3566, 3297), "on the Barrows hills", "Barrows"),
 		LOCATION_12(new Position(2986, 3599), "in the Wilderness (western dragons)", "West Dragons"),
 		LOCATION_13(new Position(3091, 3528), "in the Wilderness (Edgeville)", "Edgeville Wild"),
-		LOCATION_14(new Position(2995, 3911), "outside the Wilderness Agility Course", "Wild. Course");
+		LOCATION_14(new Position(2995, 3911), "outside the Wilderness Agility Course", "Wild. Course"),
+		LOCATION_15(new Position(1633, 2877), "at home", "Home");
 
 		private LocationData (Position spawnPos, String clue, String playerPanelFrame) {
 			this.spawnPos = spawnPos;

@@ -9,7 +9,7 @@ import ethos.model.multiplayer_session.MultiplayerSessionType;
 import ethos.model.multiplayer_session.duel.DuelSession;
 import ethos.model.players.PacketType;
 import ethos.model.players.Player;
-import ethos.model.players.skills.crafting.OrbCharging;
+import ethos.model.content.skills.crafting.OrbCharging;
 
 public class MagicOnObject implements PacketType {
 

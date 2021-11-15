@@ -7,9 +7,7 @@ import ethos.Server;
 import ethos.ServerState;
 import ethos.definitions.ItemCacheDefinition;
 import ethos.model.content.SkillcapePerks;
-import ethos.model.content.LootingBag.LootingBag;
 import ethos.model.content.LootingBag.LootingBagItem;
-import ethos.model.content.achievement_diary.ardougne.ArdougneDiaryEntry;
 import ethos.model.content.achievement_diary.karamja.KaramjaDiaryEntry;
 import ethos.model.entity.Entity;
 import ethos.model.items.bank.BankItem;
@@ -26,7 +24,7 @@ import ethos.model.players.Requirement;
 import ethos.model.players.combat.Degrade.DegradableItem;
 import ethos.model.players.combat.range.RangeData;
 import ethos.model.players.mode.ModeType;
-import ethos.model.players.skills.Skill;
+import ethos.model.content.skills.Skill;
 import ethos.model.shops.ShopAssistant;
 import ethos.util.Misc;
 
@@ -3533,5 +3531,20 @@ public class ItemAssistant {
         }
         return false;
     }
+
+	/**
+	 * Gets the item slot.
+	 *
+	 * @param ItemID
+	 * @return
+	 */
+	public int getInventoryItemSlot(int ItemID) {
+		for (int i = 0; i < c.playerItems.length; i++) {
+			if ((c.playerItems[i] - 1) == ItemID) {
+				return i;
+			}
+		}
+		return -1;
+	}
 
 }

@@ -2,7 +2,7 @@ package ethos.model.items;
 
 import org.apache.commons.lang3.RandomUtils;
 
-import ethos.model.players.skills.hunter.impling.ItemRarity;
+import ethos.model.content.skills.hunter.impling.ItemRarity;
 
 /**
  * Represents an item that exists within the game. Items hold identification and value, and have the potential to contain other information as well.

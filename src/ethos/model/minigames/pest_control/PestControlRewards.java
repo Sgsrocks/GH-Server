@@ -8,7 +8,7 @@ import ethos.model.content.achievement_diary.western_provinces.WesternDiaryEntry
 import ethos.model.items.GameItem;
 import ethos.model.items.ItemDefinition;
 import ethos.model.players.Player;
-import ethos.model.players.skills.Skill;
+import ethos.model.content.skills.Skill;
 import ethos.util.Misc;
 
 public class PestControlRewards {

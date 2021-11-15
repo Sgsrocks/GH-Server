@@ -3,16 +3,13 @@ package ethos.model.players.packets.npcoptions;
 import ethos.Config;
 import ethos.Server;
 import ethos.model.content.achievement_diary.ardougne.ArdougneDiaryEntry;
-import ethos.model.content.achievement_diary.desert.DesertDiaryEntry;
-import ethos.model.content.achievement_diary.falador.FaladorDiaryEntry;
-import ethos.model.content.achievement_diary.fremennik.FremennikDiaryEntry;
 import ethos.model.content.achievement_diary.varrock.VarrockDiaryEntry;
 import ethos.model.npcs.NPCHandler;
 import ethos.model.npcs.pets.PetHandler;
 import ethos.model.players.Boundary;
 import ethos.model.players.Player;
-import ethos.model.players.skills.agility.AgilityHandler;
-import ethos.model.players.skills.thieving.Thieving.Pickpocket;
+import ethos.model.content.skills.agility.AgilityHandler;
+import ethos.model.content.skills.thieving.Thieving.Pickpocket;
 
 /*
  * @author Matt

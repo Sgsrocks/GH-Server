@@ -1,7 +1,7 @@
 package ethos.model.players.packets.objectoptions.impl;
 
 import ethos.model.players.Player;
-import ethos.model.players.skills.agility.AgilityHandler;
+import ethos.model.content.skills.agility.AgilityHandler;
 
 public class TrainCart {
 

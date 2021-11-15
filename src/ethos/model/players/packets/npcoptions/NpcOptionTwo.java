@@ -5,23 +5,19 @@ import java.util.concurrent.TimeUnit;
 import ethos.Config;
 import ethos.Server;
 import ethos.model.content.Sawmill;
-import ethos.model.content.achievement_diary.desert.DesertDiaryEntry;
 import ethos.model.content.achievement_diary.fremennik.FremennikDiaryEntry;
 import ethos.model.content.achievement_diary.karamja.KaramjaDiaryEntry;
 import ethos.model.content.achievement_diary.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
 import ethos.model.content.achievement_diary.varrock.VarrockDiaryEntry;
-import ethos.model.content.achievement_diary.wilderness.WildernessDiaryEntry;
-import ethos.model.npcs.NPCHandler;
 import ethos.model.npcs.pets.PetHandler;
 import ethos.model.npcs.pets.Probita;
 import ethos.model.players.Boundary;
 import ethos.model.players.Player;
 import ethos.model.players.PlayerAssistant;
 import ethos.model.players.PlayerAssistant.PointExchange;
-import ethos.model.players.skills.Fishing;
-import ethos.model.players.skills.agility.AgilityHandler;
-import ethos.model.players.skills.farming.ToolLeprechaun;
-import ethos.model.players.skills.thieving.Pickpocket;
+import ethos.model.content.skills.Fishing;
+import ethos.model.content.skills.agility.AgilityHandler;
+import ethos.model.content.skills.thieving.Pickpocket;
 
 /*
  * @author Matt
@@ -77,6 +73,12 @@ public class NpcOptionTwo {
 				break;
 			case 3947:
 				player.getShops().openShop(Config.FREMENNIK_FISH_MONGER);
+				break;
+			case 2874:
+				player.getShops().openShop(Config.GEM_TRADER);
+				break;
+			case 4638:
+				player.getShops().openShop(Config.BEDABIN_VILLAGE_BARTERING);
 				break;
 			case 3894:
 				player.getShops().openShop(Config.SIGMUND_THE_MERCHANT);

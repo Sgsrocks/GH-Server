@@ -2,7 +2,7 @@ package ethos.event.impl;
 
 import ethos.event.Event;
 import ethos.model.players.Player;
-import ethos.model.players.skills.Skill;
+import ethos.model.content.skills.Skill;
 
 public class RunEnergyEvent extends Event<Player> {
 

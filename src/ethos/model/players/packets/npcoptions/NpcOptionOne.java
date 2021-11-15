@@ -4,7 +4,6 @@ import java.util.Objects;
 
 import ethos.Config;
 import ethos.Server;
-import ethos.definitions.NPCCacheDefinition;
 import ethos.model.content.achievement_diary.desert.DesertDiaryEntry;
 import ethos.model.content.achievement_diary.fremennik.FremennikDiaryEntry;
 import ethos.model.content.achievement_diary.kandarin.KandarinDiaryEntry;
@@ -24,21 +23,19 @@ import ethos.model.content.dialogue.impl.Varrock.ReldoDIalogue;
 import ethos.model.content.dialogue.impl.Yanille.FrenitaDIalogue;
 import ethos.model.content.dialogue.impl.slayer.DuradelDialogue;
 import ethos.model.content.dialogue.impl.wizard_tower.MizgagDialogue;
-import ethos.model.holiday.halloween.HalloweenRandomOrder;
 import ethos.model.npcs.NPC;
 import ethos.model.npcs.NPCHandler;
 import ethos.model.npcs.pets.PetHandler;
 import ethos.model.npcs.pets.Probita;
 import ethos.model.players.Player;
 import ethos.model.players.Right;
-import ethos.model.players.skills.Fishing;
-import ethos.model.players.skills.agility.AgilityHandler;
-import ethos.model.players.skills.crafting.Tanning;
-import ethos.model.players.skills.hunter.impling.Impling;
-import ethos.model.players.skills.mining.Mineral;
-import ethos.model.players.skills.thieving.Pickpocket;
+import ethos.model.content.skills.Fishing;
+import ethos.model.content.skills.agility.AgilityHandler;
+import ethos.model.content.skills.crafting.Tanning;
+import ethos.model.content.skills.hunter.impling.Impling;
+import ethos.model.content.skills.mining.Mineral;
+import ethos.model.content.skills.thieving.Pickpocket;
 import ethos.util.Location3D;
-import ethos.model.players.Boundary;
 /*
  * @author Matt
  * Handles all first options on non playable characters.

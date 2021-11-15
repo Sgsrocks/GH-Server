@@ -4,9 +4,7 @@ import ethos.Server;
 import ethos.model.content.tradingpost.Listing;
 import ethos.model.players.PacketType;
 import ethos.model.players.Player;
-import ethos.model.players.PlayerHandler;
 import ethos.model.players.PlayerSave;
-import ethos.model.players.skills.construction.House;
 import ethos.util.Misc;
 import ethos.world.Clan;
 

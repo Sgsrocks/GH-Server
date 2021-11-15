@@ -14,8 +14,6 @@ import ethos.model.players.PacketType;
 import ethos.model.players.Player;
 import ethos.model.players.PlayerHandler;
 import ethos.model.players.Right;
-import ethos.model.players.skills.construction.House;
-import ethos.util.Misc;
 
 public class InputField implements PacketType {
 

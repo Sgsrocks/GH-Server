@@ -3,7 +3,7 @@ package ethos.model.players;
 import java.util.HashMap;
 import java.util.Map;
 
-import ethos.model.players.skills.Skill;
+import ethos.model.content.skills.Skill;
 
 /**
  * The container class that represents one equipment requirement.

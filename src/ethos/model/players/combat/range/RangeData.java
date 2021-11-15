@@ -6,7 +6,7 @@ import ethos.model.npcs.NPC;
 import ethos.model.npcs.NPCHandler;
 import ethos.model.players.Player;
 import ethos.model.players.PlayerHandler;
-import ethos.model.players.skills.herblore.PoisonedWeapon;
+import ethos.model.content.skills.herblore.PoisonedWeapon;
 
 public class RangeData {
 

@@ -21,10 +21,9 @@ import ethos.model.players.PacketType;
 import ethos.model.players.Player;
 import ethos.model.players.Right;
 import ethos.model.players.combat.Degrade;
-import ethos.model.players.skills.hunter.impling.Impling;
-import ethos.model.players.skills.runecrafting.Pouches;
-import ethos.model.players.skills.runecrafting.Pouches.Pouch;
-import ethos.model.players.skills.runecrafting.Runecrafting;
+import ethos.model.content.skills.hunter.impling.Impling;
+import ethos.model.content.skills.runecrafting.Pouches;
+import ethos.model.content.skills.runecrafting.Pouches.Pouch;
 import ethos.util.Misc;
 
 /**

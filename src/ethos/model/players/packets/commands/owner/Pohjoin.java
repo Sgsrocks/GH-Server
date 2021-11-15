@@ -3,7 +3,7 @@ package ethos.model.players.packets.commands.owner;
 import ethos.model.players.Player;
 import ethos.model.players.PlayerHandler;
 import ethos.model.players.packets.commands.Command;
-import ethos.model.players.skills.construction.House;
+import ethos.model.content.skills.construction.House;
 import ethos.util.Misc;
 
 public class Pohjoin extends Command {

@@ -6,8 +6,6 @@ import ethos.Config;
 import ethos.Server;
 import ethos.clip.ObjectDef;
 import ethos.clip.Region;
-import ethos.clip.doors.DoorDefinition;
-import ethos.clip.doors.DoorHandler;
 import ethos.event.CycleEvent;
 import ethos.event.CycleEventContainer;
 import ethos.event.CycleEventHandler;
@@ -48,23 +46,18 @@ import ethos.model.multiplayer_session.MultiplayerSessionType;
 import ethos.model.multiplayer_session.duel.DuelSession;
 import ethos.model.multiplayer_session.duel.DuelSessionRules.Rule;
 import ethos.model.npcs.bosses.cerberus.Cerberus;
-import ethos.model.npcs.bosses.vorkath.Vorkath;
 import ethos.model.npcs.bosses.vorkath.VorkathInstance;
 import ethos.model.objects.Doors;
 import ethos.model.objects.DoubleGates;
 import ethos.model.objects.Ladders;
-import ethos.model.objects.Object;
-import ethos.model.objects.Objects;
 import ethos.model.objects.SingleGates;
 import ethos.model.objects.dungeons.KuradalsDungeons;
 import ethos.model.objects.functions.AxeInLog;
 import ethos.model.objects.functions.FlourMill;
 import ethos.model.objects.functions.MilkCow;
-import ethos.model.objects.functions.Pickable;
 import ethos.model.players.Boundary;
 import ethos.model.players.Player;
 import ethos.model.players.PlayerAssistant;
-import ethos.model.players.PlayerHandler;
 import ethos.model.players.Right;
 import ethos.model.players.WildernessDitch;
 import ethos.model.players.combat.Hitmark;
@@ -72,21 +65,18 @@ import ethos.model.players.packets.objectoptions.impl.DarkAltar;
 import ethos.model.players.packets.objectoptions.impl.Overseer;
 import ethos.model.players.packets.objectoptions.impl.RaidObjects;
 import ethos.model.players.packets.objectoptions.impl.TrainCart;
-import ethos.model.players.skills.Fishing;
-import ethos.model.players.skills.FlaxPicking;
-import ethos.model.players.skills.Skill;
-import ethos.model.players.skills.agility.AgilityHandler;
-import ethos.model.players.skills.construction.PortalDialogue;
-import ethos.model.players.skills.crafting.JewelryMaking;
-import ethos.model.players.skills.hunter.Hunter;
-import ethos.model.players.skills.runecrafting.RuneCraftingActions;
-import ethos.model.players.skills.runecrafting.Runecrafting;
-import ethos.model.players.skills.woodcutting.Tree;
-import ethos.model.players.skills.woodcutting.Woodcutting;
+import ethos.model.content.skills.*;
+import ethos.model.content.skills.agility.AgilityHandler;
+import ethos.model.content.skills.construction.PortalDialogue;
+import ethos.model.content.skills.crafting.JewelryMaking;
+import ethos.model.content.skills.hunter.Hunter;
+import ethos.model.content.skills.runecrafting.RuneCraftingActions;
+import ethos.model.content.skills.woodcutting.Tree;
+import ethos.model.content.skills.woodcutting.Woodcutting;
 import ethos.util.Location3D;
 import ethos.util.Misc;
 import ethos.world.objects.GlobalObject;
-import ethos.model.players.skills.mining.Pickaxe;
+import ethos.model.content.skills.mining.Pickaxe;
 
 /*
  * @author Matt
@@ -175,6 +165,9 @@ public class ObjectOptionOne {
 		if(c.getRooftopPrifddinas().execute(c, objectType)){
 			return;
 		}
+		if (c.getRoofTopDraynor().execute(c, objectType)) {
+			return;
+		}
 		if (c.getLighthouse().execute(c, objectType)) {
 			return;
 		}
@@ -215,6 +208,23 @@ public class ObjectOptionOne {
 					Server.getGlobalObjects().add(new GlobalObject(1582, obX, obY, c.getHeight(), object.getFace(), object.getType(), 100, 1580));
 					return;
 				}
+			}
+		}
+		if ((def!=null ? def.name : null) != null && def.name.toLowerCase().equals("anvil")) {
+			if (c.getItems().playerHasItem(barType[0])) {
+				c.getSmithingInt().showSmithInterface(barType[0]);
+			} else if (c.getItems().playerHasItem(barType[1])) {
+				c.getSmithingInt().showSmithInterface(barType[1]);
+			} else if (c.getItems().playerHasItem(barType[2])) {
+				c.getSmithingInt().showSmithInterface(barType[2]);
+			} else if (c.getItems().playerHasItem(barType[3])) {
+				c.getSmithingInt().showSmithInterface(barType[3]);
+			} else if (c.getItems().playerHasItem(barType[4])) {
+				c.getSmithingInt().showSmithInterface(barType[4]);
+			} else if (c.getItems().playerHasItem(barType[5])) {
+				c.getSmithingInt().showSmithInterface(barType[5]);
+			} else {
+				c.sendMessage("You don't have any bars.");
 			}
 		}
 		if((def!=null ? def.name : null)!= null && def.name.toLowerCase().equals("ladder")) {
@@ -973,24 +983,6 @@ public class ObjectOptionOne {
 			c.getHealth().reset();
 			c.getPA().refreshSkill(5);
 			c.sendMessage("You feel rejuvinated.");
-			break;
-		case 6150:
-
-			if (c.getItems().playerHasItem(barType[0])) {
-				c.getSmithingInt().showSmithInterface(barType[0]);
-			} else if (c.getItems().playerHasItem(barType[1])) {
-				c.getSmithingInt().showSmithInterface(barType[1]);
-			} else if (c.getItems().playerHasItem(barType[2])) {
-				c.getSmithingInt().showSmithInterface(barType[2]);
-			} else if (c.getItems().playerHasItem(barType[3])) {
-				c.getSmithingInt().showSmithInterface(barType[3]);
-			} else if (c.getItems().playerHasItem(barType[4])) {
-				c.getSmithingInt().showSmithInterface(barType[4]);
-			} else if (c.getItems().playerHasItem(barType[5])) {
-				c.getSmithingInt().showSmithInterface(barType[5]);
-			} else {
-				c.sendMessage("You don't have any bars.");
-			}
 			break;
 		case 11846:
 			if (c.combatLevel >= 100) {
@@ -2873,7 +2865,7 @@ public class ObjectOptionOne {
 
 		case 14896:
 			c.turnPlayerTo(obX, obY);
-			FlaxPicking.getInstance().pick(c, new Location3D(obX, obY, c.heightLevel));
+			//FlaxPicking.getInstance().pick(c, new Location3D(obX, obY, c.heightLevel));
 			break;
 
 		case 412:

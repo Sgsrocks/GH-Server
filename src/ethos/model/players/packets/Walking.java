@@ -8,12 +8,9 @@ import ethos.model.multiplayer_session.MultiplayerSessionStage;
 import ethos.model.multiplayer_session.MultiplayerSessionType;
 import ethos.model.multiplayer_session.duel.DuelSession;
 import ethos.model.multiplayer_session.duel.DuelSessionRules.Rule;
-import ethos.model.players.Boundary;
-import ethos.model.players.PacketType;
-import ethos.model.players.Player;
-import ethos.model.players.PlayerHandler;
-import ethos.model.players.skills.SkillHandler;
-import ethos.model.players.skills.cooking.Cooking;
+import ethos.model.players.*;
+import ethos.model.content.skills.SkillHandler;
+import ethos.model.content.skills.cooking.Cooking;
 import ethos.util.Misc;
 ;
 
@@ -241,7 +238,32 @@ public class Walking implements PacketType {
 		if (packetType == 248) {
 			packetSize -= 14;
 		}
-		c.newWalkCmdSteps = (packetSize - 5) / 2;
+		int steps = (packetSize - 5) / 2;
+		int[][] path = new int[steps][2];
+
+		int firstStepX = c.getInStream().readSignedWordBigEndianA();
+
+		for (int i = 0; i < steps; i++) {
+			path[i][0] = c.getInStream().readSignedByte();
+			path[i][1] = c.getInStream().readSignedByte();
+		}
+
+		int firstStepY = c.getInStream().readSignedWordBigEndian();
+		boolean runPath = c.getInStream().readSignedByteC() == 1;
+
+		for (int i = 0; i < steps; i++) {
+			path[i][0] += firstStepX;
+			path[i][1] += firstStepY;
+		}
+
+		int pathX = steps > 0 ? path[(steps - 1)][0] : firstStepX;
+		int pathY = steps > 0 ? path[(steps - 1)][1] : firstStepY;
+		if (Misc.distance(c.absX, c.absY, pathX, pathY) < 35) {
+			PathFinder.getPathFinder().findRoute(c, pathX, pathY, true, 0, 0);
+			c.setNewWalkCmdIsRunning(runPath);
+		}
+
+		/*c.newWalkCmdSteps = (packetSize - 5) / 2;
 		if (++c.newWalkCmdSteps > c.walkingQueueSize) {
 			c.newWalkCmdSteps = 0;
 			return;
@@ -257,7 +279,7 @@ public class Walking implements PacketType {
 		for (int i1 = 0; i1 < c.newWalkCmdSteps; i1++) {
 			c.getNewWalkCmdX()[i1] += firstStepX;
 			c.getNewWalkCmdY()[i1] += firstStepY;
-		}
+		}*/
 		c.getMusic().updateRegionMusic(c.getRegionId());
 	}
 

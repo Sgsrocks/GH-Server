@@ -1,16 +1,11 @@
 package ethos.model.players.packets;
 
 import java.util.Objects;
-import java.util.Optional;
-import java.util.function.Consumer;
 
 import ethos.Server;
-import ethos.clip.Region;
-import ethos.clip.WorldObject;
 import ethos.event.CycleEvent;
 import ethos.event.CycleEventContainer;
 import ethos.event.CycleEventHandler;
-import ethos.event.impl.PoisonEvent;
 import ethos.model.multiplayer_session.MultiplayerSessionFinalizeType;
 import ethos.model.multiplayer_session.MultiplayerSessionStage;
 import ethos.model.multiplayer_session.MultiplayerSessionType;
@@ -18,9 +13,9 @@ import ethos.model.multiplayer_session.duel.DuelSession;
 import ethos.model.players.Boundary;
 import ethos.model.players.PacketType;
 import ethos.model.players.Player;
-import ethos.model.players.skills.agility.AgilityHandler;
-import ethos.model.players.skills.farming.FarmingConstants;
-import ethos.model.players.skills.hunter.impling.PuroPuro;
+import ethos.model.content.skills.agility.AgilityHandler;
+import ethos.model.content.skills.farming.FarmingConstants;
+import ethos.model.content.skills.hunter.impling.PuroPuro;
 
 /**
  * Click Object
@@ -279,58 +274,127 @@ public class ClickObject implements PacketType {
 				case 5014:
 					c.objectDistance=2;
 					break;
-			case 1733:
-			case 10779:
-				c.objectYOffset = 2;
-				break;
 			case 15477:
 			case 13405:
 				c.objectDistance = 5;
 				break;
-			case 11756:
-			case 4551:
-			case 4553:
-			case 4555:
-			case 4557:
-			case 23556:
-			case 677:
-			case 21578:
-			case 6461:
-			case 6462:
-			case 26645:
-			case 26646:
-			case 26762:
-			case 26763:
-			case 11374:
-			case 26567:
-			case 26568:
-			case 26569:
-			case 11406:
-			case 11430:
-			case 26461:
-			case 26766:
-			case 14911:
-			case 1759:
-			case 1761:
-			case 1753:
-			case 14918:
-			case 1754:
-			case 11819:
-			case 11826:
-			case 1751:
-			case 7471:
-			case 11377:
-			case 11375:
-			case 11376:
-			case 10817:
-			case 10595:
-			case 10596:
-			case 29082:
-			case 7811:
-			case 28893:
-			case 20877:
-				c.objectDistance = 3;
-				break;
+				case 1733:
+				case 10779:
+					c.objectYOffset = 2;
+					break;
+				case 11756:
+				case 4551:
+				case 4553:
+				case 4555:
+				case 4557:
+				case 23556:
+				case 677:
+				case 21578:
+				case 6461:
+				case 6462:
+				case 26645:
+				case 26646:
+				case 26762:
+				case 26763:
+				case 11374:
+				case 26567:
+				case 26568:
+				case 26569:
+				case 11406:
+				case 11430:
+				case 26461:
+				case 26766:
+				case 1759:
+				case 1761:
+				case 1753:
+				case 14918:
+				case 1754:
+				case 11819:
+				case 11826:
+				case 1751:
+				case 7471:
+				case 11377:
+				case 11375:
+				case 11376:
+				case 10817:
+				case 10595:
+				case 10596:
+				case 29082:
+				case 7811:
+				case 28893:
+					c.objectDistance = 4;
+					break;
+				case 14938:
+				case 14402:
+				case 14403:
+				case 14404:
+				case 11634:
+				case 14409:
+				case 14398:
+				case 14399:
+				case 14413:
+				case 14414:
+				case 14832:
+					c.objectDistance = 4;
+					break;
+				case 14833:
+				case 14834:
+				case 14835:
+				case 14836:
+				case 14841:
+				case 14844:
+				case 14845:
+				case 14848:
+				case 14846:
+				case 14894:
+				case 14847:
+				case 14897:
+				case 14899:
+				case 14901:
+				case 14903:
+				case 14904:
+				case 14905:
+				case 14911:
+				case 14919:
+				case 14920:
+				case 14921:
+				case 14922:
+				case 14923:
+				case 14924:
+				case 14928:
+				case 14932:
+				case 14929:
+				case 14930:
+				case 14931:
+					c.objectDistance = 4;
+					break;
+				case 14936:
+				case 14937:
+				case 14939:
+				case 14940:
+				case 14941:
+				case 14944:
+				case 14945:
+				case 6260:
+				case 14947:
+				case 14987:
+				case 14990:
+				case 14991:
+				case 14992:
+				case 14994:
+				case 15609:
+				case 26635:
+				case 15610:
+				case 15611:
+				case 28912:
+				case 15612:
+					c.objectDistance = 4;
+				case 31925:
+					c.objectDistance = 2;
+					break;
+				case 31858:
+					c.objectYOffset = 1;
+					break;
 			case 29150:
 				c.objectYOffset = 1;
 				break;

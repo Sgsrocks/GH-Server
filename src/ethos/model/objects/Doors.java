@@ -6,12 +6,7 @@ import java.io.*;
 import java.util.Scanner;
 
 import ethos.Server;
-import ethos.cache.object.CacheObject;
-import ethos.cache.object.GameObjectData;
-import ethos.cache.object.ObjectLoader;
-import ethos.clip.ObjectDef;
-import ethos.model.players.skills.SkillHandler;
-import ethos.world.objects.GlobalObject;
+import ethos.model.content.skills.SkillHandler;
 
 
 /**

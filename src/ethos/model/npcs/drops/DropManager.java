@@ -1,7 +1,6 @@
 package ethos.model.npcs.drops;
 
 import ethos.Config;
-import ethos.model.content.fame.fameBoosts;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.json.simple.JSONArray;
@@ -21,8 +20,8 @@ import ethos.model.players.Boundary;
 import ethos.model.players.Player;
 import ethos.model.players.PlayerHandler;
 import ethos.model.players.Right;
-import ethos.model.players.skills.slayer.SlayerMaster;
-import ethos.model.players.skills.slayer.Task;
+import ethos.model.content.skills.slayer.SlayerMaster;
+import ethos.model.content.skills.slayer.Task;
 import ethos.util.Location3D;
 import ethos.util.Misc;
 
