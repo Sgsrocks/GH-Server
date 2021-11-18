@@ -30334,10 +30334,10 @@
     "yPos":3473,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
@@ -30347,10 +30347,10 @@
     "yPos":3469,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
@@ -30360,10 +30360,10 @@
     "yPos":3475,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
@@ -30373,10 +30373,10 @@
     "yPos":3470,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
@@ -30386,10 +30386,10 @@
     "yPos":3473,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
@@ -30399,10 +30399,10 @@
     "yPos":3470,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
@@ -30412,10 +30412,10 @@
     "yPos":3466,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
@@ -30425,10 +30425,10 @@
     "yPos":3470,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
@@ -30438,10 +30438,10 @@
     "yPos":3474,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
@@ -30451,10 +30451,10 @@
     "yPos":3466,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
@@ -30464,10 +30464,10 @@
     "yPos":3465,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
@@ -30477,10 +30477,10 @@
     "yPos":3463,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
@@ -30490,10 +30490,10 @@
     "yPos":3485,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
@@ -30503,10 +30503,10 @@
     "yPos":3487,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
@@ -30516,10 +30516,10 @@
     "yPos":3480,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
@@ -30529,10 +30529,10 @@
     "yPos":3475,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
@@ -30542,10 +30542,10 @@
     "yPos":3466,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
@@ -65588,17 +65588,17 @@
     "name":"Copper longtail"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":2252,
     "yPos":2786,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":10541,
@@ -65614,17 +65614,17 @@
     "name":"Bird"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":2257,
     "yPos":2791,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":10541,
@@ -65640,17 +65640,17 @@
     "name":"Bird"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":2261,
     "yPos":2791,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":1418,
@@ -65692,30 +65692,30 @@
     "name":"Pyrelord"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":2267,
     "yPos":2792,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":2273,
     "yPos":2798,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":436,
@@ -65757,30 +65757,30 @@
     "name":"Pyrefiend"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":2276,
     "yPos":2792,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":2276,
     "yPos":2815,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":434,
@@ -65822,17 +65822,17 @@
     "name":"Pyrelord"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":2281,
     "yPos":2815,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":434,
@@ -65848,17 +65848,17 @@
     "name":"Pyrefiend"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":2282,
     "yPos":2791,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":433,
@@ -65900,17 +65900,17 @@
     "name":"Pyrelord"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":2283,
     "yPos":2805,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":435,
@@ -65952,17 +65952,17 @@
     "name":"Pyrefiend"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":2285,
     "yPos":2785,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":238,
@@ -65978,17 +65978,17 @@
     "name":"Butterfly"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":2294,
     "yPos":2784,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":10515,
@@ -66005,17 +66005,17 @@
 
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":2283,
     "yPos":2801,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":10515,
@@ -66058,17 +66058,17 @@
     "name":"Bird"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":2290,
     "yPos":2789,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":1416,
@@ -66097,17 +66097,17 @@
     "name":"Crab"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":2293,
     "yPos":2788,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":10515,
@@ -87861,17 +87861,17 @@
     "name":"Dark wizard"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":1731,
     "yPos":3464,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":7002,
@@ -87900,17 +87900,17 @@
     "name":"Swarm"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1683,
     "yPos":3487,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":7003,
@@ -87926,30 +87926,30 @@
     "name":"Cheryl"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":1725,
     "yPos":3468,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":1684,
     "yPos":3481,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":3019,
@@ -87978,30 +87978,30 @@
     "name":"Swarm"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1727,
     "yPos":3466,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1685,
     "yPos":3479,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":6988,
@@ -88043,17 +88043,17 @@
     "name":"Giant rat"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":1685,
     "yPos":3489,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":6987,
@@ -88121,30 +88121,30 @@
     "name":"null"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1737,
     "yPos":3468,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1694,
     "yPos":3472,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":7004,
@@ -88186,30 +88186,30 @@
     "name":"Unicorn Foal"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":1738,
     "yPos":3469,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":1690,
     "yPos":3479,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":2854,
@@ -88238,17 +88238,17 @@
     "name":"Cormorant"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":1693,
     "yPos":3465,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":3019,
@@ -88303,17 +88303,17 @@
     "name":"Hobgoblin"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1694,
     "yPos":3470,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":11127,
@@ -88368,17 +88368,17 @@
     "name":"Imp"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1694,
     "yPos":3487,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":2147,
@@ -88420,17 +88420,17 @@
     "name":"Gull"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1695,
     "yPos":3472,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":6973,
@@ -88459,30 +88459,30 @@
     "name":"Gull"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":1735,
     "yPos":3473,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1699,
     "yPos":3477,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":6998,
@@ -88525,17 +88525,17 @@
 
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1697,
     "yPos":3486,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":6992,
@@ -88578,17 +88578,17 @@
 
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1698,
     "yPos":3461,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":1338,
@@ -88617,17 +88617,17 @@
     "name":"Pirate"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1698,
     "yPos":3479,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":7005,
@@ -88775,17 +88775,17 @@
     "name":"Hobgoblin"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1748,
     "yPos":3464,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":7069,
@@ -88840,17 +88840,17 @@
     "name":"Hobgoblin"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1748,
     "yPos":3470,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":3019,
@@ -88931,17 +88931,17 @@
     "name":"Hobgoblin"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":1750,
     "yPos":3468,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":330,
@@ -88970,17 +88970,17 @@
     "name":"Hobgoblin"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1750,
     "yPos":3470,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":6975,
@@ -89074,17 +89074,17 @@
     "name":"Hobgoblin"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":1746,
     "yPos":3471,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":6977,
@@ -89113,17 +89113,17 @@
     "name":"Hobgoblin"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1757,
     "yPos":3469,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":6976,
@@ -89288,36 +89288,36 @@
     "yPos":3471,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
   {
-    "npcId":7206,
+    "npcId":5935,
     "xPos":1765,
     "yPos":3473,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
   {
-    "npcId":7206,
+    "npcId":5935,
     "xPos":1773,
     "yPos":3462,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
@@ -89363,17 +89363,17 @@
     "name":"Imp"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1772,
     "yPos":3465,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":5935,
@@ -89381,49 +89381,49 @@
     "yPos":3460,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
   {
-    "npcId":7206,
+    "npcId":5935,
     "xPos":1774,
     "yPos":3462,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1775,
     "yPos":3468,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":7206,
+    "npcId":5935,
     "xPos":1776,
     "yPos":3469,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
@@ -89441,17 +89441,17 @@
     "name":"Sandicrahb"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1786,
     "yPos":3466,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":7926,
@@ -89467,17 +89467,17 @@
     "name":"null"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1780,
     "yPos":3472,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":6969,
@@ -89493,17 +89493,17 @@
     "name":"Banker"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":1785,
     "yPos":3470,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":6970,
@@ -89519,17 +89519,17 @@
     "name":"Banker"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1791,
     "yPos":3469,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":6969,
@@ -89758,199 +89758,199 @@
     "name":"null"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":1857,
     "yPos":3542,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1858,
     "yPos":3547,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1859,
     "yPos":3559,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":1860,
     "yPos":3546,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":1861,
     "yPos":3537,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":1861,
     "yPos":3560,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1863,
     "yPos":3536,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1863,
     "yPos":3542,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1861,
     "yPos":3556,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":1864,
     "yPos":3544,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1868,
     "yPos":3545,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1868,
     "yPos":3555,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":1868,
     "yPos":3561,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1869,
     "yPos":3557,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":1870,
     "yPos":3553,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":5935,
@@ -89958,51 +89958,51 @@
     "yPos":3566,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
   {
-    "npcId":7206,
+    "npcId":5935,
     "xPos":1870,
     "yPos":3565,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":1874,
     "yPos":3546,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1874,
     "yPos":3558,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":11104,
@@ -90018,17 +90018,17 @@
     "name":"null"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1876,
     "yPos":3554,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":3019,
@@ -90044,17 +90044,17 @@
     "name":"Spider"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":1876,
     "yPos":3556,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":11095,
@@ -90356,30 +90356,30 @@
     "name":"Gull"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":1797,
     "yPos":3469,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1802,
     "yPos":3464,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":6987,
@@ -90395,17 +90395,17 @@
     "name":"Man"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1815,
     "yPos":3456,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":6989,
@@ -90421,17 +90421,17 @@
     "name":"Man"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":1817,
     "yPos":3461,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":7905,
@@ -90512,17 +90512,17 @@
     "name":"Poor looking woman"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1833,
     "yPos":3457,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":2854,
@@ -90564,17 +90564,17 @@
     "name":"Leenz"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":1842,
     "yPos":3462,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":2854,
@@ -90590,17 +90590,17 @@
     "name":"Rat"
   },
   {
-    "npcId":5936,
+    "npcId":5935,
     "xPos":1839,
     "yPos":3455,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":6995,
@@ -90616,17 +90616,17 @@
     "name":"Pirate"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1837,
     "yPos":3456,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":2855,
@@ -92580,15 +92580,15 @@
     "name":"Squirrel"
   },
   {
-    "npcId":7206,
+    "npcId":5935,
     "xPos":1769,
     "yPos":3473,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
     "combatLevel":15,
     "name":"Sand Crab"
   },
@@ -92762,30 +92762,30 @@
     "name":"Goblin"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1775,
     "yPos":3468,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1776,
     "yPos":3469,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":3032,
@@ -92801,17 +92801,17 @@
     "name":"Goblin"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1777,
     "yPos":3468,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":3031,
@@ -92840,17 +92840,17 @@
     "name":"Goblin"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1787,
     "yPos":3472,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":235,
@@ -95975,17 +95975,17 @@
     "name":"Imp"
   },
   {
-    "npcId":7207,
+    "npcId":5935,
     "xPos":1686,
     "yPos":3490,
     "height":0,
     "walkType":1,
-    "health":0,
-    "maxHit":0,
-    "attack":0,
-    "defence":0,
-    "combatLevel":0,
-    "name":"Sandy rocks"
+    "health":60,
+    "maxHit":1,
+    "attack":1,
+    "defence":1,
+    "combatLevel":15,
+    "name":"Sand Crab"
   },
   {
     "npcId":3019,

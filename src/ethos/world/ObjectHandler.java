@@ -148,7 +148,7 @@ public class ObjectHandler {
 								o.getObjectId(), o.getObjectX(),
 								o.getObjectY(), o.getObjectFace(),
 								o.getObjectType());
-						//Region.addObject(o.getObjectId(), o.getObjectX(), o.getObjectY(), o.getObjectHeight(), o.getObjectType(), o.getObjectFace(), true);
+						Region.addObject(o.getObjectId(), o.getObjectX(), o.getObjectY(), o.getObjectHeight(), o.getObjectType(), o.getObjectFace());
 					}
 				}
 			}

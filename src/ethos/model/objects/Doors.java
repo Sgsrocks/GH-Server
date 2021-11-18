@@ -6,7 +6,9 @@ import java.io.*;
 import java.util.Scanner;
 
 import ethos.Server;
+import ethos.clip.Region;
 import ethos.model.content.skills.SkillHandler;
+import ethos.world.objects.GlobalObject;
 
 
 /**
@@ -115,16 +117,16 @@ public class Doors {
 				}
 			}
 		}
-		if (xAdjustment != 0 || yAdjustment != 0) { 
-			Objects o = new Objects(-1, d.doorX, d.doorY, d.doorZ, 0, d.type, 0);
-			  Server.objectHandler.placeObject(o);
+		if (xAdjustment != 0 || yAdjustment != 0) {
+			Server.getGlobalObjects().add(new GlobalObject(-1, d.doorX, d.doorY, d.doorZ, 0, d.type, 0));
+			//Region.removeObject(d.originalId, d.doorX,  d.doorY, d.doorZ, d.type, d.originalFace);
 		}
 		if (d.doorX == d.originalX && d.doorY == d.originalY) {
 			d.doorX += xAdjustment;
 			d.doorY += yAdjustment;
-		} else { 
-			Objects o = new Objects(-1, d.doorX, d.doorY, d.doorZ, 0, d.type, 0);
-			  Server.objectHandler.placeObject(o);
+		} else {
+			  Server.getGlobalObjects().add(new GlobalObject(-1, d.doorX, d.doorY, d.doorZ, 0, d.type, 0));
+			//Region.removeObject(d.originalId, d.doorX,  d.doorY, d.doorZ, d.type, d.originalFace);
 			d.doorX = d.originalX;
 			d.doorY = d.originalY;
 		}
@@ -155,7 +157,8 @@ public class Doors {
 				d.doorId = 11772;
 			}
 		}
-			Server.objectHandler.placeObject(new Objects(d.doorId, d.doorX, d.doorY, d.doorZ, getNextFace(d), d.type, 0));
+		//Region.addObject(d.doorId, d.doorX, d.doorY, d.doorZ, d.type, getNextFace(d));
+		Server.getGlobalObjects().add(new GlobalObject(d.doorId, d.doorX, d.doorY, d.doorZ, getNextFace(d), d.type, 0));
 		return true;
 	}
 	

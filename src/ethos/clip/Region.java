@@ -1447,21 +1447,156 @@ public class Region {
 		}
 	}
 
-	public static void removeObject(int id, int x, int y, int height, int direction, int type) {
-        GameObjectData data = GameObjectData.forId(id);
-		if (data == null) {
+
+	public static void removeObject(int objectId, int x, int y, int height, int type, int direction) {
+		ObjectDef def = ObjectDef.getObjectDef(objectId);
+		if (def == null) {
 			return;
 		}
-		int xLength = data.getSizeX(direction);
-		int yLength = data.getSizeY(direction);
+		int xLength;
+		int yLength;
+		if (direction != 1 && direction != 3) {
+			xLength = def.xLength();
+			yLength = def.yLength();
+		} else {
+			xLength = def.yLength();
+			yLength = def.xLength();
+		}
 		if (type == 22) {
-			removeClipping(x, y, height, 0x200000);
+			if (def.aBoolean767() && def.hasActions()) {
+				addClipping(x, y, height, -2097152);
+				if (def.isWalkable) {
+					addProjectileClipping(x, y, height, -2097152);
+				}
+			}
 		} else if (type >= 9) {
-			removeClippingForSolidObject(x, y, height, xLength, yLength, data.unknown());
+			if (def.aBoolean767()) {
+				removeClippingForSolidObject(x, y, height, xLength, yLength, false);
+				if (def.isWalkable) {
+					removeProjectileClippingForSolidObject(x, y, height, xLength, yLength, true);
+				}
+			}
 		} else if (type >= 0 && type <= 3) {
-			removeClippingForVariableObject(x, y, height, type, direction, data.unknown());
+			if (def.aBoolean767()) {
+				setClippingForVariableObject(x, y, height, type, direction, def.solid(), true);
+				if (def.isWalkable) {
+					setProjectileClippingForVariableObject(x, y, height, type, direction, def.solid(), true);
+				}
+			}
 		}
 	}
+	private static void setClippingForVariableObject(int x, int y, int height, int type, int direction, boolean flag, boolean negative) {
+		if (type == 0) {
+			if (direction == 0) {
+				addClipping(x, y, height, negative ? -128 : 128);
+				addClipping(x - 1, y, height, negative ? -8 : 8);
+			} else if (direction == 1) {
+				addClipping(x, y, height, negative ? -2 : 2);
+				addClipping(x, y + 1, height, negative ? -32 : 32);
+			} else if (direction == 2) {
+				addClipping(x, y, height, negative ? -8 : 8);
+				addClipping(x + 1, y, height, negative ? -128 : 128);
+			} else if (direction == 3) {
+				addClipping(x, y, height, negative ? -32 : 32);
+				addClipping(x, y - 1, height, negative ? -2 : 2);
+			}
+		} else if (type == 1 || type == 3) {
+			if (direction == 0) {
+				addClipping(x, y, height, negative ? -1 : 1);
+				addClipping(x - 1, y + 1, height, negative ? -16 : 16);//wrong method217(16, x - 1, y + 1);
+			} else if (direction == 1) {
+				addClipping(x, y, height, negative ? -4 : 4);
+				addClipping(x + 1, y + 1, height, negative ? -64 : 64);
+			} else if (direction == 2) {
+				addClipping(x, y, height, negative ? -16 : 16);
+				addClipping(x + 1, y - 1, height, negative ? -1 : 1);
+			} else if (direction == 3) {
+				addClipping(x, y, height, negative ? -64 : 64);
+				addClipping(x - 1, y - 1, height, negative ? -4 : 4);
+			}
+		} else if (type == 2) {
+			if (direction == 0) {
+				addClipping(x, y, height, 130);
+				addClipping(x - 1, y, height, negative ? -8 : 8);
+				addClipping(x, y + 1, height, negative ? -32 : 32);
+			} else if (direction == 1) {
+				addClipping(x, y, height, negative ? -10 : 10);
+				addClipping(x, y + 1, height, negative ? -32 : 32);
+				addClipping(x + 1, y, height, negative ? -128 : 128);
+			} else if (direction == 2) {
+				addClipping(x, y, height, negative ? -40 : 40);
+				addClipping(x + 1, y, height, negative ? -128 : 128);
+				addClipping(x, y - 1, height, negative ? -2 : 2);
+			} else if (direction == 3) {
+				addClipping(x, y, height, negative ? -160 : 160);
+				addClipping(x, y - 1, height, negative ? -2 : 2);
+				addClipping(x - 1, y, height, negative ? -8 : 8);
+			}
+		}
+		// Old projectile clipping code
+        /*if (flag) {
+			if (type == 0) {
+				if (direction == 0) {
+					addClipping(x, y, height, negative ? -0x10000 : 0x10000);
+					addClipping(x - 1, y, height, negative ? -4096 : 4096);
+				} else if (direction == 1) {
+					addClipping(x, y, height, negative ? -1024 : 1024);
+					addClipping(x, y + 1, height, negative ? -16384 : 16384);
+				} else if (direction == 2) {
+					addClipping(x, y, height, negative ? -4096 : 4096);
+					addClipping(x + 1, y, height, negative ? -0x10000 : 0x10000);
+				} else if (direction == 3) {
+					addClipping(x, y, height, negative ? -16384 : 16384);
+					addClipping(x, y - 1, height, negative ? -1024 : 1024);
+				}
+			}
+			if (type == 1 || type == 3) {
+				if (direction == 0) {
+					addClipping(x, y, height, negative ? -512 : 512);
+					addClipping(x - 1, y + 1, height, negative ? -8192 : 8192);
+				} else if (direction == 1) {
+					addClipping(x, y, height, negative ? -2048 : 2048);
+					addClipping(x + 1, y + 1, height, negative ? -32768 : 32768);
+				} else if (direction == 2) {
+					addClipping(x, y, height, negative ? -8192 : 8192);
+					addClipping(x + 1, y + 1, height, negative ? -512 : 512);
+				} else if (direction == 3) {
+					addClipping(x, y, height, negative ? -32768 : 32768);
+					addClipping(x - 1, y - 1, height, negative ? -2048 : 2048);
+				}
+			} else if (type == 2) {
+				if (direction == 0) {
+					addClipping(x, y, height, negative ? -0x10400 : 0x10400);
+					addClipping(x - 1, y, height, negative ? -4096 : 4096);
+					addClipping(x, y + 1, height, negative ? -16384 : 16384);
+				} else if (direction == 1) {
+					addClipping(x, y, height, negative ? -5120 : 5120);
+					addClipping(x, y + 1, height, negative ? -16384 : 16384);
+					addClipping(x + 1, y, height, negative ? -0x10000 : 0x10000);
+				} else if (direction == 2) {
+					addClipping(x, y, height, negative ? -20480 : 20480);
+					addClipping(x + 1, y, height, negative ? -0x10000 : 0x10000);
+					addClipping(x, y - 1, height, negative ? -1024 : 1024);
+				} else if (direction == 3) {
+					addClipping(x, y, height, negative ? -81920 : 81920);
+					addClipping(x, y - 1, height, negative ? -1024 : 1024);
+					addClipping(x - 1, y, height, negative ? -4096 : 4096);
+				}
+			}
+		}*/
+	}
+	private static void removeProjectileClippingForSolidObject(int x, int y, int height, int xLength, int yLength, boolean flag) {
+		int clipping = 256;
+		if (flag) {
+			clipping += -131072;
+		}
+		for (int i = x; i < x + xLength; i++) {
+			for (int i2 = y; i2 < y + yLength; i2++) {
+				addProjectileClipping(i, i2, height, -clipping);
+			}
+		}
+	}
+
 	public static void removeClippingForVariableObject(int x, int y, int height, int type, int direction, boolean flag) {
 		if (type == 0) {
 			if (direction == 0) {

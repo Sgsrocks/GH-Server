@@ -1271,30 +1271,172 @@
     }
   },
   {
-    "npc_id": [
-      100,
-      5935
-    ],
-    "constant": {
-      "accessibility": 0,
+    "npc_id": 5935,
+    "common": {
+      "accessibility": 1,
       "items": [
         {
-          "item": 526,
+          "item": 995,
+          "minimum": 4,
+          "maximum": 36
+        },
+        {
+          "item": 407,
+          "minimum": 1,
+          "maximum": 2
+        },
+        {
+          "item": 401,
+          "minimum": 1,
+          "maximum": 5
+        },
+        {
+          "item": 411,
+          "minimum": 1,
+          "maximum": 1
+        },
+        {
+          "item": 438,
+          "minimum": 3,
+          "maximum": 3
+        },
+        {
+          "item": 440,
+          "minimum": 1,
+          "maximum": 1
+        },
+        {
+          "item": 409,
+          "minimum": 1,
+          "maximum": 1
+        },
+        {
+          "item": 1265,
+          "minimum": 1,
+          "maximum": 1
+        },
+        {
+          "item": 1783,
           "minimum": 1,
           "maximum": 1
         }
       ]
     },
-    "common": {
-      "accessibility": 10,
+    "uncommon": {
+      "accessibility": 20,
       "items": [
         {
-          "item": 995,
-          "minimum": 1000,
-          "maximum": 5000
+          "item": 436,
+          "minimum": 3,
+          "maximum": 3
+        },
+        {
+          "item": 403,
+          "minimum": 2,
+          "maximum": 2
+        },
+        {
+          "item": 45,
+          "minimum": 5,
+          "maximum": 5
+        },
+        {
+          "item": 313,
+          "minimum": 10,
+          "maximum": 10
+        },
+        {
+          "item": 453,
+          "minimum": 2,
+          "maximum": 2
+        },
+        {
+          "item": 592,
+          "minimum": 2,
+          "maximum": 2
+        },
+        {
+          "item": 1267,
+          "minimum": 1,
+          "maximum": 1
+        },
+        {
+          "item": 1969,
+          "minimum": 1,
+          "maximum": 1
+        },
+        {
+          "item": 1617,
+          "minimum": 1,
+          "maximum": 1
+        },
+        {
+          "item": 1621,
+          "minimum": 1,
+          "maximum": 1
+        },
+        {
+          "item": 1619,
+          "minimum": 1,
+          "maximum": 1
         },
         {
           "item": 1623,
+          "minimum": 1,
+          "maximum": 1
+        },
+        {
+          "item": 1452,
+          "minimum": 1,
+          "maximum": 1
+        },
+        {
+          "item": 1462,
+          "minimum": 1,
+          "maximum": 1
+        },
+        {
+          "item": 985,
+          "minimum": 1,
+          "maximum": 1
+        },
+        {
+          "item": 987,
+          "minimum": 1,
+          "maximum": 1
+        },
+        {
+          "item": 830,
+          "minimum": 5,
+          "maximum": 51
+        },
+        {
+          "item": 1241,
+          "minimum": 1,
+          "maximum": 1
+        },
+        {
+          "item": 2366,
+          "minimum": 1,
+          "maximum": 1
+        },
+        {
+          "item": 1249,
+          "minimum": 1,
+          "maximum": 1
+        }
+      ]
+    },
+    "rare": {
+      "accessibility": 50,
+      "items": [
+        {
+          "item": 405,
+          "minimum": 1,
+          "maximum": 1
+        },
+        {
+          "item": 2677,
           "minimum": 1,
           "maximum": 1
         }
