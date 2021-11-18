@@ -8,9 +8,9 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
-import ethos.model.items.ItemDefinition;
-import ethos.model.content.skills.herblore.PoisonedWeapon;
-import ethos.model.content.skills.herblore.PoisonedWeapon.PoisonLevel;
+import godzhell.model.items.ItemDefinition;
+import godzhell.model.content.skills.herblore.PoisonedWeapon;
+import godzhell.model.content.skills.herblore.PoisonedWeapon.PoisonLevel;
 
 import java.util.Optional;
 

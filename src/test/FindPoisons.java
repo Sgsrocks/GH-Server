@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-import ethos.Server;
-import ethos.model.items.ItemList;
+import godzhell.Server;
+import godzhell.model.items.ItemList;
 
 public class FindPoisons {
 
@@ -22,7 +22,7 @@ public class FindPoisons {
 				if (il != null && il.itemName != null && il.itemName.length() > 0) {
 					for (String subString : possible) {
 						if (il.itemName.contains(subString) && !il.itemName.contains("tip")) {
-							if (!ethos.model.items.Item.itemIsNote[il.itemId])
+							if (!godzhell.model.items.Item.itemIsNote[il.itemId])
 								results.add(new Item(il.itemId, il.itemName));
 						}
 					}

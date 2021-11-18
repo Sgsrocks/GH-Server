@@ -1,1 +1,0 @@
-package ethos.model.content.skills.cooking;

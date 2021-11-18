@@ -2,7 +2,7 @@ package test;
 
 //import java.awt.Polygon;
 //
-//import ethos.model.players.Player;
+//import godzhell.model.players.Player;
 
 public class Polygon_Test {
 

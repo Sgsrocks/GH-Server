@@ -13,7 +13,7 @@ public class CheckForMatches {
 		List<String> ips = Arrays.asList("188.221.95.86", "204.93.58.101", "204.93.58.107", "209.73.137.103", "209.73.137.172", "50.118.172.23", "66.171.228.54", "90.198.52.117",
 				"90.198.52.33", "90.200.21.142", "90.200.98.243", "90.206.66.12");
 
-		Path path = Paths.get("ethos.online");
+		Path path = Paths.get("godzhell.online");
 
 		try (BufferedReader reader = new BufferedReader(new FileReader(path.toFile()))) {
 			String line = null;
