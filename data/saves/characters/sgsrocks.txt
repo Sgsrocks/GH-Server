@@ -11,11 +11,11 @@ revert-option =
 mode = REGULAR
 character-height = 0
 character-hp = 99
-play-time = 192793
+play-time = 193312
 last-clan = 
 character-specRestore = 0
 character-posx = 1775
-character-posy = 3469
+character-posy = 3470
 placeholders = false
 newStarter = false
 dailyTaskDate = 0
@@ -48,7 +48,7 @@ Giantkills = 0
 trivia-points = 0
 maRound = 0
 raidCount = 0
-experience-counter = 586951421
+experience-counter = 586983421
 character-title-updated = 
 removed-slayer-tasks = 			
 last-incentive = 0
@@ -233,10 +233,10 @@ character-look = 11	0
 character-look = 12	0
 
 [SKILLS]
-character-skill = 0	99	61453200	false	0
+character-skill = 0	99	61477200	false	0
 character-skill = 1	99	60000000	false	0
 character-skill = 2	99	60000000	false	0
-character-skill = 3	99	13518512	false	0
+character-skill = 3	99	13526512	false	0
 character-skill = 4	99	60000000	false	0
 character-skill = 5	99	15000000	false	0
 character-skill = 6	99	60000000	false	0
@@ -268,6 +268,7 @@ character-item = 4	2352	1
 character-item = 5	2352	1
 character-item = 6	2352	1
 character-item = 7	1620	1
+character-item = 8	26117	1
 
 [RECHARGEITEMS]
 item = 	0	3	2021-08-06 00:16:03
@@ -2065,10 +2066,10 @@ claim-state = false	false	false	false	false	false	false	false	false	false	false	
 
 
 [ACHIEVEMENTS-TIER-1]
-crab_killer = 16	false
+crab_killer = 18	false
 slaughter_house = 4	false
 bby_dragon_hunter_i = 1	false
-pvmer_i = 109	false
+pvmer_i = 111	false
 mining_task_i = 24	false
 smithing_task_i = 20	false
 agility_task_i = 10	false
@@ -2076,7 +2077,7 @@ agility_task_i = 10	false
 
 [ACHIEVEMENTS-TIER-2]
 bby_dragon_hunter_ii = 1	false
-pvmer_ii = 109	false
+pvmer_ii = 111	false
 intermediate_miner = 24	false
 intermediate_smith = 20	false
 intermediate_runner = 10	false
@@ -2084,7 +2085,7 @@ intermediate_runner = 10	false
 
 [ACHIEVEMENTS-TIER-3]
 expert_baby_dragon_slayer = 1	false
-slaughterer = 109	false
+slaughterer = 111	false
 expert_miner = 24	false
 expert_smith = 20	false
 expert_runner = 5	false
@@ -2854,6 +2855,18 @@ unlockedMusic = 400
 unlockedMusic = 547
 unlockedMusic = 321
 unlockedMusic = 50
+unlockedMusic = 62
+unlockedMusic = 466
+unlockedMusic = 0
+unlockedMusic = 400
+unlockedMusic = 547
+unlockedMusic = 321
+unlockedMusic = 62
+unlockedMusic = 466
+unlockedMusic = 0
+unlockedMusic = 400
+unlockedMusic = 547
+unlockedMusic = 321
 unlockedMusic = 62
 unlockedMusic = 466
 unlockedMusic = 0
