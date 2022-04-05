@@ -32,7 +32,35 @@
 		"name": "Book Of Spells",
 		"song": 64,
 		"frame": 38187,
-		"button": 149129
+		"button": 149043
+	},
+	{
+		"region": 10547,
+		"name": "Baroque",
+		"song": 99,
+		"frame": 38184,
+		"button": 149040
+	},
+  {
+    "region": 10548,
+    "name": "Wonderous",
+    "song": 81,
+    "frame": 38307,
+    "button": 149163
+  },
+	{
+		"region": 10549,
+		"name": "Lasting",
+		"song": 60,
+		"frame": 38234,
+		"button": 149090
+	},
+	{
+		"region": 10292,
+		"name": "Mellow",
+		"song": 193,
+		"frame": 38246,
+		"button": 149402
 	},
 		{
 		"region": 12849,
