@@ -56,11 +56,81 @@
 		"button": 149090
 	},
 	{
-		"region": 10292,
+		"region": 10293,
 		"name": "Mellow",
 		"song": 193,
 		"frame": 38246,
 		"button": 149402
+	},
+	{
+		"region": 10292,
+		"name": "The Tower",
+		"song": 133,
+		"frame": 38283,
+		"button": 149139
+	},
+	{
+		"region": 10294,
+		"name": "Theme",
+		"song": 109,
+		"frame": 38311,
+		"button": 149167
+	},
+	{
+		"region": 10544,
+		"name": "Long Ago",
+		"song": 161,
+		"frame": 38238,
+		"button": 149094
+	},
+	{
+		"region": 10288,
+		"name": "Magic Dance",
+		"song": 185,
+		"frame": 38243,
+		"button": 149099
+	},
+	{
+		"region": 10032,
+		"name": "Big Chords",
+		"song": 83,
+		"frame": 38186,
+		"button": 149042
+	},
+	{
+		"region": 10545,
+		"name": "Fanfare 3",
+		"song": 167,
+		"frame": 38208,
+		"button": 149064
+	},
+	{
+		"region": 10804,
+		"name": "Trinity",
+		"song": 192,
+		"frame": 38290,
+		"button": 149146
+	},
+	{
+		"region": 10546,
+		"name": "Upcoming",
+		"song": 70,
+		"frame": 38295,
+		"button": 149151
+	},
+	{
+		"region": 10291,
+		"name": "Knightly",
+		"song": 191,
+		"frame": 38233,
+		"button": 149089
+	},
+	{
+		"region": 10803,
+		"name": "The Mollusc Menace",
+		"song": 200,
+		"frame": 39120,
+		"button": 152208
 	},
 		{
 		"region": 12849,
