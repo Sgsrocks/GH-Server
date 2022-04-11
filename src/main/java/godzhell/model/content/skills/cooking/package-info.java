@@ -1,0 +1,1 @@
+package godzhell.model.content.skills.cooking;
