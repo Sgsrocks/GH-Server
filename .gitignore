@@ -1,4 +1,11 @@
 # Project exclude paths
+.idea/
 /out/
-run.bat
-src.rar
+/build/
+/build/*
+/bin/
+/bin/*
+/.gradle/
+/data/saves/characters/
+*.class
+*.log
