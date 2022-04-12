@@ -1,27 +1,15 @@
 package godzhell.model.npcs;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
-
 import godzhell.Config;
 import godzhell.Server;
 import godzhell.clip.PathChecker;
+import godzhell.definitions.AnimationLength;
 import godzhell.definitions.NPCCacheDefinition;
 import godzhell.event.CycleEvent;
 import godzhell.event.CycleEventContainer;
 import godzhell.event.CycleEventHandler;
+import godzhell.model.Animation;
+import godzhell.model.AnimationPriority;
 import godzhell.model.content.DailyTaskKills;
 import godzhell.model.content.SkillcapePerks;
 import godzhell.model.content.achievement.AchievementType;
@@ -31,9 +19,9 @@ import godzhell.model.content.barrows.Barrows;
 import godzhell.model.content.barrows.brothers.Brother;
 import godzhell.model.content.godwars.God;
 import godzhell.model.content.godwars.GodwarsNPCs;
+import godzhell.model.content.skills.hunter.impling.PuroPuro;
 import godzhell.model.entity.Entity;
 import godzhell.model.entity.HealthStatus;
-import godzhell.model.npcs.bosses.wildypursuit.Galvek;
 import godzhell.model.minigames.Wave;
 import godzhell.model.minigames.inferno.InfernoWave;
 import godzhell.model.minigames.lighthouse.DagannothMother;
@@ -50,6 +38,7 @@ import godzhell.model.npcs.bosses.raids.Tekton;
 import godzhell.model.npcs.bosses.skotizo.Skotizo;
 import godzhell.model.npcs.bosses.vorkath.Vorkath;
 import godzhell.model.npcs.bosses.vorkath.VorkathInstance;
+import godzhell.model.npcs.bosses.wildypursuit.Galvek;
 import godzhell.model.npcs.bosses.wildypursuit.Glod;
 import godzhell.model.npcs.bosses.wildypursuit.IceQueen;
 import godzhell.model.npcs.bosses.zulrah.Zulrah;
@@ -58,18 +47,16 @@ import godzhell.model.npcs.pets.PetHandler;
 import godzhell.model.players.Boundary;
 import godzhell.model.players.Player;
 import godzhell.model.players.PlayerHandler;
-import godzhell.model.players.combat.CombatType;
-import godzhell.model.players.combat.Damage;
-import godzhell.model.players.combat.DamageEffect;
-import godzhell.model.players.combat.Hitmark;
-import godzhell.model.players.combat.Special;
-import godzhell.model.players.combat.Specials;
+import godzhell.model.players.combat.*;
 import godzhell.model.players.combat.effects.SerpentineHelmEffect;
 import godzhell.model.players.combat.monsterhunt.MonsterHunt;
-import godzhell.model.content.skills.hunter.impling.PuroPuro;
 import godzhell.util.Location3D;
 import godzhell.util.Misc;
 import godzhell.world.objects.GlobalObject;
+
+import java.io.*;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class NPCHandler {
 
@@ -1357,25 +1344,25 @@ public class NPCHandler {
 				if(npcs[i].npcType == 1306){
 					if(Misc.random(50) == 2){
 						npcs[i].requestTransform(1307);
-						npcs[i].animNumber = 1161;
+						npcs[i].startAnimation( 1161);
 						npcs[i].forceChat("Ahah!!");
-						npcs[i].animUpdateRequired = true;
+						npcs[i].animationUpdateRequired = true;
 						npcs[i].gfx0(110);
 					}
 				}
 				if (npcs[i].npcType == 280) {
 					if (Misc.random(50) == 2) {
 						npcs[i].forceChat(Config.UPDATE_MESSAGE);
-						npcs[i].animUpdateRequired = true;
-						npcs[i].animNumber = 6865;
+						npcs[i].animationUpdateRequired = true;
+						npcs[i].startAnimation(6865);
 					}
 				}
 				if(npcs[i].npcType == 1307){
 					if(Misc.random(50) == 2){
 						npcs[i].requestTransform(1306);
-						npcs[i].animNumber = 1161;
+						npcs[i].startAnimation(1161);
 						npcs[i].forceChat("Ahah!!");
-						npcs[i].animUpdateRequired = true;
+						npcs[i].animationUpdateRequired = true;
 						npcs[i].gfx0(110);
 					}
 				}
@@ -1901,10 +1888,12 @@ public class NPCHandler {
 									checkMa(killer1,i);
 								}
 							}
-							/*
-							 * if (npcs[i].npcType == 7554) { //TODO animate objec
-							 * player.getRaids().finishRaids(); }
-							 */
+							npc.actionTimer = AnimationLength.getFrameLength(npc.getDeathAnimation());
+							if (!"Dusk".equals(npc.getDefinition().getNpcName())) { // Dusk animation length is long and we want it that way
+								if (npc.actionTimer > 20) {      // Fix for death animations being too long
+									npc.actionTimer = 20;
+								}
+							}
 							npcs[i].updateRequired = true;
 							npcs[i].facePlayer(0);
 							Entity killer = npcs[i].calculateKiller();
@@ -1918,8 +1907,8 @@ public class NPCHandler {
 								npcs[i].requestTransform(965);
 								npcs[i].getHealth().reset();
 							} else {
-								npcs[i].animNumber = getDeadEmote(i); // dead emote
-								npcs[i].animUpdateRequired = true;
+								npcs[i].startAnimation(getDeadEmote(i)); // dead emote
+								npcs[i].animationUpdateRequired = true;
 							}
 							npcs[i].freezeTimer = 0;
 							npcs[i].applyDead = true;
@@ -2009,9 +1998,9 @@ public class NPCHandler {
 						npcs[i].absX = npcs[i].makeX;
 						npcs[i].absY = npcs[i].makeY;
 						npcs[i].getHealth().reset();
-						npcs[i].animNumber = 0x328;
+						npcs[i].startAnimation(0x328);
 						npcs[i].updateRequired = true;
-						npcs[i].animUpdateRequired = true;
+						npcs[i].animationUpdateRequired = true;
 
 						/**
 						 * Actions on certain npc deaths
@@ -4936,7 +4925,7 @@ public class NPCHandler {
 		 */
 		case 5862:
 			if (Objects.equals(player.CERBERUS_ATTACK_TYPE, "GROUND_ATTACK")) {
-				startAnimation(4492, i);
+				startAnimation(4492, npcs[i]);
 				npcs[i].forceChat("Grrrrrrrrrrrrrr");
 				npcs[i].attackType = CombatType.SPECIAL;
 				npcs[i].hitDelayTimer = 4;
@@ -4944,12 +4933,12 @@ public class NPCHandler {
 				player.CERBERUS_ATTACK_TYPE = "MELEE";
 			}
 			if (Objects.equals(player.CERBERUS_ATTACK_TYPE, "GHOST_ATTACK")) {
-				startAnimation(4494, i);
+				startAnimation(4494, npcs[i]);
 				// npcs[i].forceChat("Aaarrrooooooo");
 				player.CERBERUS_ATTACK_TYPE = "MELEE";
 			}
 			if (Objects.equals(player.CERBERUS_ATTACK_TYPE, "FIRST_ATTACK")) {
-				startAnimation(4493, i);
+				startAnimation(4493, npcs[i]);
 				npcs[i].attackTimer = 5;
 				player.CERBERUS_ATTACK_TYPE = "MELEE";
 				CycleEventHandler.getSingleton().addEvent(player, new CycleEvent() {
@@ -5620,7 +5609,7 @@ public class NPCHandler {
 					npcs[i].attackTimer = getNpcDelay(i);
 					npcs[i].hitDelayTimer = getHitDelay(i);
 					loadSpell(c, i);
-					startAnimation(getAttackEmote(i), i);
+					startAnimation(getAttackEmote(i), npcs[i]);
 				}
 			}
 
@@ -5651,14 +5640,14 @@ public class NPCHandler {
 						npcs[i].oldIndex = c.getIndex();
 						c.underAttackBy2 = i;
 						c.singleCombatDelay2 = System.currentTimeMillis();
-						startAnimation(getAttackEmote(i), i);
+						startAnimation(getAttackEmote(i), npcs[i]);
 						c.getPA().removeAllWindows();
 						if (npcs[i].attackType == CombatType.DRAGON_FIRE) {
 							npcs[i].hitDelayTimer += 2;
 							c.getCombat().absorbDragonfireDamage();
 						}
 						if (multiAttacks(i)) {
-							startAnimation(getAttackEmote(i), i);
+							startAnimation(getAttackEmote(i), npcs[i]);
 							multiAttackGfx(i, npcs[i].projectileId);
 							npcs[i].oldIndex = c.getIndex();
 							return;
@@ -5777,10 +5766,12 @@ public class NPCHandler {
 
 	}
 
-	public static void startAnimation(int animId, int i) {
-		npcs[i].animNumber = animId;
-		npcs[i].animUpdateRequired = true;
-		npcs[i].updateRequired = true;
+	public static void startAnimation(int animId, NPC npc) {
+		npc.startAnimation(animId);
+	}
+
+	public static void startAnimationHighPriority(int animId, NPC npc) {
+		npc.startAnimation(new Animation(animId, 0, AnimationPriority.HIGH));
 	}
 
 	public NPC[] getNPCs() {

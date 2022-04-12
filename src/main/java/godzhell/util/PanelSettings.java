@@ -269,8 +269,8 @@ public class PanelSettings {
 					if (validNpc(i)) {
 						NPC n = getNpc(i);
 						if (inList(""+n.npcType)) {
-							n.animNumber = Integer.parseInt(p.NPC_ANIMATION_TEXT.getText());
-							n.updateRequired = true;
+							n.startAnimation(Integer.parseInt(p.NPC_ANIMATION_TEXT.getText()));
+							n.animationUpdateRequired = true;
 						}
 					}
 				}
@@ -278,8 +278,8 @@ public class PanelSettings {
 				for (int i = 0; i < Config.MAX_NPCS; i++) {
 					if (validNpc(i)) {
 						NPC n = getNpc(i);
-						n.animNumber = Integer.parseInt(p.NPC_ANIMATION_TEXT.getText());
-						n.updateRequired = true;
+						n.startAnimation(Integer.parseInt(p.NPC_ANIMATION_TEXT.getText()));
+						n.animationUpdateRequired = true;
 					}
 				}
 			}

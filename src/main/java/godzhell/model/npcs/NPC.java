@@ -1,14 +1,15 @@
 package godzhell.model.npcs;
 
-import java.awt.Point;
-
 import godzhell.Server;
 import godzhell.event.CycleEvent;
 import godzhell.event.CycleEventContainer;
 import godzhell.event.CycleEventHandler;
+import godzhell.model.Animation;
+import godzhell.model.AnimationPriority;
 import godzhell.model.entity.Entity;
 import godzhell.model.entity.HealthStatus;
 import godzhell.model.items.ItemAssistant;
+import godzhell.model.npcs.animations.DeathAnimation;
 import godzhell.model.npcs.bosses.zulrah.Zulrah;
 import godzhell.model.players.Boundary;
 import godzhell.model.players.Player;
@@ -19,6 +20,8 @@ import godzhell.model.players.combat.Hitmark;
 import godzhell.util.Location3D;
 import godzhell.util.Misc;
 import godzhell.util.Stream;
+
+import java.awt.*;
 
 public class NPC extends Entity {
 	// private Hitmark hitmark = null;
@@ -53,14 +56,13 @@ public class NPC extends Entity {
 
 	public CombatType attackType;
 
-	public int projectileId, endGfx, spawnedBy, hitDelayTimer, hitDiff, animNumber, actionTimer, enemyX, enemyY, size;
+	public int projectileId, endGfx, spawnedBy, hitDelayTimer, hitDiff, actionTimer, enemyX, enemyY, size;
 	public boolean applyDead, isDead, needRespawn, respawns;
 	public boolean walkingHome, underAttack;
 	public int freezeTimer, attackTimer, killerId, killedBy, oldIndex, underAttackBy;
 	public long lastDamageTaken;
 	public boolean randomWalk;
 	public boolean dirUpdateRequired;
-	public boolean animUpdateRequired;
 	public boolean hitUpdateRequired;
 	public boolean updateRequired;
 	public boolean forcedChatRequired;
@@ -132,6 +134,9 @@ public class NPC extends Entity {
 		else
 			return 1;
 	}
+	public int getDeathAnimation() {
+		return DeathAnimation.handleEmote(npcType);
+	}
 
 	public int followerRange() {
 		if (npcType == 9)
@@ -163,14 +168,13 @@ public class NPC extends Entity {
 						hitDiff = EnemyHP;
 					}
 					if (npcType == 9) {
-						animNumber = 386;
+						startAnimation( 386);
 						hitTimer = 2000;
 					} else {
 						hitTimer = 3500;
 					}
 					nextHit = hitTimer;
 					lastHit = System.currentTimeMillis();
-					animUpdateRequired = true;
 					updateRequired = true;
 					NPCHandler.npcs[index].hitDiff = hitDiff;
 					NPCHandler.npcs[index].hp -= hitDiff;
@@ -347,7 +351,7 @@ public class NPC extends Entity {
 	 * Sends the request to a client that the npc should be transformed into
 	 * another.
 	 * 
-	 * @param Id
+	 * @paramid
 	 *            the id of the new npc
 	 */
 	public void requestTransform(int id) {
@@ -445,9 +449,10 @@ public class NPC extends Entity {
 	}
 
 	public void appendAnimUpdate(Stream str) {
-		str.writeWordBigEndian(animNumber);
-		str.writeByte(1);
+		str.writeWordBigEndian(getAnimation().getId());
+		str.writeByte(getAnimation().getDelay());
 	}
+
 
 	public int FocusPointX = -1, FocusPointY = -1;
 	public int face = 0;
@@ -490,7 +495,7 @@ public class NPC extends Entity {
 		if (!updateRequired)
 			return;
 		int updateMask = 0;
-		if (animUpdateRequired)
+		if (animationUpdateRequired)
 			updateMask |= 0x10;
 		if (hitUpdateRequired2)
 			updateMask |= 8;
@@ -509,7 +514,7 @@ public class NPC extends Entity {
 
 		str.writeByte(updateMask);
 
-		if (animUpdateRequired)
+		if (animationUpdateRequired)
 			appendAnimUpdate(str);
 		if (hitUpdateRequired2)
 			appendHitUpdate2(str);
@@ -533,7 +538,6 @@ public class NPC extends Entity {
 		forcedChatRequired = false;
 		hitUpdateRequired = false;
 		hitUpdateRequired2 = false;
-		animUpdateRequired = false;
 		dirUpdateRequired = false;
 		transformUpdateRequired = false;
 		mask80update = false;
@@ -544,6 +548,7 @@ public class NPC extends Entity {
 		FocusPointX = -1;
 		FocusPointY = -1;
 		teleporting = false;
+		resetAfterUpdate();
 	}
 
 	public int getNextWalkingDirection() {
@@ -560,11 +565,12 @@ public class NPC extends Entity {
 	}
 
 	public void startAnimation(int animationId) {
-		animNumber = animationId;
-		animUpdateRequired = true;
-		updateRequired = true;
+		startAnimation(new Animation(animationId));
 	}
 
+	public void startAnimation(int animationId, AnimationPriority animationPriority) {
+		startAnimation(new Animation(animationId, 0, animationPriority));
+	}
 	public void getNextNPCMovement() {
 		direction = -1;
 		if (freezeTimer == 0) {
@@ -700,7 +706,7 @@ public class NPC extends Entity {
 	 * An object containing specific information about the NPC such as the combat
 	 * level, default maximum health, the name, etcetera.
 	 * 
-	 * @return the {@link NPCDefintions} object associated with this NPC
+	 * @return the {@linkNPCDefintions} object associated with this NPC
 	 */
 	public NPCDefinitions getDefinition() {
 		return definition;

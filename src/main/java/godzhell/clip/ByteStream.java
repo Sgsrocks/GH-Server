@@ -72,6 +72,25 @@ public class ByteStream {
 			;
 		return new String(buffer, i, offset - i - 1);
 	}
+	public int readUnsignedIntSmartShortCompat() {
+		int var1 = 0;
+
+		int var2;
+		for (var2 = this.readUSmart(); var2 == 32767; var2 = this.readUSmart()) {
+			var1 += 32767;
+		}
+
+		var1 += var2;
+		return var1;
+	}
+
+	public int readUSmart() {
+		int peek = buffer[offset] & 0xFF;
+		return peek < 128 ? this.getUByte() : this.getUShort() - 0x8000;
+	}
+	public int readUnsignedByte() {
+		return buffer[offset++] & 0xff;
+	}
 
 	public byte[] getBytes() {
 		int i = offset;

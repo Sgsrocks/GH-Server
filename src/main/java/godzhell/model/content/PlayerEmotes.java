@@ -1,10 +1,7 @@
 package godzhell.model.content;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-
 import godzhell.Server;
+import godzhell.definitions.AnimationLength;
 import godzhell.event.CycleEvent;
 import godzhell.event.CycleEventContainer;
 import godzhell.event.CycleEventHandler;
@@ -15,10 +12,13 @@ import godzhell.model.multiplayer_session.MultiplayerSessionFinalizeType;
 import godzhell.model.multiplayer_session.MultiplayerSessionStage;
 import godzhell.model.multiplayer_session.MultiplayerSessionType;
 import godzhell.model.multiplayer_session.duel.DuelSession;
-import godzhell.model.npcs.NPCHandler;
 import godzhell.model.players.Boundary;
 import godzhell.model.players.Player;
 import godzhell.util.Misc;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 /**
  * Performing player available animations
@@ -223,7 +223,7 @@ public class PlayerEmotes {
 				} else {
 					player.gfx0(animation.getGraphic());
 				}
-				player.lastPerformedEmote = System.currentTimeMillis();
+				player.lastPerformedEmote = AnimationLength.getFrameLength(animation.getAnimation());
 				player.sendMessage("Performing emote: " + name + ".");
 				player.stopMovement();
 			}

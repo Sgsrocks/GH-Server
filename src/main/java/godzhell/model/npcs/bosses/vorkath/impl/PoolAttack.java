@@ -1,8 +1,5 @@
 package godzhell.model.npcs.bosses.vorkath.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import godzhell.clip.Region;
 import godzhell.event.CycleEvent;
 import godzhell.event.CycleEventContainer;
@@ -15,6 +12,9 @@ import godzhell.model.players.combat.CombatType;
 import godzhell.model.players.combat.Hitmark;
 import godzhell.util.Misc;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PoolAttack implements VorkathAttack{
 
 	public boolean finished = false;
@@ -24,7 +24,7 @@ public class PoolAttack implements VorkathAttack{
 		if(player.debugMessage) {
 			player.sendMessage("Attacking with poolattack"); //
 		}
-		NPCHandler.startAnimation(getAnimation(), player.getVorkath().getIndex());
+		NPCHandler.startAnimation(getAnimation(), NPCHandler.npcs[player.getVorkath().getIndex()]);
 
 		finished = false;
 
@@ -130,7 +130,7 @@ public class PoolAttack implements VorkathAttack{
 					container.stop();
 				}
 				
-				if(player.getVorkath() != null){ NPCHandler.startAnimation(7957, player.getVorkath().getIndex());}
+				if(player.getVorkath() != null){ NPCHandler.startAnimation(7957, NPCHandler.npcs[player.getVorkath().getIndex()]);}
 				//1482
 				int x = player.absX;
 				int y = player.absY;

@@ -16,7 +16,7 @@ public class FireballAttack implements VorkathAttack{
 		if(player.debugMessage) {
 			player.sendMessage("Attacking with fireball attack");
 		}
-		NPCHandler.startAnimation(getAnimation(), player.getVorkath().getIndex());
+		NPCHandler.startAnimation(getAnimation(), NPCHandler.npcs[player.getVorkath().getIndex()]);
 
 		int nX = player.getVorkath().absX + 2;
 		int nY = player.getVorkath().absY + 2;

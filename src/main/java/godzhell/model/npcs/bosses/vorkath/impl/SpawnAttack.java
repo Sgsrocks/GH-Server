@@ -21,7 +21,7 @@ public class SpawnAttack implements VorkathAttack{
 		if(player.debugMessage) {
 			player.sendMessage("Attacking with spawnattack");
 		}
-		NPCHandler.startAnimation(getAnimation(), player.getVorkath().getIndex());
+		NPCHandler.startAnimation(getAnimation(), NPCHandler.npcs[player.getVorkath().getIndex()]);
 		
 		finished = false;
 		
@@ -54,7 +54,7 @@ public class SpawnAttack implements VorkathAttack{
 				}
 				else if(count == 1)
 				{
-					NPCHandler.startAnimation(7960, player.getVorkath().getIndex());
+					NPCHandler.startAnimation(7960, NPCHandler.npcs[player.getVorkath().getIndex()]);
 					count++;
 				}
 				else if(count == 2)

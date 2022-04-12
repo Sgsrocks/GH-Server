@@ -1,19 +1,16 @@
 package godzhell.model.entity;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.concurrent.TimeUnit;
-
+import godzhell.model.Animation;
 import godzhell.model.npcs.NPC;
 import godzhell.model.players.Boundary;
 import godzhell.model.players.Player;
 import godzhell.model.players.combat.Damage;
 import godzhell.model.players.combat.Hitmark;
 import godzhell.util.Stream;
+
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Represents a game-world presence that exists among others of the same nature.
@@ -71,8 +68,10 @@ public abstract class Entity {
 	 */
 	protected Hitmark hitmark1 = null;
 	protected Hitmark hitmark2 = null;
+	public boolean animationUpdateRequired;
 	public boolean updateRequired = true;
 	public int hitDiff2;
+	private Animation animation;
 	public int hitDiff = 0;
 	public boolean hitUpdateRequired2;
 	public boolean hitUpdateRequired = false;
@@ -90,7 +89,15 @@ public abstract class Entity {
 		this.index = index;
 		this.name = name;
 	}
+	public boolean isAnimationUpdateRequired() {
+		return animationUpdateRequired;
+	}
+	public void resetAfterUpdate() {
+		animation = null;
+		animationUpdateRequired = false;
 
+		setUpdateRequired(false);
+	}
 	/**
 	 * The index value where the {@link Entity} resides along with other common
 	 * counterparts.
@@ -185,6 +192,24 @@ public abstract class Entity {
 		} else {
 			damageTaken.put(entity, new ArrayList<>(Arrays.asList(combatDamage)));
 		}
+	}
+	public void startAnimation(Animation animation) {
+		if (this.animation == null || animation.getAnimationPriority().compareTo(this.animation.getAnimationPriority()) > 0) {
+			this.animation = animation;
+			setUpdateRequired(true);
+			animationUpdateRequired = true;
+		}
+	}
+	public Animation getAnimation() {
+		return animation;
+	}
+
+	public boolean isUpdateRequired() {
+		return updateRequired;
+	}
+
+	public void setUpdateRequired(boolean updateRequired) {
+		this.updateRequired = updateRequired;
 	}
 
 	/**

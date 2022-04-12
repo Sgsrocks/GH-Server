@@ -1,12 +1,12 @@
 package godzhell.model.npcs.bosses.vorkath.impl;
 
-import java.util.Optional;
-
 import godzhell.model.entity.HealthStatus;
 import godzhell.model.npcs.NPCHandler;
 import godzhell.model.npcs.bosses.vorkath.VorkathAttack;
 import godzhell.model.players.Player;
 import godzhell.model.players.combat.CombatType;
+
+import java.util.Optional;
 
 public class VenomAttack implements VorkathAttack{
 	@Override
@@ -14,7 +14,7 @@ public class VenomAttack implements VorkathAttack{
 		if(player.debugMessage) {
 			player.sendMessage("Attacking with venomattack");
 		}
-		NPCHandler.startAnimation(getAnimation(), player.getVorkath().getIndex());
+		NPCHandler.startAnimation(getAnimation(), NPCHandler.npcs[player.getVorkath().getIndex()]);
 		
 		int nX = NPCHandler.npcs[player.getVorkath().getIndex()].getX() + NPCHandler.offset(player.getVorkath().getIndex());
 		int nY = NPCHandler.npcs[player.getVorkath().getIndex()].getY() + NPCHandler.offset(player.getVorkath().getIndex());

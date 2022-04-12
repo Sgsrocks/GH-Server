@@ -1,19 +1,17 @@
 package godzhell.model.players.combat;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-
-import godzhell.definitions.NPCCacheDefinition;
-import org.apache.commons.lang3.RandomUtils;
-
 import godzhell.Config;
 import godzhell.Server;
 import godzhell.clip.PathChecker;
+import godzhell.definitions.NPCCacheDefinition;
 import godzhell.model.content.barrows.brothers.Brother;
+import godzhell.model.content.skills.Skill;
+import godzhell.model.content.skills.herblore.PoisonedWeapon;
+import godzhell.model.content.skills.herblore.PoisonedWeapon.PoisonLevel;
+import godzhell.model.content.skills.mining.Pickaxe;
+import godzhell.model.content.skills.slayer.SlayerMaster;
+import godzhell.model.content.skills.slayer.Task;
 import godzhell.model.entity.HealthStatus;
-import godzhell.model.npcs.bosses.wildypursuit.Galvek;
 import godzhell.model.holiday.HolidayController;
 import godzhell.model.items.EquipmentSet;
 import godzhell.model.items.Item;
@@ -28,6 +26,7 @@ import godzhell.model.npcs.bosses.CorporealBeast;
 import godzhell.model.npcs.bosses.Scorpia;
 import godzhell.model.npcs.bosses.raids.Tekton;
 import godzhell.model.npcs.bosses.skotizo.Skotizo;
+import godzhell.model.npcs.bosses.wildypursuit.Galvek;
 import godzhell.model.npcs.bosses.wildypursuit.Glod;
 import godzhell.model.npcs.bosses.wildypursuit.IceQueen;
 import godzhell.model.players.Boundary;
@@ -40,13 +39,13 @@ import godzhell.model.players.combat.magic.MagicData;
 import godzhell.model.players.combat.range.RangeData;
 import godzhell.model.players.combat.range.RangeExtras;
 import godzhell.model.players.mode.ModeType;
-import godzhell.model.content.skills.Skill;
-import godzhell.model.content.skills.herblore.PoisonedWeapon;
-import godzhell.model.content.skills.herblore.PoisonedWeapon.PoisonLevel;
-import godzhell.model.content.skills.mining.Pickaxe;
-import godzhell.model.content.skills.slayer.SlayerMaster;
-import godzhell.model.content.skills.slayer.Task;
 import godzhell.util.Misc;
+import org.apache.commons.lang3.RandomUtils;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 
 public class AttackNPC {
 
@@ -861,7 +860,7 @@ public class AttackNPC {
 					}
 					if (Server.npcHandler.getNPCs()[i].attackTimer > 3) {
 						if (npc.npcType != 2042 && npc.npcType != 2043 & npc.npcType != 2044 && npc.npcType != 3127 && npc.npcType != 319) {
-							NPCHandler.startAnimation(c.getCombat().npcDefenceAnim(i), i);
+							NPCHandler.startAnimation(c.getCombat().npcDefenceAnim(i), NPCHandler.npcs[i]);
 						}
 					}
 					c.rangeEndGFX = RangeData.getRangeEndGFX(c);
@@ -900,7 +899,7 @@ public class AttackNPC {
 						NPCHandler.npcs[i].gfx100(MagicData.MAGIC_SPELLS[c.oldSpellId][5]);
 						if (Server.npcHandler.getNPCs()[i].attackTimer > 3) {
 							if (npc.npcType != 2042 && npc.npcType != 2043 & npc.npcType != 2044 && npc.npcType != 3127 && npc.npcType != 7413) {
-								NPCHandler.startAnimation(c.getCombat().npcDefenceAnim(i), i);
+								NPCHandler.startAnimation(c.getCombat().npcDefenceAnim(i), NPCHandler.npcs[i]);
 							}
 						}
 					} else if (damage.getAmount() > 0) {
@@ -909,7 +908,7 @@ public class AttackNPC {
 					if (damage.getAmount() == 0) {
 						if (Server.npcHandler.getNPCs()[i].attackTimer > 3) {
 							if (npc.npcType != 2042 && npc.npcType != 2043 & npc.npcType != 2044) {
-								NPCHandler.startAnimation(c.getCombat().npcDefenceAnim(i), i);
+								NPCHandler.startAnimation(c.getCombat().npcDefenceAnim(i), NPCHandler.npcs[i]);
 							}
 						}
 						NPCHandler.npcs[i].gfx100(85);
@@ -1510,7 +1509,7 @@ public class AttackNPC {
 						c.startAnimation(c.getCombat().getWepAnim(ItemAssistant.getItemName(c.playerEquipment[c.playerWeapon]).toLowerCase()));
 						if (Server.npcHandler.getNPCs()[i].attackTimer > 3) {
 							if (npcType != 2042 && npcType != 2043 & npcType != 2044 && npcType != 3127 && npcType != 319) {
-								NPCHandler.startAnimation(c.getCombat().npcDefenceAnim(i), i);
+								NPCHandler.startAnimation(c.getCombat().npcDefenceAnim(i), NPCHandler.npcs[i]);
 							}
 						}
 					} else {

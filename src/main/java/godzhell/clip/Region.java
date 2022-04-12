@@ -1,21 +1,15 @@
 package godzhell.clip;
 
+import godzhell.model.npcs.NPC;
+import godzhell.model.players.Player;
+import godzhell.util.Misc;
+
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.zip.GZIPInputStream;
-
-import godzhell.cache.object.GameObjectData;
-import godzhell.model.npcs.NPC;
-import godzhell.model.players.Player;
-import godzhell.util.Misc;
 
 public class Region {
 
@@ -1067,7 +1061,7 @@ public class Region {
 			yLength = def.xLength();
 		}
 		if ((def != null ? def.name : null) != null && def.name.toLowerCase().equalsIgnoreCase("Bank Deposit Box")) {
-			System.out.println(objectId+" "+x+" "+y+" "+direction+" "+height);
+			//System.out.println(objectId+" "+x+" "+y+" "+direction+" "+height);
 				}
 		if (type == 22) {
 			if (def.hasActions() && def.aBoolean767()) {
@@ -1253,7 +1247,7 @@ public class Region {
 		}
 		int objectId = -1;
 		int incr;
-		while ((incr = str1.getUSmart()) != 0) {
+		while ((incr = str1.readUnsignedIntSmartShortCompat()) != 0) {
 			objectId += incr;
 			int location = 0;
 			int incr2;

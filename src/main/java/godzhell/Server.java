@@ -1,31 +1,16 @@
 package godzhell;
 
-import java.net.InetSocketAddress;
-import java.text.SimpleDateFormat;
-import java.util.Objects;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-
-import godzhell.event.impl.BonusXPEvent;
-import godzhell.model.content.bxp;
-import godzhell.model.players.Player;
-import org.jboss.netty.bootstrap.ServerBootstrap;
-import org.jboss.netty.channel.socket.nio.NioServerSocketChannelFactory;
-import org.jboss.netty.util.HashedWheelTimer;
-
-import godzhell.cache.Cache;
-import godzhell.cache.object.GameObjectData;
-import godzhell.cache.object.ObjectLoader;
 import godzhell.clip.ObjectDef;
 import godzhell.clip.Region;
 import godzhell.clip.doors.DoorDefinition;
 import godzhell.definitions.AnimationDefinition;
+import godzhell.definitions.AnimationLength;
 import godzhell.definitions.ItemCacheDefinition;
 import godzhell.definitions.NPCCacheDefinition;
 import godzhell.event.CycleEventHandler;
 import godzhell.event.EventHandler;
 import godzhell.event.impl.BonusApplianceEvent;
+import godzhell.event.impl.BonusXPEvent;
 import godzhell.event.impl.SkeletalMysticEvent;
 import godzhell.event.impl.WheatPortalEvent;
 import godzhell.model.content.godwars.GodwarsEquipment;
@@ -33,7 +18,6 @@ import godzhell.model.content.godwars.GodwarsNPCs;
 import godzhell.model.content.music.MusicLoader;
 import godzhell.model.content.tradingpost.Listing;
 import godzhell.model.content.trails.CasketRewards;
-import godzhell.model.content.wogw.Wogw;
 import godzhell.model.holiday.HolidayController;
 import godzhell.model.items.ItemDefinition;
 import godzhell.model.minigames.FightPits;
@@ -57,13 +41,18 @@ import godzhell.util.ControlPanel;
 import godzhell.util.date.GameCalendar;
 import godzhell.util.json.EquipmentRequirementLoader;
 import godzhell.util.log.Logger;
-import godzhell.world.ClanManager;
-import godzhell.world.GlobalDropsHandler;
-import godzhell.world.ItemHandler;
-import godzhell.world.ObjectHandler;
-import godzhell.world.ObjectManager;
-import godzhell.world.ShopHandler;
+import godzhell.world.*;
 import godzhell.world.objects.GlobalObjects;
+import org.jboss.netty.bootstrap.ServerBootstrap;
+import org.jboss.netty.channel.socket.nio.NioServerSocketChannelFactory;
+import org.jboss.netty.util.HashedWheelTimer;
+
+import java.net.InetSocketAddress;
+import java.text.SimpleDateFormat;
+import java.util.Objects;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 /**
  * The main class needed to start the server.
@@ -255,6 +244,7 @@ public class Server {
 			NPCCacheDefinition.unpackConfig();
 			AnimationDefinition.unpackConfig();
 			CasketRewards.read();
+			AnimationLength.startup();
 			ObjectDef.loadConfig();
 			NPCSpawns.loadNPCSpawns();
 			globalObjects.loadGlobalObjectFile();

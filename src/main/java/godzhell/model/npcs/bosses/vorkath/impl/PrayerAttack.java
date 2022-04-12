@@ -13,7 +13,7 @@ public class PrayerAttack implements VorkathAttack{
 		if(player.debugMessage) {
 			player.sendMessage("Attacking with prayerattack");
 		}
-		NPCHandler.startAnimation(getAnimation(), player.getVorkath().getIndex());
+		NPCHandler.startAnimation(getAnimation(), NPCHandler.npcs[player.getVorkath().getIndex()]);
 		
 		int nX = NPCHandler.npcs[player.getVorkath().getIndex()].getX() + NPCHandler.offset(player.getVorkath().getIndex());
 		int nY = NPCHandler.npcs[player.getVorkath().getIndex()].getY() + NPCHandler.offset(player.getVorkath().getIndex());

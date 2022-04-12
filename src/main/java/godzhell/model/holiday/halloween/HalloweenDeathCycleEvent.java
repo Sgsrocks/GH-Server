@@ -1,7 +1,5 @@
 package godzhell.model.holiday.halloween;
 
-import java.util.Objects;
-
 import godzhell.Server;
 import godzhell.event.CycleEvent;
 import godzhell.event.CycleEventContainer;
@@ -9,6 +7,8 @@ import godzhell.model.npcs.NPC;
 import godzhell.model.npcs.NPCHandler;
 import godzhell.model.players.Player;
 import godzhell.util.Misc;
+
+import java.util.Objects;
 
 public class HalloweenDeathCycleEvent extends CycleEvent {
 	/**
@@ -33,8 +33,8 @@ public class HalloweenDeathCycleEvent extends CycleEvent {
 		Server.npcHandler.spawnNpc(victim, 5567, victim.getX() - 1, victim.getY(), victim.heightLevel, 0, 0, 0, 0, 0, false, false);
 		death = NPCHandler.getNpc(5567, victim.getX() - 1, victim.getY());
 		if (death != null && death.spawnedBy == victim.getIndex()) {
-			death.animNumber = 405;
-			death.animUpdateRequired = true;
+			death.startAnimation( 405);
+			death.animationUpdateRequired = true;
 			death.facePlayer(victim.getIndex());
 			death.updateRequired = true;
 			String deathMessage = new DeathMessage(victim.playerName).create();

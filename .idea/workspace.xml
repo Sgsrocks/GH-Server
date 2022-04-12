@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="GH-Server:jar" />
+      <artifact name="godzhell-server:jar" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,1046 +10,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="408f6966-0e02-4abc-8420-8c51facc39c1" name="Default Changelist" comment="redid the server with gradlew.">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries-with-intellij-classes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/GH-Server.test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/Config.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/Server.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/ServerState.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/ShutdownHook.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/cache/Archive.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/cache/ArchiveFile.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/cache/Cache.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/cache/CacheFile.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/cache/index/Index.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/cache/index/IndexTable.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/cache/index/impl/StandardIndex.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/cache/map/MapListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/cache/obj/ObjectDefinitionListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/cache/region/RegionCoordinates.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/cache/util/ByteBufferUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/cache/util/ZipUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/clip/ByteStream.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/clip/ByteStreamExt.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/clip/ObjectDef.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/clip/Region.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/clip/TileControl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/clip/WorldObject.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/clip/doors/DoorDefinition.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/clip/doors/DoorHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/definitions/AnimationDefinition.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/definitions/ItemCacheDefinition.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/definitions/NPCCacheDefinition.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/definitions/items/ItemDefinition_Sub1_Sub1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/definitions/items/ItemDefinition_Sub2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/definitions/items/ItemDefinition_Sub3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/event/CycleEvent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/event/CycleEventContainer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/event/CycleEventHandler$Event.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/event/CycleEventHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/event/DelayEvent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/event/EventHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/event/impl/DidYouKnowEvent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/event/impl/IronmanRevertEvent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/event/impl/PoisonResistanceEvent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/event/impl/RunEnergyEvent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/event/impl/SkeletalMysticEvent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/event/impl/VenomEvent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/event/impl/VenomResistanceEvent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/event/impl/WheatPortalEvent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/AnguishChest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/BankPin.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/BonusActivation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/ChargeTrident.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/CrystalChest$Rarity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/CrystalChest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/DailySkillBox.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/DiceHandler$Dice.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/Dwarfcannon$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/Dwarfcannon$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/Dwarfcannon$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/Dwarfcannon$Rotation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/Dwarfcannon.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/GalvekBag.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/HerbSack.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/HourlyRewardBox.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/IronManInterface$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/IronManInterface$Action.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/IronManInterface.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/LootValue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/LootingBag/LootingBag.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/Lottery.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/MysteryBoxs/CommonMysteryBox$Rarity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/MysteryBoxs/MysteryBox$Rarity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/MysteryBoxs/MysteryBox.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/MysteryBoxs/RareMysteryBox$Rarity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/MysteryBoxs/RareMysteryBox.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/MysteryBoxs/SuperRareMysteryBox$Rarity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/MysteryBoxs/UltraMysteryBox.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/MysteryBoxs/UncommonMysteryBox.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/Obelisks$Event.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/Obelisks$Location.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/Obelisks.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/OneYearQuiz.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/Packs.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/PlayerEmotes$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/PlayerEmotes.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/PvmCasket$Rarity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/PvmCasket.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/RandomEventInterface$Items.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/RandomEventInterface.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/RecolourGraceful.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/RepairItems$armourData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/RepairItems.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/Sawmill.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/ShootingStar$LocationData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/ShootingStar.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/SkillCasket.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/SkillConstants.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/StatReset.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/WildyCrate$Rarity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/WildyCrate.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/achievement/AchievementHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/achievement/AchievementRequirement.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/achievement/AchievementTier.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/achievement/Achievements$Achievement.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/achievement/Achievements.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/achievement_diary/AchievementDiaryKills.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/achievement_diary/DifficultyAchievementDiary$EntryDifficulty.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/achievement_diary/DifficultyAchievementDiary.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/achievement_diary/RechargeItems$ItemsWithRecharge.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/achievement_diary/RechargeItems.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/achievement_diary/StatefulAchievementDiary.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/achievement_diary/ardougne/ArdougneAchievementDiary.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/achievement_diary/ardougne/ArdougneDiaryEntry.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/achievement_diary/desert/DesertAchievementDiary.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/achievement_diary/kandarin/KandarinAchievementDiary.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/achievement_diary/kandarin/KandarinDiaryEntry.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/achievement_diary/lumbridge_draynor/LumbridgeDraynorAchievementDiary.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/achievement_diary/lumbridge_draynor/LumbridgeDraynorDiaryEntry.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/achievement_diary/morytania/MorytaniaAchievementDiary.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/achievement_diary/varrock/VarrockAchievementDiary.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/achievement_diary/varrock/VarrockDiaryEntry.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/achievement_diary/western_provinces/WesternDiaryEntry.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/achievement_diary/wilderness/WildernessDiaryEntry.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/barrows/RewardItem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/barrows/RewardLevel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/barrows/RewardList.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/barrows/RoomLocation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/barrows/brothers/Ahrim.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/barrows/brothers/Brother.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/barrows/brothers/Dharok.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/barrows/brothers/Guthan.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/barrows/brothers/Torag.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/barrows/brothers/Verac.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/bxp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dailytasks/DailyTasks$PossibleTasks.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dailytasks/DailyTasks.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dailytasks/TaskTypes.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/Dialogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/DialogueConstants.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/DialogueManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/Emotion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/OptionDialogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/impl/BarrowsDialogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/impl/EmptyDialogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/impl/Falador/CassieDialogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/impl/Falador/DoricDialogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/impl/Falador/FaladorShopKeeperDialogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/impl/Falador/HerquinDialogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/impl/Lumbridge/CooksDialogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/impl/Lumbridge/DoomsayerDialogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/impl/Lumbridge/FatherAereckDialogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/impl/Lumbridge/FredTheFarmer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/impl/Lumbridge/Lumbridge_guide_Dialogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/impl/Lumbridge/Melee_combat_tutorDialogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/impl/OttoDialogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/impl/OziachDialogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/impl/RockDialogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/impl/TraderCrewMemberMale.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/impl/Varrock/ReldoDIalogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/impl/VeosDialogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/impl/Yanille/FrenitaDIalogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/impl/bosses/ZulrahDialogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/impl/slayer/DuradelDialogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/impl/slayer/TuraelDialogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/impl/teleports/AogDialogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/dialogue/impl/teleports/RodDialogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/events/Event.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/godwars/Godwars.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/godwars/GodwarsEquipment.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/godwars/GodwarsIronmanInstance.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/godwars/GodwarsNPCs$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/godwars/GodwarsNPCs.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/help/HelpDatabase$Button.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/help/HelpRequest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/help/HelpRequestState.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/instances/MultiInstancedArea.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/instances/SingleInstancedArea.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/instances/impl/LegacySoloPlayerInstance.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/kill_streaks/Killstreak$Type$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/kill_streaks/Killstreak$Type$10.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/kill_streaks/Killstreak$Type$12.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/kill_streaks/Killstreak$Type$13.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/kill_streaks/Killstreak$Type$15.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/kill_streaks/Killstreak$Type$16.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/kill_streaks/Killstreak$Type$17.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/kill_streaks/Killstreak$Type$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/kill_streaks/Killstreak$Type$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/kill_streaks/Killstreak$Type$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/kill_streaks/Killstreak$Type$5.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/kill_streaks/Killstreak$Type$8.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/kill_streaks/Killstreak$Type.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/kill_streaks/KillstreakReward.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/music/MusicLoader$Music.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/music/MusicManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/n_tp/TeleportInterface.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/n_tp/TeleportLocations.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/presets/Preset.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/presets/PresetContainer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/presets/PresetMenu.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/prestige/PrestigeSkills.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/quests/QuestAssistant$Quests.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/quests/QuestAssistant.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/quests/QuestRewards.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/quests/impl/DoricsQuest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/quests/impl/ImpCatcher.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/quests/impl/KnightsSword.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/quests/impl/PiratesTreasure.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/quests/impl/RestlessGhost.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/quests/impl/SheepShearer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/random/PartyRoom.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/randomevents/RandomEventHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/safebox/SafeBox.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/Agility$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/Agility.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/BowStringing$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/BowStringing$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/BowStringing$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/BowStringing.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/FireHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/Fishing.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/Skill.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/SkillInterfaces.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/Skilling.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/StringingData$stringingData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/StringingData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/TabletCreation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/agility/AgilityHandler$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/agility/AgilityHandler$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/agility/AgilityHandler$5.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/agility/AgilityHandler$6.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/agility/AgilityHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/agility/MarkOfGrace.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/agility/impl/BarbarianAgility.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/agility/impl/Lighthouse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/agility/impl/WildernessAgility.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/agility/impl/rooftop/RooftopArdougne$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/agility/impl/rooftop/RooftopArdougne$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/agility/impl/rooftop/RooftopArdougne.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/agility/impl/rooftop/RooftopDraynor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/agility/impl/rooftop/RooftopSeers$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/agility/impl/rooftop/RooftopSeers.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/agility/impl/rooftop/RooftopVarrock$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/agility/impl/rooftop/RooftopVarrock.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/House$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/House$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/House.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/Room.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/RoomDialogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/RoomDialogue2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/RoomInterface.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/RoomObject.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/Rooms.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/rooms/AchievementGallery.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/rooms/Bedroom.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/rooms/Chapel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/rooms/Combat.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/rooms/CorridorDungeon.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/rooms/CostumeRoom.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/rooms/Dining.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/rooms/Game.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/rooms/Garden.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/rooms/JunctionDungeon.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/rooms/Kitchen.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/rooms/PortalChamber.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/rooms/PortalNexus.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/rooms/SkillHall.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/rooms/StairsDungeon.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/rooms/Study.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/rooms/TreasureRoom.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/construction/rooms/Workshop.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/cooking/Cooking$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/cooking/Cooking$CookingItems.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/cooking/Cooking.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/cooking/DairyChurn$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/cooking/DairyChurn$ChurnData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/cooking/Potatoes.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/crafting/BraceletMaking$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/crafting/Crafting$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/crafting/CraftingData$battlestaveData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/crafting/CraftingData$battlestaveDialogueData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/crafting/CraftingData$chargeOrbData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/crafting/Enchantment$Enchant.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/crafting/Enchantment.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/crafting/GlassBlowing.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/crafting/GlassData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/crafting/LeatherMaking$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/crafting/SpinMaterial$Material.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/crafting/Tanning.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/farming/Farming$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/farming/Farming$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/farming/Farming$State.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/farming/Farming.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/farming/FarmingCompostEvent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/farming/FarmingConstants.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/farming/FarmingHerb.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/farming/ToolLeprechaun$ToolStoreData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/farming/ToolLeprechaun.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/firemake/Firemaking$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/firemake/Firemaking$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/fletching/FletchLogEvent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/fletching/FletchableArrow.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/fletching/FletchableBolt.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/fletching/FletchableCrossbow.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/fletching/FletchableGem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/fletching/FletchableLog.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/fletching/StringBowEvent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/herblore/Crushable.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/herblore/Herb.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/herblore/Herblore$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/herblore/Herblore$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/herblore/PoisonedWeapon$PoisonLevel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/herblore/PoisonedWeapon.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/herblore/Potion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/herblore/PotionData$UnfinishedPotions.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/herblore/PotionData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/hunter/Hunter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/hunter/impling/Impling.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/hunter/impling/ImplingData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/hunter/impling/PuroPuro.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/hunter/trap/Trap$TrapType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/hunter/trap/Trap.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/hunter/trap/TrapTask.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/hunter/trap/impl/BirdSnare$BirdData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/hunter/trap/impl/BoxTrap$BoxTrapData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/magic/EnchantBoits.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/mining/Mineral$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/mining/Mineral.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/mining/Mining.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/mining/MiningEvent$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/mining/MiningEvent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/mining/MotherLode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/prayer/Bone.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/prayer/Prayer$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/prayer/Prayer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/runecrafting/RuneCraftingActions.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/runecrafting/Runecrafting$Altar_Data.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/runecrafting/Runecrafting.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/runecrafting/Tiaras.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/slayer/Slayer$SLAYER_HELMETS.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/smithing/SilverCrafting$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/smithing/Smelting$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/smithing/Smithing$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/smithing/Smithing.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/thieving/Pickpocket$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/thieving/Pickpocket$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/thieving/Pickpocket.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/thieving/Thieving$Pickpocket$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/thieving/Thieving$Pickpocket$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/thieving/Thieving$Pickpocket$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/thieving/Thieving$Pickpocket$5.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/thieving/Thieving$Rarity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/thieving/Thieving$Stall.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/woodcutting/WoodcuttingEvent$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/skills/woodcutting/WoodcuttingEvent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/staff/PunishmentPanel$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/staff/PunishmentPanel$Punishment.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/staff/PunishmentPanel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/teleportation/CityTeleports$TeleportData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/teleportation/CityTeleports.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/teleportation/TeleportData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/teleportation/TeleportData1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/teleportation/TeleportHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/teleportation/TeleportOption.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/teleportation/TeleportTabTeleHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/teleportation/TeleportTablets$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/teleportation/TeleportTablets.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/teleportation/TeleportType1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/teleportation/TeleportationDevice.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/teleportation/TeleportationInterface.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/teleportation/Teleports$teleports.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/teleportation/Teleports.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/titles/Title$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/titles/Title$13.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/titles/Title$15.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/titles/Title$16.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/titles/Title$17.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/titles/Title$18.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/titles/Title$19.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/titles/Title$21.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/titles/Title$22.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/titles/Title$25.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/titles/Title$26.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/titles/Title$28.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/titles/Title$29.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/titles/Title$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/titles/Title$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/titles/Title$7.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/titles/Title$8.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/titles/Title.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/titles/TitleCurrency.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/titles/TitleMenuSlot.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/titles/TitleRequirement.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/titles/Titles.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/tradingpost/Listing.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/trails/CasketRewards.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/trails/RewardLevel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/trails/RewardRarity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/trails/TreasureTrails.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/traveling/CharterShips$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/traveling/Desert.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/traveling/DesertHeat$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/traveling/DesertHeat.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/traveling/Sailing.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/wogw/Wogw.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/wogw/Wogwitems$itemsOnWell.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/content/wogw/Wogwitems.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/entity/Entity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/entity/Health.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/entity/HealthStatus.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/holiday/Holiday.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/holiday/HolidayController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/holiday/HolidayInteraction.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/holiday/christmas/AntisantaMinion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/holiday/christmas/Christmas.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/holiday/christmas/ChristmasPresent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/holiday/christmas/ChristmasToyUpgrade.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/holiday/christmas/ThrowingSnowball.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/holiday/halloween/HalloweenDeathCycleEvent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/holiday/halloween/HalloweenRandomOrder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/items/GroundItem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/items/ItemCombinations.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/items/ItemList.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/items/bank/Bank.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/items/bank/BankItem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/items/bank/BankTab.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/items/impl/HandleEmpty.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/items/impl/PotionMixing.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/items/impl/Teles.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/items/item_combinations/BalanceBook.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/items/item_combinations/BlueDarkBow.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/items/item_combinations/DragonDefender.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/items/item_combinations/ElysianSpiritShield.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/items/item_combinations/EternalBoots.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/items/item_combinations/GraniteMaul.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/items/item_combinations/GreenDarkBow.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/items/item_combinations/InfernalAxe.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/items/item_combinations/MaledictionWard.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/items/item_combinations/OdiumWard.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/items/item_combinations/PegasianBoots.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/items/item_combinations/RingOfWealthImbued.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/items/item_combinations/TentacleWhip.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/items/item_combinations/WhiteDarkBow.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/items/item_combinations/YellowDarkBow.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/FightPits.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/Sailing$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/Trails.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/Wave.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/bounty_hunter/BountyHunterEmblem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/bounty_hunter/Target.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/bounty_hunter/TargetEvent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/bounty_hunter/TargetState.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/bounty_hunter/events/TargetDelay.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/bounty_hunter/events/TargetSelector.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/fight_cave/FightCave$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/fight_cave/FightCave.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/fight_cave/Wave.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/inferno/Tzkalzuk.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/lighthouse/DagannothMother$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/lighthouse/DisposeType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/pest_control/PestControl$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/pest_control/PestControl$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/pest_control/PestControl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/pest_control/PestControlRewards$ExperienceReward.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/pest_control/PestControlRewards$PackReward.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/pest_control/PestControlRewards$RewardButton.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/pest_control/PestControlRewards.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/pk_arena/Highpkarena.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/raids/Raids.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/rfd/RecipeForDisaster.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/warriors_guild/AnimatedArmour$Armour.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/warriors_guild/AnimatedArmour.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/minigames/warriors_guild/WarriorsGuild$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/miniquests/MageArena$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/miniquests/MageArena.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/multiplayer_session/Multiplayer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/multiplayer_session/MultiplayerSession$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/multiplayer_session/MultiplayerSession.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/multiplayer_session/MultiplayerSessionFinalizeType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/multiplayer_session/MultiplayerSessionListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/multiplayer_session/MultiplayerSessionLog.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/multiplayer_session/MultiplayerSessionStage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/multiplayer_session/duel/DuelSession$AttackingOperation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/multiplayer_session/duel/DuelSession.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/multiplayer_session/duel/DuelSessionRules$Rule$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/multiplayer_session/duel/DuelSessionRules$Rule.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/multiplayer_session/trade/Trade.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/NPC.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/NPCDeathTracker.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/NPCDefinitions.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/NPCDumbPathFinder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/NPCHandler$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/NPCHandler$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/NPCHandler$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/NPCHandler$5.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/NPCHandler$6.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/NPCHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/NPCSpawns$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/NPCSpawns.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/animations/AttackAnimation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/CorporealBeast.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/KalphiteQueen.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/Scorpia.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/cerberus/Cerberus$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/cerberus/Cerberus.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/raids/Tekton$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/skotizo/Skotizo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/vorkath/Vorkath.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/vorkath/VorkathAttack.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/vorkath/VorkathInstance$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/vorkath/VorkathInstance$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/vorkath/VorkathInstance.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/vorkath/VorkathLostItems.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/vorkath/impl/DragonfireAttack.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/vorkath/impl/PoolAttack$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/vorkath/impl/PoolAttack$2$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/vorkath/impl/PoolAttack$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/vorkath/impl/RangedAttack.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/vorkath/impl/SpawnAttack$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/wildypursuit/Galvek.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/wildypursuit/Glod.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/zulrah/DangerousLocation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/zulrah/Zulrah$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/zulrah/Zulrah.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/zulrah/impl/MageStageEight.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/zulrah/impl/MeleeStageSix.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/zulrah/impl/MeleeStageTwo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/zulrah/impl/RangeStageEleven.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/zulrah/impl/RangeStageFour.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/zulrah/impl/RangeStageSeven.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/bosses/zulrah/impl/SpawnZulrahStageZero.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/drops/DropManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/drops/Table.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/drops/TablePolicy.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/instance/InstanceBosses.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/pets/NPCData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/pets/PetHandler$Pets.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/npcs/pets/PetHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/objects/GameObject.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/objects/GateHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/objects/Ladders$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/objects/Ladders.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/objects/OtherObjects.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/objects/SingleGates.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/objects/dungeons/KuradalsDungeons$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/objects/functions/AxeInLog.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/objects/functions/FlourMill$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/objects/functions/FlourMill$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/objects/functions/FlourMill$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/objects/functions/FlourMill.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/player/World.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/ActionHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/ArmorSets.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/Boundary.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/ClientGameTimer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/DialogueHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/Equipment$Slot.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/Equipment.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/PacketHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/Player$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/Player$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/Player$RankUpgrade.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/Player$TinterfaceText.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/PlayerAssistant$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/PlayerAssistant$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/PlayerAssistant.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/PlayerHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/PlayerSave.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/PointItems.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/Position.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/Potions$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/Potions$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/Potions.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/RightComparator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/RightGroup.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/SkillMenu.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/WildernessDitch$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/WildernessDitch$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/AttackNPC$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/AttackPlayer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/CombatType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/DamageEffect.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/Special.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/Specials.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/effects/AmuletOfTheDamnedDharokEffect.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/effects/AmuletOfTheDamnedKarilEffect.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/effects/DragonfireShieldEffect$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/effects/DragonfireShieldEffect$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/effects/SerpentineHelmEffect.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/effects/ToxicBlowpipeEffect.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/effects/ToxicStaffOfTheDeadEffect.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/effects/bolts/EmeraldBoltSpecial.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/effects/bolts/JadeBoltSpecial.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/effects/bolts/OnyxBoltSpecial.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/effects/bolts/RubyBoltSpecial.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/effects/bolts/SapphireBoltSpecial.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/effects/bolts/TopazBoltSpecial.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/magic/LunarSpells$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/magic/MagicRequirements.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/magic/NonCombatSpells.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/melee/MeleeMaxHit.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/melee/QuickPrayers.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/monsterhunt/GalvekHunt$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/monsterhunt/GalvekHunt.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/monsterhunt/GalvekHuntLocation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/monsterhunt/MonsterHunt$Npcs.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/monsterhunt/MonsterHunt.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/pkdistrict/District$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/pkdistrict/District$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/pkdistrict/District.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/range/Javelin.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/range/RangeData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/range/RangeExtras.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/AbyssalDagger.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/AbyssalWhip.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/AncientMace.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/ArmadylCrossbow.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/Ballista.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/BandosGodsword.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/BarrelchestAnchor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/CrystalHalberd.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/DarkBow.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/Dragon2H.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/DragonAxe.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/DragonBattleaxe.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/DragonDagger.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/DragonHalberd.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/DragonMace.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/DragonScimitar.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/DragonSword.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/DragonThrownaxe.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/DragonWarhammer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/SaradominSword.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/SaradominSwordBlessed.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/StaffOfTheDead.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/StatiusWarhammer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/TentacleWhip.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/ToxicBlowpipe.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/VestaSpear.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/combat/specials/ZamorakGodsword.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/mode/IronmanMode$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/mode/IronmanMode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/mode/ModeType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/mode/OsrsMode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/mode/RegularMode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/AttackPlayer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/Bank10.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/Bank5.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/BankAllButOne.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/BankModifiableX.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/BankX1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/BankX2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/ChallengePlayer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/ChangeAppearance.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/ChangeRegion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/Chat.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/ClanChat.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/ClickNPC$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/ClickNPC$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/ClickNPC$5.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/ClickObject$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/ClickObject$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/ClickObject$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/ClickObject$5.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/ClickingButtons.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/ClickingInGame.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/ClickingStuff.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/Dialogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/DropItem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/IdleLogout.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/ItemOnItem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/ItemOnObject.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/ItemOptionOneGroundItem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/MagicOnItems.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/MagicOnObject.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/MapRegionFinish.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/MouseMovement.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/OperateItem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/PickupItem$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/RemoveItem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/Report.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/SilentPacket.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/Trade.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/WearItem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/action/JoinChat.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/Command.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Bonus.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Checkbank.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Coords.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/E.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Empty.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Poh.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Pohdump.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Pohenter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Pohenterb.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Pohload.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Pohsave.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Removerights.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Reset.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Safemode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Setrun.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Setwalk.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Shield.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Sigil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Smessage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Spawn.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Takeitem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Tele.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Test$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Test$RankUpgrade.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Unnetmute.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Update.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/admin/Visible.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Anti.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Bug.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Changepassword.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Char.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Checkpursuit.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Claim.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Close.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Commands.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Dailytask.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Dice.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Discord.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Droprate.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Duel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Easts.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Empty.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Facebook.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Fame.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Hang.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Help.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Highrisk.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Highscores.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Home.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Hosts.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Placeholder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Plant.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Players.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Pohjoin.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Runes.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Setrank.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Shops.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Site.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Skillz.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Staff.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Stuck.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Teleports.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Toggledrop.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Unjail.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/all/Yell.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/donator/Donatorzone.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/donator/Yell.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/helper/Kick.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/helper/Sz.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/helper/Unjail.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/helper/Unmute.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/moderator/Banip.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/moderator/Checkinventory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/moderator/Find.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/moderator/Info.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/moderator/Ks.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/moderator/Maxslayer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/moderator/Move.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/moderator/Note.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/moderator/Online.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/moderator/Pk.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/moderator/Q.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/moderator/Questioning.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/moderator/Random.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/moderator/Stafftitle.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/moderator/Staffzone.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/moderator/Teletome.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/moderator/Unjail.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/moderator/Xteleto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Addnpc.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Addrights.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Altarspawn.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Anim.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Camera.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Checkarea.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Cyber.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Debug.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Dump.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Fly.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Flyoff.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Getid.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Getpass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Giveitem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Hpray.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Infernoboss.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Interface.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Kill.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Npc.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Object.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Packet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Poh.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Pohdump.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Pohenterb.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Pohjoin.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Pohload.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Pohsave.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Pos.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Raidgear.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Red.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Refreshskill.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Region.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Resetstats.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Serverstatus.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Set.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Setlevel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Setlevelstatus.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Star.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/commands/owner/Updateshops.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/itemoptions/ItemOptionThree.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/npcoptions/NpcOptionFour.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/npcoptions/NpcOptionTwo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/objectoptions/ObjectOptionFive.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/objectoptions/ObjectOptionFour.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/objectoptions/ObjectOptionOne.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/objectoptions/ObjectOptionThree.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/objectoptions/ObjectOptionTwo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/objectoptions/impl/RaidObjects.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/players/packets/objectoptions/impl/WellOfGoodWillObject.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/model/wogw/WellOfGoodWillReward.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/net/ChannelHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/net/Packet$Type.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/net/Packet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/net/PipelineFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/net/Session.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/net/login/RS2Decoder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/net/login/RS2LoginProtocol.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/net/outgoing/PacketMessage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/net/outgoing/messages/ComponentVisibility.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/punishments/Punishment.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/punishments/PunishmentCycleEvent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/punishments/PunishmentType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/server/data/SerializablePair.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/server/data/ServerData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/AlphaBeta.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/ControlPanel$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/ControlPanel$11.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/ControlPanel$15.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/ControlPanel$16.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/ControlPanel$17.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/ControlPanel$18.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/ControlPanel$19.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/ControlPanel$21.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/ControlPanel$22.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/ControlPanel$25.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/ControlPanel$26.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/ControlPanel$28.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/ControlPanel$29.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/ControlPanel$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/ControlPanel$33.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/ControlPanel$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/ControlPanel$6.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/ControlPanel$7.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/ControlPanel$9.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/ISAACCipher.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/ItemID.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/JsonLoader.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/Location3D.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/Misc$Direction.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/Misc.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/MotivoteExecute.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/ObjectID.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/PanelSettings$Location.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/PanelSettings.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/RandomGen.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/Stopwatch$AtomicStopwatch.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/Stopwatch$State.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/Stopwatch.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/WipeLines$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/WipeLines.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/date/GameCalendar.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/json/EquipmentRequirementLoader.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/log/FileUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/log/Logger.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/log/PlayerLogging$LogType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/util/log/PlayerLogging.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/world/ClanManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/world/ConnectionList.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/world/GlobalDropsHandler$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/world/GlobalDropsHandler$GlobalDrop.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/world/GlobalDropsHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/world/ItemHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/world/ObjectManager$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/world/ObjectManager$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/world/ObjectManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/world/objects/GlobalObject.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/godzhell/world/objects/GlobalObjects.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cache/map_index" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/saves/characters/test45.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/saves/characters/testdfds.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2023.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2033.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2053.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2083.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2087.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2101.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2123.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2181.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2189.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2203.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2217.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2245.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2311.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2333.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2355.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2431.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2451.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2459.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2475.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2483.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2515.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2549.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2553.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2561.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/2575.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/3301.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/3303.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/3305.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/3307.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/3423.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/3425.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5865.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5868.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5869.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5871.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5872.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5874.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5875.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5877.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5878.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5880.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5881.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5883.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5886.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5887.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5889.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5890.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5892.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5893.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5895.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5896.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5898.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5899.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5901.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5902.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5904.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5905.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5907.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5908.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5910.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5911.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5913.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5914.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5916.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5917.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5919.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5920.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5922.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5923.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5925.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5926.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5928.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5929.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5931.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5932.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5934.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5935.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5937.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5938.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5940.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5941.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5943.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5944.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5946.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5947.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5949.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5950.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5952.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5953.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5955.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5956.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5958.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5959.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5961.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5962.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5964.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5965.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5967.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5968.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5970.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5971.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5973.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5974.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5976.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5977.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5979.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5980.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5982.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5983.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5985.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5986.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5988.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5989.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5991.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5992.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5994.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5995.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5997.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/5998.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/6000.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/6001.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/6003.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world/map/6004.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/godzhell/definitions/AnimationLength.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/Animation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/AnimationPriority.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/nightmare/NightmareConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/GH_Server_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GH-Server.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/data/logs/s/sgsrocks/command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/s/sgsrocks/command.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/logs/s/sgsrocks/dc_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/s/sgsrocks/dc_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/saves/characters/sgsrocks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/saves/characters/sgsrocks.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/godzhell/model/content/dialogue/impl/slayer/TuraelDialogue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/godzhell/model/players/packets/commands/all/Anti.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/godzhell/model/players/packets/commands/all/Char.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/godzhell/model/players/packets/commands/all/Runes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/godzhell/model/players/packets/commands/all/Teleports.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/godzhell/model/players/packets/commands/owner/Godmode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rebel.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/update log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/logs/s/sgsrocks/public_chat.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/s/sgsrocks/public_chat.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/clip/ByteStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/clip/ByteStream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/clip/Region.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/clip/Region.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/content/PlayerEmotes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/content/PlayerEmotes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/holiday/halloween/HalloweenDeathCycleEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/holiday/halloween/HalloweenDeathCycleEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/NPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/NPC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/NPCHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/NPCHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/DragonfireAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/DragonfireAttack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/FireballAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/FireballAttack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/MagicAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/MagicAttack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/PoolAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/PoolAttack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/PrayerAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/PrayerAttack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/RangedAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/RangedAttack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/SpawnAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/SpawnAttack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/VenomAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/VenomAttack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/players/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/players/combat/AttackNPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/players/combat/AttackNPC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/util/PanelSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/util/PanelSettings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1093,6 +81,12 @@
                 <item name="godzhell-server" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="godzhell-server" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="distribution" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -1145,7 +139,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Documents/MEGAsync Downloads/server/build.gradle" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -1153,6 +147,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="godzhell.model" />
       <recent name="godzhell.model.content.instances" />
       <recent name="godzhell.model.npcs.bosses.hydra" />
       <recent name="ethos.model.content.skills" />
@@ -1165,46 +160,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Gradle.GH-Server [run]">
-    <configuration name="Server (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="godzhell.Server" />
-      <module name="GH-Server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="godzhell.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ethos.Server" />
-      <module name="GH-Server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ethos.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SpawnDumper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ethos.model.tools.SpawnDumper" />
-      <module name="GH-Server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ethos.model.tools.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GH-Server [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GH-Server [assembleDist]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -1215,7 +171,70 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
+            <option value="assembleDist" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="GH-Server [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="assemble" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="GH-Server [distZip]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="distZip" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="GH-Server [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="jar" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -1249,10 +268,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.GH-Server [run]" />
-        <item itemvalue="Gradle.GH-Server [build]" />
-        <item itemvalue="Application.SpawnDumper" />
-        <item itemvalue="Application.Server (1)" />
-        <item itemvalue="Application.Server" />
+        <item itemvalue="Gradle.GH-Server [assemble]" />
+        <item itemvalue="Gradle.GH-Server [jar]" />
+        <item itemvalue="Gradle.GH-Server [assembleDist]" />
+        <item itemvalue="Gradle.GH-Server [distZip]" />
       </list>
     </recent_temporary>
   </component>
@@ -1419,7 +438,21 @@
       <option name="project" value="LOCAL" />
       <updated>1649535110227</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="redid the server with gradlew.">
+      <created>1649644336369</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1649644336370</updated>
+    </task>
+    <task id="LOCAL-00024" summary="redid the server with gradlew.">
+      <created>1649688348225</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1649688348226</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

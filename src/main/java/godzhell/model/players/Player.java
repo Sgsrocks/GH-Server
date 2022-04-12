@@ -1,28 +1,5 @@
 package godzhell.model.players;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.TimeUnit;
-
-import godzhell.model.content.*;
-import godzhell.model.content.MysteryBoxs.*;
-import godzhell.model.content.n_tp.TeleportInterface;
-import godzhell.model.content.skills.smithing.SmithingInterface;
-import godzhell.model.content.traveling.DesertHeat;
-import godzhell.model.minigames.Partyhat;
-import godzhell.model.content.skills.agility.impl.rooftop.*;
-import godzhell.model.content.skills.farming.ToolLeprechaun;
-import godzhell.model.content.skills.runecrafting.Tiaras;
-import org.jboss.netty.buffer.ChannelBuffers;
-import org.jboss.netty.channel.Channel;
-
 import godzhell.Config;
 import godzhell.Server;
 import godzhell.event.CycleEventHandler;
@@ -31,7 +8,10 @@ import godzhell.event.impl.IronmanRevertEvent;
 import godzhell.event.impl.MinigamePlayersEvent;
 import godzhell.event.impl.RunEnergyEvent;
 import godzhell.event.impl.SkillRestorationEvent;
+import godzhell.model.Animation;
+import godzhell.model.content.*;
 import godzhell.model.content.LootingBag.LootingBag;
+import godzhell.model.content.MysteryBoxs.*;
 import godzhell.model.content.achievement.AchievementHandler;
 import godzhell.model.content.achievement.Achievements;
 import godzhell.model.content.achievement_diary.AchievementDiary;
@@ -40,9 +20,9 @@ import godzhell.model.content.achievement_diary.RechargeItems;
 import godzhell.model.content.barrows.Barrows;
 import godzhell.model.content.barrows.TunnelEvent;
 import godzhell.model.content.dailytasks.DailyTasks;
+import godzhell.model.content.dailytasks.DailyTasks.PossibleTasks;
 import godzhell.model.content.dailytasks.TaskTypes;
 import godzhell.model.content.dialogue.Dialogue;
-import godzhell.model.content.dailytasks.DailyTasks.PossibleTasks;
 import godzhell.model.content.explock.ExpLock;
 import godzhell.model.content.godwars.God;
 import godzhell.model.content.godwars.Godwars;
@@ -50,31 +30,59 @@ import godzhell.model.content.godwars.GodwarsEquipment;
 import godzhell.model.content.instances.InstancedAreaManager;
 import godzhell.model.content.kill_streaks.Killstreak;
 import godzhell.model.content.music.MusicManager;
+import godzhell.model.content.n_tp.TeleportInterface;
 import godzhell.model.content.presets.Presets;
 import godzhell.model.content.prestige.PrestigeSkills;
 import godzhell.model.content.quests.QuestAssistant;
 import godzhell.model.content.safebox.SafeBox;
+import godzhell.model.content.skills.Agility;
+import godzhell.model.content.skills.SkillInterfaces;
+import godzhell.model.content.skills.Skilling;
+import godzhell.model.content.skills.agility.AgilityHandler;
+import godzhell.model.content.skills.agility.impl.*;
+import godzhell.model.content.skills.agility.impl.rooftop.*;
+import godzhell.model.content.skills.construction.House;
+import godzhell.model.content.skills.construction.Room;
+import godzhell.model.content.skills.cooking.Cooking;
+import godzhell.model.content.skills.crafting.Crafting;
+import godzhell.model.content.skills.farming.Farming;
+import godzhell.model.content.skills.farming.ToolLeprechaun;
+import godzhell.model.content.skills.fletching.Fletching;
+import godzhell.model.content.skills.herblore.Herblore;
+import godzhell.model.content.skills.hunter.Hunter;
+import godzhell.model.content.skills.mining.Mining;
+import godzhell.model.content.skills.prayer.Prayer;
+import godzhell.model.content.skills.runecrafting.Runecrafting;
+import godzhell.model.content.skills.runecrafting.Tiaras;
+import godzhell.model.content.skills.slayer.Slayer;
+import godzhell.model.content.skills.smithing.Smelting;
+import godzhell.model.content.skills.smithing.Smithing;
+import godzhell.model.content.skills.smithing.SmithingInterface;
+import godzhell.model.content.skills.thieving.Thieving;
 import godzhell.model.content.staff.PunishmentPanel;
+import godzhell.model.content.teleportation.TeleportData1;
 import godzhell.model.content.teleportation.TeleportHandler;
+import godzhell.model.content.teleportation.TeleportTabTeleHandler;
+import godzhell.model.content.teleportation.TeleportType1;
 import godzhell.model.content.teleportation.TeleportationInterface.TeleportData;
 import godzhell.model.content.teleportation.TeleportationInterface.TeleportType;
-import godzhell.model.content.teleportation.TeleportTabTeleHandler;
 import godzhell.model.content.titles.Titles;
 import godzhell.model.content.trails.RewardLevel;
 import godzhell.model.content.trails.TreasureTrails;
+import godzhell.model.content.traveling.DesertHeat;
 import godzhell.model.entity.Entity;
 import godzhell.model.entity.HealthStatus;
 import godzhell.model.holiday.HolidayStages;
 import godzhell.model.holiday.christmas.ChristmasPresent;
 import godzhell.model.items.EquipmentSet;
 import godzhell.model.items.Item;
-import godzhell.model.items.impl.*;
 import godzhell.model.items.ItemAssistant;
 import godzhell.model.items.ItemCombination;
 import godzhell.model.items.bank.Bank;
 import godzhell.model.items.bank.BankItem;
-
 import godzhell.model.items.bank.BankTab;
+import godzhell.model.items.impl.PotionMixing;
+import godzhell.model.minigames.Partyhat;
 import godzhell.model.minigames.bounty_hunter.BountyHunter;
 import godzhell.model.minigames.fight_cave.FightCave;
 import godzhell.model.minigames.inferno.Inferno;
@@ -118,31 +126,6 @@ import godzhell.model.players.combat.magic.MagicData;
 import godzhell.model.players.combat.melee.QuickPrayers;
 import godzhell.model.players.mode.Mode;
 import godzhell.model.players.mode.ModeType;
-import godzhell.model.content.skills.Agility;
-import godzhell.model.content.skills.SkillInterfaces;
-import godzhell.model.content.skills.Skilling;
-import godzhell.model.content.skills.smithing.Smelting;
-import godzhell.model.content.skills.smithing.Smithing;
-import godzhell.model.content.skills.smithing.SmithingInterface;
-import godzhell.model.content.skills.agility.AgilityHandler;
-import godzhell.model.content.skills.agility.impl.BarbarianAgility;
-import godzhell.model.content.skills.agility.impl.GnomeAgility;
-import godzhell.model.content.skills.agility.impl.Lighthouse;
-import godzhell.model.content.skills.agility.impl.Shortcuts;
-import godzhell.model.content.skills.agility.impl.WildernessAgility;
-import godzhell.model.content.skills.construction.House;
-import godzhell.model.content.skills.construction.Room;
-import godzhell.model.content.skills.cooking.Cooking;
-import godzhell.model.content.skills.crafting.Crafting;
-import godzhell.model.content.skills.farming.Farming;
-import godzhell.model.content.skills.fletching.Fletching;
-import godzhell.model.content.skills.herblore.Herblore;
-import godzhell.model.content.skills.hunter.Hunter;
-import godzhell.model.content.skills.mining.Mining;
-import godzhell.model.content.skills.prayer.Prayer;
-import godzhell.model.content.skills.runecrafting.Runecrafting;
-import godzhell.model.content.skills.slayer.Slayer;
-import godzhell.model.content.skills.thieving.Thieving;
 import godzhell.model.shops.ShopAssistant;
 import godzhell.net.Packet;
 import godzhell.net.Packet.Type;
@@ -152,7 +135,12 @@ import godzhell.util.SimpleTimer;
 import godzhell.util.Stopwatch;
 import godzhell.util.Stream;
 import godzhell.world.Clan;
-import godzhell.model.content.teleportation.*;
+import org.jboss.netty.buffer.ChannelBuffers;
+import org.jboss.netty.channel.Channel;
+
+import java.util.*;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.TimeUnit;
 
 public class Player extends Entity {
 
@@ -4284,33 +4272,23 @@ public class Player extends Entity {
 	}
 
 	/**
-	 * Animations
-	 **/
+     * Animations
+     */
 	public void startAnimation(int animId) {
-		// if (wearing2h() && animId == 829)
-		// return;
-		animationRequest = animId;
-		animationWaitCycles = 0;
-		updateRequired = true;
+		startAnimation(new Animation(animId));
 	}
 
 	public void startAnimation(int animId, int time) {
-		animationRequest = animId;
-		animationWaitCycles = time;
-		updateRequired = true;
+		startAnimation(new Animation(animId, time));
 	}
 
 	public void stopAnimation() {
-		animationRequest = 65535;
-		animationWaitCycles = 0;
-		updateRequired = true;
+		startAnimation(new Animation(65535));
 	}
 
 	public void appendAnimationRequest(Stream str) {
-		// synchronized(this) {
-		str.writeWordBigEndian((animationRequest == -1) ? 65535 : animationRequest);
-		str.writeByteC(animationWaitCycles);
-
+		str.writeWordBigEndian((getAnimation() == null || getAnimation().getId() == -1) ? 65535 : getAnimation().getId());
+		str.writeByteC(getAnimation().getDelay());
 	}
 
 	public void faceUpdate(int index) {
@@ -4532,7 +4510,7 @@ public class Player extends Entity {
 			updateMask |= 0x100;
 		}
 
-		if (animationRequest != -1) {
+		if (isAnimationUpdateRequired()) {
 			updateMask |= 8;
 		}
 
@@ -4580,7 +4558,7 @@ public class Player extends Entity {
 			appendMask100Update(str);
 		}
 
-		if (animationRequest != -1) {
+		if (isAnimationUpdateRequired()) {
 			appendAnimationRequest(str);
 		}
 
@@ -4628,6 +4606,7 @@ public class Player extends Entity {
 		faceUpdateRequired = false;
 		forceMovement = false;
 		face = 65535;
+		resetAfterUpdate();
 	}
 
 	public void stopMovement() {
