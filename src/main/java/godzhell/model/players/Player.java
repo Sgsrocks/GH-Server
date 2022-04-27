@@ -2,6 +2,7 @@ package godzhell.model.players;
 
 import godzhell.Config;
 import godzhell.Server;
+import godzhell.definitions.ItemID;
 import godzhell.event.CycleEventHandler;
 import godzhell.event.Event;
 import godzhell.event.impl.IronmanRevertEvent;
@@ -47,7 +48,7 @@ import godzhell.model.content.skills.cooking.Cooking;
 import godzhell.model.content.skills.crafting.Crafting;
 import godzhell.model.content.skills.farming.Farming;
 import godzhell.model.content.skills.farming.ToolLeprechaun;
-import godzhell.model.content.skills.fletching.Fletching;
+import godzhell.model.content.skills.fletching.LogCuttingInterface;
 import godzhell.model.content.skills.herblore.Herblore;
 import godzhell.model.content.skills.hunter.Hunter;
 import godzhell.model.content.skills.mining.Mining;
@@ -151,7 +152,8 @@ public class Player extends Entity {
 	public static int maRound = 0;
 	public int barrowsID, flourAmount, grain;
 	public boolean maOption = false, maIndeedyOption = false;
-
+	public int virusTimer = -1, virusDamage = 0;
+	public byte poisonMask = 0;
 	public int lastTeleportX, lastTeleportY, lastTeleportZ;
 
 	public MageArena mageArena = new MageArena(this);
@@ -177,7 +179,7 @@ public class Player extends Entity {
 	public int smithingCounter;
 
 	private ToolLeprechaun toolLeprechaun;
-
+	private final LogCuttingInterface fletching = new LogCuttingInterface();
 	public MageArena getMageArena() {
 		return this.mageArena;
 	}
@@ -205,6 +207,8 @@ public class Player extends Entity {
 	public boolean getHouse;
 	public boolean inHouse;
 	private House house;
+	private long lastPacketReceived = System.currentTimeMillis();
+	private Queue<Integer> previousPackets = new ConcurrentLinkedQueue<>();
 	public int[] inputData = new int[] { -1, -1, -1 };
 	public Room toReplace, replaceWith;
 	public Dialogue getDialogue() {
@@ -479,7 +483,6 @@ public class Player extends Entity {
 	private SmithingInterface smithInt = new SmithingInterface(this);
 	private Herblore herblore = new Herblore(this);
 	private Thieving thieving = new Thieving(this);
-	private Fletching fletching = new Fletching(this);
 	private Barrows barrows = new Barrows(this);
 	private Godwars godwars = new Godwars(this);
 	private TreasureTrails trails = new TreasureTrails(this);
@@ -912,6 +915,13 @@ public class Player extends Entity {
 		return false;
 	}
 
+	public Queue<Integer> getPreviousPackets() {
+		return previousPackets;
+	}
+
+	public LogCuttingInterface getFletching() {
+		return fletching;
+	}
 	public class TinterfaceText {
 		public int id;
 		public String currentState;
@@ -946,34 +956,6 @@ public class Player extends Entity {
 		outStream.endFrameVarSize();
 	}
 
-	public static final int PACKET_SIZES[] = { 0, 0, 0, 1, -1, 0, 0, 0, 4, 0, // 0
-			0, 0, 0, 0, 8, 0, 6, 2, 2, 0, // 10
-			0, 2, 0, 6, 0, 12, 0, 0, 0, 0, // 20
-			0, 0, 0, 0, 0, 8, 4, 0, 0, 2, // 30
-			2, 6, 0, 6, 0, -1, 0, 0, 0, 0, // 40 no they're different they change depending on direction
-			0, 0, 0, 12, 0, 0, 0, 8, 8, 12, // 50
-			8, 8, 0, 0, 0, 0, 0, 0, 0, 0, // 60
-			6, 0, 2, 2, 8, 6, 0, -1, 0, 6, // 70
-			0, 0, 0, 0, 0, 1, 4, 6, 0, 0, // 80
-			0, 0, 0, 0, 0, 3, 0, 0, -1, 0, // 90
-			0, 13, 0, -1, 0, 0, 0, 0, 0, 0, // 100
-			0, 0, 0, 0, 0, 0, 0, 6, 0, 0, // 110
-			1, 0, 6, 0, 16, 0, -1, -1, 2, 6, // 120
-			0, 4, 6, 8, 0, 6, 0, 0, 0, 2, // 130
-			6, 10, -1, 0, 0, 6, 0, 0, 0, 0, // 140
-			0, 0, 1, 2, 0, 2, 6, 0, 0, 0, // 150
-			0, 0, 0, 0, -1, -1, 0, 0, 0, 0, // 160
-			0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 170
-			0, 8, 0, 3, 0, 2, 2, 0, 8, 1, // 180
-			0, 0, 12, 0, 0, 0, 0, 0, 0, 0, // 190
-			2, 0, 0, 0, 0, 0, 0, 0, 4, 0, // 200
-			4, 0, 0, /* 0 */4, 7, 8, 0, 0, 10, 0, // 210
-			0, 0, 0, 0, 0, 0, -1, 0, 6, 0, // 220
-			1, 0, 4, 0, 6, 0, 6, 8, 1, 0, // 230
-			0, 4, 0, 0, 0, 0, -1, 0, -1, 4, // 240
-			0, 0, 6, 6, 0, 0, 0 // 250
-	};
-
 	public int VERIFICATION = 0;
 
 	public void resetRanks() {
@@ -996,11 +978,11 @@ public class Player extends Entity {
 	}
 
 	public void destruct() {
+		Server.panel.removeEntity(playerName);
 		Hunter.abandon(this, null, true);
 		if (session == null) {
 			return;
 		}
-		Server.panel.removeEntity(playerName);
 		if (combatLevel >= 100) {
 			if (Highpkarena.getState(this) != null) {
 				Highpkarena.removePlayer(this, true);
@@ -1225,9 +1207,9 @@ public class Player extends Entity {
 
 	public void initialize() {
 		try {
+			Server.panel.addEntity(playerName);
 			graceSum();
 			updateQuestTab();
-			Server.panel.addEntity(playerName);
 			Achievements.checkIfFinished(this);
 			getPA().loadQuests();
 			setStopPlayer(false);
@@ -1291,7 +1273,7 @@ public class Player extends Entity {
 			getPA().sendFrame107(); // reset screen
 			setSidebarInterface(0, 2423);
 			setSidebarInterface(1, 13917); // Skilltab > 3917
-			setSidebarInterface(2, 638); // 638
+			setSidebarInterface(2, 10220); // 638
 			setSidebarInterface(3, 3213);
 			setSidebarInterface(4, 1644);
 			setSidebarInterface(5, 15608);
@@ -1878,11 +1860,6 @@ public class Player extends Entity {
 	public boolean hasSpawnedOlm;
 
 	public void process() {
-		farming.farmingProcess();
-		ShootingStar.spawnStar();
-		if (Boundary.isIn(this, Boundary.DESERT) && heightLevel == 0) {
-			DesertHeat.callHeat(this);
-		}
 
 		if (isRunning && runEnergy <= 0) {
 			isRunning = false;
@@ -1936,7 +1913,9 @@ public class Player extends Entity {
 		if (Boundary.isIn(this, Zulrah.BOUNDARY) && getZulrahEvent().isInToxicLocation()) {
 			appendDamage(1 + Misc.random(3), Hitmark.VENOM);
 		}
-
+		if (Boundary.isIn(this, Boundary.DESERT) && heightLevel == 0) {
+			DesertHeat.callHeat(this);
+		}
 		if (respawnTimer > -6) {
 			respawnTimer--;
 		}
@@ -1945,7 +1924,8 @@ public class Player extends Entity {
 		}
 
 		getAgilityHandler().agilityProcess(this);
-
+		farming.farmingProcess();
+		ShootingStar.spawnStar();
 		if (specRestore > 0) {
 			specRestore--;
 		}
@@ -3474,7 +3454,13 @@ public class Player extends Entity {
 		}
 		return false;
 	}
-
+	public boolean Shattered_t3() {
+		if (getItems().isWearingItem(ItemID.SHATTERED_TROUSERS_T3) && getItems().isWearingItem(ItemID.SHATTERED_BOOTS_T3) && getItems().isWearingItem(ItemID.SHATTERED_TOP_T3)
+				&& getItems().isWearingItem(ItemID.SHATTERED_HOOD_T3)) {
+			return true;
+		}
+		return false;
+	}
 	/**
 	 * SouthWest, NorthEast, SouthWest, NorthEast
 	 */
@@ -5331,10 +5317,6 @@ public class Player extends Entity {
 
 	public void setToxicTridentCharge(int toxicTridentCharge) {
 		this.toxicTridentCharge = toxicTridentCharge;
-	}
-
-	public Fletching getFletching() {
-		return fletching;
 	}
 
 	public long getLastIncentive() {

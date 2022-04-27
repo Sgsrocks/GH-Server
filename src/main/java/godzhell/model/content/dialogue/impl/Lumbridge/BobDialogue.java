@@ -1,6 +1,7 @@
 package godzhell.model.content.dialogue.impl.Lumbridge;
 
 import godzhell.Config;
+import godzhell.definitions.NpcID;
 import godzhell.model.content.dialogue.Dialogue;
 import godzhell.model.content.dialogue.DialogueConstants;
 import godzhell.model.content.dialogue.DialogueManager;
@@ -16,7 +17,7 @@ public class BobDialogue extends Dialogue {
 					"Can you repair my items for me?");
 			break;
 		case 1:
-			DialogueManager.sendNpcChat(getPlayer(), 2812, Emotion.DEFAULT, "Get yer own!");
+			DialogueManager.sendNpcChat(getPlayer(), NpcID.BOB_10619, Emotion.DEFAULT, "Get yer own!");
 			setNext(2);
 			break;
 		case 2:
@@ -24,14 +25,14 @@ public class BobDialogue extends Dialogue {
 			end();
 			break;
 		case 3:
-			DialogueManager.sendNpcChat(getPlayer(), 2812, Emotion.DEFAULT, "Yes i buy and sell axes! Take your pick (or axe)!");
+			DialogueManager.sendNpcChat(getPlayer(), NpcID.BOB_10619, Emotion.DEFAULT, "Yes i buy and sell axes! Take your pick (or axe)!");
 			setNext(4);
 			break;
 		case 4:
 			getPlayer().getShops().openShop(Config.BOBS_BRILLIANT_AXES);
 			break;
 		case 5:
-			DialogueManager.sendNpcChat(getPlayer(), 2812, Emotion.DEFAULT, "Of course I'll repair it, though the materials may cost", "you. Just hand me the item and I'll have a look.");
+			DialogueManager.sendNpcChat(getPlayer(), NpcID.BOB_10619, Emotion.DEFAULT, "Of course I'll repair it, though the materials may cost", "you. Just hand me the item and I'll have a look.");
 			setNext(2);
 			break;
 		}

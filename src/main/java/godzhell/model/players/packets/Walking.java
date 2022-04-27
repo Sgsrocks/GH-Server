@@ -1,17 +1,19 @@
 package godzhell.model.players.packets;
 
-import java.util.Optional;
-
 import godzhell.Server;
+import godzhell.model.content.skills.SkillHandler;
+import godzhell.model.content.skills.cooking.Cooking;
+import godzhell.model.content.skills.fletching.LogCutting;
 import godzhell.model.multiplayer_session.MultiplayerSessionFinalizeType;
 import godzhell.model.multiplayer_session.MultiplayerSessionStage;
 import godzhell.model.multiplayer_session.MultiplayerSessionType;
 import godzhell.model.multiplayer_session.duel.DuelSession;
 import godzhell.model.multiplayer_session.duel.DuelSessionRules.Rule;
 import godzhell.model.players.*;
-import godzhell.model.content.skills.SkillHandler;
-import godzhell.model.content.skills.cooking.Cooking;
 import godzhell.util.Misc;
+
+import java.util.Optional;
+
 ;
 
 /**
@@ -34,6 +36,9 @@ public class Walking implements PacketType {
 			return;
 		}
 		if(c.doinguri){
+			return;
+		}
+		if (c.canChangeAppearance) { //|| c.performingAction) {
 			return;
 		}
 		if (!c.inWild() && c.teleBlockLength > 0) {
@@ -72,6 +77,9 @@ public class Walking implements PacketType {
 		}
 		if (c.playerIsCooking) {// cooking
 			Cooking.setCooking(c, false);
+		}
+		if(c.playerIsFletching){
+			LogCutting.resetFletching(c);
 		}
 		if (c.getPA().viewingOtherBank) {
 			c.getPA().resetOtherBank();

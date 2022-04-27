@@ -82,10 +82,6 @@ public class BankX2 implements PacketType {
 	        //return;
 		}
 		final int amount2 = Xamount;
-		c.getFletching().getSelectedFletchable().ifPresent(fletchable -> {
-			c.getFletching().fletchLog(fletchable, amount2);
-			return;
-		});
 		if (c.viewingLootBag || c.addingItemsToLootBag) {
 			if (c.getLootingBag().handleClickItem(c.getLootingBag().selectedItem, Xamount)) {
 				return;

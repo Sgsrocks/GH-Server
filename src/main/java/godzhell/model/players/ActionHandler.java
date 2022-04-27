@@ -4,11 +4,7 @@ import godzhell.model.players.packets.npcoptions.NpcOptionFour;
 import godzhell.model.players.packets.npcoptions.NpcOptionOne;
 import godzhell.model.players.packets.npcoptions.NpcOptionThree;
 import godzhell.model.players.packets.npcoptions.NpcOptionTwo;
-import godzhell.model.players.packets.objectoptions.ObjectOptionFive;
-import godzhell.model.players.packets.objectoptions.ObjectOptionFour;
-import godzhell.model.players.packets.objectoptions.ObjectOptionOne;
-import godzhell.model.players.packets.objectoptions.ObjectOptionThree;
-import godzhell.model.players.packets.objectoptions.ObjectOptionTwo;
+import godzhell.model.players.packets.objectoptions.*;
 
 public class ActionHandler {
 
@@ -35,6 +31,9 @@ public class ActionHandler {
 	}
 	public void fifthClickObject(int objectType, int obX, int obY) {
 		ObjectOptionFive.handleOption(c, objectType, obX, obY);
+	}
+	public void ClickObjectExamine(int objectType, int obX, int obY) {
+		ObjectExamine.handleOption(c, objectType, obX, obY);
 	}
 	public void firstClickNpc(int npcType) {
 		NpcOptionOne.handleOption(c, npcType);

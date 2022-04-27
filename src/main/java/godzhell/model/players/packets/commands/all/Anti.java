@@ -2,7 +2,7 @@ package godzhell.model.players.packets.commands.all;
 
 import godzhell.model.players.Player;
 import godzhell.model.players.packets.commands.Command;
-import godzhell.util.ItemID;
+import godzhell.definitions.ItemID;
 
 public class Anti extends Command {
 

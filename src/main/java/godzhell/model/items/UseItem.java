@@ -1,8 +1,5 @@
 package godzhell.model.items;
 
-import java.util.List;
-import java.util.Optional;
-
 import godzhell.Config;
 import godzhell.Server;
 import godzhell.clip.ObjectDef;
@@ -13,28 +10,33 @@ import godzhell.model.content.achievement.Achievements;
 import godzhell.model.content.achievement_diary.ardougne.ArdougneDiaryEntry;
 import godzhell.model.content.achievement_diary.fremennik.FremennikDiaryEntry;
 import godzhell.model.content.achievement_diary.varrock.VarrockDiaryEntry;
-import godzhell.model.content.trails.MasterClue;
-import godzhell.model.items.item_combinations.Godswords;
-import godzhell.model.minigames.warriors_guild.AnimatedArmour;
-import godzhell.model.players.Boundary;
-import godzhell.model.players.Player;
-import godzhell.model.players.ArmorSets;
-import godzhell.model.players.PlayerAssistant;
-import godzhell.model.players.combat.Degrade;
-import godzhell.model.players.mode.ModeType;
-import godzhell.model.players.packets.objectoptions.impl.DarkAltar;
 import godzhell.model.content.skills.Skill;
-import godzhell.model.content.skills.smithing.Smelting;
 import godzhell.model.content.skills.cooking.Cooking;
 import godzhell.model.content.skills.crafting.*;
 import godzhell.model.content.skills.firemake.Firemaking;
 import godzhell.model.content.skills.firemake.LogData;
+import godzhell.model.content.skills.fletching.LogCutting;
+import godzhell.model.content.skills.fletching.LogCuttingInterface;
 import godzhell.model.content.skills.herblore.Crushable;
 import godzhell.model.content.skills.herblore.PoisonedWeapon;
 import godzhell.model.content.skills.herblore.UnfCreator;
 import godzhell.model.content.skills.prayer.Bone;
 import godzhell.model.content.skills.prayer.Prayer;
+import godzhell.model.content.skills.smithing.Smelting;
+import godzhell.model.content.trails.MasterClue;
+import godzhell.model.items.item_combinations.Godswords;
+import godzhell.model.minigames.warriors_guild.AnimatedArmour;
+import godzhell.model.players.ArmorSets;
+import godzhell.model.players.Boundary;
+import godzhell.model.players.Player;
+import godzhell.model.players.PlayerAssistant;
+import godzhell.model.players.combat.Degrade;
+import godzhell.model.players.mode.ModeType;
+import godzhell.model.players.packets.objectoptions.impl.DarkAltar;
 import godzhell.util.Misc;
+
+import java.util.List;
+import java.util.Optional;
 
 
 /**
@@ -360,6 +362,7 @@ public class UseItem {
 		}
 		if (c.debugMessage)
 			c.sendMessage("Player used Item id: " + itemUsed + " with Item id: " + useWith);
+		LogCuttingInterface.handleItemOnItem(c, itemUsed, useWith);
 		if(itemUsed == 590 ) {
 			if(LogData.isLog(c, useWith))
 				Firemaking.lightFire(c, useWith, "tinderbox");
@@ -401,6 +404,30 @@ public class UseItem {
 		if (itemUsed == 2116 && useWith == 2289 || itemUsed == 2289
 				&& useWith == 2116) {
 			Cooking.cookingAddon(c, 2116, 2289, 2301, 65, 45);
+		}
+		if (itemUsed == 946 || useWith == 2862) {
+			LogCutting.makeShafts(c);
+		}
+		if (itemUsed == 2862 || useWith == 946) {
+			LogCutting.makeShafts(c);
+		}
+		if (itemUsed == 314 || useWith == 2864) {
+			LogCutting.flightedArrow(c);
+		}
+		if (itemUsed == 2864 || useWith == 314) {
+			LogCutting.flightedArrow(c);
+		}
+		if (itemUsed == 2861 || useWith == 2865) {
+			LogCutting.ogreArrow(c);
+		}
+		if (itemUsed == 2865 || useWith == 2861) {
+			LogCutting.ogreArrow(c);
+		}
+		if (itemUsed == 2859 || useWith == 1755) {
+			LogCutting.wolfBoneArrow(c);
+		}
+		if (itemUsed == 1755 || useWith == 2859) {
+			LogCutting.wolfBoneArrow(c);
 		}
 		/**
 		 * Pie Making
@@ -532,12 +559,6 @@ public class UseItem {
 			c.getItems().addItem(3159, 1);
 			//c.getDH().sendItemStatement("You sucessfully make the Ava's Assembler", 22109);
 
-		}
-		if (c.getFletching().fletchBolt(itemUsed, useWith)) {
-			return;
-		}
-		if (c.getFletching().fletchBolt(useWith, itemUsed)) {
-			return;
 		}
 		if ((itemUsed == 1743 && useWith == 1733) || (itemUsed == 1733 || useWith == 1743)) {
 			if (!c.getItems().playerHasItem(1734)) {
@@ -1062,31 +1083,6 @@ public class UseItem {
 			c.getItems().deleteItem2(21197, 1);
 			c.getItems().addItem(13321, 1);
 		}
-		//End
-		if (itemUsed == 53 || useWith == 53) {
-			int arrow = itemUsed == 53 ? useWith : itemUsed;
-			c.getFletching().fletchArrow(arrow);
-		}
-		if (itemUsed == 19584 || useWith == 19584) {
-			int javelin = itemUsed == 19584 ? useWith : itemUsed;
-			c.getFletching().fletchJavelin(javelin);
-		}
-		if (itemUsed == 52 && useWith == 314 || itemUsed == 314 && useWith == 52) {
-			c.getFletching().fletchHeadlessArrows();
-		}
-		if (itemUsed == 1777 || useWith == 1777) {
-			int unstrung = itemUsed == 1777 ? useWith : itemUsed;
-			c.getFletching().fletchUnstrung(unstrung);
-		}
-		if (itemUsed == 9438 || useWith == 9438) {
-			int unstrung = itemUsed == 9438 ? useWith : itemUsed;
-			c.getFletching().fletchUnstrungCross(unstrung);
-		}
-		if (itemUsed == 314 || useWith == 314) {
-			int item = itemUsed == 314 ? useWith : itemUsed;
-			c.getFletching().fletchUnfinishedBolt(item);
-			c.getFletching().fletchDart(item);
-		}
 		if (itemUsed == 1733 || useWith == 1733) {
 			LeatherMaking.craftLeatherDialogue(c, itemUsed, useWith);
 		}
@@ -1097,11 +1093,7 @@ public class UseItem {
 			JewelryMaking.stringAmulet(c, itemUsed, useWith);
 		}
 		if (itemUsed == 1755 || useWith == 1755) {
-			c.getFletching().fletchGem(useWith, itemUsed);
 			c.getCrafting().cut(useWith, itemUsed);
-		}
-		if (useWith == 946 || itemUsed == 946) {
-			c.getFletching().combine(useWith, itemUsed);
 		}
 		if (itemUsed == 12526 && useWith == 6585 || itemUsed == 6585 && useWith == 12526) {
 			c.getDH().sendDialogues(580, -1);

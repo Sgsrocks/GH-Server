@@ -1,16 +1,23 @@
 package godzhell.model.content.skills.woodcutting;
 
+import godzhell.definitions.ObjectID;
+
 public enum Tree {
-	NORMAL(new int[] { 1276, 1278, 1279 }, 1342, 1511, 1, 5, 20, 25, 15, 12000),
-	EVERGREEN(new int[] { 2091 }, 1342, 1511, 1, 5, 20, 25, 15,  12000),
-	OAK(new int[] { 10820, 11756 }, 1356, 1521, 15, 8, 50, 38, 25, 11500),
-	WILLOW(new int[] { 10833, 10829, 10819, 10831, 1760, 1750, 1758, 11759, 11761, 11763, 11755 }, 1356, 1519, 30, 10, 60, 68, 35, 8000),
-	TEAK(new int[] { 9036 }, 1356, 6333, 35, 10, 65, 68, 35, 7000),
-	MAPLE(new int[] { 10832, 11762 }, 1356, 1517, 45, 13, 75, 100, 45, 6000),
-	ARCTIC_PINE(new int[] { 3037 }, 1356, 10810, 54, 14, 85, 100, 50, 5400),
-	YEW(new int[] { 10822, 1754, 11758, 27255 }, 1356, 1515, 60, 15, 100, 175, 60, 5000),
-	MAGIC(new int[] { 10834, 11764 }, 9713, 1513, 75, 20, 125, 250, 75, 3600),
-	REDWOOD(new int[] { 29668, 29670 }, 29669, 19669, 90, 25, 1250, 275, 150, 3000),
+	NORMAL(new int[] { ObjectID.TREE, ObjectID.TREE_1277, ObjectID.TREE_1278, ObjectID.TREE_1279, ObjectID.TREE_1280 }, 1342, 1511, 1, 5, 100, 25, 15, 12000),
+	DEAD(new int[] { ObjectID.DEAD_TREE }, 1347, 1511, 1, 5, 100, 25, 15, 12000),
+	DEAD2(new int[] { ObjectID.DEAD_TREE_1283 }, 1347, 1511, 1, 5, 100, 25, 15, 12000),
+	DEAD3(new int[] { ObjectID.DEAD_TREE_1289 }, 1353, 1511, 1, 5, 100, 25, 15, 12000),
+	EVERGREEN(new int[] { ObjectID.EVERGREEN_2091, ObjectID.EVERGREEN_2092 }, 1342, 1511, 1, 5, 100, 25, 15,  12000),
+	OAK(new int[] { ObjectID.OAK_10820, ObjectID.OAK_9734, ObjectID.OAK_42831 }, 1356, 1521, 15, 8, 50, 38, 25, 11500),
+	WILLOW(new int[] { ObjectID.WILLOW }, 9711, 1519, 30, 10, 60, 68, 35, 8000),
+	WILLOW2(new int[] {  ObjectID.WILLOW_10829, ObjectID.WILLOW_10831, ObjectID.WILLOW_10833 }, 9471, 1519, 30, 10, 60, 68, 35, 8000),
+	TEAK(new int[] { ObjectID.TEAK }, 1356, 6333, 35, 10, 65, 68, 35, 7000),
+	MAPLE(new int[] { ObjectID.MAPLE_TREE_10832, ObjectID.MAPLE_TREE_36681, ObjectID.MAPLE_TREE_4674, ObjectID.MAPLE_TREE_40754 }, 1356, 1517, 45, 13, 75, 100, 45, 6000),
+	ARCTIC_PINE(new int[] { ObjectID.ARCTIC_PINE }, 1356, 10810, 54, 14, 85, 100, 50, 5400),
+	YEW(new int[] { ObjectID.YEW, ObjectID.YEW_42391, ObjectID.YEW_40756, ObjectID.YEW_42427, ObjectID.YEW_36683 }, 1356, 1515, 60, 15, 100, 175, 60, 5000),
+	MAGIC(new int[] { ObjectID.MAGIC_TREE_10834 }, 9713, 1513, 75, 20, 125, 250, 75, 3600),
+	REDWOOD(new int[] { ObjectID.REDWOOD  }, 29669, 19669, 90, 25, 1250, 275, 150, 3000),
+	REDWOOD2(new int[] { ObjectID.REDWOOD_29670 }, 29671, 19669, 90, 25, 1250, 275, 150, 3000),
 	SAPLING(new int[] { 29763 }, 29764, 20799, 65, 13, 75, 25, 15, 100000);
 
 	private int[] treeIds;

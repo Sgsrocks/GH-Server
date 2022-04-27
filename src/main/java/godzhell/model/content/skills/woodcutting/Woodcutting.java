@@ -12,16 +12,16 @@ public class Woodcutting {
 		Tree tree = Tree.forObject(objectId);
 		player.turnPlayerTo(x, y);
 		if (player.playerLevel[player.playerWoodcutting] < tree.getLevelRequired()) {
-			player.sendMessage("You do not have the woodcutting level required to cut this tree down.");
+			player.sendMessage("You need a Woodcutting level of " + tree.getLevelRequired() + " to cut this tree.");
 			return;
 		}
 		Hatchet hatchet = Hatchet.getBest(player);
 		if (hatchet == null) {
-			player.sendMessage("You must have an axe and the level required to cut this tree down.");
+			player.sendMessage("You do not have an axe which you have the woodcutting level to use.");
 			return;
 		}
 		if (player.getItems().freeSlots() == 0) {
-			player.sendMessage("You must have at least one free inventory space to do this.");
+			player.sendMessage("Your inventory is too full to hold any more logs.");
 			return;
 		}
 		if (Server.getGlobalObjects().exists(tree.getStumpId(), x, y)) {

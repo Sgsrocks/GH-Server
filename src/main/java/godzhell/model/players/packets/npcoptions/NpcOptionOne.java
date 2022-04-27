@@ -1,42 +1,38 @@
 package godzhell.model.players.packets.npcoptions;
 
-import java.util.Objects;
-
 import godzhell.Config;
 import godzhell.Server;
+import godzhell.definitions.NpcID;
 import godzhell.model.content.achievement_diary.desert.DesertDiaryEntry;
 import godzhell.model.content.achievement_diary.fremennik.FremennikDiaryEntry;
 import godzhell.model.content.achievement_diary.kandarin.KandarinDiaryEntry;
 import godzhell.model.content.achievement_diary.varrock.VarrockDiaryEntry;
 import godzhell.model.content.dialogue.impl.BankerDialogue;
+import godzhell.model.content.dialogue.impl.Falador.*;
 import godzhell.model.content.dialogue.impl.Lumbridge.*;
 import godzhell.model.content.dialogue.impl.ManandWomanDialogue;
 import godzhell.model.content.dialogue.impl.TraderCrewMemberFemale;
 import godzhell.model.content.dialogue.impl.TraderCrewMemberMale;
-import godzhell.model.content.dialogue.impl.Falador.CassieDialogue;
-import godzhell.model.content.dialogue.impl.Falador.DoricDialogue;
-import godzhell.model.content.dialogue.impl.Falador.FaladorShopKeeperDialogue;
-import godzhell.model.content.dialogue.impl.Falador.HerquinDialogue;
-import godzhell.model.content.dialogue.impl.Falador.SquireDialogue;
-import godzhell.model.content.dialogue.impl.Falador.ThurgoDialogue;
 import godzhell.model.content.dialogue.impl.Varrock.ReldoDIalogue;
 import godzhell.model.content.dialogue.impl.Yanille.FrenitaDIalogue;
 import godzhell.model.content.dialogue.impl.slayer.DuradelDialogue;
 import godzhell.model.content.dialogue.impl.slayer.TuraelDialogue;
 import godzhell.model.content.dialogue.impl.wizard_tower.MizgagDialogue;
-import godzhell.model.npcs.NPC;
-import godzhell.model.npcs.NPCHandler;
-import godzhell.model.npcs.pets.PetHandler;
-import godzhell.model.npcs.pets.Probita;
-import godzhell.model.players.Player;
-import godzhell.model.players.Right;
 import godzhell.model.content.skills.Fishing;
 import godzhell.model.content.skills.agility.AgilityHandler;
 import godzhell.model.content.skills.crafting.Tanning;
 import godzhell.model.content.skills.hunter.impling.Impling;
 import godzhell.model.content.skills.mining.Mineral;
 import godzhell.model.content.skills.thieving.Pickpocket;
+import godzhell.model.npcs.NPC;
+import godzhell.model.npcs.NPCHandler;
+import godzhell.model.npcs.pets.PetHandler;
+import godzhell.model.npcs.pets.Probita;
+import godzhell.model.players.Player;
+import godzhell.model.players.Right;
 import godzhell.util.Location3D;
+
+import java.util.Objects;
 /*
  * @author Matt
  * Handles all first options on non playable characters.
@@ -152,7 +148,7 @@ public class NpcOptionOne {
 			case 3216:
 				player.start(new Melee_combat_tutorDialogue());
 				break;
-			case 2812:
+			case NpcID.BOB_10619:
 				player.start(new BobDialogue());
 				break;
 			case 3893:

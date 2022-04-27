@@ -1,26 +1,12 @@
 package godzhell.definitions;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.net.URL;
-import java.net.URLConnection;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.Arrays;
-
-import org.apache.commons.io.FileUtils;
-
-import godzhell.Config;
 import godzhell.definitions.items.*;
 import godzhell.util.Stream;
+import org.apache.commons.io.FileUtils;
+
+import java.io.*;
+import java.net.URL;
+import java.net.URLConnection;
 
 
 /**
@@ -235,7 +221,67 @@ public class ItemCacheDefinition {
 			System.out.println("Done dumping " + amount + " item definitions!");
 		}
 	}
-	/**
+    public static void dumpBonuses() {
+        int[] bonuses = new int[14];
+        int bonus = 0;
+        int amount = 0;
+        for (int i = 0; i < totalItems; i++) {
+            ItemCacheDefinition item = ItemCacheDefinition.forID(i);
+            URL url;
+            try {
+                try {
+                    try {
+                        url = new URL("https://oldschool.runescape.wiki/w/" + item.name.replaceAll(" ", "_"));
+                        URLConnection con = url.openConnection();
+                        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                        String line;
+                        BufferedWriter writer = new BufferedWriter(new FileWriter("item.cfg", true));
+                        while ((line = in.readLine()) != null) {
+                            try {
+                                if (line.contains("<td style=\"text-align: center; width: 35px;\">")) {
+                                    line = line.replace("</td>", "").replace("%", "").replace("?", "")
+                                            .replace("\"\"", "")
+                                            .replace("<td style=\"text-align: center; width: 35px;\">", "");
+                                    bonuses[bonus] = Integer.parseInt(line);
+                                    bonus++;
+                                } else if (line.contains("<td style=\"text-align: center; width: 30px;\">")) {
+                                    line = line.replace("</td>", "").replace("%", "").replace("?", "").replace("%", "")
+                                            .replace("<td style=\"text-align: center; width: 30px;\">", "");
+                                    bonuses[bonus] = Integer.parseInt(line);
+                                    bonus++;
+                                }
+                            } catch (NumberFormatException e) {
+
+                            }
+                            if (bonus >= 13)
+                                bonus = 0;
+                            // in.close();
+                        }
+                        in.close();
+                        writer.write("item	=	" + i + "	" + item.name.replace(" ", "_") + "	"
+                                + item.description.replace(" ", "_") + "	" + item.value + "	" + item.value + "	"
+                                + item.value + "	" + bonuses[0] + "	" + bonuses[1] + "	" + bonuses[2] + "	"
+                                + bonuses[3] + "	" + bonuses[4] + "	" + bonuses[5] + "	" + bonuses[6] + "	"
+                                + bonuses[7] + "	" + bonuses[8] + "	" + bonuses[9] + "	" + bonuses[10] + "	"
+                                + bonuses[13]);
+                        bonuses[0] = bonuses[1] = bonuses[2] = bonuses[3] = bonuses[4] = bonuses[5] = bonuses[6] = bonuses[7] = bonuses[8] = bonuses[9] = bonuses[10] = bonuses[13] = 0;
+                        writer.newLine();
+                        amount++;
+                        writer.close();
+                    } catch (NullPointerException e) {
+
+                    }
+                } catch (FileNotFoundException e) {
+
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Done dumping " + amount + " item bonuses!");
+    }
+
+    /**
 	 * Unpacks the Item configurations.
 	 */
     public static final void unpackConfig() {
@@ -256,6 +302,7 @@ public class ItemCacheDefinition {
             cache[k] = new ItemCacheDefinition();
         }
         //dumpItemDefs();
+           // dumpBonuses();
         System.out.println("Successfully loaded: " + totalItems + " Item Cache definitions.");
     	} catch (Exception e) {
     		System.err.println("An error has occurred whilst loading Item definitions!");
@@ -332,12 +379,12 @@ public class ItemCacheDefinition {
                 }
             } else if(opcode == 41) {
                 int var3 = buffer.readUnsignedByte();
-                this.textureToReplace = new short[var3];
-                this.textToReplaceWith = new short[var3];
+                this.originalTextureColors = new short[var3];
+                this.modifiedTextureColors = new short[var3];
 
                 for(int var4 = 0; var4 < var3; ++var4) {
-                   this.textureToReplace[var4] = (short)buffer.readUnsignedWord();
-                   this.textToReplaceWith[var4] = (short)buffer.readUnsignedWord();
+                   this.originalTextureColors[var4] = (short)buffer.readUnsignedWord();
+                   this.modifiedTextureColors[var4] = (short)buffer.readUnsignedWord();
                 }
             } else if (opcode == 42) {
                 shiftClickIndex = buffer.readUnsignedByte();
@@ -431,8 +478,8 @@ public class ItemCacheDefinition {
         description = "";
         modifiedModelColors = null;
         originalModelColors = null;
-        this.textToReplaceWith = null;
-        this.textureToReplace = null;
+        this.modifiedTextureColors = null;
+        this.originalTextureColors = null;
         spriteScale = 2000;
         spritePitch = 0;
         spriteCameraRoll = 0;
@@ -582,10 +629,10 @@ public class ItemCacheDefinition {
     private int groundScaleY;
     private int groundScaleX;
     //@Export("textureToReplace")
-    public short[] textureToReplace;
+    public short[] originalTextureColors;
    // @ObfuscatedName("v")
    // @Export("textToReplaceWith")
-    public short[] textToReplaceWith;
+    public short[] modifiedTextureColors;
     private int secondaryFemaleHeadPiece;
     private int shiftClickIndex = -2;
     private boolean stockMarket;

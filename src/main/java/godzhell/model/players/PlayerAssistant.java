@@ -1,20 +1,5 @@
 package godzhell.model.players;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
-
-import godzhell.model.npcs.bosses.vorkath.VorkathInstance;
-
-import org.apache.commons.lang3.ArrayUtils;
-
 import godzhell.Config;
 import godzhell.Server;
 import godzhell.clip.PathChecker;
@@ -24,20 +9,26 @@ import godzhell.event.CycleEventContainer;
 import godzhell.event.CycleEventHandler;
 import godzhell.event.DelayEvent;
 import godzhell.event.impl.WheatPortalEvent;
-import godzhell.model.content.RunePouch;
 import godzhell.model.content.LootingBag.LootingBag;
+import godzhell.model.content.RunePouch;
 import godzhell.model.content.achievement_diary.wilderness.WildernessDiaryEntry;
 import godzhell.model.content.instances.InstancedArea;
 import godzhell.model.content.instances.InstancedAreaManager;
 import godzhell.model.content.kill_streaks.Killstreak;
+import godzhell.model.content.skills.Fishing;
+import godzhell.model.content.skills.Skill;
+import godzhell.model.content.skills.SkillHandler;
+import godzhell.model.content.skills.crafting.CraftingData;
+import godzhell.model.content.skills.crafting.Enchantment;
+import godzhell.model.content.skills.mining.Mineral;
+import godzhell.model.content.skills.slayer.Task;
+import godzhell.model.content.skills.smithing.Smelting;
+import godzhell.model.content.skills.smithing.Smelting.Bars;
+import godzhell.model.content.skills.woodcutting.Tree;
 import godzhell.model.entity.Entity;
 import godzhell.model.holiday.HolidayController;
 import godzhell.model.holiday.halloween.HalloweenDeathCycleEvent;
-import godzhell.model.items.EquipmentSet;
-import godzhell.model.items.GameItem;
-import godzhell.model.items.Item;
-import godzhell.model.items.ItemAssistant;
-import godzhell.model.items.ItemDefinition;
+import godzhell.model.items.*;
 import godzhell.model.items.bank.BankTab;
 import godzhell.model.minigames.bounty_hunter.TargetState;
 import godzhell.model.minigames.lighthouse.DisposeType;
@@ -52,31 +43,29 @@ import godzhell.model.multiplayer_session.duel.DuelSession;
 import godzhell.model.multiplayer_session.duel.DuelSessionRules.Rule;
 import godzhell.model.npcs.NPC;
 import godzhell.model.npcs.NPCHandler;
+import godzhell.model.npcs.bosses.vorkath.VorkathInstance;
 import godzhell.model.npcs.bosses.zulrah.Zulrah;
 import godzhell.model.npcs.instance.InstanceSoloFight;
 import godzhell.model.players.combat.Damage;
 import godzhell.model.players.combat.Degrade;
-import godzhell.model.players.combat.Hitmark;
 import godzhell.model.players.combat.Degrade.DegradableItem;
+import godzhell.model.players.combat.Hitmark;
 import godzhell.model.players.combat.effects.DragonfireShieldEffect;
 import godzhell.model.players.combat.magic.MagicData;
 import godzhell.model.players.combat.magic.NonCombatSpells;
 import godzhell.model.players.mode.ModeType;
-import godzhell.model.content.skills.Skill;
-import godzhell.model.content.skills.SkillHandler;
-import godzhell.model.content.skills.Fishing;
-import godzhell.model.content.skills.smithing.Smelting;
-import godzhell.model.content.skills.smithing.Smelting.Bars;
-import godzhell.model.content.skills.crafting.CraftingData;
-import godzhell.model.content.skills.crafting.Enchantment;
-import godzhell.model.content.skills.mining.Mineral;
-import godzhell.model.content.skills.slayer.Task;
-import godzhell.model.content.skills.woodcutting.Tree;
 import godzhell.model.shops.ShopAssistant;
 import godzhell.net.outgoing.messages.ComponentVisibility;
 import godzhell.util.Misc;
 import godzhell.util.Stream;
 import godzhell.world.Clan;
+import org.apache.commons.lang3.ArrayUtils;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class PlayerAssistant {
 
@@ -3867,17 +3856,18 @@ public class PlayerAssistant {
 	}
 	public void handleTiara() {
 		int[] tiaras = { 5527, 5529, 5531, 5535, 5537, 5533, 5539, 5543, 5541, 5545, 5547 };
-		int[] config = { 607 };
+		int[] config = { 491, 491, 491, 491, 491, 491, 491, 491, 491, 491, 491 };
 		if (c.wearId >= tiaras[0] && c.wearId <= tiaras[10]) {
 			for (int i = 0; i < tiaras.length; i++) {
 				if (c.wearId == tiaras[i]) {
 					int tempInt = 1;
 					int loc = i;
 					while (loc > 0) {
-						tempInt *= 2;
+						tempInt += 1;
 						loc--;
 					}
 						c.getPA().setConfig(config[i], tempInt);
+					c.sendMessage("Config id "+config[i]+" tempint"+tempInt);
 				}
 			}
 		}

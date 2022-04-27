@@ -9,35 +9,142 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="408f6966-0e02-4abc-8420-8c51facc39c1" name="Default Changelist" comment="redid the server with gradlew.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/godzhell/definitions/AnimationLength.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/Animation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/AnimationPriority.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/nightmare/NightmareConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/GH_Server_jar.xml" beforeDir="false" />
+    <list default="true" id="408f6966-0e02-4abc-8420-8c51facc39c1" name="Default Changelist" comment="some packet stuff">
+      <change afterPath="$PROJECT_DIR$/src/main/java/godzhell/definitions/AnimationID.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/godzhell/definitions/GraphicID.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/content/dialogue/impl/StarterDialogue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/fletching/LogCutting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/fletching/LogCuttingInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/players/packets/ObjectExamine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/players/packets/objectoptions/ObjectExamine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Spawn.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spawn.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/bxp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/bxp.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cache/areas.dat" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/areas.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cache/areas.idx" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/areas.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cache/loc.dat" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/loc.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cache/loc.idx" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/loc.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cache/npc.dat" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/npc.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cache/npc.idx" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/npc.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cache/obj.dat" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/obj.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cache/obj.idx" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/obj.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cache/seq.dat" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/seq.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cache/spotanim.dat" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/spotanim.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cache/varbit.dat" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/varbit.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cfg/item.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/data/cfg/item.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cfg/item_config.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/data/cfg/item_config.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cfg/shop_config.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/data/cfg/shop_config.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/doors.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/doors.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/doubledoors.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/doubledoors.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/json/npc-spawns.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/json/npc-spawns.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/logs/s/sgsrocks/change_mac_address.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/s/sgsrocks/change_mac_address.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/logs/s/sgsrocks/command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/s/sgsrocks/command.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/logs/s/sgsrocks/dc_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/s/sgsrocks/dc_log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/logs/s/sgsrocks/public_chat.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/s/sgsrocks/public_chat.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/clip/ByteStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/clip/ByteStream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/wogw.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/wogw.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/138.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/138.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/152.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/152.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/153.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/153.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/154.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/154.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/155.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/155.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2023.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2023.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2052.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2052.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2053.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2053.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2087.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2087.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2101.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2101.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2122.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2122.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2123.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2123.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2180.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2180.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2181.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2181.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2188.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2188.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2189.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2189.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2203.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2203.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2216.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2216.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2217.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2217.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2310.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2310.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2311.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2311.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2332.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2332.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2333.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2333.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2451.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2451.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2458.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2458.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2459.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2459.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2482.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2482.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2483.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2483.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2514.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2514.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2515.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2515.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2549.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2549.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2553.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2553.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2560.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2560.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2561.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2561.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2574.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2574.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/2575.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/2575.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/482.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/482.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/483.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/483.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/484.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/484.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/world/map/485.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/world/map/485.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/clip/Region.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/clip/Region.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/definitions/ItemCacheDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/definitions/ItemCacheDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/definitions/NPCCacheDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/definitions/NPCCacheDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/definitions/items/ItemDefinition_Sub1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/definitions/items/ItemDefinition_Sub1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/definitions/items/ItemDefinition_Sub1_Sub1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/definitions/items/ItemDefinition_Sub1_Sub1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/definitions/items/ItemDefinition_Sub2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/definitions/items/ItemDefinition_Sub2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/definitions/items/ItemDefinition_Sub2_Sub1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/definitions/items/ItemDefinition_Sub2_Sub1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/definitions/items/ItemDefinition_Sub3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/definitions/items/ItemDefinition_Sub3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/definitions/items/ItemDefinition_Sub4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/definitions/items/ItemDefinition_Sub4.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/content/PlayerEmotes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/content/PlayerEmotes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/holiday/halloween/HalloweenDeathCycleEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/holiday/halloween/HalloweenDeathCycleEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/content/dialogue/impl/Lumbridge/BobDialogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/content/dialogue/impl/Lumbridge/BobDialogue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/fletching/FletchLogEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/fletching/FletchableArrow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/fletching/FletchableBolt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/fletching/FletchableBow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/fletching/FletchableCrossbow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/fletching/FletchableDart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/fletching/FletchableGem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/fletching/FletchableJavelin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/fletching/FletchableLog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/fletching/FletchableLogGroup.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/fletching/FletchableUnfinishedBolt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/fletching/Fletching.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/fletching/StringBowEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/fletching/StringCrossbowEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/runecrafting/Tiaras.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/runecrafting/Tiaras.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/woodcutting/Hatchet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/woodcutting/Hatchet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/woodcutting/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/woodcutting/Tree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/woodcutting/Woodcutting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/woodcutting/Woodcutting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/woodcutting/WoodcuttingEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/content/skills/woodcutting/WoodcuttingEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/items/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/items/UseItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/items/UseItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/minigames/warriors_guild/AnimatedArmour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/minigames/warriors_guild/AnimatedArmour.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/NPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/NPC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/NPCHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/NPCHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/DragonfireAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/DragonfireAttack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/FireballAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/FireballAttack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/MagicAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/MagicAttack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/PoolAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/PoolAttack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/PrayerAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/PrayerAttack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/RangedAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/RangedAttack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/SpawnAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/SpawnAttack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/VenomAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/bosses/vorkath/impl/VenomAttack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/animations/AttackAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/animations/AttackAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/animations/BlockAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/animations/BlockAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/animations/DeathAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/npcs/animations/DeathAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/objects/Doors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/objects/Doors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/objects/DoubleDoors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/objects/DoubleDoors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/objects/GateHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/objects/GateHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/players/ActionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/players/ActionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/players/PacketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/players/PacketHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/players/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/players/combat/AttackNPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/players/combat/AttackNPC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/util/PanelSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/util/PanelSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/players/PlayerAssistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/players/PlayerAssistant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/players/combat/melee/MeleeData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/players/combat/melee/MeleeData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/players/packets/BankX2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/players/packets/BankX2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/players/packets/ClickObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/players/packets/ClickObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/players/packets/ClickingButtons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/players/packets/ClickingButtons.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/players/packets/Walking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/players/packets/Walking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/players/packets/commands/admin/Pnpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/players/packets/commands/admin/Pnpc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/players/packets/commands/all/Anti.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/players/packets/commands/all/Anti.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/players/packets/commands/all/Runes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/players/packets/commands/all/Runes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/players/packets/commands/owner/Getid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/players/packets/commands/owner/Getid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/players/packets/commands/owner/Gfx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/players/packets/commands/owner/Gfx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/players/packets/npcoptions/NpcOptionOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/players/packets/npcoptions/NpcOptionOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/model/players/packets/npcoptions/NpcOptionTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/model/players/packets/npcoptions/NpcOptionTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/net/login/RS2Decoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/net/login/RS2Decoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/util/ItemID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/definitions/ItemID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/util/NpcID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/definitions/NpcID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/godzhell/util/ObjectID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/godzhell/definitions/ObjectID.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +245,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/MEGAsync Downloads/server/build.gradle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../projects/os-royale-client/build.gradle" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -160,6 +267,19 @@
     </key>
   </component>
   <component name="RunManager" selected="Gradle.GH-Server [run]">
+    <configuration name="PacketHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="godzhell.model.players.PacketHandler" />
+      <module name="godzhell-server.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="godzhell.model.players.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GH-Server [assembleDist]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -193,27 +313,6 @@
         <option name="taskNames">
           <list>
             <option value="assemble" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="GH-Server [distZip]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="distZip" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -268,10 +367,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.GH-Server [run]" />
+        <item itemvalue="Application.PacketHandler" />
         <item itemvalue="Gradle.GH-Server [assemble]" />
         <item itemvalue="Gradle.GH-Server [jar]" />
         <item itemvalue="Gradle.GH-Server [assembleDist]" />
-        <item itemvalue="Gradle.GH-Server [distZip]" />
       </list>
     </recent_temporary>
   </component>
@@ -452,7 +551,21 @@
       <option name="project" value="LOCAL" />
       <updated>1649688348226</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="redid animation system">
+      <created>1649742686389</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1649742686389</updated>
+    </task>
+    <task id="LOCAL-00026" summary="redid animation system">
+      <created>1649743824328</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1649743824328</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -493,7 +606,11 @@
     <MESSAGE value="added 204 data" />
     <MESSAGE value="added itemID ObjectID NpcID" />
     <MESSAGE value="redid the server with gradlew." />
-    <option name="LAST_COMMIT_MESSAGE" value="redid the server with gradlew." />
+    <MESSAGE value="redid animation system" />
+    <MESSAGE value="door and gate clipping is now fixed." />
+    <MESSAGE value="some packet fix's" />
+    <MESSAGE value="some packet stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="some packet stuff" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

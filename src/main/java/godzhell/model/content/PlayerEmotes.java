@@ -1,7 +1,6 @@
 package godzhell.model.content;
 
 import godzhell.Server;
-import godzhell.definitions.AnimationLength;
 import godzhell.event.CycleEvent;
 import godzhell.event.CycleEventContainer;
 import godzhell.event.CycleEventHandler;
@@ -91,22 +90,25 @@ public class PlayerEmotes {
 		ZOMBIE_WALK(152009, 3544, -1),
 		ZOMBIE_DANCE(152010, 3543, -1),
 		SCARED(152008, 2836, -1),
-		RABBIT_HOP(152008, 6111, -1),
+		BUNNY_HOP(152020, 6111, -1),
 		Hypermobile_Drinker(152054, 7131, -1),
-		STAR_JUMP(152051, 7188, -1),
+		STAR_JUMP(152018, 7188, -1),
 		SIT_UP(152011, 7190, -1),
 		PUSH_UP(152012, 7189, -1),
-		JOG(152052, 2764, -1),
+		JOG(152019, 2764, -1),
 		FLAP(152015, 4280, -1),
 		SLAP_HEAD(152016, 4275, -1),
 		STOMP(152014,  1745, -1),
 		IDEA(152013,  4276, 712),
 		ZOMBIE_HAND(152017, -1, -1),
+		FLEX(152029, 8917, -1),
 		SMOOTH_DANCE(152058, 7533 , -1),
-		CRAZY_DANCE(152059, -1, -1),
-		AIR_GUITAR(152056, 4751, 1239),
-		URI_TRANSFORM(152057, -1, -1),
-		PREMIER_SHEILD(152060, 7751, -1);
+		CRAZY_DANCE(152026, -1, -1),
+		AIR_GUITAR(152023, 4751, 1239),
+		URI_TRANSFORM(152024, -1, -1),
+		PREMIER_SHEILD(152027, 7751, -1),
+		EXPLORE(152028, -1, -1),
+		RELIC_UNLOCK(152030, -1, -1);
 		
 		private int button;
 		private int animation;
@@ -142,7 +144,7 @@ public class PlayerEmotes {
 			if (animation.getButton() == button) {
 				if (System.currentTimeMillis() - player.lastPerformedEmote < 3500)
 					return;			
-				if (animation.getButton() == 150192) {
+				if (animation.getButton() == 152026) {
 					if (Boundary.isIn(player, Boundary.VARROCK_BOUNDARY)) {
 						player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.BECOME_A_DANCER);
 					}
@@ -151,7 +153,15 @@ public class PlayerEmotes {
 						return;
 					}
 				}
-				if(animation.getButton() == 152057){
+				//if(animation.getButton() == 152030){
+				//	if(!player.Shattered_t3()) {
+				//		player.sendMessage("You need to be wearing shattered t3 set.");
+			//		} else {
+				//		player.startAnimation(8524);
+				//		player.gfx0(2020);
+				//	}
+			//	}
+				if(animation.getButton() == 152024){
 					CycleEventHandler.getSingleton().addEvent(player, new CycleEvent() {
 						int time = 0;
 						@Override
@@ -201,7 +211,7 @@ public class PlayerEmotes {
 						}
 					}, 1);
 				}
-				if(animation.getButton() == 152059){
+				if(animation.getButton() == 152026){
 					int random = Misc.random(1);
 					if(random == 0) {
 						player.startAnimation(7536);
@@ -211,7 +221,7 @@ public class PlayerEmotes {
 				}else {
 					player.startAnimation(animation.getAnimation());
 				}
-				if(animation.getButton() == 152060){
+				if(animation.getButton() == 152027){
 					int random = Misc.random(2);
 					if(random == 0) {
 						player.gfx0(1412);
@@ -223,7 +233,7 @@ public class PlayerEmotes {
 				} else {
 					player.gfx0(animation.getGraphic());
 				}
-				player.lastPerformedEmote = AnimationLength.getFrameLength(animation.getAnimation());
+				player.lastPerformedEmote = System.currentTimeMillis();
 				player.sendMessage("Performing emote: " + name + ".");
 				player.stopMovement();
 			}

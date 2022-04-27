@@ -1,23 +1,24 @@
 package godzhell.model.players.packets.npcoptions;
 
-import java.util.concurrent.TimeUnit;
-
 import godzhell.Config;
 import godzhell.Server;
+import godzhell.definitions.NpcID;
 import godzhell.model.content.Sawmill;
 import godzhell.model.content.achievement_diary.fremennik.FremennikDiaryEntry;
 import godzhell.model.content.achievement_diary.karamja.KaramjaDiaryEntry;
 import godzhell.model.content.achievement_diary.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
 import godzhell.model.content.achievement_diary.varrock.VarrockDiaryEntry;
+import godzhell.model.content.skills.Fishing;
+import godzhell.model.content.skills.agility.AgilityHandler;
+import godzhell.model.content.skills.thieving.Pickpocket;
 import godzhell.model.npcs.pets.PetHandler;
 import godzhell.model.npcs.pets.Probita;
 import godzhell.model.players.Boundary;
 import godzhell.model.players.Player;
 import godzhell.model.players.PlayerAssistant;
 import godzhell.model.players.PlayerAssistant.PointExchange;
-import godzhell.model.content.skills.Fishing;
-import godzhell.model.content.skills.agility.AgilityHandler;
-import godzhell.model.content.skills.thieving.Pickpocket;
+
+import java.util.concurrent.TimeUnit;
 
 /*
  * @author Matt
@@ -304,7 +305,7 @@ public class NpcOptionTwo {
 		case 2814:
 			player.getShops().openShop(Config.LUMBRIDGE_GENERAL_STORE);
 			break;
-		case 2812:
+			case NpcID.BOB_10619:
 			player.getShops().openShop(Config.BOBS_BRILLIANT_AXES);
 			break;
 		case 3214:

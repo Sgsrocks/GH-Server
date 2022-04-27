@@ -1,6 +1,7 @@
 package godzhell.model.minigames.warriors_guild;
 
 import godzhell.Server;
+import godzhell.definitions.NpcID;
 import godzhell.event.CycleEvent;
 import godzhell.event.CycleEventContainer;
 import godzhell.event.CycleEventHandler;
@@ -20,7 +21,7 @@ public class AnimatedArmour {
 
 	public enum Armour {
 
-		BRONZE(2450, 1155, 1117, 1075, 5, 10, 2, 20, 20), 
+		BRONZE(NpcID.ANIMATED_BRONZE_ARMOUR, 1155, 1117, 1075, 5, 10, 2, 20, 20),
 		IRON(2451, 1153, 1115, 1067, 10, 20, 4, 30, 30), 
 		STEEL(2452, 1157, 1119, 1069, 15, 40, 6, 50, 50), 
 		BLACK(2453, 1165, 1125, 1077, 20, 60, 7, 60, 60),

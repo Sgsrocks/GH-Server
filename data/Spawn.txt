@@ -791,3 +791,16 @@
 "combatLevel":10,
 "name":"Thug"
 },
+{
+"npcId":8480,
+"xPos":2452,
+"yPos":3187,
+"height":0,
+"walkType":0,
+"health":0,
+"maxHit":0,
+"attack":0,
+"defence":0,
+"combatLevel":0,
+"name":\"Wizard Cromperty\"
+},

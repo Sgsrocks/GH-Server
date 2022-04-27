@@ -17,8 +17,8 @@ public class Gfx extends Command {
 		String[] args = input.split(" ");
 		
 
-		if (Integer.parseInt(args[0]) > 1669) {
-			c.sendMessage("Max graphic id is: 1669");
+		if (Integer.parseInt(args[0]) > 2070) {
+			c.sendMessage("Max graphic id is: 2070");
 			return;
 		}
 

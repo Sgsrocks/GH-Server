@@ -29,7 +29,7 @@ public class Getid extends Command {
 			if (Server.itemHandler.ItemList[j] != null && Server.itemHandler.ItemList[j].itemDescription != null
 					&& !Server.itemHandler.ItemList[j].itemDescription.equalsIgnoreCase("null")) {
 				if (Server.itemHandler.ItemList[j].itemName.replace("_", " ").toLowerCase().contains(input.toLowerCase())) {
-					c.sendMessage("@lue@" + Server.itemHandler.ItemList[j].itemName.replace("_", " ") + " - " + Server.itemHandler.ItemList[j].itemId);
+					c.sendMessage("@blu@" + Server.itemHandler.ItemList[j].itemName.replace("_", " ") + " - " + Server.itemHandler.ItemList[j].itemId);
 					results++;
 				}
 			}

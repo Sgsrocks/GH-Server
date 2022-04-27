@@ -3,7 +3,6 @@ package godzhell.model.npcs;
 import godzhell.Config;
 import godzhell.Server;
 import godzhell.clip.PathChecker;
-import godzhell.definitions.AnimationLength;
 import godzhell.definitions.NPCCacheDefinition;
 import godzhell.event.CycleEvent;
 import godzhell.event.CycleEventContainer;
@@ -90,7 +89,8 @@ public class NPCHandler {
 	public static int maxNPCDrops = 10000;
 	public static NPC npcs[] = new NPC[maxNPCs];
 	private static NPCDef[] npcDef = new NPCDef[maxListedNPCs];
-
+	public static int nexCountDown = 0;
+	public boolean[] nexRoom = new boolean[4];
 	public static boolean projectileClipping = true;
 
 	/**
@@ -1886,12 +1886,6 @@ public class NPCHandler {
 								if (killer1 != null) {
 									killer1.spawned = false;
 									checkMa(killer1,i);
-								}
-							}
-							npc.actionTimer = AnimationLength.getFrameLength(npc.getDeathAnimation());
-							if (!"Dusk".equals(npc.getDefinition().getNpcName())) { // Dusk animation length is long and we want it that way
-								if (npc.actionTimer > 20) {      // Fix for death animations being too long
-									npc.actionTimer = 20;
 								}
 							}
 							npcs[i].updateRequired = true;
@@ -5100,7 +5094,6 @@ public class NPCHandler {
 			return distanceNeeded += 4;
 		}
 		switch (npcs[i].npcType) {
-
 		case Skotizo.SKOTIZO_ID:
 			return npcs[i].attackType == CombatType.MAGE ? 15 : 2;
 		case 7706:
@@ -5761,6 +5754,142 @@ public class NPCHandler {
 						c.getPA().refreshSkill(5);
 					}
 				}
+			}
+		}
+		if(npcs[i].npcType == 11278) {
+			switch(npcs[i].nexStage) {
+				case 1:
+				case 2:
+					if(npcs[i].glod == 2) {
+						if(c.virusDamage == 0) {
+							c.virusTimer = 10;
+							c.virusDamage = 5;
+							c.forcedChat("*Cough*");
+						}
+					}
+					if(npcs[i].getHealth().getAmount() < 2400 && npcs[i].nexStage == 1) {
+						npcs[i].forceChat("Fumus, don't fail me!");
+						npcs[i].nexStage = 2;
+						nexRoom[0] = true;
+					}
+					break;
+				case 3:
+				case 4:
+					if(npcs[i].glod == 3) {
+						for(int fs = 0; fs < npcs[i].fearShadow.length; fs++) {
+							if(npcs[i].fearShadow[fs][0] == 0) {
+								npcs[i].fearShadow[fs][0] = c.absX;
+								npcs[i].fearShadow[fs][1] = c.absY;
+								break;
+							}
+						}
+						final int DMG = Misc.random(60);
+						final int I = i;
+						CycleEventHandler.getSingleton().addEvent(this, new CycleEvent() {
+							public void execute(CycleEventContainer e) {
+								for(int ii = 0; ii < npcs[I].fearShadow.length; ii++) {
+									if(npcs[I].fearShadow[ii][0] > 0) {
+										if(c.absX == npcs[I].fearShadow[ii][0] && c.absY == npcs[I].fearShadow[ii][1]) {
+											c.setHitDiff(DMG);
+											c.playerLevel[3] -= DMG;
+											c.getPA().refreshSkill(3);
+											c.updateRequired = true;
+											c.logoutDelay = 20;
+											npcs[I].fearShadow[ii][0] = npcs[I].fearShadow[ii][1] = 0;
+											return;
+										} else {
+											npcs[I].fearShadow[ii][0] = npcs[I].fearShadow[ii][1] = 0;
+											return;
+										}
+									}
+								}
+								e.stop();
+							}
+						}, 1800);
+						return;
+					}
+					if(npcs[i].hp < 1800 && npcs[i].nexStage == 3) {
+						npcs[i].forceChat("Umbra, don't fail me!");
+						npcs[i].nexStage = 4;
+						nexRoom[1] = true;
+					}
+					break;
+				case 5:
+				case 6:
+					if(npcs[i].glod == 2) {
+						int maximumHealth = npcs[i].getHealth().getMaximum();
+						int currentHealth = npcs[i].getHealth().getAmount();
+						currentHealth += damage;
+						if(npcs[i].getHealth().getAmount() > npcs[i].getHealth().getMaximum()) {
+							currentHealth = maximumHealth;
+						}
+						c.playerLevel[5] /= 2;
+					}
+					if(npcs[i].glod == 3) {
+						for(int t = 0; t < 1+Misc.random(2); t++) {
+							spawnNpc2(7643, (npcs[i].absX+1)+Misc.random(2), (npcs[i].absY+1)+Misc.random(2), 0, 0, 101, 15, 140, 10);
+						}
+						npcs[i].cooldown = 30;
+						return;
+					}
+					if(npcs[i].getHealth().getAmount() < 1200 && npcs[i].nexStage == 5) {
+						npcs[i].forceChat("Cruor, don't fail me!");
+						npcs[i].nexStage = 6;
+						nexRoom[2] = true;
+					}
+					break;
+				case 7:
+				case 8:
+					if(npcs[i].glod == 1) {
+						if(c.freezeTimer < 0) {
+							c.stopMovement();
+							c.sendMessage("You have been frozen!");
+							c.freezeTimer = 30;
+						}
+					}
+					else if(npcs[i].glod == 2) {
+						if(npcs[i].CONTAIN_THIS[0][0] > 0) {
+							if(c.absX > npcs[i].CONTAIN_THIS[0][0] && c.absX < npcs[i].CONTAIN_THIS[1][0]
+									&& c.absY > npcs[i].CONTAIN_THIS[0][1] && c.absY < npcs[i].CONTAIN_THIS[1][1]) {
+								int iced = Misc.random(65);
+								c.setHitDiff(iced);
+								c.playerLevel[3] -= iced;
+								c.getPA().refreshSkill(3);
+								c.updateRequired = true;
+								//c.setHitUpdateRequired(true);
+								c.logoutDelay = 20;
+								return;
+							} else {
+								return;
+							}
+						}
+					}
+					else if(npcs[i].glod == 3) {
+						c.stopMovement();
+						int iced = Misc.random(60);
+						c.setHitDiff(iced);
+						c.playerLevel[3] -= iced;
+						c.getPA().refreshSkill(3);
+						c.updateRequired = true;
+						//c.setHitUpdateRequired(true);
+						c.logoutDelay = 20;
+						return;
+					} else {
+						return;
+					}
+					if(npcs[i].getHealth().getAmount() < 600 && npcs[i].nexStage == 7) {
+						npcs[i].forceChat("Glacies, don't fail me!");
+						npcs[i].nexStage = 8;
+						nexRoom[3] = true;
+					}
+					break;
+				case 9:
+					if(npcs[i].prayerUsed == 1) {
+						int maximumHealth = npcs[i].getHealth().getMaximum();
+						int currentHealth = npcs[i].getHealth().getAmount();
+						currentHealth += damage/5;
+					}
+					break;
 			}
 		}
 

@@ -24,7 +24,7 @@ public class Config {
 	/**
 	 * Combat applications
 	 */
-	public static boolean BOUNTY_HUNTER_ACTIVE = true;
+	public static boolean BOUNTY_HUNTER_ACTIVE = false;
 	public static boolean NEW_DUEL_ARENA_ACTIVE = true;
 
 	/**
@@ -420,14 +420,14 @@ public class Config {
 	/**
 	 * The starting location of your server.
 	 */
-	public static final int START_LOCATION_X = 1635;
-	public static final int START_LOCATION_Y = 2889;
+	public static final int START_LOCATION_X = 2448;
+	public static final int START_LOCATION_Y = 3186;
 
 	/**
 	 * The re-spawn point of when someone dies.
 	 */
-	public static final int RESPAWN_X = 1635;
-	public static final int RESPAWN_Y = 2889;
+	public static final int RESPAWN_X = 2448;
+	public static final int RESPAWN_Y = 3186;
 
 	/**
 	 * The re-spawn point of when a duel ends.

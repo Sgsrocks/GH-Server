@@ -2,6 +2,7 @@ package godzhell.model.npcs.animations;
 
 import godzhell.Server;
 import godzhell.definitions.NPCCacheDefinition;
+import godzhell.definitions.NpcID;
 import godzhell.model.npcs.NPCHandler;
 import godzhell.model.npcs.bosses.skotizo.Skotizo;
 
@@ -16,6 +17,10 @@ public class BlockAnimation {
 		}
 		switch (Server.npcHandler.getNPCs()[i].npcType) {
 			//Inferno Npcs
+			case NpcID.BLACK_BEAR:
+				return 4926;
+			case NpcID.MOUNTED_TERRORBIRD_GNOME_5971:
+				return 6792;
 			case 7691:
 				return 7575;
 			case 7692:

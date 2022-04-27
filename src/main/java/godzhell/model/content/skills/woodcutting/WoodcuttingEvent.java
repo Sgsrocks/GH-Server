@@ -1,11 +1,10 @@
 package godzhell.model.content.skills.woodcutting;
 
-import java.util.Optional;
-
 import godzhell.Config;
 import godzhell.Server;
 import godzhell.clip.Region;
 import godzhell.clip.WorldObject;
+import godzhell.definitions.ItemCacheDefinition;
 import godzhell.event.Event;
 import godzhell.model.content.SkillcapePerks;
 import godzhell.model.content.achievement.AchievementType;
@@ -19,14 +18,16 @@ import godzhell.model.content.achievement_diary.varrock.VarrockDiaryEntry;
 import godzhell.model.content.achievement_diary.wilderness.WildernessDiaryEntry;
 import godzhell.model.content.dailytasks.DailyTasks;
 import godzhell.model.content.dailytasks.DailyTasks.PossibleTasks;
+import godzhell.model.content.skills.Skill;
+import godzhell.model.content.skills.firemake.Firemaking;
 import godzhell.model.players.Boundary;
 import godzhell.model.players.Player;
 import godzhell.model.players.PlayerHandler;
 import godzhell.model.players.Right;
-import godzhell.model.content.skills.Skill;
-import godzhell.model.content.skills.firemake.Firemaking;
 import godzhell.util.Misc;
 import godzhell.world.objects.GlobalObject;
+
+import java.util.Optional;
 
 public class WoodcuttingEvent extends Event<Player> {
 	private Tree tree;
@@ -79,7 +80,7 @@ public class WoodcuttingEvent extends Event<Player> {
 					stumpId = 29671;
 			}
 			Server.getGlobalObjects().add(new GlobalObject(tree.equals(Tree.REDWOOD) ? stumpId : tree.getStumpId(), x, y, attachment.heightLevel, face, 10, tree.getRespawnTime(), objectId));
-			
+			attachment.sendMessage("You get some "+ ItemCacheDefinition.forID(tree.getWood()).getName()+".");
 			attachment.getItems().addItem(tree.getWood(), 1);
 			attachment.getPA().addSkillXP((int) (attachment.getRights().isOrInherits(Right.OSRS) ? osrsExperience : experience) , Skill.WOODCUTTING.getId(), true);
 			Achievements.increase(attachment, AchievementType.WOODCUT, 1);
@@ -87,7 +88,6 @@ public class WoodcuttingEvent extends Event<Player> {
 			super.stop();
 			return;
 		}
-		if (!tree.equals(Tree.NORMAL)) {
 			if (Misc.random(chopChance) == 0 || chops >= tree.getChopsRequired()) {
 				chops = 0;
 				int random = Misc.random(4);
@@ -101,7 +101,6 @@ public class WoodcuttingEvent extends Event<Player> {
 				handleWildernessRewards();
 				attachment.getItems().addItem(tree.getWood(), SkillcapePerks.WOODCUTTING.isWearing(attachment) || (SkillcapePerks.isWearingMaxCape(attachment) && attachment.getWoodcuttingEffect()) && Misc.random(2) == 1 ? 2 : 1);
 			}
-		}
 		if (super.getElapsedTicks() % 4 == 0) {
 			attachment.startAnimation(hatchet.getAnimation());
 		}
@@ -124,17 +123,17 @@ public class WoodcuttingEvent extends Event<Player> {
 			return true;
 		}
 		if (!attachment.getItems().playerHasItem(hatchet.getItemId()) && !attachment.getItems().isWearingItem(hatchet.getItemId())) {
-			attachment.sendMessage("Your axe has disappeared.");
+			attachment.sendMessage("You need an axe to chop down this tree.");
 			super.stop();
 			return true;
 		}
 		if (attachment.playerLevel[attachment.playerWoodcutting] < hatchet.getLevelRequired()) {
-			attachment.sendMessage("You no longer have the level required to operate this hatchet.");
+			attachment.sendMessage("You do not have an axe which you have the woodcutting level to use.");
 			super.stop();
 			return true;
 		}
 		if (attachment.getItems().freeSlots() == 0) {
-			attachment.sendMessage("You have run out of free inventory space.");
+			attachment.sendMessage("Your inventory is too full to hold any more logs.");
 			super.stop();
 			return true;
 		}
@@ -234,7 +233,7 @@ public class WoodcuttingEvent extends Event<Player> {
 	public void stop() {
 		super.stop();
 		if (attachment != null) {
-			attachment.startAnimation(65535);
+			attachment.stopAnimation();
 		}
 	}
 

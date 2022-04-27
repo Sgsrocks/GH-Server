@@ -1,9 +1,9 @@
 package godzhell.model.npcs.animations;
 
 import godzhell.definitions.NPCCacheDefinition;
+import godzhell.definitions.NpcID;
 import godzhell.model.minigames.warriors_guild.AnimatedArmour;
 import godzhell.model.npcs.NPCHandler;
-import godzhell.model.npcs.bosses.skotizo.Skotizo;
 import godzhell.model.npcs.bosses.zulrah.Zulrah;
 import godzhell.model.players.combat.CombatType;
 import godzhell.util.Misc;
@@ -25,74 +25,121 @@ public class AttackAnimation extends NPCHandler {
 				return 5567;
 		}
 		switch (NPCHandler.npcs[i].npcType) {
+			case 11278:
+				if(npcs[i].nexStage == 1 || npcs[i].nexStage == 2) {
+					switch(npcs[i].glod) {
+						case 1:
+							return 9180;
+						case 2:
+							return 9181;
+					}
+				}
+				else if(npcs[i].nexStage == 3 || npcs[i].nexStage == 4) {
+					switch(npcs[i].glod) {
+						case 1:
+							return 9180;
+						case 2:
+							return 9181;
+						case 3:
+							return 9186;
+					}
+				}
+				else if(npcs[i].nexStage == 5 || npcs[i].nexStage == 6) {
+					switch(npcs[i].glod) {
+						case 1:
+						case 2:
+							return 9188;
+						case 3:
+							return 9189;
+					}
+				}
+				else if(npcs[i].nexStage == 7 || npcs[i].nexStage == 8) {
+					switch(npcs[i].glod) {
+						case 1:
+						case 2:
+						case 3:
+							return 9188;
+					}
+				}
+				else if(npcs[i].nexStage == 9) {
+					switch(npcs[i].glod) {
+						case 1:
+							return 9188;
+					}
+				}
+				return 9180;
+			case NpcID.BLACK_BEAR:
+				return 4925;
+			case NpcID.MOUNTED_TERRORBIRD_GNOME_5971:
+				return 6790;
 			//Inferno Npcs
-			case 7691:
+			case NpcID.JALNIB:
 				return 7574;
-			case 7692:
+			case NpcID.JALMEJRAH:
 				return 7578;
-			case 7693:
+			case NpcID.JALAK:
 				return 7582;
-			case 7694:
+			case NpcID.JALAKREKMEJ:
 				return 7582;
-			case 7695:
+			case NpcID.JALAKREKXIL:
 				return 7582;
-			case 7696:
+			case NpcID.JALAKREKKET:
 				return 7582;
-			case 7697:
+			case NpcID.JALIMKOT:
 				return 7597;
-			case 7699:
+			case NpcID.JALZEK:
 				return npcs[i].attackType == CombatType.MAGE ? 7610 : 7612;
-			case 7700:
+			case NpcID.JALTOKJAD:
 				if (npcs[i].attackType == CombatType.MAGE)
 					return 7592;
 				else if (npcs[i].attackType == CombatType.RANGE)
 					return 7593;
 				else if (npcs[i].attackType == CombatType.MELEE)
 					return 7590;
-			case 7702:
+			case NpcID.JALXIL_7702:
 				return 7604;
-			case 7706:
+			case NpcID.TZKALZUK:
 				return 7566;
-			case 7708:
+			case NpcID.JALMEJJAK:
 				return 2868;
 
-			case 1605:
+			case NpcID.KOLODION_1605:
 				return 811;
-			case 1606:
+			case NpcID.KOLODION_1606:
 				return 128;
-			case 1607:
+			case NpcID.KOLODION_1607:
 				return 5319;
-			case 1608:
+			case NpcID.KOLODION_1608:
 				return 394;
-			case 1609:
+			case NpcID.KOLODION_1609:
 				return 64;
-			case 8030:
-	        case 8031:
+			case NpcID.ADAMANT_DRAGON:
+	        case NpcID.RUNE_DRAGON_8031:
 	            if (npcs[i].attackType == CombatType.DRAGON_FIRE) {
 	                return 84;
 	            } else if (npcs[i].attackType == CombatType.MELEE) {
 	                return 80;
 	            }
 
-		case 8028:
-		case 8061:
+			case NpcID.VORKATH_8060:
+		case NpcID.VORKATH_8061:
 			return 7952;
-		case 7527:
+		case NpcID.VANGUARD_7527:
 			return 7441;
-		case 7566:
+		case NpcID.VASA_NISTIRIO:
 			return 7410;
-		case 7573:
+		case NpcID.LIZARDMAN_SHAMAN_7573:
 			return 7193;
-		case 7563:
+		case NpcID.MUTTADILE_7563:
 			return 7420;
-		case 8095:
+		case NpcID.GALVEK_8095:
 			return Misc.random(1) == 0 ? 7900 : 7900;
-		case Skotizo.SKOTIZO_ID:
+		case NpcID.SKOTIZO:
 			return npcs[i].attackType == CombatType.MAGE ? 69 : 4680;
-		case 7585:
-		case Skotizo.REANIMATED_DEMON:
+		case NpcID.ICE_DEMON_7585:
+		case NpcID.REANIMATED_DEMON_SPAWN:
 			return 64;
-		case 5916:
+		case NpcID.SPAWN:
 			return 4522;
 
 		case 7604: // Skeletal mystic

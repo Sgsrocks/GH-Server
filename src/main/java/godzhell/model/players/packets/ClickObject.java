@@ -1,11 +1,12 @@
 package godzhell.model.players.packets;
 
-import java.util.Objects;
-
 import godzhell.Server;
 import godzhell.event.CycleEvent;
 import godzhell.event.CycleEventContainer;
 import godzhell.event.CycleEventHandler;
+import godzhell.model.content.skills.agility.AgilityHandler;
+import godzhell.model.content.skills.farming.FarmingConstants;
+import godzhell.model.content.skills.hunter.impling.PuroPuro;
 import godzhell.model.multiplayer_session.MultiplayerSessionFinalizeType;
 import godzhell.model.multiplayer_session.MultiplayerSessionStage;
 import godzhell.model.multiplayer_session.MultiplayerSessionType;
@@ -13,16 +14,16 @@ import godzhell.model.multiplayer_session.duel.DuelSession;
 import godzhell.model.players.Boundary;
 import godzhell.model.players.PacketType;
 import godzhell.model.players.Player;
-import godzhell.model.content.skills.agility.AgilityHandler;
-import godzhell.model.content.skills.farming.FarmingConstants;
-import godzhell.model.content.skills.hunter.impling.PuroPuro;
+
+import java.util.Objects;
 
 /**
  * Click Object
  */
 public class ClickObject implements PacketType {
 
-	public static final int FIRST_CLICK = 132, SECOND_CLICK = 252, THIRD_CLICK = 70, FOURTH_CLICK = 234, FIFTH_CLICK = 228;
+	public static final int FIRST_CLICK = 132,
+			SECOND_CLICK = 252, THIRD_CLICK = 70, FOURTH_CLICK = 234, FIFTH_CLICK = 228;
 
 	@Override
 	public void processPacket(final Player c, int packetType, int packetSize) {
@@ -41,7 +42,7 @@ public class ClickObject implements PacketType {
 		switch (packetType) {
 		case FIRST_CLICK:
 			c.objectX = c.getInStream().readSignedWordBigEndianA();
-			c.objectId = c.getInStream().readUnsignedWord();
+			c.objectId = c.getInStream().readInteger();
 			c.objectY = c.getInStream().readUnsignedWordA();
 			c.objectDistance = 1;
 
@@ -756,7 +757,7 @@ public class ClickObject implements PacketType {
 			}
 			break;
 		case SECOND_CLICK:
-			c.objectId = c.getInStream().readUnsignedWordBigEndianA();
+			c.objectId = c.getInStream().readInteger();
 			c.objectY = c.getInStream().readSignedWordBigEndian();
 			c.objectX = c.getInStream().readUnsignedWordA();
 			c.objectDistance = 1;
@@ -867,7 +868,7 @@ public class ClickObject implements PacketType {
 		case THIRD_CLICK:
 			c.objectX = c.getInStream().readSignedWordBigEndian();
 			c.objectY = c.getInStream().readUnsignedWord();
-			c.objectId = c.getInStream().readUnsignedWordBigEndianA();
+			c.objectId = c.getInStream().readUnsignedWord();
 			// if (!Region.isWorldObject(c.objectId, c.objectX, c.objectY, c.heightLevel)) {
 			// c.sendMessage("Warning: The object could not be verified by the server. If
 			// you feel this is");
@@ -935,7 +936,7 @@ public class ClickObject implements PacketType {
 			break;
 		case FOURTH_CLICK:
 			c.objectX = c.getInStream().readUnsignedWordBigEndianA();
-			c.objectId = c.getInStream().readUnsignedWordA();
+			c.objectId = c.getInStream().readInteger();
 			c.objectY = c.getInStream().readUnsignedWordBigEndianA();
 			// if (!Region.isWorldObject(c.objectId, c.objectX, c.objectY, c.heightLevel)) {
 			// c.sendMessage("Warning: The object could not be verified by the server. If
@@ -996,7 +997,7 @@ public class ClickObject implements PacketType {
 			break;
 			
 		case FIFTH_CLICK:
-			c.objectId = c.getInStream().readUnsignedWordA();
+			c.objectId = c.getInStream().readInteger();
 			c.objectY = c.getInStream().readUnsignedWordA();
 			c.objectX = c.getInStream().readUnsignedWord();
 			//client.face(client.objectX, client.objectY);
@@ -1051,6 +1052,7 @@ public class ClickObject implements PacketType {
 				}, 1);
 			}
 			break;
+
 		}
 
 	}

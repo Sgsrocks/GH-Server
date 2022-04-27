@@ -1,15 +1,14 @@
 package godzhell.net.login;
 
+import godzhell.model.players.PacketHandler;
+import godzhell.net.Packet;
+import godzhell.net.Packet.Type;
+import godzhell.util.ISAACCipher;
 import org.jboss.netty.buffer.ChannelBuffer;
 import org.jboss.netty.buffer.ChannelBuffers;
 import org.jboss.netty.channel.Channel;
 import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.handler.codec.frame.FrameDecoder;
-
-import godzhell.model.players.Player;
-import godzhell.net.Packet;
-import godzhell.net.Packet.Type;
-import godzhell.util.ISAACCipher;
 
 public class RS2Decoder extends FrameDecoder {
 
@@ -28,7 +27,8 @@ public class RS2Decoder extends FrameDecoder {
 			if (buffer.readableBytes() >= 1) {
 				opcode = buffer.readByte() & 0xFF;
 				opcode = (opcode - cipher.getNextValue()) & 0xFF;
-				size = Player.PACKET_SIZES[opcode];
+				//size = Player.PACKET_SIZES[opcode];
+				size = PacketHandler.getPacketSize(opcode);
 			} else {
 				return null;
 			}

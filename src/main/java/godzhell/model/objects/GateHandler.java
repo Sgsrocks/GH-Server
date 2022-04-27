@@ -5,7 +5,6 @@ import godzhell.clip.ObjectDef;
 import godzhell.clip.Region;
 import godzhell.model.players.Player;
 import godzhell.world.ObjectManager;
-import godzhell.world.objects.GlobalObject;
 
 public class GateHandler {
 public static int gateAmount = 0, gateTicks = 100;
@@ -15,12 +14,12 @@ public static boolean isGate(int objectId) {
 	return objectName.equalsIgnoreCase("gate") || objectName.equalsIgnoreCase("Gate");
 }
 public static void spawnGate(Player player, int objectId, int newObjectX, int newObjectY, int height, int face) {
+	Region.removeObject(objectId, newObjectX, newObjectY, height, 0, face);
 	Server.objectHandler.placeObject(new Objects(objectId, newObjectX, newObjectY, height, face, 0, 0));
 }
 public static void openSingleGate(Player player, int objectId, int x1, int y1, int x2, int y2, int walkX, int walkY, int face1, int face2) {
 	if (isGate(objectId) && gateAmount == 0) {
 		spawnGate(player, -1, x2, y2, player.heightLevel, 0);
-		Region.removeObject(objectId, x2, y2, player.heightLevel, 0, 0);
 		spawnGate(player, objectId, x1, y1, player.heightLevel, face1);
 		gateAmount = 1;
 		player.getPA().walkTo(walkX, walkY);
@@ -31,13 +30,9 @@ private static void openDoubleGate(Player player, int objectId, int objectId2, i
 	if (isGate(objectId) && isGate(objectId2) && gateAmount == 0) {
 		spawnGate(player, -1, x3, y3, player.heightLevel, 0);
 		spawnGate(player,-1, x4, y4, player.heightLevel, 0);
-		Region.removeObject(objectId, x3, y3, player.heightLevel, 0, 0);
-		Region.removeObject(objectId2, x4, y4, player.heightLevel, 0, 0);
 		spawnGate(player, objectId, x1, y1, player.heightLevel, face1);
-		Region.addObject(objectId, x1, y1, player.heightLevel, 0, face1);
 		gateAmount = 1;
 		spawnGate(player, objectId2, x2, y2, player.heightLevel, face1);
-		Region.addObject(objectId2, x2, y2, player.heightLevel, 0, face1);
 		gateAmount = 2;
 		ObjectManager.doubleGateTicks(player, objectId, x3, y3, x1, y1, x2, y2, player.heightLevel, face2, gateTicks);
 		ObjectManager.doubleGateTicks(player, objectId2, x4, y4, x1, y1, x2, y2, player.heightLevel, face2, gateTicks);
@@ -51,13 +46,9 @@ private static void openSpecialGate(Player player, int objectId, int objectId2, 
 	if (isGate(objectId) && isGate(objectId2) && gateAmount == 0) {
 		spawnGate(player, -1, x3, y3, player.heightLevel, 0);
 		spawnGate(player, -1, x4, y4, player.heightLevel, 0);
-		Region.removeObject(objectId, x3, y3, player.heightLevel, 0, 0);
-		Region.removeObject(objectId2, x4, y4, player.heightLevel, 0, 0);
 		spawnGate(player, objectId, x1, y1, player.heightLevel, face1);
-		Region.addObject(objectId, x1, y1, player.heightLevel, 0, face1);
 		gateAmount = 1;
 		spawnGate(player, objectId2, x2, y2, player.heightLevel, face2);
-		Region.addObject(objectId2, x2, y2, player.heightLevel, 0, face2);
 		gateAmount = 2;
 		ObjectManager.doubleGateTicks(player, objectId, x3, y3, x1, y1, x2, y2, player.heightLevel, face3, gateTicks);
 		ObjectManager.doubleGateTicks(player, objectId2, x4, y4, x1, y1, x2, y2, player.heightLevel, face3, gateTicks);
@@ -71,8 +62,6 @@ public static void openSpecialWalkGate(Player player, int objectId, int objectId
 	if (isGate(objectId) && isGate(objectId2) && gateAmount == 0) {
 		spawnGate(player, -1, x3, y3, player.heightLevel, 0);
 		spawnGate(player, -1, x4, y4, player.heightLevel, 0);
-		Region.removeObject(objectId, x3, y3, player.heightLevel, 0, 0);
-		Region.removeObject(objectId2, x4, y4, player.heightLevel, 0, 0);
 		spawnGate(player, objectId, x1, y1, player.heightLevel, face1);
 		gateAmount = 1;
 		spawnGate(player, objectId2, x2, y2, player.heightLevel, face2);

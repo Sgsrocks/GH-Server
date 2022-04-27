@@ -24,16 +24,26 @@ public class Tiaras {
     }
 
     public static void handleTiara(Player player, int id) {
-        int[][] tiaras = { { 5527, 1 }, { 5529, 2 }, { 5531, 4 }, { 5535, 8 },
-                { 5537, 16 }, { 5533, 31 }, { 5539, 64 }, { 5543, 128 },
-                { 5541, 256 }, { 5545, 512 }, { 5547, 1024 } };
+        int[][] tiaras = {
+                { 5527, 0 },
+                { 5529, 1 },
+                { 5531, 2 },
+                { 5535, 3 },
+                { 5537, 4 },
+                { 5533, 5 },
+                { 5539, 6 },
+                { 5543, 7 },
+                { 5541, 8 },
+                { 5545, 9 },
+                { 5547, 10 }
+        };
         for (int[] t : tiaras) {
             if (t[0] == id) {
-                player.getPA().sendConfig(491, t[1]);
+                player.getPA().sendConfig(491,  t[1]);
                 return;
             }
+            player.getPA().sendConfig(491, 0);
         }
-        player.getPA().sendConfig(491, 0);
     }
 
 }

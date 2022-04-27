@@ -39,6 +39,10 @@ public class NPC extends Entity {
 	public boolean summoner = false;
 	public long singleCombatDelay = 0;
 	public boolean teleporting = false;
+	public int prayerUsed = 0;
+	public int extraHitDelay = 0, glod, deadCyle = 1;
+	public final int[][] fearShadow = new int[100][100];
+	public int diliHits = 30, nexStage = 0, cooldown = 0, mustDie = 0;
 
 	public long lastRandomlySelectedPlayer = System.currentTimeMillis();
     public int masterId;
@@ -73,7 +77,7 @@ public class NPC extends Entity {
 	public int totalAttacks;
 	private boolean facePlayer = true;
 	private int projectileDelay = 0;
-
+	public final int[][] CONTAIN_THIS = new int[100][100];
 	private NPCDefinitions definition;
 
 	private long lastRandomWalk;
@@ -91,6 +95,16 @@ public class NPC extends Entity {
 		applyDead = false;
 		actionTimer = 0;
 		randomWalk = true;
+	}
+	public String Glod() {
+		int talk = Misc.random(2);
+		switch(talk) {
+			case 1:
+				return "Glod Angry!";
+			case 2:
+				return "Glod Bash!";
+		}
+		return "Glod Smash!";
 	}
 	public void shearSheep(Player player, int itemNeeded, int itemGiven, int animation, final int currentId, final int newId, int transformTime) {
 		if (!player.getItems().playerHasItem(itemNeeded)) {

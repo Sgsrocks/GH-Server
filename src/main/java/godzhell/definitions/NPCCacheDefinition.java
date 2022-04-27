@@ -1,10 +1,9 @@
 package godzhell.definitions;
 
-import java.io.File;
-
+import godzhell.util.Stream;
 import org.apache.commons.io.FileUtils;
 
-import godzhell.util.Stream;
+import java.io.File;
 
 /**
  * A class that loads & manages NPC configurations. 
@@ -23,7 +22,7 @@ public class NPCCacheDefinition {
 	/**
 	 * Represents the total whole number integer of NPCs.
 	 */
-	public static int NPC_TOTAL = 10620;
+	public static int NPC_TOTAL = 11474;
 	
 	/**
 	 * Returns a {@link NPCCacheDefinition} for the specified ID.
@@ -41,7 +40,12 @@ public class NPCCacheDefinition {
        		npcData.currentOffset = streamIndices[i];
         npcDef.type = i;
 	if(i < totalNpcs)
-        	npcDef.readValues(npcData);	
+        	npcDef.readValues(npcData);
+	switch(i) {
+        case 9476:
+            npcDef.name = "GodzHell Guide";
+            break;
+    }
         return npcDef;
     }
 	

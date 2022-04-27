@@ -1,15 +1,15 @@
 package godzhell.model.items;
 
+import godzhell.Config;
+import godzhell.definitions.ItemCacheDefinition;
+import godzhell.model.players.Player;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
-
-import godzhell.Config;
-import godzhell.definitions.ItemCacheDefinition;
-import godzhell.model.players.Player;
 
 /**
  * Handles The Item Wielding Of The Server Used When Hardcoding Additional Items
@@ -396,7 +396,7 @@ public class Item {
 		boolean item1 = false;
 		for (String element : data) {
 			if ((item.endsWith(element) || item.contains(element))
-					&& itemId != 4214) {
+					&& !item.contains("Shattered top")&& !item.contains("Shattered trousers")) {
 				item1 = true;
 			}
 		}
@@ -406,7 +406,9 @@ public class Item {
 	public static boolean playerLegs(int itemId) {
 		String[] data = { "Halo's platelegs","tassets", "Ladies Platelegs", "Justiciar legguards","Seth Chaps", "Light Legs", "Owner Legs", "chaps", "bottoms", "gown", "trousers",
 				"platelegs", "pantaloons", "robe", "plateskirt", "legs", "leggings",
-				"shorts", "Shorts", "Skirt", "greaves","Knightmare legs", "Torva Platelegs", "Priml Platelegs", "skirt", "cuisse", "Trousers", "tights", "kilt"};
+				"shorts", "Shorts", "Skirt", "greaves","Knightmare legs",
+				"Torva Platelegs", "Priml Platelegs", "skirt", "cuisse",
+				"Trousers", "tights", "kilt", "Shattered trousers (t3)"};
 		String item = getItemName(itemId);
 		if (item == null) {
 			return false;
@@ -429,7 +431,7 @@ public class Item {
 				"tunic", "leathertop", "Saradomin plate", "chainbody",
 				"Platebody", "Chainbody", "Robe Top", "Robe top", "hauberk",
 				"Shirt", "torso", "Torso", "chestplate", "Wizard robe (g)",
-				"Snakeskin body", "Morrigan's Body" };
+				"Snakeskin body", "Morrigan's Body", "Shattered top" };
 		String item = getItemName(itemId);
 		if (item == null) {
 			return false;

@@ -4,7 +4,7 @@ import godzhell.model.items.ItemAssistant;
 import godzhell.model.npcs.animations.BlockAnimation;
 import godzhell.model.players.Player;
 import godzhell.model.players.combat.magic.MagicData;
-import godzhell.util.ItemID;
+import godzhell.definitions.ItemID;
 
 public class MeleeData {
 

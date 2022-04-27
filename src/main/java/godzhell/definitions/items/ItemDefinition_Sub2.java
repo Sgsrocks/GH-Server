@@ -33,11 +33,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 4206;
             class8.primaryFemaleModel = 4207;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Black Plateskirt (Green)";
             class8.description = "It's a Black Plateskirt (Green)";
         }
@@ -63,11 +63,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 268;
             class8.primaryFemaleModel = 432;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Black Platelegs (Green)";
             class8.description = "It's Black Platelegs (Green)";
         }
@@ -95,11 +95,11 @@ public class ItemDefinition_Sub2 {
             class8.secondaryMaleModel = 164;
             class8.secondaryFemaleModel = 344;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Black Platebody (Green)";
             class8.description = "It's a Black Platebody (Green)";
         }
@@ -123,11 +123,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 218;
             class8.primaryFemaleModel = 394;
             class8.primaryMaleHeadPiece = 56;
-            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Black Helm (Green)";
             class8.description = "It's a Black Helm (Green)";
         }
@@ -153,11 +153,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 486;
             class8.primaryFemaleModel = 486;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Black Kiteshield (Green)";
             class8.description = "It's a Black Kiteshield (Green)";
         }
@@ -183,11 +183,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 268;
             class8.primaryFemaleModel = 432;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Black Platelegs (White)";
             class8.description = "It's Black Platelegs (White)";
         }
@@ -215,11 +215,11 @@ public class ItemDefinition_Sub2 {
             class8.secondaryMaleModel = 164;
             class8.secondaryFemaleModel = 344;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Black Platebody (White)";
             class8.description = "It's a Black Platebody (White)";
         }
@@ -243,11 +243,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 218;
             class8.primaryFemaleModel = 394;
             class8.primaryMaleHeadPiece = 56;
-            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Black Helm (White)";
             class8.description = "It's a Black Helm (White)";
         }
@@ -273,11 +273,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 486;
             class8.primaryFemaleModel = 486;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Black Kiteshield (White)";
             class8.description = "It's a Black Kiteshield (White)";
         }
@@ -303,11 +303,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 268;
             class8.primaryFemaleModel = 432;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Black Platelegs (Blue)";
             class8.description = "It's Black Platelegs (Blue)";
         }
@@ -335,11 +335,11 @@ public class ItemDefinition_Sub2 {
             class8.secondaryMaleModel = 164;
             class8.secondaryFemaleModel = 344;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Black Platebody (Blue)";
             class8.description = "It's a Black Platebody (Blue)";
         }
@@ -363,11 +363,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 218;
             class8.primaryFemaleModel = 394;
             class8.primaryMaleHeadPiece = 56;
-            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Black Helm (Blue)";
             class8.description = "It's a Black Helm (Blue)";
         }
@@ -393,11 +393,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 486;
             class8.primaryFemaleModel = 486;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Black Kiteshield (Blue)";
             class8.description = "It's a Black Kiteshield (Blue)";
         }
@@ -423,11 +423,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 268;
             class8.primaryFemaleModel = 432;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Black Platelegs (Orange)";
             class8.description = "It's Black Platelegs (Orange)";
         }
@@ -455,11 +455,11 @@ public class ItemDefinition_Sub2 {
             class8.secondaryMaleModel = 164;
             class8.secondaryFemaleModel = 344;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Black Platebody (Orange)";
             class8.description = "It's a Black Platebody (Orange)";
         }
@@ -483,11 +483,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 218;
             class8.primaryFemaleModel = 394;
             class8.primaryMaleHeadPiece = 56;
-            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Black Helm (Orange)";
             class8.description = "It's a Black Helm (Orange)";
         }
@@ -513,11 +513,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 486;
             class8.primaryFemaleModel = 486;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Black Kiteshield (Orange)";
             class8.description = "It's a Black Kiteshield (Orange)";
         }
@@ -543,11 +543,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 268;
             class8.primaryFemaleModel = 432;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Black Platelegs (Purple)";
             class8.description = "It's Black Platelegs (Purple)";
         }
@@ -575,11 +575,11 @@ public class ItemDefinition_Sub2 {
             class8.secondaryMaleModel = 164;
             class8.secondaryFemaleModel = 344;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Black Platebody (Purple)";
             class8.description = "It's a Black Platebody (Purple)";
         }
@@ -682,11 +682,11 @@ public class ItemDefinition_Sub2 {
             class8.spriteTranslateY = -8;
             class8.primaryMaleModel = 268;
             class8.primaryFemaleModel = 432;
-            class8.primaryMaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryMaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.primaryFemaleHeadPiece = -1;
             class8.name = "Bronze Platelegs (Green)";
             class8.description = "It's Bronze Platelegs (Green)";
@@ -715,11 +715,11 @@ public class ItemDefinition_Sub2 {
             class8.secondaryMaleModel = 164;
             class8.secondaryFemaleModel = 344;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Bronze Platebody (Green)";
             class8.description = "It's a Bronze Platebody (Green)";
         }
@@ -743,11 +743,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 218;
             class8.primaryFemaleModel = 394;
             class8.primaryMaleHeadPiece = 56;
-            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Bronze Helm (Green)";
             class8.description = "It's a Bronze Helm (Green)";
         }
@@ -773,11 +773,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 486;
             class8.primaryFemaleModel = 486;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Bronze Kiteshield (Green)";
             class8.description = "It's a Bronze Kiteshield (Green)";
         }
@@ -803,11 +803,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 268;
             class8.primaryFemaleModel = 432;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Bronze Platelegs (White)";
             class8.description = "It's Bronze Platelegs (White)";
         }
@@ -835,11 +835,11 @@ public class ItemDefinition_Sub2 {
             class8.secondaryMaleModel = 164;
             class8.secondaryFemaleModel = 344;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Bronze Platebody (White)";
             class8.description = "It's a Bronze Platebody (White)";
         }
@@ -863,11 +863,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 218;
             class8.primaryFemaleModel = 394;
             class8.primaryMaleHeadPiece = 56;
-            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Bronze Helm (White)";
             class8.description = "It's a Bronze Helm (White)";
         }
@@ -893,11 +893,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 486;
             class8.primaryFemaleModel = 486;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Bronze Kiteshield (White)";
             class8.description = "It's a Bronze Kiteshield (White)";
         }
@@ -923,11 +923,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 268;
             class8.primaryFemaleModel = 432;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Bronze Platelegs (Blue)";
             class8.description = "It's Bronze Platelegs (Blue)";
         }
@@ -955,11 +955,11 @@ public class ItemDefinition_Sub2 {
             class8.secondaryMaleModel = 164;
             class8.secondaryFemaleModel = 344;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Bronze Platebody (Blue)";
             class8.description = "It's a Bronze Platebody (Blue)";
         }
@@ -983,11 +983,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 218;
             class8.primaryFemaleModel = 394;
             class8.primaryMaleHeadPiece = 56;
-            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Bronze Helm (Blue)";
             class8.description = "It's a Bronze Helm (Blue)";
         }
@@ -1013,11 +1013,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 486;
             class8.primaryFemaleModel = 486;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Bronze Kiteshield (Blue)";
             class8.description = "It's a Bronze Kiteshield (Blue)";
         }
@@ -1043,11 +1043,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 268;
             class8.primaryFemaleModel = 432;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Bronze Platelegs (Orange)";
             class8.description = "It's Bronze Platelegs (Orange)";
         }
@@ -1075,11 +1075,11 @@ public class ItemDefinition_Sub2 {
             class8.secondaryMaleModel = 164;
             class8.secondaryFemaleModel = 344;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Bronze Platebody (Orange)";
             class8.description = "It's a Bronze Platebody (Orange)";
         }
@@ -1103,11 +1103,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 218;
             class8.primaryFemaleModel = 394;
             class8.primaryMaleHeadPiece = 56;
-            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Bronze Helm (Orange)";
             class8.description = "It's a Bronze Helm (Orange)";
         }
@@ -1133,11 +1133,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 486;
             class8.primaryFemaleModel = 486;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Bronze Kiteshield (Orange)";
             class8.description = "It's a Bronze Kiteshield (Orange)";
         }
@@ -1163,11 +1163,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 268;
             class8.primaryFemaleModel = 432;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Bronze Platelegs (Purple)";
             class8.description = "It's Bronze Platelegs (Purple)";
         }
@@ -1195,11 +1195,11 @@ public class ItemDefinition_Sub2 {
             class8.secondaryMaleModel = 164;
             class8.secondaryFemaleModel = 344;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Bronze Platebody (Purple)";
             class8.description = "It's a Bronze Platebody (Purple)";
         }
@@ -1223,11 +1223,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 218;
             class8.primaryFemaleModel = 394;
             class8.primaryMaleHeadPiece = 56;
-            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Bronze Helm (Purple)";
             class8.description = "It's a Bronze Helm (Purple)";
         }
@@ -1253,11 +1253,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 486;
             class8.primaryFemaleModel = 486;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Bronze Kiteshield (Purple)";
             class8.description = "It's a Bronze Kiteshield (Purple)";
         }
@@ -1283,11 +1283,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 268;
             class8.primaryFemaleModel = 432;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Iron Platelegs (Green)";
             class8.description = "It's Iron Platelegs (Green)";
         }
@@ -1315,11 +1315,11 @@ public class ItemDefinition_Sub2 {
             class8.secondaryMaleModel = 164;
             class8.secondaryFemaleModel = 344;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Iron Platebody (Green)";
             class8.description = "It's a Iron Platebody (Green)";
         }
@@ -1343,11 +1343,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 218;
             class8.primaryFemaleModel = 394;
             class8.primaryMaleHeadPiece = 56;
-            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Iron Helm (Green)";
             class8.description = "It's a Iron Helm (Green)";
         }
@@ -1373,11 +1373,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 486;
             class8.primaryFemaleModel = 486;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Iron Kiteshield (Green)";
             class8.description = "It's a Iron Kiteshield (Green)";
         }
@@ -1403,11 +1403,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 268;
             class8.primaryFemaleModel = 432;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Iron Platelegs (White)";
             class8.description = "It's Iron Platelegs (White)";
         }
@@ -1435,11 +1435,11 @@ public class ItemDefinition_Sub2 {
             class8.secondaryMaleModel = 164;
             class8.secondaryFemaleModel = 344;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Iron Platebody (White)";
             class8.description = "It's a Iron Platebody (White)";
         }
@@ -1463,11 +1463,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 218;
             class8.primaryFemaleModel = 394;
             class8.primaryMaleHeadPiece = 56;
-            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Iron Helm (White)";
             class8.description = "It's a Iron Helm (White)";
         }
@@ -1493,11 +1493,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 486;
             class8.primaryFemaleModel = 486;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Iron Kiteshield (White)";
             class8.description = "It's a Iron Kiteshield (White)";
         }
@@ -1523,11 +1523,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 268;
             class8.primaryFemaleModel = 432;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Iron Platelegs (Blue)";
             class8.description = "It's Iron Platelegs (Blue)";
         }
@@ -1555,11 +1555,11 @@ public class ItemDefinition_Sub2 {
             class8.secondaryMaleModel = 164;
             class8.secondaryFemaleModel = 344;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Iron Platebody (Blue)";
             class8.description = "It's a Iron Platebody (Blue)";
         }
@@ -1583,11 +1583,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 218;
             class8.primaryFemaleModel = 394;
             class8.primaryMaleHeadPiece = 56;
-            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Iron Helm (Blue)";
             class8.description = "It's a Iron Helm (Blue)";
         }
@@ -1613,11 +1613,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 486;
             class8.primaryFemaleModel = 486;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Iron Kiteshield (Blue)";
             class8.description = "It's a Iron Kiteshield (Blue)";
         }
@@ -1643,11 +1643,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 268;
             class8.primaryFemaleModel = 432;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Iron Platelegs (Orange)";
             class8.description = "It's Iron Platelegs (Orange)";
         }
@@ -1675,11 +1675,11 @@ public class ItemDefinition_Sub2 {
             class8.secondaryMaleModel = 164;
             class8.secondaryFemaleModel = 344;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Iron Platebody (Orange)";
             class8.description = "It's a Iron Platebody (Orange)";
         }
@@ -1703,11 +1703,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 218;
             class8.primaryFemaleModel = 394;
             class8.primaryMaleHeadPiece = 56;
-            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Iron Helm (Orange)";
             class8.description = "It's a Iron Helm (Orange)";
         }
@@ -1733,11 +1733,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 486;
             class8.primaryFemaleModel = 486;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Iron Kiteshield (Orange)";
             class8.description = "It's a Iron Kiteshield (Orange)";
         }
@@ -1763,11 +1763,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 268;
             class8.primaryFemaleModel = 432;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Iron Platelegs (Purple)";
             class8.description = "It's Iron Platelegs (Purple)";
         }
@@ -1795,11 +1795,11 @@ public class ItemDefinition_Sub2 {
             class8.secondaryMaleModel = 164;
             class8.secondaryFemaleModel = 344;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Iron Platebody (Purple)";
             class8.description = "It's a Iron Platebody (Purple)";
         }
@@ -1823,11 +1823,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 218;
             class8.primaryFemaleModel = 394;
             class8.primaryMaleHeadPiece = 56;
-            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = 116;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Iron Helm (Purple)";
             class8.description = "It's a Iron Helm (Purple)";
         }
@@ -1853,11 +1853,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 486;
             class8.primaryFemaleModel = 486;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Iron Kiteshield (Purple)";
             class8.description = "It's a Iron Kiteshield (Purple)";
         }
@@ -1879,11 +1879,11 @@ public class ItemDefinition_Sub2 {
             class8.primaryMaleModel = 0x1286b;
             class8.primaryFemaleModel = 0x1286b;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "@blu@ Ice katana";
             class8.description = "Ghr's ninjas only";
         }
@@ -1907,11 +1907,11 @@ public class ItemDefinition_Sub2 {
             class8.secondaryMaleModel = -1;
             class8.secondaryFemaleModel = -1;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Ruby abyssal whip";
             class8.description = "a Ruby abyssal whip";
         }
@@ -1939,11 +1939,11 @@ public class ItemDefinition_Sub2 {
             class8.secondaryMaleModel = -1;
             class8.secondaryFemaleModel = -1;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Ruby chainbody";
             class8.description = "a Ruby chainbody";
         }
@@ -1971,11 +1971,11 @@ public class ItemDefinition_Sub2 {
             class8.secondaryMaleModel = 32630;
             class8.secondaryFemaleModel = 32631;
             class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = -1;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Ruby Platebody";
             class8.description = "a Ruby Platebody";
         }
@@ -1999,11 +1999,11 @@ public class ItemDefinition_Sub2 {
             class8.secondaryMaleModel = -1;
             class8.secondaryFemaleModel = -1;
             class8.primaryMaleHeadPiece = 57;
-            class8.primaryFemaleHeadPiece = 117;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = 117;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Ruby Med Helm";
             class8.description = "a Ruby Med Helm";
         }
@@ -2029,15 +2029,15 @@ public class ItemDefinition_Sub2 {
             class8.secondaryMaleModel = -1;
             class8.secondaryFemaleModel = -1;
             class8.primaryMaleHeadPiece = 32634;
-            class8.primaryFemaleHeadPiece = 32635;            class8.stackable = false;      		
+            class8.primaryFemaleHeadPiece = 32635;            class8.stackable = false;
             class8.certID = -1;
-      		class8.certTemplateID = -1;
-      		class8.unnotedId = -1;
-      		class8.notedId = -1;
+            class8.certTemplateID = -1;
+            class8.unnotedId = -1;
+            class8.notedId = -1;
             class8.name = "Ruby full Helm";
             class8.description = "a Ruby full Helm";
         }
- 
+
         return class8;
     }
 }

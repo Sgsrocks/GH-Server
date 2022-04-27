@@ -1,54 +1,7 @@
 package godzhell.model.players;
 
 import godzhell.Config;
-import godzhell.model.players.packets.AttackPlayer;
-import godzhell.model.players.packets.Bank10;
-import godzhell.model.players.packets.Bank5;
-import godzhell.model.players.packets.BankAll;
-import godzhell.model.players.packets.BankAllButOne;
-import godzhell.model.players.packets.BankModifiableX;
-import godzhell.model.players.packets.BankX1;
-import godzhell.model.players.packets.BankX2;
-import godzhell.model.players.packets.ChallengePlayer;
-import godzhell.model.players.packets.ChangeAppearance;
-import godzhell.model.players.packets.ChangeRegions;
-import godzhell.model.players.packets.Chat;
-import godzhell.model.players.packets.ClickNPC;
-import godzhell.model.players.packets.ClickObject;
-import godzhell.model.players.packets.ClickingButtons;
-import godzhell.model.players.packets.ClickingInGame;
-import godzhell.model.players.packets.ClickingStuff;
-import godzhell.model.players.packets.Commands;
-import godzhell.model.players.packets.Dialogue;
-import godzhell.model.players.packets.DropItem;
-import godzhell.model.players.packets.FollowPlayer;
-import godzhell.model.players.packets.IdleLogout;
-import godzhell.model.players.packets.InputField;
-import godzhell.model.players.packets.ItemOnItem;
-import godzhell.model.players.packets.ItemOnNpc;
-import godzhell.model.players.packets.ItemOnObject;
-import godzhell.model.players.packets.ItemOnPlayer;
-import godzhell.model.players.packets.ItemOptionOneGroundItem;
-import godzhell.model.players.packets.ItemOptionTwoGroundItem;
-import godzhell.model.players.packets.KeyEventPacketHandler;
-import godzhell.model.players.packets.MagicOnFloorItems;
-import godzhell.model.players.packets.MagicOnItems;
-import godzhell.model.players.packets.MagicOnObject;
-import godzhell.model.players.packets.MapRegionChange;
-import godzhell.model.players.packets.MapRegionFinish;
-import godzhell.model.players.packets.Moderate;
-import godzhell.model.players.packets.MouseMovement;
-import godzhell.model.players.packets.MoveItems;
-import godzhell.model.players.packets.OperateItem;
-import godzhell.model.players.packets.PickupItem;
-import godzhell.model.players.packets.PrivateMessaging;
-import godzhell.model.players.packets.RemoveItem;
-import godzhell.model.players.packets.Report;
-import godzhell.model.players.packets.SelectItemOnInterface;
-import godzhell.model.players.packets.SilentPacket;
-import godzhell.model.players.packets.Trade;
-import godzhell.model.players.packets.Walking;
-import godzhell.model.players.packets.WearItem;
+import godzhell.model.players.packets.*;
 import godzhell.model.players.packets.action.InterfaceAction;
 import godzhell.model.players.packets.action.JoinChat;
 import godzhell.model.players.packets.action.ReceiveString;
@@ -59,6 +12,41 @@ import godzhell.model.players.packets.itemoptions.ItemOptionTwo;
 public class PacketHandler {
 
 	private static PacketType packetId[] = new PacketType[255];
+	public static final int OPCODE_OUT_OF_RANGE_SIZE = -5000;
+
+	public static int getPacketSize(int opcode) {
+		if (opcode < 0 || opcode >= PACKET_SIZES.length)
+			return OPCODE_OUT_OF_RANGE_SIZE;
+		return PACKET_SIZES[opcode];
+	}
+	public static final int PACKET_SIZES[] = {
+			0, 0, 0, 1, -1, 0, 0, 0, 4, 0, //0 - 9
+			0, 0, 0, 0, 8, 0, 6, 2, 2, 0, //10 - 19
+			0, 2, 0, 6, 0, 12, 0, 0, 0, 0, //20 - 29
+			0, 0, 0, 0, 0, 8, 4, 0, 0, 2, //30 - 39
+			2, 6, 0, 6, 0, -1, 0, 0, 0, 0, //40 - 49
+			0, 0, 0, 12, 0, 0, 0, 8, 8, 12, //50 - 59
+			8, 8, 0, 0, 0, 0, 0, 0, 0, 0, //60 - 69
+			8, 0, 2, 2, 8, 6, 0, -1, 0, 6, //70 - 79
+			0, 0, 0, 0, 0, 1, 4, 6, 0, 0, //80 - 89
+			0, 0, 0, 0, 0, 3, 0, 0, -1, 0, //90 - 99
+			0, 13, 0, -1, 0, 0, 0, 0, 0, 0, //100 - 109
+			0, 0, 0, 0, 0, 0, 0, 6, 0, 0, //110 - 119
+			1, 0, 6, 0, 16, 0, -1, -1, 2, 6, //120 - 129
+			0, 4, 8, 8, 0, 6, 0, 0, 0, 2, //130 - 139
+			6, 10, -1, 0, 0, 6, 6, 0, 0, 0, //140 - 149
+			0, 0, 1, 2, 0, 2, 6, 0, 0, 0, //150 - 159
+			0, 0, 0, 0, -1, -1, 0, 0, 0, 0, //160 - 169
+			0, 0, 0, 0, 0, 0, 0, 0, 0, 0, //170 - 179
+			0, 8, 0, 3, 0, 2, 2, 0, 8, 1, //180 - 189
+			0, 0, 12, 0, 0, 0, 0, 0, 0, 0, //190 - 199
+			2, 0, 0, 0, 0, 0, 0, 0, 4, 0, //200 - 209
+			4, 0, 0, 4, 7, 8, 0, 0, 10, 0, //210 - 219
+			0, 0, 0, 0, 0, 0, -1, 0, 8, 0, //220 - 229
+			1, 0, 4, 0, 8, 0, 6, 8, 1, 0, //230 - 239
+			0, 4, 0, 0, 0, 0, -1, 0, -1, 4, //240 - 249
+			0, 0, 8, 6, 0, 0, 0, //250 - 255
+	};
 
 	static {
 		SilentPacket u = new SilentPacket();
@@ -102,6 +90,7 @@ public class PacketHandler {
 		packetId[70] = co;
 		packetId[234] = co;
 		packetId[228] = co;
+		packetId[146] = new ObjectExamine();
 		packetId[57] = new ItemOnNpc();
 		ClickNPC cn = new ClickNPC();
 		packetId[72] = cn;
@@ -169,7 +158,20 @@ public class PacketHandler {
 		packetId[187] = ye;
 
 	}
-
+		public static void main(String...args) {
+		int last = 0;
+		for (int index = 0; index < PACKET_SIZES.length; index++) {
+			if (index % 10 == 0 && index != 0) {
+				System.out.print("//" + last + " - " + (index - 1));
+				System.out.println();
+				last = index;
+			}
+			System.out.print(PACKET_SIZES[index] + ", ");
+			if (index == PACKET_SIZES.length - 1) {
+				System.out.print("//" + last + " - " + (index - 1));
+			}
+		}
+	}
 	public static void processPacket(Player c, int packetType, int packetSize) {
 		PacketType p = packetId[packetType];
 		if (p != null && packetType > 0 && packetType < 258 && packetType == c.packetType && packetSize == c.packetSize) {

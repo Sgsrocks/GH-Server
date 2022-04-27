@@ -1,24 +1,24 @@
 package godzhell.model.players.packets;
 
-import java.text.DecimalFormat;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map.Entry;
-import java.util.Objects;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
-
-import godzhell.model.content.Sawmill;
-import godzhell.model.players.*;
-import org.apache.commons.lang3.text.WordUtils;
-
-
 import godzhell.Config;
 import godzhell.Server;
 import godzhell.model.content.PlayerEmotes;
+import godzhell.model.content.Sawmill;
+import godzhell.model.content.achievement_diary.ardougne.ArdougneDiaryEntry;
+import godzhell.model.content.achievement_diary.falador.FaladorDiaryEntry;
+import godzhell.model.content.achievement_diary.fremennik.FremennikDiaryEntry;
+import godzhell.model.content.achievement_diary.kandarin.KandarinDiaryEntry;
+import godzhell.model.content.achievement_diary.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
+import godzhell.model.content.achievement_diary.wilderness.WildernessDiaryEntry;
 import godzhell.model.content.help.HelpDatabase;
 import godzhell.model.content.quests.QuestAssistant;
 import godzhell.model.content.random.PartyRoom;
+import godzhell.model.content.skills.construction.RoomInterface;
+import godzhell.model.content.skills.cooking.Cooking;
+import godzhell.model.content.skills.crafting.*;
+import godzhell.model.content.skills.crafting.CraftingData.tanningData;
+import godzhell.model.content.skills.fletching.LogCutting;
+import godzhell.model.content.skills.smithing.Smelting;
 import godzhell.model.content.teleportation.Teleports;
 import godzhell.model.content.tradingpost.Listing;
 import godzhell.model.content.wogw.Wogw;
@@ -30,6 +30,7 @@ import godzhell.model.multiplayer_session.MultiplayerSessionStage;
 import godzhell.model.multiplayer_session.MultiplayerSessionType;
 import godzhell.model.multiplayer_session.duel.DuelSession;
 import godzhell.model.multiplayer_session.duel.DuelSessionRules.Rule;
+import godzhell.model.players.*;
 import godzhell.model.players.combat.Special;
 import godzhell.model.players.combat.Specials;
 import godzhell.model.players.combat.magic.LunarSpells;
@@ -38,23 +39,17 @@ import godzhell.model.players.combat.magic.NonCombatSpells;
 import godzhell.model.players.combat.melee.QuickPrayers;
 import godzhell.model.players.mode.Mode;
 import godzhell.model.players.mode.ModeType;
-import godzhell.model.content.skills.smithing.Smelting;
-import godzhell.model.content.skills.construction.RoomInterface;
-import godzhell.model.content.skills.cooking.Cooking;
-import godzhell.model.content.skills.crafting.BattlestaveMaking;
-import godzhell.model.content.skills.crafting.BraceletMaking;
-import godzhell.model.content.skills.crafting.GlassBlowing;
-import godzhell.model.content.skills.crafting.LeatherMaking;
-import godzhell.model.content.skills.crafting.Tanning;
-import godzhell.model.content.skills.crafting.CraftingData.tanningData;
 import godzhell.model.shops.ShopAssistant;
 import godzhell.util.Misc;
-import godzhell.model.content.achievement_diary.ardougne.*;
-import godzhell.model.content.achievement_diary.falador.FaladorDiaryEntry;
-import godzhell.model.content.achievement_diary.fremennik.FremennikDiaryEntry;
-import godzhell.model.content.achievement_diary.kandarin.*;
-import godzhell.model.content.achievement_diary.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
-import godzhell.model.content.achievement_diary.wilderness.WildernessDiaryEntry;
+import org.apache.commons.lang3.text.WordUtils;
+
+import java.text.DecimalFormat;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.Objects;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 /**
  * Clicking most buttons
  *
@@ -189,7 +184,7 @@ public class ClickingButtons implements PacketType {
 			return;
 		}
 		DuelSession duelSession = null;
-		c.getFletching().select(actionButtonId);
+		LogCutting.handleClick(c, actionButtonId);
 		GlassBlowing.glassBlowing(c, actionButtonId);
 		PlayerEmotes.performEmote(c, actionButtonId);
 		Sawmill.HandleBottons(c, actionButtonId);
@@ -2669,7 +2664,7 @@ public class ClickingButtons implements PacketType {
 		 * case 152: c.isRunning2 = !c.isRunning2; int frame = c.isRunning2 == true ? 1
 		 * : 0; c.getPA().sendFrame36(173,frame); break;
 		 */
-		case 152055:
+		case 152022:
 			System.out.println("Setting cape: " + c.playerEquipment[c.playerCape]);
 			if (c.playerEquipment[c.playerCape] == -1) {
 				c.sendMessage("You must be wearing a skillcape in order to do this emote.");

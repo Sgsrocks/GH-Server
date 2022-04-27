@@ -1060,8 +1060,9 @@ public class Region {
 			xLength = def.yLength();
 			yLength = def.xLength();
 		}
-		if ((def != null ? def.name : null) != null && def.name.toLowerCase().equalsIgnoreCase("Bank Deposit Box")) {
+		if ((def != null ? def.name : null) != null && def.name.toLowerCase().equalsIgnoreCase("door") && def.actions[0].toLowerCase().equalsIgnoreCase("close")) {
 			//System.out.println(objectId+" "+x+" "+y+" "+direction+" "+height);
+			//System.out.println(objectId+", ");
 				}
 		if (type == 22) {
 			if (def.hasActions() && def.aBoolean767()) {
@@ -1479,7 +1480,7 @@ public class Region {
 			}
 		}
 	}
-	private static void setClippingForVariableObject(int x, int y, int height, int type, int direction, boolean flag, boolean negative) {
+	public static void setClippingForVariableObject(int x, int y, int height, int type, int direction, boolean flag, boolean negative) {
 		if (type == 0) {
 			if (direction == 0) {
 				addClipping(x, y, height, negative ? -128 : 128);

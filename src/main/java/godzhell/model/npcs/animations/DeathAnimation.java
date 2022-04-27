@@ -1,11 +1,10 @@
 package godzhell.model.npcs.animations;
 
-import godzhell.definitions.NPCCacheDefinition;
+import godzhell.definitions.NpcID;
 import godzhell.model.minigames.warriors_guild.AnimatedArmour;
 import godzhell.model.npcs.NPCHandler;
 import godzhell.model.npcs.bosses.skotizo.Skotizo;
 import godzhell.model.npcs.bosses.zulrah.Zulrah;
-import godzhell.model.players.combat.CombatType;
 
 public class DeathAnimation extends NPCHandler {
 
@@ -13,14 +12,14 @@ public class DeathAnimation extends NPCHandler {
 		if (AnimatedArmour.isAnimatedArmourNpc(npcs[i].npcType)) {
 			return 836;
 		}
-		switch(NPCCacheDefinition.forID(NPCHandler.npcs[i].npcType).getName().toLowerCase()) {
-			case "ghost":
-				return 5534;
-			case "undead druid":
-				return 5569;
-		}
 		switch (npcs[i].npcType) {
-			                                                                         //Inferno Npcs
+			case NpcID.NEX:
+			   return 9178;
+			case NpcID.BLACK_BEAR:
+				return 4929;
+			case NpcID.MOUNTED_TERRORBIRD_GNOME_5971:
+				return 6791;
+			   //Inferno Npcs
 			case 7691:
 				return 7576;
 			case 8095:

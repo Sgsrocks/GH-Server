@@ -1,14 +1,15 @@
 package godzhell.model.objects;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.io.*;
-import java.util.Scanner;
-
 import godzhell.Server;
 import godzhell.clip.Region;
-import godzhell.model.content.skills.SkillHandler;
 import godzhell.world.objects.GlobalObject;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 
 /**
@@ -118,7 +119,8 @@ public class Doors {
 			}
 		}
 		if (xAdjustment != 0 || yAdjustment != 0) {
-			Server.getGlobalObjects().add(new GlobalObject(-1, d.doorX, d.doorY, d.doorZ, 0, d.type, 0));
+			Server.getGlobalObjects().add(new GlobalObject(-1, d.doorX, d.doorY, d.doorZ, d.originalFace, d.type, 0));
+			Region.removeObject(d.doorId, d.doorX, d.doorY, d.doorZ, d.type, d.originalFace);
 			//Region.removeObject(d.originalId, d.doorX,  d.doorY, d.doorZ, d.type, d.originalFace);
 		}
 		if (d.doorX == d.originalX && d.doorY == d.originalY) {
@@ -126,6 +128,7 @@ public class Doors {
 			d.doorY += yAdjustment;
 		} else {
 			  Server.getGlobalObjects().add(new GlobalObject(-1, d.doorX, d.doorY, d.doorZ, 0, d.type, 0));
+			Region.removeObject(d.doorId, d.doorX, d.doorY, d.doorZ, d.type, d.originalFace);
 			//Region.removeObject(d.originalId, d.doorX,  d.doorY, d.doorZ, d.type, d.originalFace);
 			d.doorX = d.originalX;
 			d.doorY = d.originalY;
@@ -157,6 +160,7 @@ public class Doors {
 				d.doorId = 11772;
 			}
 		}
+		//Region.ClippingForVariableObject(d.doorX, d.doorY, d.doorZ, d.type, d.currentFace, true);
 		//Region.addObject(d.doorId, d.doorX, d.doorY, d.doorZ, d.type, getNextFace(d));
 		Server.getGlobalObjects().add(new GlobalObject(d.doorId, d.doorX, d.doorY, d.doorZ, getNextFace(d), d.type, 0));
 		return true;
