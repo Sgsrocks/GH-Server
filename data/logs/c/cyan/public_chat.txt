@@ -1,0 +1,14 @@
+[06/22/2022 16:50:37] Clan spoke = /hi
+----------------------------------------------
+[06/22/2022 16:56:30] Clan spoke = /im guessing most of the charm of godzhell is gone like the weird skilling 
+----------------------------------------------
+[06/22/2022 17:02:05] Spoke = Oooooh thats hotr
+----------------------------------------------
+[06/22/2022 17:03:19] Spoke = Im suprised some one actually loved godzhell and made a reboot 
+----------------------------------------------
+[06/22/2022 17:03:26] Spoke = I loved it back in the day
+----------------------------------------------
+[06/22/2022 17:05:39] Spoke = That was a while ago
+----------------------------------------------
+[06/22/2022 17:09:20] Spoke = Also if you open up drop table its logs you out
+----------------------------------------------

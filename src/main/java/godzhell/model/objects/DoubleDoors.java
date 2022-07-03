@@ -169,7 +169,7 @@ public class DoubleDoors {
 		}
 		if (xAdjustment != 0 || yAdjustment != 0) {
 			Region.removeClippingForVariableObject(d.x, d.y, d.z, 0, 0, true);
-			Server.objectHandler.placeObject(new Objects(-1, d.x, d.y, d.z, 0, 0, 0));
+			Server.objectHandler.placeObject(new Objects2(-1, d.x, d.y, d.z, 0, 0, 0));
 
 		}
 		if (d.x == d.originalX && d.y == d.originalY) {
@@ -177,7 +177,7 @@ public class DoubleDoors {
 			d.y += yAdjustment;
 		} else {
 			Region.removeClippingForVariableObject(d.x, d.y, d.z, 0, 0, true);
-			Server.objectHandler.placeObject(new Objects(-1, d.x, d.y, d.z, 0, 0, 0));
+			Server.objectHandler.placeObject(new Objects2(-1, d.x, d.y, d.z, 0, 0, 0));
 			d.x = d.originalX;
 			d.y = d.originalY;
 		}
@@ -196,7 +196,7 @@ public class DoubleDoors {
 		}
 		//Region.removeObject(d.originalId, d.originalX, d.originalY, d.z, d.originalFace, 0);
 		//Region.removeClippingForVariableObject(d.x, d.y, d.z, 0, d.originalFace, true);
-		Server.objectHandler.placeObject(new Objects(d.doorId, d.x, d.y, d.z, getNextLeftFace(d), 0, 0));
+		Server.objectHandler.placeObject(new Objects2(d.doorId, d.x, d.y, d.z, getNextLeftFace(d), 0, 0));
 		//Region.addObject(d.doorId, d.x, d.y, d.z, 0, getNextLeftFace(d));
 	}
 	
@@ -258,14 +258,14 @@ public class DoubleDoors {
 		}
 		if (xAdjustment != 0 || yAdjustment != 0) {
 			Region.removeClippingForVariableObject(d.x, d.y, d.z, 0, d.originalFace, true);
-			Server.objectHandler.placeObject(new Objects(-1, d.x, d.y, d.z, 0, 0, 0));
+			Server.objectHandler.placeObject(new Objects2(-1, d.x, d.y, d.z, 0, 0, 0));
 		}
 		if (d.x == d.originalX && d.y == d.originalY) {
 			d.x += xAdjustment;
 			d.y += yAdjustment;
 		} else {
 			Region.removeClippingForVariableObject(d.x, d.y, d.z, 0, 0, true);
-			Server.objectHandler.placeObject(new Objects(-1, d.x, d.y, d.z, 0, 0, 0));
+			Server.objectHandler.placeObject(new Objects2(-1, d.x, d.y, d.z, 0, 0, 0));
 			d.x = d.originalX;
 			d.y = d.originalY;
 		}
@@ -284,7 +284,7 @@ public class DoubleDoors {
 		}
 		//Region.removeClippingForVariableObject(d.x, d.y, d.z, 0, d.originalFace, true);
 		//Region.removeObject(d.originalId, d.originalX, d.originalY, d.z, d.originalFace, 0);
-		Server.objectHandler.placeObject(new Objects(d.doorId, d.x, d.y, d.z, getNextRightFace(d), 0, 0));
+		Server.objectHandler.placeObject(new Objects2(d.doorId, d.x, d.y, d.z, getNextRightFace(d), 0, 0));
 		//Region.addObject(d.doorId, d.x, d.y, d.z, 0, getNextRightFace(d));
 	}
 	

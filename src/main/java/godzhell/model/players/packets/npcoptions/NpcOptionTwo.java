@@ -8,7 +8,6 @@ import godzhell.model.content.achievement_diary.fremennik.FremennikDiaryEntry;
 import godzhell.model.content.achievement_diary.karamja.KaramjaDiaryEntry;
 import godzhell.model.content.achievement_diary.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
 import godzhell.model.content.achievement_diary.varrock.VarrockDiaryEntry;
-import godzhell.model.content.skills.Fishing;
 import godzhell.model.content.skills.agility.AgilityHandler;
 import godzhell.model.content.skills.thieving.Pickpocket;
 import godzhell.model.npcs.pets.PetHandler;
@@ -69,11 +68,44 @@ public class NpcOptionTwo {
 			case 3101:
 				Sawmill.OpemSawMill(player);
 				break;
+			case 5250:
+				player.getShops().openShop(Config.DAGAS_SCIMITAR_SMITHY);
+				break;
+			case 5252:
+				player.getShops().openShop(Config.IFABAS_GENERAL_STORE);
+				break;
+			case 5249:
+				player.getShops().openShop(Config.SOLIHIBS_FOOD_STALL);
+				break;
+			case 5253:
+				player.getShops().openShop(Config.HAMABS_CRAFTING_EMPORIUM);
+				break;
+			case 7120:
+				player.getShops().openShop(Config.OOBAPOHKS_JAVELIN_STORE);
+				break;
+			case 996:
+				player.getShops().openShop(Config.NARDOKS_BONE_WEAPONS);
+				break;
+			case 3102:
+				player.getShops().openShop(Config.GARDEN_CENTRE);
+				break;
+			case 4102:
+				player.getShops().openShop(Config.TOAD_AND_CHICKEN);
+				break;
+			case 4106:
+				player.getShops().openShop(Config.BURTHROPE_SUPPLIES);
+				break;
 			case 3935:
 				player.getShops().openShop(Config.SKULGRIMENS_BATTLE_GEAR);
 				break;
 			case 3947:
 				player.getShops().openShop(Config.FREMENNIK_FISH_MONGER);
+				break;
+			case 5363:
+				player.getShops().openShop(Config.FERNAHEIS_FISHING_HUT);
+				break;
+			case 1601:
+				player.getShops().openShop(Config.LUNDAILS_ARENA_SIDE_RUNE_SHOP);
 				break;
 			case 2874:
 				player.getShops().openShop(Config.GEM_TRADER);
@@ -195,7 +227,11 @@ public class NpcOptionTwo {
 			player.getShops().openShop(Config.PROSPECTOR_PERCYS_NUGGET_SHOP);
 			break;
 		case 2880:
-			player.getShops().openShop(Config.ZAFFS_SUPERIOR_STAFFS);
+			if(!Boundary.isIn(player, Boundary.home)) {
+				player.getShops().openShop(Config.ZAFFS_SUPERIOR_STAFFS);
+			} else {
+				player.getShops().openShop(286);
+			}
 			break;
 			case 3200:
 				player.getShops().openShop(Config.ARHEINS_STORE);
@@ -203,9 +239,13 @@ public class NpcOptionTwo {
 			case 3199:
 				player.getShops().openShop(Config.CANDLE_SHOP);
 				break;
-			case 3212:
-				player.getShops().openShop(Config.HICKTONS_ARCHERY_EMPORIUM);
-				break;
+            case 3212:
+                if(!Boundary.isIn(player, Boundary.home)) {
+                    player.getShops().openShop(Config.HICKTONS_ARCHERY_EMPORIUM);
+                } else {
+                    player.getShops().openShop(283);
+                }
+                break;
 			case 3213:
 				player.getShops().openShop(Config.HARRYS_FISHING_SHOP);
 				break;
@@ -214,7 +254,11 @@ public class NpcOptionTwo {
 				break;
 		case 2884:
 		case 2885:
-			player.getShops().openShop(Config.VARROCK_SWORDSHOP);
+			if(!Boundary.isIn(player, Boundary.home)) {
+				player.getShops().openShop(Config.VARROCK_SWORDSHOP);
+			} else {
+				player.getShops().openShop(285);
+			}
 			break;
 		case 2882:
 			player.getShops().openShop(Config.HORVIKS_ARMOUR_SHOP);
@@ -306,7 +350,11 @@ public class NpcOptionTwo {
 			player.getShops().openShop(Config.LUMBRIDGE_GENERAL_STORE);
 			break;
 			case NpcID.BOB_10619:
-			player.getShops().openShop(Config.BOBS_BRILLIANT_AXES);
+				if(!Boundary.isIn(player, Boundary.home)) {
+					player.getShops().openShop(Config.BOBS_BRILLIANT_AXES);
+				} else {
+					player.getShops().openShop(288);
+				}
 			break;
 		case 3214:
 			player.getShops().openShop(Config.CASSIES_SHIELD_SHOP);
@@ -431,7 +479,7 @@ public class NpcOptionTwo {
 			long days = TimeUnit.MILLISECONDS.toDays(milliseconds);
 			long hours = TimeUnit.MILLISECONDS.toHours(milliseconds - TimeUnit.DAYS.toMillis(days));
 			String time = days + " days and " + hours + " hours.";
-			player.getDH().sendNpcChat1("You've been playing Anguish for " + time, 3077, "Hans");
+			player.getDH().sendNpcChat1("You've been playing GodzHell for " + time, 3077, "Hans");
 			player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.HANS);
 			break;
 
@@ -517,8 +565,8 @@ public class NpcOptionTwo {
 			}
 			player.getShops().openShop(Config.THESSALIAS_FINE_CLOTHES);
 			break;
-	
-		case 4625:
+
+			case 11486:
 			player.getShops().openShop(Config.DONATOR_SHOP);
 			break;
 
@@ -532,7 +580,9 @@ public class NpcOptionTwo {
 			player.getDH().sendDialogues(2400, -1);
 			break;
 		case 3913: // BAIT + NET
-			Fishing.attemptdata(player, 2);
+			case 1525:
+			case 1523:
+			//Fishing.attemptdata(player, 2);
 			break;
 		case 310:
 		case 314:
@@ -542,17 +592,17 @@ public class NpcOptionTwo {
 		case 329:
 		case 331:
 		case 3417: // BAIT + LURE
-			Fishing.attemptdata(player, 6);
+			//Fishing.attemptdata(player, 6);
 			break;
 		case 3657:
 		case 321:
 		case 324:// SWORDIES+TUNA-CAGE+HARPOON
-			Fishing.attemptdata(player, 7);
+			//Fishing.attemptdata(player, 7);
 			break;
 		case 1520:
 		case 322:
 		case 334: // NET+HARPOON
-			Fishing.attemptdata(player, 10);
+			//Fishing.attemptdata(player, 10);
 			break;
 		case 953: // Banker
 		case 2574: // Banker

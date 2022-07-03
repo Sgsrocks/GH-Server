@@ -9,7 +9,7 @@ import godzhell.model.items.ItemAssistant;
 import godzhell.model.items.ItemDefinition;
 import godzhell.model.npcs.NPC;
 import godzhell.model.players.Player;
-import godzhell.model.players.combat.magic.MagicConfig;
+import godzhell.model.players.combat.magic.MagicData;
 import godzhell.model.players.combat.magic.MagicExtras;
 import godzhell.model.players.combat.magic.MagicMaxHit;
 import godzhell.model.players.combat.magic.MagicRequirements;
@@ -119,7 +119,7 @@ public class CombatAssistant {
 	}
 
 	public boolean multis() {
-		return MagicConfig.multiSpells(c);
+		return MagicData.multiSpells(c);
 	}
 
 	public void appendMultiBarrage(int playerId, boolean splashed) {
@@ -296,59 +296,59 @@ public class CombatAssistant {
 	}
 
 	public int getMagicGraphic(Player c, int i) {
-		return MagicConfig.getMagicGraphic(c, i);
+		return MagicData.getMagicGraphic(c, i);
 	}
 
 	public int getFreezeTime() {
-		return MagicConfig.getFreezeTime(c);
+		return MagicData.getFreezeTime(c);
 	}
 
 	public int getStartHeight() {
-		return MagicConfig.getStartHeight(c);
+		return MagicData.getStartHeight(c);
 	}
 
 	public int getEndHeight() {
-		return MagicConfig.getEndHeight(c);
+		return MagicData.getEndHeight(c);
 	}
 
 	public int getStartDelay() {
-		return MagicConfig.getStartDelay(c);
+		return MagicData.getStartDelay(c);
 	}
 
 	public int getStaffNeeded() {
-		return MagicConfig.getStaffNeeded(c);
+		return MagicData.getStaffNeeded(c, c.spellId);
 	}
 
 	public boolean godSpells() {
-		return MagicConfig.godSpells(c);
+		return MagicData.godSpells(c);
 	}
 
 	public boolean airSpells() {
-		return MagicConfig.airSpells(c);
+		return MagicData.airSpells(c);
 	}
 
 	public boolean shadowSpells() {
-		return MagicConfig.shadowSpells(c);
+		return MagicData.shadowSpells(c);
 	}
 
 	public boolean waterSpells() {
-		return MagicConfig.waterSpells(c);
+		return MagicData.waterSpells(c);
 	}
 
 	public boolean fireSpells() {
-		return MagicConfig.fireSpells(c);
+		return MagicData.fireSpells(c);
 	}
 
 	public boolean earthSpells() {
-		return MagicConfig.earthSpells(c);
+		return MagicData.earthSpells(c);
 	}
 
 	public int getEndGfxHeight() {
-		return MagicConfig.getEndGfxHeight(c);
+		return MagicData.getEndGfxHeight(c);
 	}
 
 	public int getStartGfxHeight() {
-		return MagicConfig.getStartGfxHeight(c);
+		return MagicData.getStartGfxHeight(c);
 	}
 
 	public void handlePrayerDrain() {

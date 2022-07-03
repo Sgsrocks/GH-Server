@@ -909,7 +909,7 @@ public class ItemAssistant {
 			c.getPA().sendFrame126(WeaponName, 4449);
 		} else if (WeaponName2.startsWith("dagger") || WeaponName2.contains("anchor") || WeaponName2.contains("Ghrazi rapier") || WeaponName2.contains("sword") || WeaponName2.contains("abyssal dagger")) {
 			c.setSidebarInterface(0, 2276); // stab, lunge, slash, block
-			c.getPA().sendFrame246(2277, 200, Weapon);
+			//c.getPA().sendFrame246(2277, 200, Weapon);
 			c.getPA().sendFrame126(WeaponName, 2279);
 		} else if (WeaponName2.startsWith("pickaxe")) {
 			c.setSidebarInterface(0, 5570); // spike, impale, smash, block
@@ -952,9 +952,9 @@ public class ItemAssistant {
 			c.getPA().sendFrame246(7763, 200, Weapon);
 			c.getPA().sendFrame126(WeaponName, 7765);
 		} else {
-			c.setSidebarInterface(0, 2423); // chop, slash, lunge, block
-			c.getPA().sendFrame246(2424, 200, Weapon);
-			c.getPA().sendFrame126(WeaponName, 2426);
+			c.setSidebarInterface(0, 39459); // chop, slash, lunge, block
+			//c.getPA().sendFrame246(39638, 200, Weapon);
+			c.getPA().sendFrame126(WeaponName, 39460);
 		}
 	}
 
@@ -1091,6 +1091,7 @@ public class ItemAssistant {
 		case 13269:
 		case 13271:
 		case 21009: //Dragon sword
+			case 26233:
 		case 7158:
 			c.getPA().sendFrame171(0, 7574);
 			specialAmount(weapon, c.specAmount, 7586);

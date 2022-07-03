@@ -15,7 +15,6 @@ import godzhell.model.content.achievement_diary.wilderness.WildernessDiaryEntry;
 import godzhell.model.content.instances.InstancedArea;
 import godzhell.model.content.instances.InstancedAreaManager;
 import godzhell.model.content.kill_streaks.Killstreak;
-import godzhell.model.content.skills.Fishing;
 import godzhell.model.content.skills.Skill;
 import godzhell.model.content.skills.SkillHandler;
 import godzhell.model.content.skills.crafting.CraftingData;
@@ -66,6 +65,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
+
+import static com.sun.org.apache.bcel.internal.classfile.Utility.setBit;
 
 public class PlayerAssistant {
 
@@ -140,19 +141,50 @@ public class PlayerAssistant {
 			c.totalPlayerDamageDealt += damage;
 		}
 	}
-
-	public void sendPlayerObjectAnimation(Player player, int x, int y, int animation, int type, int orientation,
-			int height) {
-		if (player == null)
+	public void objectAnim(int X, int Y, int animationID, int tileObjectType, int orientation) {
+		for (Player p : PlayerHandler.players) {
+			if(p != null) {
+				Player players = p;
+				if(players.distanceToPoint(X, Y) <= 25) {
+					players.getPA().sendPlayerObjectAnimation(X, Y, animationID, tileObjectType, orientation);
+				}
+			}
+		}
+	}
+	public static void addItems(int ItemID, int x, int y, int itemamount) {
+		try {
+			BufferedWriter out = new BufferedWriter(new FileWriter(".//Data/ItemSpawns.txt", true));
+			try {
+				out.write("{");
+				out.newLine();
+				out.write("\"amount\":\""+itemamount+"\",");
+				out.newLine();
+				out.write("\"itemX\":"+x+",");
+				out.newLine();
+				out.write("\"id\":"+ItemID+",");
+				out.newLine();
+				out.write("\"itemY\":"+y+"");
+				out.newLine();
+				out.write("},");
+				out.newLine();
+			} finally {
+				out.close();
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	public void sendPlayerObjectAnimation(int x, int y, int animation, int type, int orientation) {
+		if (c.getOutStream() == null)
 			return;
 		// if (p.getPosition().isViewableFrom(position)) {
-		player.getOutStream().createFrame(85);
-		player.getOutStream().writeByteC(y - (player.mapRegionY * 8));
-		player.getOutStream().writeByteC(x - (player.mapRegionX * 8));
-		player.getOutStream().createFrame(160);
-		player.getOutStream().writeByteS(((0 & 7) << 4) + (0 & 7));
-		player.getOutStream().writeByteS((type << 2) + (orientation & 3));
-		player.getOutStream().writeWordA(animation);
+		c.getOutStream().createFrame(85);
+		c.getOutStream().writeByteC(y - (c.mapRegionY * 8));
+		c.getOutStream().writeByteC(x - (c.mapRegionX * 8));
+		c.getOutStream().createFrame(160);
+		c.getOutStream().writeByteS(((x & 7) << 4) + (y & 7));
+		c.getOutStream().writeByteS((type << 2) + (orientation & 3));
+		c.getOutStream().writeWordA(animation);
 		// }
 	}
 
@@ -832,6 +864,7 @@ public class PlayerAssistant {
 			c.getOutStream().writeWord(SubFrame);
 			c.getOutStream().writeWord(SubFrame2);
 			c.flushOutStream();
+			System.out.println("frame 246: "+MainFrame+" "+SubFrame+" "+SubFrame2+".");
 		}
 	}
 
@@ -3749,6 +3782,21 @@ public class PlayerAssistant {
 		if(Config.bonusXP) {
 			amount *= 1.5;
 		}
+		if ( c.playerEquipment[c.playerRing] == 29171) {
+			amount *= Config.SERVER_EXP_BONUS * 2;
+		} else {
+			amount *= Config.SERVER_EXP_BONUS;
+		}
+		if (c.playerEquipment[c.playerRing] == 29172) {
+			amount *= Config.SERVER_EXP_BONUS * 3;
+		} else {
+			amount *= Config.SERVER_EXP_BONUS;
+		}
+		if (c.playerEquipment[c.playerRing] == 29173) {
+			amount *= Config.SERVER_EXP_BONUS * 4;
+		} else {
+			amount *= Config.SERVER_EXP_BONUS;
+		}
 		if (c.playerXP[skill] + amount > 200000000) {
 			c.playerXP[skill] = 200000000;
 		} else {
@@ -4555,6 +4603,25 @@ public class PlayerAssistant {
 		Server.getEventHandler().stop(c, "skilling");
 	}
 
+	/**
+	 * @author Grant_ | www.rune-server.ee/members/grant_ | 10/6/19
+	 * @param frame
+	 * @param item
+	 * @param slot
+	 * @param amount
+	 * @param opaque
+	 */
+	public void sendItemToSlotWithOpacity(int frame, int item, int slot, int amount, boolean opaque) {
+		final int bitpackedValue = opaque ? setBit(15, item + 1) : item + 1;
+		c.outStream.createFrameVarSizeWord(34);
+		c.outStream.writeUnsignedWord(frame);
+		c.outStream.writeByte(slot);
+		c.outStream.writeUnsignedWord(bitpackedValue);
+		c.outStream.writeByte(255);
+		c.outStream.writeDWord(amount);
+		c.outStream.endFrameVarSizeWord();
+	}
+
 
     /**
 	 *
@@ -4826,10 +4893,6 @@ public class PlayerAssistant {
 		}
 		for (Tree t : Tree.values()) {
 			if (t.getWood() == item)
-				return true;
-		}
-		for (int[] fish : Fishing.data) {
-			if (fish[4] == item)
 				return true;
 		}
 		for (Bars b : Smelting.Bars.values()) {

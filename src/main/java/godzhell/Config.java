@@ -9,7 +9,7 @@ public class Config {
 	public static int PLAYERMODIFIER = 0;
 
 	// Make sure this matches client version
-	public static final int CLIENT_VERSION = 4;
+	public static final int CLIENT_VERSION = 5;
 
 	/**
 	 * Defines which port is being used (see {@link ServerState})
@@ -294,9 +294,9 @@ public class Config {
 	/**
 	 * Combat experience rates.
 	 */
-	public static final int MELEE_EXP_RATE = 10;
-	public static final int RANGE_EXP_RATE = 10;
-	public static final int MAGIC_EXP_RATE = 10;
+	public static final int MELEE_EXP_RATE = 50;
+	public static final int RANGE_EXP_RATE = 50;
+	public static final int MAGIC_EXP_RATE = 50;
 	/**
 	 * Special server experience bonus rates. (Double experience weekend etc)
 	 */
@@ -826,6 +826,7 @@ public static final int IRKSOL = 259;
 public static final int JUKAT = 260;
 public static final int FAIRY_FIXITS_FAIRY_ENCHANTMENT = 261;
 public static final int CROSSBOW_SHOP_WHITE_WOLF_MOUNTAIN = 262;
+public static final int Castle_Wars_Ticket_Exchange = 270;
 public static final int TRADER_STANS_TRADING_POST = 263;
 public static final int NED_ROPES = 264;
 public static final int DONATOR_SHOP = 268;
@@ -934,5 +935,5 @@ public static final int DONATOR_SHOP = 268;
 
 		public static boolean DOUBLE_EXP = false;
 
-    public static String UPDATE_MESSAGE = "Partyhat minigame is now added!";
+    public static String UPDATE_MESSAGE = "Some npc animations has been fixed.";
 }

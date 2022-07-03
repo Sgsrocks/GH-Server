@@ -1,7 +1,5 @@
 package godzhell.model.players.packets;
 
-import java.util.Objects;
-
 import godzhell.Server;
 import godzhell.event.CycleEvent;
 import godzhell.event.CycleEventContainer;
@@ -15,6 +13,8 @@ import godzhell.model.players.PacketType;
 import godzhell.model.players.Player;
 import godzhell.model.players.PlayerHandler;
 import godzhell.world.GlobalDropsHandler;
+
+import java.util.Objects;
 
 /**
  * Pickup Item
@@ -82,22 +82,18 @@ public class PickupItem implements PacketType {
 				return;
 			}
 		}
-		if (c.getX() == c.itemX && c.getY() == c.itemY
-				|| c.getX() - 1 == c.itemX && c.getY() == c.itemY
-				|| c.getY() - 1 == c.itemY && c.getX() == c.itemX
-				|| c.getX() + 1 == c.itemX && c.getY() == c.itemY
-				|| c.getY() + 1 == c.itemY && c.getX() == c.itemX) {
-			Server.itemHandler.removeGroundItem(c, c.itemId, c.itemX, c.itemY, c.heightLevel, true);
-			GlobalDropsHandler.pickup(c,  c.itemId, c.itemX, c.itemY, c.heightLevel);
-		} else {
 			c.walkingToItem = true;
 			CycleEventHandler.getSingleton().addEvent(c, new CycleEvent() {
 				@Override
 				public void execute(CycleEventContainer container) {
-					if (!c.walkingToItem)
+					if (!c.walkingToItem) {
 						container.stop();
-					if (c.getX() == c.itemX && c.getY() == c.itemY) {
-						Server.itemHandler.removeGroundItem(c, c.itemId, c.itemX, c.itemY, c.heightLevel, true);
+					}
+					if ((c.getX() == c.itemX && c.getY() == c.itemY
+							|| c.getX() - 1 == c.itemX && c.getY() == c.itemY
+							|| c.getY() - 1 == c.itemY && c.getX() == c.itemX
+							|| c.getX() + 1 == c.itemX && c.getY() == c.itemY
+							|| c.getY() + 1 == c.itemY && c.getX() == c.itemX)) {
 						container.stop();
 					}
 				}
@@ -105,8 +101,9 @@ public class PickupItem implements PacketType {
 				@Override
 				public void stop() {
 					c.walkingToItem = false;
+						Server.itemHandler.removeGroundItem(c, c.itemId, c.itemX, c.itemY, c.heightLevel, true);
+					GlobalDropsHandler.pickup(c,  c.itemId, c.itemX, c.itemY);
 				}
 			}, 1);
-		}
 	}
 }

@@ -1,9 +1,9 @@
 package godzhell.model.players.packets;
 
-import java.util.Objects;
-
 import godzhell.Server;
 import godzhell.model.content.random.PartyRoom;
+import godzhell.model.content.skills.crafting.JewelryMaking;
+import godzhell.model.content.skills.smithing.Smithing;
 import godzhell.model.content.tradingpost.Listing;
 import godzhell.model.items.GameItem;
 import godzhell.model.multiplayer_session.MultiplayerSession;
@@ -14,8 +14,8 @@ import godzhell.model.multiplayer_session.duel.DuelSession;
 import godzhell.model.multiplayer_session.trade.TradeSession;
 import godzhell.model.players.PacketType;
 import godzhell.model.players.Player;
-import godzhell.model.content.skills.smithing.Smithing;
-import godzhell.model.content.skills.crafting.JewelryMaking;
+
+import java.util.Objects;
 
 /**
  * Remove Item
@@ -46,26 +46,26 @@ public class RemoveItem implements PacketType {
 		switch (interfaceId) {
 			case 41609:
 				switch(c.boxCurrentlyUsing) {
-					case 26826: //ultra rare
+					case 28826: //ultra rare
 						c.getUltraMysteryBox().reward();
 						break;
-					case 26822:
+					case 28822:
 						c.getUncommonMysteryBox().reward();
 						break;
 
-					case 26964:
+					case 28964:
 						//c.getRareKey().reward();
 						break;
-					case 27326:
+					case 29326:
 						c.getDrCapeMysteryBox().reward();
 						break;
-					case 26823:
+					case 28823:
 						c.getCommonMysteryBox().reward();
 						break;
-					case 26824:
+					case 28824:
 						c.getRareMysteryBox().reward();
 						break;
-					case 26825:
+					case 28825:
 						c.getSuperRareMysteryBox().reward();
 						break;
 					case 6199:

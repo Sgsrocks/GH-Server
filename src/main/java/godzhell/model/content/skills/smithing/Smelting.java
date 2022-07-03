@@ -190,6 +190,7 @@ public class Smelting {
         c.bar = null;
         c.isSmelting = false;
         c.lastSmelt = 0;
+        c.getPA().closeAllWindows();
         CycleEventHandler.getSingleton().stopEvents(c, c.smeltEventId);
     }
 

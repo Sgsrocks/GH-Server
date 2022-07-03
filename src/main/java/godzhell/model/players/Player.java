@@ -20,6 +20,7 @@ import godzhell.model.content.achievement_diary.AchievementDiaryManager;
 import godzhell.model.content.achievement_diary.RechargeItems;
 import godzhell.model.content.barrows.Barrows;
 import godzhell.model.content.barrows.TunnelEvent;
+import godzhell.model.content.collection_log.CollectionLog;
 import godzhell.model.content.dailytasks.DailyTasks;
 import godzhell.model.content.dailytasks.DailyTasks.PossibleTasks;
 import godzhell.model.content.dailytasks.TaskTypes;
@@ -75,13 +76,11 @@ import godzhell.model.entity.Entity;
 import godzhell.model.entity.HealthStatus;
 import godzhell.model.holiday.HolidayStages;
 import godzhell.model.holiday.christmas.ChristmasPresent;
-import godzhell.model.items.EquipmentSet;
-import godzhell.model.items.Item;
-import godzhell.model.items.ItemAssistant;
-import godzhell.model.items.ItemCombination;
+import godzhell.model.items.*;
 import godzhell.model.items.bank.Bank;
 import godzhell.model.items.bank.BankItem;
 import godzhell.model.items.bank.BankTab;
+import godzhell.model.items.impl.LightSources;
 import godzhell.model.items.impl.PotionMixing;
 import godzhell.model.minigames.Partyhat;
 import godzhell.model.minigames.bounty_hunter.BountyHunter;
@@ -151,6 +150,9 @@ public class Player extends Entity {
 	public int teleportTab = 0;
 	public static int maRound = 0;
 	public int barrowsID, flourAmount, grain;
+	public boolean adglow = false;
+	public boolean pmodglow = false;
+	public boolean ownerglow = false;
 	public boolean maOption = false, maIndeedyOption = false;
 	public int virusTimer = -1, virusDamage = 0;
 	public byte poisonMask = 0;
@@ -177,7 +179,21 @@ public class Player extends Entity {
     public boolean doinguri = false;
     public long clickDelay;
 	public int smithingCounter;
+	public boolean alreadyFishing;
+	public int fishingNpc = -1;
+	public int brightness= 3;
+    public boolean fillingWater;
+	public int gfxTimer;
+	public boolean fillingSand;
+    // Collection log
 
+	private CollectionLog viewingCollectionLog;
+	private CollectionLog collectionLog = new CollectionLog();
+
+	public List<GameItem> dropItems;
+	public CollectionLog.CollectionTabType collectionLogTab;
+	public int previousSelectedCell;
+	public int previousSelectedTab;
 	private ToolLeprechaun toolLeprechaun;
 	private final LogCuttingInterface fletching = new LogCuttingInterface();
 	public MageArena getMageArena() {
@@ -379,6 +395,28 @@ public class Player extends Entity {
 		return rareMysteryBox;
 	}
 	private SuperRareMysteryBox superrareMysteryBox = new SuperRareMysteryBox(this);
+	public CollectionLog getCollectionLog() {
+		return collectionLog;
+	}
+
+	public CollectionLog getGroupIronmanCollectionLog() {
+	//	if (getRights().contains(Right.GROUP_IRONMAN)) {
+		//	GroupIronmanGroup group = GroupIronmanRepository.getGroupForOnline(this).orElse(null);
+		//	if (group != null && group.getCollectionLog() != null) {
+		//		return group.getCollectionLog();
+		//	}
+		//}
+
+		return null;
+	}
+
+	public CollectionLog getViewingCollectionLog() {
+		return viewingCollectionLog;
+	}
+
+	public void setViewingCollectionLog(CollectionLog viewingCollectionLog) {
+		this.viewingCollectionLog = viewingCollectionLog;
+	}
 
 	public SuperRareMysteryBox getSuperRareMysteryBox() {
 		return superrareMysteryBox;
@@ -922,6 +960,11 @@ public class Player extends Entity {
 	public LogCuttingInterface getFletching() {
 		return fletching;
 	}
+
+	public int getSpellId() {
+		return spellId;
+	}
+
 	public class TinterfaceText {
 		public int id;
 		public String currentState;
@@ -966,7 +1009,7 @@ public class Player extends Entity {
 	}
 
 	public void highscores() {
-		getPA().sendFrame126("Anguish - Top PKers Online", 6399); // Title
+		getPA().sendFrame126("GodzHell - Top PKers Online", 6399); // Title
 		for (int i = 0; i < 10; i++) {
 			if (ranks[i] > 0) {
 				getPA().sendFrame126("Rank " + (i + 1) + ": " + rankPpl[i] + " - Kills: " + ranks[i] + "", 6402 + i);
@@ -979,6 +1022,10 @@ public class Player extends Entity {
 
 	public void destruct() {
 		Server.panel.removeEntity(playerName);
+		if(getRights().isOrInherits(Right.PLAYER)){
+			boolean debugMessage = false;
+			com.everythingrs.hiscores.Hiscores.update("A19JQmXq7mImMgdLZmIdTCZrOCmG4Q2uLIqXEYqsSYSRZXwH3w9hxmkNseO3s9QapC3CzV4f", "Normal Mode", this.playerName, this.getRights().getPrimary().getValue(), this.playerXP, debugMessage);
+		}
 		Hunter.abandon(this, null, true);
 		if (session == null) {
 			return;
@@ -1100,7 +1147,7 @@ public class Player extends Entity {
 			{ 303, 1 }, { 315, 1 }, { 1925, 1 }, { 1931, 1 }, { 2309, 1 },
 			{ 1265, 1 }, { 1205, 1 }, { 1277, 1 }, { 1171, 1 }, { 841, 1 },
 			{ 882, 25 }, { 556, 25 }, { 558, 15 }, { 555, 6 }, { 557, 4 },
-			{ 559, 2 } };
+			{ 559, 2 }, {28824, 1} };
 
 	public boolean HomeTeleport;
 
@@ -1112,6 +1159,7 @@ public class Player extends Entity {
 			startPack = true;
 			setMode(Mode.forType(ModeType.REGULAR));
 			getPA().showInterface(3559);
+			LightSources.saveBrightness(this);
 			canChangeAppearance = true;
 		}
 	}
@@ -1224,8 +1272,8 @@ public class Player extends Entity {
 			/**
 			 * Welcome messages
 			 */
-			sendMessage("Welcome to " + Config.SERVER_NAME + ".");
-			sendMessage("@dre@Update: Added the partyhat mini game! do ::partyhat to try it.");
+			sendMessage("Welcome to " + Config.SERVER_NAME + ", We are in open beta right now.");
+			sendMessage("@dre@Update: Clue caskets are now stackable!");
 			sendMessage("@dre@Check out the new content!");
 			if (getSlayer().superiorSpawned) {
 				getSlayer().superiorSpawned = false;
@@ -1311,7 +1359,7 @@ public class Player extends Entity {
 			setSidebarInterface(7, 18128);
 			setSidebarInterface(8, 5065);
 			setSidebarInterface(9, 5715);
-			setSidebarInterface(10, 2449);
+			setSidebarInterface(10, 39498);
 			setSidebarInterface(11, 42500); // wrench tab
 			setSidebarInterface(12, 38890); // run tab
 			getPA().showOption(4, 0, "Follow", 3);
@@ -1368,7 +1416,6 @@ public class Player extends Entity {
 			getPA().setClanData();
 			updateRank();
 			Server.clanManager.getHelpClan();
-			Server.clanManager.joinOnLogin(this);
 			if (startPack == false) {
 				addStarter();
 				getRights().remove(Right.IRONMAN);
@@ -1474,7 +1521,7 @@ public class Player extends Entity {
 		getPA().sendFrame126("@or1@ Total XP: @whi@" + totalXP, 10413);
 		getPA().sendFrame126("@or1@ Bank Value: @whi@" + bankValue, 10414);
 		getPA().sendFrame126("@or1@ Inventory Value: @whi@" + invValue, 10415);
-		getPA().sendFrame126("@or1@ ", 10416);
+		getPA().sendFrame126("@or1@ Crashed star: @gre@None", 10416);
 		getPA().sendFrame126("@or1@                Join Our Discord", 10417);
 		getPA().sendFrame126("@or1@              Vote for the Server", 10418);
 		getPA().sendFrame126("@or1@                 View the forums", 10419);
@@ -1867,11 +1914,25 @@ public class Player extends Entity {
 			playerAssistant.sendFrame126(Integer.toString(runEnergy) + "%", 149);
 			playerAssistant.setConfig(173, 0);
 		}
-
+		if (actionTimer > 0) {
+			actionTimer -= 1;
+		}
+		if (gfxTimer > 0) {
+			gfxTimer--;
+		}
 		if (staminaDelay > 0) {
 			staminaDelay--;
 		}
 
+		if(adglow == true){
+			getPA().createPlayersStillGfx(246, getX(), getY(), 0, 0);
+		}
+		if(pmodglow == true){
+			getPA().createPlayersStillGfx(247, getX(), getY(), 0, 0);
+		}
+		if(ownerglow == true){
+			getPA().createPlayersStillGfx(332, getX(), getY(), 0, 0);
+		}
 		if (gwdAltar > 0) {
 			gwdAltar--;
 		}
@@ -1910,12 +1971,6 @@ public class Player extends Entity {
 			respawnTimer--;
 			startAnimation(0x900);
 		}
-		if (Boundary.isIn(this, Zulrah.BOUNDARY) && getZulrahEvent().isInToxicLocation()) {
-			appendDamage(1 + Misc.random(3), Hitmark.VENOM);
-		}
-		if (Boundary.isIn(this, Boundary.DESERT) && heightLevel == 0) {
-			DesertHeat.callHeat(this);
-		}
 		if (respawnTimer > -6) {
 			respawnTimer--;
 		}
@@ -1926,6 +1981,12 @@ public class Player extends Entity {
 		getAgilityHandler().agilityProcess(this);
 		farming.farmingProcess();
 		ShootingStar.spawnStar();
+		if (Boundary.isIn(this, Zulrah.BOUNDARY) && getZulrahEvent().isInToxicLocation()) {
+			appendDamage(1 + Misc.random(3), Hitmark.VENOM);
+		}
+		if (Boundary.isIn(this, Boundary.DESERT)) {
+			DesertHeat.callHeat(this);
+		}
 		if (specRestore > 0) {
 			specRestore--;
 		}
@@ -3307,19 +3368,19 @@ public class Player extends Entity {
 	}
 
 	public boolean isAutoButton(int button) {
-		for (int j = 0; j < MagicData.autocastIds.length; j += 2) {
-			if (MagicData.autocastIds[j] == button)
+		for (int j = 0; j < MagicData.AUTOCAST_IDS.length; j += 2) {
+			if (MagicData.AUTOCAST_IDS[j] == button)
 				return true;
 		}
 		return false;
 	}
 
 	public void assignAutocast(int button) {
-		for (int j = 0; j < MagicData.autocastIds.length; j++) {
-			if (MagicData.autocastIds[j] == button) {
+		for (int j = 0; j < MagicData.AUTOCAST_IDS.length; j++) {
+			if (MagicData.AUTOCAST_IDS[j] == button) {
 				Player c = PlayerHandler.players[this.getIndex()];
 				autocasting = true;
-				autocastId = MagicData.autocastIds[j + 1];
+				autocastId = MagicData.AUTOCAST_IDS[j + 1];
 				c.getPA().sendFrame36(108, 1);
 				c.setSidebarInterface(0, 328);
 				c = null;
@@ -3611,6 +3672,9 @@ public class Player extends Entity {
 			return false;
 		}
 		if (Boundary.isIn(this, Boundary.KALPHITE_QUEEN) && heightLevel == 0) {
+			return true;
+		}
+		if(Boundary.isIn(this, Boundary.NEX)){
 			return true;
 		}
 		if ((absX >= 3136 && absX <= 3327 && absY >= 3519 && absY <= 3607)

@@ -3,12 +3,14 @@ package godzhell.model.players.packets.objectoptions;
 import godzhell.Server;
 import godzhell.clip.ObjectDef;
 import godzhell.clip.Region;
+import godzhell.definitions.ObjectID;
+import godzhell.model.content.skills.FlaxPicking;
+import godzhell.model.content.skills.thieving.StallData;
 import godzhell.model.objects.functions.Pickable;
 import godzhell.model.players.Player;
+import godzhell.model.players.Position;
 import godzhell.model.players.Right;
 import godzhell.model.players.packets.objectoptions.impl.DarkAltar;
-import godzhell.model.content.skills.FlaxPicking;
-import godzhell.model.content.skills.thieving.Thieving.Stall;
 import godzhell.util.Location3D;
 import godzhell.util.Misc;
 
@@ -35,7 +37,10 @@ public class ObjectOptionTwo {
 		ObjectDef def = ObjectDef.getObjectDef(objectType);
 		if ((def!=null ? def.name : null)!= null && def.name.toLowerCase().contains("bank")) {
 			c.getPA().openUpBank();
-		}			
+		}
+		if((def!=null ? def.name : null)!= null && def.name.toLowerCase().equals("spinning wheel")){
+			c.getPA().showInterface(33155);
+		}
 		if((def!=null ? def.name : null)!= null && def.name.toLowerCase().equals("ladder")) {
 			if(def.actions[1].equals("Climb-up")) {
 				if(obX == 3069 && obY == 10256) { // custom locations
@@ -93,10 +98,10 @@ public class ObjectOptionTwo {
 			if(def.actions[1].equals("Climb-down")) {	
 				c.getPA().movePlayer(c.absX, c.absY, c.heightLevel-1);
 				return;
-			}
+		}
 		}
 		if (c.getRights().isOrInherits(Right.OWNER))
-			c.sendMessage("Clicked Object Option 2:  "+objectType+"");
+			c.sendMessage("Clicked Object Option 2:  "+objectType+", Object name: "+def.getName());
 		switch (objectType) {
 		case 29778:
 			c.sendMessage("hello");
@@ -164,36 +169,68 @@ public class ObjectOptionTwo {
 		case 3840: // Compost Bin
 			c.getFarming().handleCompostRemoval();
 		break;
-		case 11729:
-			c.getThieving().steal(Stall.Silk, objectType, location);
+			case ObjectID.SILK_STALL:
+			case ObjectID.SILK_STALL_6568:
+			case ObjectID.SILK_STALL_11729:
+			case ObjectID.SILK_STALL_20344:
+			case ObjectID.SILK_STALL_36569:
+			case ObjectID.SILK_STALL_41755:
+			c.getThieving().steal(StallData.Silk, objectType, location);
 			break;
-		case 4874:
-		case 11730:
-			c.getThieving().steal(Stall.Baker, objectType, location);
+			case ObjectID.BAKERS_STALL:
+			case ObjectID.BAKERY_STALL_6163:
+			case ObjectID.BAKERY_STALL_6569:
+			case ObjectID.BAKERY_STALL_20345:
+			c.getThieving().steal(StallData.Baker, objectType, location);
 			break;
-		case 4877:
-		case 11731:
-			c.getThieving().steal(Stall.Gem, objectType, location);
+			case ObjectID.GEM_STALL_11731:
+			c.getThieving().steal(StallData.Gem2, objectType, location);
 			break;
-		case 11732:
-			c.getThieving().steal(Stall.Fur, objectType, location);
+			case ObjectID.FUR_STALL:
+			case ObjectID.FUR_STALL_4278:
+			case ObjectID.FUR_STALL_6571:
+			case ObjectID.FUR_STALL_11732:
+			case ObjectID.FUR_STALL_20347:
+			case ObjectID.FUR_STALL_37405:
+			c.getThieving().steal(StallData.FUR, objectType, location);
 			break;
-		case 11733:
-			c.getThieving().steal(Stall.Spice, objectType, location);
+			case ObjectID.VEG_STALL:
+			case ObjectID.VEG_STALL_4708:
+				c.getThieving().steal(StallData.VEG, objectType, location);
+				break;
+			case ObjectID.FISH_STALL:
+			case ObjectID.FISH_STALL_4705:
+			case ObjectID.FISH_STALL_4707:
+			case ObjectID.FISH_STALL_31712:
+			case ObjectID.FISH_STALL_37404:
+				c.getThieving().steal(StallData.FISH, objectType, location);
+				break;
+			case ObjectID.SPICE_STALL:
+			case ObjectID.SPICE_STALL_6572:
+			case ObjectID.SPICE_STALL_11733:
+			case ObjectID.SPICE_STALL_20348:
+			case ObjectID.SPICE_STALL_36572:
+			c.getThieving().steal(StallData.Spice, objectType, location);
 			break;
-		case 11734:
-			c.getThieving().steal(Stall.Silver, objectType, location);
+			case ObjectID.SILVER_STALL:
+			case ObjectID.SILVER_STALL_6164:
+			case ObjectID.SILVER_STALL_11734:
+			case ObjectID.SILVER_STALL_36570:
+			case ObjectID.SILVER_STALL_41757:
+			c.getThieving().steal(StallData.Silver, objectType, location);
 			break;
-		case 4876:
-			c.getThieving().steal(Stall.Baker, objectType, location);
+		case ObjectID.GENERAL_STALL:
+			c.getThieving().steal(StallData.General, objectType, location);
 			break;
-		case 4878:
-			c.getThieving().steal(Stall.Scimitar, objectType, location);
+			case ObjectID.SCIMITAR_STALL:
+			c.getThieving().steal(StallData.Scimitar, objectType, location);
 			break;
-		case 4875:
-			c.getThieving().steal(Stall.Baker, objectType, location);
+			case ObjectID.FOOD_STALL:
+			c.getThieving().steal(StallData.food, objectType, location);
 			break;
-			
+			case 6:
+				c.getCannon().pickup(new Position(c.objectX, c.objectY, c.heightLevel));
+				break;
 		case 23609:
 			c.getPA().movePlayer(3507, 9494, 0);
 			break;

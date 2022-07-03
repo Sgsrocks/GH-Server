@@ -1,17 +1,12 @@
 package godzhell.model.content.MysteryBoxs;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Random;
-
 import godzhell.definitions.ItemCacheDefinition;
 import godzhell.model.items.GameItem;
 import godzhell.model.players.Player;
 import godzhell.model.players.PlayerHandler;
 import godzhell.util.Misc;
+
+import java.util.*;
 
 /**
  * Revamped a simple means of receiving a random item based on chance.
@@ -24,7 +19,7 @@ public class UltraMysteryBox {
 	/**
 	 * The item id of the mystery box required to trigger the event
 	 */
-	public static final int MYSTERY_BOX = 26826;
+	public static final int MYSTERY_BOX = 28826;
 
 	/**
 	 * A map containing a List of {@link GameItem}'s that contain items relevant to their rarity.

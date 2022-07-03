@@ -1,22 +1,12 @@
 package godzhell.model.content.MysteryBoxs;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Random;
-
 import godzhell.definitions.ItemCacheDefinition;
-import godzhell.event.CycleEvent;
-import godzhell.event.CycleEventContainer;
-import godzhell.event.CycleEventHandler;
-import godzhell.model.content.MysteryBoxs.UltraMysteryBox.Rarity;
 import godzhell.model.items.GameItem;
-import godzhell.model.items.ItemAssistant;
 import godzhell.model.players.Player;
 import godzhell.model.players.PlayerHandler;
 import godzhell.util.Misc;
+
+import java.util.*;
 
 
 /**
@@ -30,7 +20,7 @@ public class RareMysteryBox {
     /**
      * The item id of the mystery box required to trigger the event
      */
-    private static final int MYSTERY_BOX = 26824;
+    private static final int MYSTERY_BOX = 28824;
 
     /**
      * A map containing a List of {@link GameItem}'s that contain items relevant to their rarity.
@@ -54,42 +44,42 @@ public class RareMysteryBox {
                 		new GameItem(1053),
                 		new GameItem(1055),
                 		new GameItem(1057),
-                		new GameItem(26698))
+                		new GameItem(28698))
         );
 
         items.put(Rarity.UNCOMMON,
                 Arrays.asList(
-                		new GameItem(26715),
-                		new GameItem(26716),
-                		new GameItem(26213),
-                		new GameItem(26214),
-                		new GameItem(26215),
-                		new GameItem(26216),
-                		new GameItem(26217),
-                		new GameItem(26220),
-                		new GameItem(26221),
-                		new GameItem(26222),
-                		new GameItem(26229),
-                		new GameItem(26230))
+                		new GameItem(28715),
+                		new GameItem(28716),
+                		new GameItem(28213),
+                		new GameItem(28214),
+                		new GameItem(28215),
+                		new GameItem(28216),
+                		new GameItem(28217),
+                		new GameItem(28220),
+                		new GameItem(28221),
+                		new GameItem(28222),
+                		new GameItem(28229),
+                		new GameItem(28230))
         );
 
         items.put(Rarity.RARE,
                 Arrays.asList(
-                		new GameItem(26231),
-                		new GameItem(26232),
-                		new GameItem(26233),
-                		new GameItem(26234),
-                		new GameItem(26247),
-                		new GameItem(26484),
-                		new GameItem(26498),
-                		new GameItem(26501),
-                		new GameItem(26558),
-                		new GameItem(26655),
-                		new GameItem(26658),
-                		new GameItem(26746),
-                		new GameItem(26756),
-                		new GameItem(26827),
-                		new GameItem(26842)));
+                		new GameItem(28231),
+                		new GameItem(28232),
+                		new GameItem(28233),
+                		new GameItem(28234),
+                		new GameItem(28247),
+                		new GameItem(28484),
+                		new GameItem(28498),
+                		new GameItem(28501),
+                		new GameItem(28558),
+                		new GameItem(28655),
+                		new GameItem(28658),
+                		new GameItem(28746),
+                		new GameItem(28756),
+                		new GameItem(28827),
+                		new GameItem(28842)));
     }
 
     /**

@@ -1,9 +1,9 @@
 package godzhell.model.players.packets.commands.all;
 
-import java.util.Optional;
-
 import godzhell.model.players.Player;
 import godzhell.model.players.packets.commands.Command;
+
+import java.util.Optional;
 
 /**
  * Opens the store page in the default web browser.
@@ -14,7 +14,7 @@ public class Store extends Command {
 
 	@Override
 	public void execute(Player c, String input) {
-		c.getPA().sendFrame126("https://auroraps.everythingrs.com/services/store", 12000);
+		c.getPA().sendFrame126("https://godzhellrsps.everythingrs.com/services/store", 12000);
 	}
 
 	@Override

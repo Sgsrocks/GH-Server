@@ -27,8 +27,9 @@ public class ItemCacheDefinition {
 	 * Represents the total whole number integer of Items.
 	 */
 	public static int ITEM_TOTAL = 30000;
-	
-	/**
+    private String opcode150;
+
+    /**
 	 * Returns a {@link ItemCacheDefinition} for the specified ID.
 	 * @param i	the id of the Item to get the definition for
 	 * @return	the definition
@@ -225,7 +226,7 @@ public class ItemCacheDefinition {
         int[] bonuses = new int[14];
         int bonus = 0;
         int amount = 0;
-        for (int i = 0; i < totalItems; i++) {
+        for (int i = 25000; i < 30000; i++) {
             ItemCacheDefinition item = ItemCacheDefinition.forID(i);
             URL url;
             try {
@@ -302,7 +303,7 @@ public class ItemCacheDefinition {
             cache[k] = new ItemCacheDefinition();
         }
         //dumpItemDefs();
-           // dumpBonuses();
+            //dumpBonuses();
         System.out.println("Successfully loaded: " + totalItems + " Item Cache definitions.");
     	} catch (Exception e) {
     		System.err.println("An error has occurred whilst loading Item definitions!");
@@ -437,6 +438,8 @@ public class ItemCacheDefinition {
     				placeholderId = buffer.readUnsignedWord();
                 else if (opcode == 149) {
                     placeholderTemplateId = buffer.readUnsignedWord();
+            } else if (opcode == 150) {
+                opcode150 = buffer.readString();
             }
         }
     }

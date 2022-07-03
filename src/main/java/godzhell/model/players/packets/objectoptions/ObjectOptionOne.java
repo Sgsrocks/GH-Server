@@ -1,11 +1,10 @@
 package godzhell.model.players.packets.objectoptions;
 
-import java.util.stream.IntStream;
-
 import godzhell.Config;
 import godzhell.Server;
 import godzhell.clip.ObjectDef;
 import godzhell.clip.Region;
+import godzhell.definitions.ItemID;
 import godzhell.event.CycleEvent;
 import godzhell.event.CycleEventContainer;
 import godzhell.event.CycleEventHandler;
@@ -23,15 +22,25 @@ import godzhell.model.content.achievement_diary.varrock.VarrockDiaryEntry;
 import godzhell.model.content.achievement_diary.wilderness.WildernessDiaryEntry;
 import godzhell.model.content.dialogue.DialogueManager;
 import godzhell.model.content.dialogue.impl.RockDialogue;
+import godzhell.model.content.dialogue.impl.altarDialogue;
 import godzhell.model.content.dialogue.impl.bosses.ZulrahDialogue;
 import godzhell.model.content.godwars.God;
 import godzhell.model.content.random.Balloons;
 import godzhell.model.content.random.PartyRoom;
+import godzhell.model.content.skills.Skill;
+import godzhell.model.content.skills.agility.AgilityHandler;
+import godzhell.model.content.skills.construction.PortalDialogue;
+import godzhell.model.content.skills.crafting.JewelryMaking;
+import godzhell.model.content.skills.hunter.Hunter;
+import godzhell.model.content.skills.mining.Pickaxe;
+import godzhell.model.content.skills.runecrafting.RuneCraftingActions;
+import godzhell.model.content.skills.woodcutting.Tree;
+import godzhell.model.content.skills.woodcutting.Woodcutting;
+import godzhell.model.content.tradingpost.Listing;
 import godzhell.model.content.traveling.Desert;
 import godzhell.model.content.traveling.Sailing;
 import godzhell.model.content.wogw.Wogw;
 import godzhell.model.entity.HealthStatus;
-import godzhell.model.players.Position;
 import godzhell.model.holiday.halloween.HalloweenRandomOrder;
 import godzhell.model.items.EquipmentSet;
 import godzhell.model.minigames.lighthouse.DagannothMother;
@@ -55,28 +64,17 @@ import godzhell.model.objects.dungeons.KuradalsDungeons;
 import godzhell.model.objects.functions.AxeInLog;
 import godzhell.model.objects.functions.FlourMill;
 import godzhell.model.objects.functions.MilkCow;
-import godzhell.model.players.Boundary;
-import godzhell.model.players.Player;
-import godzhell.model.players.PlayerAssistant;
-import godzhell.model.players.Right;
-import godzhell.model.players.WildernessDitch;
+import godzhell.model.players.*;
 import godzhell.model.players.combat.Hitmark;
 import godzhell.model.players.packets.objectoptions.impl.DarkAltar;
 import godzhell.model.players.packets.objectoptions.impl.Overseer;
 import godzhell.model.players.packets.objectoptions.impl.RaidObjects;
 import godzhell.model.players.packets.objectoptions.impl.TrainCart;
-import godzhell.model.content.skills.*;
-import godzhell.model.content.skills.agility.AgilityHandler;
-import godzhell.model.content.skills.construction.PortalDialogue;
-import godzhell.model.content.skills.crafting.JewelryMaking;
-import godzhell.model.content.skills.hunter.Hunter;
-import godzhell.model.content.skills.runecrafting.RuneCraftingActions;
-import godzhell.model.content.skills.woodcutting.Tree;
-import godzhell.model.content.skills.woodcutting.Woodcutting;
 import godzhell.util.Location3D;
 import godzhell.util.Misc;
 import godzhell.world.objects.GlobalObject;
-import godzhell.model.content.skills.mining.Pickaxe;
+
+import java.util.stream.IntStream;
 
 /*
  * @author Matt
@@ -182,6 +180,9 @@ public class ObjectOptionOne {
 		if ((def != null ? def.name : null) != null && def.name.toLowerCase().equalsIgnoreCase("bank")) {
 			c.getPA().openUpBank();
 		}
+		if ((def != null ? def.name : null) != null && def.name.toLowerCase().equalsIgnoreCase("bank chest")) {
+			c.getPA().openUpBank();
+		}
 		if ((def != null ? def.name : null) != null && def.name.toLowerCase().equalsIgnoreCase("Bank Deposit Box")) {
 			c.getPA().sendString("The Bank of " + Config.SERVER_NAME + " - Deposit Box", 7421);
 			c.getPA().sendFrame248(4465, 197);
@@ -232,13 +233,46 @@ public class ObjectOptionOne {
 				c.sendMessage("You don't have any bars.");
 			}
 		}
-		if((def!=null ? def.name : null)!= null && def.name.toLowerCase().equals("ladder")) {
+		if((def!=null ? def.name : null)!= null && def.name.toLowerCase().contains("cave entrance")) {
+			if(def.actions[0].toLowerCase().equals("enter")) {
+				if(obX == 2622 && obY == 3392){
+					c.getPA().movePlayer(2620, 9797, 0);
+					return;
+				}
+				if(c.getY() < 6400 && (c.heightLevel & 3) == 0) {
+					c.getPA().movePlayer(c.getX(), c.getY()+6400, c.heightLevel);
+					return;
+				} else {
+					c.getPA().movePlayer(c.getX(), c.getY()+6400, c.heightLevel);
+					return;
+				}
+			}
+		}
+		if((def!=null ? def.name : null)!= null && def.name.toLowerCase().contains("mud pile")) {
+			if(def.actions[0].toLowerCase().equals("climb-over")) {
+				if(obX == 2621 && obY == 9796){
+					c.getPA().movePlayer(2623, 3391, 0);
+					return;
+				}
+				if(c.getY() < 6400 && (c.heightLevel & 3) == 0) {
+					c.getPA().movePlayer(c.getX(), c.getY()-6400, c.heightLevel);
+					return;
+				} else {
+					c.getPA().movePlayer(c.getX(), c.getY()-6400, c.heightLevel);
+					return;
+				}
+			}
+		}
+		if((def!=null ? def.name : null)!= null && def.name.toLowerCase().contains("ladder")) {
 			if(def.actions[0].toLowerCase().equals("climb-up")) {
 				if(obX == 3069 && obY == 10256) { //KBD LAIR
 					Ladders.climbLadder(c, 3017, 3850, 0);
 					return;
 				}
-
+				if(obX == 2899 && obY == 4449) {
+					Ladders.climbLadder(c, 1910, 4367, 0);
+					return;
+				}
 				if(obX == 1913 && obY == 5226) { //sos
 					Ladders.climbLadder(c, 1859, 5243, 0);
 					return;
@@ -430,8 +464,71 @@ public class ObjectOptionOne {
 		}
 		
 		if (c.getRights().isOrInherits(Right.OWNER))
-			c.sendMessage("Clicked Object Option 1:  "+objectType+"");
+			c.sendMessage("Clicked Object Option 1:  "+objectType+", Object name: "+def.getName()+", SizeX "+def.xLength()+", SizeY "+def.yLength());
 		switch (objectType) {
+			case 1727:
+				if(c.getX() == 3337 && c.getY() == 3896) {
+					c.getPA().movePlayer(3337, 3895, 0);
+				} else if(c.getX() == 3337 && c.getY() == 3895) {
+					c.getPA().movePlayer(3337, 3896, 0);
+				} else if(c.getX() == 3225 && c.getY() == 3904) {
+					c.getPA().movePlayer(3225, 3903, 0);
+				} else if(c.getX() == 3225 && c.getY() == 3903){
+					c.getPA().movePlayer(3225,3904, 0);
+				} else if(c.getX() == 2948 && c.getY() == 3904) {
+					c.getPA().movePlayer(2948, 3903, 0);
+				} else if(c.getX() == 2948 && c.getY() == 3903){
+					c.getPA().movePlayer(2948,3904, 0);
+				} else if (c.absX == 3007) {
+					c.getPA().walkTo(+1, 0);
+				} else if (c.absX == 3008) {
+					c.getPA().walkTo(-1, 0);
+				}
+				break;
+			case 1728:
+				if(c.getX() == 3336 && c.getY() == 3896) {
+					c.getPA().movePlayer(3336, 3895, 0);
+				} else if(c.getX() == 3336 && c.getY() == 3895){
+					c.getPA().movePlayer(3336,3896, 0);
+				} else if(c.getX() == 3224 && c.getY() == 3904) {
+					c.getPA().movePlayer(3224, 3903, 0);
+				} else if(c.getX() == 3224 && c.getY() == 3903){
+					c.getPA().movePlayer(3224,3904, 0);
+				} else if(c.getX() == 2947 && c.getY() == 3904) {
+					c.getPA().movePlayer(2947, 3903, 0);
+				} else if(c.getX() == 2947 && c.getY() == 3903){
+					c.getPA().movePlayer(2947,3904, 0);
+				} else if (c.absX == 3007) {
+					c.getPA().walkTo(+1, 0);
+				} else if (c.absX == 3008) {
+					c.getPA().walkTo(-1, 0);
+				}
+				break;
+			case 41438:
+				if(c.getX() == 2674 && c.getY() == 3707){
+				c.getPA().movePlayer(2677, 3707, 0);
+				} else if(c.getX() == 2677 && c.getY() == 3707){
+					c.getPA().movePlayer(2674, 3707, 0);
+				}
+				break;
+			case 10061:
+				Listing.openPost(c, false, true);
+				break;
+			case 30189:
+				c.getPA().movePlayer(2880, 9825, 1);
+				break;
+			case 30190:
+				c.getPA().movePlayer(2883, 9825, 0);
+				break;
+			case 75:
+				if(c.actionTimer == 0){
+					c.getPA().addSkillXP((1700 * c.playerLevel[11]), 11);
+					c.sendMessage("You Gain Some FireMaking.");
+					c.startAnimation(1979);
+					c.getPA().stillGfx(76, c.getX(), c.getY(), 0, 0);
+					c.actionTimer = 15;
+				}
+				break;
 			case 1579:
 
 				break;
@@ -552,16 +649,16 @@ public class ObjectOptionOne {
 				break;
 			case 29889: // Raids fishing spot
 				if (c.playerLevel[Skill.THIEVING.getId()] >= 1 && c.playerLevel[Skill.THIEVING.getId()] <= 29) {
-					Fishing.attemptdata(c, 20);
+					//Fishing.attemptdata(c, 20);
 				}
 				if (c.playerLevel[Skill.THIEVING.getId()] >= 30 && c.playerLevel[Skill.THIEVING.getId()] <= 59) {
-					Fishing.attemptdata(c, 21);
+					//Fishing.attemptdata(c, 21);
 				}
 				if (c.playerLevel[Skill.THIEVING.getId()] >= 60 && c.playerLevel[Skill.THIEVING.getId()] <= 89) {
-					Fishing.attemptdata(c, 22);
+					//Fishing.attemptdata(c, 22);
 				}
 				if (c.playerLevel[Skill.THIEVING.getId()] >= 90) {
-					Fishing.attemptdata(c, 23);
+					//.attemptdata(c, 23);
 				}
 				break;
 		case 26670:
@@ -1084,12 +1181,7 @@ public class ObjectOptionOne {
 		 * c.getItems().deleteItem(20799, 1); } else {
 		 * c.sendMessage("You need some kindling to light this brazier!"); } break;
 		 */
-			case 26797:
-			case 8720:
-				c.getShops().openShop(77);
-				c.sendMessage("@red@ Please type in ::vote to go to the site. And do ::claimvotes to receive them!");
-				c.sendMessage("@red@ Thank you for supporting Anguish!");
-				break;
+
 			case 31556:
 				c.getPA().movePlayer(3241, 10234);
 				break;
@@ -1234,14 +1326,7 @@ public class ObjectOptionOne {
 			c.getDH().sendDialogues(55874, 2200);
 			break;
 
-		case 1727:
-		case 1728: // Kbd gates
-			if (c.absX == 3007) {
-				c.getPA().walkTo(+1, 0);
-			} else if (c.absX == 3008) {
-				c.getPA().walkTo(-1, 0);
-			}
-			break;
+
 
 		case 10439:
 		case 7814:
@@ -1371,11 +1456,31 @@ public class ObjectOptionOne {
 			c.getDH().sendDialogues(70300, -1);
 			break;
 		case 30266:
-			if (c != null) {
-				c.sendMessage("The Inferno is currently under construction.");
+			if(!c.getItems().playerHasItem(ItemID.FIRE_CAPE)){
+				c.sendMessage("You need a fire cape to enter.");
 				return;
 			}
-			c.getPA().movePlayer(2495, 5174, 0);
+			if(c.getX() == 2457 && c.getY() == 5120){
+				c.getPA().movePlayer(2457, 5118, 0);
+			} else if(c.getX() == 2457 && c.getY() == 5118){
+				c.getPA().movePlayer(2457, 5120, 0);
+			} else if(c.getX() == 2436 && c.getY() == 5121){
+				c.getPA().movePlayer(2436, 5119, 0);
+			} else if(c.getX() == 2436 && c.getY() == 5119){
+				c.getPA().movePlayer(2436, 5121, 0);
+			} else if(c.getX() == 2474 && c.getY() == 5138){
+				c.getPA().movePlayer(2474, 5136, 0);
+			} else if(c.getX() == 2474 && c.getY() == 5136){
+				c.getPA().movePlayer(2474, 5138, 0);
+			} else if(c.getX() == 2494 && c.getY() == 5157){
+				c.getPA().movePlayer(2496, 5157, 0);
+		} else if(c.getX() == 2496 && c.getY() == 5157){
+			c.getPA().movePlayer(2494, 5157, 0);
+			} else if(c.getX() == 2493 && c.getY() == 5174){
+				c.getPA().movePlayer(2495, 5174, 0);
+			} else if(c.getX() == 2495 && c.getY() == 5174){
+				c.getPA().movePlayer(2493, 5174, 0);
+			}
 			break;
 		case 28894:
 		case 28895:
@@ -2653,6 +2758,7 @@ public class ObjectOptionOne {
 		case 14838:
 		case 2030:
 		case 10082:
+			case 21303:
 			c.getSmithing().sendSmelting();
 			break;
 		/*
@@ -2826,7 +2932,9 @@ public class ObjectOptionOne {
 				}
 			}
 			break;
-
+			case 31858:
+				c.start(new altarDialogue());
+				break;
 		case 410:
 			if (c.inWild()) {
 				return;
@@ -3162,22 +3270,88 @@ public class ObjectOptionOne {
 			else
 				c.getPA().walkTo(0, -1);
 			break;
-
+			case 3831:
+				Ladders.climbLadder(c, 2900, 4449, 0);
+				break;
 		case 733:
 			GlobalObject objectOne = null;
 			int chance = c.getRechargeItems().hasAnyItem(13108, 13109, 13110, 13111) ? 0 : 4;
-			c.startAnimation(451);
+			c.startAnimation(390);
 			c.sendMessage("You fail to cut through it.");
 			if (Misc.random(chance) == 0) {
 				c.sendMessage("You slash the web apart.");
 				if (c.objectX == 3092 && c.objectY == 3957) {
-					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 2, 0, 50, 733);
+					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 2, 10, 50, 733);
+					Region.removeClippingForVariableObject(obX, obY, c.heightLevel, 10, 2, false);
 				} else if (c.objectX == 3095 && c.objectY == 3957) {
-					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 0, 0, 50, 733);
+					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 0, 10, 50, 733);
+					Region.removeClippingForVariableObject(obX, obY, c.heightLevel, 10, 0, false);
 				} else if (c.objectX == 3158 && c.objectY == 3951) {
 					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 1, 10, 50, 733);
+					Region.removeClippingForVariableObject(obX, obY, c.heightLevel, 10, 1, false);
 				} else if (c.objectX == 3105 && c.objectY == 3958 || c.objectX == 3106 && c.objectY == 3958) {
 					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 3, 10, 50, 733);
+					Region.removeClippingForVariableObject(obX, obY, c.heightLevel, 10, 3, false);
+				} else if (c.objectX == 2569 && c.objectY == 3118 || c.objectX == 2570 && c.objectY == 3118) {
+					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 1, 10, 50, 733);
+					Region.removeClippingForVariableObject(obX, obY, c.heightLevel, 10, 1, false);
+				} else if (c.objectX == 2574 && c.objectY == 3124) {
+					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 1, 10, 50, 733);
+					Region.removeClippingForVariableObject(obX, obY, c.heightLevel, 10, 1, false);
+				} else if (c.objectX == 2565 && c.objectY == 3124) {
+					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 2, 10, 50, 733);
+					Region.removeClippingForVariableObject(obX, obY, c.heightLevel, 10, 2, false);
+				} else if (c.objectX == 1833 && c.objectY == 9944) {
+					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 3, 10, 50, 733);
+					Region.removeClippingForVariableObject(obX, obY, c.heightLevel, 10, 3, false);
+				} else if (c.objectX == 1841 && c.objectY == 9933) {
+					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 1, 10, 50, 733);
+					Region.removeClippingForVariableObject(obX, obY, c.heightLevel, 10, 1, false);
+				} else if (c.objectX == 1842 && c.objectY == 9933) {
+					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 1, 10, 50, 733);
+					Region.removeClippingForVariableObject(obX, obY, c.heightLevel, 10, 1, false);
+				} else if (c.objectX == 1849 && c.objectY == 9934) {
+					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 1, 10, 50, 733);
+					Region.removeClippingForVariableObject(obX, obY, c.heightLevel, 10, 1, false);
+				} else if (c.objectX == 1850 && c.objectY == 9934) {
+					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 1, 10, 50, 733);
+					Region.removeClippingForVariableObject(obX, obY, c.heightLevel, 10, 1, false);
+				} else if (c.objectX == 2654 && c.objectY == 9766) {
+					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 3, 10, 50, 733);
+					Region.removeClippingForVariableObject(obX, obY, c.heightLevel, 10, 3, false);
+				} else if (c.objectX == 3030 && c.objectY == 3852) {
+					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 2, 10, 50, 733);
+					Region.removeClippingForVariableObject(obX, obY, c.heightLevel, 10, 2, false);
+				} else if (c.objectX == 3115 && c.objectY == 3859) {
+					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 1, 10, 50, 733);
+					Region.removeClippingForVariableObject(obX, obY, c.heightLevel, 10, 1, false);
+				} else if (c.objectX == 3092 && c.objectY == 3957) {
+					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 2, 10, 50, 733);
+					Region.removeClippingForVariableObject(obX, obY, c.heightLevel, 10, 2, false);
+				} else if (c.objectX == 3095 && c.objectY == 3957) {
+					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 0, 10, 50, 733);
+					Region.removeClippingForVariableObject(obX, obY, c.heightLevel, 10, 0, false);
+				} else if (c.objectX == 3105 && c.objectY == 3958) {
+					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 3, 10, 50, 733);
+					Region.removeClippingForVariableObject(obX, obY, c.heightLevel, 10, 3, false);
+				} else if (c.objectX == 3106 && c.objectY == 3958) {
+					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 3, 10, 50, 733);
+					Region.removeClippingForVariableObject(obX, obY, c.heightLevel, 10, 3, false);
+				} else if (c.objectX == 3147 && c.objectY == 3727) {
+					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 1, 10, 50, 733);
+					Region.removeClippingForVariableObject(obX, obY, c.heightLevel, 10, 1, false);
+				} else if (c.objectX == 3163 && c.objectY == 3736) {
+					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 0, 10, 50, 733);
+					Region.removeClippingForVariableObject(obX, obY, c.heightLevel, 10, 0, false);
+				} else if (c.objectX == 3183 && c.objectY == 3733) {
+					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 1, 10, 50, 733);
+					Region.removeClippingForVariableObject(obX, obY, c.heightLevel, 10, 1, false);
+				} else if (c.objectX == 3158 && c.objectY == 3951) {
+					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 1, 10, 50, 733);
+					Region.removeClippingForVariableObject(obX, obY, c.heightLevel, 10, 1, false);
+				} else if (c.objectX == 3210 && c.objectY == 9898) {
+					objectOne = new GlobalObject(734, obX, obY, c.heightLevel, 1, 10, 50, 733);
+					Region.removeClippingForVariableObject(obX, obY, c.heightLevel, 10, 1, false);
 				}
 				if (objectOne != null) {
 					Server.getGlobalObjects().add(objectOne);

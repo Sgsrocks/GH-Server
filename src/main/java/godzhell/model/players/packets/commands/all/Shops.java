@@ -3,6 +3,8 @@ package godzhell.model.players.packets.commands.all;
 import godzhell.model.players.Player;
 import godzhell.model.players.packets.commands.Command;
 
+import java.util.Optional;
+
 public class Shops extends Command {
 
 	@Override
@@ -19,5 +21,8 @@ public class Shops extends Command {
 			c.getPlayerAssistant().sendFrame126("@whi@Most free to play shops are added.", 35491);
 			c.getPlayerAssistant().showInterface(35483);
 	}
-
+	@Override
+	public Optional<String> getDescription() {
+		return Optional.of("tells you where shops are.");
+	}
 }

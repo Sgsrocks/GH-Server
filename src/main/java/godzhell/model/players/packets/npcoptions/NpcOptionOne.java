@@ -7,20 +7,20 @@ import godzhell.model.content.achievement_diary.desert.DesertDiaryEntry;
 import godzhell.model.content.achievement_diary.fremennik.FremennikDiaryEntry;
 import godzhell.model.content.achievement_diary.kandarin.KandarinDiaryEntry;
 import godzhell.model.content.achievement_diary.varrock.VarrockDiaryEntry;
-import godzhell.model.content.dialogue.impl.BankerDialogue;
+import godzhell.model.content.dialogue.impl.*;
 import godzhell.model.content.dialogue.impl.Falador.*;
 import godzhell.model.content.dialogue.impl.Lumbridge.*;
-import godzhell.model.content.dialogue.impl.ManandWomanDialogue;
-import godzhell.model.content.dialogue.impl.TraderCrewMemberFemale;
-import godzhell.model.content.dialogue.impl.TraderCrewMemberMale;
 import godzhell.model.content.dialogue.impl.Varrock.ReldoDIalogue;
+import godzhell.model.content.dialogue.impl.Varrock.SwordShopDialogue;
 import godzhell.model.content.dialogue.impl.Yanille.FrenitaDIalogue;
 import godzhell.model.content.dialogue.impl.slayer.DuradelDialogue;
+import godzhell.model.content.dialogue.impl.slayer.MazchnaDialogue;
+import godzhell.model.content.dialogue.impl.slayer.NieveDialogue;
 import godzhell.model.content.dialogue.impl.slayer.TuraelDialogue;
 import godzhell.model.content.dialogue.impl.wizard_tower.MizgagDialogue;
-import godzhell.model.content.skills.Fishing;
 import godzhell.model.content.skills.agility.AgilityHandler;
 import godzhell.model.content.skills.crafting.Tanning;
+import godzhell.model.content.skills.fishing.Fishing;
 import godzhell.model.content.skills.hunter.impling.Impling;
 import godzhell.model.content.skills.mining.Mineral;
 import godzhell.model.content.skills.thieving.Pickpocket;
@@ -28,6 +28,7 @@ import godzhell.model.npcs.NPC;
 import godzhell.model.npcs.NPCHandler;
 import godzhell.model.npcs.pets.PetHandler;
 import godzhell.model.npcs.pets.Probita;
+import godzhell.model.players.Boundary;
 import godzhell.model.players.Player;
 import godzhell.model.players.Right;
 import godzhell.util.Location3D;
@@ -149,10 +150,29 @@ public class NpcOptionOne {
 				player.start(new Melee_combat_tutorDialogue());
 				break;
 			case NpcID.BOB_10619:
-				player.start(new BobDialogue());
+				if(!Boundary.isIn(player, Boundary.home)) {
+					player.start(new BobDialogue());
+				} else {
+					player.getShops().openShop(288);
+				}
 				break;
 			case 3893:
 player.start(new DoricDialogue());
+				break;
+			case NpcID.TOWN_CRIER:
+			case NpcID.TOWN_CRIER_277:
+			case NpcID.TOWN_CRIER_278:
+			case NpcID.TOWN_CRIER_279:
+			case NpcID.TOWN_CRIER_280:
+			case NpcID.TOWN_CRIER_6823:
+			case NpcID.TOWN_CRIER_10887:
+				player.start(new TownCrierDialogue());
+				break;
+			case 2884:
+			case 2885:
+				if(!Boundary.isIn(player, Boundary.home)) {
+					player.start(new SwordShopDialogue());
+				}
 				break;
 			case 4626:
 				player.start(new CooksDialogue());
@@ -217,23 +237,7 @@ player.start(new DoricDialogue());
 			AgilityHandler.delayFade(player, "NONE", 3351, 3003, 0, "You step on the carpet and take off...",
 					"at last you end up in pollnivneach.", 3);
 			break;
-		case 276:
-			if (Config.BONUS_XP_WOGW) {
-				player.getDH().sendNpcChat1(
-						"Well of Goodwill is currently @red@active@bla@! \\n It is granting 1 hour of @red@Double XP@bla@!",
-						276, "Anguish Crier");
-			} else if (Config.BONUS_MINIGAME_WOGW) {
-				player.getDH().sendNpcChat1(
-						"Well of Goodwill is currently @red@active@bla@! \\n It is granting 1 hour of @red@Double Pc Points@bla@!",
-						276, "Anguish Crier");
-			} else if (Config.DOUBLE_DROPS) {
-				player.getDH().sendNpcChat1(
-						"Well of Goodwill is currently @red@active@bla@! \\n It is granting 1 hour of @red@Double Drops@bla@!",
-						276, "Anguish Crier");
-			} else {
-				player.getDH().sendNpcChat1("Well of Goodwill is currently @red@inactive@bla@!", 276, "Anguish Crier");
-			}
-			break;
+
 		case 5520:
 			player.getDiaryManager().getDesertDiary().claimReward();
 			break;
@@ -355,7 +359,7 @@ player.start(new DoricDialogue());
 				player.getDH().sendNpcChat2("Do not waste my time peasent.","You need a Combat level of 20.",402,"Mazchna");
 				return;
 			}
-			player.getDH().sendDialogues(3300, npcType);
+			player.start(new MazchnaDialogue());
 			break;
 		case 401:
 			player.start(new TuraelDialogue());
@@ -368,7 +372,7 @@ player.start(new DoricDialogue());
 				player.getDH().sendNpcChat1("You must have a slayer level of at least 90 weakling.", 6797, "Nieve");
 				return;
 			} else {
-				player.getDH().sendDialogues(3300, npcType);
+				player.start(new NieveDialogue());
 			}
 			break;
 		case 315:
@@ -379,28 +383,32 @@ player.start(new DoricDialogue());
 			break;
 		// FISHING
 		case 3913: // NET + BAIT
-			Fishing.attemptdata(player, 1);
+			case 1525:
+			case 1523:
+			//Fishing.attemptdata(player, 1);
+				Fishing.startFishing(player, 1, npcType);
 			break;
-		case 3317:
-			Fishing.attemptdata(player, 14);
-			break;
+		//case 3317:
+			//Fishing.attemptdata(player, 14);
+			//break;
 		case 4712:
-			Fishing.attemptdata(player, 15);
+			Fishing.startFishing(player, 8, npcType);
 			break;
 		case 1524:
-			Fishing.attemptdata(player, 11);
+			Fishing.startFishing(player, 10, npcType);
 			break;
 		case 3417: // TROUT
-			Fishing.attemptdata(player, 4);
+			Fishing.startFishing(player, 3, npcType);
 			break;
 		case 3657:
-			Fishing.attemptdata(player, 8);
+			Fishing.startFishing(player, 6, npcType);
 			break;
 		case 635:
-			Fishing.attemptdata(player, 13); // DARK CRAB FISHING
+			//Fishing.attemptdata(player, 13); // DARK CRAB FISHING
+			Fishing.startFishing(player, 13, npcType);
 			break;
 		case 6825: // Anglerfish
-			Fishing.attemptdata(player, 16);
+			//Fishing.attemptdata(player, 16);
 			break;
 		case 1520: // LURE
 		case 310:
@@ -409,7 +417,7 @@ player.start(new DoricDialogue());
 		case 318:
 		case 328:
 		case 331:
-			Fishing.attemptdata(player, 9);
+			Fishing.startFishing(player, 7, npcType);
 			break;
 
 		case 5809:

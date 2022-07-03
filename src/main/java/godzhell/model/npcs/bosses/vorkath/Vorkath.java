@@ -1,20 +1,15 @@
 package godzhell.model.npcs.bosses.vorkath;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.google.common.collect.Lists;
+import godzhell.model.items.GameItem;
 import godzhell.model.npcs.NPC;
 import godzhell.model.npcs.NPCDefinitions;
-import godzhell.model.npcs.bosses.vorkath.impl.DragonfireAttack;
-import godzhell.model.npcs.bosses.vorkath.impl.FireballAttack;
-import godzhell.model.npcs.bosses.vorkath.impl.MagicAttack;
-import godzhell.model.npcs.bosses.vorkath.impl.PoolAttack;
-import godzhell.model.npcs.bosses.vorkath.impl.PrayerAttack;
-import godzhell.model.npcs.bosses.vorkath.impl.RangedAttack;
-import godzhell.model.npcs.bosses.vorkath.impl.SpawnAttack;
-import godzhell.model.npcs.bosses.vorkath.impl.VenomAttack;
+import godzhell.model.npcs.bosses.vorkath.impl.*;
 import godzhell.model.players.Player;
 import godzhell.util.Misc;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Vorkath extends NPC{
 
@@ -50,7 +45,12 @@ public class Vorkath extends NPC{
 	
 	public int numberOfAttacks = 0;
 
-	public void attack(Player c) {
+
+	public static ArrayList<GameItem> getVeryRareDrops() {
+		return Lists.newArrayList(new GameItem(11286, 1), new GameItem(22006, 1));
+	}
+
+    public void attack(Player c) {
 		if(this.npcType != 8061 || !VorkathInstance.inVorkath(player)) //8028 - 8061
 		{
 			return;

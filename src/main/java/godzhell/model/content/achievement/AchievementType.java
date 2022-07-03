@@ -26,6 +26,7 @@ public enum AchievementType {
 	/*
 	 * Others
 	 */
-	CLUES,
+	CLUES, COLLECTOR
+    ;
 
 }

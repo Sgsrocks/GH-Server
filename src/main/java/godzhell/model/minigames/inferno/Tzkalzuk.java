@@ -126,8 +126,8 @@ public class Tzkalzuk extends SingleInstancedArea {
 					Server.getGlobalObjects().add(new GlobalObject(-1, 2270, 5363, height, 3, 10, -1, -1)); // Delete ancestral glyph
 					player.getPA().stillCamera(2271, 5365, 2, 0, 10);
 				} else if (cycle == 17) {
-					player.getPA().sendPlayerObjectAnimation(player, 2268, 5364, 7560, 10, 3, height); // Set falling rocks animation - west
-					player.getPA().sendPlayerObjectAnimation(player, 2273, 5364, 7559, 10, 3, height); // Set falling rocks animation - east
+					player.getPA().sendPlayerObjectAnimation(2268, 5364, 7560, 10, 3); // Set falling rocks animation - west
+					player.getPA().sendPlayerObjectAnimation( 2273, 5364, 7559, 10, 3); // Set falling rocks animation - east
 					//player.getPA().sendPlayerObjectAnimation(player, 2270, 5363, 7560, 10, 3, height); // Set falling rocks animation - middle
 					spawnNpcs();
 				//	player.sendMessage("error");
@@ -174,8 +174,8 @@ public class Tzkalzuk extends SingleInstancedArea {
 					Server.getGlobalObjects().add(new GlobalObject(-1, 2270, 5363, height, 3, 10, -1, -1)); // Delete ancestral glyph
 					player.getPA().stillCamera(2271, 5365, 2, 0, 10);
 				} else if (cycle == 10) {
-					player.getPA().sendPlayerObjectAnimation(player, 2268, 5364, 7560, 10, 3, height); // Set falling rocks animation - west
-					player.getPA().sendPlayerObjectAnimation(player, 2273, 5364, 7559, 10, 3, height); // Set falling rocks animation - east
+					player.getPA().sendPlayerObjectAnimation( 2268, 5364, 7560, 10, 3); // Set falling rocks animation - west
+					player.getPA().sendPlayerObjectAnimation( 2273, 5364, 7559, 10, 3); // Set falling rocks animation - east
 					//player.getPA().sendPlayerObjectAnimation(player, 2270, 5363, 7560, 10, 3, height); // Set falling rocks animation - middle
 					spawnNpcs();
 				//	player.sendMessage("error");

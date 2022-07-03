@@ -4,12 +4,12 @@ import godzhell.Config;
 import godzhell.Server;
 import godzhell.model.content.achievement_diary.ardougne.ArdougneDiaryEntry;
 import godzhell.model.content.achievement_diary.varrock.VarrockDiaryEntry;
+import godzhell.model.content.skills.agility.AgilityHandler;
+import godzhell.model.content.skills.thieving.PickpocketData;
 import godzhell.model.npcs.NPCHandler;
 import godzhell.model.npcs.pets.PetHandler;
 import godzhell.model.players.Boundary;
 import godzhell.model.players.Player;
-import godzhell.model.content.skills.agility.AgilityHandler;
-import godzhell.model.content.skills.thieving.Thieving.Pickpocket;
 
 /*
  * @author Matt
@@ -41,7 +41,7 @@ public class NpcOptionThree {
 		switch (npcType) {
 		case 3257:
 			if(player.getMode().isIronman() || player.getMode().isUltimateIronman()){
-				player.getThieving().steal(Pickpocket.FARMER, NPCHandler.npcs[player.rememberNpcIndex]);
+				player.getThieving().steal(PickpocketData.FARMER, NPCHandler.npcs[player.rememberNpcIndex]);
 			}else{
 				player.getShops().openShop(16);
 			}

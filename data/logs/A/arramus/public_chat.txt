@@ -1,0 +1,56 @@
+[06/08/2022 14:51:23] Spoke = Hey dude
+----------------------------------------------
+[06/08/2022 14:51:33] Spoke = This your server?
+----------------------------------------------
+[06/08/2022 14:52:08] Spoke = Hey man
+----------------------------------------------
+[06/08/2022 14:52:17] Spoke = I remember your name for some reason
+----------------------------------------------
+[06/08/2022 14:52:25] Spoke = Have you ever heard of deathlypvpz?
+----------------------------------------------
+[06/08/2022 14:52:35] Spoke = That private server from 10 years ago
+----------------------------------------------
+[06/08/2022 14:52:52] Spoke = If you google deathlypvpz
+----------------------------------------------
+[06/08/2022 14:53:03] Spoke = You'll see all the listings on runelocus and runeserver etc
+----------------------------------------------
+[06/08/2022 14:53:22] Spoke = Yeah, i'm hack3r
+----------------------------------------------
+[06/08/2022 14:53:30] Spoke = I made it man
+----------------------------------------------
+[06/08/2022 14:53:38] Spoke = Message me on rune-server and i'll reply dude
+----------------------------------------------
+[06/08/2022 14:53:41] Spoke = No joke haha
+----------------------------------------------
+[06/08/2022 14:53:50] Spoke = I jumped on to see how 317's were doing
+----------------------------------------------
+[06/08/2022 14:54:58] Spoke = There you go
+----------------------------------------------
+[06/08/2022 14:55:02] Spoke = Sent you a message on rune-server
+----------------------------------------------
+[06/08/2022 14:57:20] Spoke = I requested you
+----------------------------------------------
+[06/08/2022 14:59:20] Spoke = I think i remember godzhell
+----------------------------------------------
+[06/08/2022 14:59:43] Spoke = Reminds me of when runelocus made them webclients hosting with a variable ip
+----------------------------------------------
+[06/08/2022 14:59:56] Spoke = So people could host their own servers and as long as they had portforwarded
+----------------------------------------------
+[06/08/2022 15:00:02] Spoke = They would be able to host their own server
+----------------------------------------------
+[06/08/2022 15:00:14] Spoke = Feel like the entire rsps community has died a little bit
+----------------------------------------------
+[06/08/2022 15:00:28] Spoke = Thats why i came on to see if rsps were any good still
+----------------------------------------------
+[06/08/2022 15:00:40] Spoke = If you have a look at my deathlypvpz v5 thread on rune-server
+----------------------------------------------
+[06/08/2022 15:00:58] Spoke = Thats what i had a 317 doing
+----------------------------------------------
+[06/08/2022 15:02:14] Spoke = Is the plan to make it 317 with lower school graphics?
+----------------------------------------------
+[06/08/2022 15:02:33] Spoke = Because of the popularity of osrs these days
+----------------------------------------------
+[06/08/2022 15:07:09] Spoke = Ok heading out bro
+----------------------------------------------
+[06/08/2022 15:07:17] Spoke = Give me a message if you want the source code for it
+----------------------------------------------

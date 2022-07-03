@@ -4,9 +4,8 @@ import godzhell.Config;
 import godzhell.Server;
 import godzhell.clip.PathChecker;
 import godzhell.definitions.NPCCacheDefinition;
-import godzhell.event.CycleEvent;
-import godzhell.event.CycleEventContainer;
-import godzhell.event.CycleEventHandler;
+import godzhell.definitions.NpcID;
+import godzhell.event.*;
 import godzhell.model.Animation;
 import godzhell.model.AnimationPriority;
 import godzhell.model.content.DailyTaskKills;
@@ -84,8 +83,8 @@ public class NPCHandler {
 				}
 			}
 
-	public static int maxNPCs = 30000;
-	public static int maxListedNPCs = 10000;
+	public static int maxNPCs = 23000;
+	public static int maxListedNPCs = 30000;
 	public static int maxNPCDrops = 10000;
 	public static NPC npcs[] = new NPC[maxNPCs];
 	private static NPCDef[] npcDef = new NPCDef[maxListedNPCs];
@@ -99,7 +98,7 @@ public class NPCHandler {
 	public static String tektonAttack = "MELEE";
 	public static Boolean tektonWalking = false;
 	NPC TEKTON = NPCHandler.getNpc(7544);
-	
+
 	/**
 	 * Galvek variables
 	 */
@@ -306,7 +305,7 @@ public class NPCHandler {
 							npcs[i].projectileId, getProjectileStartHeight(npcs[i].npcType, npcs[i].projectileId),
 							getProjectileEndHeight(npcs[i].npcType, npcs[i].projectileId), -c.getIndex() - 1, 65);
 					if (npcs[i].npcType == 7554) {
-						c.getPA().sendPlayerObjectAnimation(c, 3220, 5738, 7371, 10, 3, c.getHeight());
+						c.getPA().sendPlayerObjectAnimation( 3220, 5738, 7371, 10, 3);
 					}
 				}
 			}
@@ -406,7 +405,7 @@ public class NPCHandler {
 
 	/**
 	 * Updated to support the new drop table checker
-	 * 
+	 *
 	 * @param i
 	 * @param searching
 	 * @return
@@ -439,10 +438,10 @@ public class NPCHandler {
 		if (npcs[i].inRaids() && npcs[i].getHealth().getMaximum() > 0)
 			return true;
 		switch(npcs[i].npcType){
-			case 2205://Commander Zilyana
-			case 2206://Starlight
-			case 2207://Growler
-			case 2208://Bree
+			case NpcID.COMMANDER_ZILYANA://Commander Zilyana
+			case NpcID.STARLIGHT://Starlight
+			case NpcID.GROWLER://Growler
+			case NpcID.BREE://Bree
 			case 2209://Saradomin priest
 			case 2210://Spiritual warrior
 			case 2211://Spiritual ranger
@@ -473,43 +472,12 @@ public class NPCHandler {
 			case 2265://Dagannoth Supreme
 			case 2266://Dagannoth Prime
 			case 2267://Dagannoth Rex
-			case 239://King Black Dragon
-			case 240://Black demon
 			case 241://Baby blue dragon
 			case 242://Baby blue dragon
 			case 243://Baby blue dragon
 			case 244://Baby red dragon
 			case 245://Baby red dragon
 			case 246://Baby red dragon
-			case 247://Red dragon
-			case 248://Red dragon
-			case 249://Red dragon
-			case 250://Red dragon
-			case 251://Red dragon
-			case 252://Black dragon
-			case 253://Black dragon
-			case 254://Black dragon
-			case 255://Black dragon
-			case 256://Black dragon
-			case 257://Black dragon
-			case 258://Black dragon
-			case 259://Black dragon
-			case 260://Green dragon
-			case 261://Green dragon
-			case 262://Green dragon
-			case 263://Green dragon
-			case 264://Green dragon
-			case 265://Blue dragon
-			case 266://Blue dragon
-			case 267://Blue dragon
-			case 268://Blue dragon
-			case 269://Blue dragon
-			case 270://Bronze dragon
-			case 271://Bronze dragon
-			case 272://Iron dragon
-			case 273://Iron dragon
-			case 274://Steel dragon
-			case 275://Steel dragon
 			case 465://Skeletal Wyvern
 			case 466://Skeletal Wyvern
 			case 467://Skeletal Wyvern
@@ -527,7 +495,6 @@ public class NPCHandler {
 			case 3130://Tstanon Karlak
 			case 3131://Zakl'n Gritch
 			case 3132://Balfrug Kreeyath
-			case 3133://Hellhound
 			case 3134://Imp
 			case 3135://Werewolf
 			case 3136://Werewolf
@@ -563,10 +530,182 @@ public class NPCHandler {
 			case 3183://Aviansie
 			case 2916://Waterfiend
 			case 2917://Waterfiend
-			case 2918://Brutal green dragon
 			case 2919://Mithril dragon
 			case 2920://Confused barbarian
 			case 2921://Lost barbarian
+			case NpcID.CALLISTO:
+			case NpcID.CHAOS_ELEMENTAL:
+			case NpcID.CHAOS_FANATIC:
+			case NpcID.CRAZY_ARCHAEOLOGIST:
+			case NpcID.KING_BLACK_DRAGON:
+			case NpcID.SCORPIA:
+			case NpcID.VENENATIS:
+			case NpcID.VETION:
+			case NpcID.WOLF:
+			case NpcID.HILL_GIANT:
+			case NpcID.HILL_GIANT_2099:
+			case NpcID.HILL_GIANT_2100:
+			case NpcID.HILL_GIANT_2101:
+			case NpcID.HILL_GIANT_2102:
+			case NpcID.HILL_GIANT_2103:
+			case NpcID.HILL_GIANT_7261:
+			case NpcID.HILL_GIANT_10374:
+			case NpcID.HILL_GIANT_10375:
+			case NpcID.HILL_GIANT_10376:
+			case NpcID.HILL_GIANT_11195:
+			case NpcID.FIRE_GIANT:
+			case NpcID.FIRE_GIANT_2076:
+			case NpcID.FIRE_GIANT_2077:
+			case NpcID.FIRE_GIANT_2078:
+			case NpcID.FIRE_GIANT_2079:
+			case NpcID.FIRE_GIANT_2080:
+			case NpcID.FIRE_GIANT_2081:
+			case NpcID.FIRE_GIANT_2082:
+			case NpcID.FIRE_GIANT_2083:
+			case NpcID.FIRE_GIANT_2084:
+			case NpcID.FIRE_GIANT_7251:
+			case NpcID.FIRE_GIANT_7252:
+			case NpcID.MOSS_GIANT:
+			case NpcID.MOSS_GIANT_2091:
+			case NpcID.MOSS_GIANT_2092:
+			case NpcID.MOSS_GIANT_2093:
+			case NpcID.MOSS_GIANT_3851:
+			case NpcID.MOSS_GIANT_3852:
+			case NpcID.MOSS_GIANT_7262:
+			case NpcID.MOSS_GIANT_8736:
+			case NpcID.ICE_GIANT:
+			case NpcID.ICE_GIANT_2086:
+			case NpcID.ICE_GIANT_2087:
+			case NpcID.ICE_GIANT_2088:
+			case NpcID.ICE_GIANT_2089:
+			case NpcID.ICE_GIANT_7878:
+			case NpcID.ICE_GIANT_7879:
+			case NpcID.ICE_GIANT_7880:
+			case NpcID.RED_DRAGON:
+			case NpcID.RED_DRAGON_248:
+			case NpcID.RED_DRAGON_249:
+			case NpcID.RED_DRAGON_250:
+			case NpcID.RED_DRAGON_251:
+			case NpcID.RED_DRAGON_8075:
+			case NpcID.RED_DRAGON_8078:
+			case NpcID.RED_DRAGON_8079:
+			case NpcID.BLACK_DRAGON:
+			case NpcID.BLACK_DRAGON_253:
+			case NpcID.BLACK_DRAGON_254:
+			case NpcID.BLACK_DRAGON_255:
+			case NpcID.BLACK_DRAGON_256:
+			case NpcID.BLACK_DRAGON_257:
+			case NpcID.BLACK_DRAGON_258:
+			case NpcID.BLACK_DRAGON_259:
+			case NpcID.GREEN_DRAGON:
+			case NpcID.GREEN_DRAGON_261:
+			case NpcID.GREEN_DRAGON_262:
+			case NpcID.GREEN_DRAGON_263:
+			case NpcID.GREEN_DRAGON_264:
+			case NpcID.GREEN_DRAGON_7868:
+			case NpcID.GREEN_DRAGON_7869:
+			case NpcID.GREEN_DRAGON_7870:
+			case NpcID.GREEN_DRAGON_8073:
+			case NpcID.GREEN_DRAGON_8076:
+			case NpcID.GREEN_DRAGON_8082:
+			case NpcID.BLUE_DRAGON:
+			case NpcID.BLUE_DRAGON_266:
+			case NpcID.BLUE_DRAGON_267:
+			case NpcID.BLUE_DRAGON_268:
+			case NpcID.BLUE_DRAGON_269:
+			case NpcID.BLUE_DRAGON_4385:
+			case NpcID.BLUE_DRAGON_5878:
+			case NpcID.BLUE_DRAGON_5879:
+			case NpcID.BLUE_DRAGON_5880:
+			case NpcID.BLUE_DRAGON_5881:
+			case NpcID.BLUE_DRAGON_5882:
+			case NpcID.BLUE_DRAGON_8074:
+			case NpcID.BLUE_DRAGON_8077:
+			case NpcID.BLUE_DRAGON_8083:
+			case NpcID.BRONZE_DRAGON:
+			case NpcID.BRONZE_DRAGON_271:
+			case NpcID.BRONZE_DRAGON_7253:
+			case NpcID.IRON_DRAGON:
+			case NpcID.IRON_DRAGON_273:
+			case NpcID.IRON_DRAGON_7254:
+			case NpcID.IRON_DRAGON_8080:
+			case NpcID.STEEL_DRAGON:
+			case NpcID.STEEL_DRAGON_274:
+			case NpcID.STEEL_DRAGON_275:
+			case NpcID.STEEL_DRAGON_7255:
+			case NpcID.STEEL_DRAGON_8086:
+			case NpcID.LAVA_DRAGON:
+			case NpcID.BRUTAL_BLUE_DRAGON:
+			case NpcID.BRUTAL_BLACK_DRAGON:
+			case NpcID.BRUTAL_BLACK_DRAGON_8092:
+			case NpcID.BRUTAL_BLACK_DRAGON_8093:
+			case NpcID.BRUTAL_GREEN_DRAGON:
+			case NpcID.BRUTAL_GREEN_DRAGON_8081:
+			case NpcID.BRUTAL_RED_DRAGON:
+			case NpcID.BRUTAL_RED_DRAGON_8087:
+			case NpcID.LESSER_DEMON:
+			case NpcID.LESSER_DEMON_2006:
+			case NpcID.LESSER_DEMON_2007:
+			case NpcID.LESSER_DEMON_2008:
+			case NpcID.LESSER_DEMON_2018:
+			case NpcID.LESSER_DEMON_7247:
+			case NpcID.LESSER_DEMON_3982:
+			case NpcID.LESSER_DEMON_7248:
+			case NpcID.LESSER_DEMON_7656:
+			case NpcID.LESSER_DEMON_7657:
+			case NpcID.LESSER_DEMON_7664:
+			case NpcID.LESSER_DEMON_7865:
+			case NpcID.LESSER_DEMON_7866:
+			case NpcID.LESSER_DEMON_7867:
+			case NpcID.GREATER_DEMON:
+			case NpcID.GREATER_DEMON_2026:
+			case NpcID.GREATER_DEMON_2027:
+			case NpcID.GREATER_DEMON_2028:
+			case NpcID.GREATER_DEMON_2029:
+			case NpcID.GREATER_DEMON_2030:
+			case NpcID.GREATER_DEMON_2031:
+			case NpcID.GREATER_DEMON_2032:
+			case NpcID.GREATER_DEMON_7244:
+			case NpcID.GREATER_DEMON_7245:
+			case NpcID.GREATER_DEMON_7246:
+			case NpcID.GREATER_DEMON_7871:
+			case NpcID.GREATER_DEMON_7872:
+			case NpcID.GREATER_DEMON_7873:
+			case NpcID.REVENANT_DEMON:
+			case NpcID.BLACK_DEMON:
+			case NpcID.BLACK_DEMON_1432:
+			case NpcID.BLACK_DEMON_2048:
+			case NpcID.BLACK_DEMON_2049:
+			case NpcID.BLACK_DEMON_2050:
+			case NpcID.BLACK_DEMON_2051:
+			case NpcID.BLACK_DEMON_2052:
+			case NpcID.BLACK_DEMON_5874:
+			case NpcID.BLACK_DEMON_5875:
+			case NpcID.BLACK_DEMON_5876:
+			case NpcID.BLACK_DEMON_5877:
+			case NpcID.BLACK_DEMON_6357:
+			case NpcID.BLACK_DEMON_7242:
+			case NpcID.BLACK_DEMON_7243:
+			case NpcID.BLACK_DEMON_7874:
+			case NpcID.BLACK_DEMON_7875:
+			case NpcID.BLACK_DEMON_7876:
+			case NpcID.BLACK_DEMON_HARD:
+			case NpcID.HELLHOUND:
+			case NpcID.HELLHOUND_105:
+			case NpcID.HELLHOUND_135:
+			case NpcID.HELLHOUND_3133:
+			case NpcID.HELLHOUND_7256:
+			case NpcID.HELLHOUND_7877:
+			case NpcID.BLACK_KNIGHT:
+			case NpcID.BLACK_KNIGHT_517:
+			case NpcID.VYREWATCH_SENTINEL_9756:
+			case NpcID.VYREWATCH_SENTINEL_9757:
+			case NpcID.VYREWATCH_SENTINEL_9758:
+			case NpcID.VYREWATCH_SENTINEL_9759:
+			case NpcID.VYREWATCH_SENTINEL_9760:
+			case NpcID.VYREWATCH_SENTINEL_9761:
+			case NpcID.VYREWATCH_SENTINEL_9763:
+			case 1047:
 				return true;
 		}
 
@@ -705,7 +844,7 @@ public class NPCHandler {
 		return newNPC;
 	}
 
-	
+
 	public Vorkath spawnVorkath(final Player c, int npcType, int x, int y, int heightLevel,
 			int WalkingType, int HP, int maxHit, int attack, int defence, boolean attackPlayer,
 			boolean headIcon) {
@@ -764,10 +903,10 @@ public class NPCHandler {
 		}
 		return newNPC;
 	}
-	
+
 	/**
 	 * Attack animations
-	 * 
+	 *
 	 * @param i
 	 *            the npc to perform the animation.
 	 * @return the animation to be performed.
@@ -778,7 +917,7 @@ public class NPCHandler {
 
 	/**
 	 * Death animations
-	 * 
+	 *
 	 * @param i
 	 *            the npc to perform the animation.
 	 * @return the animation to be performed.
@@ -789,7 +928,7 @@ public class NPCHandler {
 
 	/**
 	 * Death delay
-	 * 
+	 *
 	 * @param i
 	 *            the npc whom were setting the delay to
 	 * @return the delay were setting
@@ -872,13 +1011,24 @@ public class NPCHandler {
 
 	/**
 	 * Attack delay
-	 * 
+	 *
 	 * @param i
 	 *            the npc whom were setting the delay to
 	 * @return the delay were setting
 	 */
 	public int getNpcDelay(int i) {
 		switch (npcs[i].npcType) {
+			case 11278:
+				if((npcs[i].nexStage == 3 || npcs[i].nexStage == 4) && npcs[i].glod == 3) {
+					return 8;
+				}
+				if((npcs[i].nexStage == 5 || npcs[i].nexStage == 6) && npcs[i].glod == 3) {
+					return 18;
+				}
+				if((npcs[i].nexStage == 7 || npcs[i].nexStage == 8) && (npcs[i].glod == 2 || npcs[i].glod == 3)) {
+					return 8;
+				}
+				return 6;
 		case 499:
 			return 4;
 		case 498:
@@ -898,6 +1048,37 @@ public class NPCHandler {
 		case 3127:
 			case 7700:
 			return 8;
+			case NpcID.FIRE_GIANT:
+			case NpcID.FIRE_GIANT_2076:
+			case NpcID.FIRE_GIANT_2077:
+			case NpcID.FIRE_GIANT_2078:
+			case NpcID.FIRE_GIANT_2079:
+			case NpcID.FIRE_GIANT_2080:
+			case NpcID.FIRE_GIANT_2081:
+			case NpcID.FIRE_GIANT_2082:
+			case NpcID.FIRE_GIANT_2083:
+			case NpcID.FIRE_GIANT_2084:
+			case NpcID.FIRE_GIANT_7251:
+			case NpcID.FIRE_GIANT_7252:
+				return 5;
+			case NpcID.MOSS_GIANT:
+			case NpcID.MOSS_GIANT_2091:
+			case NpcID.MOSS_GIANT_2092:
+			case NpcID.MOSS_GIANT_2093:
+			case NpcID.MOSS_GIANT_3851:
+			case NpcID.MOSS_GIANT_3852:
+			case NpcID.MOSS_GIANT_7262:
+			case NpcID.MOSS_GIANT_8736:
+				return 6;
+			case NpcID.ICE_GIANT:
+			case NpcID.ICE_GIANT_2086:
+			case NpcID.ICE_GIANT_2087:
+			case NpcID.ICE_GIANT_2088:
+			case NpcID.ICE_GIANT_2089:
+			case NpcID.ICE_GIANT_7878:
+			case NpcID.ICE_GIANT_7879:
+			case NpcID.ICE_GIANT_7880:
+				return 5;
 		case 2205:
 			return 4;
 		case Brother.AHRIM:
@@ -924,6 +1105,21 @@ public class NPCHandler {
 			return 2;
 		case 3162:
 			return 7;
+			case NpcID.WOLF:
+				return 4;
+
+			case NpcID.HILL_GIANT:
+			case NpcID.HILL_GIANT_2099:
+			case NpcID.HILL_GIANT_2100:
+			case NpcID.HILL_GIANT_2101:
+			case NpcID.HILL_GIANT_2102:
+			case NpcID.HILL_GIANT_2103:
+			case NpcID.HILL_GIANT_7261:
+			case NpcID.HILL_GIANT_10374:
+			case NpcID.HILL_GIANT_10375:
+			case NpcID.HILL_GIANT_10376:
+			case NpcID.HILL_GIANT_11195:
+				return 6;
 		default:
 			return 5;
 		}
@@ -931,7 +1127,7 @@ public class NPCHandler {
 
 	/**
 	 * Projectile start height
-	 * 
+	 *
 	 * @param npcType
 	 *            the npc to perform the projectile
 	 * @param projectileId
@@ -963,7 +1159,7 @@ public class NPCHandler {
 
 	/**
 	 * Projectile end height
-	 * 
+	 *
 	 * @param npcType
 	 *            the npc to perform the projectile
 	 * @param projectileId
@@ -988,13 +1184,52 @@ public class NPCHandler {
 
 	/**
 	 * Hit delay
-	 * 
+	 *
 	 * @param i
 	 *            the npc whom were setting the delay to
 	 * @return the delay were setting
 	 */
 	public int getHitDelay(int i) {
 		switch (npcs[i].npcType) {
+			case 11278:
+
+				if(npcs[i].nexStage == 1 || npcs[i].nexStage == 2) {
+					switch(npcs[i].glod){
+						case 1:
+						case 2:
+							return 4;
+					}
+				}
+				else if(npcs[i].nexStage == 3 || npcs[i].nexStage == 4) {
+					switch(npcs[i].glod){
+						case 1:
+						case 2:
+							return 4;
+					}
+				}
+				else if(npcs[i].nexStage == 5 || npcs[i].nexStage == 6) {
+					switch(npcs[i].glod){
+						case 1:
+						case 2:
+							return 4;
+					}
+				}
+				else if(npcs[i].nexStage == 7 || npcs[i].nexStage == 8) {
+					switch(npcs[i].glod){
+						case 1:
+							return 4;
+						case 2:
+						case 3:
+							return 6;
+					}
+				}
+				else if(npcs[i].nexStage == 9) {
+					switch(npcs[i].glod){
+						case 1:
+							return 4;
+					}
+				}
+				return 2;
 		case 7706:
 		return 7;
 		case 1605:
@@ -1076,13 +1311,15 @@ public class NPCHandler {
 
 	/**
 	 * Respawn time
-	 * 
+	 *
 	 * @param i
 	 *            the npc whom were setting the time to
 	 * @return the time were setting
 	 */
 	public int getRespawnTime(int i) {
 		switch (npcs[i].npcType) {
+			case 11278:
+				return 300;
 		case 6600:
 		case 6601:
 		case 6602:
@@ -1140,7 +1377,37 @@ public class NPCHandler {
 		case 2266:
 		case 2267:
 			return 70;
-
+			case NpcID.FIRE_GIANT:
+			case NpcID.FIRE_GIANT_2076:
+			case NpcID.FIRE_GIANT_2077:
+			case NpcID.FIRE_GIANT_2078:
+			case NpcID.FIRE_GIANT_2079:
+			case NpcID.FIRE_GIANT_2080:
+			case NpcID.FIRE_GIANT_2081:
+			case NpcID.FIRE_GIANT_2082:
+			case NpcID.FIRE_GIANT_2083:
+			case NpcID.FIRE_GIANT_2084:
+			case NpcID.FIRE_GIANT_7251:
+			case NpcID.FIRE_GIANT_7252:
+				return 30;
+			case NpcID.MOSS_GIANT:
+			case NpcID.MOSS_GIANT_2091:
+			case NpcID.MOSS_GIANT_2092:
+			case NpcID.MOSS_GIANT_2093:
+			case NpcID.MOSS_GIANT_3851:
+			case NpcID.MOSS_GIANT_3852:
+			case NpcID.MOSS_GIANT_7262:
+			case NpcID.MOSS_GIANT_8736:
+				return 30;
+			case NpcID.ICE_GIANT:
+			case NpcID.ICE_GIANT_2086:
+			case NpcID.ICE_GIANT_2087:
+			case NpcID.ICE_GIANT_2088:
+			case NpcID.ICE_GIANT_2089:
+			case NpcID.ICE_GIANT_7878:
+			case NpcID.ICE_GIANT_7879:
+			case NpcID.ICE_GIANT_7880:
+				return 30;
 		case 6611:
 		case 6612:
 		case 492:
@@ -1185,6 +1452,21 @@ public class NPCHandler {
 		case 3780:
 		case 7302:
 			return 500;
+			case NpcID.WOLF:
+				return 90;
+
+			case NpcID.HILL_GIANT:
+			case NpcID.HILL_GIANT_2099:
+			case NpcID.HILL_GIANT_2100:
+			case NpcID.HILL_GIANT_2101:
+			case NpcID.HILL_GIANT_2102:
+			case NpcID.HILL_GIANT_2103:
+			case NpcID.HILL_GIANT_7261:
+			case NpcID.HILL_GIANT_10374:
+			case NpcID.HILL_GIANT_10375:
+			case NpcID.HILL_GIANT_10376:
+			case NpcID.HILL_GIANT_11195:
+				return 30;
 		default:
 			return 25;
 		}
@@ -1192,7 +1474,7 @@ public class NPCHandler {
 
 	/**
 	 * Spawn a new npc on the world
-	 * 
+	 *
 	 * @param npcType
 	 *            the npcType were spawning
 	 * @param x
@@ -1242,14 +1524,46 @@ public class NPCHandler {
 		newNPC.resetDamageTaken();
 		npcs[slot] = newNPC;
 	}
+	public void newNPC3(int npcType, int x, int y, int heightLevel,
+						int WalkingType, int HP, int maxHit, int attack, int defence,
+						int size) {
+		// first, search for a free slot
+		int slot = -1;
+		for (int i = 1; i < maxNPCs; i++) {
+			if (npcs[i] == null) {
+				slot = i;
+				break;
+			}
+		}
 
+		if (slot == -1)
+			return; // no free slot found
+		NPCDefinitions definition = NPCDefinitions.get(npcType);
+		NPC newNPC = new NPC(slot, npcType, definition);
+		newNPC.absX = x;
+		newNPC.absY = y;
+		newNPC.makeX = x;
+		newNPC.makeY = y;
+		newNPC.heightLevel = heightLevel;
+		newNPC.walkingType = WalkingType;
+		newNPC.getHealth().setMaximum(HP);
+		newNPC.getHealth().reset();
+		newNPC.maxHit = maxHit;
+		newNPC.attack = attack;
+		newNPC.defence = defence;
+		//newNPC.npcSize = size;
+		npcs[slot] = newNPC;
+		/*if (npcType == 1160) {
+			npcs[slot].actionTimer = 4;
+			npcs[slot].startAnimation(6237);*/
+	}
 	public boolean olmDead;
 	public static boolean rightClawDead;
 	public static boolean leftClawDead;
 
 	/**
 	 * Constructs a new npc list
-	 * 
+	 *
 	 * @param npcType
 	 *            npcType to be set
 	 * @param npcName
@@ -1299,7 +1613,71 @@ public class NPCHandler {
 				if (npcs[i].actionTimer > 0) {
 					npcs[i].actionTimer--;
 				}
-
+				if(npcs[i].npcType == 11278) {
+					if(nexCountDown > 0) {
+						nexCountDown--;
+						nexCountDown = 24;
+						System.out.println(nexCountDown);
+						if(npcs[i].nexStage == 0) {
+							if(nexCountDown == 24) {
+								npcs[i].forceChat("AT LAST!");
+							}
+							else if(nexCountDown == 18) {
+								npcs[i].forceChat("Fumus!");
+								//npcs[i].startAnimation(6987);
+								npcs[i].turnNpc(2552, 4967);
+							}
+							else if(nexCountDown == 14) {
+								npcs[i].forceChat("Umbra!");
+								//npcs[i].startAnimation(6987);
+								npcs[i].turnNpc(2567, 4967);
+							}
+							else if(nexCountDown == 10) {
+								npcs[i].forceChat("Cruor!");
+								//npcs[i].startAnimation(6987);
+								npcs[i].turnNpc(2567, 4952);
+							}
+							else if(nexCountDown == 6) {
+								npcs[i].forceChat("Glacies!");
+								//npcs[i].startAnimation(6987);
+								npcs[i].turnNpc(2552, 4952);
+							}
+							else if(nexCountDown == 2) {
+								npcs[i].forceChat("Fill my soul with smoke!");
+								npcs[i].nexStage = 1;
+							}
+						}
+						else if(npcs[i].nexStage == 2) {
+							if(nexCountDown == 1) {
+								npcs[i].forceChat("Darken my shadow!");
+								npcs[i].nexStage = 3;
+							}
+						}
+						else if(npcs[i].nexStage == 4) {
+							if(nexCountDown == 1) {
+								npcs[i].forceChat("Flood my lungs with blood!");
+								npcs[i].nexStage = 5;
+							}
+						}
+						else if(npcs[i].nexStage == 6) {
+							if(nexCountDown == 1) {
+								npcs[i].forceChat("Infuse me with the power of ice!");
+								npcs[i].nexStage = 7;
+							}
+						}
+						else if(npcs[i].nexStage == 8) {
+							if (nexCountDown == 1) {
+								npcs[i].forceChat("NOW, THE POWER OF ZAROS!");
+								npcs[i].nexStage = 9;
+								nexCountDown = 10;
+								int maximum = npcs[i].getHealth().getMaximum() + 600;
+								npcs[i].getHealth().setAmount(maximum);
+								//npcs[i].startAnimation(6326);
+								NPCHandler.npcs[i].updateRequired = true;
+							}
+						}
+					}
+				}
 				if (npcs[i].freezeTimer > 0) {
 					npcs[i].freezeTimer--;
 				}
@@ -1350,7 +1728,11 @@ public class NPCHandler {
 						npcs[i].gfx0(110);
 					}
 				}
-				if (npcs[i].npcType == 280) {
+				if (npcs[i].npcType == NpcID.TOWN_CRIER ||
+						npcs[i].npcType == NpcID.TOWN_CRIER_277 ||
+						npcs[i].npcType == NpcID.TOWN_CRIER_278 ||
+						npcs[i].npcType == NpcID.TOWN_CRIER_279  ||
+						npcs[i].npcType == NpcID.TOWN_CRIER_280  || npcs[i].npcType == NpcID.TOWN_CRIER_6823  || npcs[i].npcType == NpcID.TOWN_CRIER_10887) {
 					if (Misc.random(50) == 2) {
 						npcs[i].forceChat(Config.UPDATE_MESSAGE);
 						npcs[i].animationUpdateRequired = true;
@@ -1554,10 +1936,10 @@ public class NPCHandler {
 					CorporealBeast.checkCore();
 				}
 
-				if (type == 8026 || type == 8027) {
+				if (type == 8058 || type == 8059) {
 					npcs[i].setFacePlayer(false);
 				}
-				if (type == 8028 || type == 8061) {
+				if (type == 8060 || type == 8061) {
 					npcs[i].setFacePlayer(true);
 				}
 				if (type >= 2042 && type <= 2044 && npcs[i].getHealth().getAmount() > 0) {
@@ -1584,10 +1966,10 @@ public class NPCHandler {
 				if (isAggressive(i, false) && !npc.underAttack && npc.killerId <= 0 && !npc.isDead
 						&& !switchesAttackers(i) && npc.inMulti() && !Boundary.isIn(npc, Boundary.GODWARS_BOSSROOMS)
 						&& !Boundary.isIn(npcs[i], Boundary.CORPOREAL_BEAST_LAIR)) {
-					
+
 					Player closestPlayer = null;
 					int closestDistance = Integer.MAX_VALUE;
-					
+
 					God god = GodwarsNPCs.NPCS.get(npc.npcType);
 
 					for (Player player : PlayerHandler.players) {
@@ -1637,26 +2019,26 @@ public class NPCHandler {
 					Player closestPlayer = null;
 					int closestDistance = Integer.MAX_VALUE;
 					boolean attackthem = true;
-					
+
 					for(Player ppl : PlayerHandler.players) {
 						if(ppl == null)
 							continue;
 						if(ppl.isIdle)
 							continue;
 						if(ppl.getItems().isWearingItem(1327)) {
-							
+
 							attackthem = false;
 						}
-						
+
 						if(attackthem) {
-							
+
 							closestPlayer = ppl;
 						}
 						if(!attackthem) {
 							//ppl.sendMessage("You are safe");
 							closestPlayer = null;
 						}
-						
+
 						int distance = Misc.distanceToPoint(npc.absX, npc.absY, ppl.absX, ppl.absY);
 						if (distance < closestDistance && distance <= distanceRequired(i) + followDistance(i)) {
 							closestDistance = distance;
@@ -1668,18 +2050,18 @@ public class NPCHandler {
 								//ppl.sendMessage("You are safe");
 								closestPlayer = null;
 							}
-								
+
 						}
 					}
-					
-					
-					
-					if (closestPlayer != null && System.currentTimeMillis() - npcs[i].lastDamageTaken < 5000) {	
+
+
+
+					if (closestPlayer != null && System.currentTimeMillis() - npcs[i].lastDamageTaken < 5000) {
 						npc.killerId = closestPlayer.getIndex();
 						closestPlayer.underAttackBy = npc.getIndex();
 						closestPlayer.underAttackBy2 = npc.getIndex();
 					}
-					
+
 				}
 
 				if (System.currentTimeMillis() - npcs[i].lastDamageTaken > 5000 && !npcs[i].underAttack) {
@@ -1724,7 +2106,7 @@ public class NPCHandler {
 				}
 
 				/**
-				 * 
+				 *
 				 * Random walking and walking home
 				 **/
 				if (npcs[i] == null)
@@ -1813,7 +2195,7 @@ public class NPCHandler {
 					Player player = PlayerHandler.players[npcs[i].spawnedBy];
 
 					if (npcs[i].actionTimer == 0 && !npcs[i].applyDead && !npcs[i].needRespawn) {
-						if (npcs[i].npcType == 8028 || npcs[i].npcType == 8061) {
+						if (npcs[i].npcType == 8060 || npcs[i].npcType == 8061) {
 							CycleEventHandler.getSingleton().addEvent(player, new CycleEvent() {
 								@Override
 								public void execute(CycleEventContainer container) {
@@ -1824,11 +2206,11 @@ public class NPCHandler {
 										Server.itemHandler.createGroundItem(player, 2425, VorkathInstance.lootCoordinates[0],
 												VorkathInstance.lootCoordinates[1], player.heightLevel, 1, player.getIndex());
 									}
-									Vorkath vorkath = Server.npcHandler.spawnVorkath(player, 8026, 2272, 4065, player.getHeight(), 0, 750,
+									Vorkath vorkath = Server.npcHandler.spawnVorkath(player, 8059, 2269, 4062, player.getHeight(), 0, 750,
 											player.antifireDelay > 0 ? 0 : 61, 560, 114, true, false);
-									
+
 									player.setVorkath(vorkath);
-									
+
 									container.stop();
 								}
 
@@ -1837,7 +2219,15 @@ public class NPCHandler {
 								}
 							}, 9);
 						}
-
+					 if(npcs[i].npcType == 11278) {
+						newNPC3(NpcID.FUMUS, 2913, 5215, 0, 0, 600, 32, 120, 100, 4);
+						newNPC3(NpcID.UMBRA, 2937, 5215, 0, 0, 600, 32, 120, 100, 4);
+						newNPC3(NpcID.CRUOR, 2937, 5191, 0, 0, 600, 32, 120, 100, 4);
+						newNPC3(NpcID.GLACIES, 2913, 5191, 0, 0, 600, 32, 120, 100, 4);
+						for(int nr = 0; nr < nexRoom.length; nr++) {
+							nexRoom[nr] = false;
+						}
+					}
 						if (npcs[i].npcType == 6618) {
 							npcs[i].forceChat("Ow!");
 						}
@@ -2203,7 +2593,7 @@ public class NPCHandler {
 
 	/**
 	 * Apply damage
-	 * 
+	 *
 	 * @param i
 	 *            the damage were applying towards a playable character
 	 */
@@ -2953,7 +3343,7 @@ public class NPCHandler {
 
 	/**
 	 * Poison damage
-	 * 
+	 *
 	 * @param npc
 	 *            the npc whom can be poisonous
 	 * @return the amount of damage the poison will begin on
@@ -2980,7 +3370,7 @@ public class NPCHandler {
 
 	/**
 	 * Multi attacks from a distance
-	 * 
+	 *
 	 * @param npc
 	 *            the npc whom can pefrom multiattacks from a distance
 	 * @return the distance that the npc can reach from
@@ -2998,7 +3388,7 @@ public class NPCHandler {
 
 	/**
 	 * Multi attack damage
-	 * 
+	 *
 	 * @param i
 	 *            the damage set
 	 */
@@ -3099,7 +3489,9 @@ public class NPCHandler {
 							case 6612:
 								damage *= .5;
 								break;
-
+								case 11278:
+									damage = Misc.random((55));
+									break;
 							case 319:
 								if (c.protectingMagic())
 									damage /= 2;
@@ -3119,6 +3511,12 @@ public class NPCHandler {
 							}
 							if (npcs[i].npcType == 2215) {
 								damage /= 2;
+							}
+							if (npcs[i].npcType == 11278) {
+								damage /= 2;
+							}
+							else if(npcs[i].npcType == 11278) {
+								damage = Misc.random(40);
 							}
 						} else {
 							switch (npcs[i].npcType) {
@@ -3140,7 +3538,7 @@ public class NPCHandler {
 
 	/**
 	 * Gets pulled
-	 * 
+	 *
 	 * @param i
 	 *            the npc to be pulled
 	 * @return return true if it can, false otherwise
@@ -3157,7 +3555,7 @@ public class NPCHandler {
 
 	/**
 	 * Multi attacks
-	 * 
+	 *
 	 * @param i
 	 *            the npc whom can perform multi attacks
 	 * @return true if it can, false otherwise
@@ -3165,6 +3563,7 @@ public class NPCHandler {
 	public boolean multiAttacks(int i) {
 		switch (npcs[i].npcType) {
 			case 7554:
+			case NpcID.NEX:
 				return true;
 		case 6611:
 		case 6612:
@@ -3205,7 +3604,7 @@ public class NPCHandler {
 
 	/**
 	 * Npc killer id
-	 * 
+	 *
 	 * @param npcId
 	 *            the npc whom were grabbing the id from
 	 * @return the killeId to be printed
@@ -3229,13 +3628,25 @@ public class NPCHandler {
 
 	/**
 	 * Barrows kills
-	 * 
+	 *
 	 * @param i
 	 *            the barrow brother whom been killed
 	 */
 	private void killedBarrow(int i) {
 		Player player = PlayerHandler.players[npcs[i].killedBy];
 		if (player != null && player.getBarrows() != null) {
+			if(npcs[i].npcType == 11278) {
+				nexCountDown = 3;
+			}
+			else if(npcs[i].npcType == 11279) {
+				nexCountDown = 3;
+			}
+			else if(npcs[i].npcType == 11280) {
+				nexCountDown = 3;
+			}
+			else if(npcs[i].npcType == 11281) {
+				nexCountDown = 3;
+			}
 			Optional<Brother> brother = player.getBarrows().getBrother(npcs[i].npcType);
 			if (brother.isPresent()) {
 				brother.get().handleDeath();
@@ -3249,7 +3660,7 @@ public class NPCHandler {
 
 	/**
 	 * Godwars kill
-	 * 
+	 *
 	 * @param npc
 	 *            the godwars npc whom been killed
 	 */
@@ -3275,7 +3686,7 @@ public class NPCHandler {
 
 	/**
 	 * Handles kills towards the achievement diaries
-	 * 
+	 *
 	 * @param npc
 	 *            The npc killed.
 	 */
@@ -3289,7 +3700,7 @@ public class NPCHandler {
 
 	/**
 	 * Handles kills towards daily tasks
-	 * 
+	 *
 	 * @param npc
 	 *            The npc killed.
 	 */
@@ -3303,7 +3714,7 @@ public class NPCHandler {
 
 	/**
 	 * Tzhaar kill
-	 * 
+	 *
 	 * @param player
 	 *            the player who killed a tzhaar
 	 * @param i
@@ -3333,7 +3744,7 @@ public class NPCHandler {
 
 	/**
 	 * Killed tzhaar
-	 * 
+	 *
 	 * @param player
 	 *            the player who killed a tzhaar
 	 * @param i
@@ -3362,7 +3773,7 @@ public class NPCHandler {
 
 	/**
 	 * Jad kill
-	 * 
+	 *
 	 * @param i
 	 */
 	public void handleJadDeath(int i) {
@@ -3376,7 +3787,7 @@ public class NPCHandler {
 
 	/**
 	 * Dropping items
-	 * 
+	 *
 	 * @param i
 	 */
 	public void dropItems(int i) {
@@ -3646,13 +4057,13 @@ public class NPCHandler {
 		case 7560:
 		case 7559:
 		case 8030:
-		case 8031:	
+		case 8031:
 			return false;
 		}
 		return true;
 	}
 
-	public void followPlayer(int i, int playerId) { 
+	public void followPlayer(int i, int playerId) {
 		if (PlayerHandler.players[playerId] == null) {
 			return;
 		}
@@ -3739,6 +4150,113 @@ public class NPCHandler {
 	public void loadSpell(Player player, int i) {
 		int chance = 0;
 		switch (npcs[i].npcType) {
+			case 11278:
+				if(npcs[i].nexStage == 1 || npcs[i].nexStage == 2) {
+					if(npcs[i].glod == 1) {
+						//npcs[i].multiAttack = true;
+						npcs[i].attackType = CombatType.MAGE;
+						npcs[i].projectileId = 2004;
+						npcs[i].endGfx = 2005;
+					} else if(npcs[i].glod == 2) {
+						npcs[i].forceChat("Let the virus flow through you!");
+						//npcs[i].multiAttack = true;
+						npcs[i].attackType = CombatType.SPECIAL;
+						npcs[i].projectileId = -1;
+						npcs[i].endGfx = -1;
+						npcs[i].cooldown = 30;
+					} else {
+						npcs[i].attackType = CombatType.MELEE;
+						npcs[i].projectileId = -1;
+						npcs[i].endGfx = -1;
+					}
+				}
+				else if(npcs[i].nexStage == 3 || npcs[i].nexStage == 4) {
+					if(npcs[i].glod == 1) {
+						//npcs[i].multiAttack = true;
+						npcs[i].attackType = CombatType.RANGE;
+						npcs[i].projectileId = 2004;
+						npcs[i].endGfx = -1;
+					} else if(npcs[i].glod == 2) {
+						npcs[i].forceChat("Embrace darkness!");
+						//npcs[i].multiAttack = true;
+						npcs[i].attackType = CombatType.SPECIAL;
+						npcs[i].projectileId = -1;
+						npcs[i].endGfx = -1;
+						npcs[i].cooldown = 30;
+					} else if(npcs[i].glod == 3) {
+						npcs[i].forceChat("Fear the shadow!");
+						//npcs[i].multiAttack = true;
+						npcs[i].attackType = CombatType.SPECIAL;
+						npcs[i].projectileId = -1;
+						npcs[i].endGfx = 382;
+					} else {
+						npcs[i].attackType = CombatType.MELEE;
+						npcs[i].projectileId = -1;
+						npcs[i].endGfx = -1;
+					}
+				}
+				else if(npcs[i].nexStage == 5 || npcs[i].nexStage == 6) {
+					if(npcs[i].glod == 1) {
+						//npcs[i].multiAttack = true;
+						npcs[i].attackType = CombatType.MAGE;
+						npcs[i].projectileId = 374;
+						npcs[i].endGfx = 376;
+					} else if(npcs[i].glod == 2) {
+						npcs[i].forceChat("I demand a blood sacrifice!");
+						//npcs[i].multiAttack = true;
+						npcs[i].attackType = CombatType.MAGE;
+						npcs[i].projectileId = -1;
+						npcs[i].endGfx = 377;
+						npcs[i].cooldown = 20;
+					} else if(npcs[i].glod == 3) {
+						npcs[i].forceChat("A siphon will solve this!");
+						npcs[i].attackType = CombatType.MAGE;
+						npcs[i].projectileId = -1;
+						npcs[i].endGfx = -1;
+					} else {
+						npcs[i].attackType = CombatType.MELEE;
+						npcs[i].projectileId = -1;
+						npcs[i].endGfx = -1;
+					}
+				}
+				else if(npcs[i].nexStage == 7 || npcs[i].nexStage == 8) {
+					if(npcs[i].glod == 1) {
+						//npcs[i].multiAttack = true;
+						npcs[i].attackType = CombatType.MAGE;
+						npcs[i].projectileId = 362;
+						npcs[i].endGfx = 369;
+					} else if(npcs[i].glod == 2) {
+						npcs[i].forceChat("Contain this!");
+						//npcs[i].multiAttack = true;
+						npcs[i].attackType = CombatType.MAGE;
+						npcs[i].projectileId = -1;
+						npcs[i].endGfx = -1;
+						npcs[i].cooldown = 16;
+					} else if(npcs[i].glod == 3) {
+						npcs[i].forceChat("Die now, in a prison of ice!");
+						npcs[i].attackType = CombatType.MAGE;
+						npcs[i].projectileId = -1;
+						npcs[i].endGfx = -1;
+						npcs[i].cooldown = 16;
+					} else {
+						npcs[i].attackType = CombatType.MELEE;
+						npcs[i].projectileId = -1;
+						npcs[i].endGfx = -1;
+					}
+				}
+				else if(npcs[i].nexStage == 9) {
+					if(npcs[i].glod == 1) {
+						//npcs[i].multiAttack = true;
+						npcs[i].attackType = CombatType.MAGE;
+						npcs[i].projectileId = 386;
+						npcs[i].endGfx = 390;
+					} else {
+						npcs[i].attackType = CombatType.MELEE;
+						npcs[i].projectileId = (npcs[i].prayerUsed == 1 ? 2263:-1);
+						npcs[i].endGfx = (npcs[i].prayerUsed == 1 ? 2264:-1);
+					}
+				}
+				break;
 			case 7931:
 			case 7932:
 			case 7933:
@@ -3828,7 +4346,7 @@ public class NPCHandler {
 					npcs[i].endGfx = -1;
 
 				break;
-				
+
 			case 8095:
 				if (Objects.equals(galvekAttack, "MAGIC")) {
 					npcs[i].attackType = CombatType.MAGE;
@@ -4476,19 +4994,68 @@ public class NPCHandler {
 			npcs[i].projectileId = 298;
 			npcs[i].attackType = CombatType.RANGE;
 			break;
-		case 264:
-		case 259:
-		case 247:
-		case 268:
-		case 270:
-		case 274:
-		case 6593:
-		case 273:
-		case 2919:
-		case 7273:
-		case 7274:
-		case 2918:
-		case 7275:
+			case NpcID.RED_DRAGON:
+			case NpcID.RED_DRAGON_248:
+			case NpcID.RED_DRAGON_249:
+			case NpcID.RED_DRAGON_250:
+			case NpcID.RED_DRAGON_251:
+			case NpcID.RED_DRAGON_8075:
+			case NpcID.RED_DRAGON_8078:
+			case NpcID.RED_DRAGON_8079:
+			case NpcID.BLACK_DRAGON:
+			case NpcID.BLACK_DRAGON_253:
+			case NpcID.BLACK_DRAGON_254:
+			case NpcID.BLACK_DRAGON_255:
+			case NpcID.BLACK_DRAGON_256:
+			case NpcID.BLACK_DRAGON_257:
+			case NpcID.BLACK_DRAGON_258:
+			case NpcID.BLACK_DRAGON_259:
+			case NpcID.GREEN_DRAGON:
+			case NpcID.GREEN_DRAGON_261:
+			case NpcID.GREEN_DRAGON_262:
+			case NpcID.GREEN_DRAGON_263:
+			case NpcID.GREEN_DRAGON_264:
+			case NpcID.GREEN_DRAGON_7868:
+			case NpcID.GREEN_DRAGON_7869:
+			case NpcID.GREEN_DRAGON_7870:
+			case NpcID.GREEN_DRAGON_8073:
+			case NpcID.GREEN_DRAGON_8076:
+			case NpcID.GREEN_DRAGON_8082:
+			case NpcID.BLUE_DRAGON:
+			case NpcID.BLUE_DRAGON_266:
+			case NpcID.BLUE_DRAGON_267:
+			case NpcID.BLUE_DRAGON_268:
+			case NpcID.BLUE_DRAGON_269:
+			case NpcID.BLUE_DRAGON_4385:
+			case NpcID.BLUE_DRAGON_5878:
+			case NpcID.BLUE_DRAGON_5879:
+			case NpcID.BLUE_DRAGON_5880:
+			case NpcID.BLUE_DRAGON_5881:
+			case NpcID.BLUE_DRAGON_5882:
+			case NpcID.BLUE_DRAGON_8074:
+			case NpcID.BLUE_DRAGON_8077:
+			case NpcID.BLUE_DRAGON_8083:
+			case NpcID.BRONZE_DRAGON:
+			case NpcID.BRONZE_DRAGON_271:
+			case NpcID.BRONZE_DRAGON_7253:
+			case NpcID.IRON_DRAGON:
+			case NpcID.IRON_DRAGON_273:
+			case NpcID.IRON_DRAGON_7254:
+			case NpcID.IRON_DRAGON_8080:
+			case NpcID.STEEL_DRAGON:
+			case NpcID.STEEL_DRAGON_274:
+			case NpcID.STEEL_DRAGON_275:
+			case NpcID.STEEL_DRAGON_7255:
+			case NpcID.STEEL_DRAGON_8086:
+			case NpcID.LAVA_DRAGON:
+			case NpcID.BRUTAL_BLUE_DRAGON:
+			case NpcID.BRUTAL_BLACK_DRAGON:
+			case NpcID.BRUTAL_BLACK_DRAGON_8092:
+			case NpcID.BRUTAL_BLACK_DRAGON_8093:
+			case NpcID.BRUTAL_GREEN_DRAGON:
+			case NpcID.BRUTAL_GREEN_DRAGON_8081:
+			case NpcID.BRUTAL_RED_DRAGON:
+			case NpcID.BRUTAL_RED_DRAGON_8087:
 			int random3 = Misc.random(2);
 			if (random3 == 0) {
 				npcs[i].projectileId = 393;
@@ -4692,7 +5259,7 @@ public class NPCHandler {
 				npcs[i].projectileId = -1;
 			}
 			break;
-		case 3209:// cave horror
+		case NpcID.CAVE_HORROR:// cave horror
 			random = Misc.random(3);
 			if (random == 0 || random == 1) {
 				npcs[i].attackType = CombatType.MELEE;
@@ -5005,7 +5572,7 @@ public class NPCHandler {
 			npcs[i].projectileId = 1242;
 			npcs[i].endGfx = 1243;
 			break;
-		
+
 		case 8030://Addy Drag
 			int random4 = Misc.random(100);
 			distance = player.distanceToPoint(npcs[i].absX, npcs[i].absY);
@@ -5018,7 +5585,7 @@ public class NPCHandler {
 				npcs[i].projectileId = -1;
 				npcs[i].endGfx = -1;
 			}
-			break;					
+			break;
 		case 8031://Rune Drag
 			int random5 = Misc.random(100);
 			distance = player.distanceToPoint(npcs[i].absX, npcs[i].absY);
@@ -5031,7 +5598,7 @@ public class NPCHandler {
 				npcs[i].projectileId = -1;
 				npcs[i].endGfx = -1;
 			}
-			break;	
+			break;
 
 		case Skotizo.SKOTIZO_ID:
 			int randomStyle;
@@ -5094,6 +5661,25 @@ public class NPCHandler {
 			return distanceNeeded += 4;
 		}
 		switch (npcs[i].npcType) {
+			case 11278:
+					if(npcs[i].nexStage == 1 || npcs[i].nexStage == 2) {
+						npcs[i].glod = 1+Misc.random2(1);
+					}
+					else if((npcs[i].nexStage == 3 || npcs[i].nexStage == 4) || (npcs[i].nexStage == 5 || npcs[i].nexStage == 6) || (npcs[i].nexStage == 7 || npcs[i].nexStage == 8)) {
+						npcs[i].glod = 1+Misc.random2(2);
+					}
+					else if(npcs[i].nexStage == 9) {
+						npcs[i].glod = 1;
+					}
+				if(npcs[i].cooldown > 0) {
+					if(((npcs[i].nexStage == 1 || npcs[i].nexStage == 2) && npcs[i].glod == 2) ||
+							((npcs[i].nexStage == 3 || npcs[i].nexStage == 4) && npcs[i].glod == 2) ||
+							((npcs[i].nexStage == 5 || npcs[i].nexStage == 6) && npcs[i].glod == 2 || npcs[i].glod == 3) ||
+							((npcs[i].nexStage == 7 || npcs[i].nexStage == 8) && (npcs[i].glod == 2 || npcs[i].glod == 3))) {
+						npcs[i].glod = 1;
+					}
+				}
+				return 6 + npcs[i].getSize();
 		case Skotizo.SKOTIZO_ID:
 			return npcs[i].attackType == CombatType.MAGE ? 15 : 2;
 		case 7706:
@@ -5415,6 +6001,8 @@ public class NPCHandler {
 
 	public int getProjectileSpeed(int i) {
 		switch (npcs[i].npcType) {
+			case 11278:
+				return 100;
 		case 498:
 			return 120;
 		case 499:
@@ -5447,7 +6035,7 @@ public class NPCHandler {
 
 	/**
 	 * Npcs who ignores projectile clipping to ensure no safespots
-	 * 
+	 *
 	 * @param i
 	 * @return true is the npc is using range, mage or special
 	 */
@@ -5536,6 +6124,66 @@ public class NPCHandler {
 			// }
 			// break;
 			}
+		if(npcs[i].npcType == 11278) {
+			if(npcs[i].nexStage == 7 || npcs[i].nexStage == 8) {
+				if(npcs[i].glod == 2) {
+					npcs[i].CONTAIN_THIS[0][0] = npcs[i].absX-2;
+					npcs[i].CONTAIN_THIS[0][1] = npcs[i].absY-2;
+					npcs[i].CONTAIN_THIS[1][0] = npcs[i].absX+2;
+					npcs[i].CONTAIN_THIS[1][1] = npcs[i].absY+2;
+					int obx = 0, oby = 0;
+					for(int s = 0; s < 4; s++) {
+						Server.getGlobalObjects().add(new GlobalObject(534, npcs[i].CONTAIN_THIS[0][0]+obx, npcs[i].CONTAIN_THIS[0][1], 0, 10, 0));
+						Server.getGlobalObjects().add(new GlobalObject(534, npcs[i].CONTAIN_THIS[1][0]-obx, npcs[i].CONTAIN_THIS[1][1], 0, 10, 0));
+						Server.getGlobalObjects().add(new GlobalObject(534, npcs[i].CONTAIN_THIS[1][0], npcs[i].CONTAIN_THIS[0][1]+oby, 0, 10, 0));
+						Server.getGlobalObjects().add(new GlobalObject(534, npcs[i].CONTAIN_THIS[0][0], npcs[i].CONTAIN_THIS[1][1]-oby, 0, 10, 0));
+						obx++;
+						oby++;
+					}
+					final Player c1 = c;
+					final int I = i;
+					EventManager.getSingleton().addEvent(new Event2() {
+						public void execute(EventContainer e) {
+							int obX = 0, obY = 0;
+							for(int s = 0; s < 4; s++) {
+								Server.getGlobalObjects().add(new GlobalObject(-1, npcs[I].CONTAIN_THIS[0][0]+obX, npcs[I].CONTAIN_THIS[0][1], 0, 10, 0));
+								Server.getGlobalObjects().add(new GlobalObject(-1, npcs[I].CONTAIN_THIS[1][0]-obX, npcs[I].CONTAIN_THIS[1][1], 0, 10, 0));
+								Server.getGlobalObjects().add(new GlobalObject(-1, npcs[I].CONTAIN_THIS[1][0], npcs[I].CONTAIN_THIS[0][1]+obY, 0, 10, 0));
+								Server.getGlobalObjects().add(new GlobalObject(-1, npcs[I].CONTAIN_THIS[0][0], npcs[I].CONTAIN_THIS[1][1]-obY, 0, 10, 0));
+								obX++;
+								obY++;
+							}
+							npcs[I].CONTAIN_THIS[0][0] = 0;
+							e.stop();
+						}
+					}, 4000);
+				} else if(npcs[i].glod == 3) {
+					Server.getGlobalObjects().add(new GlobalObject(534, c.absX-1, c.absY-1, 0, 10, 0));
+					Server.getGlobalObjects().add(new GlobalObject(534, c.absX, c.absY-1, 0, 10, 0));
+					Server.getGlobalObjects().add(new GlobalObject(534, c.absX+1, c.absY-1, 0, 10, 0));
+					Server.getGlobalObjects().add(new GlobalObject(534, c.absX+1, c.absY, 0, 10, 0));
+					Server.getGlobalObjects().add(new GlobalObject(534, c.absX+1, c.absY+1, 0, 10, 0));
+					Server.getGlobalObjects().add(new GlobalObject(534, c.absX, c.absY+1, 0, 10, 0));
+					Server.getGlobalObjects().add(new GlobalObject(534, c.absX-1, c.absY+1, 0, 10, 0));
+					Server.getGlobalObjects().add(new GlobalObject(534, c.absX-1, c.absY, 0, 10, 0));
+					final Player c1 = c;
+					final int I = i;
+					EventManager.getSingleton().addEvent(new Event2() {
+						public void execute(EventContainer e) {
+							Server.getGlobalObjects().add(new GlobalObject(-1, c1.absX-1, c1.absY-1, 0, 10, 0));
+							Server.getGlobalObjects().add(new GlobalObject(-1, c1.absX, c1.absY-1, 0, 10, 0));
+							Server.getGlobalObjects().add(new GlobalObject(-1, c1.absX+1, c1.absY-1, 0, 10, 0));
+							Server.getGlobalObjects().add(new GlobalObject(-1, c1.absX+1, c1.absY, 0, 10, 0));
+							Server.getGlobalObjects().add(new GlobalObject(-1, c1.absX+1, c1.absY+1, 0, 10, 0));
+							Server.getGlobalObjects().add(new GlobalObject(-1, c1.absX, c1.absY+1, 0, 10, 0));
+							Server.getGlobalObjects().add(new GlobalObject(-1, c1.absX-1, c1.absY+1, 0, 10, 0));
+							Server.getGlobalObjects().add(new GlobalObject(-1, c1.absX-1, c1.absY, 0, 10, 0));
+							e.stop();
+						}
+					}, 4000);
+				}
+			}
+		}
 			if (Boundary.isIn(npcs[i], Boundary.GODWARS_BOSSROOMS) ^ Boundary.isIn(c, Boundary.GODWARS_BOSSROOMS)) {
 				npcs[i].killerId = 0;
 				npcs[i].facePlayer(0);
@@ -5739,7 +6387,20 @@ public class NPCHandler {
 		case 6612:
 		case 6609:
 			return npcs[npcId].attackType == CombatType.MAGE || npcs[npcId].attackType == CombatType.SPECIAL;
-		case 465:
+			case NpcID.BLUE_DRAGON:
+			case NpcID.BLUE_DRAGON_266:
+			case NpcID.BLUE_DRAGON_267:
+			case NpcID.BLUE_DRAGON_268:
+			case NpcID.BLUE_DRAGON_269:
+			case NpcID.BLUE_DRAGON_4385:
+			case NpcID.BLUE_DRAGON_5878:
+			case NpcID.BLUE_DRAGON_5879:
+			case NpcID.BLUE_DRAGON_5880:
+			case NpcID.BLUE_DRAGON_5881:
+			case NpcID.BLUE_DRAGON_5882:
+			case NpcID.BLUE_DRAGON_8074:
+			case NpcID.BLUE_DRAGON_8077:
+			case NpcID.BLUE_DRAGON_8083:
 			return npcs[npcId].attackType == CombatType.DRAGON_FIRE;
 		}
 		return false;
@@ -5756,142 +6417,7 @@ public class NPCHandler {
 				}
 			}
 		}
-		if(npcs[i].npcType == 11278) {
-			switch(npcs[i].nexStage) {
-				case 1:
-				case 2:
-					if(npcs[i].glod == 2) {
-						if(c.virusDamage == 0) {
-							c.virusTimer = 10;
-							c.virusDamage = 5;
-							c.forcedChat("*Cough*");
-						}
-					}
-					if(npcs[i].getHealth().getAmount() < 2400 && npcs[i].nexStage == 1) {
-						npcs[i].forceChat("Fumus, don't fail me!");
-						npcs[i].nexStage = 2;
-						nexRoom[0] = true;
-					}
-					break;
-				case 3:
-				case 4:
-					if(npcs[i].glod == 3) {
-						for(int fs = 0; fs < npcs[i].fearShadow.length; fs++) {
-							if(npcs[i].fearShadow[fs][0] == 0) {
-								npcs[i].fearShadow[fs][0] = c.absX;
-								npcs[i].fearShadow[fs][1] = c.absY;
-								break;
-							}
-						}
-						final int DMG = Misc.random(60);
-						final int I = i;
-						CycleEventHandler.getSingleton().addEvent(this, new CycleEvent() {
-							public void execute(CycleEventContainer e) {
-								for(int ii = 0; ii < npcs[I].fearShadow.length; ii++) {
-									if(npcs[I].fearShadow[ii][0] > 0) {
-										if(c.absX == npcs[I].fearShadow[ii][0] && c.absY == npcs[I].fearShadow[ii][1]) {
-											c.setHitDiff(DMG);
-											c.playerLevel[3] -= DMG;
-											c.getPA().refreshSkill(3);
-											c.updateRequired = true;
-											c.logoutDelay = 20;
-											npcs[I].fearShadow[ii][0] = npcs[I].fearShadow[ii][1] = 0;
-											return;
-										} else {
-											npcs[I].fearShadow[ii][0] = npcs[I].fearShadow[ii][1] = 0;
-											return;
-										}
-									}
-								}
-								e.stop();
-							}
-						}, 1800);
-						return;
-					}
-					if(npcs[i].hp < 1800 && npcs[i].nexStage == 3) {
-						npcs[i].forceChat("Umbra, don't fail me!");
-						npcs[i].nexStage = 4;
-						nexRoom[1] = true;
-					}
-					break;
-				case 5:
-				case 6:
-					if(npcs[i].glod == 2) {
-						int maximumHealth = npcs[i].getHealth().getMaximum();
-						int currentHealth = npcs[i].getHealth().getAmount();
-						currentHealth += damage;
-						if(npcs[i].getHealth().getAmount() > npcs[i].getHealth().getMaximum()) {
-							currentHealth = maximumHealth;
-						}
-						c.playerLevel[5] /= 2;
-					}
-					if(npcs[i].glod == 3) {
-						for(int t = 0; t < 1+Misc.random(2); t++) {
-							spawnNpc2(7643, (npcs[i].absX+1)+Misc.random(2), (npcs[i].absY+1)+Misc.random(2), 0, 0, 101, 15, 140, 10);
-						}
-						npcs[i].cooldown = 30;
-						return;
-					}
-					if(npcs[i].getHealth().getAmount() < 1200 && npcs[i].nexStage == 5) {
-						npcs[i].forceChat("Cruor, don't fail me!");
-						npcs[i].nexStage = 6;
-						nexRoom[2] = true;
-					}
-					break;
-				case 7:
-				case 8:
-					if(npcs[i].glod == 1) {
-						if(c.freezeTimer < 0) {
-							c.stopMovement();
-							c.sendMessage("You have been frozen!");
-							c.freezeTimer = 30;
-						}
-					}
-					else if(npcs[i].glod == 2) {
-						if(npcs[i].CONTAIN_THIS[0][0] > 0) {
-							if(c.absX > npcs[i].CONTAIN_THIS[0][0] && c.absX < npcs[i].CONTAIN_THIS[1][0]
-									&& c.absY > npcs[i].CONTAIN_THIS[0][1] && c.absY < npcs[i].CONTAIN_THIS[1][1]) {
-								int iced = Misc.random(65);
-								c.setHitDiff(iced);
-								c.playerLevel[3] -= iced;
-								c.getPA().refreshSkill(3);
-								c.updateRequired = true;
-								//c.setHitUpdateRequired(true);
-								c.logoutDelay = 20;
-								return;
-							} else {
-								return;
-							}
-						}
-					}
-					else if(npcs[i].glod == 3) {
-						c.stopMovement();
-						int iced = Misc.random(60);
-						c.setHitDiff(iced);
-						c.playerLevel[3] -= iced;
-						c.getPA().refreshSkill(3);
-						c.updateRequired = true;
-						//c.setHitUpdateRequired(true);
-						c.logoutDelay = 20;
-						return;
-					} else {
-						return;
-					}
-					if(npcs[i].getHealth().getAmount() < 600 && npcs[i].nexStage == 7) {
-						npcs[i].forceChat("Glacies, don't fail me!");
-						npcs[i].nexStage = 8;
-						nexRoom[3] = true;
-					}
-					break;
-				case 9:
-					if(npcs[i].prayerUsed == 1) {
-						int maximumHealth = npcs[i].getHealth().getMaximum();
-						int currentHealth = npcs[i].getHealth().getAmount();
-						currentHealth += damage/5;
-					}
-					break;
-			}
-		}
+
 
 	}
 
@@ -5971,9 +6497,69 @@ public class NPCHandler {
 			return 30;
 		case 239:
 			return npcs[i].attackType == CombatType.DRAGON_FIRE ? 50 : 20;
-		case 465:
-			return npcs[i].attackType == CombatType.DRAGON_FIRE ? 55 : 13;
-			case 2918:
+			case NpcID.BLUE_DRAGON:
+			case NpcID.BLUE_DRAGON_266:
+			case NpcID.BLUE_DRAGON_267:
+			case NpcID.BLUE_DRAGON_268:
+			case NpcID.BLUE_DRAGON_269:
+			case NpcID.BLUE_DRAGON_4385:
+			case NpcID.BLUE_DRAGON_5878:
+			case NpcID.BLUE_DRAGON_5879:
+			case NpcID.BLUE_DRAGON_5880:
+			case NpcID.BLUE_DRAGON_5881:
+			case NpcID.BLUE_DRAGON_5882:
+			case NpcID.BLUE_DRAGON_8074:
+			case NpcID.BLUE_DRAGON_8077:
+			case NpcID.BLUE_DRAGON_8083:
+			return npcs[i].attackType == CombatType.DRAGON_FIRE ? 50 : 10;
+			case NpcID.RED_DRAGON:
+			case NpcID.RED_DRAGON_248:
+			case NpcID.RED_DRAGON_249:
+			case NpcID.RED_DRAGON_250:
+			case NpcID.RED_DRAGON_251:
+			case NpcID.RED_DRAGON_8075:
+			case NpcID.RED_DRAGON_8078:
+			case NpcID.RED_DRAGON_8079:
+				return npcs[i].attackType == CombatType.DRAGON_FIRE ? 50 : 14;
+			case NpcID.GREEN_DRAGON:
+			case NpcID.GREEN_DRAGON_261:
+			case NpcID.GREEN_DRAGON_262:
+			case NpcID.GREEN_DRAGON_263:
+			case NpcID.GREEN_DRAGON_264:
+			case NpcID.GREEN_DRAGON_7868:
+			case NpcID.GREEN_DRAGON_7869:
+			case NpcID.GREEN_DRAGON_7870:
+			case NpcID.GREEN_DRAGON_8073:
+			case NpcID.GREEN_DRAGON_8076:
+			case NpcID.GREEN_DRAGON_8082:
+				return npcs[i].attackType == CombatType.DRAGON_FIRE ? 50 : 8;
+			case NpcID.BLACK_DRAGON:
+			case NpcID.BLACK_DRAGON_253:
+			case NpcID.BLACK_DRAGON_254:
+			case NpcID.BLACK_DRAGON_255:
+			case NpcID.BLACK_DRAGON_256:
+			case NpcID.BLACK_DRAGON_257:
+			case NpcID.BLACK_DRAGON_258:
+			case NpcID.BLACK_DRAGON_259:
+				return npcs[i].attackType == CombatType.DRAGON_FIRE ? 50 : 21;
+			case NpcID.BRONZE_DRAGON:
+			case NpcID.BRONZE_DRAGON_271:
+			case NpcID.BRONZE_DRAGON_7253:
+				return npcs[i].attackType == CombatType.DRAGON_FIRE ? 50 : 12;
+			case NpcID.IRON_DRAGON:
+			case NpcID.IRON_DRAGON_273:
+			case NpcID.IRON_DRAGON_7254:
+			case NpcID.IRON_DRAGON_8080:
+				return npcs[i].attackType == CombatType.DRAGON_FIRE ? 50 : 17;
+			case NpcID.STEEL_DRAGON:
+			case NpcID.STEEL_DRAGON_274:
+			case NpcID.STEEL_DRAGON_275:
+			case NpcID.STEEL_DRAGON_7255:
+			case NpcID.STEEL_DRAGON_8086:
+				return npcs[i].attackType == CombatType.DRAGON_FIRE ? 50 : 22;
+			case NpcID.MITHRIL_DRAGON:
+			case NpcID.MITHRIL_DRAGON_8088:
+			case NpcID.MITHRIL_DRAGON_8089:
 				return npcs[i].attackType == CombatType.DRAGON_FIRE ? 50 : 18;
 		case 2208:
 		case 2207:

@@ -1,11 +1,10 @@
 package godzhell.model.content.music;
 
-import java.awt.Color;
-import java.util.LinkedList;
-import java.util.List;
-
 import godzhell.model.content.music.MusicLoader.Music;
 import godzhell.model.players.Player;
+
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Manages in-game music.
@@ -85,7 +84,7 @@ public class MusicManager {
 
 		// Set the AUTO config.
 		player.getPA().sendConfig(18, 1);
-		player.getPA().sendFrame126("AUTO", 38573);
+		player.getPA().sendFrame126("AUTO", 38203);
 
 		// Update track list.
 		updateTrackList();
@@ -104,14 +103,14 @@ public class MusicManager {
 		if (music == null) {
 			music = MusicLoader.forSong(2);
 			player.getPA().playMusic(music.getSong());
-			player.getPA().sendFrame126(music.getName(), 38573);
+			player.getPA().sendFrame126(music.getName(), 38203);
 			if(player.debugMessage){
 			player.sendMessage("Music isn't added into this region yet! Region = "+ player.getRegionId());
 			}
 			return;
 		}
 		player.getPA().playMusic(music.getSong());
-		player.getPA().sendFrame126(music.getName(), 38573);
+		player.getPA().sendFrame126(music.getName(), 38203);
 		if (!unlockedMusics.contains(music.getSong())) {
 			unlockedMusics.add(music.getSong());
 			player.sendMessage("<col=ff0000>You have unlocked a new music track: "+music.getName());
@@ -144,23 +143,23 @@ public class MusicManager {
 	 */
 	public void handleMusicButtons(int button) {
 		switch (button) {
-			case 150175: // AUTO feature.
+			case 149061: // AUTO feature.
 				if (!auto) {
 					this.auto = true;
 					this.man = false;
 					player.getPA().sendConfig(18, 1);
-					player.getPA().sendFrame126("AUTO", 38573);
+					player.getPA().sendFrame126("AUTO", 38203);
 				}
 				break;
-			case 150176: // MAN feature.
+			case 149062: // MAN feature.
 				if (!man) {
 					this.auto = false;
 					this.man = true;
 					player.getPA().sendConfig(18, 0);
-					player.getPA().sendFrame126("MANUAL", 38573);
+					player.getPA().sendFrame126("MANUAL", 38203);
 				}
 				break;
-			case 150180: // LOOP feature.
+			case 149065: // LOOP feature.
 				this.loop = !loop;
 				player.getPA().sendConfig(19, loop ? 1 : 0);
 				player.sendMessage("Music looping is now "+ (loop ? "enabled" : "disabled") +".");
@@ -175,7 +174,7 @@ public class MusicManager {
 			return;
 		}
 		player.getPA().playMusic(music.getSong());
-		player.getPA().sendFrame126(music.getName(), 38573);
+		player.getPA().sendFrame126(music.getName(), 38203);
 		if (auto) {
 			this.auto = false;
 			this.man = true;

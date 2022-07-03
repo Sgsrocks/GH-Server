@@ -1,22 +1,18 @@
 package godzhell.model.shops;
 
-import java.util.stream.IntStream;
-
 import godzhell.Config;
 import godzhell.Server;
 import godzhell.definitions.ItemCacheDefinition;
-import godzhell.model.content.achievement_diary.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
 import godzhell.model.content.wogw.Wogwitems;
-import godzhell.model.holiday.HolidayController;
 import godzhell.model.items.Item;
 import godzhell.model.items.ItemAssistant;
-import godzhell.model.items.ItemDefinition;
 import godzhell.model.items.ItemList;
 import godzhell.model.players.Player;
 import godzhell.model.players.PlayerHandler;
-import godzhell.model.players.PlayerSave;
 import godzhell.util.Misc;
 import godzhell.world.ShopHandler;
+
+import java.util.stream.IntStream;
 
 public class ShopAssistant {
 
@@ -194,8 +190,10 @@ public class ShopAssistant {
 			c.sendMessage(ItemAssistant.getItemName(removeId) + ": currently costs " + ShopValue + " tokkul" + ShopAdd);
 		} else if(c.myShopId == Config.DONATOR_SHOP) {
 			c.sendMessage(ItemAssistant.getItemName(removeId) + ": currently costs " + ShopValue + " Donator Money" + ShopAdd);
-		
-		
+		} else if(c.myShopId == Config.CASTLE_WARS_TICKET_EXCHANGE) {
+			c.sendMessage(ItemAssistant.getItemName(removeId) + ": currently costs " + ShopValue + " Castle wars tickets" + ShopAdd);
+
+
 		} else {
 		c.sendMessage(ItemAssistant.getItemName(removeId) + ": currently costs " + ShopValue + " coins" + ShopAdd);
 		}
@@ -1318,6 +1316,9 @@ public class ShopAssistant {
 				c.sendMessage(ItemAssistant.getItemName(removeId) + ": shop will buy for " + ShopValue + " tokkul" + ShopAdd);
 			}  else if (c.myShopId == Config.DONATOR_SHOP) {
 				c.sendMessage(ItemAssistant.getItemName(removeId) + ": shop will buy for " + ShopValue + " Donator Money" + ShopAdd);
+			} else if(c.myShopId == Config.CASTLE_WARS_TICKET_EXCHANGE) {
+				c.sendMessage(ItemAssistant.getItemName(removeId) + ": shop will buy for " + ShopValue + " Castle wars tickets" + ShopAdd);
+
 			} else {
 				ShopValue *= 0.667;
 				c.sendMessage(ItemAssistant.getItemName(removeId) + ": shop will buy for " + ShopValue + " coins");
@@ -1426,19 +1427,28 @@ public class ShopAssistant {
 				return false;
 			}
 	} else if (c.myShopId == Config.DONATOR_SHOP) {
-		if(c.getItems().freeSlots() > 0 || c.getItems().playerHasItem(27316, 1)) {
+		if(c.getItems().freeSlots() > 0 || c.getItems().playerHasItem(29316, 1)) {
 			c.getItems().deleteItem2(itemID, amount);
-			c.getItems().addItem(27316, price);
+			c.getItems().addItem(29316, price);
 			addShopItem(itemID, amount);
 		} else {
 			c.sendMessage("You don't have enough space in your inventory.");
 			return false;
 		}
+		} else if (c.myShopId == Config.CASTLE_WARS_TICKET_EXCHANGE) {
+			if(c.getItems().freeSlots() > 0 || c.getItems().playerHasItem(4067, 1)) {
+				c.getItems().deleteItem2(itemID, amount);
+				c.getItems().addItem(4067, price);
+				addShopItem(itemID, amount);
+			} else {
+				c.sendMessage("You don't have enough space in your inventory.");
+				return false;
+			}
 	} else if (c.myShopId != Config.PROSPECTOR_PERCYS_NUGGET_SHOP && 
 			c.myShopId != Config.TZHAAR_HUR_LEKS_ORE_AND_GEM_STORE &&
 			c.myShopId != Config.TZHAAR_MEJ_ROHS_RUNE_STORE &&
 			c.myShopId != Config.TZHAAR_HUR_TELS_EQUIPMENT_STORE &&
-			c.myShopId != Config.DONATOR_SHOP) {
+			c.myShopId != Config.DONATOR_SHOP&& c.myShopId != Config.CASTLE_WARS_TICKET_EXCHANGE) {
 		if(c.getItems().freeSlots() > 0 || c.getItems().playerHasItem(995, 1)) {
 			c.getItems().deleteItem2(itemID, amount);
 			c.getItems().addItem(995, price);
@@ -1500,11 +1510,11 @@ public class ShopAssistant {
 		public boolean buyItem(int itemID, int fromSlot, int amount) {
 			if (Server.getMultiplayerSessionListener().inAnySession(c))
 				return false;
-			if (!shopSellsItem(itemID) && !(c.myShopId == 140)) {
+			if (!shopSellsItem(itemID) && !(c.myShopId == 280)) {
 				c.sendMessage("Stop trying to cheat!");
 				return false;
 			}
-			if (c.myShopId == 140) {
+			if (c.myShopId == 280) {
 				skillBuy(itemID);
 				return false;
 			}
@@ -1528,6 +1538,7 @@ public class ShopAssistant {
 				int Slot1 = 0;// Tokkul
 				int Slot2 = 0;//Golden Nuggets
 				int Slot3 = 0;//Donator coins
+				int Slot4 = 0;//castle wars tickets
 				for (int i = amount; i > 0; i--) {
 					TotPrice2 = (int) Math.floor(getItemShopValue(itemID, 0,
 							fromSlot));
@@ -1536,13 +1547,14 @@ public class ShopAssistant {
 					Slot = c.getItems().getItemSlot(995);
 					Slot1 = c.getItems().getItemSlot(6529);
 					Slot2 = c.getItems().getItemSlot(12012);
-					Slot3 = c.getItems().getItemSlot(27316);
+					Slot3 = c.getItems().getItemSlot(29316);
+					Slot4 = c.getItems().getItemSlot(4067);
 					if (Slot == -1 && c.myShopId != Config.PROSPECTOR_PERCYS_NUGGET_SHOP && 
 							c.myShopId != Config.TZHAAR_HUR_LEKS_ORE_AND_GEM_STORE &&
 							c.myShopId != Config.TZHAAR_MEJ_ROHS_RUNE_STORE &&
 							c.myShopId != Config.TZHAAR_HUR_TELS_EQUIPMENT_STORE &&
 							c.myShopId != Config.TZHAAR_HUR_ZALS_EQUIPMENT_STORE &&
-							c.myShopId != Config.DONATOR_SHOP) {
+							c.myShopId != Config.DONATOR_SHOP && c.myShopId != Config.CASTLE_WARS_TICKET_EXCHANGE) {
 						c.sendMessage("You don't have enough coins.");
 						break;
 					}
@@ -1568,6 +1580,10 @@ public class ShopAssistant {
 					}
 					if (Slot3 == -1 && c.myShopId == Config.DONATOR_SHOP) {
 						c.sendMessage("You don't have enough Donator money.");
+						break;
+					}
+					if (Slot4 == -1 && c.myShopId == Config.CASTLE_WARS_TICKET_EXCHANGE) {
+						c.sendMessage("You don't have enough Castle wars tickets..");
 						break;
 					}
 					if (TotPrice2 <= 1) {
@@ -1803,11 +1819,11 @@ public class ShopAssistant {
 					else if (c.myShopId == Config.DONATOR_SHOP) {
 						if (c.playerItemsN[Slot3] >= TotPrice3) {
 							if (c.getItems().freeSlots() > 0) {
-								if (Item.itemStackable[itemID] && c.getItems().playerHasItem(27316, TotPrice3*amount)) {
+								if (Item.itemStackable[itemID] && c.getItems().playerHasItem(29316, TotPrice3*amount)) {
 									if (Server.shopHandler.ShopItemsN[c.myShopId][fromSlot] < amount) {
 										amount = Server.shopHandler.ShopItemsN[c.myShopId][fromSlot];
 									}
-									c.getItems().deleteItem(27316, c.getItems().getItemSlot(27316), TotPrice3*amount);
+									c.getItems().deleteItem(29316, c.getItems().getItemSlot(29316), TotPrice3*amount);
 									c.getItems().addItem(itemID, amount);
 									Server.shopHandler.ShopItemsN[c.myShopId][fromSlot] -= amount;
 									Server.shopHandler.ShopItemsDelay[c.myShopId][fromSlot] = 0;
@@ -1817,9 +1833,9 @@ public class ShopAssistant {
 									updatePlayerShop();
 									return false;
 								}
-								if (Item.itemStackable[itemID] && !c.getItems().playerHasItem(27316, TotPrice3*amount)) {
-									int itemAmount = c.playerItemsN[c.getItems().getItemSlot(27316)]/TotPrice3;
-									c.getItems().deleteItem(27316, c.getItems().getItemSlot(27316), TotPrice3*itemAmount);
+								if (Item.itemStackable[itemID] && !c.getItems().playerHasItem(29316, TotPrice3*amount)) {
+									int itemAmount = c.playerItemsN[c.getItems().getItemSlot(29316)]/TotPrice3;
+									c.getItems().deleteItem(29316, c.getItems().getItemSlot(29316), TotPrice3*itemAmount);
 									c.getItems().addItem(itemID, itemAmount);
 									Server.shopHandler.ShopItemsN[c.myShopId][fromSlot] -= itemAmount;
 									Server.shopHandler.ShopItemsDelay[c.myShopId][fromSlot] = 0;
@@ -1828,7 +1844,7 @@ public class ShopAssistant {
 									updatePlayerShop();
 									return false;
 								}
-								c.getItems().deleteItem(27316, c.getItems().getItemSlot(27316),
+								c.getItems().deleteItem(29316, c.getItems().getItemSlot(29316),
 										TotPrice3);
 								c.getItems().addItem(itemID, 1);
 								ShopHandler.ShopItemsN[c.myShopId][fromSlot] -= 1;
@@ -1844,12 +1860,57 @@ public class ShopAssistant {
 							c.sendMessage("You don't have enough Donator Money.");
 							break;
 						}
-					} 
+					}
+					else if (c.myShopId == Config.CASTLE_WARS_TICKET_EXCHANGE) {
+						if (c.playerItemsN[Slot4] >= TotPrice3) {
+							if (c.getItems().freeSlots() > 0) {
+								if (Item.itemStackable[itemID] && c.getItems().playerHasItem(4067, TotPrice3*amount)) {
+									if (Server.shopHandler.ShopItemsN[c.myShopId][fromSlot] < amount) {
+										amount = Server.shopHandler.ShopItemsN[c.myShopId][fromSlot];
+									}
+									c.getItems().deleteItem(4067, c.getItems().getItemSlot(4067), TotPrice3*amount);
+									c.getItems().addItem(itemID, amount);
+									Server.shopHandler.ShopItemsN[c.myShopId][fromSlot] -= amount;
+									Server.shopHandler.ShopItemsDelay[c.myShopId][fromSlot] = 0;
+									Server.shopHandler.ShopItemsRestock[c.myShopId][fromSlot] = System.currentTimeMillis();
+									c.getItems().resetItems(3823);
+									resetShop(c.myShopId);
+									updatePlayerShop();
+									return false;
+								}
+								if (Item.itemStackable[itemID] && !c.getItems().playerHasItem(4067, TotPrice3*amount)) {
+									int itemAmount = c.playerItemsN[c.getItems().getItemSlot(4067)]/TotPrice3;
+									c.getItems().deleteItem(4067, c.getItems().getItemSlot(4067), TotPrice3*itemAmount);
+									c.getItems().addItem(itemID, itemAmount);
+									Server.shopHandler.ShopItemsN[c.myShopId][fromSlot] -= itemAmount;
+									Server.shopHandler.ShopItemsDelay[c.myShopId][fromSlot] = 0;
+									c.getItems().resetItems(3823);
+									resetShop(c.myShopId);
+									updatePlayerShop();
+									return false;
+								}
+								c.getItems().deleteItem(4067, c.getItems().getItemSlot(4067),
+										TotPrice3);
+								c.getItems().addItem(itemID, 1);
+								ShopHandler.ShopItemsN[c.myShopId][fromSlot] -= 1;
+								ShopHandler.ShopItemsDelay[c.myShopId][fromSlot] = 0;
+								if ((fromSlot + 1) > ShopHandler.ShopItemsStandard[c.myShopId]) {
+									ShopHandler.ShopItems[c.myShopId][fromSlot] = 0;
+								}
+							} else {
+								c.sendMessage("You don't have enough space in your inventory.");
+								break;
+							}
+						} else {
+							c.sendMessage("You don't have enough Castle wars tickets.");
+							break;
+						}
+					}
 					else if (c.myShopId != Config.PROSPECTOR_PERCYS_NUGGET_SHOP && 
 							c.myShopId != Config.TZHAAR_HUR_LEKS_ORE_AND_GEM_STORE &&
 							c.myShopId != Config.TZHAAR_MEJ_ROHS_RUNE_STORE &&
 							c.myShopId != Config.TZHAAR_HUR_TELS_EQUIPMENT_STORE &&
-							c.myShopId != Config.DONATOR_SHOP) {
+							c.myShopId != Config.DONATOR_SHOP && c.myShopId != Config.CASTLE_WARS_TICKET_EXCHANGE) {
 						if (c.playerItemsN[Slot] >= TotPrice2) {
 							if (c.getItems().freeSlots() > 0) {
 								if (Item.itemStackable[itemID] && c.getItems().playerHasItem(995, TotPrice2*amount)) {
@@ -1905,13 +1966,7 @@ public class ShopAssistant {
 	}
 			return false;
 		}
-	/**
-	 * Special currency stores
-	 * @param itemID	
-	 * 					itemID that is being bought
-	 * @param amount
-	 * 					amount that is being bought
-	 */
+
 public void handleOthershops() {
 	
 }
@@ -1921,7 +1976,7 @@ public void handleOthershops() {
 			capes = 1;
 		else
 			capes = 0;
-		c.myShopId = 17;
+		c.myShopId = 280;
 		setupSkillCapes(capes, get99Count());
 	}
 
@@ -1947,7 +2002,7 @@ public void handleOthershops() {
 		c.getPA().sendFrame171(1, 28053);
 		c.getItems().resetItems(3823);
 		c.isShopping = true;
-		c.myShopId = 17;
+		c.myShopId = 280;
 		c.getPA().sendFrame248(3824, 3822);
 		c.getPA().sendFrame126("Skillcape Shop", 3901);
 

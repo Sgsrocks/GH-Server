@@ -9,26 +9,31 @@ import godzhell.definitions.ItemCacheDefinition;
 import godzhell.definitions.NPCCacheDefinition;
 import godzhell.event.CycleEventHandler;
 import godzhell.event.EventHandler;
+import godzhell.event.EventManager;
 import godzhell.event.impl.BonusApplianceEvent;
 import godzhell.event.impl.BonusXPEvent;
 import godzhell.event.impl.SkeletalMysticEvent;
 import godzhell.event.impl.WheatPortalEvent;
+import godzhell.model.content.collection_log.CollectionLog;
 import godzhell.model.content.godwars.GodwarsEquipment;
 import godzhell.model.content.godwars.GodwarsNPCs;
 import godzhell.model.content.music.MusicLoader;
 import godzhell.model.content.tradingpost.Listing;
-import godzhell.model.content.trails.CasketRewards;
+import godzhell.model.content.trails.TreasureTrailsRewards;
 import godzhell.model.holiday.HolidayController;
 import godzhell.model.items.ItemDefinition;
+import godzhell.model.items.ItemExamines;
 import godzhell.model.minigames.FightPits;
 import godzhell.model.minigames.pk_arena.Highpkarena;
 import godzhell.model.minigames.pk_arena.Lowpkarena;
 import godzhell.model.multiplayer_session.MultiplayerSessionListener;
 import godzhell.model.npcs.NPCHandler;
 import godzhell.model.npcs.NPCSpawns;
+import godzhell.model.npcs.NpcExamines;
 import godzhell.model.npcs.drops.DropManager;
 import godzhell.model.objects.Doors;
 import godzhell.model.objects.DoubleDoors;
+import godzhell.model.objects.ObjectExamines;
 import godzhell.model.players.PlayerHandler;
 import godzhell.model.players.PlayerSave;
 import godzhell.model.players.combat.monsterhunt.MonsterHunt;
@@ -95,6 +100,8 @@ public class Server {
 	 * Sleep mode of the server.
 	 */
 	public static boolean sleeping;
+	public static String savearea = "./data/saves";
+	public static String dataarea = "./data";
 	/**
 	 * The test thingy
 	 */
@@ -187,6 +194,7 @@ public class Server {
 			Highpkarena.process();
 			Lowpkarena.process();
 			globalObjects.pulse();
+
 			CycleEventHandler.getSingleton().process();
 			events.process();
 			serverData.processQueue();
@@ -243,11 +251,18 @@ public class Server {
 			ItemCacheDefinition.unpackConfig();
 			NPCCacheDefinition.unpackConfig();
 			AnimationDefinition.unpackConfig();
-			CasketRewards.read();
+			TreasureTrailsRewards.read();
 			AnimationLength.startup();
 			ObjectDef.loadConfig();
+			EventManager.initialize();
+			CollectionLog.init();
 			NPCSpawns.loadNPCSpawns();
+			ObjectExamines.load();
+			ItemExamines.load();
+			NpcExamines.load();
+			//ObjectExamines.loadObjectexamines();
 			globalObjects.loadGlobalObjectFile();
+			//GlobalDropsHandler.writeGlobalDropsDump();
 			GlobalDropsHandler.initialize();
 			new EquipmentRequirementLoader().load();
 			//Doors.getSingleton().load();
@@ -332,5 +347,14 @@ public class Server {
 	public static String getStatus() {
 		return "IO_THREAD\n" + "\tShutdown? " + IO_THREAD.isShutdown() + "\n" + "\tTerminated? "
 				+ IO_THREAD.isTerminated();
+	}
+
+
+    public static String getSaveDirectory() {
+		return savearea;
+    }
+
+	public static String getDataDirectory() {
+		return dataarea;
 	}
 }

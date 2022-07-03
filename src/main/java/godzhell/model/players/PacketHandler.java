@@ -20,7 +20,7 @@ public class PacketHandler {
 		return PACKET_SIZES[opcode];
 	}
 	public static final int PACKET_SIZES[] = {
-			0, 0, 0, 1, -1, 0, 0, 0, 4, 0, //0 - 9
+			0, 0, 6, 1, -1, 0, 4, 0, 4, 0, //0 - 9
 			0, 0, 0, 0, 8, 0, 6, 2, 2, 0, //10 - 19
 			0, 2, 0, 6, 0, 12, 0, 0, 0, 0, //20 - 29
 			0, 0, 0, 0, 0, 8, 4, 0, 0, 2, //30 - 39
@@ -39,7 +39,7 @@ public class PacketHandler {
 			0, 0, 0, 0, -1, -1, 0, 0, 0, 0, //160 - 169
 			0, 0, 0, 0, 0, 0, 0, 0, 0, 0, //170 - 179
 			0, 8, 0, 3, 0, 2, 2, 0, 8, 1, //180 - 189
-			0, 0, 12, 0, 0, 0, 0, 0, 0, 0, //190 - 199
+			0, 0, 14, 0, 0, 0, 0, 0, 0, 0, //190 - 199
 			2, 0, 0, 0, 0, 0, 0, 0, 4, 0, //200 - 209
 			4, 0, 0, 4, 7, 8, 0, 0, 10, 0, //210 - 219
 			0, 0, 0, 0, 0, 0, -1, 0, 8, 0, //220 - 229
@@ -76,6 +76,7 @@ public class PacketHandler {
 		//packetId[140] = u;
 		// packetId[18] = u;
 		packetId[223] = u;
+		packetId[2] = new ItemExamine();
 		packetId[8] = new Moderate();
 		packetId[142] = new InputField();
 		packetId[253] = new ItemOptionTwoGroundItem();
@@ -91,6 +92,7 @@ public class PacketHandler {
 		packetId[234] = co;
 		packetId[228] = co;
 		packetId[146] = new ObjectExamine();
+		packetId[6] = new NpcExamine();
 		packetId[57] = new ItemOnNpc();
 		ClickNPC cn = new ClickNPC();
 		packetId[72] = cn;

@@ -1,11 +1,10 @@
 package godzhell.model.players.packets.commands.all;
 
-import java.util.Map.Entry;
-
 import godzhell.Server;
 import godzhell.model.players.Player;
 import godzhell.model.players.packets.commands.Command;
 
+import java.util.Map.Entry;
 import java.util.Optional;
 
 /**
@@ -21,8 +20,12 @@ public class Commands extends Command {
 		if (Server.getMultiplayerSessionListener().inAnySession(c)) {
 			return;
 		}
-		int counter = 8144;
-		c.getPA().sendFrame126("@dre@Aurora Commands", counter++);
+		for (int i = 35488; i < 35665; i++) {
+			c.getPA().sendFrame126("", i);
+			c.getPlayerAssistant().sendFrame126("", 35486);
+		}
+		int counter = 35486;
+		c.getPA().sendFrame126("@dre@GodzHell Commands", counter++);
 		c.getPA().sendFrame126("", counter++);
 		counter++; // 8146 is already being used
 		counter = sendCommands(c, "all", counter);
@@ -30,7 +33,7 @@ public class Commands extends Command {
 		c.getPA().sendFrame126("@dre@Donators Only", counter++);
 		//noinspection UnusedAssignment
 		counter = sendCommands(c, "donator", counter);
-		c.getPA().showInterface(8134);
+		c.getPA().showInterface(35483);
 	}
 
 	public int sendCommands(Player player, String rank, int counter) {

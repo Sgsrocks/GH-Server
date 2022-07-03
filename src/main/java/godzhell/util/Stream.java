@@ -1,10 +1,9 @@
 package godzhell.util;
 
-import java.nio.ByteBuffer;
+import org.apache.commons.io.Charsets;
+
 import java.nio.charset.Charset;
 import java.util.Arrays;
-
-import org.apache.commons.io.Charsets;
 
 public class Stream {
 
@@ -463,6 +462,12 @@ public class Stream {
 	public int read24Int() {
 		currentOffset += 3;
 		return ((buffer[currentOffset - 3] & 0xff) << 16) + ((buffer[currentOffset - 2] & 0xff) << 8) + (buffer[currentOffset - 1] & 0xff);
+	}
+
+	public void writeUnsignedWord(int i) {
+		ensureCapacity(2);
+		buffer[currentOffset++] = (byte) (i >> 8);
+		buffer[currentOffset++] = (byte) i;
 	}
 
 }

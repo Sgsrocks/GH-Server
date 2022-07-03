@@ -1,22 +1,12 @@
 package godzhell.model.content.MysteryBoxs;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Random;
-
 import godzhell.definitions.ItemCacheDefinition;
-import godzhell.event.CycleEvent;
-import godzhell.event.CycleEventContainer;
-import godzhell.event.CycleEventHandler;
-import godzhell.model.content.MysteryBoxs.UltraMysteryBox.Rarity;
 import godzhell.model.items.GameItem;
-import godzhell.model.items.ItemAssistant;
 import godzhell.model.players.Player;
 import godzhell.model.players.PlayerHandler;
 import godzhell.util.Misc;
+
+import java.util.*;
 
 
 /**
@@ -30,7 +20,7 @@ public class SuperRareMysteryBox {
     /**
      * The item id of the mystery box required to trigger the event
      */
-    private static final int MYSTERY_BOX = 26825;
+    private static final int MYSTERY_BOX = 28825;
 
     /**
      * A map containing a List of {@link GameItem}'s that contain items relevant to their rarity.
@@ -70,7 +60,7 @@ public class SuperRareMysteryBox {
                 		new GameItem(23267),
                 		new GameItem(23270),
                 		new GameItem(23273),
-                		new GameItem(26230))
+                		new GameItem(28230))
         );
 
         items.put(Rarity.RARE,

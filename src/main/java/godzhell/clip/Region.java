@@ -1060,7 +1060,7 @@ public class Region {
 			xLength = def.yLength();
 			yLength = def.xLength();
 		}
-		if ((def != null ? def.name : null) != null && def.name.toLowerCase().equalsIgnoreCase("door") && def.actions[0].toLowerCase().equalsIgnoreCase("close")) {
+		if ((def != null ? def.name : null) != null && def.name.toLowerCase().equalsIgnoreCase("web") && def.actions[0].toLowerCase().equalsIgnoreCase("slash")) {
 			//System.out.println(objectId+" "+x+" "+y+" "+direction+" "+height);
 			//System.out.println(objectId+", ");
 				}
@@ -1186,8 +1186,8 @@ public class Region {
 				regions[i] = new Region(regionIds[i], false);
 			}
 			for (int i = 0; i < size; i++) {
-				byte[] file1 = getBuffer(new File("./data/world/map/" + mapObjectsFileIds[i] + ".gz"));
-				byte[] file2 = getBuffer(new File("./data/world/map/" + mapGroundFileIds[i] + ".gz"));
+				byte[] file1 = getBuffer(new File("./data/world/maps/" + mapObjectsFileIds[i] + ".gz"));
+				byte[] file2 = getBuffer(new File("./data/world/maps/" + mapGroundFileIds[i] + ".gz"));
 
 				if (file1 == null || file2 == null) {
 					continue;

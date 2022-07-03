@@ -1,6 +1,7 @@
 package godzhell.model.players.packets.objectoptions;
 
 import godzhell.Server;
+import godzhell.clip.ObjectDef;
 import godzhell.clip.Region;
 import godzhell.model.players.Player;
 import godzhell.model.players.Right;
@@ -19,8 +20,9 @@ public class ObjectOptionFive {
 		c.getPA().resetVariables();
 		c.clickObjectType = 0;
 		c.turnPlayerTo(obX, obY);
+		ObjectDef def = ObjectDef.getObjectDef(objectType);
 		if (c.getRights().isOrInherits(Right.OWNER))
-			c.sendMessage("Clicked Object Option 5:  "+objectType+"");
+			c.sendMessage("Clicked Object Option 5:  "+objectType+", Object name: "+def.getName());
 		Construction.handleConstructionClick(c, objectType, obX, obY);
 		switch (objectType) {
 			case 5492:

@@ -1,11 +1,9 @@
 package godzhell.model.content;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 import godzhell.Server;
 import godzhell.clip.Region;
+import godzhell.definitions.ItemID;
+import godzhell.definitions.ObjectID;
 import godzhell.event.CycleEvent;
 import godzhell.event.CycleEventContainer;
 import godzhell.event.CycleEventHandler;
@@ -20,6 +18,10 @@ import godzhell.model.players.combat.Damage;
 import godzhell.model.players.combat.Hitmark;
 import godzhell.util.Misc;
 import godzhell.world.objects.GlobalObject;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 
 public class Dwarfcannon {
@@ -108,16 +110,17 @@ public class Dwarfcannon {
 			}
 		}
 
-		if (player.getItems().playerHasItem(6, 1) && player.getItems().playerHasItem(8, 1)
-				&& player.getItems().playerHasItem(10, 1) && player.getItems().playerHasItem(12, 1)) {
+		if (player.getItems().playerHasItem(ItemID.CANNON_BASE, 1) && player.getItems().playerHasItem(ItemID.CANNON_STAND, 1)
+				&& player.getItems().playerHasItem(ItemID.CANNON_BARRELS, 1) && player.getItems().playerHasItem(ItemID
+				.CANNON_FURNACE, 1)) {
 
 			player.stopMovement();
 
 			player.startAnimation(827);
-			GlobalObject base = new GlobalObject(player, 7, player.absX, player.absY, player.heightLevel);
+			GlobalObject base = new GlobalObject(player, ObjectID.CANNON_BASE, player.absX, player.absY, player.heightLevel);
 			player.turnPlayerTo(base.getPosition().getX(), base.getPosition().getY());
 			Server.getGlobalObjects().add(base);
-			player.getItems().deleteItem(6, 1);
+			player.getItems().deleteItem(ItemID.CANNON_BASE, 1);
 			cannons.add(base);
 			cannon = base;
 			stage = Setup.BASE;
@@ -131,9 +134,9 @@ public class Dwarfcannon {
 					}
 
 					player.startAnimation(827);
-					GlobalObject stand = new GlobalObject(player, 8, player.absX, player.absY, player.heightLevel);
+					GlobalObject stand = new GlobalObject(player, ObjectID.CANNON_STAND, player.absX, player.absY, player.heightLevel);
 					Server.getGlobalObjects().replace(cannon, stand);
-					player.getItems().deleteItem(8, 1);
+					player.getItems().deleteItem(ItemID.CANNON_STAND, 1);
 					cannon = stand;
 					stage = Setup.STAND;
 					container.stop();
@@ -149,9 +152,9 @@ public class Dwarfcannon {
 					}
 
 					player.startAnimation(827);
-					GlobalObject newCannon = new GlobalObject(player, 9, player.absX, player.absY, player.heightLevel);
+					GlobalObject newCannon = new GlobalObject(player, ObjectID.CANNON_BARRELS, player.absX, player.absY, player.heightLevel);
 					Server.getGlobalObjects().replace(cannon, newCannon);
-					player.getItems().deleteItem(10, 1);
+					player.getItems().deleteItem(ItemID.CANNON_BARRELS, 1);
 					cannon = newCannon;
 					stage = Setup.BARRELS;
 					container.stop();
@@ -167,9 +170,9 @@ public class Dwarfcannon {
 					}
 
 					player.startAnimation(827);
-					GlobalObject barrel = new GlobalObject(player, 6, player.absX, player.absY, player.heightLevel);
+					GlobalObject barrel = new GlobalObject(player, ObjectID.DWARF_MULTICANNON, player.absX, player.absY, player.heightLevel);
 					Server.getGlobalObjects().replace(cannon, barrel);
-					player.getItems().deleteItem(12, 1);
+					player.getItems().deleteItem(ItemID.CANNON_FURNACE, 1);
 					cannon = barrel;
 					stage = Setup.COMPLETE;
 					container.stop();
@@ -185,13 +188,13 @@ public class Dwarfcannon {
 			return;
 		if (cannon == null)
 			return;
-		else if (cannon.getObjectId() == 6)
+		else if (cannon.getObjectId() == ObjectID.DWARF_MULTICANNON)
 			stage = Setup.COMPLETE;
-		else if (cannon.getObjectId() == 7)
+		else if (cannon.getObjectId() == ObjectID.CANNON_BASE)
 			stage = Setup.BASE;
-		else if (cannon.getObjectId() == 8)
+		else if (cannon.getObjectId() == ObjectID.CANNON_STAND)
 			stage = Setup.STAND;
-		else if (cannon.getObjectId() == 9)
+		else if (cannon.getObjectId() == ObjectID.CANNON_BARRELS)
 			stage = Setup.BARRELS;
 	}
 	
@@ -318,28 +321,28 @@ public class Dwarfcannon {
     private void rotate(GlobalObject cannon2) {
         switch (rotation) {
             case NORTH: // north
-                player.getPA().object(cannon2.getPosition().getX(), cannon2.getPosition().getY(), 516, 10, -1);
+                player.getPA().objectAnim(cannon2.getPosition().getX(), cannon2.getPosition().getY(), 516, 10, -1);
                 break;
             case NORTH_EAST: // north-east
-                player.getPA().object(cannon2.getPosition().getX(), cannon2.getPosition().getY(), 517, 10, -1);
+                player.getPA().objectAnim(cannon2.getPosition().getX(), cannon2.getPosition().getY(), 517, 10, -1);
                 break;
             case EAST: // east
-                player.getPA().object(cannon2.getPosition().getX(), cannon2.getPosition().getY(), 518, 10, -1);
+                player.getPA().objectAnim(cannon2.getPosition().getX(), cannon2.getPosition().getY(), 518, 10, -1);
                 break;
             case SOUTH_EAST: // south-east
-                player.getPA().object(cannon2.getPosition().getX(), cannon2.getPosition().getY(), 519, 10, -1);
+                player.getPA().objectAnim(cannon2.getPosition().getX(), cannon2.getPosition().getY(), 519, 10, -1);
                 break;
             case SOUTH: // south
-                player.getPA().object(cannon2.getPosition().getX(), cannon2.getPosition().getY(), 520, 10, -1);
+                player.getPA().objectAnim(cannon2.getPosition().getX(), cannon2.getPosition().getY(), 520, 10, -1);
                 break;
             case SOUTH_WEST: // south-west
-                player.getPA().object(cannon2.getPosition().getX(), cannon2.getPosition().getY(), 521, 10, -1);
+                player.getPA().objectAnim(cannon2.getPosition().getX(), cannon2.getPosition().getY(), 521, 10, -1);
                 break;
             case WEST: // west
-                player.getPA().object(cannon2.getPosition().getX(), cannon2.getPosition().getY(), 514, 10, -1);
+                player.getPA().objectAnim(cannon2.getPosition().getX(), cannon2.getPosition().getY(), 514, 10, -1);
                 break;
             case NORTH_WEST: // north-west
-                player.getPA().object(cannon2.getPosition().getX(), cannon2.getPosition().getY(), 515, 10, -1);
+                player.getPA().objectAnim(cannon2.getPosition().getX(), cannon2.getPosition().getY(), 515, 10, -1);
                 rotation = null;
                 break;
         }

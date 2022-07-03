@@ -1,6 +1,7 @@
 package godzhell.model.npcs;
 
 import godzhell.Server;
+import godzhell.definitions.NPCCacheDefinition;
 import godzhell.event.CycleEvent;
 import godzhell.event.CycleEventContainer;
 import godzhell.event.CycleEventHandler;
@@ -77,9 +78,9 @@ public class NPC extends Entity {
 	public int totalAttacks;
 	private boolean facePlayer = true;
 	private int projectileDelay = 0;
-	public final int[][] CONTAIN_THIS = new int[100][100];
+	public final int[][] CONTAIN_THIS = new int[2][2];
 	private NPCDefinitions definition;
-
+	private NPCCacheDefinition cacheDefinition;
 	private long lastRandomWalk;
 	private long lastRandomWalkHome;
 
@@ -668,7 +669,9 @@ public class NPC extends Entity {
 		if (Boundary.isIn(this, Boundary.KALPHITE_QUEEN) && heightLevel == 0) {
 			return true;
 		}
-
+		if(Boundary.isIn(this, Boundary.NEX)){
+			return true;
+		}
 		if ((absX >= 3136 && absX <= 3327 && absY >= 3519 && absY <= 3607)
 				|| (absX >= 3190 && absX <= 3327 && absY >= 3648 && absY <= 3839)
 				|| (absX >= 3200 && absX <= 3390 && absY >= 3840 && absY <= 3967)
@@ -711,9 +714,9 @@ public class NPC extends Entity {
 	}
 
 	public int getSize() {
-		if (definition == null)
+		if (cacheDefinition == null)
 			return 1;
-		return definition.getSize();
+		return cacheDefinition.getSize();
 	}
 
 	/**
@@ -724,6 +727,9 @@ public class NPC extends Entity {
 	 */
 	public NPCDefinitions getDefinition() {
 		return definition;
+	}
+	public NPCCacheDefinition getCacheDefinition() {
+		return cacheDefinition;
 	}
 
 	public int getProjectileDelay() {

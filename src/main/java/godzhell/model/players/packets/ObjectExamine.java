@@ -2,9 +2,11 @@ package godzhell.model.players.packets;
 
 import godzhell.clip.ObjectDef;
 import godzhell.clip.Region;
+import godzhell.model.objects.ObjectExamines;
 import godzhell.model.players.PacketType;
 import godzhell.model.players.Player;
 import godzhell.model.players.Position;
+import godzhell.model.players.Right;
 
 public class ObjectExamine implements PacketType {
 
@@ -17,10 +19,21 @@ public class ObjectExamine implements PacketType {
         if (c.debugMessage) {
             c.sendMessage("Object Examine: " + id + " objectX: " + x + " objectY: " + y);
         }
-        if(!Region.objectExists(id, x, y, c.getHeight())) {
+        if (!Region.objectExists(id, x, y, c.getHeight())) {
             return;
         }
-        ObjectDef def = ObjectDef.getObjectDef(id);
-        c.sendMessage("It's a "+def.getName()+".");
+
+        ObjectExamines description = ObjectExamines.forId(id);
+        if (description != null) {
+            String examine = description.getName();
+            c.sendMessage(examine);
+        } else {
+            if (c.getRights().contains(Right.OWNER)) {
+                c.sendMessage("Object id: "+id+" Needs a examine.");
+            } else {
+                ObjectDef cacheDefinition = ObjectDef.getObjectDef(id);
+                c.sendMessage("Its a " + cacheDefinition.name + ".");
+            }
+        }
     }
 }

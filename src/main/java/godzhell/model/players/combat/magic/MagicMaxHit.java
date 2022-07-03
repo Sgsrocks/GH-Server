@@ -1,12 +1,12 @@
 package godzhell.model.players.combat.magic;
 
-import java.util.stream.IntStream;
-
 import godzhell.Config;
 import godzhell.model.npcs.NPC;
 import godzhell.model.npcs.NPCHandler;
 import godzhell.model.players.Player;
 import godzhell.util.Misc;
+
+import java.util.stream.IntStream;
 
 public class MagicMaxHit {
 
@@ -19,19 +19,65 @@ public class MagicMaxHit {
 		if (c.fullVoidMage()) {
 			modifier *= 1.5;
 		}
+		if (c.getItems().isWearingItem(4710, c.playerWeapon)) {
+			modifier *= 1.15;
+		}
 		if (c.npcIndex > 0 && c.getSlayer().getTask().isPresent()) {
+			//	NPC npc = NPCHandler.npcs[c.npcIndex];
+			//	if (npc != null && c.getSlayer().getTask().get().matches(npc.getDefinition().getNpcName()) || npc.npcType == 7413) {
+			//	boolean SLAYER_HELM = IntStream.of(c.IMBUED_SLAYER_HELMETS).anyMatch(i -> c.getItems().isWearingItem(i));
+			//	if (!c.getItems().isWearingItem(4081) && (c.getItems().isWearingItem(11865) || c.getItems().isWearingItem(11784) || c.getItems().isWearingItem(19641) || c.getItems().isWearingItem(19645) || c.getItems().isWearingItem(19649) || c.getItems().isWearingItem(21266))) {
+			//		modifier *= 1.1667;
 			NPC npc = NPCHandler.npcs[c.npcIndex];
 			if (npc != null && c.getSlayer().getTask().get().matches(npc.getDefinition().getNpcName()) || npc.npcType == 7413) {
-				if (!c.getItems().isWearingItem(4081) && c.getItems().isWearingItem(11865)) {
+				//	boolean SLAYER_HELM = IntStream.of(c.IMBUED_SLAYER_HELMETS).anyMatch(i -> c.getItems().isWearingItem(i));
+				if (!c.getItems().isWearingItem(4081) && (c.getItems().isWearingItem(11865) || c.getItems().isWearingItem(11784) || c.getItems().isWearingItem(19641) || c.getItems().isWearingItem(19645) || c.getItems().isWearingItem(19649) || c.getItems().isWearingItem(21890) || c.getItems().isWearingItem(21266))) {
 					modifier *= 1.15;
-				}
-			}
-			if (c.getItems().isWearingItem(4081, c.playerAmulet)) {
-				if (Misc.linearSearch(Config.UNDEAD_IDS, npc.npcType) != -1) {
-					modifier *= 1.15;
+					if (c.debugMessage)
+						c.sendMessage("Magic Attack on slayer: "+ modifier +"");
 				}
 			}
 		}
+		if (c.npcIndex > 0) {
+			NPC npc = NPCHandler.npcs[c.npcIndex];
+			if (c.inWild()) {
+				if (c.playerEquipment[c.playerWeapon] == 22555) {
+					modifier *= 1.25;
+					if (c.debugMessage)
+						c.sendMessage("Magic Attack Thammaron's: "+ modifier +"");
+				}
+			}
+		}
+		if (c.npcIndex > 0) {
+			NPC npc = NPCHandler.npcs[c.npcIndex];
+			if (c.getItems().isWearingItem(12018, c.playerAmulet)) {
+				if (Misc.linearSearch(Config.UNDEAD_IDS, npc.npcType) != -1) {
+					modifier *= 1.20;
+					if (c.debugMessage)
+						c.sendMessage("Magic Attack on Undead: "+ modifier +"");
+				}
+			}
+		}
+		if (c.npcIndex > 0) {
+			NPC npc = NPCHandler.npcs[c.npcIndex];
+			if (c.getItems().isWearingItem(12017, c.playerAmulet)) {
+				if (Misc.linearSearch(Config.UNDEAD_IDS, npc.npcType) != -1) {
+					modifier *= 1.20;
+					if (c.debugMessage)
+						c.sendMessage("Magic Attack on Unded: "+ modifier +"");
+				}
+			}
+		}
+	/*	if (c.npcIndex > 0 && c.getSlayer().getTask().isPresent()) {
+			NPC npc = NPCHandler.npcs[c.npcIndex];
+					if (npc != null && c.getSlayer().getTask().get().matches(npc.getDefinition().getNpcName()) || npc.npcType == 7413) {
+						if (c.getItems().isWearingItem(11865) || c.getItems().isWearingItem(11784) || c.getItems().isWearingItem(19641) || c.getItems().isWearingItem(19645) || c.getItems().isWearingItem(19649) || c.getItems().isWearingItem(21890) || c.getItems().isWearingItem(21266) || c.getItems().isWearingItem(23075)) {
+					modifier *= 1.1667;
+					if (c.debugMessage)
+						c.sendMessage("Magic Attack on slayer: "+ modifier +"");
+				}
+			}
+		}*/
 		return (int) (accuracy * modifier);
 	}
 
@@ -49,73 +95,231 @@ public class MagicMaxHit {
 		switch (c.playerEquipment[c.playerWeapon]) {
 			case 4710:
 				damageMultiplier += .05;
+				if (c.debugMessage)
+					c.sendMessage("Multiplier from weapon: "+ damageMultiplier +"");
+				break;
+			case 22323:
+				damageMultiplier += .69;
+				if (c.debugMessage)
+					c.sendMessage("Multiplier from weapon: "+ damageMultiplier +"");
 				break;
 			case 6914:
 				damageMultiplier += .04;
+				if (c.debugMessage)
+					c.sendMessage("Multiplier from weapon: "+ damageMultiplier +"");
 				break;
 			case 21006:
 			case 20604:
 				damageMultiplier += .15;
+				if (c.debugMessage)
+					c.sendMessage("Multiplier from weapon: "+ damageMultiplier +"");
 				break;
 			case 11791:
 			case 22296:
 			case 12904:
 				damageMultiplier += 0.15;
+				if (c.debugMessage)
+					c.sendMessage("Multiplier from weapon: "+ damageMultiplier +"");
 				break;
 		}
 		switch (c.playerEquipment[c.playerShield]) {
-			case 20359:// Tome of fire
+			case 20714:// Tome of fire
 				if(c.spellId == 3 || c.spellId == 7 || c.spellId == 11 || c.spellId == 15 || c.autocastId == 15 || c.autocastId == 3 || c.autocastId == 7 || c.autocastId == 11){
 					damageMultiplier += .5;
+					if (c.debugMessage)
+						c.sendMessage("Multiplier from shield: "+ damageMultiplier +"");
 				}
 				break;
 			case 18346:// Tome of frost
 				if(c.spellId == 1 || c.spellId == 5 || c.spellId == 9 || c.spellId == 13 || c.autocastId == 1 || c.autocastId == 5 || c.autocastId == 9 || c.autocastId == 13){
 					damageMultiplier += .5;
+					if (c.debugMessage)
+						c.sendMessage("Multiplier from shield: "+ damageMultiplier +"");
 				}
+				break;
 
 		}
 		if (c.playerEquipment[c.playerAmulet] == 12002 || c.playerEquipment[c.playerAmulet] == 19720) {
 			damageMultiplier += .10;
+			if (c.debugMessage)
+				c.sendMessage("Multiplier from Occult: "+ damageMultiplier +"");
 		}
 		if(c.fullVoidMage()) {
 			damageMultiplier +=0.025;
+			if (c.debugMessage)
+				c.sendMessage("Multiplier from void: "+ damageMultiplier +"");
 		}
 		if (c.playerEquipment[c.playerCape] == 21791 || c.playerEquipment[c.playerCape] == 21793 || c.playerEquipment[c.playerCape] == 21795 ||c.playerEquipment[c.playerCape] == 21793 ||c.playerEquipment[c.playerCape] == 21776 || c.playerEquipment[c.playerCape] == 21780 || c.playerEquipment[c.playerCape] == 21784) {
 			damageMultiplier +=0.02;
+			if (c.debugMessage)
+				c.sendMessage("Multiplier from cape: "+ damageMultiplier +"");
 		}
 		if (c.playerEquipment[c.playerHat] == 21018) {
 			damageMultiplier += 0.02;
+			if (c.debugMessage)
+				c.sendMessage("Multiplier from Ancestral Hat: "+ damageMultiplier +"");
 		}
 		if (c.playerEquipment[c.playerHands] == 19544) {
 			damageMultiplier += 0.05;
+			if (c.debugMessage)
+				c.sendMessage("Multiplier from Tormented Bracelet: "+ damageMultiplier +"");
 		}
 		if (c.playerEquipment[c.playerChest] == 21021) {
 			damageMultiplier += 0.02;
+			if (c.debugMessage)
+				c.sendMessage("Multiplier from Ancestral Body: "+ damageMultiplier +"");
 		}
 		if (c.playerEquipment[c.playerLegs] == 21024) {
 			damageMultiplier += 0.02;
+			if (c.debugMessage)
+				c.sendMessage("Multiplier from Ancestral Legs: "+ damageMultiplier +"");
+		}
+
+	/*	if (c.npcIndex > 0) {
+			if (c.getSlayer().getTask().isPresent()) {
+			NPC npc = NPCHandler.npcs[c.npcIndex];
+			if (npc != null && c.getSlayer().getTask().get().matches(npc.getDefinition().getNpcName()) || npc.npcType == 7413) {
+				boolean SLAYER_HELM = IntStream.of(c.IMBUED_SLAYER_HELMETS).anyMatch(i -> c.getItems().isWearingItem(i));
+				if (SLAYER_HELM) {
+					damageMultiplier += .1667;
+					if (c.debugMessage)
+						c.sendMessage("Multipler on slayer: "+ damageMultiplier +"");
+				}
+				}
+			}
+		}*/
+	/*	if (c.npcIndex > 0 && c.getSlayer().getTask().isPresent()) {
+			NPC npc = NPCHandler.npcs[c.npcIndex];
+			if (npc != null && c.getSlayer().getTask().get().matches(npc.getDefinition().getNpcName()) || npc.npcType == 7413) {
+				if (c.getItems().isWearingItem(11865) || c.getItems().isWearingItem(11784) || c.getItems().isWearingItem(19641) || c.getItems().isWearingItem(19645) || c.getItems().isWearingItem(19649) || c.getItems().isWearingItem(21890) || c.getItems().isWearingItem(21266)) {
+					damageMultiplier += .15;
+					if (c.debugMessage)
+						c.sendMessage("Multipler on slayer: "+ damageMultiplier +"");
+				}
+			}
+		}*/
+		if (c.npcIndex > 0) {
+			if (c.inWild()) {
+				if (c.playerEquipment[c.playerWeapon] == 22555) {
+					damageMultiplier += 0.25;
+					if (c.debugMessage)
+						c.sendMessage("Multiplier with Thammaron's: "+ damageMultiplier +"");
+				}
+			}
+		}
+		if (c.npcIndex > 0) {
+			NPC npc = NPCHandler.npcs[c.npcIndex];
+			if (c.getItems().isWearingItem(12018, c.playerAmulet)) {
+				if (Misc.linearSearch(Config.UNDEAD_IDS, npc.npcType) != -1) {
+					damageMultiplier += 0.20;
+					if (c.debugMessage)
+						c.sendMessage("Multiplier on Undead: "+ damageMultiplier +"");
+				}
+			}
+		}
+		if (c.npcIndex > 0) {
+			NPC npc = NPCHandler.npcs[c.npcIndex];
+			if (c.getItems().isWearingItem(12017, c.playerAmulet)) {
+				if (Misc.linearSearch(Config.UNDEAD_IDS, npc.npcType) != -1) {
+					damageMultiplier += 0.20;
+					if (c.debugMessage)
+						c.sendMessage("Multiplier on Unded: "+ damageMultiplier +"");
+				}
+			}
 		}
 		if (c.npcIndex > 0 && c.getSlayer().getTask().isPresent()) {
 			NPC npc = NPCHandler.npcs[c.npcIndex];
 			if (npc != null && c.getSlayer().getTask().get().matches(npc.getDefinition().getNpcName()) || npc.npcType == 7413) {
 				boolean SLAYER_HELM = IntStream.of(c.IMBUED_SLAYER_HELMETS).anyMatch(i -> c.getItems().isWearingItem(i));
 				if (SLAYER_HELM) {
-					damageMultiplier += .15;
+					damageMultiplier += .1667;
+					if (c.debugMessage)
+						c.sendMessage("Multiplier on Slayer: "+ damageMultiplier +"");
 				}
 			}
 		}
 		switch (MagicData.MAGIC_SPELLS[c.oldSpellId][0]) {
-		case 12037:
-			if (c.getItems().isWearingAnyItem(21255)) {
-				damage += (c.playerLevel[6] / 6) + 5;
-			} else {
-				damage += c.playerLevel[6] / 10;
-			}
-			break;
+			case 12037:
+				if (c.getItems().isWearingAnyItem(21255)) {
+					damage += (c.playerLevel[6] / 6) + 5;
+				} else {
+					damage += c.playerLevel[6] / 10;
+				}
+				break;
 		}
 
 		damage *= damageMultiplier;
+		/**
+		 * Start of Max Hit Debugging.
+		 * Always put in this order Set effects > Single item, Non offensive > Weapons/Offensive item > Slayer buffs (Helmet, Pet, Prestige reward)
+		 * Written by Kid Buu
+		 */
+		if(c.fullVoidMage()) {
+			if (c.debugMessage)
+				c.sendMessage("Max with void: "+ damage +"");
+		}
+		if (c.npcIndex > 0 && c.getSlayer().getTask().isPresent()) {
+			NPC npc = NPCHandler.npcs[c.npcIndex];
+			if (npc != null && c.getSlayer().getTask().get().matches(npc.getDefinition().getNpcName()) || npc.npcType == 7413) {
+				boolean SLAYER_HELM = IntStream.of(c.IMBUED_SLAYER_HELMETS).anyMatch(i -> c.getItems().isWearingItem(i));
+				if (!c.getItems().isWearingItem(4081) || !c.getItems().isWearingItem(12018) || !c.getItems().isWearingItem(10588) || !c.getItems().isWearingItem(12017) && SLAYER_HELM) {
+					if (c.debugMessage)
+						c.sendMessage("Max on Slayer task: "+ damage +"");
+				}
+			}
+		}
+		if (c.npcIndex > 0) {
+			NPC npc = NPCHandler.npcs[c.npcIndex];
+			if (c.inWild()) {
+				if (c.playerEquipment[c.playerWeapon] == 22555) {
+					if (c.debugMessage)
+						c.sendMessage("Max with Thammaron's: "+ damage +"");
+				}
+			}
+			if (c.getItems().isWearingItem(12018, c.playerAmulet)) {
+				if (Misc.linearSearch(Config.UNDEAD_IDS, npc.npcType) != -1) {
+					if (c.debugMessage)
+						c.sendMessage("Max on undead: "+ damage +"");
+				}
+			}
+			if (c.getItems().isWearingItem(12017, c.playerAmulet)) {
+				if (Misc.linearSearch(Config.UNDEAD_IDS, npc.npcType) != -1) {
+					if (c.debugMessage)
+						c.sendMessage("Max on undead: "+ damage +"");
+				}
+			}
+		}
+
+		if (c.playerEquipment[c.playerAmulet] == 12002 || c.playerEquipment[c.playerAmulet] == 19720) {
+			if (c.debugMessage)
+				c.sendMessage("Max from Occult: "+ damage +"");
+		}
+		if (c.playerEquipment[c.playerCape] == 21791 || c.playerEquipment[c.playerCape] == 21793 || c.playerEquipment[c.playerCape] == 21795 ||c.playerEquipment[c.playerCape] == 21793 ||c.playerEquipment[c.playerCape] == 21776 || c.playerEquipment[c.playerCape] == 21780 || c.playerEquipment[c.playerCape] == 21784) {
+			if (c.debugMessage)
+				c.sendMessage("Max from cape: "+ damage +"");
+		}
+		if (c.playerEquipment[c.playerHat] == 21018) {
+			if (c.debugMessage)
+				c.sendMessage("Max from Ancestral Hat: "+ damage +"");
+		}
+		if (c.playerEquipment[c.playerHands] == 19544) {
+			if (c.debugMessage)
+				c.sendMessage("Max from Tormented Bracelet: "+ damage +"");
+		}
+		if (c.playerEquipment[c.playerChest] == 21021) {
+			if (c.debugMessage)
+				c.sendMessage("Max from Ancestral Body: "+ damage +"");
+		}
+		if (c.playerEquipment[c.playerLegs] == 21024) {
+			if (c.debugMessage)
+				c.sendMessage("Max from Ancestral legs: "+ damage +"");
+		}
+		if (c.playerEquipment[c.playerWeapon] == 4710 || c.playerEquipment[c.playerWeapon] == 6914 || c.playerEquipment[c.playerWeapon] == 21006 || c.playerEquipment[c.playerWeapon] == 20604 || c.playerEquipment[c.playerWeapon] == 11791 || c.playerEquipment[c.playerWeapon] == 22296 || c.playerEquipment[c.playerWeapon] == 12904) {
+			if (c.debugMessage)
+				c.sendMessage("Max from Weapon: "+ damage +"");
+		}
 		return (int) damage;
+
+
 	}
 }

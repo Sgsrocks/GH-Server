@@ -83,6 +83,10 @@ public class ClickingButtons implements PacketType {
 		if (c.getExpLock().ExpLockClicking(c, actionButtonId)) {
 			return;
 		}
+
+		if (c.getCollectionLog().handleActionButtons(c, actionButtonId)) {
+			return;
+		}
 		if (c.getRunePouch().handleButton(actionButtonId)) {
 			return;
 		}
@@ -224,7 +228,9 @@ public class ClickingButtons implements PacketType {
 			c.teleportCities();
 			break;
 		case 75010:
-			c.getPA().spellTeleport(Config.START_LOCATION_X, Config.START_LOCATION_Y, 0, false);
+			c.getPA().showInterface(51000);
+			c.getTeleport().selection(c, 0);
+			//c.getPA().spellTeleport(Config.START_LOCATION_X, Config.START_LOCATION_Y, 0, false);
 			break;
 		//Teleport Selections	
 		case 254007:
@@ -335,7 +341,7 @@ public class ClickingButtons implements PacketType {
 			
 		//Select your mode interface stuff
 		case 132014:
-			c.getPA().sendFrame126("Standard playing style. Enjoy playing Anguish with", 33815);
+			c.getPA().sendFrame126("Standard playing style. Enjoy playing GodzHell with", 33815);
 			c.getPA().sendFrame126("5x combat experience rates as well as 8x skilling", 33816);
 			c.getPA().sendFrame126("experience rates.", 33817);
 			
@@ -568,25 +574,25 @@ public class ClickingButtons implements PacketType {
 			break;
 			case 183156:
 				switch(c.boxCurrentlyUsing) {
-					case 26826: //ultra rare
+					case 28826: //ultra rare
 						c.getUltraMysteryBox().spin();
 						break;
-					case 27326:
+					case 29326:
 						c.getDrCapeMysteryBox().spin();
 						break;
-					case 26822:
+					case 28822:
 						c.getUncommonMysteryBox().spin();
 						break;
-					case 26823:
+					case 28823:
 						c.getCommonMysteryBox().spin();
 						break;
-					case 26824:
+					case 28824:
 						c.getRareMysteryBox().spin();
 						break;
-					case 26825:
+					case 28825:
 						c.getSuperRareMysteryBox().spin();
 						break;
-					case 26964:
+					case 28964:
 					//	c.getRareKey().spin();
 						break;
 					case 6199:
@@ -660,7 +666,7 @@ public class ClickingButtons implements PacketType {
 			}
 			if (c.playerLevel[6] > 50) {
 				if (c.getItems().playerHasItem(555, 2) && c.getItems().playerHasItem(563, 2)) {
-					c.getPA().startTeleport(Config.ARDOUGNE_X, Config.ARDOUGNE_Y, 0, "modern", false);
+					c.getPA().startTeleport(Config.ARDOUGNE_X + Misc.random(4), Config.ARDOUGNE_Y+ Misc.random(4), 0, "modern", false);
 					c.getItems().deleteItem(555, c.getItems().getItemSlot(555), 2);
 					c.getItems().deleteItem(563, c.getItems().getItemSlot(563), 2);
 					c.getPA().addSkillXP(61, 6, true);
@@ -984,7 +990,7 @@ public class ClickingButtons implements PacketType {
 				c.getDiaryManager().getVarrockDiary().display();
 			}
 			if(c.questTab == 2) {
-				c.getPA().sendFrame126("http://playanguish.net/Forums/index.php?/forum/9-guides/", 12000);
+				c.getPA().sendFrame126("", 12000);
 			}
 			if(c.questTab == 3) {
 				
@@ -1049,7 +1055,7 @@ public class ClickingButtons implements PacketType {
 					//long minutes = TimeUnit.MILLISECONDS.toMinutes(milliseconds - TimeUnit.DAYS.toMillis(days) - TimeUnit.HOURS.toMillis(hours));
 					//long seconds = TimeUnit.MILLISECONDS.toSeconds(milliseconds - TimeUnit.DAYS.toMillis(days) - TimeUnit.HOURS.toMillis(hours) - TimeUnit.MINUTES.toMillis(minutes));
 				String time = days + " days, " + hours + " hrs";
-				c.forcedChat("I have played Anguish for " + time);
+				c.forcedChat("I have played GodzHell for " + time);
 			} 
 			if(c.questTab == 1) {
 				c.getDiaryManager().getFremennikDiary().display();
@@ -1119,7 +1125,7 @@ public class ClickingButtons implements PacketType {
 			break;
 		case 40177:
 			if(c.questTab == 0) {
-				c.getPA().sendFrame126("https://discord.gg/uxDwGjC", 12000);
+				c.getPA().sendFrame126("https://discord.gg/qJ7vNdpsVB", 12000);
 			} 
 			if(c.questTab == 1) {
 				c.getDiaryManager().getWesternDiary().display();
@@ -1133,7 +1139,7 @@ public class ClickingButtons implements PacketType {
 			break;	
 		case 40178:
 			if(c.questTab == 0) {
-				c.getPA().sendFrame126("http://playanguish.net/vote", 12000);
+				c.getPA().sendFrame126("https://godzhellrsps.everythingrs.com/services/vote", 12000);
 			} 
 			if(c.questTab == 1) {
 				c.getDiaryManager().getWildernessDiary().display();
@@ -1147,7 +1153,7 @@ public class ClickingButtons implements PacketType {
 			break;
 		case 40179: //forums
 			if(c.questTab == 0) {
-				c.getPA().sendFrame126("http://playanguish.net/", 12000);
+				c.getPA().sendFrame126("http://godzhell.org/", 12000);
 			} 
 			if(c.questTab == 1) {
 				c.forcedChat("I have completed: " + c.amountOfDiariesComplete() + " of the acheivement diaries!") ;
@@ -1188,9 +1194,10 @@ public class ClickingButtons implements PacketType {
 			c.setSidebarInterface(7, 18128);
 			c.setSidebarInterface(8, 5065);
 			c.setSidebarInterface(9, 5715);
-			c.setSidebarInterface(10, 2449);
-			c.setSidebarInterface(11, 23000); // wrench tab
-			c.setSidebarInterface(12, 147); // run tab
+			c.setSidebarInterface(10, 39498);
+			c.setSidebarInterface(11, 42500); // wrench tab
+			c.setSidebarInterface(12, 38890); // run tab
+			c.setSidebarInterface(13, 38161); //music
 			c.setSidebarInterface(0, 2423);
 			// if (c.playerEquipment[c.playerRing] == 7927) {
 			// c.getItems().deleteEquipment(c.playerEquipment[c.playerRing], c.playerRing);
@@ -1641,7 +1648,7 @@ public class ClickingButtons implements PacketType {
 			long days = TimeUnit.MILLISECONDS.toDays(milliseconds);
 			long hours = TimeUnit.MILLISECONDS.toHours(milliseconds - TimeUnit.DAYS.toMillis(days));
 			String time = days + " days, " + hours + " hours.";
-			c.forcedChat("I've played Anguish for a total of : " + time);
+			c.forcedChat("I've played Godzhell for a total of : " + time);
 			break;
 		case 113240:
 			c.forcedChat("I currently have: " + c.pkp + " PK Points.");
@@ -1671,7 +1678,7 @@ public class ClickingButtons implements PacketType {
 				// https://www.youtube.com/user/DopeRsps/videos
 				break;
 			case 185158: // Store
-				c.getPA().sendFrame126("https://auroraps.org/forums/index.php?/forum/15-guides/", 12000);
+				c.getPA().sendFrame126("", 12000);
 				//c.getPA().sendFrame126("https://OSPSrs.com/store", 12000);
 				// https://www.youtube.com/user/DopeRsps/videos
 				break;
@@ -1840,100 +1847,100 @@ public class ClickingButtons implements PacketType {
 
 
 		/* End Quest */
-		case 15147:// Bronze, 1
+		case 154005:// Bronze, 1
 			Smelting.startSmelting(c, "bronze", "ONE", "FURNACE");
 			break;
-		case 15146:// Bronze, 5
+		case 154004:// Bronze, 5
 			Smelting.startSmelting(c, "bronze", "FIVE", "FURNACE");
 			break;
-		case 10247:// Bronze, 10
+		case 154003:// Bronze, 10
 			Smelting.startSmelting(c, "bronze", "TEN", "FURNACE");
 			break;
-		case 9110:// Bronze, 28
+		case 154002:// Bronze, 28
 			Smelting.startSmelting(c, "bronze", "ALL", "FURNACE");
 			break;
-		case 15151:// Iron, 1
+		case 154009:// Iron, 1
 			Smelting.startSmelting(c, "iron", "ONE", "FURNACE");
 			break;
-		case 15150:// Iron, 5
+		case 154008:// Iron, 5
 			Smelting.startSmelting(c, "iron", "FIVE", "FURNACE");
 			break;
-		case 15149:// Iron, 10
+		case 154007:// Iron, 10
 			Smelting.startSmelting(c, "iron", "TEN", "FURNACE");
 			break;
-		case 15148:// Iron, 28
+		case 154006:// Iron, 28
 			Smelting.startSmelting(c, "iron", "ALL", "FURNACE");
 			break;
-		case 15155:// silver, 1
+		case 154013:// silver, 1
 			Smelting.startSmelting(c, "silver", "ONE", "FURNACE");
 			break;
-		case 15154:// silver, 5
+		case 154012:// silver, 5
 			Smelting.startSmelting(c, "silver", "FIVE", "FURNACE");
 			break;
-		case 15153:// silver, 10
+		case 154011:// silver, 10
 			Smelting.startSmelting(c, "silver", "TEN", "FURNACE");
 			break;
-		case 15152:// silver, 28
+		case 154010:// silver, 28
 			Smelting.startSmelting(c, "silver", "ALL", "FURNACE");
 			break;
-		case 15159:// steel, 1
+		case 154017:// steel, 1
 			Smelting.startSmelting(c, "steel", "ONE", "FURNACE");
 			break;
-		case 15158:// steel, 5
+		case 154016:// steel, 5
 			Smelting.startSmelting(c, "steel", "FIVE", "FURNACE");
 			break;
-		case 15157:// steel, 10
+		case 154015:// steel, 10
 			Smelting.startSmelting(c, "steel", "TEN", "FURNACE");
 			break;
-		case 15156:// steel, 28
+		case 154014:// steel, 28
 			Smelting.startSmelting(c, "steel", "ALL", "FURNACE");
 			break;
-		case 15163:// gold, 1
+		case 154021:// gold, 1
 			Smelting.startSmelting(c, "gold", "ONE", "FURNACE");
 			break;
-		case 15162:// gold, 5
+		case 154020:// gold, 5
 			Smelting.startSmelting(c, "gold", "FIVE", "FURNACE");
 			break;
-		case 15161:// gold, 10
+		case 154019:// gold, 10
 			Smelting.startSmelting(c, "gold", "TEN", "FURNACE");
 			break;
-		case 15160:// gold, 28
+		case 154018:// gold, 28
 			Smelting.startSmelting(c, "gold", "ALL", "FURNACE");
 			break;
-		case 29017:// mithril, 1
+		case 154025:// mithril, 1
 			Smelting.startSmelting(c, "mithril", "ONE", "FURNACE");
 			break;
-		case 29016:// mithril, 5
+		case 154024:// mithril, 5
 			Smelting.startSmelting(c, "mithril", "FIVE", "FURNACE");
 			break;
-		case 24253:// mithril, 10
+		case 154023:// mithril, 10
 			Smelting.startSmelting(c, "mithril", "TEN", "FURNACE");
 			break;
-		case 16062:// mithril, 28
+		case 154022:// mithril, 28
 			Smelting.startSmelting(c, "mithril", "ALL", "FURNACE");
 			break;
-		case 29022:// addy, 1
+		case 154029:// addy, 1
 			Smelting.startSmelting(c, "adamant", "ONE", "FURNACE");
 			break;
-		case 29021:// addy, 5
+		case 154028:// addy, 5
 			Smelting.startSmelting(c, "adamant", "FIVE", "FURNACE");
 			break;
-		case 29019:// addy, 10
+		case 154027:// addy, 10
 			Smelting.startSmelting(c, "adamant", "TEN", "FURNACE");
 			break;
-		case 29018:// addy, 28
+		case 154026:// addy, 28
 			Smelting.startSmelting(c, "adamant", "ALL", "FURNACE");
 			break;
-		case 29026:// rune, 1
+		case 154033:// rune, 1
 			Smelting.startSmelting(c, "rune", "ONE", "FURNACE");
 			break;
-		case 29025:// rune, 5
+		case 154032:// rune, 5
 			Smelting.startSmelting(c, "rune", "FIVE", "FURNACE");
 			break;
-		case 29024:// rune, 10
+		case 154031:// rune, 10
 			Smelting.startSmelting(c, "rune", "TEN", "FURNACE");
 			break;
-		case 29023:// rune, 28
+		case 154030:// rune, 28
 			Smelting.startSmelting(c, "rune", "ALL", "FURNACE");
 			break;
 
@@ -2697,7 +2704,7 @@ public class ClickingButtons implements PacketType {
 			c.getPA().setConfig(427, c.acceptAid ? 1 : 0);
 			break;
 
-		case 9154:
+		case 154083:
 		c.logout();
 		break;
 
@@ -2880,7 +2887,9 @@ public class ClickingButtons implements PacketType {
 			}
 			//c.getDH().sendDialogues(94399, 5314);
 			//c.dialogueId = 94399;
-			c.getPA().homeTele(c);
+			//c.getPA().homeTele(c);
+			c.getPA().showInterface(51000);
+			c.getTeleport().selection(c, 0);
 			//c.getPA().showInterface(51000);
 			//c.getTeleport().selection(c, 0);
 			break;
@@ -2989,7 +2998,8 @@ public class ClickingButtons implements PacketType {
 			}
 			break;
 			case 166056:
-				c.getPA().showInterface(53000);
+				//c.getPA().showInterface(52000);
+				c.sendMessage("this is disabled for right now till i fix it");
 				break;
 
 			case 166028:
@@ -2998,6 +3008,32 @@ public class ClickingButtons implements PacketType {
 		/**
 		 * Prayers *
 		 */
+			case 129228:
+				SpinMaterial.getInstance().spin(c, 1779);
+				break;
+			case 72038:
+				if (c.teleTimer > 0) {
+					return;
+				}
+				if (c.playerLevel[6] > 64) {
+					if ((c.getItems().playerHasItem(554, 2) && c.getItems().playerHasItem(555, 2) && c.getItems().playerHasItem(563, 2))) {
+						if(!c.getItems().playerHasItem(1963)){
+							c.sendMessage("You need a banana to cast this spell.");
+							return;
+						}
+						c.getPA().startTeleport(2770 + Misc.random(3), 2694  + Misc.random(3), 0, "modern", false);
+						c.getItems().deleteItem(554, c.getItems().getItemSlot(554), 2);
+						c.getItems().deleteItem(555, c.getItems().getItemSlot(556), 2);
+						c.getItems().deleteItem(563, c.getItems().getItemSlot(563), 2);
+						c.getItems().deleteItem(1963, c.getItems().getItemSlot(1963), 1);
+						c.getPA().addSkillXP(74, 6, true);
+					} else {
+						c.sendMessage("You do not have the required runes to cast this spell.");
+					}
+				} else {
+					c.sendMessage("You do not have the required magic level to cast this spell.");
+				}
+				break;
 		case 21233: // thick skin
 			c.getCombat().activatePrayer(0);
 			break;

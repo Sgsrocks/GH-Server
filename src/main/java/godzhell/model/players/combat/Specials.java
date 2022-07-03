@@ -1,11 +1,11 @@
 package godzhell.model.players.combat;
 
+import godzhell.model.players.combat.specials.*;
+
 import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.Optional;
 import java.util.Set;
-
-import godzhell.model.players.combat.specials.*;
 
 /**
  * Contains an enumeration of {@link Special} objects.
@@ -22,6 +22,7 @@ public enum Specials {
 	DRAGON_LONGSWORD(new DragonLongsword()),
 	ABYSSAL_BLUDGEON(new AbyssalBludgeon()),
 	ARMADYL_CROSSBOW(new ArmadylCrossbow()),
+	ANCIENT_GODSWORD(new AncientGodsword()),
 	ABYSSAL_WHIP(new AbyssalWhip()),
 	ABYSSAL_DAGGER(new AbyssalDagger()),
 	ANCIENT_MACE(new AncientMace()),

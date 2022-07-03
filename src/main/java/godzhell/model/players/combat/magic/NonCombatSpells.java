@@ -1,6 +1,7 @@
 package godzhell.model.players.combat.magic;
 
 import godzhell.Config;
+import godzhell.definitions.ItemCacheDefinition;
 import godzhell.model.content.achievement_diary.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
 import godzhell.model.items.ItemAssistant;
 import godzhell.model.players.Player;
@@ -112,19 +113,19 @@ public class NonCombatSpells extends MagicRequirements {
 					if (!c.getCombat().checkMagicReqs(49)) {
 						break;
 					}
-					if (itemId == 13307) {
+					if (itemId == 995) {
 						c.sendMessage("You can't alch coins.");
 						break;
 					}
 					int reward = ShopAssistant.getItemShopValue(itemId) / 3;
-					int playerAmount = c.getItems().getItemAmount(13307);
+					int playerAmount = c.getItems().getItemAmount(995);
 					if (reward + playerAmount > 2147483647) {
 						c.sendMessage("You have reached max cash you can't alch anymore.");
 						break;
 					}
 					if (c.getItems().playerHasItem(itemId, slot, 1)) {
 						c.getItems().deleteItem(itemId, slot, 1);
-						c.getItems().addItem(13307, ShopAssistant.getItemShopValue(itemId) / 3);
+						c.getItems().addItem(995, (int) (ItemCacheDefinition.forID(itemId).getvalue() * 0.4));
 						c.startAnimation(MagicData.MAGIC_SPELLS[49][2]);
 						c.gfx100(MagicData.MAGIC_SPELLS[49][3]);
 						c.alchDelay = System.currentTimeMillis();
@@ -142,19 +143,19 @@ public class NonCombatSpells extends MagicRequirements {
 					if (!c.getCombat().checkMagicReqs(50)) {
 						break;
 					}
-					if (itemId == 13307) {
+					if (itemId == 995) {
 						c.sendMessage("You can't alch coins.");
 						break;
 					}
-					int reward = (int) (ShopAssistant.getItemShopValue(itemId) * .75);
-					int playerAmount = c.getItems().getItemAmount(13307);
+					int reward = (int) (ShopAssistant.getItemShopValue(itemId) * .6);
+					int playerAmount = c.getItems().getItemAmount(995);
 					if (reward + playerAmount > 2147483647) {
 						c.sendMessage("You can't alch anymore!");
 						break;
 					}
 					if (c.getItems().playerHasItem(itemId, slot, 1)) {
 						c.getItems().deleteItem(itemId, slot, 1);
-						c.getItems().addItem(13307, (int) (ShopAssistant.getItemShopValue(itemId) * .75));
+						c.getItems().addItem(995, (int) (ItemCacheDefinition.forID(itemId).getvalue() * .6));
 						c.startAnimation(MagicData.MAGIC_SPELLS[50][2]);
 						c.gfx100(MagicData.MAGIC_SPELLS[50][3]);
 						c.alchDelay = System.currentTimeMillis();

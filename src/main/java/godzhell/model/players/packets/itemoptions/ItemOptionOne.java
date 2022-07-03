@@ -1,16 +1,21 @@
 package godzhell.model.players.packets.itemoptions;
 
-import java.util.Objects;
-import java.util.Optional;
-
 import godzhell.Server;
+import godzhell.definitions.ItemID;
 import godzhell.model.content.DiceHandler;
+import godzhell.model.content.LootingBag.LootingBag;
 import godzhell.model.content.Packs;
 import godzhell.model.content.RunePouch;
-import godzhell.model.content.LootingBag.LootingBag;
 import godzhell.model.content.achievement.AchievementType;
 import godzhell.model.content.achievement.Achievements;
 import godzhell.model.content.barrows.Barrows;
+import godzhell.model.content.skills.hunter.Hunter;
+import godzhell.model.content.skills.hunter.trap.impl.BirdSnare;
+import godzhell.model.content.skills.hunter.trap.impl.BoxTrap;
+import godzhell.model.content.skills.prayer.Bone;
+import godzhell.model.content.skills.prayer.Prayer;
+import godzhell.model.content.skills.runecrafting.Pouches;
+import godzhell.model.content.skills.runecrafting.Pouches.Pouch;
 import godzhell.model.content.teleportation.TeleportTablets;
 import godzhell.model.content.trails.MasterClue;
 import godzhell.model.content.trails.RewardLevel;
@@ -21,15 +26,11 @@ import godzhell.model.multiplayer_session.duel.DuelSessionRules.Rule;
 import godzhell.model.players.*;
 import godzhell.model.players.combat.Hitmark;
 import godzhell.model.players.combat.magic.NonCombatSpells;
-import godzhell.model.content.skills.hunter.Hunter;
-import godzhell.model.content.skills.hunter.trap.impl.BirdSnare;
-import godzhell.model.content.skills.hunter.trap.impl.BoxTrap;
-import godzhell.model.content.skills.prayer.Bone;
-import godzhell.model.content.skills.prayer.Prayer;
-import godzhell.model.content.skills.runecrafting.Pouches;
-import godzhell.model.content.skills.runecrafting.Pouches.Pouch;
 import godzhell.util.Misc;
 import godzhell.world.objects.GlobalObject;
+
+import java.util.Objects;
+import java.util.Optional;
 
 import static godzhell.model.content.DiceHandler.DICING_AREA;
 
@@ -206,6 +207,17 @@ public class ItemOptionOne implements PacketType {
                     c.getPA().closeAllWindows();
                     return;
                 }
+            case 29293:
+                if (c.getItems().playerHasItem(29293, 1)) {
+                    c.getItems().deleteItem(29293, 1);
+                    c.gfx100(263);
+                    c.amDonated += 300;
+                    c.sendMessage("Thank you for donating! 300$ has been added to your total credit.");
+                    c.getRights().add(Right.RAINBOW_DONATOR);
+                    c.getRights().updatePrimary();
+                    c.getPA().closeAllWindows();
+                    return;
+                }
             case 2699:
                 if (c.getItems().playerHasItem(2699, 1)) {
                     c.getItems().deleteItem(2699, 1);
@@ -314,38 +326,38 @@ public class ItemOptionOne implements PacketType {
                  
              }
                 break;
-            case 26826:
-                if (c.getItems().playerHasItem(26826)) {
+            case 28826:
+                if (c.getItems().playerHasItem(28826)) {
                     c.getUltraMysteryBox().openInterface();
                     return;
                 }
                 break;
-            case 27326:
-                if(c.getItems().playerHasItem(27326)){
+            case 29326:
+                if(c.getItems().playerHasItem(29326)){
                     c.getDrCapeMysteryBox().openInterface();
                     return;
                 }
                 break;
-            case 26822:
-                if (c.getItems().playerHasItem(26822)) {
+            case 28822:
+                if (c.getItems().playerHasItem(28822)) {
                     c.getUncommonMysteryBox().openInterface();
                     return;
                 }
                 break;
-            case 26823:
-                if (c.getItems().playerHasItem(26823)) {
+            case 28823:
+                if (c.getItems().playerHasItem(28823)) {
                     c.getCommonMysteryBox().openInterface();
                     return;
                 }
                 break;
-            case 26824:
-                if (c.getItems().playerHasItem(26824)) {
+            case 28824:
+                if (c.getItems().playerHasItem(28824)) {
                     c.getRareMysteryBox().openInterface();
                     return;
                 }
                 break;
-            case 26825:
-                if (c.getItems().playerHasItem(26825)) {
+            case 28825:
+                if (c.getItems().playerHasItem(28825)) {
                     c.getSuperRareMysteryBox().openInterface();
                     return;
                 }
@@ -580,26 +592,26 @@ public class ItemOptionOne implements PacketType {
                 c.getChristmasPresent().open();
                 return;
             }
-        if (itemId == 2714) { // Easy Clue Scroll Casket
+        if (itemId == ItemID.REWARD_CASKET_EASY) { // Easy Clue Scroll Casket
             c.getItems().deleteItem(itemId, 1);
             c.getTrails().addRewards(RewardLevel.EASY);
             c.setEasyClueCounter(c.getEasyClueCounter() + 1);
             c.sendMessage("@blu@You have completed " + c.getEasyClueCounter() + " easy Treasure Trails.");
         }
-        if (itemId == 2802) { // Medium Clue Scroll Casket
+        if (itemId == ItemID.REWARD_CASKET_MEDIUM) { // Medium Clue Scroll Casket
             c.getItems().deleteItem(itemId, 1);
             c.getTrails().addRewards(RewardLevel.MEDIUM);
             c.setMediumClueCounter(c.getMediumClueCounter() + 1);
             c.sendMessage("@blu@You have completed " + c.getMediumClueCounter() + " medium Treasure Trails.");
         }
-        if (itemId == 2775) { // Hard Clue Scroll Casket
+        if (itemId == ItemID.REWARD_CASKET_HARD) { // Hard Clue Scroll Casket
             c.getItems().deleteItem(itemId, 1);
             c.getTrails().addRewards(RewardLevel.HARD);
             c.setHardClueCounter(c.getHardClueCounter() + 1);
             c.sendMessage("@blu@You have completed " + c.getHardClueCounter() + " hard Treasure Trails.");
         }
-        if (itemId == 19841) { // Master Clue Scroll Casket
-            if (c.getItems().playerHasItem(19841)) {
+        if (itemId == ItemID.REWARD_CASKET_MASTER) { // Master Clue Scroll Casket
+            if (c.getItems().playerHasItem(ItemID.REWARD_CASKET_MASTER)) {
                 c.getItems().deleteItem(itemId, 1);
                 c.getTrails().addRewards(RewardLevel.MASTER);
                 c.setMasterClueCounter(c.getMasterClueCounter() + 1);
@@ -614,19 +626,19 @@ public class ItemOptionOne implements PacketType {
         if (itemId == 2677) {
             Achievements.increase(c, AchievementType.CLUES, 1);
             c.getItems().deleteItem(itemId, 1);
-            c.getItems().addItem(2714, 1);
+            c.getItems().addItem(ItemID.REWARD_CASKET_EASY, 1);
             c.sendMessage("You've received a easy clue scroll casket.");
         }
         if (itemId == 2801) {
             Achievements.increase(c, AchievementType.CLUES, 1);
             c.getItems().deleteItem(itemId, 1);
-            c.getItems().addItem(2802, 1);
+            c.getItems().addItem(ItemID.REWARD_CASKET_MEDIUM, 1);
             c.sendMessage("You've receivedd a medium clue scroll casket.");
         }
         if (itemId == 2722) {
             Achievements.increase(c, AchievementType.CLUES, 1);
             c.getItems().deleteItem(itemId, 1);
-            c.getItems().addItem(2775, 1);
+            c.getItems().addItem(ItemID.REWARD_CASKET_HARD, 1);
             c.sendMessage("You've received a hard clue scroll casket.");
         }
         /**

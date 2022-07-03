@@ -41,11 +41,11 @@ public class TeleportHandler {
 			"Chaos Elemental @red@(50)", "Chaos Fanatic @red@(41)", "Crazy Archaeologist @red@(23)", "", "", "", "", "",
 			"", "", "" };
 	String[] cityNames = { "Select your City Teleport", "Varrock", "Yanille", "Edgeville", "Lumbridge", "Ardougne",
-			"Neitiznot", "Karamja", "Falador", "Taverley", "Camelot", "Catherby", "Al Kharid", "", "", "", "", "", "",
+			"Neitiznot", "Karamja", "Falador", "Taverley", "Camelot", "Catherby", "Al Kharid", "Ape Atoll", "", "", "", "", "",
 			"", "" };
-	String[] donatorNames = { "Select your Dungeon Teleport", "Catacombs", "Fremennik Slayer Dungeon",
-			"Taverley Dungeon", "Skeletal Wyverns", "Asgarnian Ice Dungeon", "Brimhaven Dungeon", "Ancient Cavern", "Edgeville Dungeon", "Stronghold of Security", "Ape Atoll Dungeon", "",
-			"", "", "", "", "", "", "", "", "" };
+	String[] donatorNames = { "Select your Dungeon Teleport", "Catacombs of Kourend", "Fremennik Slayer Dungeon",
+			"Taverley Dungeon", "Asgarnian Ice Dungeon", "Brimhaven Dungeon", "Ancient Cavern", "Edgeville Dungeon", "Stronghold of Security", "Ape Atoll Dungeon", "Forthos Dungeon",
+			"Ruins of Camdozaal", "Varrock Sewers", "", "", "", "", "", "", "", "" };
 	String[] otherNames = { "Select your Skilling Teleport", "Slayer Masters", "Lands End", "Skillers Cove",
 			"Woodcutting Guild", "Farming Patches", "Agility (Gnome)", "Hunter", "Puro Puro", "Mining Guild", "", "",
 			"", "", "", "", "", "", "", "", "" };
@@ -265,7 +265,7 @@ public class TeleportHandler {
 			} else if (player.teleSelected == 4) { // City - Varrock
 				player.getPA().startTeleport(3210, 3424, 0, "modern", false);
 				// player.sendMessage("Teleporting to "+cityNames[1]+".");
-			} else if (player.teleSelected == 5) { // Donator - Donator Lobby
+			} else if (player.teleSelected == 5) { // dungeons - catacombs
 				player.getPA().startTeleport(1661, 10049, 0, "modern", false);
 			} else if (player.teleSelected == 6) { // Other - Slayer Masters
 				player.getPA().startTeleport(3107, 3507, 0, "modern", false); // change
@@ -290,7 +290,7 @@ public class TeleportHandler {
 			} else if (player.teleSelected == 4) { // City - Yanille
 				player.getPA().startTeleport(2606, 3093, 0, "modern", false);
 				// player.sendMessage("Teleporting to "+cityNames[2]+".");
-			} else if (player.teleSelected == 5) { // Donator - Basic Slayer
+			} else if (player.teleSelected == 5) { // Dungeon - Basic Slayer
 				player.getPA().startTeleport(2807, 10003, 0, "modern", false);
 			} else if (player.teleSelected == 6) { // Other - Lands end
 				player.getPA().startTeleport(1504, 3419, 0, "modern", false); // change
@@ -347,7 +347,7 @@ public class TeleportHandler {
 				// player.sendMessage("Teleporting to "+cityNames[4]+".");
 				c.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.LUMBRIDGE_TELEPORT);
 			} else if (player.teleSelected == 5) { // Super - Basic Skilling
-				player.getPA().startTeleport(3066, 9544, 0, "modern", false);
+				player.getPA().startTeleport(3007, 9550, 0, "modern", false);
 			} else if (player.teleSelected == 6) { // Other - Woodcutting Guild
 				player.getPA().startTeleport(1658, 3505, 0, "modern", false);
 				// player.sendMessage("Teleporting to "+otherNames[4]+".");
@@ -373,7 +373,7 @@ public class TeleportHandler {
 				// player.sendMessage("Teleporting to "+cityNames[5]+".");
 				c.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.TELEPORT_ARDOUGNE);
 			} else if (player.teleSelected == 5) { // Super - Demons
-				player.getPA().startTeleport(3048, 9582, 0, "modern", false);
+				player.getPA().startTeleport(2712, 9564, 0, "modern", false);
 			} else if (player.teleSelected == 6) { // Other - Farming Patches
 				player.getPA().startTeleport(3003, 3376, 0, "modern", false);
 				// player.sendMessage("Teleporting to "+otherNames[5]+".");
@@ -398,7 +398,7 @@ public class TeleportHandler {
 				player.getPA().startTeleport(2321, 3804, 0, "modern", false);
 				// player.sendMessage("Teleporting to "+cityNames[6]+".");
 			} else if (player.teleSelected == 5) { // Extreme - Advanced Skilling
-				player.getPA().startTeleport(2710, 9466, 0, "modern", false);
+				player.getPA().startTeleport(1764,5365, 1, "modern", false);
 			} else if (player.teleSelected == 6) { // Other - Agility - Grace
 				player.getPA().startTeleport(2480, 3437, 0, "modern", false);
 				// player.sendMessage("Teleporting to "+otherNames[6]+".");
@@ -422,8 +422,8 @@ public class TeleportHandler {
 			} else if (player.teleSelected == 4) { // City - Karamja
 				player.getPA().startTeleport(2948, 3147, 0, "modern", false);
 				// player.sendMessage("Teleporting to "+cityNames[7]+".");
-			} else if (player.teleSelected == 5) { // Extreme - Dragons(Hides)
-				player.getPA().startTeleport(1764,5365,1, "modern", false);
+			} else if (player.teleSelected == 5) { // Dungeon - edgeville
+				player.getPA().startTeleport(3097,9869,0, "modern", false);
 			} else if (player.teleSelected == 6) { // Other - Hunter
 				player.getPA().startTeleport(1580, 3437, 0, "modern", false);
 				// player.sendMessage("Teleporting to "+otherNames[7]+".");
@@ -448,8 +448,8 @@ public class TeleportHandler {
 				player.getPA().startTeleport(2964, 3378, 0, "modern", false);
 				// player.sendMessage("Teleporting to "+cityNames[8]+".");
 				c.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.TELEPORT_TO_FALADOR);
-			} else if (player.teleSelected == 5) { // Extreme - Dragons(Metal)
-				player.getPA().startTeleport(3097,9869,0, "modern", false);
+			} else if (player.teleSelected == 5) { // Dungeon - sos
+				player.getPA().startTeleport(1860,5242,0, "modern", false);
 			} else if (player.teleSelected == 6) { // Other - Puro Puro
 				if (WheatPortalEvent.xLocation > 0 && WheatPortalEvent.yLocation > 0) {
 					player.getPA().spellTeleport(WheatPortalEvent.xLocation + 1, WheatPortalEvent.yLocation + 1, 0,
@@ -479,7 +479,7 @@ public class TeleportHandler {
 				player.getPA().startTeleport(2928, 3451, 0, "modern", false);
 				// player.sendMessage("Teleporting to "+cityNames[9]+".");
 			} else if (player.teleSelected == 5) { // Extreme - Smoke Devil
-				player.getPA().startTeleport(1860,5242,0, "modern", false);
+				player.getPA().startTeleport(2757,9094,0, "modern", false);
 			} else if (player.teleSelected == 6) { // Other - Mining Guild
 				player.getPA().startTeleport(3046, 9756, 0, "modern", false);
 				// player.sendMessage("Teleporting to "+otherNames[9]+".");
@@ -496,6 +496,8 @@ public class TeleportHandler {
 				player.getPA().startTeleport(1310, 1237, 0, "modern", false);
 			} else if (player.teleSelected == 4) {
 				player.getPA().startTeleport(2804, 3432, 0, "modern", false);
+			} else if (player.teleSelected == 5) { // Legendary - Skeletal Wyverns
+				player.getPA().startTeleport(2967,5794,0, "modern", false);
 			}
 			break;
 		case 180215:
@@ -509,6 +511,8 @@ public class TeleportHandler {
 				player.getPA().startTeleport(2404, 9415, 0, "modern", false);
 			} else if (player.teleSelected == 4) {
 				player.getPA().startTeleport(3293, 3179, 0, "modern", false);
+			} else if (player.teleSelected == 5) { // Legendary - Skeletal Wyverns
+				player.getPA().startTeleport(3236,9863,0, "modern", false);
 			}
 			break;
 		case 180221:
@@ -533,7 +537,7 @@ public class TeleportHandler {
 			} else if (player.teleSelected == 2) {
 				player.getPA().startTeleport(3037, 4765, 0, "modern", false);
 			} else if (player.teleSelected == 4) {
-				player.getPA().startTeleport(3293, 3179, 0, "modern", false);
+				player.getPA().startTeleport(2764, 2775, 0, "modern", false);
 			}
 			break;
 		case 180209:
@@ -553,7 +557,7 @@ public class TeleportHandler {
 				// player.sendMessage("Teleporting to "+cityNames[10]+".");
 				c.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.CAMELOT_TELEPORT);
 			} else if (player.teleSelected == 5) { // Legendary - Skeletal Wyverns
-				player.getPA().startTeleport(2757,9094,0, "modern", false);
+				player.getPA().startTeleport(1800,9968,0, "modern", false);
 			}
 			break;
 		case 254046:

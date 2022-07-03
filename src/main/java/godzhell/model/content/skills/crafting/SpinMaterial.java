@@ -1,13 +1,13 @@
 package godzhell.model.content.skills.crafting;
 
-import java.util.Arrays;
-
 import godzhell.Config;
 import godzhell.Server;
 import godzhell.event.Event;
+import godzhell.model.content.skills.Skill;
 import godzhell.model.players.Player;
 import godzhell.model.players.mode.ModeType;
-import godzhell.model.content.skills.Skill;
+
+import java.util.Arrays;
 
 public class SpinMaterial {
 
@@ -73,7 +73,8 @@ public class SpinMaterial {
 	}
 
 	public enum Material {
-		FLAX(1779, 1777, 1, 5), CROSSBOW(9436, 9438, 10, 15);
+		FLAX(1779, 1777, 1, 5),
+		CROSSBOW(9436, 9438, 10, 15);
 
 		/**
 		 * The item required to craft

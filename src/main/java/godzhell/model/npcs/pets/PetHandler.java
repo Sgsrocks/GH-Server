@@ -1,16 +1,9 @@
 package godzhell.model.npcs.pets;
 
-import java.util.Collections;
-import java.util.EnumSet;
-import java.util.Optional;
-import java.util.Set;
-
-import org.apache.commons.lang3.RandomUtils;
-
 import com.google.common.collect.ImmutableSet;
-
 import godzhell.Server;
 import godzhell.clip.Region;
+import godzhell.model.items.GameItem;
 import godzhell.model.npcs.NPC;
 import godzhell.model.npcs.NPCHandler;
 import godzhell.model.players.Boundary;
@@ -18,6 +11,9 @@ import godzhell.model.players.Player;
 import godzhell.model.players.PlayerHandler;
 import godzhell.model.players.PlayerSave;
 import godzhell.util.Misc;
+import org.apache.commons.lang3.RandomUtils;
+
+import java.util.*;
 
 public class PetHandler {
 
@@ -28,7 +24,7 @@ public class PetHandler {
     private static final Set<Pets> PETS = Collections.unmodifiableSet(EnumSet.allOf(Pets.class));
 
     private static final ImmutableSet<Integer> PET_IDS = ImmutableSet.of(12650, 12649, 12651, 12652, 12644, 12645,
-            12643, 11995, 15568, 12653, 12655, 13178, 12646, 13179, 13177, 12921, 13181, 12816, 12647, 22752);
+            12643, 11995, 15568, 12653, 12655, 13178, 12646, 13179, 13177, 12921, 13181, 12816, 12647, 22752, 26348);
 
     public static boolean ownsAll(Player player) {
         int amount = 0;
@@ -41,6 +37,46 @@ public class PetHandler {
             }
         }
         return false;
+    }
+    public static ArrayList<GameItem> getPetIds(boolean parent) {
+        ArrayList<GameItem> drops = new ArrayList<>();
+        //Yeah this could be done better but I don't want to write a contains function override on the GameItem class
+        ArrayList<Integer> itemIds = new ArrayList<>();
+        for (Pets p : Pets.values()) {
+            int itemId = parent ? getPetForParentId(p).itemId : p.getItemId();
+            if (!itemIds.contains(itemId)) {
+                itemIds.add(itemId);
+                drops.add(new GameItem(itemId));
+            }
+        }
+
+        return drops;
+    }
+    public static Pets getPetForParentId(Pets pet) {
+        switch(pet.parent) {
+            case "Runecrafting":
+                return Pets.RIFT_GUARDIAN_AIR;
+            case "Alchemical Hydra":
+                return Pets.HYDRA;
+            case "Vetion":
+                return Pets.VETION;
+            case "Zulrah":
+                return Pets.ZULRAH;
+            case "Zombie":
+                return Pets.DEATH_JR_RED;
+            case "Mining":
+                return Pets.ROCK_GOLEM;
+           // case "Vote Genie Pet":
+             //   return Pets.VOTE_GENIE_PET;
+         //   case "Hunnlef":
+             //   return Pets.YOUNGLEF;
+            case "The Nightmare":
+                return Pets.LITTLE_NIGHTMARE;
+            case "Kalphite Queen":
+                return Pets.KALPHITE_PRINCESS;
+            default:
+                return pet;
+        }
     }
 
     public static enum Pets {
@@ -366,7 +402,9 @@ public class PetHandler {
                 2143,
                 "",
                 -1,
-                "second");
+                "second"),
+        LITTLE_NIGHTMARE(24491, 9398, "The Nightmare", 500, "second"),
+        NEXLING(26348, 11276, "Nex", 500, "second");
 
         private final int itemId;
 
@@ -384,6 +422,14 @@ public class PetHandler {
             this.parent = parent;
             this.droprate = droprate;
             this.pickupOption = pickupOption;
+        }
+
+        public int getItemId() {
+            return itemId;
+        }
+
+        public int getDroprate() {
+            return droprate;
         }
     }
 

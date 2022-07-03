@@ -1,19 +1,5 @@
 package godzhell.net.login;
 
-import java.math.BigInteger;
-import java.net.InetSocketAddress;
-import java.security.SecureRandom;
-import java.util.Optional;
-
-import godzhell.util.AlphaBeta;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
-import org.jboss.netty.channel.Channel;
-import org.jboss.netty.channel.ChannelFuture;
-import org.jboss.netty.channel.ChannelFutureListener;
-import org.jboss.netty.channel.ChannelHandlerContext;
-import org.jboss.netty.handler.codec.frame.FrameDecoder;
-
 import godzhell.Config;
 import godzhell.Server;
 import godzhell.event.CycleEventHandler;
@@ -28,12 +14,24 @@ import godzhell.util.ISAACCipher;
 import godzhell.util.Misc;
 import godzhell.util.log.PlayerLogging;
 import godzhell.util.log.PlayerLogging.LogType;
+import org.jboss.netty.buffer.ChannelBuffer;
+import org.jboss.netty.buffer.ChannelBuffers;
+import org.jboss.netty.channel.Channel;
+import org.jboss.netty.channel.ChannelFuture;
+import org.jboss.netty.channel.ChannelFutureListener;
+import org.jboss.netty.channel.ChannelHandlerContext;
+import org.jboss.netty.handler.codec.frame.FrameDecoder;
+
+import java.math.BigInteger;
+import java.net.InetSocketAddress;
+import java.security.SecureRandom;
+import java.util.Optional;
 
 public class RS2LoginProtocol extends FrameDecoder {
 
-	private static final BigInteger RSA_MODULUS = new BigInteger("145070429513857928356880786941123816181630520860080339322435570820430043499463177812253480148237908616258207726950984696213172953111732583773303228522886811373466945121724744339027069147807590618813484504901124652903479014617029322094921583291344697479472782446080174377656364716283579697273806153353959480613");
+	private static final BigInteger RSA_MODULUS = new BigInteger("134751015111419595993778377460439070230983114535128917474432135545041083420980508255851874734134133394956350693628851426161616300374216589705179844485003691977762402361886901340023941480000866691960770514278772603850726962156915707566310275471984497966207454414023944266617246931823137351380051727499706089567");
 
-	private static final BigInteger RSA_EXPONENT = new BigInteger("110255474368002037834015519733134506617495988731857448789404357034878008402349229040855296896464317717735097253028084848767595886621943150665493698361177166894611486475000118786301274725521282507977452122878443299768269224131947564087581036674651672985782901454404408850294772693665396421981017344176172707309");
+	private static final BigInteger RSA_EXPONENT = new BigInteger("123713838415536348495501032903812478702534797419231454529793966211599202715366528850059530507623429089539171229762643414570674446148225246593084304481715454457771585059016367861338178408755817704218301888900895340820901402953827087252114751136497968188313067039157777412620230613859973477254478864849539604145");
 
 	private static final int CONNECTED = 0;
 	private static final int LOGGING_IN = 1;
@@ -57,6 +55,7 @@ public class RS2LoginProtocol extends FrameDecoder {
 			if (request != 14) {
 				System.out.println("Ip. "+channel.getRemoteAddress());
 				System.out.println("Invalid login request: " + request);
+				channel.disconnect();
 				channel.close();
 				return null;
 			}

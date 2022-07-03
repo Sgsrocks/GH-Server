@@ -1,6 +1,7 @@
 package godzhell.model.players.packets;
 
 import godzhell.Server;
+import godzhell.clip.ObjectDef;
 import godzhell.event.CycleEvent;
 import godzhell.event.CycleEventContainer;
 import godzhell.event.CycleEventHandler;
@@ -45,7 +46,7 @@ public class ClickObject implements PacketType {
 			c.objectId = c.getInStream().readInteger();
 			c.objectY = c.getInStream().readUnsignedWordA();
 			c.objectDistance = 1;
-
+			ObjectDef def = ObjectDef.getObjectDef(c.objectId);
 			if (c.isForceMovementActive()) {
 				return;
 			}
@@ -92,7 +93,7 @@ public class ClickObject implements PacketType {
 				return;
 			}
 			if (c.debugMessage) {
-				c.sendMessage("Object Option One: " + c.objectId + " objectX: " + c.objectX + " objectY: " + c.objectY);
+				c.sendMessage("Clicked Object Option 1:  "+c.objectId+", Object name: "+def.getName()+", SizeX "+def.xLength()+", SizeY "+def.yLength());
 			}
 			if (Math.abs(c.getX() - c.objectX) > 25 || Math.abs(c.getY() - c.objectY) > 25) {
 				c.resetWalkingQueue();
@@ -159,7 +160,7 @@ public class ClickObject implements PacketType {
 				c.getPA().movePlayer(2449, 2847, 1);
 				break;
 			case 9398:// deposit
-				c.getPA().sendFrame126("The Bank of Anguish - Deposit Box", 7421);
+				c.getPA().sendFrame126("The Bank of GodzHell - Deposit Box", 7421);
 				c.getPA().sendFrame248(4465, 197);// 197 just because you can't
 				// see it =\
 				c.getItems().resetItems(7423);
@@ -283,6 +284,9 @@ public class ClickObject implements PacketType {
 				case 10779:
 					c.objectYOffset = 2;
 					break;
+				case 41438:
+					c.objectDistance=2;
+					break;
 				case 11756:
 				case 4551:
 				case 4553:
@@ -397,6 +401,7 @@ public class ClickObject implements PacketType {
 				case 15612:
 					c.objectDistance = 4;
 				case 31925:
+				case 30189:
 					c.objectDistance = 2;
 					break;
 				case 31858:

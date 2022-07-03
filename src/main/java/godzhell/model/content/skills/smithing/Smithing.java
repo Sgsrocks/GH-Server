@@ -17,7 +17,7 @@ public class Smithing {
 
     private final Player c;
     private final int[] SMELT_BARS = { 2349, 2351, 2355, 2353, 2357, 2359, 2361, 2363 };
-    private final int[] SMELT_FRAME = { 2405, 2406, 2407, 2409, 2410, 2411, 2412, 2413 };
+    private final int[] SMELT_FRAME = { 39418, 39419, 39420, 39421, 39422, 39423, 39424, 39425 };
     private final int[] BAR_REQS = { 1, 15, 20, 30, 40, 50, 70, 85 };
     private final int[] ORE_1 = { 438, 440, -1, 440, 444, 447, 449, 451 };
     private final int[] ORE_2 = { 436, -1, -1, -1, -1, -1, -1, -1 };

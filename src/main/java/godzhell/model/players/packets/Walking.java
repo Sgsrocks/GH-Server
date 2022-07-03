@@ -41,6 +41,9 @@ public class Walking implements PacketType {
 		if (c.canChangeAppearance) { //|| c.performingAction) {
 			return;
 		}
+		if (c.alreadyFishing) {
+			c.alreadyFishing = false;
+		}
 		if (!c.inWild() && c.teleBlockLength > 0) {
 			c.getPA().resetTb();
 		}
@@ -153,9 +156,6 @@ public class Walking implements PacketType {
 			}
 		}
 
-		if (c.canChangeAppearance) {
-			c.canChangeAppearance = false;
-		}
 		// if (c.getBarrows().cantWalk) {
 		// c.getBarrows().challengeMinigame();
 		// return;
@@ -172,6 +172,8 @@ public class Walking implements PacketType {
 			c.gfx0(-1);
 			c.startAnimation(-1);
 		}
+		c.fillingWater = false;
+		c.fillingSand = false;
 		c.walkingToItem = false;
 		c.isWc = false;
 		c.clickNpcType = 0;

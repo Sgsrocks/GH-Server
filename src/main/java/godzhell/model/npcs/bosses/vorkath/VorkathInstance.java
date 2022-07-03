@@ -107,7 +107,7 @@ public class VorkathInstance {
 				if (player.absY == 4052 && player.absX == 2272) {
 					player.setForceMovement(player.absX, 4054, 10, 10, "NORTH", 839);
 					player.getPA().movePlayer(player.absX, player.absY, player.getIndex() * 4);
-					Vorkath vorkath = Server.npcHandler.spawnVorkath(player, 8026, 2272, 4065, player.getIndex() * 4, 0, 750, 
+					Vorkath vorkath = Server.npcHandler.spawnVorkath(player, 8059, 2269, 4062, player.getIndex() * 4, 0, 750,
 							player.antifireDelay > 0 ? 0 : 61, 560, 114, true, false); //2272, 4065,
 					container.stop();
 					player.setVorkath(vorkath);

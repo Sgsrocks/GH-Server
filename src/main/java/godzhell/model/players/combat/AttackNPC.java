@@ -3,7 +3,6 @@ package godzhell.model.players.combat;
 import godzhell.Config;
 import godzhell.Server;
 import godzhell.clip.PathChecker;
-import godzhell.definitions.NPCCacheDefinition;
 import godzhell.model.content.barrows.brothers.Brother;
 import godzhell.model.content.skills.Skill;
 import godzhell.model.content.skills.herblore.PoisonedWeapon;
@@ -79,41 +78,36 @@ public class AttackNPC {
 					}
 				}
 				switch (defender.npcType) {
-				
-				
-				
-				case 494:
-					if (Boundary.isIn(attacker, Boundary.KRAKEN_CAVE)) {
-						if (!attacker.getSlayer().getTask().isPresent()) {
-							attacker.sendMessage("You must have an active kraken task in order to do this.");
-							attacker.getCombat().resetPlayerAttack();
-						}
-							
-						if (!attacker.getSlayer().getTask().get().getPrimaryName().contains("kraken")) {
-							attacker.sendMessage("You must have an active kraken task in order to do this.");
-							attacker.getCombat().resetPlayerAttack();
-							return;
-						}
-					}
-					break;
-				
-				case 7413:
-					accuracy = maximumAccuracy;
-					damage = maximumDamage;
-					break;
 
-					
-				case 7144:
-				case 2266:
-				case 2267:
-					damage = 0;
-					break;
-					
-				case 965:
-					if (!EquipmentSet.VERAC.isWearingBarrows(attacker)) {
+					case 494:
+						if (Boundary.isIn(attacker, Boundary.KRAKEN_CAVE)) {
+							if (!attacker.getSlayer().getTask().isPresent()) {
+								attacker.sendMessage("You must have an active kraken task in order to do this.");
+								attacker.getCombat().resetPlayerAttack();
+							}
+
+							if (!attacker.getSlayer().getTask().get().getPrimaryName().contains("kraken")) {
+								attacker.sendMessage("You must have an active kraken task in order to do this.");
+								attacker.getCombat().resetPlayerAttack();
+								return;
+							}
+						}
+						break;
+					case 7413:
+						accuracy = maximumAccuracy;
+						damage = maximumDamage;
+						break;
+					case 7144:
+					case 2266:
+					case 2267:
 						damage = 0;
-					}
-					break;
+						break;
+
+					case 965:
+						if (!EquipmentSet.VERAC.isWearingBarrows(attacker)) {
+							damage = 0;
+						}
+						break;
 				}
 				if (defender.npcType == 5666) {
 					damage = damage / 4;
@@ -138,8 +132,10 @@ public class AttackNPC {
 					int maxHit = attacker.getCombat().calculateMeleeMaxHit();
 					damage2 = Misc.random((int)maxHit/2);
 					damage3 = Misc.random((int)maxHit/4);
-					//attacker.sendMessage("hits: " + damage + " " + damage2 + " " + damage3);
-					//attacker.sendMessage("Max hits:" + + maxHit + " " + maxHit/2 + " " + maxHit/4);
+					if (attacker.debugMessage) {
+						attacker.sendMessage("hits: " + damage + " " + damage2 + " " + damage3);
+						attacker.sendMessage("Max hits:" + + maxHit + " " + maxHit/2 + " " + maxHit/4);
+					}
 				}
 				Optional<Brother> brother = attacker.getBarrows().getActive();
 				if (brother.isPresent() && defender.npcType == brother.get().getId()) {
@@ -178,7 +174,7 @@ public class AttackNPC {
 					//attacker.sendMessage("aded xp" + damage2 + " " + damage3);
 					AttackPlayer.addCombatXP(attacker, CombatType.MELEE, damage + (damage2 > 0 ? damage2 : 0) + (damage3 > 0 ? damage3 : 0));
 				}
-				
+
 				/**
 				 * Ranged attack style
 				 */
@@ -204,50 +200,50 @@ public class AttackNPC {
 					}
 				}
 				switch (defender.npcType) {
-				
-				case 494:
-					if (Boundary.isIn(attacker, Boundary.KRAKEN_CAVE)) {
-						if (!attacker.getSlayer().getTask().isPresent()) {
-							attacker.sendMessage("You must have an active kraken task in order to do this.");
-							attacker.getCombat().resetPlayerAttack();
+
+					case 494:
+						if (Boundary.isIn(attacker, Boundary.KRAKEN_CAVE)) {
+							if (!attacker.getSlayer().getTask().isPresent()) {
+								attacker.sendMessage("You must have an active kraken task in order to do this.");
+								attacker.getCombat().resetPlayerAttack();
+							}
+
+							if (!attacker.getSlayer().getTask().get().getPrimaryName().contains("kraken")) {
+								attacker.sendMessage("You must have an active kraken task in order to do this.");
+								attacker.getCombat().resetPlayerAttack();
+								return;
+							}
 						}
-							
-						if (!attacker.getSlayer().getTask().get().getPrimaryName().contains("kraken")) {
-							attacker.sendMessage("You must have an active kraken task in order to do this.");
-							attacker.getCombat().resetPlayerAttack();
+						break;
+
+					case 7413:
+						damage = maximumDamage;
+						accuracy = maximumAccuracy;
+						break;
+
+					case 7145:
+					case 2265:
+					case 2267:
+						damage = 0;
+						break;
+
+					case 5890:
+						if (!attacker.getSlayer().getTask().isPresent()) {
 							return;
 						}
-					}
-					break;
-
-				case 7413:
-					damage = maximumDamage;
-					accuracy = maximumAccuracy;
-					break;
-					
-				case 7145:
-				case 2265:
-				case 2267:
-					damage = 0;
-					break;
-					
-				case 5890:
-					if (!attacker.getSlayer().getTask().isPresent()) {
-						return;
-					}
-					if (!attacker.getSlayer().getTask().isPresent() && !attacker.getSlayer().getTask().get().getPrimaryName().equals("abyssal demon") && !attacker.getSlayer().getTask().get().getPrimaryName().equals("abyssal sire")) {
+						if (!attacker.getSlayer().getTask().isPresent() && !attacker.getSlayer().getTask().get().getPrimaryName().equals("abyssal demon") && !attacker.getSlayer().getTask().get().getPrimaryName().equals("abyssal sire")) {
 							attacker.sendMessage("The sire does not seem interested.");
 							attacker.getCombat().resetPlayerAttack();
 							return;
-					}
-					int health = defender.getHealth().getAmount();
-					if (health > 329) {
-						if (!attacker.getCombat().shadowSpells()) {
-							attacker.sendMessage("This would not be effective, I should try shadow spells.");
-							attacker.getCombat().resetPlayerAttack();
 						}
-					}
-					break;
+						int health = defender.getHealth().getAmount();
+						if (health > 329) {
+							if (!attacker.getCombat().shadowSpells()) {
+								attacker.sendMessage("This would not be effective, I should try shadow spells.");
+								attacker.getCombat().resetPlayerAttack();
+							}
+						}
+						break;
 				}
 				if (RangeExtras.wearingCrossbow(attacker) && RangeExtras.wearingBolt(attacker)) {
 					damage = RangeExtras.executeBoltSpecial(attacker, defender, new Damage(damage));
@@ -286,7 +282,7 @@ public class AttackNPC {
 				if (defender.npcType != 7413) {
 					AttackPlayer.addCombatXP(attacker, CombatType.RANGE, damage + (damage2 > 0 ? damage2 : 0));
 				}
-				
+
 				/**
 				 * Magic attack style
 				 */
@@ -299,46 +295,45 @@ public class AttackNPC {
 					maximumAccuracy *= special.getAccuracy();
 					maximumDamage *= special.getDamageModifier();
 				}
-
 				switch (defender.npcType) {
-				
-				case 494:
-					if (Boundary.isIn(attacker, Boundary.KRAKEN_CAVE)) {
-						if (!attacker.getSlayer().getTask().isPresent()) {
-							attacker.sendMessage("You must have an active kraken task in order to do this.");
-							attacker.getCombat().resetPlayerAttack();
+
+					case 494:
+						if (Boundary.isIn(attacker, Boundary.KRAKEN_CAVE)) {
+							if (!attacker.getSlayer().getTask().isPresent()) {
+								attacker.sendMessage("You must have an active kraken task in order to do this.");
+								attacker.getCombat().resetPlayerAttack();
+							}
+
+							if (!attacker.getSlayer().getTask().get().getPrimaryName().contains("kraken")) {
+								attacker.sendMessage("You must have an active kraken task in order to do this.");
+								attacker.getCombat().resetPlayerAttack();
+								return;
+							}
 						}
-							
-						if (!attacker.getSlayer().getTask().get().getPrimaryName().contains("kraken")) {
-							attacker.sendMessage("You must have an active kraken task in order to do this.");
-							attacker.getCombat().resetPlayerAttack();
+						break;
+
+					case 7413:
+						damage = maximumDamage;
+						accuracy = maximumAccuracy;
+						break;
+
+					case 5890:
+						if (!attacker.getSlayer().getTask().isPresent()) {
 							return;
 						}
-					}
-					break;
-
-				case 7413:
-					damage = maximumDamage;
-					accuracy = maximumAccuracy;
-					break;
-					
-				case 5890:
-					if (!attacker.getSlayer().getTask().isPresent()) {
-						return;
-					}
-					if (!attacker.getSlayer().getTask().isPresent() && !attacker.getSlayer().getTask().get().getPrimaryName().equals("abyssal demon") && !attacker.getSlayer().getTask().get().getPrimaryName().equals("abyssal sire")) {
+						if (!attacker.getSlayer().getTask().isPresent() && !attacker.getSlayer().getTask().get().getPrimaryName().equals("abyssal demon") && !attacker.getSlayer().getTask().get().getPrimaryName().equals("abyssal sire")) {
 							attacker.sendMessage("The sire does not seem interested.");
 							attacker.getCombat().resetPlayerAttack();
 							return;
-					}
-					int health = defender.getHealth().getAmount();
-					if (health > 329) {
-						if (!attacker.getCombat().shadowSpells()) {
-							attacker.sendMessage("This would not be effective, I should try shadow spells.");
-							attacker.getCombat().resetPlayerAttack();
 						}
-					}
-					break;
+						int health = defender.getHealth().getAmount();
+						if (health > 329) {
+							if (!attacker.getCombat().shadowSpells()) {
+								attacker.sendMessage("This would not be effective, I should try shadow spells.");
+								attacker.getCombat().resetPlayerAttack();
+							}
+						}
+						break;
 				}
 				damage = Misc.random(maximumDamage);
 				accuracy = Misc.random(maximumAccuracy);
@@ -391,7 +386,7 @@ public class AttackNPC {
 				}
 				hitmark1 = damage > 0 ? Hitmark.HIT : Hitmark.MISS;
 				hitmark2 = damage2 > 0 ? Hitmark.HIT : Hitmark.MISS;
-				
+
 				switch (defender.npcType) { //The position of where it sets the damage does matter. Make sure its after the damage calculation
 					case 7146:
 					case 2265:
@@ -399,7 +394,7 @@ public class AttackNPC {
 						damage = 0;
 						break;
 				}
-				
+
 				if (defender.npcType != 7413) {
 					AttackPlayer.addCombatXP(attacker, CombatType.MAGE, damage + (damage2 > 0 ? damage2 : 0));
 					attacker.getPA().refreshSkill(6);
@@ -440,80 +435,101 @@ public class AttackNPC {
 	private static int getBonusDefence(Player player, NPC npc, CombatType type) {
 		if (type.equals(CombatType.MELEE)) {
 			switch (npc.npcType) {
-			case 965:
-				return EquipmentSet.VERAC.isWearing(player) ? +500 : 5000;
-			case 5890:
-			case 7144:
-			case 7145:
-			case 7146:
-			case 7604:
-			case 7605:
-			case 7606:
-				return 500;
+				case 965:
+					return EquipmentSet.VERAC.isWearing(player) ? +500 : 5000;
+				case 5890:
+				case 7144:
+				case 7145:
+				case 7146:
+				case 7604:
+				case 7605:
+				case 7606:
+					return 500;
 
-			case 7544:
-				return 400;
-			case 5129:
-				return 500;
-			case 4922:
-				return 500;
+				case 7544:
+				case 7542:
+					return 400;
+				case 5129:
+					return 500;
+				case 4922:
+					return 500;
+				case 7308:
+				case 7528:
+				case 7529:
+				case 7694:
+				case 7695:
+					return +999999;
 			}
 		} else if (type.equals(CombatType.MAGE)) {
 			switch (npc.npcType) {
-			case 2042:
-				return -150;
-			case 319:
-				return +80;
-			case 2044:
-			case 7544:
-				return 1550;
-			case 963:
-				return +7000;
-			case 965:
-			case 5129:
-				return 300;
-			case 4922:
-				return 500;
-			case 7144:
-			case 7145:
-			case 7146:
-			case 5890:
-			case 7604:
-			case 7605:
-			case 7606:
-				return 500;
+				case 2042:
+					return -150;
+				case 319:
+					return +80;
+				case 2044:
+				case 7544:
+					return 1550;
+				case 963:
+					return +7000;
+				case 965:
+				case 5129:
+					return 300;
+				case 4922:
+					return 500;
+				case 7144:
+				case 7145:
+				case 7146:
+				case 5890:
+				case 7604:
+				case 7605:
+				case 7606:
+					return 500;
+				case 7309:
+				case 7527:
+				case 7528:
+				case 7559:
+				case 7695:
+				case 7696:
+					return +999999;
 			}
 		} else if (type.equals(CombatType.RANGE)) {
 			switch (npc.npcType) {
-			case 492:
-				return 50;
-			case 2042:
-			case 2043:
-			case 5890:
-			case 7544:
-				return 1500;
-			case 5129:
-				return 500;
-			case 4922:
-				return 300;
-			case 6766:
-				return 280;
-			case 319:
-				return 80;
-			case 2044:
-				return -150;
-			case 963:
-				return +7000;
-			case 965:
-				return 300;
-			case 7144:
-			case 7145:
-			case 5862:
-			case 7146:
-			case 7604:
-			case 7605:
-			case 7606:
-				return 500;
+				case 492:
+					return 50;
+				case 2042:
+				case 2043:
+				case 5890:
+				case 7544:
+					return 1500;
+				case 5129:
+					return 500;
+				case 4922:
+					return 300;
+				case 6766:
+					return 280;
+				case 319:
+					return 80;
+				case 2044:
+					return -150;
+				case 963:
+					return +7000;
+				case 965:
+					return 300;
+				case 7144:
+				case 7145:
+				case 5862:
+				case 7146:
+				case 7604:
+				case 7605:
+				case 7606:
+					return 500;
+				case 7307:
+				case 7527:
+				case 7529:
+				case 7560:
+				case 7696:
+				case 7694:
+					return +999999;
 			}
 		}
 		return 0;
@@ -542,46 +558,46 @@ public class AttackNPC {
 			 * Damage applied and maybe changed
 			 */
 			switch (npc.npcType) {
-			case 7413:
-				NPCHandler.npcs[i].getHealth().setAmount(50000);
-				break;
-			/**
-			 * Corporeal Beast
-			 */
-			case 320:
-				if (!Boundary.isIn(c, Boundary.CORPOREAL_BEAST_LAIR)) {
-					c.getCombat().resetPlayerAttack();
-					c.sendMessage("You cannot do this from here.");
-					return;
-				}
-				break;
-				
-			case 8030:
-				if (!Boundary.isIn(c, Boundary.ADDY_DRAG)) {
-					c.getCombat().resetPlayerAttack();
-					c.sendMessage("You cannot do this from here.");
-					return;
-				}
-				break;
-			case 8031:
-				if (!Boundary.isIn(c, Boundary.RUNE_DRAG)) {
-					c.getCombat().resetPlayerAttack();
-					c.sendMessage("You cannot attack from here.");
-					return;
-				}
-				break;	
+				case 7413:
+					NPCHandler.npcs[i].getHealth().setAmount(50000);
+					break;
+				/**
+				 * Corporeal Beast
+				 */
+				case 320:
+					if (!Boundary.isIn(c, Boundary.CORPOREAL_BEAST_LAIR)) {
+						c.getCombat().resetPlayerAttack();
+						c.sendMessage("You cannot do this from here.");
+						return;
+					}
+					break;
 
-			/**
-			 * No melee
-			 */
-			case 2042: // Zulrah
-			case 2043:
-			case 2044:
-				if (c.usingMelee) {
-					damage.setAmount(0);
-				}
-				break;
-				
+				case 8030:
+					if (!Boundary.isIn(c, Boundary.ADDY_DRAG)) {
+						c.getCombat().resetPlayerAttack();
+						c.sendMessage("You cannot do this from here.");
+						return;
+					}
+					break;
+				case 8031:
+					if (!Boundary.isIn(c, Boundary.RUNE_DRAG)) {
+						c.getCombat().resetPlayerAttack();
+						c.sendMessage("You cannot attack from here.");
+						return;
+					}
+					break;
+
+				/**
+				 * No melee
+				 */
+				case 2042: // Zulrah
+				case 2043:
+				case 2044:
+					if (c.usingMelee) {
+						damage.setAmount(0);
+					}
+					break;
+
 //			/**
 //			 * No range
 //			 */
@@ -590,7 +606,7 @@ public class AttackNPC {
 //					damage.setAmount(0);
 //				}
 //				break;
-//				
+//
 //			/**
 //			 * No mage
 //			 */
@@ -600,175 +616,195 @@ public class AttackNPC {
 //				}
 //				break;
 
-			/**
-			 * Melee only
-			 */
-			case 986:
-			case 988:
-			case 6374:
-				if (!c.usingMelee) {
-					damage.setAmount(0);
-				}
-				break;
-
-			/**
-			 * Range only
-			 */
-			case 987:
-			case 6377:
-				if (!c.usingBow && !c.usingCross && !c.usingOtherRangeWeapons && !c.usingBallista) {
-					damage.setAmount(0);
-				}
-				break;
-
-			/**
-			 * Magic only
-			 */
-			case 1610:
-			case 1611:
-			case 1612:
-				if (!c.usingMagic) {
-					damage.setAmount(0);
-				}
-				break;
-
-			/**
-			 * Air based spells only
-			 */
-			case 6373:
-			case 983:
-				if (!c.getCombat().airSpells()) {
-					damage.setAmount(0);
-				}
-				break;
-
-			/**
-			 * Water based spells only
-			 */
-			case 984:
-			case 6375:
-				if (!c.getCombat().waterSpells()) {
-					damage.setAmount(0);
-				}
-				break;
-
-			/**
-			 * Fire based spells only
-			 */
-			case 985:
-			case 6376:
-				if (!c.getCombat().fireSpells()) {
-					damage.setAmount(0);
-				}
-				break;
-
-			/**
-			 * Earth based spells only
-			 */
-			case 6378:
-				if (!c.getCombat().earthSpells()) {
-					damage.setAmount(0);
-				}
-				break;
-			
-			
-			case 319:
-				if (!Boundary.isIn(c, Boundary.CORPOREAL_BEAST_LAIR)) {
-					c.getCombat().resetPlayerAttack();
-					c.sendMessage("You cannot do this from here.");
-					return;
-				}
-				CorporealBeast.attack(c, damage);
-				c.corpDamage += damage.getAmount();
-				break;
-			case 7584:
-			case 7604: //Skeletal mystic
-			case 7605: //Skeletal mystic
-			case 7606: //Skeletal mystic
-				c.setSkeletalMysticDamageCounter(c.getSkeletalMysticDamageCounter() + damage.getAmount());
-				break;
-				
-			case 7544: //Tekton
-				c.setTektonDamageCounter(c.getTektonDamageCounter() + damage.getAmount());
-				Tekton.tektonSpecial(c);
-				break;
-				
-			case 5129: //Glod
-				c.setGlodDamageCounter(c.getGlodDamageCounter() + damage.getAmount());
-				Glod.glodSpecial(c);
-				break;
-				
-			case 4922: //Ice Queen
-				c.setIceQueenDamageCounter(c.getIceQueenDamageCounter() + damage.getAmount());
-				IceQueen.queenSpecial(c);
-				break;
-				
-			case 8095: //Galvek
-				c.setGalvekDamageCounter(c.getGalvekDamageCounter() + damage.getAmount());
-				Galvek.galvekSpecial(c);
-				break;
-				
-			case 6617:
-			case 6616:
-			case 6615:
-				List<NPC> healer = Arrays.asList(NPCHandler.npcs);
-				if (Scorpia.stage > 0 && healer.stream().filter(Objects::nonNull).anyMatch(n -> n.npcType == 6617 && !n.isDead && n.getHealth().getAmount() > 0)) {
-					NPC scorpia = NPCHandler.getNpc(6615);
-					Damage heal = new Damage(Misc.random(45 + 5));
-					if (scorpia != null && scorpia.getHealth().getAmount() < 150) {
-						scorpia.getHealth().increase(heal.getAmount());
+				/**
+				 * Melee only
+				 */
+				case 986:
+				case 988:
+				case 6374:
+				case 7553:
+					if (!c.usingMelee) {
+						damage.setAmount(0);
 					}
-				}
-				break;
-				
-			case 3118: //Tz-kek small
-				c.appendDamage(1, Hitmark.HIT);
-				break;
-				
-			case 5862:
-				if (Boundary.isIn(c, Boundary.WITHIN_BOUNDARY_CERB)) {
-					c.getCerberus().cerberusSpecials();
-				} else {
-					damage.setAmount(0);
-					c.sendMessage("@red@You should keep yourself in the middle so you don't get burned.");
-				}
-				break;
-				
-			case Skotizo.SKOTIZO_ID:
+					break;
+
+				/**
+				 * Range only
+				 */
+				case 987:
+				case 6377:
+				case 7555:
+				case 7528:
+					if (!c.usingBow && !c.usingCross && !c.usingOtherRangeWeapons && !c.usingBallista) {
+						damage.setAmount(0);
+					}
+					break;
+
+				/**
+				 * Magic only
+				 */
+				case 1605:
+				case 1606:
+				case 1607:
+				case 1608:
+				case 1609:
+				case 1610:
+				case 1611:
+				case 1612:
+				case 7529:
+					if (!c.usingMagic) {
+						damage.setAmount(0);
+					}
+					break;
+
+				/**
+				 * Air based spells only
+				 */
+				case 6373:
+				case 983:
+					if (!c.getCombat().airSpells()) {
+						damage.setAmount(0);
+					}
+					break;
+
+				/**
+				 * Water based spells only
+				 */
+				case 984:
+				case 6375:
+					if (!c.getCombat().waterSpells()) {
+						damage.setAmount(0);
+					}
+					break;
+
+				/**
+				 * Fire based spells only
+				 */
+				case 985:
+				case 6376:
+					if (!c.getCombat().fireSpells()) {
+						damage.setAmount(0);
+					}
+					break;
+
+				/**
+				 * Earth based spells only
+				 */
+				case 6378:
+					if (!c.getCombat().earthSpells()) {
+						damage.setAmount(0);
+					}
+					break;
+
+
+				case 319:
+					if (!Boundary.isIn(c, Boundary.CORPOREAL_BEAST_LAIR)) {
+						c.getCombat().resetPlayerAttack();
+						c.sendMessage("You cannot do this from here.");
+						return;
+					}
+					CorporealBeast.attack(c, damage);
+					c.corpDamage += damage.getAmount();
+					break;
+				case 7584:
+				case 7604: //Skeletal mystic
+				case 7605: //Skeletal mystic
+				case 7606: //Skeletal mystic
+					c.setSkeletalMysticDamageCounter(c.getSkeletalMysticDamageCounter() + damage.getAmount());
+					break;
+
+				case 7544: //Tekton
+					c.setTektonDamageCounter(c.getTektonDamageCounter() + damage.getAmount());
+					Tekton.tektonSpecial(c);
+					break;
+
+				case 5129: //Glod
+					c.setGlodDamageCounter(c.getGlodDamageCounter() + damage.getAmount());
+					Glod.glodSpecial(c);
+					break;
+
+				case 7542: //Glod
+					c.setGlodDamageCounter(c.getGlodDamageCounter() + damage.getAmount());
+					//Glod.glodSpecial(c);
+					break;
+				case 4922: //Ice Queen
+					c.setIceQueenDamageCounter(c.getIceQueenDamageCounter() + damage.getAmount());
+					IceQueen.queenSpecial(c);
+					break;
+
+				//case 7531: //Vespula
+				//	c.setVespulaDamageCounter(c.getVespulaDamageCounter() + damage.getAmount());
+					///Vespula.vespulaSpecial(c);
+					//break;
+
+				case 8095: //Galvek
+					c.setGalvekDamageCounter(c.getGalvekDamageCounter() + damage.getAmount());
+					Galvek.galvekSpecial(c);
+					break;
+
+				case 6617:
+				case 6616:
+				case 6615:
+					List<NPC> healer = Arrays.asList(NPCHandler.npcs);
+					if (Scorpia.stage > 0 && healer.stream().filter(Objects::nonNull).anyMatch(n -> n.npcType == 6617 && !n.isDead && n.getHealth().getAmount() > 0)) {
+						NPC scorpia = NPCHandler.getNpc(6615);
+						Damage heal = new Damage(Misc.random(45 + 5));
+						if (scorpia != null && scorpia.getHealth().getAmount() < 150) {
+							scorpia.getHealth().increase(heal.getAmount());
+						}
+					}
+					break;
+
+				case 3118: //Tz-kek small
+					c.appendDamage(1, Hitmark.HIT);
+					break;
+				case 1: //hitmark test
+					//c.appendDamage(1, Hitmark.HOLY);
+					break;
+				case 5862:
+					if (Boundary.isIn(c, Boundary.WITHIN_BOUNDARY_CERB)) {
+						c.getCerberus().cerberusSpecials();
+					} else {
+						damage.setAmount(0);
+						c.sendMessage("@red@You should keep yourself in the middle so you don't get burned.");
+					}
+					break;
+
+				case Skotizo.SKOTIZO_ID:
 					c.getSkotizo().skotizoSpecials();
-				break;
-				
-			case Skotizo.AWAKENED_ALTAR_NORTH:
-			case Skotizo.AWAKENED_ALTAR_SOUTH:
-			case Skotizo.AWAKENED_ALTAR_WEST:
-			case Skotizo.AWAKENED_ALTAR_EAST:
+					break;
+
+				case Skotizo.AWAKENED_ALTAR_NORTH:
+				case Skotizo.AWAKENED_ALTAR_SOUTH:
+				case Skotizo.AWAKENED_ALTAR_WEST:
+				case Skotizo.AWAKENED_ALTAR_EAST:
 					if (c.playerEquipment[c.playerWeapon] == 19675) {
 						c.getSkotizo().arclightEffect(npc);
 						return;
 					}
-				break;
-				
-			case 7144:
-			case 7145:
-			case 7146:
-				int getTransformation = 0;
-				c.totalGorillaDamage += damage.getAmount();
-				if (c.totalGorillaDamage >= Misc.random(40) + 10) {
-					if (c.usingMelee) {
-						getTransformation = 7144;
-					} else if (c.usingBow || c.usingCross || c.usingOtherRangeWeapons || c.usingBallista) {
-						getTransformation = 7145;
-					} else if (c.usingMagic || c.autocasting) {
-						getTransformation = 7146;
-					} else {
-						getTransformation = 7144;
+					break;
+
+				case 7144:
+				case 7145:
+				case 7146:
+					int getTransformation = 0;
+					c.totalGorillaDamage += damage.getAmount();
+					if (c.totalGorillaDamage >= Misc.random(40) + 10) {
+						if (c.usingMelee) {
+							getTransformation = 7144;
+						} else if (c.usingBow || c.usingCross || c.usingOtherRangeWeapons || c.usingBallista) {
+							getTransformation = 7145;
+						} else if (c.usingMagic || c.autocasting) {
+							getTransformation = 7146;
+						} else {
+							getTransformation = 7144;
+						}
+						if (damage.getAmount() > 0) {
+							npc.requestTransform(getTransformation);
+							c.totalGorillaDamage = 0;
+						}
 					}
-					if (damage.getAmount() > 0) {
-						npc.requestTransform(getTransformation);
-						c.totalGorillaDamage = 0;
-					}
-				}
-				break;
+					break;
 			}
 			if (DagannothMother.RANGE_OF_IDS.contains(npc.npcType)) {
 				DagannothMother mother = c.getDagannothMother();
@@ -833,131 +869,140 @@ public class AttackNPC {
 			}
 			if (damage.getCombatType() != null) {
 				switch (damage.getCombatType()) {
-				case MELEE:
-					NPCHandler.npcs[i].appendDamage(c, damage.getAmount(), damage.getHitmark());
-					break;
+					case MELEE:
+						NPCHandler.npcs[i].appendDamage(c, damage.getAmount(), damage.getHitmark());
+						//Achievements.increase(c, AchievementType.DEAL_DAMAGE_PVM, damage.getAmount());
+						//c.sendMessage("increasing "+ damage.getAmount() +"");
+						break;
 
-				case RANGE:
-					if (c.dbowSpec) {
-						c.dbowSpec = false;
-					}
-					boolean dropArrows = true;
-					if (c.lastWeaponUsed >= 4212 || c.lastWeaponUsed <= 4223 || Item.getItemName(c.playerEquipment[3]).contains("crystal bow")) {
-						dropArrows = false;
-					}
-					for (int noArrowId : c.NO_ARROW_DROP) {
-						if (c.lastWeaponUsed == noArrowId) {
+					case RANGE:
+						if (c.dbowSpec) {
+							c.dbowSpec = false;
+						}
+						boolean dropArrows = true;
+						if (c.lastWeaponUsed >= 4212 || c.lastWeaponUsed <= 4223 ||  c.lastWeaponUsed == 22550 || c.lastWeaponUsed == 11749 || Item.getItemName(c.playerEquipment[3]).contains("crystal bow")) {
 							dropArrows = false;
-							break;
 						}
-					}
-					if (dropArrows) {
-						c.getItems().dropArrowNpc(NPCHandler.npcs[i]);
-						if (c.playerEquipment[3] == 11235 || c.playerEquipment[3] == 12765 || c.playerEquipment[3] == 12766 || c.playerEquipment[3] == 12767
-								|| c.playerEquipment[3] == 12768) {
+						for (int noArrowId : c.NO_ARROW_DROP) {
+							if (c.lastWeaponUsed == noArrowId) {
+								dropArrows = false;
+								break;
+							}
+						}
+						if (dropArrows) {
 							c.getItems().dropArrowNpc(NPCHandler.npcs[i]);
+							if (c.playerEquipment[3] == 11235 || c.playerEquipment[3] == 12765 || c.playerEquipment[3] == 12766 || c.playerEquipment[3] == 12767
+									|| c.playerEquipment[3] == 12768) {
+								c.getItems().dropArrowNpc(NPCHandler.npcs[i]);
+							}
 						}
-					}
-					if (Server.npcHandler.getNPCs()[i].attackTimer > 3) {
-						if (npc.npcType != 2042 && npc.npcType != 2043 & npc.npcType != 2044 && npc.npcType != 3127 && npc.npcType != 319) {
-							NPCHandler.startAnimation(c.getCombat().npcDefenceAnim(i), NPCHandler.npcs[i]);
+						if (Server.npcHandler.getNPCs()[i].attackTimer > 3) {
+							if (npc.npcType != 2042 && npc.npcType != 2043 & npc.npcType != 2044 && npc.npcType != 3127 && npc.npcType != 319) {
+								NPCHandler.startAnimation(c.getCombat().npcDefenceAnim(i), NPCHandler.npcs[i]);
+							}
 						}
-					}
-					c.rangeEndGFX = RangeData.getRangeEndGFX(c);
-					c.ignoreDefence = false;
-					c.multiAttacking = false;
+						c.rangeEndGFX = RangeData.getRangeEndGFX(c);
+						c.ignoreDefence = false;
+						c.multiAttacking = false;
 
-					if (c.playerEquipment[3] == 10034 || c.playerEquipment[3] == 10033
-							|| c.playerEquipment[3] == 11959) {
-						if (multiAttackRange(c, i)) {
+						if (c.playerEquipment[3] == 10034 || c.playerEquipment[3] == 10033
+								|| c.playerEquipment[3] == 11959) {
+							if (multiAttackRange(c, i)) {
+								return;
+							}
+						}
+						if (c.rangeEndGFX > 0) {
+							if (c.rangeEndGFXHeight) {
+								NPCHandler.npcs[i].gfx100(c.rangeEndGFX);
+							} else {
+								NPCHandler.npcs[i].gfx0(c.rangeEndGFX);
+							}
+						}
+						if (c.killingNpcIndex != c.oldNpcIndex) {
+							c.totalDamageDealt = 0;
+						}
+						NPCHandler.npcs[i].appendDamage(c, damage.getAmount(), damage.getHitmark());
+						//Achievements.increase(c, AchievementType.DEAL_DAMAGE_PVM, damage.getAmount());
+						//c.sendMessage("increasing "+ damage.getAmount() +"");
+						break;
+
+					case MAGE:
+						if (c.spellSwap) {
+							c.spellSwap = false;
+							c.setSidebarInterface(6, 16640);
+							c.playerMagicBook = 2;
+							c.gfx0(-1);
+						}
+						c.usingMagic = true;
+						if (c.getCombat().getEndGfxHeight() == 100 && damage.getAmount() > 0) { // end
+							// GFX
+							NPCHandler.npcs[i].gfx100(MagicData.MAGIC_SPELLS[c.oldSpellId][5]);
+							if (Server.npcHandler.getNPCs()[i].attackTimer > 3) {
+								if (npc.npcType != 2042 && npc.npcType != 2043 & npc.npcType != 2044 && npc.npcType != 3127 && npc.npcType != 7413) {
+									NPCHandler.startAnimation(c.getCombat().npcDefenceAnim(i), NPCHandler.npcs[i]);
+								}
+							}
+						} else if (damage.getAmount() > 0) {
+							NPCHandler.npcs[i].gfx0(MagicData.MAGIC_SPELLS[c.oldSpellId][5]);
+						}
+						if (damage.getAmount() == 0) {
+							if (Server.npcHandler.getNPCs()[i].attackTimer > 3) {
+								if (npc.npcType != 2042 && npc.npcType != 2043 & npc.npcType != 2044) {
+									NPCHandler.startAnimation(c.getCombat().npcDefenceAnim(i), NPCHandler.npcs[i]);
+								}
+							}
+							NPCHandler.npcs[i].gfx100(85);
+						}
+						if (multiAttackMagic(c, i)) {
 							return;
 						}
-					}
-					if (c.rangeEndGFX > 0) {
-						if (c.rangeEndGFXHeight) {
-							NPCHandler.npcs[i].gfx100(c.rangeEndGFX);
-						} else {
-							NPCHandler.npcs[i].gfx0(c.rangeEndGFX);
+						if (c.playerEquipment[c.playerWeapon] == 11907) {
+							c.setTridentCharge(c.getTridentCharge() - 1);
+						} else if (c.playerEquipment[c.playerWeapon] == 12899) {
+							c.setToxicTridentCharge(c.getToxicTridentCharge() - 1);
+						} else if (c.playerEquipment[c.playerWeapon] == 22323) {
+							//c.setSangStaffCharge(c.getSangStaffCharge() - 1);
 						}
-					}
-					if (c.killingNpcIndex != c.oldNpcIndex) {
-						c.totalDamageDealt = 0;
-					}
-					NPCHandler.npcs[i].appendDamage(c, damage.getAmount(), damage.getHitmark());
-					break;
 
-				case MAGE:
-					if (c.spellSwap) {
-						c.spellSwap = false;
-						c.setSidebarInterface(6, 16640);
-						c.playerMagicBook = 2;
-						c.gfx0(-1);
-					}
-					c.usingMagic = true;
-					if (c.getCombat().getEndGfxHeight() == 100 && damage.getAmount() > 0) { // end
-						// GFX
-						NPCHandler.npcs[i].gfx100(MagicData.MAGIC_SPELLS[c.oldSpellId][5]);
-						if (Server.npcHandler.getNPCs()[i].attackTimer > 3) {
-							if (npc.npcType != 2042 && npc.npcType != 2043 & npc.npcType != 2044 && npc.npcType != 3127 && npc.npcType != 7413) {
-								NPCHandler.startAnimation(c.getCombat().npcDefenceAnim(i), NPCHandler.npcs[i]);
+						DamageEffect tridentOfTheSwampEffect = new TridentOfTheSwampEffect();
+						if (tridentOfTheSwampEffect.isExecutable(c)) {
+							tridentOfTheSwampEffect.execute(c, NPCHandler.npcs[i], new Damage(6));
+						}
+						if (damage.getAmount() > 0) {
+							int freezeDelay = c.getCombat().getFreezeTime();// freeze
+							if (freezeDelay > 0 && NPCHandler.npcs[i].freezeTimer == 0 && isFreezable(NPCHandler.npcs[i])) {
+								NPCHandler.npcs[i].freezeTimer = freezeDelay;
 							}
-						}
-					} else if (damage.getAmount() > 0) {
-						NPCHandler.npcs[i].gfx0(MagicData.MAGIC_SPELLS[c.oldSpellId][5]);
-					}
-					if (damage.getAmount() == 0) {
-						if (Server.npcHandler.getNPCs()[i].attackTimer > 3) {
-							if (npc.npcType != 2042 && npc.npcType != 2043 & npc.npcType != 2044) {
-								NPCHandler.startAnimation(c.getCombat().npcDefenceAnim(i), NPCHandler.npcs[i]);
+							switch (MagicData.MAGIC_SPELLS[c.oldSpellId][0]) {
+								case 12901:
+								case 12919: // blood spells
+								case 12911:
+								case 12929:
+									int heal = Misc.random(damage.getAmount() / 2);
+									c.getHealth().increase(heal);
+									c.getPA().refreshSkill(3);
+									break;
 							}
-						}
-						NPCHandler.npcs[i].gfx100(85);
-					}
-					if (multiAttackMagic(c, i)) {
-						return;
-					}
-					if (c.playerEquipment[c.playerWeapon] == 11907) {
-						c.setTridentCharge(c.getTridentCharge() - 1);
-					} else if (c.playerEquipment[c.playerWeapon] == 12899) {
-						c.setToxicTridentCharge(c.getToxicTridentCharge() - 1);
-					}
-					DamageEffect tridentOfTheSwampEffect = new TridentOfTheSwampEffect();
-					if (tridentOfTheSwampEffect.isExecutable(c)) {
-						tridentOfTheSwampEffect.execute(c, NPCHandler.npcs[i], new Damage(6));
-					}
-					if (damage.getAmount() > 0) {
-						int freezeDelay = c.getCombat().getFreezeTime();// freeze
-						if (freezeDelay > 0 && NPCHandler.npcs[i].freezeTimer == 0 && isFreezable(NPCHandler.npcs[i])) {
-							NPCHandler.npcs[i].freezeTimer = freezeDelay;
-						}
-						switch (MagicData.MAGIC_SPELLS[c.oldSpellId][0]) {
-						case 12901:
-						case 12919: // blood spells
-						case 12911:
-						case 12929:
-							int heal = Misc.random(damage.getAmount() / 2);
-							c.getHealth().increase(heal);
-							c.getPA().refreshSkill(3);
-							break;
-						}
-							
+
 						/*case 12891:
 							if (Boundary.isIn(c, Boundary.DESERT_BOUNDARY)) {
 								c.getDiaryManager().getDesertDiary().progress(DesertDiaryEntry.CAST_BARRAGE);
 							}
 						}*/
-						if (damage.getAmount() > 0) {
-							NPCHandler.npcs[i].appendDamage(c, damage.getAmount(), damage.getHitmark());
+							if (damage.getAmount() > 0) {
+								NPCHandler.npcs[i].appendDamage(c, damage.getAmount(), damage.getHitmark());
+								//Achievements.increase(c, AchievementType.DEAL_DAMAGE_PVM, damage.getAmount());
+								//c.sendMessage("increasing "+ damage.getAmount() +"");
+							}
 						}
-					}
-					break;
+						break;
 
-				default:
-					break;
+					default:
+						break;
 				}
 			}
 		}
-		
+
 		c.multiAttacking = false;
 		c.killingNpcIndex = c.oldNpcIndex;
 		NPCHandler.npcs[i].updateRequired = true;
@@ -987,17 +1032,19 @@ public class AttackNPC {
 
 	private static boolean isFreezable(NPC npc) {
 		switch (npc.npcType) {
-		case 2042:
-		case 2043:
-		case 2044:
-		case 7544:
-		case 5129:
-		case 4922:
-		case 2205:
-		case 3129:
-		case 2215:
-		case 3162:
-			return false;
+			case 2042:
+			case 2043:
+			case 2044:
+			case 7544:
+			case 5129:
+			case 7542:
+			case 4922:
+			case 2205:
+			case 3129:
+			case 2215:
+			case 3162:
+			case 319:
+				return false;
 		}
 		return true;
 	}
@@ -1023,7 +1070,28 @@ public class AttackNPC {
 		}
 		return found;
 	}
-	
+
+	private static boolean multiAttackScythe(Player player, int i) {
+		boolean found = false;
+		for (int j = 0; j < NPCHandler.npcs.length; j++) {
+			if (NPCHandler.npcs[j] != null && NPCHandler.npcs[j].getHealth().getMaximum() > 0) {
+				if (NPCHandler.npcs[j].getHeight() != player.getHeight()) {
+					continue;
+				}
+				int nX = NPCHandler.npcs[j].getX();
+				int nY = NPCHandler.npcs[j].getY();
+				int pX = NPCHandler.npcs[i].getX();
+				int pY = NPCHandler.npcs[i].getY();
+				if ((nX - pX == -1 || nX - pX == 0 || nX - pX == 1) && (nY - pY == -1 || nY - pY == 0 || nY - pY == 1)) {
+					if (NPCHandler.npcs[j].getHeight() == NPCHandler.npcs[i].getHeight()) {
+						//player.getCombat().appendMultiScytheNPC(j);
+						found = true;
+					}
+				}
+			}
+		}
+		return found;
+	}
 
 	private static boolean multiAttackRange(Player player, int i) {
 		boolean found = false;
@@ -1049,35 +1117,35 @@ public class AttackNPC {
 
 	public static boolean armaNpc(int i) {
 		switch (NPCHandler.npcs[i].npcType) {
-		case 6229:
-		case 6230:
-		case 6231:
-		case 6232:
-		case 6233:
-		case 6234:
-		case 6222:
-		case 3162:
-		case 3163:
-		case 3164:
-		case 3165:
-		case 3166:
-		case 3167:
-		case 3168:
-		case 3169:
-		case 3174:
-		case 6235:
-		case 6236:
-		case 6237:
-		case 6238:
-		case 6239:
-		case 6240:
-		case 6241:
-		case 6242:
-		case 6243:
-		case 6244:
-		case 6245:
-		case 6246:
-			return true;
+			case 6229:
+			case 6230:
+			case 6231:
+			case 6232:
+			case 6233:
+			case 6234:
+			case 6222:
+			case 3162:
+			case 3163:
+			case 3164:
+			case 3165:
+			case 3166:
+			case 3167:
+			case 3168:
+			case 3169:
+			case 3174:
+			case 6235:
+			case 6236:
+			case 6237:
+			case 6238:
+			case 6239:
+			case 6240:
+			case 6241:
+			case 6242:
+			case 6243:
+			case 6244:
+			case 6245:
+			case 6246:
+				return true;
 		}
 		return false;
 	}
@@ -1103,7 +1171,7 @@ public class AttackNPC {
 					return false;
 				}
 			}
-			
+
 		}
 		if (NPCHandler.npcs[i].npcType != 5890 && NPCHandler.npcs[i].npcType != 7563 && NPCHandler.npcs[i].npcType != 5916 && NPCHandler.npcs[i].npcType != 7554 && NPCHandler.npcs[i].npcType != 7555 && NPCHandler.npcs[i].npcType != 7553) {
 			if ((player.underAttackBy > 0 || player.underAttackBy2 > 0) && player.underAttackBy2 != i && !player.inMulti()) {
@@ -1126,7 +1194,7 @@ public class AttackNPC {
 			return;
 		}
 		NPC npc = NPCHandler.npcs[i];
-		Optional<Task> task = SlayerMaster.get(NPCCacheDefinition.forID(npc.npcType).getName().replaceAll("_", " "));
+		Optional<Task> task = SlayerMaster.get(npc.getName().replaceAll("_", " "));
 		if (task.isPresent()) {
 			int level = task.get().getLevel();
 			if (c.playerLevel[Skill.SLAYER.getId()] < task.get().getLevel()) {
@@ -1135,10 +1203,54 @@ public class AttackNPC {
 				return;
 			}
 		}
-		
-		if (NPCHandler.npcs[i].npcType == 7544) {
+	switch(npc.npcType){
+		case 1872:
+		case 257:
+		case 258:
+		case 259:
+			if (Boundary.isIn(c, Boundary.Taverley_Dungeon_slayer)) {
+				if (!c.getSlayer().getTask().isPresent()) {
+					c.sendMessage("You must have an active black dragon task in order to do this.");
+					c.getCombat().resetPlayerAttack();
+				}
+				if (!c.getSlayer().getTask().get().getPrimaryName().contains("black dragon")) {
+					c.sendMessage("You need to be on a slayer task to kill this monster.");
+					c.getCombat().resetPlayerAttack();
+					return;
+				}
+			}
+			break;
+		case 5879:
+			if (Boundary.isIn(c, Boundary.Taverley_Dungeon_slayer)) {
+				if (!c.getSlayer().getTask().isPresent()) {
+					c.sendMessage("You must have an active blue dragon task in order to do this.");
+					c.getCombat().resetPlayerAttack();
+				}
+				if (!c.getSlayer().getTask().get().getPrimaryName().contains("blue dragon")) {
+					c.sendMessage("You need to be on a slayer task to kill this monster.");
+					c.getCombat().resetPlayerAttack();
+					return;
+				}
+			}
+			break;
+		case 7544:
 			if (!Boundary.isIn(c, Boundary.TEKTON_ATTACK_BOUNDARY)) {
 				c.sendMessage("You must be within tektons territory to attack him.");
+				c.getCombat().resetPlayerAttack();
+				return;
+			}
+			break;
+	}
+		if (npc.npcType == 7585) {
+			Player raidLeader = c.getRaids().raidLeader;
+
+			if (raidLeader == null) {
+				return;
+			}
+
+			if (!raidLeader.getRaids().isBraziersLit()) {
+				c.sendMessage("@dre@It's too cold and you find yourself unable to attack the Ice Demon.");
+				c.sendMessage("@dre@Perhaps if you lit the braziers it'd get warm enough...");
 				c.getCombat().resetPlayerAttack();
 				return;
 			}
@@ -1149,7 +1261,7 @@ public class AttackNPC {
 				return;
 			}
 		}
-		if (NPCHandler.npcs[i].npcType == 4922 || NPCHandler.npcs[i].npcType == 5129) {
+		if (NPCHandler.npcs[i].npcType == 7542 || NPCHandler.npcs[i].npcType == 5129) {
 			if (!Boundary.isIn(c, Boundary.PURSUIT_AREAS)) {
 				c.sendMessage("You must be within this npc's original spawn location!");
 				c.getCombat().resetPlayerAttack();
@@ -1163,14 +1275,18 @@ public class AttackNPC {
 				return;
 			}
 			if (!c.getSlayer().getTask().isPresent() || !c.getSlayer().getTask().get().getPrimaryName().equals("cave kraken")) {
-					c.sendMessage("You do not have a cave kraken task.");
-					c.getCombat().resetPlayerAttack();
-					return;
+				c.sendMessage("You do not have a cave kraken task.");
+				c.getCombat().resetPlayerAttack();
+				return;
 			}
 		}
 		if (NPCHandler.npcs[i].npcType == 5890) {
 
 		}
+		//if (c.getBankPin().requiresUnlock()) {
+		//	c.getBankPin().open(2);
+			//return;
+	//	}
 		if (c.getInterfaceEvent().isActive()) {
 			c.sendMessage("Please finish what you're doing.");
 			c.getCombat().resetPlayerAttack();
@@ -1189,7 +1305,7 @@ public class AttackNPC {
 		resetSpells(c);
 		if (NPCHandler.npcs[i] != null) {
 			c.getCombat().strBonus = c.playerBonus[10];
-			if (NPCHandler.npcs[i].isDead  || NPCHandler.npcs[i].getHealth().getMaximum() <= 0) {
+			if (NPCHandler.npcs[i].isDead || NPCHandler.npcs[i].getHealth().getMaximum() <= 0) {
 				c.usingMagic = false;
 				c.faceUpdate(0);
 				c.npcIndex = 0;
@@ -1202,7 +1318,7 @@ public class AttackNPC {
 				c.npcIndex = 0;
 				return;
 			}
-			
+
 			if (c.playerEquipment[c.playerWeapon] == 4734 && c.playerEquipment[c.playerArrows] != 4740) {
 				c.sendMessage("You must use bolt racks with the karil's crossbow.");
 				c.npcIndex = 0;
@@ -1232,9 +1348,9 @@ public class AttackNPC {
 			}
 			if (NPCHandler.npcs[i].npcType != 5890 && NPCHandler.npcs[i].npcType != 5916) {
 				if ((c.underAttackBy > 0 || c.underAttackBy2 > 0) && c.underAttackBy2 != i && !c.inMulti()) {
-						c.getCombat().resetPlayerAttack();
-						c.sendMessage("I am already under attack.");
-						return;
+					c.getCombat().resetPlayerAttack();
+					c.sendMessage("I am already under attack.");
+					return;
 				}
 			}
 			if (NPCHandler.npcs[i].spawnedBy != c.getIndex() && NPCHandler.npcs[i].spawnedBy > 0) {
@@ -1301,38 +1417,58 @@ public class AttackNPC {
 					c.usingBallista = false;
 				}
 				switch (c.playerEquipment[c.playerWeapon]) {
-				case 22325:
-					//c.sendMessage("hits: " + c.totalDamageDealt + " " +c.delayedDamage2 + " " + c.delayedDamage3);
-					c.tripleHit = true;
-					break;
-				
-				case 11907:
-					if (c.autocasting) {
-						if (c.getTridentCharge() <= 0) {
-							c.sendMessage("Your trident of the seas has no more charges.");
-							c.getCombat().resetPlayerAttack();
-							return;
+					case 22325:
+						c.tripleHit = true;
+						if (c.debugMessage)
+							c.sendMessage("hits: " + c.totalDamageDealt + " " +c.delayedDamage2 + " " + c.delayedDamage3);
+						break;
+					case 22516://DawnBringer
+						for (int skill = 0; skill < c.playerLevel.length; skill++) {
+							if (skill == 3)
+								continue;
+							//	c.doubleHit = true;
+							c.usingMagic = true;
+							c.autocasting = true;
+							c.spellId = 63;
+							c.attackTimer = 4;
+							if (Misc.random(5) == 1) {
+								if (c.playerLevel[skill] < c.getLevelForXP(c.playerXP[skill])) {
+									c.playerLevel[skill] += 2;
+									c.getPA().refreshSkill(skill);
+									c.getPA().setSkillLevel(skill, c.playerLevel[skill], c.playerXP[skill]);
+									//c.sendMessage("prayer +2");
+								}
+							}
 						}
-						c.usingMagic = true;
-						c.autocasting = true;
-						c.spellId = 52;
-						c.attackTimer = 4;
-					}
-					break;
-
-				case 12899:
-					if (c.autocasting) {
-						if (c.getToxicTridentCharge() <= 0) {
-							c.sendMessage("Your trident of the swamp has no more charges.");
-							c.getCombat().resetPlayerAttack();
-							return;
+						break;
+					case 11907:
+						if (c.autocasting) {
+							if (c.getTridentCharge() <= 0) {
+								c.sendMessage("Your trident of the seas has no more charges.");
+								c.getCombat().resetPlayerAttack();
+								return;
+							}
+							c.usingMagic = true;
+							c.autocasting = true;
+							c.spellId = 52;
+							c.attackTimer = 4;
 						}
-						c.usingMagic = true;
-						c.autocasting = true;
-						c.spellId = 53;
-						c.attackTimer = 4;
-					}
-					break;
+						break;
+					case 12899:
+						if (c.autocasting) {
+							if (c.getToxicTridentCharge() <= 0) {
+								c.sendMessage("Your trident of the swamp has no more charges.");
+								c.getCombat().resetPlayerAttack();
+								return;
+							}
+							c.usingMagic = true;
+							c.autocasting = true;
+							c.spellId = 53;
+							c.attackTimer = 4;
+						}
+						break;
+				}
+				switch (c.playerEquipment[c.playerHands]) {
 				}
 				c.attackTimer = c.getCombat().getAttackDelay(ItemAssistant.getItemName(c.playerEquipment[c.playerWeapon]).toLowerCase());
 				c.specAccuracy = 1.0;
@@ -1384,7 +1520,7 @@ public class AttackNPC {
 					c.sendMessage("You need to range attack this monster!");
 					return;
 				}
-				
+
 				NPC theNPC = NPCHandler.npcs[i];
 				double distanceToNpc = theNPC.getDistance(c.absX, c.absY);
 				int distance = 1;
@@ -1403,12 +1539,12 @@ public class AttackNPC {
 				if(NPCHandler.npcs[i].npcType == 7706 && c.usingBow || c.usingMagic || c.autocasting || c.playerEquipment[c.playerWeapon] == 11907 || c.playerEquipment[c.playerWeapon] == 12899){
 					distance = 20;
 				}
-				
+
 				if (!PathChecker.isProjectilePathClear(c.absX, c.absY, c.heightLevel, theNPC.absX, theNPC.absY) && !Boundary.isIn(c, Boundary.PEST_CONTROL_AREA) & theNPC.npcType != Skotizo.AWAKENED_ALTAR_NORTH && theNPC.npcType != Skotizo.AWAKENED_ALTAR_SOUTH && theNPC.npcType != Skotizo.AWAKENED_ALTAR_WEST && theNPC.npcType != Skotizo.AWAKENED_ALTAR_EAST&& theNPC.npcType != 7559&& theNPC.npcType != 7560) {
 					c.attackTimer = 1;
 					return;
 				}
-				if (!c.usingBallista && !c.usingCross && !c.usingArrows && c.usingBow && (c.playerEquipment[c.playerWeapon] < 4212 || c.playerEquipment[c.playerWeapon] > 4223)) {
+				if (!c.usingBallista && !c.usingCross && !c.usingArrows && c.usingBow && c.playerEquipment[c.playerWeapon] != 22550 && c.playerEquipment[c.playerWeapon] != 11749 && (c.playerEquipment[c.playerWeapon] < 4212 || c.playerEquipment[c.playerWeapon] > 4223)) {
 					c.sendMessage("You have run out of arrows!");
 					c.stopMovement();
 					c.npcIndex = 0;
@@ -1418,7 +1554,7 @@ public class AttackNPC {
 					c.sendMessage("You cannot use ammo with a crystal bow.");
 					return;
 				}
-				if (!c.getCombat().correctBowAndArrows() && Config.CORRECT_ARROWS && c.usingBow && !c.getCombat().usingCrystalBow() && c.playerEquipment[c.playerWeapon] != 9185
+				if (!c.getCombat().correctBowAndArrows() && Config.CORRECT_ARROWS && c.usingBow && !c.getCombat().usingCrystalBow() /*&& !c.getCombat().usingCrawsBow()*/ && c.playerEquipment[c.playerWeapon] != 22550 && c.playerEquipment[c.playerWeapon] != 9185
 						&& c.playerEquipment[c.playerWeapon] != 4734 && c.playerEquipment[c.playerWeapon] != 11785 && c.playerEquipment[c.playerWeapon] != 21012 && c.playerEquipment[c.playerWeapon] != 12926 && c.playerEquipment[c.playerWeapon] != 19478 && c.playerEquipment[c.playerWeapon] != 19481) {
 					c.sendMessage("You can't use " + ItemAssistant.getItemName(c.playerEquipment[c.playerArrows]).toLowerCase() + "'s with a "
 							+ ItemAssistant.getItemName(c.playerEquipment[c.playerWeapon]).toLowerCase() + ".");
@@ -1454,12 +1590,12 @@ public class AttackNPC {
 				} else {
 					combatType = CombatType.MELEE;
 				}
-				
+
 				if (c.usingMagic && !c.autocasting) {
 					c.followId2 = 0;
 					c.stopMovement();
 				}
-				
+
 				c.faceUpdate(i);
 				NPCHandler.npcs[i].underAttackBy = c.getIndex();
 				NPCHandler.npcs[i].lastDamageTaken = System.currentTimeMillis();
@@ -1527,8 +1663,8 @@ public class AttackNPC {
 				}
 
 				if (c.usingBow && !c.usingOtherRangeWeapons && !c.usingMagic || c.usingCross || c.usingBallista) { // range
-																								// hit
-																								// delay
+					// hit
+					// delay
 					if (c.usingCross)
 						c.usingBow = true;
 					if (c.fightMode == 2)
@@ -1546,9 +1682,19 @@ public class AttackNPC {
 						c.crystalBowArrowCount++;
 						c.lastArrowUsed = 0;
 						c.getCombat().fireProjectileNpc(0);
+					} else if (c.playerEquipment[c.playerWeapon] == 11749) {
+						c.rangeItemUsed = c.playerEquipment[c.playerWeapon];
+						c.lastArrowUsed = 0;
+						c.getCombat().fireProjectileNpc(0);
+					} else if (c.playerEquipment[c.playerWeapon] == 22550) {
+						c.rangeItemUsed = c.playerEquipment[c.playerWeapon];
+						c.lastArrowUsed = 0;
+						c.getCombat().fireProjectileNpc(0);
 					} else if (c.playerEquipment[c.playerWeapon] == 12926) {
 						c.getCombat().fireProjectileNpc(0);
-					} else {
+					}
+
+					else {
 						c.rangeItemUsed = c.playerEquipment[c.playerArrows];
 						c.getItems().deleteArrow();
 						if (c.playerEquipment[3] == 11235 || c.playerEquipment[3] == 12765 || c.playerEquipment[3] == 12766 || c.playerEquipment[3] == 12767
@@ -1609,37 +1755,37 @@ public class AttackNPC {
 				}
 
 				if (c.usingBow && Config.CRYSTAL_BOW_DEGRADES) { // crystal bow
-																	// degrading
+					// degrading
 					if (c.playerEquipment[c.playerWeapon] == 4212) { // new
-																		// crystal
-																		// bow
-																		// becomes
-																		// full
-																		// bow
-																		// on
-																		// the
-																		// first
-																		// shot
+						// crystal
+						// bow
+						// becomes
+						// full
+						// bow
+						// on
+						// the
+						// first
+						// shot
 						c.getItems().wearItem(4214, 1, 3);
 					}
 
 					if (c.crystalBowArrowCount >= 250) {
 						switch (c.playerEquipment[c.playerWeapon]) {
 
-						case 4223: // 1/10 bow
-							c.getItems().wearItem(-1, 1, 3);
-							c.sendMessage("Your crystal bow has fully degraded.");
-							if (!c.getItems().addItem(4207, 1)) {
-								Server.itemHandler.createGroundItem(c, 4207, c.getX(), c.getY(), c.heightLevel, 1);
-							}
-							c.crystalBowArrowCount = 0;
-							break;
+							case 4223: // 1/10 bow
+								c.getItems().wearItem(-1, 1, 3);
+								c.sendMessage("Your crystal bow has fully degraded.");
+								if (!c.getItems().addItem(4207, 1)) {
+									Server.itemHandler.createGroundItem(c, 4207, c.getX(), c.getY(), c.heightLevel, 1);
+								}
+								c.crystalBowArrowCount = 0;
+								break;
 
-						default:
-							c.getItems().wearItem(++c.playerEquipment[c.playerWeapon], 1, 3);
-							c.sendMessage("Your crystal bow degrades.");
-							c.crystalBowArrowCount = 0;
-							break;
+							default:
+								c.getItems().wearItem(++c.playerEquipment[c.playerWeapon], 1, 3);
+								c.sendMessage("Your crystal bow degrades.");
+								c.crystalBowArrowCount = 0;
+								break;
 						}
 					}
 				}

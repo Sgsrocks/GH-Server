@@ -1,10 +1,10 @@
 package godzhell.model.npcs;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import godzhell.model.players.Player;
 import godzhell.util.Misc;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class NPCDeathTracker {
 
@@ -65,4 +65,19 @@ public class NPCDeathTracker {
 	public Map<String, Integer> getTracker() {
 		return tracker;
 	}
+
+	public int getKc(String name) {
+		name = name.toLowerCase();
+
+		//if (name.equalsIgnoreCase(TobConstants.THEATRE_OF_BLOOD)) {
+		//	return player.tobCompletions;
+		//}
+
+		if (name.equalsIgnoreCase("Chambers of Xeric") || name.equalsIgnoreCase("cox")) {
+			return player.raidCount;
+		}
+
+		return tracker.getOrDefault(name, 0);
+	}
+
 }

@@ -7,6 +7,7 @@ public final class ObjectDef {
 	private int opcode61;
 	private boolean field3621;
 	private boolean interactive;
+	private String opcode150;
 
 	public static ObjectDef getObjectDef(int id) {
 		if (id > streamIndices.length) {
@@ -32,7 +33,15 @@ public final class ObjectDef {
 		class46.setDefaults();
 		class46.readValues(stream);
 
+		switch (id) {
+			case 10060:
+			case 10061:
+			case 30390:
+				class46.name = "Trading Post booth";
+				break;
 
+
+		}
 
 		return class46;
 	}
@@ -295,9 +304,11 @@ public final class ObjectDef {
 
 			if (anInt746 == 0xFFFF) {
 				anInt746 = -1;
-			} else if (opcode == 89)
+			} else if (opcode == 89){
 				field3621 = false;
-			else if (opcode == 77 || opcode == 92) {
+		} else if (opcode == 94) {
+				opcode150 = stream.readString();
+			} else if (opcode == 77 || opcode == 92) {
 				varbit = buffer.readUnsignedWord();
 
 			if (varbit == 65535) {

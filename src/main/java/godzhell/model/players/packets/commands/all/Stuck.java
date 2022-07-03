@@ -1,5 +1,6 @@
 package godzhell.model.players.packets.commands.all;
 
+import godzhell.Config;
 import org.apache.commons.lang3.text.WordUtils;
 
 import godzhell.Server;
@@ -67,7 +68,7 @@ public class Stuck extends Command {
 						return;
 					}
 					if (c.isStuck) {
-						c.getPlayerAssistant().movePlayer(3093, 3493, 0);
+						c.getPlayerAssistant().movePlayer(Config.START_LOCATION_X, Config.START_LOCATION_Y, 0);
 						c.sendMessage("@red@Your account has been moved home.");
 						c.isStuck = false;
 					}

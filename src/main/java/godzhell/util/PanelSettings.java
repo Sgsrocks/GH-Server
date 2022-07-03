@@ -570,6 +570,11 @@ public class PanelSettings {
 			if(id != -1)
 				c.startAnimation(id);
 		}
+		if (cmd.equals("Force Interface")) {
+			int id = getInt(cmd, "Enter the interface id:");
+			if(id != -1)
+				c.getPA().showInterface(id);
+		}
 		if (cmd.equals("Display GFX")) {
 			int id = getInt(cmd, "Enter the GFX id:");
 			if(id != -1)
@@ -676,7 +681,7 @@ public class PanelSettings {
 
 		public static Location getLocationByName(String name) {
 			if(name.equals("Home"))
-				return new Location(1640, 2858, 0);
+				return new Location(Config.START_LOCATION_X, Config.START_LOCATION_Y, 0);
 			if(name.equals("Edgeville"))
 				return new Location(3087, 3492, 0);
 			if(name.equals("Lumbridge"))
@@ -753,6 +758,8 @@ public class PanelSettings {
 				return new Location(2198, 3055, 0);
 			if(name.equals("Myth's Guild Basement"))
 				return new Location(1933, 9009, 1);
+			if(name.equals("Necropolis"))
+				return new Location(3341, 2733, 0);
 			return null;
 		}
 	}

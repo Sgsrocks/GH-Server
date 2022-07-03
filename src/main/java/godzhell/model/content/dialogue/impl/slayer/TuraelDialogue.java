@@ -53,24 +53,31 @@ public class TuraelDialogue extends Dialogue {
                             DialogueManager.sendNpcChat(getPlayer(), 401, Emotion.CALM, "You have an easier task from a different master.",
                                     "If you cannot complete their task, you cannot start",
                                     "one of mine. You must finish theirs first.");
+                            getPlayer().sendMessage("@blu@test");
                             setNext(2);
                             return;
                         }
                         DialogueManager.sendNpcChat(getPlayer(), 401, Emotion.CALM, "I can give you an easier task but this will reset your",
                                 "consecutive tasks completed if you have an active task.",
                                 "Are you sure this is what you want to do?");
+                        getPlayer().sendMessage("@blu@test2");
                         setNext(6);
                 } else {
                     DialogueManager.sendNpcChat(getPlayer(), 401, Emotion.CALM, "You currently have " + player.getSlayer().getTaskAmount() + " "
                                     + player.getSlayer().getTask().get().getPrimaryName() + " to kill.",
                             "You cannot get an easier task. You must finish this.");
+                        getPlayer().sendMessage("@blu@test3");
                     setNext(7);
                 }
         } else {
-            player.getSlayer().createNewTask(player.clickNpcType);
+            player.getSlayer().createNewTask(401);
         }
                 break;
             case 6:
+                break;
+            case 8:
+                DialogueManager.sendNpcChat(getPlayer(), 401, Emotion.CALM, "You currently have " + player.getSlayer().getTaskAmount() + " "
+                                + player.getSlayer().getTask().get().getPrimaryName() + " to kill.");
                 break;
         }
     }
@@ -92,7 +99,7 @@ public class TuraelDialogue extends Dialogue {
             case DialogueConstants.OPTIONS_2_1:
                 Optional<SlayerMaster> master_npc = SlayerMaster.get(getPlayer().talkingNpc);
                 if (getPlayer().getSlayer().getMaster() != master_npc.get().getId() && master_npc.get().getId() != 405) {
-                    DialogueManager.sendNpcChat(getPlayer(), 405, Emotion.CALM, "You already seem to have an active task with someone else.");
+                    DialogueManager.sendNpcChat(getPlayer(), 401, Emotion.CALM, "You already seem to have an active task with someone else.");
                     setNext(2);
                     return false;
                 }

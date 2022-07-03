@@ -5,10 +5,8 @@ import java.util.List;
 
 import godzhell.Server;
 import godzhell.clip.Region;
-import godzhell.model.objects.Doors;
-import godzhell.model.objects.DoubleDoors;
 import godzhell.model.objects.GameObject;
-import godzhell.model.objects.Objects;
+import godzhell.model.objects.Objects2;
 import godzhell.model.players.Player;
 import godzhell.model.players.PlayerHandler;
 import godzhell.util.Misc;
@@ -19,10 +17,10 @@ import godzhell.util.Misc;
 
 public class ObjectHandler {
 
-	public List<Objects> globalObjects = new ArrayList<Objects>();
+	public List<Objects2> globalObjects = new ArrayList<Objects2>();
 	public static ArrayList<GameObject> objects = new ArrayList<GameObject>();
-	public static List<Objects> mapObjects = new ArrayList<Objects>();
-	public static List<Objects> removedObjects = new ArrayList<Objects>();
+	public static List<Objects2> mapObjects = new ArrayList<Objects2>();
+	public static List<Objects2> removedObjects = new ArrayList<Objects2>();
 
 	/**
 	 * The instance of this class
@@ -33,8 +31,8 @@ public class ObjectHandler {
 		
 	}
 	
-	 public Objects getObjectByPosition(int x, int y) {
-			for (Objects o : globalObjects) {
+	 public Objects2 getObjectByPosition(int x, int y) {
+			for (Objects2 o : globalObjects) {
 			    for(int j = 0; j < globalObjects.size(); j++) {
 	            globalObjects.get(j);
 	            globalObjects.get(j);
@@ -47,7 +45,7 @@ public class ObjectHandler {
 	 }
 
 	    public void createAnObject(int id, int x, int y, int face) {
-	        Objects OBJECT = new Objects(id, x, y, 0, face, 10, 0);
+	        Objects2 OBJECT = new Objects2(id, x, y, 0, face, 10, 0);
 	        if (id == -1) {
 	            removeObject(OBJECT);
 	        } else {
@@ -59,7 +57,7 @@ public class ObjectHandler {
 		
 
 	public void createAnObject(Player c, int id, int x, int y) {
-		Objects OBJECT = new Objects(id, x, y, c.heightLevel, 0, 10, 0);
+		Objects2 OBJECT = new Objects2(id, x, y, c.heightLevel, 0, 10, 0);
 		if (id == -1) {
 			removeObject(OBJECT);
 		} else {
@@ -69,7 +67,7 @@ public class ObjectHandler {
 	}
 
 	public void createAnObject(Player player, int id, int x, int y, int h, int face) {
-		Objects OBJECT = new Objects(id, x, y, h, face, 10, 0);
+		Objects2 OBJECT = new Objects2(id, x, y, h, face, 10, 0);
 		if (id == -1) {
 			removeObject(OBJECT);
 		} else {
@@ -79,7 +77,7 @@ public class ObjectHandler {
 	}
 
 	public void createAnObject(int id, int x, int y) {
-		Objects OBJECT = new Objects(id, x, y, 0, 0, 10, 0);
+		Objects2 OBJECT = new Objects2(id, x, y, 0, 0, 10, 0);
 		if (id == -1) {
 			removeObject(OBJECT);
 		} else {
@@ -91,22 +89,22 @@ public class ObjectHandler {
 	/**
 	 * Adds object to list
 	 **/
-	public void addObject(Objects object) {
+	public void addObject(Objects2 object) {
 		globalObjects.add(object);
 	}
 
 	/**
 	 * Removes object from list
 	 **/
-	public void removeObject(Objects object) {
+	public void removeObject(Objects2 object) {
 		globalObjects.remove(object);
 	}
 
 	/**
 	 * Does object exist
 	 **/
-	public Objects objectExists(int objectX, int objectY, int objectHeight) {
-		for (Objects o : globalObjects) {
+	public Objects2 objectExists(int objectX, int objectY, int objectHeight) {
+		for (Objects2 o : globalObjects) {
 			if (o.getObjectX() == objectX && o.getObjectY() == objectY
 					&& o.getObjectHeight() == objectHeight) {
 				return o;
@@ -119,7 +117,7 @@ public class ObjectHandler {
 	 * Update objects when entering a new region or logging in
 	 **/
 	public void updateObjects(Player c) {
-		for (Objects o : globalObjects) {
+		for (Objects2 o : globalObjects) {
 			if (c != null) {
 				if (c.heightLevel == 0 && o.objectTicks == 0 && c.distanceToPoint(o.getObjectX(), o.getObjectY()) <= 60) {
 				}
@@ -133,7 +131,7 @@ public class ObjectHandler {
 	/**
 	 * Creates the object for anyone who is within 60 squares of the object
 	 **/
-	public void placeObject(Objects o) {
+	public void placeObject(Objects2 o) {
 		Region.addClipping(o.getObjectX(), o.getObjectY(), o.getObjectHeight(), 0);
 		for (Player p : PlayerHandler.players) {
 			if (p != null) {
@@ -155,7 +153,7 @@ public class ObjectHandler {
 		}
 	}
 
-	public void removeAllObjects(Objects o) {
+	public void removeAllObjects(Objects2 o) {
 		//Using Iterator for concurrency
 		globalObjects.removeIf(s -> s.getObjectX() == o.getObjectX() &&
 				s.getObjectY() == o.getObjectY() &&
@@ -165,12 +163,12 @@ public class ObjectHandler {
 	public void process() {
 		for (int j = 0; j < globalObjects.size(); j++) {
 			if (globalObjects.get(j) != null) {
-				Objects o = globalObjects.get(j);
+				Objects2 o = globalObjects.get(j);
 				if (o.objectTicks > 0) {
 					o.objectTicks--;
 				}
 				if (o.objectTicks == 1) {
-					Objects deleteObject = objectExists(o.getObjectX(),
+					Objects2 deleteObject = objectExists(o.getObjectX(),
 							o.getObjectY(), o.getObjectHeight());
 					removeObject(deleteObject);
 					o.objectTicks = 0;
@@ -210,13 +208,13 @@ public class ObjectHandler {
 		if (index >= 0) {
 			if (!activated[index]) {
 				activated[index] = true;
-				Objects obby1 = new Objects(14825, obeliskCoords[index][0],
+				Objects2 obby1 = new Objects2(14825, obeliskCoords[index][0],
 						obeliskCoords[index][1], 0, -1, 10, 0);
-				Objects obby2 = new Objects(14825, obeliskCoords[index][0] + 4,
+				Objects2 obby2 = new Objects2(14825, obeliskCoords[index][0] + 4,
 						obeliskCoords[index][1], 0, -1, 10, 0);
-				Objects obby3 = new Objects(14825, obeliskCoords[index][0],
+				Objects2 obby3 = new Objects2(14825, obeliskCoords[index][0],
 						obeliskCoords[index][1] + 4, 0, -1, 10, 0);
-				Objects obby4 = new Objects(14825, obeliskCoords[index][0] + 4,
+				Objects2 obby4 = new Objects2(14825, obeliskCoords[index][0] + 4,
 						obeliskCoords[index][1] + 4, 0, -1, 10, 0);
 				addObject(obby1);
 				addObject(obby2);
@@ -226,16 +224,16 @@ public class ObjectHandler {
 				Server.objectHandler.placeObject(obby2);
 				Server.objectHandler.placeObject(obby3);
 				Server.objectHandler.placeObject(obby4);
-				Objects obby5 = new Objects(obeliskIds[index],
+				Objects2 obby5 = new Objects2(obeliskIds[index],
 						obeliskCoords[index][0], obeliskCoords[index][1], 0,
 						-1, 10, 10);
-				Objects obby6 = new Objects(obeliskIds[index],
+				Objects2 obby6 = new Objects2(obeliskIds[index],
 						obeliskCoords[index][0] + 4, obeliskCoords[index][1],
 						0, -1, 10, 10);
-				Objects obby7 = new Objects(obeliskIds[index],
+				Objects2 obby7 = new Objects2(obeliskIds[index],
 						obeliskCoords[index][0], obeliskCoords[index][1] + 4,
 						0, -1, 10, 10);
-				Objects obby8 = new Objects(obeliskIds[index],
+				Objects2 obby8 = new Objects2(obeliskIds[index],
 						obeliskCoords[index][0] + 4,
 						obeliskCoords[index][1] + 4, 0, -1, 10, 10);
 				addObject(obby5);

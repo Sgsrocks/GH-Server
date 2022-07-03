@@ -119,16 +119,18 @@ public class Doors {
 			}
 		}
 		if (xAdjustment != 0 || yAdjustment != 0) {
+			Region.removeClippingForVariableObject(d.doorX, d.doorY, d.doorZ, d.type, d.originalFace, false);
 			Server.getGlobalObjects().add(new GlobalObject(-1, d.doorX, d.doorY, d.doorZ, d.originalFace, d.type, 0));
-			Region.removeObject(d.doorId, d.doorX, d.doorY, d.doorZ, d.type, d.originalFace);
+			//Region.removeObject(d.doorId, d.doorX, d.doorY, d.doorZ, d.type, d.originalFace);
 			//Region.removeObject(d.originalId, d.doorX,  d.doorY, d.doorZ, d.type, d.originalFace);
 		}
 		if (d.doorX == d.originalX && d.doorY == d.originalY) {
 			d.doorX += xAdjustment;
 			d.doorY += yAdjustment;
 		} else {
+			Region.removeClippingForVariableObject(d.doorX, d.doorY, d.doorZ, d.type, d.originalFace, false);
 			  Server.getGlobalObjects().add(new GlobalObject(-1, d.doorX, d.doorY, d.doorZ, 0, d.type, 0));
-			Region.removeObject(d.doorId, d.doorX, d.doorY, d.doorZ, d.type, d.originalFace);
+			//Region.removeObject(d.doorId, d.doorX, d.doorY, d.doorZ, d.type, d.originalFace);
 			//Region.removeObject(d.originalId, d.doorX,  d.doorY, d.doorZ, d.type, d.originalFace);
 			d.doorX = d.originalX;
 			d.doorY = d.originalY;

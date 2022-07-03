@@ -1,22 +1,20 @@
 package godzhell.model.players.packets;
 
-import java.util.stream.IntStream;
-
 import godzhell.Config;
-import godzhell.definitions.NPCCacheDefinition;
 import godzhell.event.CycleEvent;
 import godzhell.event.CycleEventContainer;
 import godzhell.event.CycleEventHandler;
-import godzhell.model.content.dialogue.impl.BankerDialogue;
 import godzhell.model.items.ItemAssistant;
 import godzhell.model.npcs.NPCHandler;
-import godzhell.model.npcs.bosses.vorkath.Vorkath;
 import godzhell.model.npcs.bosses.vorkath.VorkathInstance;
 import godzhell.model.npcs.pets.PetHandler;
 import godzhell.model.players.Boundary;
 import godzhell.model.players.PacketType;
 import godzhell.model.players.Player;
 import godzhell.model.players.combat.magic.MagicData;
+import godzhell.util.Misc;
+
+import java.util.stream.IntStream;
 
 /**
  * Click NPC
@@ -48,188 +46,219 @@ public class ClickNPC implements PacketType {
 		/**
 		 * Attack npc melee or range
 		 **/
-		case ATTACK_NPC:
-			if (c.morphed) {
-				return;
-			}
-			if (c.playerEquipment[c.playerWeapon] == 11907) {
-				c.usingMagic = true;
-				c.autocasting = true;
-				c.spellId = 52;
-			}
-			if (c.playerEquipment[c.playerWeapon] == 12899) {
-				c.usingMagic = true;
-				c.autocasting = true;
-				c.spellId = 53;
-			}
+			case ATTACK_NPC:
+				if (c.morphed) {
+					return;
+				}
+				if (c.playerEquipment[c.playerWeapon] == 11907) {
+					c.usingMagic = true;
+					c.autocasting = true;
+					c.spellId = 52;
+				}
+				if (c.playerEquipment[c.playerWeapon] == 12899) {
+					c.usingMagic = true;
+					c.autocasting = true;
+					c.spellId = 53;
+				}
+				if (c.playerEquipment[c.playerWeapon] == 22323) {
+					c.usingMagic = true;
+					c.autocasting = true;
 
-			if (!c.mageAllowed) {
-				c.mageAllowed = true;
-				c.sendMessage("I can't reach that.");
-				break;
-			}
-			c.npcIndex = c.getInStream().readUnsignedWordA();
-			if (c.npcIndex >= NPCHandler.npcs.length || c.npcIndex < 0) {
-				return;
-			}
-			if (NPCHandler.npcs[c.npcIndex] == null) {
-				c.npcIndex = 0;
-				break;
-			}
+					int passive = Misc.random(1, 6);
 
-			if (NPCHandler.npcs[c.npcIndex].getHealth().getMaximum() == 0) {
-				c.npcIndex = 0;
-				break;
-			}
-			if (NPCHandler.npcs[c.npcIndex] == null) {
-				break;
-			}
-			if (c.autocastId > 0)
-				c.autocasting = true;
-			if (!c.autocasting && c.spellId > 0) {
-				c.spellId = 0;
-			}
-			c.faceUpdate(c.npcIndex);
-			c.usingMagic = false;
-			boolean usingBow = false;
-			boolean usingOtherRangeWeapons = false;
-			boolean usingArrows = false;
-			boolean usingCross = c.playerEquipment[c.playerWeapon] == 9185 || c.playerEquipment[c.playerWeapon] == 11785
-					|| c.playerEquipment[c.playerWeapon] == 21012;
-			if (c.playerEquipment[c.playerWeapon] >= 4214 && c.playerEquipment[c.playerWeapon] <= 4223)
-				usingBow = true;
-			for (int bowId : c.BOWS) {
-				if (c.playerEquipment[c.playerWeapon] == bowId) {
-					usingBow = true;
-					if (bowId == 19481 || bowId == 19478) {
-						usingBow = false;
-						c.usingBallista = true;
+					if (passive < 6) {
+						c.spellId = 100;
+					} else {
+						c.spellId = 101;
+						c.getHealth().increase((c.getHealth().getAmount() / 11));
+						if (c.debugMessage)
+							c.sendMessage("@red@Healed by" + (c.getHealth().getAmount() / 11) +"");
 					}
-					for (int arrowId : c.ARROWS) {
-						if (c.playerEquipment[c.playerArrows] == arrowId) {
-							usingArrows = true;
+				}
+				if (c.playerEquipment[c.playerWeapon] == 22516) {
+					c.usingMagic = true;
+					c.autocasting = true;
+					c.spellId = 63;
+				}
+				if (!c.mageAllowed) {
+					c.mageAllowed = true;
+					c.sendMessage("I can't reach that.");
+					break;
+				}
+				c.npcIndex = c.getInStream().readUnsignedWordA();
+				if (c.npcIndex >= NPCHandler.npcs.length || c.npcIndex < 0) {
+					return;
+				}
+				if (NPCHandler.npcs[c.npcIndex] == null) {
+					c.npcIndex = 0;
+					break;
+				}
+
+				if (NPCHandler.npcs[c.npcIndex].getHealth().getMaximum() == 0) {
+					c.npcIndex = 0;
+					break;
+				}
+				if (NPCHandler.npcs[c.npcIndex] == null) {
+					break;
+				}
+				//if (c.getBankPin().requiresUnlock()) {
+					//c.getBankPin().open(2);
+					//return;
+			//	}
+				//if (c.getTutorial().isActive()) {
+				//	c.getTutorial().refresh();
+				//	return;
+			//	}
+				if (c.autocastId > 0)
+					c.autocasting = true;
+				if (!c.autocasting && c.spellId > 0) {
+					c.spellId = 0;
+				}
+				c.faceUpdate(c.npcIndex);
+				c.usingMagic = false;
+				boolean usingBow = false;
+				boolean usingOtherRangeWeapons = false;
+				boolean usingArrows = false;
+				boolean usingCross = c.playerEquipment[c.playerWeapon] == 9185 || c.playerEquipment[c.playerWeapon] == 11785
+						|| c.playerEquipment[c.playerWeapon] == 21012;
+				if (c.playerEquipment[c.playerWeapon] >= 4214 && c.playerEquipment[c.playerWeapon] <= 4223)
+					usingBow = true;
+				if (c.playerEquipment[c.playerWeapon] == 22550)
+					usingBow = true;
+				if (c.playerEquipment[c.playerWeapon] == 11749)
+					usingBow = true;
+				for (int bowId : c.BOWS) {
+					if (c.playerEquipment[c.playerWeapon] == bowId) {
+						usingBow = true;
+						if (bowId == 19481 || bowId == 19478) {
+							usingBow = false;
+							c.usingBallista = true;
+						}
+						for (int arrowId : c.ARROWS) {
+							if (c.playerEquipment[c.playerArrows] == arrowId) {
+								usingArrows = true;
+							}
 						}
 					}
 				}
-			}
-			for (int otherRangeId : c.OTHER_RANGE_WEAPONS) {
-				if (c.playerEquipment[c.playerWeapon] == otherRangeId) {
-					usingOtherRangeWeapons = true;
+				for (int otherRangeId : c.OTHER_RANGE_WEAPONS) {
+					if (c.playerEquipment[c.playerWeapon] == otherRangeId) {
+						usingOtherRangeWeapons = true;
+					}
 				}
-			}
 
-			if ((usingBow || c.autocasting) && c.goodDistance(c.getX(), c.getY(), NPCHandler.npcs[c.npcIndex].getX(),
-					NPCHandler.npcs[c.npcIndex].getY(), 7)) {
-				c.stopMovement();
-			}
-
-			if ((c.usingBallista || usingOtherRangeWeapons || c.playerEquipment[c.playerWeapon] == 11907
-					|| c.playerEquipment[c.playerWeapon] == 12899)
-					&& c.goodDistance(c.getX(), c.getY(), NPCHandler.npcs[c.npcIndex].getX(),
-							NPCHandler.npcs[c.npcIndex].getY(), 6)) {
-				c.stopMovement();
-			}
-			if (!usingCross && !usingArrows && usingBow && c.playerEquipment[c.playerWeapon] < 4212
-					&& c.playerEquipment[c.playerWeapon] > 4223 && !usingCross) {
-				c.sendMessage("You have run out of arrows!");
-				break;
-			}
-			if (!c.getCombat().correctBowAndArrows() && Config.CORRECT_ARROWS && usingBow
-					&& !c.getCombat().usingCrystalBow() && c.playerEquipment[c.playerWeapon] != 4734
-					&& c.playerEquipment[c.playerWeapon] != 9185 && c.playerEquipment[c.playerWeapon] != 11785
-					&& c.playerEquipment[c.playerWeapon] != 21012 && c.playerEquipment[c.playerWeapon] != 19481
-					&& c.playerEquipment[c.playerWeapon] != 19478) {
-				c.sendMessage("You can't use "
-						+ ItemAssistant.getItemName(c.playerEquipment[c.playerArrows]).toLowerCase() + "'s with a "
-						+ ItemAssistant.getItemName(c.playerEquipment[c.playerWeapon]).toLowerCase() + ".");
-				c.stopMovement();
-				c.getCombat().resetPlayerAttack();
-				return;
-			}
-			if (c.playerEquipment[c.playerWeapon] == 9185 && !c.getCombat().properBolts()
-					|| c.playerEquipment[c.playerWeapon] == 11785 && !c.getCombat().properBolts()
-					|| c.playerEquipment[c.playerWeapon] == 21012 && !c.getCombat().properBolts()) {
-				c.sendMessage("You must use bolts with a crossbow.");
-				c.stopMovement();
-				c.getCombat().resetPlayerAttack();
-				return;
-			}
-
-			if (c.followId > 0) {
-				c.getPA().resetFollow();
-			}
-			if (c.attackTimer <= 0) {
-				c.getCombat().attackNpc(c.npcIndex);
-				c.attackTimer++;
-			}
-			c.followId2 = c.npcIndex;
-			if (!Boundary.isIn(c, Boundary.INFERNO))
-				c.stopMovement();
-			break;
-
-		/**
-		 * Attack npc with magic
-		 **/
-		case MAGE_NPC:
-			if (c.morphed) {
-				return;
-			}
-			if (!c.mageAllowed) {
-				c.mageAllowed = true;
-				c.sendMessage("I can't reach that.");
-				break;
-			}
-			c.npcIndex = c.getInStream().readSignedWordBigEndianA();
-			int castingSpellId = c.getInStream().readSignedWordA();
-			c.usingMagic = false;
-			if(c.debugMessage) {
-				c.sendMessage("Spell: "+castingSpellId);
-			}
-
-			if (c.npcIndex >= NPCHandler.npcs.length || c.npcIndex < 0 || NPCHandler.npcs[c.npcIndex] == null) {
-				break;
-			}
-
-			if (NPCHandler.npcs[c.npcIndex].getHealth().getMaximum() == 0) {
-				c.sendMessage("You can't attack this npc.");
-				break;
-			}
-
-			for (int i = 0; i < MagicData.MAGIC_SPELLS.length; i++) {
-				if (castingSpellId == MagicData.MAGIC_SPELLS[i][0]) {
-					c.spellId = i;
-					c.usingMagic = true;
-					break;
-				}
-			}
-			if (castingSpellId == 1171) { // crumble undead
-				boolean isUndead = IntStream.of(Config.UNDEAD_IDS)
-						.anyMatch(id -> id == NPCHandler.npcs[c.npcIndex].npcType);
-				if (!isUndead) {
-					c.sendMessage("You can only attack undead monsters with this spell.");
-					c.getCombat().resetPlayerAttack();
-					c.usingMagic = false;
+				if ((usingBow || c.autocasting) && c.goodDistance(c.getX(), c.getY(), NPCHandler.npcs[c.npcIndex].getX(),
+						NPCHandler.npcs[c.npcIndex].getY(), 7)) {
 					c.stopMovement();
-					return;
 				}
-			}
 
-			if (c.autocasting)
-				c.autocasting = false;
-
-			if (c.usingMagic || c.playerEquipment[c.playerWeapon] == 11907
-					|| c.playerEquipment[c.playerWeapon] == 12899) {
-				if (c.goodDistance(c.getX(), c.getY(), NPCHandler.npcs[c.npcIndex].getX(),
+				if ((c.usingBallista || usingOtherRangeWeapons || c.playerEquipment[c.playerWeapon] == 11907
+						|| c.playerEquipment[c.playerWeapon] == 12899 || c.playerEquipment[c.playerWeapon] == 22516
+						|| c.playerEquipment[c.playerWeapon] == 22323)
+						&& c.goodDistance(c.getX(), c.getY(), NPCHandler.npcs[c.npcIndex].getX(),
 						NPCHandler.npcs[c.npcIndex].getY(), 6)) {
 					c.stopMovement();
+				}
+				if (!usingCross && !usingArrows && usingBow && c.playerEquipment[c.playerWeapon] != 22550 && c.playerEquipment[c.playerWeapon] != 11749 && c.playerEquipment[c.playerWeapon] < 4212
+						&& c.playerEquipment[c.playerWeapon] > 4223 && !usingCross) {
+					c.sendMessage("You have run out of arrows!");
+					break;
+				}
+				if (!c.getCombat().correctBowAndArrows() && Config.CORRECT_ARROWS && usingBow
+						&& !c.getCombat().usingCrystalBow()&&  c.playerEquipment[c.playerWeapon] != 22550 && c.playerEquipment[c.playerWeapon] != 11749 && c.playerEquipment[c.playerWeapon] != 4734
+						&& c.playerEquipment[c.playerWeapon] != 9185 && c.playerEquipment[c.playerWeapon] != 11785
+						&& c.playerEquipment[c.playerWeapon] != 21012 && c.playerEquipment[c.playerWeapon] != 19481
+						&& c.playerEquipment[c.playerWeapon] != 19478) {
+					c.sendMessage("You can't use "
+							+ ItemAssistant.getItemName(c.playerEquipment[c.playerArrows]).toLowerCase() + "'s with a "
+							+ ItemAssistant.getItemName(c.playerEquipment[c.playerWeapon]).toLowerCase() + ".");
+					c.stopMovement();
+					c.getCombat().resetPlayerAttack();
+					return;
+				}
+				if (c.playerEquipment[c.playerWeapon] == 9185 && !c.getCombat().properBolts()
+						|| c.playerEquipment[c.playerWeapon] == 11785 && !c.getCombat().properBolts()
+						|| c.playerEquipment[c.playerWeapon] == 21012 && !c.getCombat().properBolts()) {
+					c.sendMessage("You must use bolts with a crossbow.");
+					c.stopMovement();
+					c.getCombat().resetPlayerAttack();
+					return;
+				}
+
+				if (c.followId > 0) {
+					c.getPA().resetFollow();
 				}
 				if (c.attackTimer <= 0) {
 					c.getCombat().attackNpc(c.npcIndex);
 					c.attackTimer++;
 				}
-			}
+				c.followId2 = c.npcIndex;
+				if (!Boundary.isIn(c, Boundary.INFERNO))
+					c.stopMovement();
+				break;
 
-			break;
+
+		/**
+		 * Attack npc with magic
+		 **/
+			case MAGE_NPC:
+				if (c.morphed) {
+					return;
+				}
+				if (!c.mageAllowed) {
+					c.mageAllowed = true;
+					c.sendMessage("I can't reach that.");
+					break;
+				}
+				c.npcIndex = c.getInStream().readSignedWordBigEndianA();
+				int castingSpellId = c.getInStream().readSignedWordA();
+				c.usingMagic = false;
+
+				if (c.npcIndex >= NPCHandler.npcs.length || c.npcIndex < 0 || NPCHandler.npcs[c.npcIndex] == null) {
+					break;
+				}
+
+				if (NPCHandler.npcs[c.npcIndex].getHealth().getMaximum() == 0
+						|| NPCHandler.npcs[c.npcIndex].npcType == 944) {
+					c.sendMessage("You can't attack this npc.");
+					break;
+				}
+
+				for (int i = 0; i < MagicData.MAGIC_SPELLS.length; i++) {
+					if (castingSpellId == MagicData.MAGIC_SPELLS[i][0]) {
+						c.spellId = i;
+						c.usingMagic = true;
+						break;
+					}
+				}
+				if (castingSpellId == 1171) { // crumble undead
+					boolean isUndead = IntStream.of(Config.UNDEAD_IDS)
+							.anyMatch(id -> id == NPCHandler.npcs[c.npcIndex].npcType);
+					if (!isUndead) {
+						c.sendMessage("You can only attack undead monsters with this spell.");
+						c.getCombat().resetPlayerAttack();
+						c.usingMagic = false;
+						c.stopMovement();
+						return;
+					}
+				}
+
+				if (c.autocasting)
+					c.autocasting = false;
+
+				if (c.usingMagic || c.playerEquipment[c.playerWeapon] == 11907
+						|| c.playerEquipment[c.playerWeapon] == 12899 || c.playerEquipment[c.playerWeapon] == 22516 || c.playerEquipment[c.playerWeapon] == 22323) {
+					if (c.goodDistance(c.getX(), c.getY(), NPCHandler.npcs[c.npcIndex].getX(),
+							NPCHandler.npcs[c.npcIndex].getY(), 6)) {
+						c.stopMovement();
+					}
+					if (c.attackTimer <= 0) {
+						c.getCombat().attackNpc(c.npcIndex);
+						c.attackTimer++;
+					}
+				}
+
+				break;
 
 		case FIRST_CLICK:
 			c.npcClickIndex = c.inStream.readSignedWordBigEndian();
@@ -248,7 +277,7 @@ public class ClickNPC implements PacketType {
 			}
 			if (NPCHandler.npcs[c.npcClickIndex] != null)
 				c.npcType = NPCHandler.npcs[c.npcClickIndex].npcType;
-			if (c.npcType == 8026) {
+			if (c.npcType == 8059) {
 				c.stopMovement();
 				c.faceUpdate(0);
 				c.getPA().resetFollow();

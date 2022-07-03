@@ -641,4 +641,46 @@ public class DropManager {
 	}
 
 
+	public List<GameItem> getNPCdrops(int id) {
+		Optional<TableGroup> group = groups.values().stream().filter(g -> g.getNpcIds().contains(id)).findFirst();
+		try {
+			return group.map(g -> {
+				List<GameItem> items = new ArrayList<>();
+				for (TablePolicy policy : TablePolicy.POLICIES) {
+					if (policy == TablePolicy.RARE || policy == TablePolicy.VERY_RARE) {
+						Optional<Table> table = g.stream().filter(t -> t.getPolicy() == policy).findFirst();
+						if (table.isPresent()) {
+							for (Drop d : table.get()) {
+								items.add(new GameItem(d.getItemId(), d.getMaximumAmount()));
+							}
+						}
+					}
+				}
+				return items;
+			}).orElse(new ArrayList<>());
+		} catch (Exception e) {
+			//logger.error("Error getting npc drops {}", id);
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public void getDrops(Player player, int id) {
+		Optional<TableGroup> group = groups.values().stream().filter(g -> g.getNpcIds().contains(id)).findFirst();
+		group.ifPresent(g -> {
+			List<GameItem> items = new ArrayList<>();
+			for (TablePolicy policy : TablePolicy.POLICIES) {
+				if (policy == TablePolicy.RARE || policy == TablePolicy.VERY_RARE) {
+					Optional<Table> table = g.stream().filter(t -> t.getPolicy() == policy).findFirst();
+					if (table.isPresent()) {
+						for(Drop d : table.get()) {
+							items.add(new GameItem(d.getItemId(), d.getMaximumAmount()));
+						}
+					}
+				}
+			}
+			player.dropItems = items;
+		});
+	}
+
 }

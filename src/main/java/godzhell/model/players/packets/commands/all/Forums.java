@@ -1,9 +1,9 @@
 package godzhell.model.players.packets.commands.all;
 
-import java.util.Optional;
-
 import godzhell.model.players.Player;
 import godzhell.model.players.packets.commands.Command;
+
+import java.util.Optional;
 
 /**
  * Open the forums in the default web browser.
@@ -15,7 +15,7 @@ public class Forums extends Command {
 	@Override
 	public void execute(Player c, String input) {
 		c.sendMessage("@red@Opening forums... ");
-        c.getPA().sendFrame126("http://playanguish.net", 12000);
+        c.getPA().sendFrame126("https://www.youtube.com/watch?v=dQw4w9WgXcQ", 12000);
 	}
 
 	@Override

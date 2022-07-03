@@ -4,8 +4,6 @@ package godzhell.model.players.packets;
  * @author Ryan / Lmctruck30
  */
 
-import java.util.Objects;
-
 import godzhell.Server;
 import godzhell.event.CycleEvent;
 import godzhell.event.CycleEventContainer;
@@ -17,7 +15,8 @@ import godzhell.model.multiplayer_session.MultiplayerSessionType;
 import godzhell.model.multiplayer_session.duel.DuelSession;
 import godzhell.model.players.PacketType;
 import godzhell.model.players.Player;
-import godzhell.model.players.Right;
+
+import java.util.Objects;
 
 public class ItemOnObject implements PacketType {
 
@@ -29,7 +28,7 @@ public class ItemOnObject implements PacketType {
 
 		@SuppressWarnings("unused")
 		int a = c.getInStream().readUnsignedWord();
-		int objectId = c.getInStream().readSignedWordBigEndian();
+		int objectId = c.getInStream().readInteger();
 		int objectY = c.getInStream().readSignedWordBigEndianA();
 		@SuppressWarnings("unused")
 		int b = c.getInStream().readUnsignedWord();

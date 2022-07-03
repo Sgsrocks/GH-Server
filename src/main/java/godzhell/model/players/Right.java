@@ -1,13 +1,8 @@
 package godzhell.model.players;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.EnumSet;
-import java.util.List;
-import java.util.Set;
-
 import godzhell.util.Misc;
+
+import java.util.*;
 
 /**
  * The rights of a player determines their authority. Every right can be viewed with a name and a value. The value is used to separate each right from one another.
@@ -21,26 +16,26 @@ public enum Right implements Comparator<Right> {
 	HELPER(11, "004080", "Helper"),
 	MODERATOR(1, "919191", "Moderator", HELPER),
 	ADMINISTRATOR(2, "F5FF0F", "Administrator", MODERATOR),
-	OWNER(3, "F5FF0F", "Owner", ADMINISTRATOR),
-	UNKNOWN(4, "F5FF0F", ""),
-	CONTRIBUTOR(5, "B60818", ""),
-	SPONSOR(6, "063DCF", "", CONTRIBUTOR),
-	SUPPORTER(7, "118120", "", SPONSOR),
+	OWNER(9, "F5FF0F", "Owner", ADMINISTRATOR),
+	//UNKNOWN(4, "F5FF0F", ""),
+	CONTRIBUTOR(-1, "B60818", ""),
+	SPONSOR(-1, "063DCF", "", CONTRIBUTOR),
+	SUPPORTER(-1, "118120", "", SPONSOR),
 	
-	DONATOR(8, "9E00DE", "", SUPPORTER),
-	SUPER_DONATOR(9, "9E6405", "", DONATOR),
-	EXTREME_DONATOR(17, "9E6405", "", SUPER_DONATOR),
-	LEGENDARY(18, "9E6405", "", EXTREME_DONATOR),
-	UBER_DONATOR(19, "9E6405", "", LEGENDARY),
-	MAX_DONATOR(20, "9E6405", "", UBER_DONATOR),
+	DONATOR(3, "9E00DE", ""),
+	SUPER_DONATOR(7, "9E6405", "", DONATOR),
+	EXTREME_DONATOR(8, "9E6405", "", SUPER_DONATOR),
+	LEGENDARY(21, "9E6405", "", EXTREME_DONATOR),
+	RAINBOW_DONATOR(22, "9E6405", "", LEGENDARY),
+	//MAX_DONATOR(20, "9E6405", "", RAINBOW_DONATOR),
 	
 	RESPECTED_MEMBER(10, "272727", ""),
 	HITBOX(12, "437100", ""),
-	IRONMAN(13, "3A3A3A", ""),
-	ULTIMATE_IRONMAN(14, "717070", ""),
-	YOUTUBER(15, "FE0018", ""),
-	GAME_DEVELOPER(16, "544FBB", "Developer", OWNER),
-	OSRS(23, "437100", "");
+	IRONMAN(23, "3A3A3A", ""),
+	ULTIMATE_IRONMAN(24, "717070", ""),
+	YOUTUBER(10, "FE0018", ""),
+	GAME_DEVELOPER(4, "544FBB", "Developer", OWNER),
+	OSRS(-1, "437100", "");
 
 	/**
 	 * The level of rights that define this
@@ -181,7 +176,7 @@ public enum Right implements Comparator<Right> {
 	 */
 
 	public static final Right[] PRIORITY = { PLAYER, OSRS, IRONMAN, ULTIMATE_IRONMAN, CONTRIBUTOR, SPONSOR, SUPPORTER, DONATOR, SUPER_DONATOR, EXTREME_DONATOR, LEGENDARY, RESPECTED_MEMBER, HITBOX, YOUTUBER, HELPER,
-			GAME_DEVELOPER, MODERATOR, ADMINISTRATOR, OWNER, UNKNOWN, };
+			GAME_DEVELOPER, MODERATOR, ADMINISTRATOR, OWNER, };
 
 	@Override
 	public String toString() {

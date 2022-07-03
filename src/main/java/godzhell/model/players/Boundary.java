@@ -1,11 +1,10 @@
 package godzhell.model.players;
 
+import godzhell.model.npcs.NPC;
+
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Optional;
-
-import godzhell.model.players.Boundary;
-import godzhell.model.npcs.NPC;
 
 /**
  * 
@@ -176,6 +175,8 @@ public class Boundary {
 	public static final Boundary DRAYNOR_DUNGEON_BOUNDARY = new Boundary(3084, 9623, 3132, 9700);
 	public static final Boundary AL_KHARID_BOUNDARY = new Boundary(3263, 3136, 3388, 3328);
 	public static final Boundary DRAYNOR_MANOR_BOUNDARY = new Boundary(3074, 3311, 3131, 3388);
+	public static final Boundary home = new Boundary(2425, 3130, 2494, 3215);
+
 	public static final Boundary DRAYNOR_BOUNDARY = new Boundary(3065, 3216, 3136, 3292);
 	public static final Boundary KARAMJA_BOUNDARY = new Boundary(2816, 3139, 2965, 3205);
 	public static final Boundary BRIMHAVEN_BOUNDARY = new Boundary(2683, 3138, 2815, 3248);
@@ -297,7 +298,7 @@ public class Boundary {
 	public static final Boundary BOSS_ROOM_EAST = new Boundary(1354, 1224, 1387, 1274);
 	public static final Boundary WITHIN_BOUNDARY_CERB = new Boundary(1234, 1246, 1246, 1256);
 	public static final Boundary[] CERBERUS_BOSSROOMS  = { BOSS_ROOM_NORTH, BOSS_ROOM_WEST, BOSS_ROOM_EAST };
-	
+	public static final Boundary NEX = new Boundary(2909, 5187, 2942, 5218);
 	public static final Boundary[] KARUULM_SLAYER_DUNGEON = {
 		    new Boundary(1239, 10132, 1301, 10212, 0),
 		    new Boundary(1283, 10215, 1360, 10252, 0),
@@ -377,5 +378,8 @@ public class Boundary {
 		    new Boundary(2480, 5799, 2585, 5907),
 		    new Boundary(2220, 5790, 2322, 5914)
 		};
-
+	public static final Boundary[] Taverley_Dungeon_slayer = new Boundary[] {
+			new Boundary(2758, 9789, 2881, 9875, 1),
+			new Boundary(2886, 9800, 2976, 9842, 1)
+	};
 }

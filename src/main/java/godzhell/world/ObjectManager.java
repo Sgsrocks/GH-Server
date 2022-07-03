@@ -8,11 +8,10 @@ import godzhell.event.CycleEventContainer;
 import godzhell.event.CycleEventHandler;
 import godzhell.model.objects.DoubleGates;
 import godzhell.model.objects.Object;
-import godzhell.model.objects.Objects;
+import godzhell.model.objects.Objects2;
 import godzhell.model.players.Player;
 import godzhell.model.players.PlayerHandler;
 import godzhell.util.Misc;
-import godzhell.world.objects.GlobalObject;
 
 /**
  * @author Sanity
@@ -179,8 +178,8 @@ public class ObjectManager {
 					container.stop();
 					return;
 				}
-				Server.objectHandler.placeObject(new Objects(-1, oldObjectX, oldObjectY, objectH, face, 0, 0));
-				Server.objectHandler.placeObject(new Objects(objectId, newObjectX, newObjectY, objectH, face, 0, 0));
+				Server.objectHandler.placeObject(new Objects2(-1, oldObjectX, oldObjectY, objectH, face, 0, 0));
+				Server.objectHandler.placeObject(new Objects2(objectId, newObjectX, newObjectY, objectH, face, 0, 0));
 				container.stop();
 			}
 
@@ -201,9 +200,9 @@ public class ObjectManager {
 					container.stop();
 					return;
 				}
-				Server.objectHandler.placeObject(new Objects(-1, oldObjectX, oldObjectY, objectH, face, 0, 0));
-				Server.objectHandler.placeObject(new Objects(-1, oldObjectX2, oldObjectY2, objectH, face, 0, 0));
-				Server.objectHandler.placeObject(new Objects(objectId, newObjectX, newObjectY, objectH, face, 0, 0));
+				Server.objectHandler.placeObject(new Objects2(-1, oldObjectX, oldObjectY, objectH, face, 0, 0));
+				Server.objectHandler.placeObject(new Objects2(-1, oldObjectX2, oldObjectY2, objectH, face, 0, 0));
+				Server.objectHandler.placeObject(new Objects2(objectId, newObjectX, newObjectY, objectH, face, 0, 0));
 				container.stop();
 			}
 

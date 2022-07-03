@@ -1,6 +1,7 @@
 package godzhell.model.players.packets.objectoptions;
 
 import godzhell.Server;
+import godzhell.clip.ObjectDef;
 import godzhell.clip.Region;
 import godzhell.model.players.Player;
 import godzhell.model.players.Right;
@@ -20,12 +21,13 @@ public class ObjectOptionFour {
 		if (Objects.isObject(objectType)) {
 			Objects.handleObjectClick(c, objectType, obX, obY);
 		}
+		ObjectDef def = ObjectDef.getObjectDef(objectType);
 		Construction.handleConstructionClick(c, objectType, obX, obY);
 		c.clickObjectType = 0;
 		c.turnPlayerTo(obX, obY);
 		
 		if (c.getRights().isOrInherits(Right.OWNER))
-			c.sendMessage("Clicked Object Option 4:  "+objectType+"");
+			c.sendMessage("Clicked Object Option 4:  "+objectType+", Object name: "+def.getName());
 		
 		switch (objectType) {
 		case 12309:

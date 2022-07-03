@@ -7,7 +7,7 @@ import java.util.Random;
 import godzhell.Config;
 import godzhell.Server;
 import godzhell.model.items.Item;
-import godzhell.model.objects.Objects;
+import godzhell.model.objects.Objects2;
 import godzhell.model.players.Player;
 
 public class PartyRoom {
@@ -60,7 +60,7 @@ public class PartyRoom {
 		}
 		trys = 0;
 		for (int x = 0; x < amount * 2; x++) {
-			Objects o;
+			Objects2 o;
 			do {
 				o = Balloons.getEmpty();
 			} while (coords.contains(new Point(o.objectX, o.objectY))

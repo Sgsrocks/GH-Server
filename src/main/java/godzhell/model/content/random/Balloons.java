@@ -4,10 +4,10 @@ import java.awt.Point;
 import java.util.Random;
 
 import godzhell.Server;
-import godzhell.model.objects.Objects;
+import godzhell.model.objects.Objects2;
 import godzhell.model.players.Player;
 
-public class Balloons extends Objects {
+public class Balloons extends Objects2 {
 
 	static Random r = new Random();
 	public static int item, amount;

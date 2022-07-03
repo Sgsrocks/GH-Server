@@ -1,12 +1,5 @@
 package godzhell.model.content.skills.slayer;
 
-import godzhell.model.content.dialogue.Dialogue;
-import godzhell.model.content.dialogue.DialogueManager;
-import godzhell.model.content.dialogue.Emotion;
-import godzhell.model.players.RightGroup;
-import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.Range;
-
 import godzhell.Config;
 import godzhell.Server;
 import godzhell.model.content.achievement.AchievementType;
@@ -14,14 +7,19 @@ import godzhell.model.content.achievement.Achievements;
 import godzhell.model.content.achievement_diary.karamja.KaramjaDiaryEntry;
 import godzhell.model.content.achievement_diary.morytania.MorytaniaDiaryEntry;
 import godzhell.model.content.achievement_diary.western_provinces.WesternDiaryEntry;
+import godzhell.model.content.dialogue.DialogueManager;
+import godzhell.model.content.dialogue.Emotion;
+import godzhell.model.content.skills.Skill;
 import godzhell.model.items.ItemAssistant;
 import godzhell.model.npcs.NPC;
 import godzhell.model.players.Boundary;
 import godzhell.model.players.Player;
 import godzhell.model.players.Right;
+import godzhell.model.players.RightGroup;
 import godzhell.model.players.mode.ModeType;
-import godzhell.model.content.skills.Skill;
 import godzhell.util.Misc;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.Range;
 
 import java.util.*;
 
@@ -122,7 +120,7 @@ public class Slayer {
 	public void createNewTask(int masterId) {
 		SlayerMaster.get(masterId).ifPresent(m -> {
 			if (player.calculateCombatLevel() < m.getLevel()) {
-				DialogueManager.sendNpcChat(player, player.clickNpcType, Emotion.CALM, "You need a combat level of " + m.getLevel() + " to receive tasks from me.", "Please come back when you have this combat level.");
+				DialogueManager.sendNpcChat(player, masterId, Emotion.CALM, "You need a combat level of " + m.getLevel() + " to receive tasks from me.", "Please come back when you have this combat level.");
 				return;
 			}
 			if (masterId == 401 && master != 401 && consecutiveTasks > 0 && taskAmount > 0) {
@@ -144,9 +142,9 @@ public class Slayer {
 			task = Optional.of(Misc.randomSearch(available, 0, available.length - 1));
 			
 			taskAmount = m.getId() == 6797 && !task.equals("tztok-jad") && biggerBossTasks ? Misc.random(Range.between(task.get().getMinimum(), task.get().getMaximum())) + Misc.random(10) + 10 : Misc.random(Range.between(task.get().getMinimum(), task.get().getMaximum()));
-			
+
 			player.npcClickIndex = m.getId();
-			DialogueManager.sendNpcChat(player, player.clickNpcType, Emotion.CALM, "You have been assigned " + taskAmount + " " + task.get().getPrimaryName() + ".", "Come talk to me when you finish this task.");
+			DialogueManager.sendNpcChat(player, masterId, Emotion.CALM, "You have been assigned " + taskAmount + " " + task.get().getPrimaryName() + ".", "Come talk to me when you finish this task.");
 			player.getDialogue().end();
 			master = m.getId();
 		});

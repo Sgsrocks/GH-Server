@@ -22,7 +22,15 @@ public class MagicRequirements extends MagicConfig {
 		c.sendMessage("You don't have enough required runes to cast this spell!");
 		return false;
 	}
-
+	public static boolean hasRunes(Player player, int[][] runes) {
+		for (int[] rune : runes) {
+			// if player doesn't have the required amount of runes or a staff for that rune
+			if (!player.getItems().playerHasItem(rune[0], rune[1]) && !MagicRequirements.wearingStaff(player, rune[0])) {
+				return false;
+			}
+		}
+		return true;
+	}
 	public static void deleteRunes(Player c, int[] runes, int[] amount) {
 		if (c.getRunePouch().hasRunes(runes, amount)) {
 			c.getRunePouch().deleteRunesOnCast(runes, amount);
@@ -30,6 +38,13 @@ public class MagicRequirements extends MagicConfig {
 		}
 		for (int i = 0; i < runes.length; i++) {
 			c.getItems().deleteItem(runes[i], c.getItems().getItemSlot(runes[i]), amount[i]);
+		}
+	}
+	public static void deleteRunes(Player player, int[][] runes) {
+		for (int[] rune : runes) {
+			if (!MagicRequirements.wearingStaff(player, rune[0])) {
+				player.getItems().deleteItem(rune[0], rune[1]);
+			}
 		}
 	}
 
@@ -40,29 +55,29 @@ public class MagicRequirements extends MagicConfig {
 	public static boolean wearingStaff(Player c, int runeId) {
 		int wep = c.playerEquipment[c.playerWeapon];
 		switch (runeId) {
-		case FIRE:
-			if (wep == 1387 || wep == 1393 || wep == 1401 || wep == 12796 || wep == 11789 || wep == 12000 || wep == 11998 || wep == 12795)
-				return true;
-			break;
-		case WATER:
-			if (wep == 1383 || wep == 1395 || wep == 12796 || wep == 11789 || wep == 6563 || wep == 1403 || wep == 21006 || wep == 20730  || wep == 12795)
-				return true;
-			break;
-		case AIR:
-			if (wep == 1381 || wep == 1397 || wep == 1405 || wep == 12000 || wep == 20736 || wep == 20736 || wep == 20730)
-				return true;
-			break;
-			
-		case EARTH:
-			if (wep == 1385 || wep == 1399 || wep == 1407 || wep == 6563 || wep == 20736 | wep == 20736  || wep == 11998)
-				return true;
-			break;
+			case FIRE:
+				if (wep == 1387 || wep == 1393 || wep == 1401 || wep == 12796 || wep == 11789 || wep == 12000 || wep == 11998 || wep == 12795)
+					return true;
+				break;
+			case WATER:
+				if (wep == 1383 || wep == 1395 || wep == 12796 || wep == 11789 || wep == 6563 || wep == 1403 || wep == 21006 || wep == 20730  || wep == 12795)
+					return true;
+				break;
+			case AIR:
+				if (wep == 1381 || wep == 1397 || wep == 1405 || wep == 12000 || wep == 20736 || wep == 20736 || wep == 20730)
+					return true;
+				break;
+
+			case EARTH:
+				if (wep == 1385 || wep == 1399 || wep == 1407 || wep == 6563 || wep == 20736 | wep == 20736  || wep == 11998)
+					return true;
+				break;
 		}
 		return false;
 	}
 
 	public static boolean checkMagicReqs(Player c, int spell) {
-		//System.out.println("Spell: " + spell + ", Spellid: " + c.spellId + ", Old Spellid: " + c.oldSpellId);
+		//c.sendMessage("Spell: " + spell + ", Spellid: " + c.spellId + ", Old Spellid: " + c.oldSpellId);
 		if (c.usingMagic) {
 			if (!Boundary.isIn(c, Boundary.FOUNTAIN_OF_RUNE_BOUNDARY)) {
 				boolean hasRunesInPouch1 = c.getRunePouch().hasRunes(MagicData.MAGIC_SPELLS[spell][8], MagicData.MAGIC_SPELLS[spell][9]);
@@ -125,7 +140,7 @@ public class MagicRequirements extends MagicConfig {
 			}
 		}
 
-		int staffRequired = getStaffNeeded(c);
+		int staffRequired = MagicData.getStaffNeeded(c, c.spellId);
 		if (c.usingMagic && staffRequired > 0 && Config.RUNES_REQUIRED) { // staff required
 			if (c.playerEquipment[c.playerWeapon] != staffRequired) {
 				c.sendMessage("You need a " + ItemAssistant.getItemName(staffRequired).toLowerCase() + " to cast this spell.");
@@ -192,4 +207,6 @@ public class MagicRequirements extends MagicConfig {
 	public static final int BLOOD = 565;
 	public static final int SOUL = 566;
 	public static final int ASTRAL = 9075;
+	public static final int WRATH = 21880;
+
 }

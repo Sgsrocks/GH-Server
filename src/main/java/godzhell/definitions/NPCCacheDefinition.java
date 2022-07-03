@@ -23,8 +23,9 @@ public class NPCCacheDefinition {
 	 * Represents the total whole number integer of NPCs.
 	 */
 	public static int NPC_TOTAL = 11474;
-	
-	/**
+    private String opcode112;
+
+    /**
 	 * Returns a {@link NPCCacheDefinition} for the specified ID.
 	 * @param i	the id of the NPC to get the definition for
 	 * @return	the definition
@@ -203,6 +204,8 @@ public class NPCCacheDefinition {
             } else if (opcode == 109) {
             } else
             if(opcode == 107 || opcode == 111) {
+            } else if (opcode == 112) {
+                opcode112 = str.readString();
             
             }
         } while(true);

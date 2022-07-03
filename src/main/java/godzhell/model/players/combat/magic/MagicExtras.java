@@ -1,9 +1,5 @@
 package godzhell.model.players.combat.magic;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-
 import godzhell.Config;
 import godzhell.model.npcs.NPC;
 import godzhell.model.npcs.NPCHandler;
@@ -15,6 +11,11 @@ import godzhell.model.players.combat.Hitmark;
 import godzhell.model.players.mode.ModeType;
 import godzhell.util.Misc;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+
+
 public class MagicExtras {
 
 	public static void multiSpellEffectNPC(Player c, int npcId, int damage) {
@@ -23,19 +24,19 @@ public class MagicExtras {
 			return;
 		}
 		switch (MagicData.MAGIC_SPELLS[c.oldSpellId][0]) {
-		case 12891:
-		case 12881:
-			if (NPCHandler.npcs[npcId].freezeTimer < -4) {
-				NPCHandler.npcs[npcId].freezeTimer = c.getCombat().getFreezeTime();
-			}
-			break;
+			case 12891:
+			case 12881:
+				if (NPCHandler.npcs[npcId].freezeTimer < -4) {
+					NPCHandler.npcs[npcId].freezeTimer = c.getCombat().getFreezeTime();
+				}
+				break;
 
-		case 12919: // blood spells
-		case 12929:
-			int heal = damage / 4;
-			c.getHealth().increase(heal);
-			c.getPA().refreshSkill(3);
-			break;
+			case 12919: // blood spells
+			case 12929:
+				int heal = damage / 4;
+				c.getHealth().increase(heal);
+				c.getPA().refreshSkill(3);
+				break;
 		}
 	}
 
@@ -105,8 +106,14 @@ public class MagicExtras {
 					if (n.npcType == 7413) {
 						n.appendDamage(c, c.getCombat().magicMaxHit(), Hitmark.HIT);
 					} else {
-						AttackPlayer.addCombatXP(c, CombatType.MAGE, damage);
+						c.barrageMultiDmg = c.barrageMultiDmg + damage;
 						n.appendDamage(c, damage, Hitmark.HIT);
+						if(System.currentTimeMillis() - c.lastBarrageMulti >= 7000) {
+							//c.sendMessage("Now");
+							AttackPlayer.addCombatXP(c, CombatType.MAGE, c.barrageMultiDmg);
+							c.lastBarrageMulti = System.currentTimeMillis();
+							c.barrageMultiDmg = 0;
+						}
 					}
 					c.getCombat().multiSpellEffectNPC(npcId, damage);
 					c.totalDamageDealt += damage;
@@ -119,26 +126,26 @@ public class MagicExtras {
 
 	public static void multiSpellEffect(Player c, int playerId, int damage) {
 		switch (MagicData.MAGIC_SPELLS[c.oldSpellId][0]) {
-		case 13011:
-		case 13023:
-			if (System.currentTimeMillis() - PlayerHandler.players[playerId].reduceStat > 35000) {
-				PlayerHandler.players[playerId].reduceStat = System.currentTimeMillis();
-				PlayerHandler.players[playerId].playerLevel[0] -= ((PlayerHandler.players[playerId].getLevelForXP(PlayerHandler.players[playerId].playerXP[0]) * 10) / 100);
-			}
-			break;
-		case 12919: // blood spells
-		case 12929:
-			int heal = damage / 4;
-			c.getHealth().increase(heal);
-			c.getPA().refreshSkill(3);
-			break;
-		case 12891:
-		case 12881:
-			if (PlayerHandler.players[playerId].freezeTimer < -4) {
-				PlayerHandler.players[playerId].freezeTimer = c.getCombat().getFreezeTime();
-				PlayerHandler.players[playerId].stopMovement();
-			}
-			break;
+			case 13011:
+			case 13023:
+				if (System.currentTimeMillis() - PlayerHandler.players[playerId].reduceStat > 35000) {
+					PlayerHandler.players[playerId].reduceStat = System.currentTimeMillis();
+					PlayerHandler.players[playerId].playerLevel[0] -= ((PlayerHandler.players[playerId].getLevelForXP(PlayerHandler.players[playerId].playerXP[0]) * 10) / 100);
+				}
+				break;
+			case 12919: // blood spells
+			case 12929:
+				int heal = damage / 4;
+				c.getHealth().increase(heal);
+				c.getPA().refreshSkill(3);
+				break;
+			case 12891:
+			case 12881:
+				if (PlayerHandler.players[playerId].freezeTimer < -4) {
+					PlayerHandler.players[playerId].freezeTimer = c.getCombat().getFreezeTime();
+					PlayerHandler.players[playerId].stopMovement();
+				}
+				break;
 		}
 	}
 
@@ -162,8 +169,8 @@ public class MagicExtras {
 					if (c2.getHealth().getAmount() - damage < 0) {
 						damage = c2.getHealth().getAmount();
 					}
-					c.getPA().addSkillXP((MagicData.MAGIC_SPELLS[c.oldSpellId][7] + damage * (c.getMode().getType().equals(ModeType.OSRS) ? 1 : Config.MAGIC_EXP_RATE)), 6, true);
-					c.getPA().addSkillXP((MagicData.MAGIC_SPELLS[c.oldSpellId][7] + damage * (c.getMode().getType().equals(ModeType.OSRS) ? 1 : Config.MAGIC_EXP_RATE) / 3), 3, true);
+					c.getPA().addSkillXP((MagicData.MAGIC_SPELLS[c.oldSpellId][7] + damage * (c.getMode().getType().equals(ModeType.OSRS) ? 4 : Config.MAGIC_EXP_RATE)), 6, true);
+					c.getPA().addSkillXP((MagicData.MAGIC_SPELLS[c.oldSpellId][7] + damage * (c.getMode().getType().equals(ModeType.OSRS) ? 4 : Config.MAGIC_EXP_RATE) / 3), 3, true);
 					c2.appendDamage(damage, damage > 0 ? Hitmark.HIT : Hitmark.MISS);
 					c2.addDamageTaken(c, damage);
 					c2.getPA().refreshSkill(3);

@@ -8212,12 +8212,12 @@ public class ItemDefinition_Sub2_Sub1 {
             class8.originalModelColors = new int[4];
             class8.modifiedModelColors[0] = 127;
             class8.modifiedModelColors[1] = 111;
-            class8.originalModelColors[0] = 26934;
-            class8.originalModelColors[1] = 26918;
+            class8.originalModelColors[0] = 28934;
+            class8.originalModelColors[1] = 28918;
             class8.modifiedModelColors[2] = 119;
             class8.modifiedModelColors[3] = 108;
-            class8.originalModelColors[2] = 26934;
-            class8.originalModelColors[3] = 26918;
+            class8.originalModelColors[2] = 28934;
+            class8.originalModelColors[3] = 28918;
             class8.modelId = 17125;
             class8.spriteScale = 919;
             class8.spritePitch = 595;
@@ -8327,9 +8327,9 @@ public class ItemDefinition_Sub2_Sub1 {
             class8.modifiedModelColors[3] = 10293;
             class8.modifiedModelColors[4] = 10297;
             class8.modifiedModelColors[5] = 10289;
-            class8.originalModelColors[0] = 55131;
-            class8.originalModelColors[1] = 55131;
-            class8.originalModelColors[2] = 55131;
+            class8.originalModelColors[0] = 54194;
+            class8.originalModelColors[1] = 54194;
+            class8.originalModelColors[2] = 54194;
             class8.originalModelColors[3] = 54245;
             class8.originalModelColors[4] = 54220;
             class8.originalModelColors[5] = 54194;
@@ -8368,10 +8368,10 @@ public class ItemDefinition_Sub2_Sub1 {
             class8.modifiedModelColors[1] = 3484;
             class8.modifiedModelColors[2] = 9137;
             class8.modifiedModelColors[3] = 5045;
-            class8.originalModelColors[0] = 55131;
+            class8.originalModelColors[0] = 54194;
             class8.originalModelColors[1] = 54194;
             class8.originalModelColors[2] = 54220;
-            class8.originalModelColors[3] = 55131;
+            class8.originalModelColors[3] = 54194;
             class8.modelId = 44102;
             class8.spriteScale = 1414;
             class8.spritePitch = 532;
@@ -8407,10 +8407,10 @@ public class ItemDefinition_Sub2_Sub1 {
             class8.modifiedModelColors[1] = 3486;
             class8.modifiedModelColors[2] = 9137;
             class8.modifiedModelColors[3] = 5045;
-            class8.originalModelColors[0] = 55131;
+            class8.originalModelColors[0] = 54194;
             class8.originalModelColors[1] = 54194;
             class8.originalModelColors[2] = 54220;
-            class8.originalModelColors[3] = 55131;
+            class8.originalModelColors[3] = 54194;
             class8.modelId = 44131;
             class8.spriteScale = 1711;
             class8.spritePitch = 579;
@@ -8448,9 +8448,9 @@ public class ItemDefinition_Sub2_Sub1 {
             class8.modifiedModelColors[3] = 10293;
             class8.modifiedModelColors[4] = 10297;
             class8.modifiedModelColors[5] = 10289;
-            class8.originalModelColors[0] = 11263;
-            class8.originalModelColors[1] = 11263;
-            class8.originalModelColors[2] = 11263;
+            class8.originalModelColors[0] = 11212;
+            class8.originalModelColors[1] = 11212;
+            class8.originalModelColors[2] = 11212;
             class8.originalModelColors[3] = 9215;
             class8.originalModelColors[4] = 11237;
             class8.originalModelColors[5] = 13311;
@@ -8489,10 +8489,10 @@ public class ItemDefinition_Sub2_Sub1 {
             class8.modifiedModelColors[1] = 3484;
             class8.modifiedModelColors[2] = 9137;
             class8.modifiedModelColors[3] = 5045;
-            class8.originalModelColors[0] = 11263;
+            class8.originalModelColors[0] = 11212;
             class8.originalModelColors[1] = 13311;
             class8.originalModelColors[2] = 11237;
-            class8.originalModelColors[3] = 11263;
+            class8.originalModelColors[3] = 11212;
             class8.modelId = 44102;
             class8.spriteScale = 1414;
             class8.spritePitch = 532;
@@ -8516,44 +8516,6 @@ public class ItemDefinition_Sub2_Sub1 {
             class8.placeholderTemplateId = -1;
         }
 
-        if(i == 28976) //ID
-        {
-            class8.itemActions = new String[] {null, "Wear", null, null, "Drop"};
-            class8.groundActions = new String[] {null};
-            class8.name = "Robe bottoms of the eye (yellow)"; //Name
-            class8.description = "Its an Robe bottoms of the eye (yellow)"; //Description
-            class8.modifiedModelColors = new int[4];
-            class8.originalModelColors = new int[4];
-            class8.modifiedModelColors[0] = 3495;
-            class8.modifiedModelColors[1] = 3486;
-            class8.modifiedModelColors[2] = 9137;
-            class8.modifiedModelColors[3] = 5045;
-            class8.originalModelColors[0] = 11263;
-            class8.originalModelColors[1] = 13311;
-            class8.originalModelColors[2] = 11237;
-            class8.originalModelColors[3] = 11263;
-            class8.modelId = 44131;
-            class8.spriteScale = 1711;
-            class8.spritePitch = 579;
-            class8.spriteCameraRoll = 2047;
-            class8.spriteCameraYaw = 0;
-            class8.spriteTranslateX = 0;
-            class8.spriteTranslateY = 9;
-            class8.primaryMaleModel = 43889;
-            class8.primaryFemaleModel = 43899;
-            class8.secondaryMaleModel = -1;
-            class8.secondaryFemaleModel = -1;
-            class8.primaryMaleHeadPiece = -1;
-            class8.primaryFemaleHeadPiece = -1;
-            class8.value = 400;
-            class8.unnotedId = -1;
-            class8.notedId = -1;
-            class8.certID = -1;
-            class8.certTemplateID = -1;
-            class8.stackable = false;
-            class8.placeholderId = 26875;
-            class8.placeholderTemplateId = -1;
-        }
         if(i == 28976) //ID
         {
             class8.itemActions = new String[] {null, "Wear", null, null, "Drop"};
@@ -8849,9 +8811,9 @@ public class ItemDefinition_Sub2_Sub1 {
             class8.originalModelColors[0] = 32716;
             class8.originalModelColors[1] = 32716;
             class8.originalModelColors[2] = 32716;
-            class8.originalModelColors[3] = 32690;
+            class8.originalModelColors[3] = 32890;
             class8.originalModelColors[4] = 32716;
-            class8.originalModelColors[5] = 32690;
+            class8.originalModelColors[5] = 32890;
             class8.modelId = 44127;
             class8.spriteScale = 1118;
             class8.spritePitch = 131;
@@ -8888,7 +8850,7 @@ public class ItemDefinition_Sub2_Sub1 {
             class8.modifiedModelColors[2] = 9137;
             class8.modifiedModelColors[3] = 5045;
             class8.originalModelColors[0] = 32716;
-            class8.originalModelColors[1] = 32690;
+            class8.originalModelColors[1] = 32890;
             class8.originalModelColors[2] = 32716;
             class8.originalModelColors[3] = 32716;
             class8.modelId = 44102;
@@ -8927,7 +8889,7 @@ public class ItemDefinition_Sub2_Sub1 {
             class8.modifiedModelColors[2] = 9137;
             class8.modifiedModelColors[3] = 5045;
             class8.originalModelColors[0] = 32716;
-            class8.originalModelColors[1] = 32690;
+            class8.originalModelColors[1] = 32890;
             class8.originalModelColors[2] = 32716;
             class8.originalModelColors[3] = 32716;
             class8.modelId = 44131;
@@ -8952,7 +8914,7 @@ public class ItemDefinition_Sub2_Sub1 {
             class8.placeholderId = 26875;
             class8.placeholderTemplateId = -1;
         }
-        if(i == 28986) //ID
+        if(i == 29017) //ID
         {
             class8.itemActions = new String[] {null, "Wear", null, null, "Drop"};
             class8.groundActions = new String[] {null};
@@ -8995,7 +8957,7 @@ public class ItemDefinition_Sub2_Sub1 {
             class8.placeholderTemplateId = -1;
         }
 
-        if(i == 28987) //ID
+        if(i == 29018) //ID
         {
             class8.itemActions = new String[] {null, "Wear", null, null, "Drop"};
             class8.groundActions = new String[] {null};
@@ -9034,7 +8996,7 @@ public class ItemDefinition_Sub2_Sub1 {
             class8.placeholderTemplateId = -1;
         }
 
-        if(i == 28988) //ID
+        if(i == 29019) //ID
         {
             class8.itemActions = new String[] {null, "Wear", null, null, "Drop"};
             class8.groundActions = new String[] {null};
@@ -9072,7 +9034,7 @@ public class ItemDefinition_Sub2_Sub1 {
             class8.placeholderId = 26875;
             class8.placeholderTemplateId = -1;
         }
-        if(i == 28989) //ID
+        if(i == 29392) //ID
         {
             class8.itemActions = new String[] {null, "Wear", null, null, "Drop"};
             class8.groundActions = new String[] {null};
@@ -9115,7 +9077,7 @@ public class ItemDefinition_Sub2_Sub1 {
             class8.placeholderTemplateId = -1;
         }
 
-        if(i == 28990) //ID
+        if(i == 29393) //ID
         {
             class8.itemActions = new String[] {null, "Wear", null, null, "Drop"};
             class8.groundActions = new String[] {null};
@@ -9154,7 +9116,7 @@ public class ItemDefinition_Sub2_Sub1 {
             class8.placeholderTemplateId = -1;
         }
 
-        if(i == 28991) //ID
+        if(i == 29394) //ID
         {
             class8.itemActions = new String[] {null, "Wear", null, null, "Drop"};
             class8.groundActions = new String[] {null};
@@ -9192,7 +9154,7 @@ public class ItemDefinition_Sub2_Sub1 {
             class8.placeholderId = 26875;
             class8.placeholderTemplateId = -1;
         }
-        if (i == 26988)
+        if (i == 28988)
         {
             class8.itemActions = new String[5];
             class8.itemActions[1] = "Wield";
@@ -9221,7 +9183,7 @@ public class ItemDefinition_Sub2_Sub1 {
             class8.name = "White Energy sword";
             class8.description = "A strong sword made of energy.";
         }
-        if (i == 26989)
+        if (i == 28989)
         {
             class8.itemActions = new String[5];
             class8.itemActions[1] = "Wield";
@@ -9251,7 +9213,7 @@ public class ItemDefinition_Sub2_Sub1 {
             class8.description = "A strong sword made of energy.";
         }
 
-        if (i == 26990)
+        if (i == 28990)
         {
             class8.itemActions = new String[5];
             class8.itemActions[1] = "Wield";
@@ -9280,7 +9242,7 @@ public class ItemDefinition_Sub2_Sub1 {
             class8.name = "Ladies Energy sword";
             class8.description = "A strong sword made of energy.";
         }
-        if (i == 26991)
+        if (i == 28991)
         {
             class8.itemActions = new String[5];
             class8.itemActions[1] = "Wield";
@@ -9309,7 +9271,7 @@ public class ItemDefinition_Sub2_Sub1 {
             class8.name = "Ivandis Energy sword";
             class8.description = "A strong sword made of energy.";
         }
-        if (i == 26992)
+        if (i == 28992)
         {
             class8.itemActions = new String[5];
             class8.itemActions[1] = "Wield";

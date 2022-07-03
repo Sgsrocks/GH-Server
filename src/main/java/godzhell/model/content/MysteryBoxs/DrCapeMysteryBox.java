@@ -20,7 +20,7 @@ public class DrCapeMysteryBox {
     /**
      * The item id of the mystery box required to trigger the event
      */
-    private static final int MYSTERY_BOX = 27326;
+    private static final int MYSTERY_BOX = 29326;
 
     /**
      * A map containing a List of {@link GameItem}'s that contain items relevant to their rarity.
@@ -33,40 +33,40 @@ public class DrCapeMysteryBox {
     static {
         items.put(Rarity.COMMON,
                 Arrays.asList(
-						new GameItem(26797),//Dr Cape (Blue)
-						new GameItem(26798),//Dr Cape (Green)
-						new GameItem(26799),//Dr Cape (Light Blue)
-						new GameItem(26800),//Dr Cape (Orange)
-						new GameItem(26801),//Dr Cape (Pink)
-						new GameItem(26802),//Dr Cape (Purple)
-						new GameItem(26803)//Dr Cape (Red)
+						new GameItem(28797),//Dr Cape (Blue)
+						new GameItem(28798),//Dr Cape (Green)
+						new GameItem(28799),//Dr Cape (Light Blue)
+						new GameItem(28800),//Dr Cape (Orange)
+						new GameItem(28801),//Dr Cape (Pink)
+						new GameItem(28802),//Dr Cape (Purple)
+						new GameItem(28803)//Dr Cape (Red)
 						 )
         );
 
         items.put(Rarity.UNCOMMON,
                 Arrays.asList(
-						new GameItem(27103),//Dr Cape (White)
-						new GameItem(27104),//Dr Cape (Neon Green)
-						new GameItem(27105),//Dr Cape (Neon Pink)
-						new GameItem(27106),//Dr Cape (Neon Blue)
-						new GameItem(27107),//Dr Cape (Neon Purple)
-						new GameItem(27108),//Dr Cape (Neon Yellow)
-						new GameItem(27109)//Dr Cape (Neon Teal)
+						new GameItem(29103),//Dr Cape (White)
+						new GameItem(29104),//Dr Cape (Neon Green)
+						new GameItem(29105),//Dr Cape (Neon Pink)
+						new GameItem(29106),//Dr Cape (Neon Blue)
+						new GameItem(29107),//Dr Cape (Neon Purple)
+						new GameItem(29108),//Dr Cape (Neon Yellow)
+						new GameItem(29109)//Dr Cape (Neon Teal)
 						 )
         );
 
         items.put(Rarity.RARE,
                 Arrays.asList(
-						new GameItem(27272),//Dr Cape
-						new GameItem(27273),//Dr Cape
-						new GameItem(27274),//Dr Cape
-						new GameItem(27275),//Dr Cape
-						new GameItem(27276),//Dr Cape
-						new GameItem(27277),//Dr Cape
-						new GameItem(27278),//Dr Cape
-						new GameItem(27279),//Dr Cape
-						new GameItem(27280),//Dr Cape
-						new GameItem(27281)//Dr Cape
+						new GameItem(29272),//Dr Cape
+						new GameItem(29273),//Dr Cape
+						new GameItem(29274),//Dr Cape
+						new GameItem(29275),//Dr Cape
+						new GameItem(29276),//Dr Cape
+						new GameItem(29277),//Dr Cape
+						new GameItem(29278),//Dr Cape
+						new GameItem(29279),//Dr Cape
+						new GameItem(29280),//Dr Cape
+						new GameItem(29281)//Dr Cape
 						 ));
     }
 

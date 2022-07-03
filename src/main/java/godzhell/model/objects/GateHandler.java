@@ -15,7 +15,7 @@ public static boolean isGate(int objectId) {
 }
 public static void spawnGate(Player player, int objectId, int newObjectX, int newObjectY, int height, int face) {
 	Region.removeObject(objectId, newObjectX, newObjectY, height, 0, face);
-	Server.objectHandler.placeObject(new Objects(objectId, newObjectX, newObjectY, height, face, 0, 0));
+	Server.objectHandler.placeObject(new Objects2(objectId, newObjectX, newObjectY, height, face, 0, 0));
 }
 public static void openSingleGate(Player player, int objectId, int x1, int y1, int x2, int y2, int walkX, int walkY, int face1, int face2) {
 	if (isGate(objectId) && gateAmount == 0) {

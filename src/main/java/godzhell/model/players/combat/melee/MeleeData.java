@@ -50,7 +50,11 @@ public class MeleeData {
 			c.playerRunIndex = 7327;
 			return;
 		}
-		
+		if(weaponName.contains("rubber chicken")){
+			c.playerStandIndex = 1832;
+			c.playerWalkIndex = 1830;
+			return;
+		}
 		if (weaponName.contains("bulwark")) {
 			c.playerStandIndex = 7508;
 			c.playerWalkIndex = 7510;
@@ -68,7 +72,15 @@ public class MeleeData {
 			c.playerRunIndex = 7274;
 			return;
 		}
-
+		if(weaponName.contains("2h sword")){
+			c.playerStandIndex = 2561;
+			c.playerWalkIndex = 2562;
+			c.playerTurn180Index = 2562;
+			c.playerTurn90CWIndex = 2562;
+			c.playerTurn90CCWIndex = 2562;
+			c.playerRunIndex = 2563;
+			return;
+		}
 		if (weaponName.contains("sled")) {
 			c.playerStandIndex = 1461;
 			c.playerWalkIndex = 1468;
@@ -326,7 +338,7 @@ public class MeleeData {
 		if (weaponName.contains("dart")) {
 			return c.fightMode == 2 ? 806 : 6600;
 		}
-		if (weaponName.contains("dragon 2h")) {
+		if (weaponName.contains("2h sword")) {
 			return 407;
 		}
 		if (weaponName.contains("knife") || weaponName.contains("javelin") || weaponName.contains("thrownaxe")) {
@@ -503,8 +515,8 @@ public class MeleeData {
 		String weapon = ItemAssistant.getItemName(c.playerEquipment[c.playerWeapon]).toLowerCase();
 		if (shield.contains("defender"))
 			return 4177;
-		if (shield.contains("2h") && c.playerEquipment[c.playerWeapon] != ItemID.DRAGON_2H_SWORD)
-			return 7050;
+		if (shield.contains("2h sword"))
+			return 410;
 		if (shield.contains("book") || (weapon.contains("wand") || (weapon.contains("staff") || weapon.contains("trident"))))
 			return 420;
 		if (shield.contains("shield"))
@@ -522,46 +534,31 @@ public class MeleeData {
 			return 435;
 		}
 		switch (c.playerEquipment[c.playerWeapon]) {
-		case 1734:
-		case 411:
-			return 3895;
-		case 1724:
-			return 3921;
-		case 1709:
-			return 3909;
-		case 1704:
-			return 3916;
-		case 1699:
-			return 3902;
-		case 1689:
-			return 3890;
-		case 22545:
-		case 4755:
+		case ItemID.VIGGORAS_CHAINMACE:
+		case ItemID.VERACS_FLAIL:
 			return 2063;
-		case 14484:
-			return 397;
-		case 12848:
-		case 4153:		
-		case 13263:
+		case ItemID.GRANITE_MAUL_12848:
+		case ItemID.GRANITE_MAUL:
+		case ItemID.ABYSSAL_BLUDGEON:
 			return 1666;
-		case 13265:
-		case 13267:
-		case 13269:
-		case 13271:
+		case ItemID.ABYSSAL_DAGGER:
+		case ItemID.ABYSSAL_DAGGER_P:
+		case ItemID.ABYSSAL_DAGGER_P_13269:
+		case ItemID.ABYSSAL_DAGGER_P_13271:
 			return 3295;
-		case ItemID.DRAGON_2H_SWORD:
-			return 410;
 
-		case 11802:
-		case 11806:
-		case 11808:
-		case 11804:
-		case 11838:
-		case 12809:
-		case 11730:
+			case ItemID.ARMADYL_GODSWORD:
+			case ItemID.BANDOS_GODSWORD:
+			case ItemID.SARADOMIN_GODSWORD:
+			case ItemID.ZAMORAK_GODSWORD:
+			case ItemID.SARADOMIN_SWORD:
+			case ItemID.SARADOMINS_BLESSED_SWORD:
+			case ItemID.ANCIENT_GODSWORD:
+			case ItemID.ARMADYL_GODSWORD_OR:
+			case ItemID.BANDOS_GODSWORD_OR:
+			case ItemID.SARADOMIN_GODSWORD_OR:
+			case ItemID.ZAMORAK_GODSWORD_OR:
 			return 7056;
-		case -1:
-			return 424;
 		default:
 			return 424;
 		}
@@ -585,27 +582,28 @@ public class MeleeData {
 		if (c.playerEquipment[c.playerWeapon] == -1)
 			return 4;// unarmed
 		switch (c.playerEquipment[c.playerWeapon]) {
-		case 12926:
+		case ItemID.TOXIC_BLOWPIPE:
 			return c.playerIndex > 0 ? 4 : 3;
-		case 12765:
-		case 12766:
-		case 12767:
-		case 12768:
-		case 11235:
+			case ItemID.DARK_BOW:
+			case ItemID.DARK_BOW_12765:
+			case ItemID.DARK_BOW_12766:
+			case ItemID.DARK_BOW_12767:
+			case ItemID.DARK_BOW_12768:
+			case ItemID.DARK_BOW_20408:
 			return 9;
-		case 12424:
-		case 11838:
-		case 12809:
+		case ItemID._3RD_AGE_BOW:
+		case ItemID.SARADOMIN_SWORD:
+		case ItemID.SARADOMINS_BLESSED_SWORD:
 			return 4;
-		case 6528:
-		case 19478:
-		case 19481:
+		case ItemID.TZHAARKETOM:
+		case ItemID.LIGHT_BALLISTA:
+		case ItemID.HEAVY_BALLISTA:
 			return 7;
-		case 10033:
-		case 10034:
-		case 21012:
+		case ItemID.CHINCHOMPA_10033:
+		case ItemID.RED_CHINCHOMPA_10034:
+		case ItemID.DRAGON_HUNTER_CROSSBOW:
 			return 5;
-		case 9703:
+		case ItemID.TRAINING_SWORD:
 			return 5;
 		}
 		if (s.endsWith("greataxe"))
@@ -730,12 +728,12 @@ public class MeleeData {
 		}
 
 		switch (c.playerEquipment[c.playerWeapon]) {
-		case 6522: // Toktz-xil-ul
+		case ItemID.TOKTZXILUL:
 			return 3;
-		case 10887:
+		case ItemID.BARRELCHEST_ANCHOR:
 			return 3;
-		case 10034:
-		case 10033:
+		case ItemID.CHINCHOMPA_10033:
+		case ItemID.RED_CHINCHOMPA_10034:
 			return 3;
 		default:
 			return 2;

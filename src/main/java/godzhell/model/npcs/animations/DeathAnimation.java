@@ -13,12 +13,166 @@ public class DeathAnimation extends NPCHandler {
 			return 836;
 		}
 		switch (npcs[i].npcType) {
+			case 5007:
+				return 172;
+			case NpcID.VYREWATCH_SENTINEL_9756:
+			case NpcID.VYREWATCH_SENTINEL_9757:
+			case NpcID.VYREWATCH_SENTINEL_9758:
+			case NpcID.VYREWATCH_SENTINEL_9759:
+			case NpcID.VYREWATCH_SENTINEL_9760:
+			case NpcID.VYREWATCH_SENTINEL_9761:
+			case NpcID.VYREWATCH_SENTINEL_9763:
+				return 8723;
+			case NpcID.GOBLIN:
+			case NpcID.GOBLIN_657://axes
+			case NpcID.GOBLIN_659://axes
+			case NpcID.GOBLIN_662://axes
+			case NpcID.GOBLIN_664://axes
+			case NpcID.GOBLIN_666://axes
+			case NpcID.GOBLIN_3028://unarmed
+			case NpcID.GOBLIN_3029:
+			case NpcID.GOBLIN_3030:
+			case NpcID.GOBLIN_3031:
+			case NpcID.GOBLIN_3032:
+			case NpcID.GOBLIN_3033:
+			case NpcID.GOBLIN_3034:
+			case NpcID.GOBLIN_3035:
+			case NpcID.GOBLIN_3036:
+			case NpcID.GOBLIN_3037:
+			case NpcID.GOBLIN_3038:
+			case NpcID.GOBLIN_3039:
+			case NpcID.GOBLIN_3040:
+			case NpcID.GOBLIN_5192:
+			case NpcID.GOBLIN_5193:
+			case NpcID.GOBLIN_5195:
+			case NpcID.GOBLIN_5196:
+			case NpcID.GOBLIN_5197:
+			case NpcID.GOBLIN_5198:
+			case NpcID.GOBLIN_5199:
+			case NpcID.GOBLIN_5200:
+			case NpcID.GOBLIN_5201:
+			case NpcID.GOBLIN_5202:
+			case NpcID.GOBLIN_5203:
+			case NpcID.GOBLIN_5205:
+			case NpcID.GOBLIN_5206:
+			case NpcID.GOBLIN_5207:
+			case NpcID.GOBLIN_5208:
+				return 6182;
+			case NpcID.GIANT_RAT:
+			case NpcID.GIANT_RAT_2511:
+			case NpcID.GIANT_RAT_2512:
+			case NpcID.GIANT_RAT_2856:
+			case NpcID.GIANT_RAT_2857:
+			case NpcID.GIANT_RAT_2858:
+			case NpcID.GIANT_RAT_2859:
+			case NpcID.GIANT_RAT_2860:
+			case NpcID.GIANT_RAT_2861:
+			case NpcID.GIANT_RAT_2862:
+			case NpcID.GIANT_RAT_2863:
+			case NpcID.GIANT_RAT_2864:
+			case NpcID.GIANT_RAT_3313:
+			case NpcID.GIANT_RAT_3314:
+			case NpcID.GIANT_RAT_3315:
+			case NpcID.GIANT_RAT_9483:
+			case NpcID.GIANT_CRYPT_RAT_1681:
+			case NpcID.GIANT_CRYPT_RAT_1682:
+			case NpcID.ANGRY_GIANT_RAT_4689:
+			case NpcID.ANGRY_GIANT_RAT_4690:
+			case NpcID.BLESSED_GIANT_RAT_4535:
+				return 4935;
+			case NpcID.GOBLIN_3073:
+			case NpcID.GOBLIN_3074:
+			case NpcID.GOBLIN_5204:
+			case NpcID.GOBLIN_3075://armed with staff
+			case NpcID.GOBLIN_3076:
+			case NpcID.GOBLIN_656:
+			case NpcID.GOBLIN_658:
+			case NpcID.GOBLIN_660:
+			case NpcID.GOBLIN_661:
+			case NpcID.GOBLIN_663:
+			case NpcID.GOBLIN_665:
+			case NpcID.GOBLIN_667:
+			case NpcID.GOBLIN_668:
+				return 6190;
+			case NpcID.HOBGOBLIN:
+			case NpcID.HOBGOBLIN_2241:
+			case NpcID.HOBGOBLIN_3049:
+			case NpcID.HOBGOBLIN_3050:
+			case NpcID.HOBGOBLIN_3286:
+			case NpcID.HOBGOBLIN_3287:
+			case NpcID.HOBGOBLIN_3288:
+			case NpcID.HOBGOBLIN_3289:
+			case NpcID.HOBGOBLIN_4805:
+				return 167;
+			case NpcID.SCORPION:
+			case NpcID.SCORPION_2480:
+			case NpcID.SCORPION_3024:
+			case NpcID.SCORPION_5242:
+			case NpcID.KHARID_SCORPION_5229:
+			case NpcID.KHARID_SCORPION_5230:
+			case NpcID.KING_SCORPION:
+				return 6256;
+			case NpcID.HILL_GIANT:
+			case NpcID.HILL_GIANT_2099:
+			case NpcID.HILL_GIANT_2100:
+			case NpcID.HILL_GIANT_2101:
+			case NpcID.HILL_GIANT_2102:
+			case NpcID.HILL_GIANT_2103:
+			case NpcID.HILL_GIANT_7261:
+			case NpcID.HILL_GIANT_10374:
+			case NpcID.HILL_GIANT_10375:
+			case NpcID.HILL_GIANT_10376:
+			case NpcID.HILL_GIANT_11195:
+				return 4653;
+			case NpcID.COW:
+			case NpcID.COW_2791:
+			case NpcID.COW_2793:
+			case NpcID.COW_2795:
+			case NpcID.COW_5842:
+			case NpcID.COW_6401:
+			case NpcID.COW_10598:
+				return 5784;
+			case NpcID.COW_CALF:
+			case NpcID.COW_CALF_2794:
+			case NpcID.COW_CALF_2801:
+				return 5851;
+			case 2838:
+				return 4929;
+			case NpcID.FIRE_GIANT:
+			case NpcID.FIRE_GIANT_2076:
+			case NpcID.FIRE_GIANT_2077:
+			case NpcID.FIRE_GIANT_2078:
+			case NpcID.FIRE_GIANT_2079:
+			case NpcID.FIRE_GIANT_2080:
+			case NpcID.FIRE_GIANT_2081:
+			case NpcID.FIRE_GIANT_2082:
+			case NpcID.FIRE_GIANT_2083:
+			case NpcID.FIRE_GIANT_2084:
+			case NpcID.FIRE_GIANT_7251:
+			case NpcID.FIRE_GIANT_7252:
+				return 4668;
+			case NpcID.UNICORN:
+			case NpcID.UNICORN_FOAL:
+			case NpcID.BLACK_UNICORN:
+			case NpcID.BLACK_UNICORN_FOAL:
+				return 6377;
 			case NpcID.NEX:
-			   return 9178;
+			   return 9184;
 			case NpcID.BLACK_BEAR:
 				return 4929;
 			case NpcID.MOUNTED_TERRORBIRD_GNOME_5971:
 				return 6791;
+			case NpcID.WOLF:
+				return 6558;
+			case NpcID.MOSS_GIANT:
+			case NpcID.MOSS_GIANT_2091:
+			case NpcID.MOSS_GIANT_2092:
+			case NpcID.MOSS_GIANT_2093:
+			case NpcID.MOSS_GIANT_3851:
+			case NpcID.MOSS_GIANT_3852:
+			case NpcID.MOSS_GIANT_7262:
+			case NpcID.MOSS_GIANT_8736:
+				return 4659;
 			   //Inferno Npcs
 			case 7691:
 				return 7576;
@@ -82,7 +236,14 @@ public class DeathAnimation extends NPCHandler {
 		case 7605: // Skeletal mystic
 		case 7606: // Skeletal mystic
 			return 5491;
-		case 2085:
+			case NpcID.ICE_GIANT:
+			case NpcID.ICE_GIANT_2086:
+			case NpcID.ICE_GIANT_2087:
+			case NpcID.ICE_GIANT_2088:
+			case NpcID.ICE_GIANT_2089:
+			case NpcID.ICE_GIANT_7878:
+			case NpcID.ICE_GIANT_7879:
+			case NpcID.ICE_GIANT_7880:
 			return 4673;
 		case 7544: // Tekton
 			return 7495;
@@ -185,14 +346,109 @@ public class DeathAnimation extends NPCHandler {
 		case 6616:
 		case 6617:
 			return 6256;
-		case 2527: // Ghosts
-			return 5542;
-		case 2528:
-		case 2529:
-		case 2530:
-			return 5534;
-		case 6462: // Zombies
-		case 6465:
+			case NpcID.GHOST:
+			case NpcID.GHOST_86:
+			case NpcID.GHOST_87:
+			case NpcID.GHOST_88:
+			case NpcID.GHOST_89:
+			case NpcID.GHOST_90:
+			case NpcID.GHOST_91:
+			case NpcID.GHOST_92:
+			case NpcID.GHOST_93:
+			case NpcID.GHOST_94:
+			case NpcID.GHOST_95:
+			case NpcID.GHOST_96:
+			case NpcID.GHOST_97:
+			case NpcID.GHOST_98:
+			case NpcID.GHOST_99:
+			case NpcID.GHOST_472:
+			case NpcID.GHOST_473:
+			case NpcID.GHOST_474:
+			case NpcID.GHOST_505:
+			case NpcID.GHOST_506:
+			case NpcID.GHOST_507:
+			case NpcID.GHOST_920:
+			case NpcID.GHOST_1786:
+			case NpcID.GHOST_2527:
+			case NpcID.GHOST_2528:
+			case NpcID.GHOST_2529:
+			case NpcID.GHOST_2530:
+			case NpcID.GHOST_2531:
+			case NpcID.GHOST_2532:
+			case NpcID.GHOST_2533:
+			case NpcID.GHOST_2534:
+			case NpcID.GHOST_3516:
+			case NpcID.GHOST_3617:
+			case NpcID.GHOST_3625:
+			case NpcID.GHOST_3975:
+			case NpcID.GHOST_3976:
+			case NpcID.GHOST_3977:
+			case NpcID.GHOST_3978:
+			case NpcID.GHOST_3979:
+			case NpcID.GHOST_5370:
+			case NpcID.GHOST_7263:
+			case NpcID.GHOST_7264:
+			case NpcID.GHOST_9194:
+			case NpcID.GHOST_10538:
+			case NpcID.GHOST_10697:
+			case NpcID.GHOST_10698:
+			case NpcID.GHOST_10699:
+			case NpcID.GHOST_11301:
+				return 5534;
+			case NpcID.ZOMBIE:
+			case NpcID.ZOMBIE_27:
+			case NpcID.ZOMBIE_28:
+			case NpcID.ZOMBIE_29:
+			case NpcID.ZOMBIE_30:
+			case NpcID.ZOMBIE_31:
+			case NpcID.ZOMBIE_32:
+			case NpcID.ZOMBIE_33:
+			case NpcID.ZOMBIE_34:
+			case NpcID.ZOMBIE_35:
+			case NpcID.ZOMBIE_36:
+			case NpcID.ZOMBIE_37:
+			case NpcID.ZOMBIE_38:
+			case NpcID.ZOMBIE_39:
+			case NpcID.ZOMBIE_40:
+			case NpcID.ZOMBIE_41:
+			case NpcID.ZOMBIE_42:
+			case NpcID.ZOMBIE_43:
+			case NpcID.ZOMBIE_44:
+			case NpcID.ZOMBIE_45:
+			case NpcID.ZOMBIE_46:
+			case NpcID.ZOMBIE_47:
+			case NpcID.ZOMBIE_48:
+			case NpcID.ZOMBIE_49:
+			case NpcID.ZOMBIE_50:
+			case NpcID.ZOMBIE_51:
+			case NpcID.ZOMBIE_52:
+			case NpcID.ZOMBIE_53:
+			case NpcID.ZOMBIE_54:
+			case NpcID.ZOMBIE_55:
+			case NpcID.ZOMBIE_56:
+			case NpcID.ZOMBIE_57:
+			case NpcID.ZOMBIE_58:
+			case NpcID.ZOMBIE_59:
+			case NpcID.ZOMBIE_60:
+			case NpcID.ZOMBIE_61:
+			case NpcID.ZOMBIE_62:
+			case NpcID.ZOMBIE_63:
+			case NpcID.ZOMBIE_64:
+			case NpcID.ZOMBIE_65:
+			case NpcID.ZOMBIE_66:
+			case NpcID.ZOMBIE_67:
+			case NpcID.ZOMBIE_68:
+			case NpcID.ZOMBIE_880:
+			case NpcID.ZOMBIE_1784:
+			case NpcID.ZOMBIE_2501:
+			case NpcID.ZOMBIE_2502:
+			case NpcID.ZOMBIE_2503:
+			case NpcID.ZOMBIE_2504:
+			case NpcID.ZOMBIE_2505:
+			case NpcID.ZOMBIE_2506:
+			case NpcID.ZOMBIE_2507:
+			case NpcID.ZOMBIE_2508:
+			case NpcID.ZOMBIE_2509:
 			return 5575;
 		case 320: // Dark core
 			return 1688;
@@ -205,8 +461,7 @@ public class DeathAnimation extends NPCHandler {
 		case 6372: // Dessourt
 			return 3509;
 
-		case 2084: // Fire giant
-			return 4668;
+
 		case 6373:
 		case 6374:
 		case 6375:
@@ -261,16 +516,12 @@ public class DeathAnimation extends NPCHandler {
 			return 4653;
 		case 2237:
 			return 4321;
-		case 2241:
-			return 167;
 		case 2242:
 		case 2243:
 		case 2244:
 			return 4321;
 		case 2245:
 			return 6182;
-		case 3133:
-			return 6567;
 		case 3134:
 			return 172;
 		case 3135:
@@ -327,9 +578,23 @@ public class DeathAnimation extends NPCHandler {
 			return 3901;
 		case 1689:
 			return 3888;
-		case 2037:// Skeleton
-		case 70:
-			return 5491;
+			case NpcID.SKELETON:
+			case NpcID.SKELETON_71:
+			case NpcID.SKELETON_72:
+			case NpcID.SKELETON_73:
+			case NpcID.SKELETON_74:
+			case NpcID.SKELETON_75:
+			case NpcID.SKELETON_76:
+			case NpcID.SKELETON_77:
+			case NpcID.SKELETON_78:
+			case NpcID.SKELETON_79:
+			case NpcID.SKELETON_80:
+			case NpcID.SKELETON_81:
+			case NpcID.SKELETON_82:
+			case NpcID.SKELETON_83:
+			case NpcID.SKELETON_130:
+			case NpcID.SKELETON_924:
+				return 5491;
 		case 437: // Jelly
 		case 8609: //Hydra
 			return 8264;
@@ -338,7 +603,7 @@ public class DeathAnimation extends NPCHandler {
 		case 7400:
 		case 7399:
 			return 1587;
-		case 3209: // Cave Horror
+		case NpcID.CAVE_HORROR: // Cave Horror
 		case 7401:
 			return 4233;
 		case 411: // Kurask
@@ -359,10 +624,6 @@ public class DeathAnimation extends NPCHandler {
 			return 361;
 		case 6609: // Castillo
 			return 4929;
-		case 73:
-		case 5399:
-		case 77:
-			return 5569;
 		case 438:
 		case 439:
 		case 440:
@@ -383,12 +644,9 @@ public class DeathAnimation extends NPCHandler {
 		case 420:
 		case 422:
 			// case 423:
-		case 28:
-			return 5569;
 		// begin new updates
 		case 891: // moss
 			return 4659;
-		case 85: // ghost
 		case 7258:
 			return 5542;
 		case 2834: // bats
@@ -419,8 +677,6 @@ public class DeathAnimation extends NPCHandler {
 			return 1314;
 		case 100:// rc
 			return 1314;
-		case 662:
-			return 6182;
 		case 414:// Battle Mage
 		case 7272:
 		case 7391:
@@ -441,23 +697,24 @@ public class DeathAnimation extends NPCHandler {
 			return 3894;
 		case 5779: // giant mole
 			return 3313;
-		case 135:
+			case NpcID.HELLHOUND:
+			case NpcID.HELLHOUND_105:
+			case NpcID.HELLHOUND_135:
+			case NpcID.HELLHOUND_3133:
+			case NpcID.HELLHOUND_7256:
+			case NpcID.HELLHOUND_7877:
 			case 7935:
 			return 6567;
 		case 2205:
 			return 6968;
 		case 2215:
 			return 7020;
-		case 6267:
-			return 357;
 		case 6268:
 			return 2938;
 		case 6269:
 			return 4653;
 		case 6270:
 			return 4653;
-		case 6271:
-			return 4321;
 		case 6272:
 			return 4321;
 		case 6273:
@@ -465,9 +722,6 @@ public class DeathAnimation extends NPCHandler {
 		case 6274:
 			case 7937:
 			return 4321;
-		case 2098:
-		case 2463:
-			return 4653;
 		case 1459:
 			return 1404;
 		case 2559:
@@ -505,8 +759,6 @@ public class DeathAnimation extends NPCHandler {
 			return 146;
 		case 2033: // rat
 			return 141;
-		case 2031: // bloodvel
-			return 2073;
 		case 1769:
 		case 1770:
 		case 1771:
@@ -515,14 +767,6 @@ public class DeathAnimation extends NPCHandler {
 		case 1773:
 		case 101: // goblin
 			return 6182;
-		case 1767:
-		case 397:
-		case 1766:
-		case 1768:
-		case 81: // cow
-			return 5851;
-		case 41: // chicken
-			return 57;
 		case 1338: // dagannoth
 		case 1340:
 		case 1342:
@@ -551,23 +795,75 @@ public class DeathAnimation extends NPCHandler {
 			return 1548;
 		case 1653: // hand
 			return 1590;
-		case 2006:// demons
-		case 7244:
-		case 911:
-		case 2026:
-		case 2025:
-		case 1432:
-			case 7936:
+			case NpcID.SPIDER:
+			case NpcID.SPIDER_3019:
+			case NpcID.SPIDER_4561:
+			case NpcID.SPIDER_5238:
+			case NpcID.SPIDER_5239:
+			case NpcID.SPIDER_8137:
+			case NpcID.SPIDER_8138:
+			case NpcID.SPIDER_9643:
+			case NpcID.SPIDER_9644:
+			case NpcID.SPIDER_10442:
+			case NpcID.SPIDER_10443:
+			case NpcID.SPIDER_10652:
+			case NpcID.SPIDER_11027:
+			case NpcID.SPIDER_11174:
+			case NpcID.SPIDER_11175:
+			case NpcID.SPIDER_11176:
+				return 6251;
+			case NpcID.LESSER_DEMON:
+			case NpcID.LESSER_DEMON_2006:
+			case NpcID.LESSER_DEMON_2007:
+			case NpcID.LESSER_DEMON_2008:
+			case NpcID.LESSER_DEMON_2018:
+			case NpcID.LESSER_DEMON_7247:
+			case NpcID.LESSER_DEMON_3982:
+			case NpcID.LESSER_DEMON_7248:
+			case NpcID.LESSER_DEMON_7656:
+			case NpcID.LESSER_DEMON_7657:
+			case NpcID.LESSER_DEMON_7664:
+			case NpcID.LESSER_DEMON_7865:
+			case NpcID.LESSER_DEMON_7866:
+			case NpcID.LESSER_DEMON_7867:
+			case NpcID.GREATER_DEMON:
+			case NpcID.GREATER_DEMON_2026:
+			case NpcID.GREATER_DEMON_2027:
+			case NpcID.GREATER_DEMON_2028:
+			case NpcID.GREATER_DEMON_2029:
+			case NpcID.GREATER_DEMON_2030:
+			case NpcID.GREATER_DEMON_2031:
+			case NpcID.GREATER_DEMON_2032:
+			case NpcID.GREATER_DEMON_7244:
+			case NpcID.GREATER_DEMON_7245:
+			case NpcID.GREATER_DEMON_7246:
+			case NpcID.GREATER_DEMON_7871:
+			case NpcID.GREATER_DEMON_7872:
+			case NpcID.GREATER_DEMON_7873:
+			case NpcID.REVENANT_DEMON:
+			case NpcID.BLACK_DEMON:
+			case NpcID.BLACK_DEMON_1432:
+			case NpcID.BLACK_DEMON_2048:
+			case NpcID.BLACK_DEMON_2049:
+			case NpcID.BLACK_DEMON_2050:
+			case NpcID.BLACK_DEMON_2051:
+			case NpcID.BLACK_DEMON_2052:
+			case NpcID.BLACK_DEMON_5874:
+			case NpcID.BLACK_DEMON_5875:
+			case NpcID.BLACK_DEMON_5876:
+			case NpcID.BLACK_DEMON_5877:
+			case NpcID.BLACK_DEMON_6357:
+			case NpcID.BLACK_DEMON_7242:
+			case NpcID.BLACK_DEMON_7243:
+			case NpcID.BLACK_DEMON_7874:
+			case NpcID.BLACK_DEMON_7875:
+			case NpcID.BLACK_DEMON_7876:
+			case NpcID.BLACK_DEMON_HARD:
 			return 67;
 		case 6:// abby spec
 		case 7279: // Deviant spectre
 		case 7403:
 			return 1508;
-		case 51:// baby drags
-		case 52:
-		case 1589:
-		case 3376:
-			return 28;
 		case 1543: // Gargoyle
 		case 7407:
 			return 1518;
@@ -615,9 +911,6 @@ public class DeathAnimation extends NPCHandler {
 			return 1590;
 		case 102:
 			return 313;
-		case 105:
-		case 106:
-			return 44;
 		case 412:
 			// case 2834:
 			return 36;
@@ -625,14 +918,21 @@ public class DeathAnimation extends NPCHandler {
 		case 123:
 			case 7933:
 			return 167;
-		case 58:
-		case 59:
-		case 60:
-		case 61:
-		case 62:
-		case 63:
-		case 64:
-		case 3021:
+			case NpcID.SHADOW_SPIDER:
+			case NpcID.GIANT_SPIDER:
+			case NpcID.GIANT_SPIDER_3017:
+			case NpcID.GIANT_SPIDER_3018:
+			case NpcID.JUNGLE_SPIDER:
+			case NpcID.JUNGLE_SPIDER_5243:
+			case NpcID.JUNGLE_SPIDER_6267:
+			case NpcID.JUNGLE_SPIDER_6271:
+			case NpcID.DEADLY_RED_SPIDER:
+			case NpcID.ICE_SPIDER:
+			case NpcID.ICE_SPIDER_10722:
+			case NpcID.BLESSED_SPIDER:
+			case NpcID.FEVER_SPIDER:
+			case NpcID.POISON_SPIDER:
+			case NpcID.GIANT_CRYPT_SPIDER:
 			return 5329;
 		case 1153:
 		case 1154:
@@ -640,37 +940,88 @@ public class DeathAnimation extends NPCHandler {
 		case 1156:
 		case 1157:
 			return 1190;
-		case 104:
-			return 5534;
+
 		case 118:
 		case 291:
 			return 102;
 		case 239:// drags
 			case 7940:
 			return 92;
-		case 247:
-		case 259:
-		case 268:
-		case 240:
-		case 241:
-		case 242:
-		case 243:
-		case 244:
-		case 245:
-		case 246:
-		case 264:
-		case 270:
-		case 2919:
-		case 1270:
-		case 273:
-		case 274:
-		case 6593:
-		case 7273:
-		case 7274:
-		case 7275:
-		case 8030:
-		case 8031:
-			case 2918:
+			case NpcID.BABY_BLUE_DRAGON:
+			case NpcID.BABY_BLUE_DRAGON_242:
+			case NpcID.BABY_BLUE_DRAGON_243:
+			case NpcID.BABY_RED_DRAGON:
+			case NpcID.BABY_RED_DRAGON_244:
+			case NpcID.BABY_RED_DRAGON_245:
+			case NpcID.BABY_RED_DRAGON_246:
+			case NpcID.BABY_GREEN_DRAGON:
+			case NpcID.BABY_GREEN_DRAGON_5872:
+			case NpcID.BABY_GREEN_DRAGON_5873:
+			case NpcID.RED_DRAGON:
+			case NpcID.RED_DRAGON_248:
+			case NpcID.RED_DRAGON_249:
+			case NpcID.RED_DRAGON_250:
+			case NpcID.RED_DRAGON_251:
+			case NpcID.RED_DRAGON_8075:
+			case NpcID.RED_DRAGON_8078:
+			case NpcID.RED_DRAGON_8079:
+			case NpcID.BLACK_DRAGON:
+			case NpcID.BLACK_DRAGON_253:
+			case NpcID.BLACK_DRAGON_254:
+			case NpcID.BLACK_DRAGON_255:
+			case NpcID.BLACK_DRAGON_256:
+			case NpcID.BLACK_DRAGON_257:
+			case NpcID.BLACK_DRAGON_258:
+			case NpcID.BLACK_DRAGON_259:
+			case NpcID.GREEN_DRAGON:
+			case NpcID.GREEN_DRAGON_261:
+			case NpcID.GREEN_DRAGON_262:
+			case NpcID.GREEN_DRAGON_263:
+			case NpcID.GREEN_DRAGON_264:
+			case NpcID.GREEN_DRAGON_7868:
+			case NpcID.GREEN_DRAGON_7869:
+			case NpcID.GREEN_DRAGON_7870:
+			case NpcID.GREEN_DRAGON_8073:
+			case NpcID.GREEN_DRAGON_8076:
+			case NpcID.GREEN_DRAGON_8082:
+			case NpcID.BLUE_DRAGON:
+			case NpcID.BLUE_DRAGON_266:
+			case NpcID.BLUE_DRAGON_267:
+			case NpcID.BLUE_DRAGON_268:
+			case NpcID.BLUE_DRAGON_269:
+			case NpcID.BLUE_DRAGON_4385:
+			case NpcID.BLUE_DRAGON_5878:
+			case NpcID.BLUE_DRAGON_5879:
+			case NpcID.BLUE_DRAGON_5880:
+			case NpcID.BLUE_DRAGON_5881:
+			case NpcID.BLUE_DRAGON_5882:
+			case NpcID.BLUE_DRAGON_8074:
+			case NpcID.BLUE_DRAGON_8077:
+			case NpcID.BLUE_DRAGON_8083:
+			case NpcID.BRONZE_DRAGON:
+			case NpcID.BRONZE_DRAGON_271:
+			case NpcID.BRONZE_DRAGON_7253:
+			case NpcID.IRON_DRAGON:
+			case NpcID.IRON_DRAGON_273:
+			case NpcID.IRON_DRAGON_7254:
+			case NpcID.IRON_DRAGON_8080:
+			case NpcID.STEEL_DRAGON:
+			case NpcID.STEEL_DRAGON_274:
+			case NpcID.STEEL_DRAGON_275:
+			case NpcID.STEEL_DRAGON_7255:
+			case NpcID.STEEL_DRAGON_8086:
+			case NpcID.LAVA_DRAGON:
+			case NpcID.BRUTAL_BLUE_DRAGON:
+			case NpcID.BRUTAL_BLACK_DRAGON:
+			case NpcID.BRUTAL_BLACK_DRAGON_8092:
+			case NpcID.BRUTAL_BLACK_DRAGON_8093:
+			case NpcID.BRUTAL_GREEN_DRAGON:
+			case NpcID.BRUTAL_GREEN_DRAGON_8081:
+			case NpcID.BRUTAL_RED_DRAGON:
+			case NpcID.BRUTAL_RED_DRAGON_8087:
+			case NpcID.MITHRIL_DRAGON:
+			case NpcID.MITHRIL_DRAGON_8088:
+			case NpcID.MITHRIL_DRAGON_8089:
 			return 92;
 		case 1680:
 			return 4935;
@@ -678,9 +1029,6 @@ public class DeathAnimation extends NPCHandler {
 			return 241;
 		case 1678:
 			return 2072;
-		case 1683:
-		case 1684:
-			return 6246;
 		case 1685:
 			return 5491;
 		default:

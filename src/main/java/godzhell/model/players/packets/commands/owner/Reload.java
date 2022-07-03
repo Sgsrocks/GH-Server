@@ -1,17 +1,19 @@
 package godzhell.model.players.packets.commands.owner;
 
-import java.io.IOException;
-
 import godzhell.Config;
 import godzhell.Server;
-import godzhell.clip.doors.DoorDefinition;
 import godzhell.model.content.music.MusicLoader;
-import godzhell.model.content.music.MusicManager;
 import godzhell.model.items.ItemDefinition;
+import godzhell.model.items.ItemExamines;
+import godzhell.model.npcs.NpcExamines;
 import godzhell.model.objects.Doors;
 import godzhell.model.objects.DoubleDoors;
+import godzhell.model.objects.ObjectExamines;
 import godzhell.model.players.Player;
 import godzhell.model.players.packets.commands.Command;
+import godzhell.world.GlobalDropsHandler;
+
+import java.io.IOException;
 
 /**
  * Reloading certain objects by {String input}
@@ -34,7 +36,20 @@ public class Reload extends Command {
 			DoubleDoors.getSingleton().load();
 			player.sendMessage("@blu@Reloaded Doors.");
 			break;
-
+			case "examines":
+				try {
+					ObjectExamines.load();
+					NpcExamines.load();
+					ItemExamines.load();
+					player.sendMessage("@blu@Reloaded Examines.");
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+				}
+				break;
+			case "gitems":
+				GlobalDropsHandler.reset(player);
+				player.sendMessage("@blu@Reloaded Global items.");
+				break;
 		case "drops":
 			Server.getDropManager().read();
 			player.sendMessage("@blu@Reloaded Drops.");

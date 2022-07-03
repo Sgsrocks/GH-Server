@@ -87,7 +87,7 @@ public class ObjectOptionThree {
 			}
 		}
 		if (c.getRights().isOrInherits(Right.OWNER))
-			c.sendMessage("Clicked Object Option 3:  "+objectType+"");
+			c.sendMessage("Clicked Object Option 3:  "+objectType+", Object name: "+def.getName());
 		
 		switch (objectType) {
 		case 24101:

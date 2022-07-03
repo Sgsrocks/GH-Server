@@ -1,9 +1,9 @@
 package godzhell.model.players.packets.commands.donator;
 
-import java.util.Optional;
-
 import godzhell.model.players.Player;
 import godzhell.model.players.packets.commands.Command;
+
+import java.util.Optional;
 
 /**
  * Teleports the player to the donator zone.
@@ -17,7 +17,7 @@ public class Donatorzone extends Command {
 		if (c.inTrade || c.inDuel || c.inWild()) {
 			return;
 		}
-		c.getPA().startTeleport(2038, 4530, 0, "modern", false);
+		c.getPA().startTeleport(1005, 9231, 0, "modern", false);
 	}
 
 	@Override

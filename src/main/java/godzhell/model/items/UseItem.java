@@ -3,13 +3,12 @@ package godzhell.model.items;
 import godzhell.Config;
 import godzhell.Server;
 import godzhell.clip.ObjectDef;
+import godzhell.definitions.ObjectID;
 import godzhell.model.content.*;
 import godzhell.model.content.RepairItems.armourData;
 import godzhell.model.content.achievement.AchievementType;
 import godzhell.model.content.achievement.Achievements;
 import godzhell.model.content.achievement_diary.ardougne.ArdougneDiaryEntry;
-import godzhell.model.content.achievement_diary.fremennik.FremennikDiaryEntry;
-import godzhell.model.content.achievement_diary.varrock.VarrockDiaryEntry;
 import godzhell.model.content.skills.Skill;
 import godzhell.model.content.skills.cooking.Cooking;
 import godzhell.model.content.skills.crafting.*;
@@ -196,35 +195,106 @@ public class UseItem {
 				}
 			}
 			break;
-		
-		case 8927:
-			switch (itemId) {
-			case 1925:
-			case 3727:
-				c.getItems().deleteItem(1925, 1);
-				c.getItems().addItem(1929, 1);
-				c.sendMessage("You fill the bucket with water.");
-				c.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.FILL_BUCKET);
-				break;
-			}
-		
-		case 3043:
-		case 7143:
-			if (itemId == 229) {
-				if (Boundary.isIn(c, Boundary.VARROCK_BOUNDARY)) {
-					c.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.FILL_VIAL);
-					c.getItems().deleteItem(229, 1);
-					c.getItems().addItem(227, 1);
-				}
-			}
-			break;
+
 			
 		case 11744:
 			if (c.getMode().isUltimateIronman()) {
 
 			}
 			break;
-			
+			case ObjectID.WELL:
+			case ObjectID.WELL_884:
+			case ObjectID.WELL_3264:
+			case ObjectID.WELL_3305:
+			case ObjectID.WELL_3359:
+			case ObjectID.WELL_3485:
+			case ObjectID.WELL_3646:
+			case ObjectID.WELL_4004:
+			case ObjectID.WELL_4005:
+			case ObjectID.WELL_6097:
+			case ObjectID.WELL_6249:
+			case ObjectID.WELL_8747:
+			case ObjectID.WELL_8927:
+			case ObjectID.WELL_12201:
+			case ObjectID.WELL_12897:
+			case ObjectID.WELL_24150:
+			case ObjectID.WELL_29100:
+			case ObjectID.WELL_30930:
+			case ObjectID.WELL_35881:
+			case ObjectID.WELL_39720:
+			case ObjectID.FOUNTAIN:
+			case ObjectID.FOUNTAIN_879:
+			case ObjectID.FOUNTAIN_880:
+			case ObjectID.FOUNTAIN_2864:
+			case ObjectID.FOUNTAIN_3641:
+			case ObjectID.FOUNTAIN_5125:
+			case ObjectID.FOUNTAIN_6232:
+			case ObjectID.FOUNTAIN_7143:
+			case ObjectID.FOUNTAIN_10436:
+			case ObjectID.FOUNTAIN_10437:
+			case ObjectID.FOUNTAIN_10827:
+			case ObjectID.FOUNTAIN_11007:
+			case ObjectID.FOUNTAIN_12941:
+			case ObjectID.FOUNTAIN_22973:
+			case ObjectID.FOUNTAIN_24102:
+			case ObjectID.FOUNTAIN_27536:
+			case ObjectID.FOUNTAIN_39162:
+			case ObjectID.FOUNTAIN_42162:
+			case ObjectID.FOUNTAIN_43689:
+			case ObjectID.WATERPUMP:
+			case ObjectID.WATERPUMP_20776:
+			case ObjectID.WATERPUMP_24004:
+			case ObjectID.WATER_PUMP_15937:
+			case ObjectID.WATER_PUMP_35981:
+			case ObjectID.WATER_PUMP_15938:
+			case ObjectID.WATER_PUMP_36078:
+			case ObjectID.WATER_PUMP_41000:
+			case ObjectID.WATER_PUMP_41004:
+			case ObjectID.SINK:
+			case ObjectID.SINK_874:
+			case ObjectID.SINK_1763:
+			case ObjectID.SINK_3014:
+			case ObjectID.SINK_4063:
+			case ObjectID.SINK_6151:
+			case ObjectID.SINK_7422:
+			case ObjectID.SINK_8699:
+			case ObjectID.SINK_9143:
+			case ObjectID.SINK_9684:
+			case ObjectID.SINK_10175:
+			case ObjectID.SINK_12279:
+			case ObjectID.SINK_12609:
+			case ObjectID.SINK_12974:
+			case ObjectID.SINK_13563:
+			case ObjectID.SINK_13564:
+			case ObjectID.SINK_14868:
+			case ObjectID.SINK_15678:
+			case ObjectID.SINK_16704:
+			case ObjectID.SINK_16705:
+			case ObjectID.SINK_20358:
+			case ObjectID.SINK_22715:
+			case ObjectID.SINK_25729:
+			case ObjectID.SINK_25929:
+			case ObjectID.SINK_27707:
+			case ObjectID.SINK_27708:
+			case ObjectID.SINK_28538:
+			case ObjectID.SINK_34943:
+			case ObjectID.SINK_39393:
+			case ObjectID.SINK_39459:
+			case ObjectID.SINK_39489:
+			case ObjectID.SINK_40023:
+			case ObjectID.SINK_42205:
+			case ObjectID.WATER_BARREL:
+			case ObjectID.WATER_BARREL_5599:
+			case ObjectID.WATER_BARREL_8702:
+			case ObjectID.WATER_BARREL_8703:
+				Fillables.fillTheItem(c, itemId, objectID);
+				break;
+			case ObjectID.SAND_PIT:
+			case ObjectID.SAND_PIT_36563:
+			case ObjectID.SAND_PIT_37391:
+			case ObjectID.SAND_PIT_37392:
+				Sandpit.fillTheItem(c, itemId, objectID);
+				break;
 		case 14888:
 			if (itemId == 19529) {
 				if (c.getItems().playerHasItem(6571)) {
@@ -248,11 +318,6 @@ public class UseItem {
 
 		case 23955:
 			AnimatedArmour.itemOnAnimator(c, itemId);
-			break;
-		case 878:
-			if (c.getPoints().useItem(itemId)) {
-				c.getPoints().sendConfirmation(itemId);
-			}
 			break;
 		case 2783:
 		case 6150:
@@ -295,6 +360,7 @@ public class UseItem {
 		case 7183:
 		case 7184:
 		case 26181:
+			case 21302:
 			c.turnPlayerTo(objectX, objectY);
 			Cooking.startCooking(c, itemId, objectID);
 			break;
@@ -766,13 +832,6 @@ public class UseItem {
 			c.getItems().deleteItem2(12337, 1);
 			c.getItems().addItem(12399, 1);
 			c.sendMessage("You combine the spectacles and the hat to make a partyhat and specs.");
-			return;
-		}
-		if (itemUsed == 964 && useWith == 6104 || useWith == 964 && itemUsed == 6104) {
-			c.getItems().deleteItem2(964,1);
-			c.getItems().deleteItem2(6104,1);
-			c.getItems().addItem(13302,1);
-			c.sendMessage("@blu@You combine the two key parts to create a Key of Anguish.");
 			return;
 		}
 		if (itemUsed == 3150 && useWith == 3157 || itemUsed == 3157 && useWith == 3150) {

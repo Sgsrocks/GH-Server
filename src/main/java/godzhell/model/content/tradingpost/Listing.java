@@ -1,17 +1,8 @@
 package godzhell.model.content.tradingpost;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
 import godzhell.Config;
 import godzhell.Server;
+import godzhell.definitions.ItemCacheDefinition;
 import godzhell.model.items.Item;
 import godzhell.model.items.ItemAssistant;
 import godzhell.model.items.ItemDefinition;
@@ -21,12 +12,17 @@ import godzhell.model.players.PlayerHandler;
 import godzhell.model.players.PlayerSave;
 import godzhell.util.Misc;
 
+import java.io.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 /**
-*
-* @author Nighel
-* @credits Nicholas
-*
-*/
+ *
+ * @author Nighel
+ * @credits Nicholas
+ *
+ */
 
 public class Listing {
 
@@ -41,55 +37,56 @@ public class Listing {
 
 	// recently read sales kept in memory for faster access
 	private static LinkedList<Sale> cache = new LinkedList<Sale>();
-	
-	
+
+
 	/**
 	 * Loads the total sales on load of server
 	 */
-	
+
 	public static void loadNextSale() {
 		getFile("./data/tradingpost/sales/");
+		System.out.println("NEXT_SALE_ID: " + NEXT_SALE_ID);
 	}
-	
+
 	/**
 	 * Counts how much sales there are
 	 * @Param dirPath
 	 */
-	
+
 	private static void getFile(String dirPath) {
-	    File f = new File(dirPath);
-	    File[] files = f.listFiles();
+		File f = new File(dirPath);
+		File[] files = f.listFiles();
 
-	    if (files != null)
-	    for (int i = 0; i < files.length; i++) {
-	    	NEXT_SALE_ID = files.length+1;
-	        File file = files[i];
+		if (files != null)
+			for (int i = 0; i < files.length; i++) {
+				NEXT_SALE_ID = files.length+1;
+				File file = files[i];
 
-	        if (file.isDirectory()) {   
-	             getFile(file.getAbsolutePath()); 
-	        }
-	    }
+				if (file.isDirectory()) {
+					getFile(file.getAbsolutePath());
+				}
+			}
 	}
-	
+
 	/**
 	 * Loads the sales via player name
 	 * @Param playerName - player his username
 	 * @Return
 	 */
-	
+
 	public static List<Sale> getSales(String playerName) {
 		String line = "";
 		LinkedList<Sale> sales = new LinkedList<Sale>();
 		// read text file at /players/playerName.txt
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("./Data/tradingpost/players/"+playerName+".txt"));
+			BufferedReader br = new BufferedReader(new FileReader("./data/tradingpost/players/"+playerName+".txt"));
 
 			while((line = br.readLine()) != null) {
 				int id = Integer.parseInt(line);
 				if(sales != null)
 					sales.add(getSale(id));
 			}
-			
+
 			br.close();
 
 			return sales;
@@ -98,26 +95,26 @@ public class Listing {
 			return new LinkedList<Sale>();
 		}
 	}
-	
+
 	/**
 	 * Loads the sales via item id
 	 * @Param itemId
 	 * @Return
 	 */
-	
+
 	public static List<Sale> getSales(int itemId) {
 		String line = "";
 		LinkedList<Sale> sales = new LinkedList<Sale>();
 		// read text file at /players/playerName.txt
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("./Data/tradingpost/items/"+itemId+".txt"));
+			BufferedReader br = new BufferedReader(new FileReader("./data/tradingpost/items/"+itemId+".txt"));
 
 			while((line = br.readLine()) != null) {
 				int id = Integer.parseInt(line);
 				if(sales != null)
 					sales.add(getSale(id));
 			}
-			
+
 			br.close();
 
 			return sales;
@@ -132,7 +129,7 @@ public class Listing {
 	 * @Param saleId - id of the sale
 	 * @Return
 	 */
-	
+
 	public static Sale getSale(int saleId) {
 		String[] split;
 		// Check cache for this sale
@@ -147,21 +144,21 @@ public class Listing {
 			// read information
 			split = br.readLine().split("\t");
 			Sale sale = new Sale(saleId, split[0], Integer.parseInt(split[1]), Integer.parseInt(split[2]), Integer.parseInt(split[3]), Integer.parseInt(split[4]), Integer.parseInt(split[5]), Boolean.parseBoolean(split[6]));
-				
+
 			// If the cache is full, remove the last Sale. Add this one to the beginning either way.
 			if(!PRELOAD_ALL && cache.size() == CACHE_SIZE)
-			cache.removeLast();
+				cache.removeLast();
 			cache.addFirst(sale);
 
 			br.close();
-				
+
 			return sale;
 		} catch(Exception e) {
 			e.printStackTrace();
 			return null;
 		}
 	}
-	
+
 	/**
 	 * Opens up the first interface for the trading post.
 	 * And then loading all the data thats needed.
@@ -188,19 +185,19 @@ public class Listing {
 		c.insidePost = true;
 		loadHistory(c);
 	}
-	
+
 	/**
 	 * Makes all the listings show up for the player.
 	 * @Param c
 	 */
-	
+
 	public static void loadPlayersListings(Player c) {
 		int start = 48788, id = 0, moneyCollectable = 0;
 
 		LinkedList<Sale> sales = (LinkedList<Sale>) getSales(c.playerName);
-		
+
 		for(Sale sale : sales) {
-			c.getPA().sendTradingPost(48847, sale.getId(), id, sale.getQuantity()-sale.getTotalSold());
+			c.getPA().sendTradingPost(48847, sale.getId(), id, sale.getQuantity());
 			id++;
 			c.getPA().sendFrame126(ItemAssistant.getItemName(sale.getId()), start);
 			start++;
@@ -218,17 +215,17 @@ public class Listing {
 			c.getPA().sendFrame126("", i);
 		}
 	}
-	
+
 	/**
 	 * Shows the last 10 latest sales you have done.
 	 * @Param c
 	 */
-	
+
 	public static void loadHistory(Player c) {
 		for(int i = 0, start1 = 48636, start2 = 48637; i < c.saleItems.size(); i++) {
-			//System.out.println("salesItems - " + c.saleItems.get(i).intValue());
-			//System.out.println("saleAmount - " + c.saleAmount.get(i).intValue());
-			//System.out.println("salePrice - " + c.salePrice.get(i).intValue());
+			System.out.println("salesItems - " + c.saleItems.get(i).intValue());
+			System.out.println("saleAmount - " + c.saleAmount.get(i).intValue());
+			System.out.println("salePrice - " + c.salePrice.get(i).intValue());
 			if(c.saleItems.get(i).intValue() > 0 && c.saleAmount.get(i).intValue() > 0 && c.salePrice.get(i).intValue() > 0) {
 				String each = c.saleAmount.get(i).intValue() > 1 ? "each" : "coins";
 				c.getPA().sendFrame126(c.saleAmount.get(i).intValue() + " x " + ItemAssistant.getItemName(c.saleItems.get(i).intValue()), start1);
@@ -238,7 +235,7 @@ public class Listing {
 			}
 		}
 	}
-	
+
 	/**
 	 * Opens up the selected item using offer 1/5/10/all/x
 	 * @Param c
@@ -246,11 +243,10 @@ public class Listing {
 	 * @Param amount
 	 * @Param p
 	 */
-	
- @SuppressWarnings("unused")
+
 	public static void openSelectedItem(Player c, int itemId, int amount, int p) {
-		//System.out.println("");
-		if (!c.getItems().playerHasItem(itemId, amount) && !c.getItems().playerHasItem(itemId + 1, amount)) {
+		System.out.println("");
+		if (!c.getItems().playerHasItem(itemId, amount)) {
 			c.sendMessage("[@red@Trading Post@bla@] You don't have that many "+ItemAssistant.getItemName(itemId) + (amount > 1 ? "s" : "")+".");
 			return;
 		}
@@ -274,32 +270,19 @@ public class Listing {
 		c.uneditItem = itemId;
 		//Config.trade
 		c.item = -1;
-		int[] itemAmounts = new int[3];
+
 		c.inSelecting = false;
 		c.isListing = true;
 		boolean noted = Item.itemIsNote[itemId];
 		//boolean noted = ItemDefinition.forId(itemId).isNoteable();
 		if(noted)
 			itemId--;
-		
+
 		c.item = itemId;
-		itemAmounts[0] = c.getItems().getItemCount(itemId);
-		itemAmounts[1] = c.getItems().getItemCount(itemId + 1);
-		if (itemAmounts[0] > itemAmounts[1]) {
-			if (amount > itemAmounts[0]) {
-				amount = itemAmounts[0];
-			}
-		} else if (itemAmounts[1] > itemAmounts[0]) {
-			if (amount > itemAmounts[1]) {
-				amount = itemAmounts[1];	
-			}
-		} else {
-			amount = 0;
-		}
 		c.quantity = amount;
 		ItemList itemList = Server.itemHandler.ItemList[c.item];
-		//c.price = p >= 1 ? p : (int) itemList.ShopValue; //c.getInventory().getItemshopValue(c.item);
-		c.price = p >= 1 ? p : (int) ItemDefinition.forId(itemId).getValue();
+		c.price = p >= 1 ? p : (int) itemList.ShopValue; //c.getInventory().getItemshopValue(c.item);
+		c.price = p >= 1 ? p : (int) ItemCacheDefinition.forID(itemId).getvalue();
 		c.getPA().showInterface(48598);
 		c.getPA().sendTradingPost(48962, itemId, 0, amount);
 		c.getPA().sendFrame126(ItemAssistant.getItemName(itemId), 48963); //item name
@@ -308,50 +291,50 @@ public class Listing {
 		//c.getPA().sendFrame(s, 48966); //guide
 		//c.getPA().sendFrame(s, 48967); //listings
 	}
-	
+
 	/**
 	 * Writes every thing the the proper files.
 	 * @Param c
 	 */
-	
+
 	public static void confirmListing(Player c) {
-		
+
 		if (c.uneditItem == -1) {
 			if (c.debugMessage)
 				c.sendMessage("Stopped");
 			return;
 		}
-		
+
 		BufferedWriter sale_id;
 		BufferedWriter item_id;
 		BufferedWriter name;
 		try {
-			sale_id = new BufferedWriter(new FileWriter("./Data/tradingpost/sales/"+NEXT_SALE_ID+".txt", true));
-			item_id = new BufferedWriter(new FileWriter("./Data/tradingpost/items/"+c.item+".txt", true));
-			name = new BufferedWriter(new FileWriter("./Data/tradingpost/players/"+c.playerName+".txt", true));
-			
+			sale_id = new BufferedWriter(new FileWriter("./data/tradingpost/sales/"+NEXT_SALE_ID+".txt", true));
+			item_id = new BufferedWriter(new FileWriter("./data/tradingpost/items/"+c.item+".txt", true));
+			name = new BufferedWriter(new FileWriter("./data/tradingpost/players/"+c.playerName+".txt", true));
+
 			sale_id.write(c.playerName + "\t" + c.item + "\t" + c.quantity + "\t0\t" + c.price + "\t0\t" + "false");
 			sale_id.newLine();
-			
+
 			item_id.write("" + NEXT_SALE_ID);
 			item_id.newLine();
-			
+
 			name.write("" + NEXT_SALE_ID);
 			name.newLine();
-			
+
 			//try {
-				//CreateListing.getSingleton().createListing(NEXT_SALE_ID, c.item, c.getPA().getItemName(c.item), c.quantity, c.price, c.playerName, 0);
+			//CreateListing.getSingleton().createListing(NEXT_SALE_ID, c.item, c.getPA().getItemName(c.item), c.quantity, c.price, c.playerName, 0);
 			//} catch (Exception e) {
-			//	e.printStackTrace();
+			//e.printStackTrace();
 			//}
 			Sale sale = new Sale(NEXT_SALE_ID, c.playerName, c.item, c.quantity, 0, c.price, 0, false);
-			
+
 			++NEXT_SALE_ID;
-			
+
 			if(!PRELOAD_ALL && cache.size() == CACHE_SIZE)
 				cache.removeLast();
-		        cache.addFirst(sale);
-			
+			cache.addFirst(sale);
+
 			sale_id.close();
 			item_id.close();
 			name.close();
@@ -359,22 +342,18 @@ public class Listing {
 			e.printStackTrace();
 		}
 		if (c.debugMessage)
-			c.sendMessage("uneditedItem "+c.uneditItem+" - c.item "+c.item+" - quantity: "+c.quantity);
-		if (c.getItems().playerHasItem(c.uneditItem, c.quantity)) {
-			c.getItems().deleteItem2(c.uneditItem, c.quantity);
-		} else {
-			c.getItems().deleteItem2(c.uneditItem + 1, c.quantity);
-		}
+			c.sendMessage("uneditItem "+c.uneditItem+" - c.item "+c.item+" - quanity: "+c.quantity);
+		c.getItems().deleteItem2(c.uneditItem, c.quantity);
 		openPost(c, true, false);
 		PlayerSave.save(c);
 	}
-	
+
 	/**
 	 * Cancel a listing via its sale id
 	 * @Param c
 	 * @Param saleId
 	 */
-	
+
 	public static void cancelListing(Player c, int id, int itemId) {
 		if (id < 0 || itemId < 0)
 			return;
@@ -392,25 +371,23 @@ public class Listing {
 			if(leftOver > 0) {
 				if ((((c.getItems().freeSlots() >= 1) || c.getItems().playerHasItem(saleItem, 1)) && Item.itemIsNote[saleItem]) || ((c.getItems().freeSlots() > 0) && !Item.itemStackable[saleItem])) {
 					c.getItems().addItem(saleItem, leftOver);
-					c.sendMessage("[@red@Trading Post@bla@] You successfully cancel the offer for "+leftOver+"x "+ItemAssistant.getItemName(sales.getId())+".");
-			} else {// If inventory is full!
+					c.sendMessage("[@red@Trading Post@bla@] You succesfully cancel the offer for "+leftOver+"x "+ItemAssistant.getItemName(sales.getId())+".");
+				} else {// If inventory is full!
 					c.getItems().addItemToBank(saleItem, leftOver);
-					c.sendMessage("[@red@Trading Post@bla@] You successfully cancel the offer for "+leftOver+"x "+ItemAssistant.getItemName(sales.getId())+".");
+					c.sendMessage("[@red@Trading Post@bla@] You succesfully cancel the offer for "+leftOver+"x "+ItemAssistant.getItemName(sales.getId())+".");
 					c.sendMessage("[@red@Trading Post@bla@] You had no room so your "+leftOver+"x "+ItemAssistant.getItemName(sales.getId())+" was sent to your bank.");
 				}
 			}
-			
-			
 			loadPlayersListings(c);
 			PlayerSave.save(c);
 		}
 	}
-	
+
 	/**
 	 * Collecting your money via the button
 	 * @Param c
 	 */
-	
+
 	public static void collectMoney(Player c) {
 		LinkedList<Sale> sales = (LinkedList<Sale>) getSales(c.playerName);
 		int moneyCollectable = 0;
@@ -420,19 +397,12 @@ public class Listing {
 			save(sale);
 		}
 		c.getItems().addItem(995, moneyCollectable);
-		if(moneyCollectable == 0) {
-			c.sendMessage("[@red@Trading Post@bla@] The coffer is empty.");
-			return;
-		} else {
-			c.sendMessage("[@red@Trading Post@bla@] You successfully collect "+Misc.format(moneyCollectable)+" coins from your coffer.");
-
-		}
-		//c.sendMessage("[@red@Trading Post@bla@] You successfully collect "+Misc.format(moneyCollectable)+" coins from your coffer.");
+		c.sendMessage("[@red@Trading Post@bla@] You successfully collect "+Misc.format(moneyCollectable)+" coins from your coffer.");
 		moneyCollectable = 0;
 		c.getPA().sendFrame126(Misc.format(moneyCollectable) + " GP", 48610);
 		PlayerSave.save(c);
 	}
-	
+
 	public static void save(Sale sale) {
 		String line;
 		String newLine = "";
@@ -443,7 +413,7 @@ public class Listing {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		if(sale.hasSold()) {
 			if(sale.getLastCollectedAmount() > 0) {
 				Player c = (Player) PlayerHandler.players[PlayerHandler.getPlayerID(sale.getName())];
@@ -459,18 +429,17 @@ public class Listing {
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}*/
-				BufferedReader read = new BufferedReader(new FileReader("./Data/tradingpost/players/"+sale.getName()+".txt"));
+				BufferedReader read = new BufferedReader(new FileReader("./data/tradingpost/players/"+sale.getName()+".txt"));
 				while((line = read.readLine()) != null) {
-					if(line.equals(Integer.toString(sale.getSaleId()))) 
-						continue;
+					if(line.equals(Integer.toString(sale.getSaleId()))) continue;
 					newLine += line + System.getProperty("line.separator");
 				}
-				read.close(); 
-				BufferedWriter write = new BufferedWriter(new FileWriter("./Data/tradingpost/players/"+sale.getName()+".txt"));
+				read.close();
+				BufferedWriter write = new BufferedWriter(new FileWriter("./data/tradingpost/players/"+sale.getName()+".txt"));
 				write.write(newLine);
 				write.close();
 				newLine = "";
-				read = new BufferedReader(new FileReader("./Data/tradingpost/items/"+sale.getId()+".txt"));
+				read = new BufferedReader(new FileReader("./data/tradingpost/items/"+sale.getId()+".txt"));
 				while((line = read.readLine()) != null) {
 					if(line.equals(Integer.toString(sale.getSaleId()))) continue;
 					newLine += line + System.getProperty("line.separator");
@@ -489,23 +458,19 @@ public class Listing {
 			}
 		}
 	}
-	
+
 	/**
 	 * Displays the 6 sales based on pages and item name/player name and recent
 	 * @Param sales
 	 * @Param c
 	 */
-	
+
 	public static void displayResults(List<Sale> sales, Player c) {
 		List<Integer> result = new ArrayList<Integer>();
 		int total = 0, skipped = 0, start = 48022;
 		for(Sale sale : sales) {
-			if(sale.hasSold() || sale.getTotalSold() == sale.getQuantity()) 
-				continue;
-			if(skipped < (c.pageId - 1) * 6) { 
-				skipped++; 
-				continue; 
-				}
+			if(sale.hasSold() || sale.getTotalSold() == sale.getQuantity()) continue;
+			if(skipped < (c.pageId - 1) * 6) { skipped++; continue; }
 			result.add(sale.getSaleId());
 			c.getPA().sendTradingPost(48021, sale.getId(), total, sale.getQuantity() - sale.getTotalSold());
 			c.getPA().sendFrame126(ItemAssistant.getItemName(sale.getId()), start);
@@ -519,7 +484,7 @@ public class Listing {
 			start++;
 			total++;
 			if(total == 6) {
-				//System.out.println("Reached 6 recent sales");
+				System.out.println("Reached 6 recent sales");
 				break;
 			}
 		}
@@ -531,14 +496,14 @@ public class Listing {
 		}
 		c.saleResults = result;
 	}
-	
+
 	/**
 	 * Loads the recent sales
 	 * @Param c
 	 */
-	
-	public static void loadRecent(Player c, int pageId) {
-		c.pageId = pageId;
+
+	public static void loadRecent(Player c) {
+		c.pageId = 0;
 		c.searchId = 3;
 		c.getPA().sendFrame126("Trading Post - Recent listings", 48019);
 		c.getPA().showInterface(48000);
@@ -547,8 +512,7 @@ public class Listing {
 
 		for(int i = NEXT_SALE_ID - 1; i > 0; i--) {
 			Sale sale = getSale(i);
-			if(sale.hasSold()) 
-				continue;
+			if(sale.hasSold()) continue;
 			total++;
 			sales.add(sale);
 			if(total == 60)
@@ -556,76 +520,68 @@ public class Listing {
 		}
 		displayResults(sales, c);
 	}
-	
+
 	public static void buyListing(Player c, int slot, int amount) {
-		
+
+		if (!c.getMode().isTradingPermitted()) {
+			c.sendMessage("You are not permitted to make use of this.");
+			return;
+		}
+
 		Sale sales = getSale(c.saleResults.get(slot));
 
-
-		if(sales.hasSold() || sales.getQuantity() == sales.getTotalSold()){
-			c.sendMessage("Item is no longer available.");
-			loadRecent(c, 0);
+		if(sales.getQuantity() == sales.getTotalSold())
 			return;
-		}
-		
-		if((amount > sales.getQuantity() - sales.getTotalSold())) {
-			c.sendMessage("[@red@Trading Post@bla@] There is only "+(sales.getQuantity() - sales.getTotalSold())+"x "+ItemAssistant.getItemName(sales.getId())+" available.");
-			return;
-		}
-
 
 		if(sales.getName().equalsIgnoreCase(c.playerName)) {
 			c.sendMessage("[@red@Trading Post@bla@] You cannot buy your own listings.");
 			return;
 		}
 
-		
+		if(amount > sales.getQuantity())
+			amount = sales.getQuantity();
+
 		if(!c.getItems().playerHasItem(995, sales.getPrice() * amount)) {
-			c.sendMessage("[@red@Trading Post@bla@] You need at least "+Misc.format(sales.getPrice() * amount)+" coins to buy the "+amount+"x "+ItemAssistant.getItemName(sales.getId())+".");
+			c.sendMessage("[@red@Trading Post@bla@] You need atleast "+Misc.format(sales.getPrice() * amount)+" coins to buy the "+amount+"x "+ItemAssistant.getItemName(sales.getId())+".");
 			return;
 		}
 		int slotsNeeded = amount;
-		
+
 		int saleItem = sales.getId();
-		
+
 		if(amount > 1 && Item.itemIsNote[sales.getId()+1]) {
 			saleItem++;
 		}
-		if(amount == 1 && Item.itemIsNote[sales.getId()+1] && c.getItems().freeSlots() < slotsNeeded ) {
-			//saleItem++;
-			c.sendMessage("[@red@Trading Post@bla@] You need atleast "+ slotsNeeded +" free slots to buy this.");
-				return;
-		}
+
 		if(c.getItems().freeSlots() < slotsNeeded && (!Item.itemIsNote[sales.getId()+1] && !Item.itemStackable[sales.getId()])) {
 			c.sendMessage("[@red@Trading Post@bla@] You need atleast "+ slotsNeeded +" free slots to buy this.");
 			return;
 		}
 
-		//c.getItems().playerHasItem(sales.getId()+1);
 		c.getItems().deleteItem(995, sales.getPrice() * amount);
 		c.getItems().addItem(saleItem, amount);
-		c.sendMessage("[@red@Trading Post@bla@] You successfully purchase "+ amount +"x "+ItemAssistant.getItemName(sales.getId())+".");
+		c.sendMessage("[@red@Trading Post@bla@] You succesfully purchase "+ amount +"x "+ItemAssistant.getItemName(sales.getId())+".");
 		c.getItems().resetItems(3214);
 		PlayerSave.save(c);
-		
+
 		c.sendMessage("saleId: " + sales.getSaleId());
-		
+
 		c.sendMessage("collect: " + sales.getLastCollectedAmount());
 		c.sendMessage("total sold: " + sales.getTotalSold());
-		
+
 		sales.setLastCollectedSold(sales.getLastCollectedAmount() + amount);
 		sales.setTotalSold(sales.getTotalSold() + amount);
-		
+
 		c.sendMessage("collect 2: " + sales.getLastCollectedAmount());
 		c.sendMessage("total sold 2: " + sales.getTotalSold());
 		save(sales);
-			
+
 		if(PlayerHandler.getPlayerID(sales.getName()) != -1) {
 			Player seller = (Player) PlayerHandler.players[PlayerHandler.getPlayerID(sales.getName())];
 			if(seller != null) {
 				if(seller.playerName.equalsIgnoreCase(sales.getName())) {
 					if(sales.getTotalSold() < sales.getQuantity())
-						seller.sendMessage("[@red@Trading Post@bla@] You successfully sold "+ amount +"x of your "+ItemAssistant.getItemName(sales.getId())+".");
+						seller.sendMessage("[@red@Trading Post@bla@] You succesfully sold "+ amount +"x of your "+ItemAssistant.getItemName(sales.getId())+".");
 					else
 						seller.sendMessage("[@red@Trading Post@bla@] Finished selling your "+ItemAssistant.getItemName(sales.getId())+".");
 
@@ -636,15 +592,14 @@ public class Listing {
 				}
 			}
 		}
-		loadRecent(c, c.pageId);
 	}
-	
+
 	/**
 	 * Loads the sales via playerName
 	 * @Param c
 	 * @Param playerName
 	 */
-	
+
 	public static void loadPlayerName(Player c, String playerName) {
 		c.lookup = playerName;
 		c.searchId = 2;
@@ -653,28 +608,28 @@ public class Listing {
 
 		List<Sale> sales = new LinkedList<Sale>();
 
-		for(String s : new File("./Data/tradingpost/players/").list()) {
+		for(String s : new File("./data/tradingpost/players/").list()) {
 			s = s.substring(0, s.indexOf(".")).toLowerCase();
 			if(s.contains(playerName.toLowerCase()))
 				sales.addAll(getSales(s));
-			}
+		}
 
-		 displayResults(sales, c);
+		displayResults(sales, c);
 	}
-	
+
 	/**
 	 * Loads the sales via itemName
 	 * @Param c
 	 * @Param itemName
 	 */
-	
+
 	public static void loadItemName(Player c, String itemName) {
 		c.lookup = itemName;
 		itemName = itemName.replace("_"," ");
 		c.searchId = 1;
 		c.getPA().showInterface(48000);
 		c.getPA().sendFrame126("Trading Post - Searching for item: " + itemName, 48019);
-		  
+
 		List<Integer> items = new LinkedList<Integer>();
 		List<Sale> sales = new LinkedList<Sale>();
 
@@ -682,32 +637,32 @@ public class Listing {
 			items.add(Integer.parseInt(s.substring(0, s.indexOf("."))));
 
 		for(int item : items) {
-			//System.out.println("item: "+ItemAssistant.getItemName(item)+", itemName: " + itemName);
+			System.out.println("item: "+ItemAssistant.getItemName(item)+", itemName: " + itemName);
 			if(ItemAssistant.getItemName(item).toLowerCase().contains(itemName.toLowerCase())) {
 				sales.addAll(getSales(item));
 			}
 		}
-		  
+
 		displayResults(sales, c);
 	}
-	
+
 	/**
 	 * Resets all the necessary stuff;
 	 * @Param c
 	 */
-	
+
 	public static void resetEverything(Player c) {
 		c.inSelecting = false;
 		c.isListing = true;
 		c.insidePost = false;
 		c.setSidebarInterface(3, 3213);
 	}
-	
+
 	/**
 	 * Handles the opening of the interface for offering an item
 	 * @Param c
 	 */
-	
+
 	public static void openNewListing(Player c) {
 		c.getPA().showInterface(48599);
 		c.setSidebarInterface(3, 48500); // backpack tab
@@ -715,13 +670,13 @@ public class Listing {
 			c.getPA().sendTradingPost(48501, c.playerItems[k]-1, k, c.playerItemsN[k]);
 		}
 	}
-	
+
 	/*
-	 * 
+	 *
 	 * Handles the buttons of the interfaces
-	 * 
+	 *
 	 */
-	
+
 	public static void postButtons(Player c, int button) {
 		switch(button) {
 			case 189237:
@@ -731,10 +686,9 @@ public class Listing {
 				}
 				int total = 0;
 				LinkedList<Sale> sales = (LinkedList<Sale>) getSales(c.playerName);
-				
-				//for @SuppressWarnings("unused") Sale sale : sales)
-					total++;
-			/*	if(c.amDonated <= 9 && total >= 6) {
+
+				total++;
+				if(c.amDonated <= 9 && total >= 6) {
 					c.sendMessage("[@red@Trading Post@bla@] You cannot have more then 6 listings as a regular player.");
 					return;
 				} else if(c.amDonated >= 10 && c.amDonated <= 149 && total >= 10) {
@@ -743,7 +697,7 @@ public class Listing {
 				} else if(c.amDonated >= 150 && total >= 15) {
 					c.sendMessage("[@red@Trading Post@bla@] You cannot have more then 15 listings.");
 					return;
-				}*/
+				}
 				if(!c.inSelecting) {
 					openNewListing(c);
 					c.inSelecting = true;
@@ -753,19 +707,13 @@ public class Listing {
 					c.getPA().showInterface(48600);
 					c.getPA().sendFrame106(3);
 				}
-			break;
-			
-			case 59229: //Close 
-			case 187130:
-			case 189218:
+				break;
+
+			case 59229: //Close select item
 				c.getPA().closeAllWindows();
 				resetEverything(c);
-			break;
-			
-			case 187227: //refresh
-				loadRecent(c, 0);
 				break;
-			
+
 			case 191072:
 				if (!c.getMode().isTradingPermitted()) {
 					c.sendMessage("You are not permitted to make use of this.");
@@ -775,8 +723,8 @@ public class Listing {
 					c.outStream.createFrame(191);
 				}
 				c.xInterfaceId = 191072;
-			break;
-			
+				break;
+
 			case 191075: // Removed quantity button
 				if (!c.getMode().isTradingPermitted()) {
 					c.sendMessage("You are not permitted to make use of this.");
@@ -786,40 +734,40 @@ public class Listing {
 					c.outStream.createFrame(192);
 				}
 				c.xInterfaceId = 191075;
-			break;
-			
+				break;
+
 			case 191078:
 				if (!c.getMode().isTradingPermitted()) {
 					c.sendMessage("You are not permitted to make use of this.");
 					return;
 				}
 				confirmListing(c);
-			break;
-			
+				break;
+
 			case 189223:
 				if (!c.getMode().isTradingPermitted()) {
 					c.sendMessage("You are not permitted to make use of this.");
 					return;
 				}
 				collectMoney(c);
-			break;
-			
+				break;
+
 			case 189234:
 				if (!c.getMode().isTradingPermitted()) {
 					c.sendMessage("You are not permitted to make use of this.");
 					return;
 				}
-				loadRecent(c, c.pageId);
-			break;
-			
+				loadRecent(c);
+				break;
+
 			case 187133:
 				if (!c.getMode().isTradingPermitted()) {
 					c.sendMessage("You are not permitted to make use of this.");
 					return;
 				}
 				openPost(c, false, false);
-			break;
-			
+				break;
+
 			case 187136:
 				if (!c.getMode().isTradingPermitted()) {
 					c.sendMessage("You are not permitted to make use of this.");
@@ -827,49 +775,49 @@ public class Listing {
 				}
 				if(c.pageId > 1)
 					c.pageId--;
-				//System.out.println("id: "+c.searchId+" lookup: " + c.lookup);
+				System.out.println("id: "+c.searchId+" lookup: " + c.lookup);
 				switch(c.searchId) {
 					case 1:
 						loadItemName(c, c.lookup);
-					break;
+						break;
 					case 2:
 						loadPlayerName(c, c.lookup);
-					break;
+						break;
 					case 3:
-						loadRecent(c, c.pageId);
-					break;
+						loadRecent(c);
+						break;
 				}
-			break;
-			
+				break;
+
 			case 187139:
 				if (!c.getMode().isTradingPermitted()) {
 					c.sendMessage("You are not permitted to make use of this.");
 					return;
 				}
 				c.pageId++;
-				//System.out.println("id: "+c.searchId+" lookup: " + c.lookup);
+				System.out.println("id: "+c.searchId+" lookup: " + c.lookup);
 				switch(c.searchId) {
 					case 1:
 						loadItemName(c, c.lookup);
-					break;
+						break;
 					case 2:
 						loadPlayerName(c, c.lookup);
-					break;
+						break;
 					case 3:
-						loadRecent(c, c.pageId);
-					break;
+						loadRecent(c);
+						break;
 				}
-			break;
+				break;
 		}
 	}
-	
+
 	/*
-	 * 
+	 *
 	 * This method makes it so it cleans out the history and my offers.
 	 * Incase you had a diffrent account with more listings.
-	 * 
+	 *
 	 */
-	
+
 	public static void emptyInterface(Player c, boolean b) {
 		for(int i = 0; i < 15; i++) {
 			c.getPA().sendTradingPost(48847, -1, i, -1);
@@ -883,13 +831,13 @@ public class Listing {
 			c.getPA().sendFrame126("", i);
 		}
 	}
-	
+
 	/*
-	 * 
+	 *
 	 * Turns the 100,000,000 into 100m etc.
-	 * 
+	 *
 	 */
-	
+
 	private static String zerosintomills(int j) {
 		if(j >= 0 && j < 1000)
 			return String.valueOf(j);
@@ -899,11 +847,11 @@ public class Listing {
 			return j / 1000000 + "M";
 		return String.valueOf(j);
 	}
-	
+
 	private static void updateHistory(Player c, int itemId, int amount, int price) {
-		//System.out.println("itemId - " + itemId);
-		//System.out.println("amount - " + amount);
-		//System.out.println("price - " + price);
+		System.out.println("itemId - " + itemId);
+		System.out.println("amount - " + amount);
+		System.out.println("price - " + price);
 		c.saleItems.add(0, itemId);
 		c.saleItems.remove(c.saleItems.size()-1);
 		c.saleAmount.add(0, amount);
@@ -912,5 +860,5 @@ public class Listing {
 		c.salePrice.remove(c.salePrice.size()-1);
 		loadHistory(c);
 	}
-	
+
 }

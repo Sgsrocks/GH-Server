@@ -1,14 +1,18 @@
 package godzhell.model.content.trails;
 
-import java.util.List;
-
 import godzhell.Server;
 import godzhell.model.items.Item;
 import godzhell.model.players.Player;
 import godzhell.model.players.PlayerHandler;
 
+import java.util.List;
+
 public class TreasureTrails {
 
+	public static final int EASY_CLUE_SCROLL = 2677;
+	public static final int MEDIUM_CLUE_SCROLL = 2801;
+	public static final int HARD_CLUE_SCROLL = 2722;
+	public static final int MASTER_CLUE_SCROLL = 19835;
 	private Player player;
 
 	public TreasureTrails(Player player) {
@@ -17,8 +21,8 @@ public class TreasureTrails {
 
 	public void addRewards(RewardLevel difficulty) {
 		//int rights = player.getRights().getPrimary().getValue() - 1;
-		List<RewardItem> rewards = CasketRewards.getRandomRewards(difficulty);
-		for (RewardItem item : rewards) {
+		List<TreasureTrailsRewardItem> rewards = TreasureTrailsRewards.getRandomRewards(difficulty);
+		for (TreasureTrailsRewardItem item : rewards) {
 			if (Item.getItemName(item.getId()).contains("3rd") || 
 				item.getId() == 2577 || 
 				Item.getItemName(item.getId()).contains("mage's")) {
@@ -33,7 +37,7 @@ public class TreasureTrails {
 		displayRewards(rewards);
 	}
 
-	public void displayRewards(List<RewardItem> rewards) {
+	public void displayRewards(List<TreasureTrailsRewardItem> rewards) {
 		player.outStream.createFrameVarSizeWord(53);
 		player.outStream.writeWord(6963);
 		player.outStream.writeWord(rewards.size());

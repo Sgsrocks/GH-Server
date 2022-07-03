@@ -1,19 +1,18 @@
 package godzhell.util;
 
 
-import java.io.*;
-import java.net.MalformedURLException;
-import java.net.URL;
-import javax.swing.*;
-
 import godzhell.Config;
 
+import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
 import java.awt.image.RenderedImage;
 import java.io.File;
 import java.io.IOException;
-import javax.imageio.ImageIO;
+import java.io.PrintStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class ControlPanel extends JFrame {
 
@@ -375,7 +374,7 @@ public class ControlPanel extends JFrame {
 		FORCE_COMMANDS.setFont(new java.awt.Font("Tahoma", 0, 12));
 		FORCE_COMMANDS.setForeground(new java.awt.Color(153, 0, 51));
 		FORCE_COMMANDS.setModel(new AbstractListModel() {
-			String[] strings = { "Force Animation", "Display GFX", "Lock EXP", "Force Bank", "Force Shop", "Force Death", "Force Command", "Force Chat", "Give Master", "Add SkillXP", "Remove SkillXP", "Reset Skill", "Reset All Skills" };
+			String[] strings = { "Force Animation", "Display GFX", "Lock EXP", "Force Interface", "Force Bank", "Force Shop", "Force Death", "Force Command", "Force Chat", "Give Master", "Add SkillXP", "Remove SkillXP", "Reset Skill", "Reset All Skills" };
 			public int getSize() { return strings.length; }
 			public Object getElementAt(int i) { return strings[i]; }
 		});
@@ -1064,7 +1063,7 @@ public class ControlPanel extends JFrame {
 			"Lunar Isle",
 			"Zul-Andra",
 			"Myth's Guild Basement",
-			"Coming Soon!",
+			"Necropolis",
 			"Coming Soon!",
 			"Coming Soon!",
 			"Coming Soon!",

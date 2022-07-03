@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
 public class Yell extends Command {
 
 	private static final Right[] PERMITTED = {  Right.PLAYER, Right.IRONMAN, Right.ULTIMATE_IRONMAN,
-												Right.CONTRIBUTOR, Right.SUPPORTER, Right.SPONSOR, Right.DONATOR, Right.SUPER_DONATOR, Right.EXTREME_DONATOR, 
+												Right.DONATOR, Right.SUPER_DONATOR, Right.EXTREME_DONATOR,
 												Right.LEGENDARY, Right.HELPER, Right.MODERATOR, Right.ADMINISTRATOR,
 												Right.OWNER, Right.GAME_DEVELOPER, Right.YOUTUBER, Right.HITBOX };
 
@@ -105,11 +105,7 @@ public class Yell extends Command {
 			return TimeUnit.SECONDS.toMillis(30);
 		} else if (rights.contains(Right.DONATOR)) {
 			return TimeUnit.SECONDS.toMillis(30);
-		} else if (rights.contains(Right.SUPPORTER)) {
-			return TimeUnit.SECONDS.toMillis(30);
-		} else if (rights.contains(Right.SPONSOR)) {
-			return TimeUnit.SECONDS.toMillis(30);
-		} else if (rights.contains(Right.CONTRIBUTOR) || 
+		} else if (
 					rights.contains(Right.HITBOX) || 
 					rights.contains(Right.YOUTUBER)) {
 			return TimeUnit.SECONDS.toMillis(30);

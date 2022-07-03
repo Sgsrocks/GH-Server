@@ -1,21 +1,11 @@
 package godzhell.model.players.packets;
 
-import java.io.IOException;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.TreeMap;
-
 import com.google.common.reflect.ClassPath;
 import com.google.common.reflect.ClassPath.ClassInfo;
-
 import godzhell.Config;
 import godzhell.Server;
 import godzhell.ServerState;
-import godzhell.model.content.bxp;
 import godzhell.model.content.wogw.Wogw;
-import godzhell.model.items.ItemAssistant;
-import godzhell.model.minigames.raids.Raids;
 import godzhell.model.multiplayer_session.MultiplayerSession;
 import godzhell.model.multiplayer_session.MultiplayerSessionFinalizeType;
 import godzhell.model.multiplayer_session.MultiplayerSessionStage;
@@ -25,7 +15,6 @@ import godzhell.model.players.PacketType;
 import godzhell.model.players.Player;
 import godzhell.model.players.PlayerHandler;
 import godzhell.model.players.Right;
-import godzhell.model.players.RightGroup;
 import godzhell.model.players.packets.commands.Command;
 import godzhell.punishments.Punishment;
 import godzhell.punishments.PunishmentType;
@@ -33,7 +22,12 @@ import godzhell.punishments.Punishments;
 import godzhell.util.Misc;
 import godzhell.util.log.PlayerLogging;
 import godzhell.util.log.PlayerLogging.LogType;
-import godzhell.world.objects.GlobalObject;
+
+import java.io.IOException;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.TreeMap;
 
 /**
  * Commands
@@ -85,7 +79,7 @@ public class Commands implements PacketType {
     public static void initializeCommands() throws IOException, InstantiationException, IllegalAccessException, ClassNotFoundException {
         ClassPath classPath = ClassPath.from(Commands.class.getClassLoader());
         String[] packages = {"godzhell.model.players.packets.commands.admin", "godzhell.model.players.packets.commands.all", "godzhell.model.players.packets.commands.donator",
-                "godzhell.model.players.packets.commands.helper", "godzhell.model.players.packets.commands.moderator", "godzhell.model.players.packets.commands.owner"};
+                "godzhell.model.players.packets.commands.helper", "godzhell.model.players.packets.commands.moderator", "godzhell.model.players.packets.commands.owner", "godzhell.model.players.packets.commands.rainbow"};
 
         for (String pack : packages) {
             for (ClassInfo classInfo : classPath.getTopLevelClasses(pack)) {
@@ -349,34 +343,6 @@ public class Commands implements PacketType {
 			
         }
 
-        if (playerCommand.startsWith("item")) {
-        	if (!isManagment && !Config.BETA_MODE) {
-        			c.sendMessage(NO_ACCESS);
-        			return;
-        	}
-        	
-        	
-            try {
-                String[] args = playerCommand.split(" ");
-                if (args.length >= 2) {
-                    int newItemID = Integer.parseInt(args[1]);
-                    int newItemAmount = 1;
-                    if (args.length > 2) {
-                    	newItemAmount = Integer.parseInt(args[2]);
-                    } 
-                    
-                    if ((newItemID <= 40000) && (newItemID >= 0)) {
-                        c.getItems().addItem(newItemID, newItemAmount);
-                    } else {
-                        c.sendMessage("No such item.");
-                    }
-                } else {
-                    c.sendMessage("Use as ::item id amount.");
-                }
-            } catch (Exception e) {
-
-            }
-        }
         
 		if (playerCommand.startsWith("movehome")) {
 
@@ -495,7 +461,9 @@ public class Commands implements PacketType {
             return;
         } else if (c.getRights().isOrInherits(Right.HELPER) && executeCommand(c, playerCommand, "helper")) {
             return;
-        } else if (c.getRights().isOrInherits(Right.CONTRIBUTOR) && executeCommand(c, playerCommand, "donator")) {
+        } else if (c.getRights().isOrInherits(Right.DONATOR) && executeCommand(c, playerCommand, "donator")) {
+            return;
+        } else if (c.getRights().isOrInherits(Right.RAINBOW_DONATOR) && executeCommand(c, playerCommand, "rainbow")) {
             return;
         } else if (executeCommand(c, playerCommand, "all")) {
             return;

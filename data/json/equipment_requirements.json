@@ -6507,6 +6507,15 @@
     ]
   },
   {
+    "id": 26233,
+    "requirements": [
+      {
+        "level": 75,
+        "skill": "ATTACK"
+      }
+    ]
+  },
+  {
     "id": 11804,
     "requirements": [
       {

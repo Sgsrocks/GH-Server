@@ -91,7 +91,7 @@ public class PlayerEmotes {
 		ZOMBIE_DANCE(152010, 3543, -1),
 		SCARED(152008, 2836, -1),
 		BUNNY_HOP(152020, 6111, -1),
-		Hypermobile_Drinker(152054, 7131, -1),
+		Hypermobile_Drinker(152021, 7131, -1),
 		STAR_JUMP(152018, 7188, -1),
 		SIT_UP(152011, 7190, -1),
 		PUSH_UP(152012, 7189, -1),
@@ -102,7 +102,7 @@ public class PlayerEmotes {
 		IDEA(152013,  4276, 712),
 		ZOMBIE_HAND(152017, -1, -1),
 		FLEX(152029, 8917, -1),
-		SMOOTH_DANCE(152058, 7533 , -1),
+		SMOOTH_DANCE(152025, 7533 , -1),
 		CRAZY_DANCE(152026, -1, -1),
 		AIR_GUITAR(152023, 4751, 1239),
 		URI_TRANSFORM(152024, -1, -1),
@@ -234,7 +234,7 @@ public class PlayerEmotes {
 					player.gfx0(animation.getGraphic());
 				}
 				player.lastPerformedEmote = System.currentTimeMillis();
-				player.sendMessage("Performing emote: " + name + ".");
+				//player.sendMessage("Performing emote: " + name + ".");
 				player.stopMovement();
 			}
 		}

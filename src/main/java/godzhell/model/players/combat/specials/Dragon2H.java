@@ -25,7 +25,7 @@ public class Dragon2H extends Special {
 
 	@Override
 	public void hit(Player player, Entity target, Damage damage) {
-		player.sendMessage("AAA");
+
 	}
 
 }

@@ -396,7 +396,7 @@ public class Item {
 		boolean item1 = false;
 		for (String element : data) {
 			if ((item.endsWith(element) || item.contains(element))
-					&& !item.contains("Shattered top")&& !item.contains("Shattered trousers")) {
+					&& !item.contains("Shattered top")&& !item.contains("Shattered trousers") && !item.contains("Halo's platebody") && !item.contains("Halo's platelegs")) {
 				item1 = true;
 			}
 		}
@@ -475,7 +475,7 @@ public class Item {
 				itemStackable[6646] = true;
 				itemStackable[6651] = true;
 				itemStackable[21930] = true;
-				itemStackable[27316] = true;
+				itemStackable[29316] = true;
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
