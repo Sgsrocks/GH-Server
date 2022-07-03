@@ -6,6 +6,5 @@
 /bin/
 /bin/*
 /.gradle/
-/data/saves/characters/
 *.class
 *.log
