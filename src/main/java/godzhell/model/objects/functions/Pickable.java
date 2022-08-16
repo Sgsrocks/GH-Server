@@ -1,9 +1,6 @@
 package godzhell.model.objects.functions;
 
 import godzhell.Server;
-import godzhell.event.CycleEvent;
-import godzhell.event.CycleEventContainer;
-import godzhell.event.CycleEventHandler;
 import godzhell.model.players.Player;
 import godzhell.world.objects.GlobalObject;
 
@@ -38,7 +35,7 @@ public class Pickable {
 			player.turnPlayerTo(objectX, objectY);
 			player.startAnimation(827);
 			if (objectType == 2646 && random(3) == 0 || objectType != 2646) {
-					Server.getGlobalObjects().add(new GlobalObject(-1, objectX, objectY, player.heightLevel, 0, 10, 5, objectType));
+					Server.getGlobalObjects().add(new GlobalObject(-1, objectX, objectY, player.heightLevel, 0, 10, 60, objectType));
 			}
 			//player.getActionSender().sendSound(SoundList.PICKABLE, 100, 1);
 			player.miscTimer = System.currentTimeMillis();

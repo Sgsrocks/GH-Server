@@ -81,6 +81,21 @@ object ShootingStar {
 
     class CrashedStar(val starObject: GlobalObject?, val starLocation: LocationData)
     enum class LocationData(val spawnPos: Position, val clue: String, var playerPanelFrame: String) {
-        LOCATION_1(Position(3053, 3301), "south of the Falador Farming patches", "Farming"), LOCATION_2(Position(3094, 3484), "south of the Edgeville bank", "Edgeville"), LOCATION_3(Position(2480, 3433), "at the Gnome Agility Course", "Gnome Course"), LOCATION_4(Position(2745, 3445), "in the middle of the Flax field", "Flax Field"), LOCATION_5(Position(2322, 3796), "in the yak field", "Yak Field"), LOCATION_6(Position(2481, 2867), "outside the Myths Guild", "Myths Guild"), LOCATION_7(Position(3368, 3269), "in the Duel Arena", "Duel Arena"), LOCATION_8(Position(1746, 5327), "in the Ancient cavern", "Ancient Cavern"), LOCATION_9(Position(2882, 9800), "in the Taverly dungeon", "Taverly Dung."), LOCATION_10(Position(2666, 2648), "at the Void knight island", "Pest Control"), LOCATION_11(Position(3566, 3297), "on the Barrows hills", "Barrows"), LOCATION_12(Position(2986, 3599), "in the Wilderness (western dragons)", "West Dragons"), LOCATION_13(Position(3091, 3528), "in the Wilderness (Edgeville)", "Edgeville Wild"), LOCATION_14(Position(2995, 3911), "outside the Wilderness Agility Course", "Wild. Course"), LOCATION_15(Position(2449, 3166), "at home", "Home"), LOCATION_16(Position(2600, 3386), "outside of the fishing guild.", "Fishing Guild");
+        LOCATION_1(Position(3050, 3319), "north of the Falador Farming patches", "Falador Farming"),
+        LOCATION_2(Position(3094, 3484), "south of the Edgeville bank", "Edgeville"),
+        LOCATION_3(Position(2480, 3433), "at the Gnome Agility Course", "Gnome Course"),
+        LOCATION_4(Position(2745, 3445), "in the middle of the Flax field", "Flax Field"),
+        LOCATION_5(Position(2322, 3796), "in the yak field", "Yak Field"),
+        LOCATION_6(Position(2481, 2867), "outside the Myths Guild", "Myths Guild"),
+        LOCATION_7(Position(3368, 3269), "in the Duel Arena", "Duel Arena"),
+        LOCATION_8(Position(1746, 5327), "in the Ancient cavern", "Ancient Cavern"),
+        LOCATION_9(Position(2882, 9800), "in the Taverly dungeon", "Taverly Dung."),
+        LOCATION_10(Position(2666, 2648), "at the Void knight island", "Pest Control"),
+        LOCATION_11(Position(3566, 3297), "on the Barrows hills", "Barrows"),
+        LOCATION_12(Position(2986, 3599), "in the Wilderness (western dragons)", "West Dragons"),
+        LOCATION_13(Position(3091, 3528), "in the Wilderness (Edgeville)", "Edgeville Wild"),
+        LOCATION_14(Position(2995, 3911), "outside the Wilderness Agility Course", "Wild. Course"),
+        LOCATION_15(Position(2450, 3167), "south of home", "Home"),
+        LOCATION_16(Position(2600, 3386), "outside of the fishing guild.", "Fishing Guild");
     }
 }

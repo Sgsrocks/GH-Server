@@ -122,6 +122,11 @@ public class AttackAnimation extends NPCHandler {
 			case NpcID.ICE_GIANT_7879:
 			case NpcID.ICE_GIANT_7880:
 				return 4672;
+			case NpcID.AIR_WIZARD:
+			case NpcID.FIRE_WIZARD:
+			case NpcID.WATER_WIZARD:
+			case NpcID.EARTH_WIZARD:
+				return 711;
 			case 11278:
 				if(npcs[i].nexStage == 1 || npcs[i].nexStage == 2) {
 					switch(npcs[i].glod) {

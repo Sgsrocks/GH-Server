@@ -17,7 +17,7 @@
   },
   {
     "id": 5,
-    "examine": "unfortunately not working."
+    "examine": " unfortunately not working."
   },
   {
     "id": 6,
@@ -129,19 +129,19 @@
   },
   {
     "id": 33,
-    "examine": "definitely a lever."
+    "examine": " definitely a lever."
   },
   {
     "id": 34,
-    "examine": "definitely a lever."
+    "examine": " definitely a lever."
   },
   {
     "id": 35,
-    "examine": "definitely a lever."
+    "examine": " definitely a lever."
   },
   {
     "id": 36,
-    "examine": "definitely a lever."
+    "examine": " definitely a lever."
   },
   {
     "id": 37,
@@ -533,7 +533,7 @@
   },
   {
     "id": 154,
-    "examine": "with skill."
+    "examine": " with skill."
   },
   {
     "id": 155,
@@ -685,7 +685,7 @@
   },
   {
     "id": 207,
-    "examine": "disturbingly skull-shaped."
+    "examine": " disturbingly skull-shaped."
   },
   {
     "id": 208,
@@ -889,7 +889,7 @@
   },
   {
     "id": 310,
-    "examine": "dark brown matter. Probably mud."
+    "examine": " dark brown matter. Probably mud."
   },
   {
     "id": 311,
@@ -1265,7 +1265,7 @@
   },
   {
     "id": 532,
-    "examine": "broken and dumped."
+    "examine": " broken and dumped."
   },
   {
     "id": 534,
@@ -1385,15 +1385,15 @@
   },
   {
     "id": 574,
-    "examine": "A carving of a figure from the history of GodzHell."
+    "examine": "A carving of a figure from the history of Gielinor."
   },
   {
     "id": 575,
-    "examine": "A carving of a figure from the history of GodzHell."
+    "examine": "A carving of a figure from the history of Gielinor."
   },
   {
     "id": 576,
-    "examine": "A carving of a figure from the history of GodzHell."
+    "examine": "A carving of a figure from the history of Gielinor."
   },
   {
     "id": 577,
@@ -1765,7 +1765,7 @@
   },
   {
     "id": 683,
-    "examine": "it's a clock."
+    "examine": " it's a clock."
   },
   {
     "id": 684,
@@ -1921,7 +1921,7 @@
   },
   {
     "id": 734,
-    "examine": "cruelly slashed in half."
+    "examine": " cruelly slashed in half."
   },
   {
     "id": 735,
@@ -2081,7 +2081,7 @@
   },
   {
     "id": 841,
-    "examine": "but I wouldn't use it in a fight."
+    "examine": " but I wouldn't use it in a fight."
   },
   {
     "id": 842,
@@ -2093,15 +2093,15 @@
   },
   {
     "id": 844,
-    "examine": "this wall's now safe from harm thanks to that shield."
+    "examine": " this wall's now safe from harm thanks to that shield."
   },
   {
     "id": 845,
-    "examine": "this wall's now safe from harm thanks to that shield."
+    "examine": " this wall's now safe from harm thanks to that shield."
   },
   {
     "id": 846,
-    "examine": "this wall's now safe from harm thanks to that shield."
+    "examine": " this wall's now safe from harm thanks to that shield."
   },
   {
     "id": 847,
@@ -2245,7 +2245,7 @@
   },
   {
     "id": 882,
-    "examine": "someone has left this manhole open."
+    "examine": " someone has left this manhole open."
   },
   {
     "id": 883,
@@ -2281,7 +2281,7 @@
   },
   {
     "id": 891,
-    "examine": "but I like this."
+    "examine": " but I like this."
   },
   {
     "id": 892,
@@ -2329,7 +2329,7 @@
   },
   {
     "id": 903,
-    "examine": "I knew him."
+    "examine": " I knew him."
   },
   {
     "id": 904,
@@ -2413,11 +2413,11 @@
   },
   {
     "id": 961,
-    "examine": "low interest rates!'"
+    "examine": " low interest rates!'"
   },
   {
     "id": 962,
-    "examine": "how nice."
+    "examine": " how nice."
   },
   {
     "id": 963,
@@ -2645,7 +2645,7 @@
   },
   {
     "id": 1049,
-    "examine": "The Bank of GodzHell."
+    "examine": "The Bank of Gielinor."
   },
   {
     "id": 1050,
@@ -2697,7 +2697,7 @@
   },
   {
     "id": 1062,
-    "examine": "GodzHell Postal Delivery Team."
+    "examine": "Gielinor Postal Delivery Team."
   },
   {
     "id": 1063,
@@ -3357,7 +3357,7 @@
   },
   {
     "id": 1276,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 1277,
@@ -3422,14 +3422,6 @@
   {
     "id": 1292,
     "examine": "An ancient magical tree."
-  },
-  {
-    "id": 1294,
-    "examine": "An ancient sentient tree."
-  },
-  {
-    "id": 7962,
-    "examine": "You can grow Fruit Trees in this Farming patch."
   },
   {
     "id": 1296,
@@ -4389,7 +4381,7 @@
   },
   {
     "id": 1797,
-    "examine": "I wouldn't want to fall on those."
+    "examine": " I wouldn't want to fall on those."
   },
   {
     "id": 1804,
@@ -4737,7 +4729,7 @@
   },
   {
     "id": 2022,
-    "examine": "maybe a way off this rock."
+    "examine": " maybe a way off this rock."
   },
   {
     "id": 2023,
@@ -4745,23 +4737,23 @@
   },
   {
     "id": 2024,
-    "examine": "smells... Ugh!"
+    "examine": " smells... Ugh!"
   },
   {
     "id": 2025,
-    "examine": "the box should then slam shut."
+    "examine": " the box should then slam shut."
   },
   {
     "id": 2026,
-    "examine": "the box should then slam shut."
+    "examine": " the box should then slam shut."
   },
   {
     "id": 2028,
-    "examine": "the box should then slam shut."
+    "examine": " the box should then slam shut."
   },
   {
     "id": 2029,
-    "examine": "the box should then slam shut."
+    "examine": " the box should then slam shut."
   },
   {
     "id": 2030,
@@ -5053,7 +5045,7 @@
   },
   {
     "id": 2106,
-    "examine": "but it'll probably stay up for now."
+    "examine": " but it'll probably stay up for now."
   },
   {
     "id": 2107,
@@ -5113,7 +5105,7 @@
   },
   {
     "id": 2123,
-    "examine": "it's a cave."
+    "examine": " it's a cave."
   },
   {
     "id": 2124,
@@ -5253,7 +5245,7 @@
   },
   {
     "id": 2182,
-    "examine": "can it?"
+    "examine": " can it?"
   },
   {
     "id": 2183,
@@ -5405,7 +5397,7 @@
   },
   {
     "id": 2225,
-    "examine": "it looks like you might be able to climb them."
+    "examine": " it looks like you might be able to climb them."
   },
   {
     "id": 2226,
@@ -5417,7 +5409,7 @@
   },
   {
     "id": 2228,
-    "examine": "dripping water from many feet above."
+    "examine": " dripping water from many feet above."
   },
   {
     "id": 2229,
@@ -5473,31 +5465,31 @@
   },
   {
     "id": 2246,
-    "examine": "they look terrifying."
+    "examine": " they look terrifying."
   },
   {
     "id": 2247,
-    "examine": "they look terrifying."
+    "examine": " they look terrifying."
   },
   {
     "id": 2248,
-    "examine": "they look terrifying."
+    "examine": " they look terrifying."
   },
   {
     "id": 2249,
-    "examine": "they look terrifying."
+    "examine": " they look terrifying."
   },
   {
     "id": 2250,
-    "examine": "they look terrifying."
+    "examine": " they look terrifying."
   },
   {
     "id": 2251,
-    "examine": "they look terrifying."
+    "examine": " they look terrifying."
   },
   {
     "id": 2252,
-    "examine": "they look terrifying."
+    "examine": " they look terrifying."
   },
   {
     "id": 2253,
@@ -5509,11 +5501,11 @@
   },
   {
     "id": 2255,
-    "examine": "but still pretty secure."
+    "examine": " but still pretty secure."
   },
   {
     "id": 2256,
-    "examine": "but still pretty secure."
+    "examine": " but still pretty secure."
   },
   {
     "id": 2257,
@@ -5649,7 +5641,7 @@
   },
   {
     "id": 2297,
-    "examine": "Bank of GodzHell."
+    "examine": "Bank of Gielinor."
   },
   {
     "id": 2298,
@@ -5661,7 +5653,7 @@
   },
   {
     "id": 2300,
-    "examine": "fortune-teller. Guaranteed no waiting.'"
+    "examine": " fortune-teller. Guaranteed no waiting.'"
   },
   {
     "id": 2301,
@@ -5705,7 +5697,7 @@
   },
   {
     "id": 2314,
-    "examine": "what could you possibly drive?"
+    "examine": " what could you possibly drive?"
   },
   {
     "id": 2315,
@@ -5737,7 +5729,7 @@
   },
   {
     "id": 2322,
-    "examine": "for tomorrow we die."
+    "examine": " for tomorrow we die."
   },
   {
     "id": 2332,
@@ -5829,15 +5821,15 @@
   },
   {
     "id": 2354,
-    "examine": "they're sacks!"
+    "examine": " they're sacks!"
   },
   {
     "id": 2355,
-    "examine": "they're sacks!"
+    "examine": " they're sacks!"
   },
   {
     "id": 2356,
-    "examine": "they're sacks!"
+    "examine": " they're sacks!"
   },
   {
     "id": 2357,
@@ -6453,7 +6445,7 @@
   },
   {
     "id": 2544,
-    "examine": "someone has left this manhole open."
+    "examine": " someone has left this manhole open."
   },
   {
     "id": 2545,
@@ -6513,7 +6505,7 @@
   },
   {
     "id": 2573,
-    "examine": "I'll be able to collect it here."
+    "examine": " I'll be able to collect it here."
   },
   {
     "id": 2574,
@@ -6549,7 +6541,7 @@
   },
   {
     "id": 2582,
-    "examine": "it looks like something was growing here."
+    "examine": " it looks like something was growing here."
   },
   {
     "id": 2583,
@@ -6561,7 +6553,7 @@
   },
   {
     "id": 2585,
-    "examine": "you may be able to climb it."
+    "examine": " you may be able to climb it."
   },
   {
     "id": 2586,
@@ -6689,7 +6681,7 @@
   },
   {
     "id": 2617,
-    "examine": "an exit!"
+    "examine": " an exit!"
   },
   {
     "id": 2618,
@@ -6753,7 +6745,7 @@
   },
   {
     "id": 2634,
-    "examine": "but block the way."
+    "examine": " but block the way."
   },
   {
     "id": 2635,
@@ -6893,7 +6885,7 @@
   },
   {
     "id": 2677,
-    "examine": "it belongs to Captain Siad."
+    "examine": " it belongs to Captain Siad."
   },
   {
     "id": 2678,
@@ -6909,7 +6901,7 @@
   },
   {
     "id": 2683,
-    "examine": "complete with metalic bars."
+    "examine": " complete with metalic bars."
   },
   {
     "id": 2684,
@@ -6933,15 +6925,15 @@
   },
   {
     "id": 2689,
-    "examine": "it's a fairly sturdy prison cell door."
+    "examine": " it's a fairly sturdy prison cell door."
   },
   {
     "id": 2690,
-    "examine": "thick set oak doors - they lead outside."
+    "examine": " thick set oak doors - they lead outside."
   },
   {
     "id": 2691,
-    "examine": "thick set oak doors - they lead outside."
+    "examine": " thick set oak doors - they lead outside."
   },
   {
     "id": 2692,
@@ -7049,7 +7041,7 @@
   },
   {
     "id": 2720,
-    "examine": "or they might just smell funny."
+    "examine": " or they might just smell funny."
   },
   {
     "id": 2721,
@@ -7057,7 +7049,7 @@
   },
   {
     "id": 2722,
-    "examine": "mostly pickled in jars."
+    "examine": " mostly pickled in jars."
   },
   {
     "id": 2723,
@@ -7069,7 +7061,7 @@
   },
   {
     "id": 2725,
-    "examine": "suitable for entertaining young children."
+    "examine": " suitable for entertaining young children."
   },
   {
     "id": 2726,
@@ -7077,7 +7069,7 @@
   },
   {
     "id": 2727,
-    "examine": "the cat basket probably gets a lot of use."
+    "examine": " the cat basket probably gets a lot of use."
   },
   {
     "id": 2728,
@@ -7381,7 +7373,7 @@
   },
   {
     "id": 2859,
-    "examine": "where some soup is bubbling nicely."
+    "examine": " where some soup is bubbling nicely."
   },
   {
     "id": 2860,
@@ -7477,7 +7469,7 @@
   },
   {
     "id": 2886,
-    "examine": "it might have something interesting in it."
+    "examine": " it might have something interesting in it."
   },
   {
     "id": 2887,
@@ -7485,7 +7477,7 @@
   },
   {
     "id": 2888,
-    "examine": "dense foliage."
+    "examine": " dense foliage."
   },
   {
     "id": 2889,
@@ -7501,11 +7493,11 @@
   },
   {
     "id": 2892,
-    "examine": "quite common to these areas."
+    "examine": " quite common to these areas."
   },
   {
     "id": 2893,
-    "examine": "quite common to these areas."
+    "examine": " quite common to these areas."
   },
   {
     "id": 2894,
@@ -7617,19 +7609,19 @@
   },
   {
     "id": 2922,
-    "examine": "ancient gateway."
+    "examine": " ancient gateway."
   },
   {
     "id": 2923,
-    "examine": "ancient gateway."
+    "examine": " ancient gateway."
   },
   {
     "id": 2924,
-    "examine": "ancient gateway."
+    "examine": " ancient gateway."
   },
   {
     "id": 2925,
-    "examine": "ancient gateway."
+    "examine": " ancient gateway."
   },
   {
     "id": 2926,
@@ -7645,19 +7637,19 @@
   },
   {
     "id": 2929,
-    "examine": "probably dwarven remains."
+    "examine": " probably dwarven remains."
   },
   {
     "id": 2930,
-    "examine": "not sure how this opens."
+    "examine": " not sure how this opens."
   },
   {
     "id": 2931,
-    "examine": "who knows where it leads?"
+    "examine": " who knows where it leads?"
   },
   {
     "id": 2932,
-    "examine": "I wonder what's inside."
+    "examine": " I wonder what's inside."
   },
   {
     "id": 2934,
@@ -7665,7 +7657,7 @@
   },
   {
     "id": 2935,
-    "examine": "the dig shaft. A rope has been thrown over it."
+    "examine": " the dig shaft. A rope has been thrown over it."
   },
   {
     "id": 2936,
@@ -7689,7 +7681,7 @@
   },
   {
     "id": 2942,
-    "examine": "babbling flow of water from an underground source."
+    "examine": " babbling flow of water from an underground source."
   },
   {
     "id": 2943,
@@ -7701,39 +7693,39 @@
   },
   {
     "id": 2945,
-    "examine": "it has a mystical aura."
+    "examine": " it has a mystical aura."
   },
   {
     "id": 2946,
-    "examine": "it has a mystical aura."
+    "examine": " it has a mystical aura."
   },
   {
     "id": 2947,
-    "examine": "you'll need a tough axe to remove this."
+    "examine": " you'll need a tough axe to remove this."
   },
   {
     "id": 2948,
-    "examine": "it won't get much taller than this."
+    "examine": " it won't get much taller than this."
   },
   {
     "id": 2949,
-    "examine": "sharp axe to remove this."
+    "examine": " sharp axe to remove this."
   },
   {
     "id": 2950,
-    "examine": "perhaps you should trim those branches?"
+    "examine": " perhaps you should trim those branches?"
   },
   {
     "id": 2951,
-    "examine": "it was left too long in the damp jungle."
+    "examine": " it was left too long in the damp jungle."
   },
   {
     "id": 2952,
-    "examine": "perfect for sculpting into a totem pole."
+    "examine": " perfect for sculpting into a totem pole."
   },
   {
     "id": 2953,
-    "examine": "it was left too long in the damp jungle air."
+    "examine": " it was left too long in the damp jungle air."
   },
   {
     "id": 2954,
@@ -7741,7 +7733,7 @@
   },
   {
     "id": 2955,
-    "examine": "it was left to rot in the jungle."
+    "examine": " it was left to rot in the jungle."
   },
   {
     "id": 2956,
@@ -7749,7 +7741,7 @@
   },
   {
     "id": 2957,
-    "examine": "time will restore the fertility."
+    "examine": " time will restore the fertility."
   },
   {
     "id": 2958,
@@ -8541,7 +8533,7 @@
   },
   {
     "id": 3359,
-    "examine": "now the Well of the Damned."
+    "examine": " now the Well of the Damned."
   },
   {
     "id": 3360,
@@ -8589,11 +8581,11 @@
   },
   {
     "id": 3376,
-    "examine": "useful for taking all that weight off their legs."
+    "examine": " useful for taking all that weight off their legs."
   },
   {
     "id": 3377,
-    "examine": "a rock for a lock...."
+    "examine": " a rock for a lock...."
   },
   {
     "id": 3378,
@@ -8725,7 +8717,7 @@
   },
   {
     "id": 3467,
-    "examine": "then?"
+    "examine": " then?"
   },
   {
     "id": 3479,
@@ -8841,7 +8833,7 @@
   },
   {
     "id": 3523,
-    "examine": "probably made from wood in this swamp."
+    "examine": " probably made from wood in this swamp."
   },
   {
     "id": 3525,
@@ -8917,11 +8909,11 @@
   },
   {
     "id": 3563,
-    "examine": "the jungle VIP."
+    "examine": " the jungle VIP."
   },
   {
     "id": 3564,
-    "examine": "the jungle VIP."
+    "examine": " the jungle VIP."
   },
   {
     "id": 3565,
@@ -8977,11 +8969,11 @@
   },
   {
     "id": 3578,
-    "examine": "a giant leap for player kind."
+    "examine": " a giant leap for player kind."
   },
   {
     "id": 3579,
-    "examine": "a giant leap for player kind."
+    "examine": " a giant leap for player kind."
   },
   {
     "id": 3580,
@@ -9269,7 +9261,7 @@
   },
   {
     "id": 3756,
-    "examine": "very old picture carved in this..."
+    "examine": " very old picture carved in this..."
   },
   {
     "id": 3757,
@@ -9405,11 +9397,11 @@
   },
   {
     "id": 3794,
-    "examine": "that is."
+    "examine": " that is."
   },
   {
     "id": 3795,
-    "examine": "that is."
+    "examine": " that is."
   },
   {
     "id": 3797,
@@ -9457,7 +9449,7 @@
   },
   {
     "id": 3808,
-    "examine": "it's just a rock."
+    "examine": " it's just a rock."
   },
   {
     "id": 3810,
@@ -9501,7 +9493,7 @@
   },
   {
     "id": 3823,
-    "examine": "I've probably been captured again."
+    "examine": " I've probably been captured again."
   },
   {
     "id": 3824,
@@ -10229,7 +10221,7 @@
   },
   {
     "id": 4092,
-    "examine": "broken down fire altar."
+    "examine": " broken down fire altar."
   },
   {
     "id": 4093,
@@ -10305,87 +10297,87 @@
   },
   {
     "id": 4111,
-    "examine": "the lock is painted blood red."
+    "examine": " the lock is painted blood red."
   },
   {
     "id": 4112,
-    "examine": "the lock is painted brown."
+    "examine": " the lock is painted brown."
   },
   {
     "id": 4113,
-    "examine": "the lock is painted crimson."
+    "examine": " the lock is painted crimson."
   },
   {
     "id": 4114,
-    "examine": "the lock is painted black."
+    "examine": " the lock is painted black."
   },
   {
     "id": 4115,
-    "examine": "the lock is painted purple."
+    "examine": " the lock is painted purple."
   },
   {
     "id": 4116,
-    "examine": "the lock is painted blood red."
+    "examine": " the lock is painted blood red."
   },
   {
     "id": 4117,
-    "examine": "the lock is painted brown."
+    "examine": " the lock is painted brown."
   },
   {
     "id": 4118,
-    "examine": "the lock is painted crimson."
+    "examine": " the lock is painted crimson."
   },
   {
     "id": 4119,
-    "examine": "the lock is painted black."
+    "examine": " the lock is painted black."
   },
   {
     "id": 4120,
-    "examine": "the lock is painted purple."
+    "examine": " the lock is painted purple."
   },
   {
     "id": 4121,
-    "examine": "the lock is painted blood red."
+    "examine": " the lock is painted blood red."
   },
   {
     "id": 4122,
-    "examine": "the lock is painted brown."
+    "examine": " the lock is painted brown."
   },
   {
     "id": 4123,
-    "examine": "the lock is painted crimson."
+    "examine": " the lock is painted crimson."
   },
   {
     "id": 4124,
-    "examine": "the lock is painted black."
+    "examine": " the lock is painted black."
   },
   {
     "id": 4125,
-    "examine": "the lock is painted purple."
+    "examine": " the lock is painted purple."
   },
   {
     "id": 4126,
-    "examine": "the lock is painted blood red."
+    "examine": " the lock is painted blood red."
   },
   {
     "id": 4127,
-    "examine": "the lock is painted brown."
+    "examine": " the lock is painted brown."
   },
   {
     "id": 4128,
-    "examine": "the lock is painted crimson."
+    "examine": " the lock is painted crimson."
   },
   {
     "id": 4129,
-    "examine": "the lock is painted black."
+    "examine": " the lock is painted black."
   },
   {
     "id": 4130,
-    "examine": "the lock is painted purple."
+    "examine": " the lock is painted purple."
   },
   {
     "id": 4131,
-    "examine": "the open lock is painted blood red."
+    "examine": " the open lock is painted blood red."
   },
   {
     "id": 4132,
@@ -10489,7 +10481,7 @@
   },
   {
     "id": 4162,
-    "examine": "presumably for rainwater to run through."
+    "examine": " presumably for rainwater to run through."
   },
   {
     "id": 4163,
@@ -10565,7 +10557,7 @@
   },
   {
     "id": 4181,
-    "examine": "I knew him well."
+    "examine": " I knew him well."
   },
   {
     "id": 4182,
@@ -10665,7 +10657,7 @@
   },
   {
     "id": 4273,
-    "examine": "I could do with a drink..."
+    "examine": " I could do with a drink..."
   },
   {
     "id": 4274,
@@ -10685,7 +10677,7 @@
   },
   {
     "id": 4278,
-    "examine": "this is where you buy new doors."
+    "examine": " this is where you buy new doors."
   },
   {
     "id": 4280,
@@ -10717,7 +10709,7 @@
   },
   {
     "id": 4296,
-    "examine": "looks like this neighbourhood is perfectly safe for travellers..."
+    "examine": " looks like this neighbourhood is perfectly safe for travellers..."
   },
   {
     "id": 4297,
@@ -11217,11 +11209,11 @@
   },
   {
     "id": 4531,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 4532,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 4533,
@@ -11349,7 +11341,7 @@
   },
   {
     "id": 4600,
-    "examine": "growing from the floor upward."
+    "examine": " growing from the floor upward."
   },
   {
     "id": 4601,
@@ -11481,7 +11473,7 @@
   },
   {
     "id": 4642,
-    "examine": "how nice."
+    "examine": " how nice."
   },
   {
     "id": 4643,
@@ -11613,11 +11605,11 @@
   },
   {
     "id": 4692,
-    "examine": "it's a flagpole."
+    "examine": " it's a flagpole."
   },
   {
     "id": 4693,
-    "examine": "it's a flagpole."
+    "examine": " it's a flagpole."
   },
   {
     "id": 4696,
@@ -11737,7 +11729,7 @@
   },
   {
     "id": 4729,
-    "examine": "void of life."
+    "examine": " void of life."
   },
   {
     "id": 4743,
@@ -11757,27 +11749,27 @@
   },
   {
     "id": 4749,
-    "examine": "full of bananas."
+    "examine": " full of bananas."
   },
   {
     "id": 4750,
-    "examine": "with lots of bananas."
+    "examine": " with lots of bananas."
   },
   {
     "id": 4751,
-    "examine": "with many bananas."
+    "examine": " with many bananas."
   },
   {
     "id": 4752,
-    "examine": "with a few bananas."
+    "examine": " with a few bananas."
   },
   {
     "id": 4753,
-    "examine": "with but one banana."
+    "examine": " with but one banana."
   },
   {
     "id": 4754,
-    "examine": "with no more bananas left."
+    "examine": " with no more bananas left."
   },
   {
     "id": 4755,
@@ -11797,11 +11789,11 @@
   },
   {
     "id": 4765,
-    "examine": "rising as high as you can see."
+    "examine": " rising as high as you can see."
   },
   {
     "id": 4766,
-    "examine": "rising as high as you can see."
+    "examine": " rising as high as you can see."
   },
   {
     "id": 4767,
@@ -11885,15 +11877,15 @@
   },
   {
     "id": 4791,
-    "examine": "made of strips of bamboo."
+    "examine": " made of strips of bamboo."
   },
   {
     "id": 4792,
-    "examine": "made of strips of bamboo."
+    "examine": " made of strips of bamboo."
   },
   {
     "id": 4793,
-    "examine": "made of strips of bamboo."
+    "examine": " made of strips of bamboo."
   },
   {
     "id": 4794,
@@ -12029,11 +12021,11 @@
   },
   {
     "id": 4833,
-    "examine": "quite common to these areas."
+    "examine": " quite common to these areas."
   },
   {
     "id": 4834,
-    "examine": "quite common to these areas."
+    "examine": " quite common to these areas."
   },
   {
     "id": 4835,
@@ -12349,7 +12341,7 @@
   },
   {
     "id": 4930,
-    "examine": "but it looks dark down there anyway."
+    "examine": " but it looks dark down there anyway."
   },
   {
     "id": 4932,
@@ -12389,7 +12381,7 @@
   },
   {
     "id": 4945,
-    "examine": "how useful."
+    "examine": " how useful."
   },
   {
     "id": 4949,
@@ -12629,7 +12621,7 @@
   },
   {
     "id": 5047,
-    "examine": "growing from the floor upward."
+    "examine": " growing from the floor upward."
   },
   {
     "id": 5048,
@@ -12649,11 +12641,11 @@
   },
   {
     "id": 5052,
-    "examine": "you'd probably watch it dry."
+    "examine": " you'd probably watch it dry."
   },
   {
     "id": 5053,
-    "examine": "you'd probably watch it dry."
+    "examine": " you'd probably watch it dry."
   },
   {
     "id": 5054,
@@ -12741,7 +12733,7 @@
   },
   {
     "id": 5083,
-    "examine": "how charming."
+    "examine": " how charming."
   },
   {
     "id": 5084,
@@ -12761,7 +12753,7 @@
   },
   {
     "id": 5094,
-    "examine": "by Ali Morrisane."
+    "examine": " by Ali Morrisane."
   },
   {
     "id": 5095,
@@ -12769,7 +12761,7 @@
   },
   {
     "id": 5096,
-    "examine": "there's pollution."
+    "examine": " there's pollution."
   },
   {
     "id": 5097,
@@ -12825,7 +12817,7 @@
   },
   {
     "id": 5112,
-    "examine": "land of a thousand barrels."
+    "examine": " land of a thousand barrels."
   },
   {
     "id": 5113,
@@ -13029,15 +13021,15 @@
   },
   {
     "id": 5167,
-    "examine": "elaborately ornamented memorial stone."
+    "examine": " elaborately ornamented memorial stone."
   },
   {
     "id": 5168,
-    "examine": "marked by an ostentatious memorial stone."
+    "examine": " marked by an ostentatious memorial stone."
   },
   {
     "id": 5169,
-    "examine": "wooden cross."
+    "examine": " wooden cross."
   },
   {
     "id": 5170,
@@ -13065,7 +13057,7 @@
   },
   {
     "id": 5176,
-    "examine": "rendering it useless."
+    "examine": " rendering it useless."
   },
   {
     "id": 5177,
@@ -13113,7 +13105,7 @@
   },
   {
     "id": 5202,
-    "examine": "someone could trip on them."
+    "examine": " someone could trip on them."
   },
   {
     "id": 5206,
@@ -13293,7 +13285,7 @@
   },
   {
     "id": 5350,
-    "examine": "I could do with a drink..."
+    "examine": " I could do with a drink..."
   },
   {
     "id": 5351,
@@ -13301,7 +13293,7 @@
   },
   {
     "id": 5352,
-    "examine": "wooden suspension. A beauty."
+    "examine": " wooden suspension. A beauty."
   },
   {
     "id": 5353,
@@ -13545,15 +13537,15 @@
   },
   {
     "id": 5555,
-    "examine": "but I like it!"
+    "examine": " but I like it!"
   },
   {
     "id": 5556,
-    "examine": "but I like it!"
+    "examine": " but I like it!"
   },
   {
     "id": 5558,
-    "examine": "probably best not to think what..."
+    "examine": " probably best not to think what..."
   },
   {
     "id": 5559,
@@ -13709,7 +13701,7 @@
   },
   {
     "id": 5608,
-    "examine": "I wouldn't mess with it if I were you..."
+    "examine": " I wouldn't mess with it if I were you..."
   },
   {
     "id": 5609,
@@ -13813,11 +13805,11 @@
   },
   {
     "id": 5791,
-    "examine": "A carving of a figure from the history of GodzHell."
+    "examine": "A carving of a figure from the history of Gielinor."
   },
   {
     "id": 5792,
-    "examine": "I'll be able to collect it here."
+    "examine": " I'll be able to collect it here."
   },
   {
     "id": 5793,
@@ -13893,7 +13885,7 @@
   },
   {
     "id": 5815,
-    "examine": "a lens and some sort of crystal all precariously balanced together."
+    "examine": " a lens and some sort of crystal all precariously balanced together."
   },
   {
     "id": 5816,
@@ -13977,15 +13969,15 @@
   },
   {
     "id": 5849,
-    "examine": "but maybe something can be wedged into there."
+    "examine": " but maybe something can be wedged into there."
   },
   {
     "id": 5850,
-    "examine": "it's quite smooth and flat."
+    "examine": " it's quite smooth and flat."
   },
   {
     "id": 5851,
-    "examine": "it's quite smooth and flat."
+    "examine": " it's quite smooth and flat."
   },
   {
     "id": 5852,
@@ -14021,7 +14013,7 @@
   },
   {
     "id": 5860,
-    "examine": "very sharp."
+    "examine": " very sharp."
   },
   {
     "id": 5862,
@@ -14049,7 +14041,7 @@
   },
   {
     "id": 5883,
-    "examine": "dirty mud."
+    "examine": " dirty mud."
   },
   {
     "id": 5884,
@@ -14061,23 +14053,23 @@
   },
   {
     "id": 5886,
-    "examine": "dirty mud."
+    "examine": " dirty mud."
   },
   {
     "id": 5887,
-    "examine": "really."
+    "examine": " really."
   },
   {
     "id": 5888,
-    "examine": "really."
+    "examine": " really."
   },
   {
     "id": 5889,
-    "examine": "really."
+    "examine": " really."
   },
   {
     "id": 5890,
-    "examine": "really."
+    "examine": " really."
   },
   {
     "id": 5891,
@@ -14097,11 +14089,11 @@
   },
   {
     "id": 5895,
-    "examine": "really."
+    "examine": " really."
   },
   {
     "id": 5896,
-    "examine": "someone is going to be in trouble!"
+    "examine": " someone is going to be in trouble!"
   },
   {
     "id": 5897,
@@ -14217,19 +14209,19 @@
   },
   {
     "id": 5977,
-    "examine": "rising as high as you can see."
+    "examine": " rising as high as you can see."
   },
   {
     "id": 5978,
-    "examine": "rising as high as you can see."
+    "examine": " rising as high as you can see."
   },
   {
     "id": 5979,
-    "examine": "rising as high as you can see."
+    "examine": " rising as high as you can see."
   },
   {
     "id": 5980,
-    "examine": "rising as high as you can see."
+    "examine": " rising as high as you can see."
   },
   {
     "id": 5981,
@@ -14429,19 +14421,19 @@
   },
   {
     "id": 6076,
-    "examine": "for a dwarf!"
+    "examine": " for a dwarf!"
   },
   {
     "id": 6077,
-    "examine": "for a dwarf!"
+    "examine": " for a dwarf!"
   },
   {
     "id": 6078,
-    "examine": "for a dwarf!"
+    "examine": " for a dwarf!"
   },
   {
     "id": 6079,
-    "examine": "for a dwarf!"
+    "examine": " for a dwarf!"
   },
   {
     "id": 6080,
@@ -14681,7 +14673,7 @@
   },
   {
     "id": 6178,
-    "examine": "contents unknown."
+    "examine": " contents unknown."
   },
   {
     "id": 6179,
@@ -14701,7 +14693,7 @@
   },
   {
     "id": 6183,
-    "examine": "not very inviting."
+    "examine": " not very inviting."
   },
   {
     "id": 6184,
@@ -14741,7 +14733,7 @@
   },
   {
     "id": 6193,
-    "examine": "but not necessarily sweeter!"
+    "examine": " but not necessarily sweeter!"
   },
   {
     "id": 6194,
@@ -14777,11 +14769,11 @@
   },
   {
     "id": 6202,
-    "examine": "but then you knew that already."
+    "examine": " but then you knew that already."
   },
   {
     "id": 6203,
-    "examine": "but then you knew that already."
+    "examine": " but then you knew that already."
   },
   {
     "id": 6204,
@@ -14801,7 +14793,7 @@
   },
   {
     "id": 6208,
-    "examine": "fit for a King."
+    "examine": " fit for a King."
   },
   {
     "id": 6211,
@@ -14829,11 +14821,11 @@
   },
   {
     "id": 6236,
-    "examine": "food?"
+    "examine": " food?"
   },
   {
     "id": 6237,
-    "examine": "lovely."
+    "examine": " lovely."
   },
   {
     "id": 6238,
@@ -14869,7 +14861,7 @@
   },
   {
     "id": 6246,
-    "examine": "which I will not take for moral reasons."
+    "examine": " which I will not take for moral reasons."
   },
   {
     "id": 6247,
@@ -14881,7 +14873,7 @@
   },
   {
     "id": 6250,
-    "examine": "it's just a bed."
+    "examine": " it's just a bed."
   },
   {
     "id": 6255,
@@ -14933,7 +14925,7 @@
   },
   {
     "id": 6267,
-    "examine": "maybe the owner let the creature free... I do hope so."
+    "examine": " maybe the owner let the creature free... I do hope so."
   },
   {
     "id": 6268,
@@ -14957,7 +14949,7 @@
   },
   {
     "id": 6276,
-    "examine": "but I like this."
+    "examine": " but I like this."
   },
   {
     "id": 6277,
@@ -15009,7 +15001,7 @@
   },
   {
     "id": 6295,
-    "examine": "that was me!"
+    "examine": " that was me!"
   },
   {
     "id": 6296,
@@ -15017,7 +15009,7 @@
   },
   {
     "id": 6297,
-    "examine": "older than me anyway."
+    "examine": " older than me anyway."
   },
   {
     "id": 6298,
@@ -15025,7 +15017,7 @@
   },
   {
     "id": 6299,
-    "examine": "why didn't he go back to Lumby?"
+    "examine": " why didn't he go back to Lumby?"
   },
   {
     "id": 6301,
@@ -15037,11 +15029,11 @@
   },
   {
     "id": 6307,
-    "examine": "facing right."
+    "examine": " facing right."
   },
   {
     "id": 6308,
-    "examine": "facing left."
+    "examine": " facing left."
   },
   {
     "id": 6309,
@@ -15177,7 +15169,7 @@
   },
   {
     "id": 6402,
-    "examine": "growing from the floor upward."
+    "examine": " growing from the floor upward."
   },
   {
     "id": 6403,
@@ -15509,15 +15501,15 @@
   },
   {
     "id": 6538,
-    "examine": "the head of a man?"
+    "examine": " the head of a man?"
   },
   {
     "id": 6545,
-    "examine": "sandstone door that is slightly warm to the touch."
+    "examine": " sandstone door that is slightly warm to the touch."
   },
   {
     "id": 6547,
-    "examine": "sandstone door that is slightly warm to the touch."
+    "examine": " sandstone door that is slightly warm to the touch."
   },
   {
     "id": 6549,
@@ -15689,7 +15681,7 @@
   },
   {
     "id": 6637,
-    "examine": "I think there are lungs inside."
+    "examine": " I think there are lungs inside."
   },
   {
     "id": 6639,
@@ -15977,15 +15969,15 @@
   },
   {
     "id": 6759,
-    "examine": "but better than a bare floor."
+    "examine": " but better than a bare floor."
   },
   {
     "id": 6760,
-    "examine": "but better than a bare floor."
+    "examine": " but better than a bare floor."
   },
   {
     "id": 6761,
-    "examine": "but better than a bare floor."
+    "examine": " but better than a bare floor."
   },
   {
     "id": 6762,
@@ -16049,7 +16041,7 @@
   },
   {
     "id": 6777,
-    "examine": "perhaps to cover a hole in the wall?"
+    "examine": " perhaps to cover a hole in the wall?"
   },
   {
     "id": 6778,
@@ -16085,15 +16077,15 @@
   },
   {
     "id": 6786,
-    "examine": "saw and shears."
+    "examine": " saw and shears."
   },
   {
     "id": 6787,
-    "examine": "tinderbox and knife."
+    "examine": " tinderbox and knife."
   },
   {
     "id": 6788,
-    "examine": "apron and glassblowing pipe."
+    "examine": " apron and glassblowing pipe."
   },
   {
     "id": 6789,
@@ -16205,7 +16197,7 @@
   },
   {
     "id": 6847,
-    "examine": "'Please ring for attention.'"
+    "examine": " 'Please ring for attention.'"
   },
   {
     "id": 6848,
@@ -16329,11 +16321,11 @@
   },
   {
     "id": 6888,
-    "examine": "frail old man."
+    "examine": " frail old man."
   },
   {
     "id": 6889,
-    "examine": "frail old man - transformed into an ogre."
+    "examine": " frail old man - transformed into an ogre."
   },
   {
     "id": 6890,
@@ -16361,7 +16353,7 @@
   },
   {
     "id": 6897,
-    "examine": "this must be where the artefacts are stored."
+    "examine": " this must be where the artefacts are stored."
   },
   {
     "id": 6903,
@@ -16369,7 +16361,7 @@
   },
   {
     "id": 6904,
-    "examine": "some shelves."
+    "examine": " some shelves."
   },
   {
     "id": 6905,
@@ -16405,11 +16397,11 @@
   },
   {
     "id": 6917,
-    "examine": "looks odd..."
+    "examine": " looks odd..."
   },
   {
     "id": 6918,
-    "examine": "looks odd..."
+    "examine": " looks odd..."
   },
   {
     "id": 6919,
@@ -16589,7 +16581,7 @@
   },
   {
     "id": 7003,
-    "examine": "it's hardly recognizable as a dwarf."
+    "examine": " it's hardly recognizable as a dwarf."
   },
   {
     "id": 7004,
@@ -16917,15 +16909,15 @@
   },
   {
     "id": 7099,
-    "examine": "old stories..."
+    "examine": " old stories..."
   },
   {
     "id": 7100,
-    "examine": "but still effective."
+    "examine": " but still effective."
   },
   {
     "id": 7101,
-    "examine": "suitable for a battle-mage."
+    "examine": " suitable for a battle-mage."
   },
   {
     "id": 7102,
@@ -17285,7 +17277,7 @@
   },
   {
     "id": 7253,
-    "examine": "fear is the little death that brings total oblivion."
+    "examine": " fear is the little death that brings total oblivion."
   },
   {
     "id": 7254,
@@ -17329,11 +17321,11 @@
   },
   {
     "id": 7277,
-    "examine": "but I don't think he'll do anything while I'm here."
+    "examine": " but I don't think he'll do anything while I'm here."
   },
   {
     "id": 7278,
-    "examine": "although perhaps a little guilty-looking."
+    "examine": " although perhaps a little guilty-looking."
   },
   {
     "id": 7281,
@@ -17633,7 +17625,7 @@
   },
   {
     "id": 7400,
-    "examine": "hopefully."
+    "examine": " hopefully."
   },
   {
     "id": 7401,
@@ -17765,7 +17757,7 @@
   },
   {
     "id": 7444,
-    "examine": "da da da dummm."
+    "examine": " da da da dummm."
   },
   {
     "id": 7445,
@@ -17801,7 +17793,7 @@
   },
   {
     "id": 7466,
-    "examine": "nice juicy green apples!"
+    "examine": " nice juicy green apples!"
   },
   {
     "id": 7467,
@@ -21101,51 +21093,51 @@
   },
   {
     "id": 8370,
-    "examine": "your spirit tree has died."
+    "examine": " your spirit tree has died."
   },
   {
     "id": 8371,
-    "examine": "your spirit tree has died."
+    "examine": " your spirit tree has died."
   },
   {
     "id": 8372,
-    "examine": "your spirit tree has died."
+    "examine": " your spirit tree has died."
   },
   {
     "id": 8373,
-    "examine": "your spirit tree has died."
+    "examine": " your spirit tree has died."
   },
   {
     "id": 8374,
-    "examine": "your spirit tree has died."
+    "examine": " your spirit tree has died."
   },
   {
     "id": 8375,
-    "examine": "your spirit tree has died."
+    "examine": " your spirit tree has died."
   },
   {
     "id": 8376,
-    "examine": "your spirit tree has died."
+    "examine": " your spirit tree has died."
   },
   {
     "id": 8377,
-    "examine": "your spirit tree has died."
+    "examine": " your spirit tree has died."
   },
   {
     "id": 8378,
-    "examine": "your spirit tree has died."
+    "examine": " your spirit tree has died."
   },
   {
     "id": 8379,
-    "examine": "your spirit tree has died."
+    "examine": " your spirit tree has died."
   },
   {
     "id": 8380,
-    "examine": "your spirit tree has died."
+    "examine": " your spirit tree has died."
   },
   {
     "id": 8381,
-    "examine": "your spirit tree has died."
+    "examine": " your spirit tree has died."
   },
   {
     "id": 8392,
@@ -21225,51 +21217,51 @@
   },
   {
     "id": 8411,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8412,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8413,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8414,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8415,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8416,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8417,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8418,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8419,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8420,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8421,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8422,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8423,
@@ -21365,35 +21357,35 @@
   },
   {
     "id": 8446,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8447,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8448,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8449,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8450,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8451,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8452,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8453,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8454,
@@ -21457,19 +21449,19 @@
   },
   {
     "id": 8473,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8474,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8475,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8476,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8477,
@@ -21525,27 +21517,27 @@
   },
   {
     "id": 8490,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8491,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8492,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8493,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8494,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8495,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8496,
@@ -21625,43 +21617,43 @@
   },
   {
     "id": 8515,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8516,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8517,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8518,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8519,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8520,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8521,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8522,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8523,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8524,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 8525,
@@ -22317,7 +22309,7 @@
   },
   {
     "id": 8699,
-    "examine": "why not wash your hands?"
+    "examine": " why not wash your hands?"
   },
   {
     "id": 8700,
@@ -22369,15 +22361,15 @@
   },
   {
     "id": 8731,
-    "examine": "it should close around anything that trips the trigger string."
+    "examine": " it should close around anything that trips the trigger string."
   },
   {
     "id": 8732,
-    "examine": "probably quite flexible."
+    "examine": " probably quite flexible."
   },
   {
     "id": 8733,
-    "examine": "probably quite flexible."
+    "examine": " probably quite flexible."
   },
   {
     "id": 8734,
@@ -22665,7 +22657,7 @@
   },
   {
     "id": 8843,
-    "examine": "nice juicy apples!"
+    "examine": " nice juicy apples!"
   },
   {
     "id": 8844,
@@ -22853,7 +22845,7 @@
   },
   {
     "id": 8912,
-    "examine": "contents unknown."
+    "examine": " contents unknown."
   },
   {
     "id": 8913,
@@ -22973,7 +22965,7 @@
   },
   {
     "id": 8967,
-    "examine": "propped shut with a support."
+    "examine": " propped shut with a support."
   },
   {
     "id": 8968,
@@ -23033,15 +23025,15 @@
   },
   {
     "id": 8990,
-    "examine": "probably quite flexible."
+    "examine": " probably quite flexible."
   },
   {
     "id": 8991,
-    "examine": "probably quite flexible."
+    "examine": " probably quite flexible."
   },
   {
     "id": 8992,
-    "examine": "it should close around anything that trips the trigger string."
+    "examine": " it should close around anything that trips the trigger string."
   },
   {
     "id": 8993,
@@ -23073,15 +23065,15 @@
   },
   {
     "id": 9000,
-    "examine": "probably quite flexible."
+    "examine": " probably quite flexible."
   },
   {
     "id": 9001,
-    "examine": "probably quite flexible."
+    "examine": " probably quite flexible."
   },
   {
     "id": 9002,
-    "examine": "it should close around anything that trips the trigger string."
+    "examine": " it should close around anything that trips the trigger string."
   },
   {
     "id": 9003,
@@ -23225,11 +23217,11 @@
   },
   {
     "id": 9038,
-    "examine": "sturdy wooden doors."
+    "examine": " sturdy wooden doors."
   },
   {
     "id": 9039,
-    "examine": "sturdy wooden doors."
+    "examine": " sturdy wooden doors."
   },
   {
     "id": 9043,
@@ -23445,7 +23437,7 @@
   },
   {
     "id": 9103,
-    "examine": "quick!"
+    "examine": " quick!"
   },
   {
     "id": 9104,
@@ -23453,7 +23445,7 @@
   },
   {
     "id": 9105,
-    "examine": "quick!"
+    "examine": " quick!"
   },
   {
     "id": 9106,
@@ -23477,7 +23469,7 @@
   },
   {
     "id": 9117,
-    "examine": "fix them!"
+    "examine": " fix them!"
   },
   {
     "id": 9120,
@@ -23485,7 +23477,7 @@
   },
   {
     "id": 9121,
-    "examine": "fix them!"
+    "examine": " fix them!"
   },
   {
     "id": 9123,
@@ -23969,7 +23961,7 @@
   },
   {
     "id": 9325,
-    "examine": "they've drawn their daddies."
+    "examine": " they've drawn their daddies."
   },
   {
     "id": 9326,
@@ -24025,15 +24017,15 @@
   },
   {
     "id": 9341,
-    "examine": "probably quite flexible."
+    "examine": " probably quite flexible."
   },
   {
     "id": 9342,
-    "examine": "probably quite flexible."
+    "examine": " probably quite flexible."
   },
   {
     "id": 9343,
-    "examine": "it should close around anything that trips the trigger string."
+    "examine": " it should close around anything that trips the trigger string."
   },
   {
     "id": 9344,
@@ -24153,11 +24145,11 @@
   },
   {
     "id": 9380,
-    "examine": "the box should then slam shut."
+    "examine": " the box should then slam shut."
   },
   {
     "id": 9381,
-    "examine": "the box should then slam shut."
+    "examine": " the box should then slam shut."
   },
   {
     "id": 9382,
@@ -24177,51 +24169,51 @@
   },
   {
     "id": 9386,
-    "examine": "the box should then slam shut."
+    "examine": " the box should then slam shut."
   },
   {
     "id": 9387,
-    "examine": "the box should then slam shut."
+    "examine": " the box should then slam shut."
   },
   {
     "id": 9388,
-    "examine": "the box should then slam shut."
+    "examine": " the box should then slam shut."
   },
   {
     "id": 9389,
-    "examine": "the box should then slam shut."
+    "examine": " the box should then slam shut."
   },
   {
     "id": 9390,
-    "examine": "the box should then slam shut."
+    "examine": " the box should then slam shut."
   },
   {
     "id": 9391,
-    "examine": "the box should then slam shut."
+    "examine": " the box should then slam shut."
   },
   {
     "id": 9392,
-    "examine": "the box should then slam shut."
+    "examine": " the box should then slam shut."
   },
   {
     "id": 9393,
-    "examine": "the box should then slam shut."
+    "examine": " the box should then slam shut."
   },
   {
     "id": 9394,
-    "examine": "the box should then slam shut."
+    "examine": " the box should then slam shut."
   },
   {
     "id": 9395,
-    "examine": "the box should then slam shut."
+    "examine": " the box should then slam shut."
   },
   {
     "id": 9396,
-    "examine": "the box should then slam shut."
+    "examine": " the box should then slam shut."
   },
   {
     "id": 9397,
-    "examine": "the box should then slam shut."
+    "examine": " the box should then slam shut."
   },
   {
     "id": 9398,
@@ -24245,19 +24237,19 @@
   },
   {
     "id": 9404,
-    "examine": "I say Poh-tar-to."
+    "examine": " I say Poh-tar-to."
   },
   {
     "id": 9405,
-    "examine": "I say Poh-tar-to."
+    "examine": " I say Poh-tar-to."
   },
   {
     "id": 9406,
-    "examine": "I say Poh-tar-to."
+    "examine": " I say Poh-tar-to."
   },
   {
     "id": 9407,
-    "examine": "I say Poh-tar-to."
+    "examine": " I say Poh-tar-to."
   },
   {
     "id": 9408,
@@ -24293,7 +24285,7 @@
   },
   {
     "id": 9437,
-    "examine": "it's not made."
+    "examine": " it's not made."
   },
   {
     "id": 9438,
@@ -24333,7 +24325,7 @@
   },
   {
     "id": 9498,
-    "examine": "suitable for sandy soil."
+    "examine": " suitable for sandy soil."
   },
   {
     "id": 9499,
@@ -24397,7 +24389,7 @@
   },
   {
     "id": 9525,
-    "examine": "wooden suspension. A beauty."
+    "examine": " wooden suspension. A beauty."
   },
   {
     "id": 9526,
@@ -24685,7 +24677,7 @@
   },
   {
     "id": 9694,
-    "examine": "how nice."
+    "examine": " how nice."
   },
   {
     "id": 9695,
@@ -24825,19 +24817,19 @@
   },
   {
     "id": 9730,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 9731,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 9732,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 9733,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 9734,
@@ -25241,7 +25233,7 @@
   },
   {
     "id": 9992,
-    "examine": "oh so bright!"
+    "examine": " oh so bright!"
   },
   {
     "id": 9993,
@@ -25457,7 +25449,7 @@
   },
   {
     "id": 10058,
-    "examine": "but the draughts don't help very much."
+    "examine": " but the draughts don't help very much."
   },
   {
     "id": 10060,
@@ -25513,15 +25505,15 @@
   },
   {
     "id": 10087,
-    "examine": "just infinitely more sinister..."
+    "examine": " just infinitely more sinister..."
   },
   {
     "id": 10088,
-    "examine": "just infinitely more sinister..."
+    "examine": " just infinitely more sinister..."
   },
   {
     "id": 10089,
-    "examine": "just infinitely more sinister..."
+    "examine": " just infinitely more sinister..."
   },
   {
     "id": 10090,
@@ -25557,7 +25549,7 @@
   },
   {
     "id": 10103,
-    "examine": "wrecked and infertile."
+    "examine": " wrecked and infertile."
   },
   {
     "id": 10105,
@@ -25597,7 +25589,7 @@
   },
   {
     "id": 10143,
-    "examine": "possessed control panel."
+    "examine": " possessed control panel."
   },
   {
     "id": 10144,
@@ -25625,7 +25617,7 @@
   },
   {
     "id": 10158,
-    "examine": "barrel-shaped."
+    "examine": " barrel-shaped."
   },
   {
     "id": 10159,
@@ -25709,151 +25701,151 @@
   },
   {
     "id": 10193,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10194,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10195,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10196,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10197,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10198,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10199,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10200,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10201,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10202,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10203,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10204,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10205,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10206,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10207,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10208,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10209,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10210,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10211,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10212,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10213,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10214,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10215,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10216,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10217,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10218,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10219,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10220,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10221,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10222,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10223,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10224,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10225,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10226,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10227,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10228,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10229,
-    "examine": "for climbing up and down."
+    "examine": " for climbing up and down."
   },
   {
     "id": 10237,
@@ -26045,7 +26037,7 @@
   },
   {
     "id": 10295,
-    "examine": "I could do with a drink..."
+    "examine": " I could do with a drink..."
   },
   {
     "id": 10296,
@@ -26265,7 +26257,7 @@
   },
   {
     "id": 10371,
-    "examine": "probably for storing things."
+    "examine": " probably for storing things."
   },
   {
     "id": 10374,
@@ -26469,7 +26461,7 @@
   },
   {
     "id": 10457,
-    "examine": "with his supply of water."
+    "examine": " with his supply of water."
   },
   {
     "id": 10458,
@@ -26813,79 +26805,79 @@
   },
   {
     "id": 10607,
-    "examine": "the open lock is painted brown."
+    "examine": " the open lock is painted brown."
   },
   {
     "id": 10608,
-    "examine": "the open lock is painted crimson."
+    "examine": " the open lock is painted crimson."
   },
   {
     "id": 10609,
-    "examine": "the open lock is painted black."
+    "examine": " the open lock is painted black."
   },
   {
     "id": 10610,
-    "examine": "the open lock is painted purple."
+    "examine": " the open lock is painted purple."
   },
   {
     "id": 10611,
-    "examine": "open the lock is painted blood red."
+    "examine": " open the lock is painted blood red."
   },
   {
     "id": 10612,
-    "examine": "the open lock is painted brown."
+    "examine": " the open lock is painted brown."
   },
   {
     "id": 10613,
-    "examine": "the open lock is painted crimson."
+    "examine": " the open lock is painted crimson."
   },
   {
     "id": 10614,
-    "examine": "the open lock is painted black."
+    "examine": " the open lock is painted black."
   },
   {
     "id": 10615,
-    "examine": "the open lock is painted purple."
+    "examine": " the open lock is painted purple."
   },
   {
     "id": 10616,
-    "examine": "the open lock is painted blood red."
+    "examine": " the open lock is painted blood red."
   },
   {
     "id": 10617,
-    "examine": "the open lock is painted brown."
+    "examine": " the open lock is painted brown."
   },
   {
     "id": 10618,
-    "examine": "the open lock is painted crimson."
+    "examine": " the open lock is painted crimson."
   },
   {
     "id": 10619,
-    "examine": "the open lock is painted black."
+    "examine": " the open lock is painted black."
   },
   {
     "id": 10620,
-    "examine": "the open lock is painted purple."
+    "examine": " the open lock is painted purple."
   },
   {
     "id": 10621,
-    "examine": "the open lock is painted blood red."
+    "examine": " the open lock is painted blood red."
   },
   {
     "id": 10622,
-    "examine": "the open lock is painted brown."
+    "examine": " the open lock is painted brown."
   },
   {
     "id": 10623,
-    "examine": "the open lock is painted crimson."
+    "examine": " the open lock is painted crimson."
   },
   {
     "id": 10624,
-    "examine": "the open lock is painted black."
+    "examine": " the open lock is painted black."
   },
   {
     "id": 10625,
-    "examine": "the open lock is painted purple."
+    "examine": " the open lock is painted purple."
   },
   {
     "id": 10639,
@@ -26965,7 +26957,7 @@
   },
   {
     "id": 10733,
-    "examine": "I wonder where it goes?"
+    "examine": " I wonder where it goes?"
   },
   {
     "id": 10734,
@@ -27045,19 +27037,19 @@
   },
   {
     "id": 10756,
-    "examine": "I must be welcome."
+    "examine": " I must be welcome."
   },
   {
     "id": 10757,
-    "examine": "I must be welcome."
+    "examine": " I must be welcome."
   },
   {
     "id": 10758,
-    "examine": "I must be welcome."
+    "examine": " I must be welcome."
   },
   {
     "id": 10759,
-    "examine": "I must be welcome."
+    "examine": " I must be welcome."
   },
   {
     "id": 10760,
@@ -27533,19 +27525,19 @@
   },
   {
     "id": 10982,
-    "examine": "right arm and left leg."
+    "examine": " right arm and left leg."
   },
   {
     "id": 10983,
-    "examine": "right arm and right leg."
+    "examine": " right arm and right leg."
   },
   {
     "id": 10984,
-    "examine": "left leg and right leg."
+    "examine": " left leg and right leg."
   },
   {
     "id": 10985,
-    "examine": "left leg and right leg."
+    "examine": " left leg and right leg."
   },
   {
     "id": 10986,
@@ -27601,23 +27593,23 @@
   },
   {
     "id": 11000,
-    "examine": "shadow and smoke globes are lit."
+    "examine": " shadow and smoke globes are lit."
   },
   {
     "id": 11001,
-    "examine": "shadow and smoke globes are lit."
+    "examine": " shadow and smoke globes are lit."
   },
   {
     "id": 11002,
-    "examine": "ice and smoke globes are lit."
+    "examine": " ice and smoke globes are lit."
   },
   {
     "id": 11003,
-    "examine": "ice and shadow globes are lit."
+    "examine": " ice and shadow globes are lit."
   },
   {
     "id": 11004,
-    "examine": "smoke - are lit."
+    "examine": " smoke - are lit."
   },
   {
     "id": 11005,
@@ -27873,7 +27865,7 @@
   },
   {
     "id": 11113,
-    "examine": "void of life."
+    "examine": " void of life."
   },
   {
     "id": 11129,
@@ -27909,7 +27901,7 @@
   },
   {
     "id": 11166,
-    "examine": "but it gets bigger."
+    "examine": " but it gets bigger."
   },
   {
     "id": 11168,
@@ -28405,7 +28397,7 @@
   },
   {
     "id": 11356,
-    "examine": "A gateway back to GodzHell."
+    "examine": "A gateway back to Gielinor."
   },
   {
     "id": 11357,
@@ -28557,7 +28549,7 @@
   },
   {
     "id": 11398,
-    "examine": "all that is and space for all that will be."
+    "examine": " all that is and space for all that will be."
   },
   {
     "id": 11399,
@@ -28569,7 +28561,7 @@
   },
   {
     "id": 11401,
-    "examine": "cruelly slashed in half."
+    "examine": " cruelly slashed in half."
   },
   {
     "id": 11402,
@@ -28625,7 +28617,7 @@
   },
   {
     "id": 11418,
-    "examine": "but this mud looks disturbed."
+    "examine": " but this mud looks disturbed."
   },
   {
     "id": 11419,
@@ -28765,7 +28757,7 @@
   },
   {
     "id": 11469,
-    "examine": "its eyes look everywhere in the room except at you."
+    "examine": " its eyes look everywhere in the room except at you."
   },
   {
     "id": 11470,
@@ -29081,7 +29073,7 @@
   },
   {
     "id": 11655,
-    "examine": "probably ketchup...?"
+    "examine": " probably ketchup...?"
   },
   {
     "id": 11657,
@@ -29541,7 +29533,7 @@
   },
   {
     "id": 11808,
-    "examine": "becomes better with age."
+    "examine": " becomes better with age."
   },
   {
     "id": 11809,
@@ -29597,7 +29589,7 @@
   },
   {
     "id": 11862,
-    "examine": "but too small for humans."
+    "examine": " but too small for humans."
   },
   {
     "id": 11863,
@@ -29884,6 +29876,10 @@
     "examine": "It faintly glimmers."
   },
   {
+    "id": 12011,
+    "examine": "It faintly glimmers."
+  },
+  {
     "id": 12012,
     "examine": "It faintly glimmers."
   },
@@ -30085,79 +30081,79 @@
   },
   {
     "id": 12070,
-    "examine": "blue and magic!"
+    "examine": " blue and magic!"
   },
   {
     "id": 12071,
-    "examine": "blue and magic!"
+    "examine": " blue and magic!"
   },
   {
     "id": 12072,
-    "examine": "blue and magic!"
+    "examine": " blue and magic!"
   },
   {
     "id": 12073,
-    "examine": "blue and magic!"
+    "examine": " blue and magic!"
   },
   {
     "id": 12074,
-    "examine": "blue and magic!"
+    "examine": " blue and magic!"
   },
   {
     "id": 12075,
-    "examine": "blue and magic!"
+    "examine": " blue and magic!"
   },
   {
     "id": 12076,
-    "examine": "blue and magic!"
+    "examine": " blue and magic!"
   },
   {
     "id": 12077,
-    "examine": "blue and magic!"
+    "examine": " blue and magic!"
   },
   {
     "id": 12078,
-    "examine": "blue and magic!"
+    "examine": " blue and magic!"
   },
   {
     "id": 12079,
-    "examine": "blue and magic!"
+    "examine": " blue and magic!"
   },
   {
     "id": 12080,
-    "examine": "blue and magic!"
+    "examine": " blue and magic!"
   },
   {
     "id": 12081,
-    "examine": "blue and magic!"
+    "examine": " blue and magic!"
   },
   {
     "id": 12082,
-    "examine": "blue and magic!"
+    "examine": " blue and magic!"
   },
   {
     "id": 12083,
-    "examine": "blue and magic!"
+    "examine": " blue and magic!"
   },
   {
     "id": 12084,
-    "examine": "blue and magic!"
+    "examine": " blue and magic!"
   },
   {
     "id": 12085,
-    "examine": "blue and magic!"
+    "examine": " blue and magic!"
   },
   {
     "id": 12086,
-    "examine": "blue and magic!"
+    "examine": " blue and magic!"
   },
   {
     "id": 12087,
-    "examine": "blue and magic!"
+    "examine": " blue and magic!"
   },
   {
     "id": 12088,
-    "examine": "blue and magic!!"
+    "examine": " blue and magic!!"
   },
   {
     "id": 12089,
@@ -30265,7 +30261,7 @@
   },
   {
     "id": 12125,
-    "examine": "so we swung him from the gallows high."
+    "examine": " so we swung him from the gallows high."
   },
   {
     "id": 12128,
@@ -30385,7 +30381,7 @@
   },
   {
     "id": 12201,
-    "examine": "it is not safe to climb down."
+    "examine": " it is not safe to climb down."
   },
   {
     "id": 12202,
@@ -30425,11 +30421,11 @@
   },
   {
     "id": 12245,
-    "examine": "I knew him backwards."
+    "examine": " I knew him backwards."
   },
   {
     "id": 12246,
-    "examine": "skinny."
+    "examine": " skinny."
   },
   {
     "id": 12247,
@@ -30745,11 +30741,11 @@
   },
   {
     "id": 12399,
-    "examine": "apart from the explosion debris covering everything now."
+    "examine": " apart from the explosion debris covering everything now."
   },
   {
     "id": 12400,
-    "examine": "even for a cauldron."
+    "examine": " even for a cauldron."
   },
   {
     "id": 12401,
@@ -30793,11 +30789,11 @@
   },
   {
     "id": 12411,
-    "examine": "soot flavoured sauce. Lovely!"
+    "examine": " soot flavoured sauce. Lovely!"
   },
   {
     "id": 12412,
-    "examine": "it's just sitting there."
+    "examine": " it's just sitting there."
   },
   {
     "id": 12413,
@@ -30933,19 +30929,19 @@
   },
   {
     "id": 12460,
-    "examine": "where will it lead?"
+    "examine": " where will it lead?"
   },
   {
     "id": 12461,
-    "examine": "where will it lead?"
+    "examine": " where will it lead?"
   },
   {
     "id": 12462,
-    "examine": "leading me to another underwater adventure."
+    "examine": " leading me to another underwater adventure."
   },
   {
     "id": 12463,
-    "examine": "leading me to another underwater adventure."
+    "examine": " leading me to another underwater adventure."
   },
   {
     "id": 12464,
@@ -30957,11 +30953,11 @@
   },
   {
     "id": 12467,
-    "examine": "a wonderful example of ze underwater craftsmanship."
+    "examine": " a wonderful example of ze underwater craftsmanship."
   },
   {
     "id": 12468,
-    "examine": "a wonderful example of ze underwater craftsmanship."
+    "examine": " a wonderful example of ze underwater craftsmanship."
   },
   {
     "id": 12474,
@@ -30973,7 +30969,7 @@
   },
   {
     "id": 12476,
-    "examine": "linking me with zis underwater paradise."
+    "examine": " linking me with zis underwater paradise."
   },
   {
     "id": 12477,
@@ -31253,15 +31249,15 @@
   },
   {
     "id": 12552,
-    "examine": "pushed over by Rantz."
+    "examine": " pushed over by Rantz."
   },
   {
     "id": 12553,
-    "examine": "with the roots cut off."
+    "examine": " with the roots cut off."
   },
   {
     "id": 12554,
-    "examine": "made from an old tree."
+    "examine": " made from an old tree."
   },
   {
     "id": 12555,
@@ -31385,7 +31381,7 @@
   },
   {
     "id": 12590,
-    "examine": "even though it may look like they are!"
+    "examine": " even though it may look like they are!"
   },
   {
     "id": 12591,
@@ -31421,7 +31417,7 @@
   },
   {
     "id": 12612,
-    "examine": "suitable for casual meals."
+    "examine": " suitable for casual meals."
   },
   {
     "id": 12617,
@@ -31453,7 +31449,7 @@
   },
   {
     "id": 12658,
-    "examine": "now open."
+    "examine": " now open."
   },
   {
     "id": 12659,
@@ -31565,7 +31561,7 @@
   },
   {
     "id": 12747,
-    "examine": "probably from the fallen down building which surrounds you."
+    "examine": " probably from the fallen down building which surrounds you."
   },
   {
     "id": 12748,
@@ -31633,7 +31629,7 @@
   },
   {
     "id": 12776,
-    "examine": "perhaps you can jump it?"
+    "examine": " perhaps you can jump it?"
   },
   {
     "id": 12777,
@@ -31713,7 +31709,7 @@
   },
   {
     "id": 12807,
-    "examine": "but it has no fuel."
+    "examine": " but it has no fuel."
   },
   {
     "id": 12808,
@@ -31721,19 +31717,19 @@
   },
   {
     "id": 12809,
-    "examine": "hot and ready for action."
+    "examine": " hot and ready for action."
   },
   {
     "id": 12812,
-    "examine": "with bits of rock in it. Not easy to move."
+    "examine": " with bits of rock in it. Not easy to move."
   },
   {
     "id": 12813,
-    "examine": "with bits of rock in it. Slightly broken up but not easy to move."
+    "examine": " with bits of rock in it. Slightly broken up but not easy to move."
   },
   {
     "id": 12814,
-    "examine": "with bits of rock in it. Partially broken up but not easy to move."
+    "examine": " with bits of rock in it. Partially broken up but not easy to move."
   },
   {
     "id": 12815,
@@ -31773,7 +31769,7 @@
   },
   {
     "id": 12857,
-    "examine": "I wasn't thirsty anyway."
+    "examine": " I wasn't thirsty anyway."
   },
   {
     "id": 12872,
@@ -31953,7 +31949,7 @@
   },
   {
     "id": 12974,
-    "examine": "why not wash your hands?"
+    "examine": " why not wash your hands?"
   },
   {
     "id": 12975,
@@ -32493,7 +32489,7 @@
   },
   {
     "id": 13215,
-    "examine": "what a gush of euphony voluminously wells!"
+    "examine": " what a gush of euphony voluminously wells!"
   },
   {
     "id": 13216,
@@ -32725,7 +32721,7 @@
   },
   {
     "id": 13273,
-    "examine": "Lord of Light."
+    "examine": " Lord of Light."
   },
   {
     "id": 13274,
@@ -32737,7 +32733,7 @@
   },
   {
     "id": 13276,
-    "examine": "Lord of Balance."
+    "examine": " Lord of Balance."
   },
   {
     "id": 13277,
@@ -32749,7 +32745,7 @@
   },
   {
     "id": 13279,
-    "examine": "Lord of Chaos."
+    "examine": " Lord of Chaos."
   },
   {
     "id": 13280,
@@ -32761,7 +32757,7 @@
   },
   {
     "id": 13282,
-    "examine": "Lord of Cats."
+    "examine": " Lord of Cats."
   },
   {
     "id": 13283,
@@ -32829,7 +32825,7 @@
   },
   {
     "id": 13299,
-    "examine": "ooh."
+    "examine": " ooh."
   },
   {
     "id": 13300,
@@ -32877,7 +32873,7 @@
   },
   {
     "id": 13311,
-    "examine": "it's just for show."
+    "examine": " it's just for show."
   },
   {
     "id": 13312,
@@ -33417,11 +33413,11 @@
   },
   {
     "id": 13508,
-    "examine": "Chaos and Nature runes made by a skilled runecrafter."
+    "examine": " Chaos and Nature runes made by a skilled runecrafter."
   },
   {
     "id": 13509,
-    "examine": "Soul and Death runes made by a great runecrafter."
+    "examine": " Soul and Death runes made by a great runecrafter."
   },
   {
     "id": 13510,
@@ -33477,7 +33473,7 @@
   },
   {
     "id": 13523,
-    "examine": "symbol of a member of the Heroes' Guild."
+    "examine": " symbol of a member of the Heroes' Guild."
   },
   {
     "id": 13524,
@@ -33489,11 +33485,11 @@
   },
   {
     "id": 13526,
-    "examine": "A map of GodzHell."
+    "examine": "A map of Gielinor."
   },
   {
     "id": 13527,
-    "examine": "A map of GodzHell including major cave systems."
+    "examine": "A map of Gielinor including major cave systems."
   },
   {
     "id": 13528,
@@ -33781,11 +33777,11 @@
   },
   {
     "id": 13603,
-    "examine": "this barrel smells more strongly of rum than of fish."
+    "examine": " this barrel smells more strongly of rum than of fish."
   },
   {
     "id": 13604,
-    "examine": "I hope they clean them later!"
+    "examine": " I hope they clean them later!"
   },
   {
     "id": 13605,
@@ -33961,11 +33957,11 @@
   },
   {
     "id": 13662,
-    "examine": "you can't see it."
+    "examine": " you can't see it."
   },
   {
     "id": 13663,
-    "examine": "you can see them here!"
+    "examine": " you can see them here!"
   },
   {
     "id": 13664,
@@ -34581,11 +34577,11 @@
   },
   {
     "id": 13838,
-    "examine": "muddy bog..."
+    "examine": " muddy bog..."
   },
   {
     "id": 13839,
-    "examine": "muddy bog..."
+    "examine": " muddy bog..."
   },
   {
     "id": 13840,
@@ -34989,27 +34985,27 @@
   },
   {
     "id": 13993,
-    "examine": "pointy things!"
+    "examine": " pointy things!"
   },
   {
     "id": 13994,
-    "examine": "pointy things!"
+    "examine": " pointy things!"
   },
   {
     "id": 13995,
-    "examine": "pointy things!"
+    "examine": " pointy things!"
   },
   {
     "id": 13996,
-    "examine": "pointy things!"
+    "examine": " pointy things!"
   },
   {
     "id": 13997,
-    "examine": "pointy things!"
+    "examine": " pointy things!"
   },
   {
     "id": 13998,
-    "examine": "pointy things!"
+    "examine": " pointy things!"
   },
   {
     "id": 13999,
@@ -35033,7 +35029,7 @@
   },
   {
     "id": 14005,
-    "examine": "now to get something to boil."
+    "examine": " now to get something to boil."
   },
   {
     "id": 14006,
@@ -35045,7 +35041,7 @@
   },
   {
     "id": 14008,
-    "examine": "very bad..."
+    "examine": " very bad..."
   },
   {
     "id": 14009,
@@ -35077,7 +35073,7 @@
   },
   {
     "id": 14016,
-    "examine": "everybody needs a hobby."
+    "examine": " everybody needs a hobby."
   },
   {
     "id": 14017,
@@ -35097,7 +35093,7 @@
   },
   {
     "id": 14021,
-    "examine": "small ancient beastie gone splat."
+    "examine": " small ancient beastie gone splat."
   },
   {
     "id": 14022,
@@ -35109,7 +35105,7 @@
   },
   {
     "id": 14024,
-    "examine": "but it evidently wasn't tough enough."
+    "examine": " but it evidently wasn't tough enough."
   },
   {
     "id": 14025,
@@ -35385,15 +35381,15 @@
   },
   {
     "id": 14193,
-    "examine": "founder of Great Kourend."
+    "examine": " founder of Great Kourend."
   },
   {
     "id": 14194,
-    "examine": "founder of Great Kourend."
+    "examine": " founder of Great Kourend."
   },
   {
     "id": 14195,
-    "examine": "founder of Great Kourend."
+    "examine": " founder of Great Kourend."
   },
   {
     "id": 14196,
@@ -35693,7 +35689,7 @@
   },
   {
     "id": 14308,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 14309,
@@ -36105,35 +36101,35 @@
   },
   {
     "id": 14504,
-    "examine": "Wilderness up ahead. Last chance to turn back..."
+    "examine": " Wilderness up ahead. Last chance to turn back..."
   },
   {
     "id": 14505,
-    "examine": "Wilderness up ahead. Watch out for the Beast!"
+    "examine": " Wilderness up ahead. Watch out for the Beast!"
   },
   {
     "id": 14506,
-    "examine": "Wilderness up ahead. Beware of stray magma."
+    "examine": " Wilderness up ahead. Beware of stray magma."
   },
   {
     "id": 14507,
-    "examine": "Wilderness up ahead. Almost certain death!"
+    "examine": " Wilderness up ahead. Almost certain death!"
   },
   {
     "id": 14508,
-    "examine": "Fency!"
+    "examine": " Fency!"
   },
   {
     "id": 14509,
-    "examine": "Fency!"
+    "examine": " Fency!"
   },
   {
     "id": 14510,
-    "examine": "Fency!"
+    "examine": " Fency!"
   },
   {
     "id": 14511,
-    "examine": "Fency!"
+    "examine": " Fency!"
   },
   {
     "id": 14513,
@@ -36941,7 +36937,7 @@
   },
   {
     "id": 14740,
-    "examine": "it probably isn't healthy."
+    "examine": " it probably isn't healthy."
   },
   {
     "id": 14741,
@@ -37225,7 +37221,7 @@
   },
   {
     "id": 14846,
-    "examine": "more jumpy!"
+    "examine": " more jumpy!"
   },
   {
     "id": 14847,
@@ -37313,7 +37309,7 @@
   },
   {
     "id": 14868,
-    "examine": "why not wash your hands?"
+    "examine": " why not wash your hands?"
   },
   {
     "id": 14869,
@@ -37429,7 +37425,7 @@
   },
   {
     "id": 14911,
-    "examine": "right?"
+    "examine": " right?"
   },
   {
     "id": 14914,
@@ -37441,11 +37437,11 @@
   },
   {
     "id": 14916,
-    "examine": "unfortunately not working."
+    "examine": " unfortunately not working."
   },
   {
     "id": 14917,
-    "examine": "hop off."
+    "examine": " hop off."
   },
   {
     "id": 14918,
@@ -37481,7 +37477,7 @@
   },
   {
     "id": 14926,
-    "examine": "The Bank of GodzHell."
+    "examine": "The Bank of Gielinor."
   },
   {
     "id": 14927,
@@ -37513,7 +37509,7 @@
   },
   {
     "id": 14935,
-    "examine": "you could climb on this momentarily."
+    "examine": " you could climb on this momentarily."
   },
   {
     "id": 14936,
@@ -37541,7 +37537,7 @@
   },
   {
     "id": 14944,
-    "examine": "for you tread on my fronds."
+    "examine": " for you tread on my fronds."
   },
   {
     "id": 14945,
@@ -37621,7 +37617,7 @@
   },
   {
     "id": 14994,
-    "examine": "soft pile of fish."
+    "examine": " soft pile of fish."
   },
   {
     "id": 14995,
@@ -37857,7 +37853,7 @@
   },
   {
     "id": 15103,
-    "examine": "I could do with a drink..."
+    "examine": " I could do with a drink..."
   },
   {
     "id": 15104,
@@ -39049,7 +39045,7 @@
   },
   {
     "id": 15471,
-    "examine": "but the fish arn't moving."
+    "examine": " but the fish arn't moving."
   },
   {
     "id": 15472,
@@ -39069,7 +39065,7 @@
   },
   {
     "id": 15476,
-    "examine": "but dead."
+    "examine": " but dead."
   },
   {
     "id": 15477,
@@ -39265,7 +39261,7 @@
   },
   {
     "id": 15548,
-    "examine": "what's it doing?"
+    "examine": " what's it doing?"
   },
   {
     "id": 15549,
@@ -39273,7 +39269,7 @@
   },
   {
     "id": 15550,
-    "examine": "what's it doing?"
+    "examine": " what's it doing?"
   },
   {
     "id": 15551,
@@ -39281,7 +39277,7 @@
   },
   {
     "id": 15559,
-    "examine": "what's it doing?"
+    "examine": " what's it doing?"
   },
   {
     "id": 15560,
@@ -39377,7 +39373,7 @@
   },
   {
     "id": 15600,
-    "examine": "contents unknown."
+    "examine": " contents unknown."
   },
   {
     "id": 15601,
@@ -39513,19 +39509,19 @@
   },
   {
     "id": 15658,
-    "examine": "man."
+    "examine": " man."
   },
   {
     "id": 15659,
-    "examine": "man."
+    "examine": " man."
   },
   {
     "id": 15660,
-    "examine": "man."
+    "examine": " man."
   },
   {
     "id": 15661,
-    "examine": "man."
+    "examine": " man."
   },
   {
     "id": 15662,
@@ -39661,7 +39657,7 @@
   },
   {
     "id": 15709,
-    "examine": "poor Zanik."
+    "examine": " poor Zanik."
   },
   {
     "id": 15711,
@@ -39905,23 +39901,23 @@
   },
   {
     "id": 15840,
-    "examine": "then you could brew rum."
+    "examine": " then you could brew rum."
   },
   {
     "id": 15841,
-    "examine": "then you could brew rum."
+    "examine": " then you could brew rum."
   },
   {
     "id": 15842,
-    "examine": "then you could brew rum."
+    "examine": " then you could brew rum."
   },
   {
     "id": 15843,
-    "examine": "then you could brew rum."
+    "examine": " then you could brew rum."
   },
   {
     "id": 15844,
-    "examine": "then you could brew rum."
+    "examine": " then you could brew rum."
   },
   {
     "id": 15845,
@@ -39969,11 +39965,11 @@
   },
   {
     "id": 15856,
-    "examine": "troubled water below!"
+    "examine": " troubled water below!"
   },
   {
     "id": 15857,
-    "examine": "troubled water below!"
+    "examine": " troubled water below!"
   },
   {
     "id": 15858,
@@ -40009,23 +40005,23 @@
   },
   {
     "id": 15866,
-    "examine": "then you could brew rum."
+    "examine": " then you could brew rum."
   },
   {
     "id": 15867,
-    "examine": "then you could brew rum."
+    "examine": " then you could brew rum."
   },
   {
     "id": 15868,
-    "examine": "then you could brew rum."
+    "examine": " then you could brew rum."
   },
   {
     "id": 15869,
-    "examine": "then you could brew rum."
+    "examine": " then you could brew rum."
   },
   {
     "id": 15870,
-    "examine": "then you could brew rum."
+    "examine": " then you could brew rum."
   },
   {
     "id": 15871,
@@ -40073,11 +40069,11 @@
   },
   {
     "id": 15882,
-    "examine": "troubled water below!"
+    "examine": " troubled water below!"
   },
   {
     "id": 15883,
-    "examine": "troubled water below!"
+    "examine": " troubled water below!"
   },
   {
     "id": 15884,
@@ -40269,7 +40265,7 @@
   },
   {
     "id": 15933,
-    "examine": "so sad..."
+    "examine": " so sad..."
   },
   {
     "id": 15934,
@@ -40277,7 +40273,7 @@
   },
   {
     "id": 15935,
-    "examine": "full of water. Astonishing!"
+    "examine": " full of water. Astonishing!"
   },
   {
     "id": 15936,
@@ -40289,7 +40285,7 @@
   },
   {
     "id": 15938,
-    "examine": "you can't get water from here."
+    "examine": " you can't get water from here."
   },
   {
     "id": 15939,
@@ -40357,7 +40353,7 @@
   },
   {
     "id": 15955,
-    "examine": "I will get burned."
+    "examine": " I will get burned."
   },
   {
     "id": 15956,
@@ -40417,7 +40413,7 @@
   },
   {
     "id": 15970,
-    "examine": "good for its bark."
+    "examine": " good for its bark."
   },
   {
     "id": 15971,
@@ -40485,7 +40481,7 @@
   },
   {
     "id": 15995,
-    "examine": "looks like Jimmy has some interesting stuff."
+    "examine": " looks like Jimmy has some interesting stuff."
   },
   {
     "id": 15996,
@@ -40493,11 +40489,11 @@
   },
   {
     "id": 15997,
-    "examine": "Fancy Dan's ship."
+    "examine": " Fancy Dan's ship."
   },
   {
     "id": 15998,
-    "examine": "San Fan's ship."
+    "examine": " San Fan's ship."
   },
   {
     "id": 16001,
@@ -40673,7 +40669,7 @@
   },
   {
     "id": 16077,
-    "examine": "hot rock."
+    "examine": " hot rock."
   },
   {
     "id": 16078,
@@ -40681,7 +40677,7 @@
   },
   {
     "id": 16079,
-    "examine": "burnt snake on."
+    "examine": " burnt snake on."
   },
   {
     "id": 16080,
@@ -40833,11 +40829,11 @@
   },
   {
     "id": 16198,
-    "examine": "it's not living."
+    "examine": " it's not living."
   },
   {
     "id": 16199,
-    "examine": "it's not living."
+    "examine": " it's not living."
   },
   {
     "id": 16213,
@@ -40869,7 +40865,7 @@
   },
   {
     "id": 16234,
-    "examine": "fairy injured."
+    "examine": " fairy injured."
   },
   {
     "id": 16235,
@@ -40901,7 +40897,7 @@
   },
   {
     "id": 16242,
-    "examine": "this crutch is discarded too."
+    "examine": " this crutch is discarded too."
   },
   {
     "id": 16244,
@@ -41001,11 +40997,11 @@
   },
   {
     "id": 16273,
-    "examine": "she loves me not."
+    "examine": " she loves me not."
   },
   {
     "id": 16274,
-    "examine": "pretty flowers."
+    "examine": " pretty flowers."
   },
   {
     "id": 16275,
@@ -41028,6 +41024,10 @@
     "examine": "A large bullrush."
   },
   {
+    "id": 16280,
+    "examine": "What do you call a bull in a hurry? A bullrush."
+  },
+  {
     "id": 16281,
     "examine": "A patch of bullrushes."
   },
@@ -41037,7 +41037,7 @@
   },
   {
     "id": 16283,
-    "examine": "but obviously not roll."
+    "examine": " but obviously not roll."
   },
   {
     "id": 16284,
@@ -41045,7 +41045,7 @@
   },
   {
     "id": 16302,
-    "examine": "natural shower."
+    "examine": " natural shower."
   },
   {
     "id": 16303,
@@ -41193,7 +41193,7 @@
   },
   {
     "id": 16494,
-    "examine": "it's a flagpole."
+    "examine": " it's a flagpole."
   },
   {
     "id": 16499,
@@ -41253,7 +41253,7 @@
   },
   {
     "id": 16520,
-    "examine": "which appears to be in the ground."
+    "examine": " which appears to be in the ground."
   },
   {
     "id": 16521,
@@ -41297,7 +41297,7 @@
   },
   {
     "id": 16531,
-    "examine": "but also suspicious."
+    "examine": " but also suspicious."
   },
   {
     "id": 16532,
@@ -41349,7 +41349,7 @@
   },
   {
     "id": 16545,
-    "examine": "so as not to stick out."
+    "examine": " so as not to stick out."
   },
   {
     "id": 16546,
@@ -41373,7 +41373,7 @@
   },
   {
     "id": 16552,
-    "examine": "now it's a little bit vandalised."
+    "examine": " now it's a little bit vandalised."
   },
   {
     "id": 16556,
@@ -41485,7 +41485,7 @@
   },
   {
     "id": 16599,
-    "examine": "all that is and space for all that will be."
+    "examine": " all that is and space for all that will be."
   },
   {
     "id": 16600,
@@ -41585,7 +41585,7 @@
   },
   {
     "id": 16640,
-    "examine": "blowing in the wind."
+    "examine": " blowing in the wind."
   },
   {
     "id": 16641,
@@ -41617,7 +41617,7 @@
   },
   {
     "id": 16648,
-    "examine": "the source of Necrovarus' power."
+    "examine": " the source of Necrovarus' power."
   },
   {
     "id": 16649,
@@ -41785,7 +41785,7 @@
   },
   {
     "id": 16693,
-    "examine": "I'm sad to say."
+    "examine": " I'm sad to say."
   },
   {
     "id": 16694,
@@ -41837,7 +41837,7 @@
   },
   {
     "id": 16708,
-    "examine": "looking fine."
+    "examine": " looking fine."
   },
   {
     "id": 16709,
@@ -41909,7 +41909,7 @@
   },
   {
     "id": 16726,
-    "examine": "possibly made with a stencil."
+    "examine": " possibly made with a stencil."
   },
   {
     "id": 16727,
@@ -42065,11 +42065,11 @@
   },
   {
     "id": 16821,
-    "examine": "she loves me not."
+    "examine": " she loves me not."
   },
   {
     "id": 16822,
-    "examine": "pretty flowers."
+    "examine": " pretty flowers."
   },
   {
     "id": 16827,
@@ -42513,11 +42513,11 @@
   },
   {
     "id": 17000,
-    "examine": "now it's a little bit vandalised."
+    "examine": " now it's a little bit vandalised."
   },
   {
     "id": 17001,
-    "examine": "but also suspicious."
+    "examine": " but also suspicious."
   },
   {
     "id": 17002,
@@ -43049,7 +43049,7 @@
   },
   {
     "id": 17240,
-    "examine": "it's broken."
+    "examine": " it's broken."
   },
   {
     "id": 17241,
@@ -43641,11 +43641,11 @@
   },
   {
     "id": 17430,
-    "examine": "how exciting."
+    "examine": " how exciting."
   },
   {
     "id": 17432,
-    "examine": "seems this leads from the drain in the kitchen."
+    "examine": " seems this leads from the drain in the kitchen."
   },
   {
     "id": 17433,
@@ -45153,15 +45153,15 @@
   },
   {
     "id": 17953,
-    "examine": "it's a sailboat."
+    "examine": " it's a sailboat."
   },
   {
     "id": 17954,
-    "examine": "it's a sailboat."
+    "examine": " it's a sailboat."
   },
   {
     "id": 17955,
-    "examine": "it's a sailboat."
+    "examine": " it's a sailboat."
   },
   {
     "id": 17956,
@@ -45185,7 +45185,7 @@
   },
   {
     "id": 17961,
-    "examine": "it's a sailboat."
+    "examine": " it's a sailboat."
   },
   {
     "id": 17962,
@@ -45353,7 +45353,7 @@
   },
   {
     "id": 18006,
-    "examine": "curiously full of bones which you think came from fish."
+    "examine": " curiously full of bones which you think came from fish."
   },
   {
     "id": 18007,
@@ -45401,7 +45401,7 @@
   },
   {
     "id": 18018,
-    "examine": "dusty pub counter."
+    "examine": " dusty pub counter."
   },
   {
     "id": 18019,
@@ -45445,7 +45445,7 @@
   },
   {
     "id": 18033,
-    "examine": "squeaky floorboards that look moveable."
+    "examine": " squeaky floorboards that look moveable."
   },
   {
     "id": 18034,
@@ -45453,7 +45453,7 @@
   },
   {
     "id": 18035,
-    "examine": "squeaky floorboards that look moveable."
+    "examine": " squeaky floorboards that look moveable."
   },
   {
     "id": 18036,
@@ -45593,19 +45593,19 @@
   },
   {
     "id": 18070,
-    "examine": "rickety floorboards."
+    "examine": " rickety floorboards."
   },
   {
     "id": 18071,
-    "examine": "rickety floorboards."
+    "examine": " rickety floorboards."
   },
   {
     "id": 18072,
-    "examine": "rickety floorboards."
+    "examine": " rickety floorboards."
   },
   {
     "id": 18073,
-    "examine": "rickety floorboards."
+    "examine": " rickety floorboards."
   },
   {
     "id": 18074,
@@ -45617,11 +45617,11 @@
   },
   {
     "id": 18076,
-    "examine": "rickety floorboards."
+    "examine": " rickety floorboards."
   },
   {
     "id": 18077,
-    "examine": "rickety floorboards."
+    "examine": " rickety floorboards."
   },
   {
     "id": 18078,
@@ -45637,11 +45637,11 @@
   },
   {
     "id": 18081,
-    "examine": "rickety floorboards."
+    "examine": " rickety floorboards."
   },
   {
     "id": 18082,
-    "examine": "rickety floorboards."
+    "examine": " rickety floorboards."
   },
   {
     "id": 18085,
@@ -45661,11 +45661,11 @@
   },
   {
     "id": 18089,
-    "examine": "rickety floorboards."
+    "examine": " rickety floorboards."
   },
   {
     "id": 18090,
-    "examine": "rickety floorboards."
+    "examine": " rickety floorboards."
   },
   {
     "id": 18091,
@@ -45677,11 +45677,11 @@
   },
   {
     "id": 18093,
-    "examine": "rickety floorboards."
+    "examine": " rickety floorboards."
   },
   {
     "id": 18094,
-    "examine": "rickety floorboards."
+    "examine": " rickety floorboards."
   },
   {
     "id": 18095,
@@ -45693,11 +45693,11 @@
   },
   {
     "id": 18097,
-    "examine": "rickety floorboards."
+    "examine": " rickety floorboards."
   },
   {
     "id": 18098,
-    "examine": "rickety floorboards."
+    "examine": " rickety floorboards."
   },
   {
     "id": 18099,
@@ -45717,11 +45717,11 @@
   },
   {
     "id": 18103,
-    "examine": "rickety floorboards."
+    "examine": " rickety floorboards."
   },
   {
     "id": 18104,
-    "examine": "rickety floorboards."
+    "examine": " rickety floorboards."
   },
   {
     "id": 18105,
@@ -45741,35 +45741,35 @@
   },
   {
     "id": 18109,
-    "examine": "rickety floorboards."
+    "examine": " rickety floorboards."
   },
   {
     "id": 18110,
-    "examine": "rickety floorboards."
+    "examine": " rickety floorboards."
   },
   {
     "id": 18111,
-    "examine": "rickety floorboards."
+    "examine": " rickety floorboards."
   },
   {
     "id": 18112,
-    "examine": "rickety floorboards."
+    "examine": " rickety floorboards."
   },
   {
     "id": 18113,
-    "examine": "rickety floorboards."
+    "examine": " rickety floorboards."
   },
   {
     "id": 18114,
-    "examine": "rickety floorboards."
+    "examine": " rickety floorboards."
   },
   {
     "id": 18117,
-    "examine": "rickety floorboards."
+    "examine": " rickety floorboards."
   },
   {
     "id": 18118,
-    "examine": "rickety floorboards."
+    "examine": " rickety floorboards."
   },
   {
     "id": 18137,
@@ -45825,7 +45825,7 @@
   },
   {
     "id": 18176,
-    "examine": "sturdy looking table."
+    "examine": " sturdy looking table."
   },
   {
     "id": 18177,
@@ -46005,7 +46005,7 @@
   },
   {
     "id": 18242,
-    "examine": "but well used."
+    "examine": " but well used."
   },
   {
     "id": 18243,
@@ -46389,7 +46389,7 @@
   },
   {
     "id": 18452,
-    "examine": "longboat wreck."
+    "examine": " longboat wreck."
   },
   {
     "id": 18454,
@@ -47317,11 +47317,11 @@
   },
   {
     "id": 18841,
-    "examine": "a dolphin."
+    "examine": " a dolphin."
   },
   {
     "id": 18842,
-    "examine": "a fish."
+    "examine": " a fish."
   },
   {
     "id": 18843,
@@ -47361,7 +47361,7 @@
   },
   {
     "id": 18853,
-    "examine": "but apparently not immortal."
+    "examine": " but apparently not immortal."
   },
   {
     "id": 18854,
@@ -47377,7 +47377,7 @@
   },
   {
     "id": 18864,
-    "examine": "drunken dwarfie gone splat."
+    "examine": " drunken dwarfie gone splat."
   },
   {
     "id": 18865,
@@ -47525,7 +47525,7 @@
   },
   {
     "id": 18907,
-    "examine": "it belongs to Captain Siad."
+    "examine": " it belongs to Captain Siad."
   },
   {
     "id": 18918,
@@ -47557,7 +47557,7 @@
   },
   {
     "id": 18938,
-    "examine": "Not safe for humans."
+    "examine": " Not safe for humans."
   },
   {
     "id": 18946,
@@ -47609,7 +47609,7 @@
   },
   {
     "id": 18960,
-    "examine": "used for pulling carts full of minerals."
+    "examine": " used for pulling carts full of minerals."
   },
   {
     "id": 18961,
@@ -47709,7 +47709,7 @@
   },
   {
     "id": 19005,
-    "examine": "you may take a shortcut here."
+    "examine": " you may take a shortcut here."
   },
   {
     "id": 19025,
@@ -48041,7 +48041,7 @@
   },
   {
     "id": 19125,
-    "examine": "dirt."
+    "examine": " dirt."
   },
   {
     "id": 19126,
@@ -48109,7 +48109,7 @@
   },
   {
     "id": 19165,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 19166,
@@ -48913,7 +48913,7 @@
   },
   {
     "id": 19837,
-    "examine": "curling tendrils of a creeping plant."
+    "examine": " curling tendrils of a creeping plant."
   },
   {
     "id": 19838,
@@ -48929,11 +48929,11 @@
   },
   {
     "id": 19846,
-    "examine": "but it might be possible to climb them anyway."
+    "examine": " but it might be possible to climb them anyway."
   },
   {
     "id": 19847,
-    "examine": "but it might be possible to climb them anyway."
+    "examine": " but it might be possible to climb them anyway."
   },
   {
     "id": 19849,
@@ -48969,11 +48969,11 @@
   },
   {
     "id": 19879,
-    "examine": "as beds go."
+    "examine": " as beds go."
   },
   {
     "id": 19880,
-    "examine": "it could be considered to be a bed."
+    "examine": " it could be considered to be a bed."
   },
   {
     "id": 19881,
@@ -49113,7 +49113,7 @@
   },
   {
     "id": 19930,
-    "examine": "it is now ruined."
+    "examine": " it is now ruined."
   },
   {
     "id": 19931,
@@ -49173,7 +49173,7 @@
   },
   {
     "id": 19945,
-    "examine": "I wonder what that means."
+    "examine": " I wonder what that means."
   },
   {
     "id": 19950,
@@ -49453,11 +49453,11 @@
   },
   {
     "id": 20084,
-    "examine": "which appears to be in the ground."
+    "examine": " which appears to be in the ground."
   },
   {
     "id": 20085,
-    "examine": "which appears to be in the ground."
+    "examine": " which appears to be in the ground."
   },
   {
     "id": 20087,
@@ -49481,7 +49481,7 @@
   },
   {
     "id": 20097,
-    "examine": "a bit of care and this bed is now comfortable!"
+    "examine": " a bit of care and this bed is now comfortable!"
   },
   {
     "id": 20099,
@@ -49849,7 +49849,7 @@
   },
   {
     "id": 20232,
-    "examine": "hot!"
+    "examine": " hot!"
   },
   {
     "id": 20233,
@@ -49861,7 +49861,7 @@
   },
   {
     "id": 20235,
-    "examine": "to be sure!"
+    "examine": " to be sure!"
   },
   {
     "id": 20236,
@@ -50157,7 +50157,7 @@
   },
   {
     "id": 20358,
-    "examine": "why not wash your hands?"
+    "examine": " why not wash your hands?"
   },
   {
     "id": 20359,
@@ -51201,7 +51201,7 @@
   },
   {
     "id": 20786,
-    "examine": "you may take a shortcut through this level."
+    "examine": " you may take a shortcut through this level."
   },
   {
     "id": 20787,
@@ -51241,7 +51241,7 @@
   },
   {
     "id": 20803,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 20804,
@@ -51321,7 +51321,7 @@
   },
   {
     "id": 20828,
-    "examine": "I hope they clean them later!"
+    "examine": " I hope they clean them later!"
   },
   {
     "id": 20829,
@@ -51369,7 +51369,7 @@
   },
   {
     "id": 20844,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 20845,
@@ -51665,7 +51665,7 @@
   },
   {
     "id": 20947,
-    "examine": "no evil ghosts in here..."
+    "examine": " no evil ghosts in here..."
   },
   {
     "id": 20948,
@@ -51745,7 +51745,7 @@
   },
   {
     "id": 21000,
-    "examine": "they try to take over GodzHell!"
+    "examine": " they try to take over Gielinor!"
   },
   {
     "id": 21001,
@@ -52553,31 +52553,31 @@
   },
   {
     "id": 21403,
-    "examine": "sturdy metal door."
+    "examine": " sturdy metal door."
   },
   {
     "id": 21404,
-    "examine": "sturdy metal door."
+    "examine": " sturdy metal door."
   },
   {
     "id": 21405,
-    "examine": "sturdy metal door."
+    "examine": " sturdy metal door."
   },
   {
     "id": 21406,
-    "examine": "sturdy metal door."
+    "examine": " sturdy metal door."
   },
   {
     "id": 21437,
-    "examine": "full of axes."
+    "examine": " full of axes."
   },
   {
     "id": 21438,
-    "examine": "full of swords."
+    "examine": " full of swords."
   },
   {
     "id": 21439,
-    "examine": "displaying swords."
+    "examine": " displaying swords."
   },
   {
     "id": 21440,
@@ -52609,7 +52609,7 @@
   },
   {
     "id": 21447,
-    "examine": "displaying armour."
+    "examine": " displaying armour."
   },
   {
     "id": 21454,
@@ -52677,7 +52677,7 @@
   },
   {
     "id": 21510,
-    "examine": "don't look down."
+    "examine": " don't look down."
   },
   {
     "id": 21511,
@@ -52861,7 +52861,7 @@
   },
   {
     "id": 21600,
-    "examine": "wooden gate."
+    "examine": " wooden gate."
   },
   {
     "id": 21601,
@@ -53165,7 +53165,7 @@
   },
   {
     "id": 21773,
-    "examine": "it has devoured many souls."
+    "examine": " it has devoured many souls."
   },
   {
     "id": 21781,
@@ -53181,7 +53181,7 @@
   },
   {
     "id": 21784,
-    "examine": "it's a chair."
+    "examine": " it's a chair."
   },
   {
     "id": 21785,
@@ -53241,7 +53241,7 @@
   },
   {
     "id": 21828,
-    "examine": "glug."
+    "examine": " glug."
   },
   {
     "id": 21829,
@@ -53461,7 +53461,7 @@
   },
   {
     "id": 21901,
-    "examine": "What on GodzHell is that?"
+    "examine": "What on Gielinor is that?"
   },
   {
     "id": 21902,
@@ -53529,7 +53529,7 @@
   },
   {
     "id": 21918,
-    "examine": "it's magic!"
+    "examine": " it's magic!"
   },
   {
     "id": 21920,
@@ -53573,11 +53573,11 @@
   },
   {
     "id": 21932,
-    "examine": "one size fits all!"
+    "examine": " one size fits all!"
   },
   {
     "id": 21933,
-    "examine": "function unknown."
+    "examine": " function unknown."
   },
   {
     "id": 21934,
@@ -54221,7 +54221,7 @@
   },
   {
     "id": 22420,
-    "examine": "I'll be able to collect it here."
+    "examine": " I'll be able to collect it here."
   },
   {
     "id": 22421,
@@ -54461,7 +54461,7 @@
   },
   {
     "id": 22499,
-    "examine": "if he resembled a human!"
+    "examine": " if he resembled a human!"
   },
   {
     "id": 22500,
@@ -54473,7 +54473,7 @@
   },
   {
     "id": 22502,
-    "examine": "if he resembled a human!"
+    "examine": " if he resembled a human!"
   },
   {
     "id": 22503,
@@ -54489,7 +54489,7 @@
   },
   {
     "id": 22506,
-    "examine": "if he resembled a human!"
+    "examine": " if he resembled a human!"
   },
   {
     "id": 22507,
@@ -54501,7 +54501,7 @@
   },
   {
     "id": 22509,
-    "examine": "if he resembled a human!"
+    "examine": " if he resembled a human!"
   },
   {
     "id": 22510,
@@ -54517,7 +54517,7 @@
   },
   {
     "id": 22513,
-    "examine": "if he resembled a human!"
+    "examine": " if he resembled a human!"
   },
   {
     "id": 22514,
@@ -54529,7 +54529,7 @@
   },
   {
     "id": 22516,
-    "examine": "if he resembled a human!"
+    "examine": " if he resembled a human!"
   },
   {
     "id": 22517,
@@ -54545,7 +54545,7 @@
   },
   {
     "id": 22520,
-    "examine": "if she resembled a human!"
+    "examine": " if she resembled a human!"
   },
   {
     "id": 22521,
@@ -54557,7 +54557,7 @@
   },
   {
     "id": 22523,
-    "examine": "if she resembled a human!"
+    "examine": " if she resembled a human!"
   },
   {
     "id": 22524,
@@ -54573,7 +54573,7 @@
   },
   {
     "id": 22527,
-    "examine": "if she resembled a human!"
+    "examine": " if she resembled a human!"
   },
   {
     "id": 22528,
@@ -54585,7 +54585,7 @@
   },
   {
     "id": 22530,
-    "examine": "if she resembled a human!"
+    "examine": " if she resembled a human!"
   },
   {
     "id": 22531,
@@ -54625,7 +54625,7 @@
   },
   {
     "id": 22549,
-    "examine": "slimy lump of rock."
+    "examine": " slimy lump of rock."
   },
   {
     "id": 22550,
@@ -54701,31 +54701,31 @@
   },
   {
     "id": 22600,
-    "examine": "stone ladder back up to Dorgesh-Kaan."
+    "examine": " stone ladder back up to Dorgesh-Kaan."
   },
   {
     "id": 22601,
-    "examine": "stone ladder back up to Dorgesh-Kaan."
+    "examine": " stone ladder back up to Dorgesh-Kaan."
   },
   {
     "id": 22602,
-    "examine": "stone ladder down to the cave floor."
+    "examine": " stone ladder down to the cave floor."
   },
   {
     "id": 22607,
-    "examine": "metal stairs."
+    "examine": " metal stairs."
   },
   {
     "id": 22608,
-    "examine": "metal stairs."
+    "examine": " metal stairs."
   },
   {
     "id": 22609,
-    "examine": "metal stairs."
+    "examine": " metal stairs."
   },
   {
     "id": 22624,
-    "examine": "dirty boiler."
+    "examine": " dirty boiler."
   },
   {
     "id": 22625,
@@ -54749,15 +54749,15 @@
   },
   {
     "id": 22649,
-    "examine": "but I think they're safe."
+    "examine": " but I think they're safe."
   },
   {
     "id": 22650,
-    "examine": "but I think they're safe."
+    "examine": " but I think they're safe."
   },
   {
     "id": 22651,
-    "examine": "but I think they're safe."
+    "examine": " but I think they're safe."
   },
   {
     "id": 22652,
@@ -54977,19 +54977,19 @@
   },
   {
     "id": 22709,
-    "examine": "carved in stone."
+    "examine": " carved in stone."
   },
   {
     "id": 22710,
-    "examine": "carved in stone."
+    "examine": " carved in stone."
   },
   {
     "id": 22711,
-    "examine": "carved in stone."
+    "examine": " carved in stone."
   },
   {
     "id": 22712,
-    "examine": "carved in stone."
+    "examine": " carved in stone."
   },
   {
     "id": 22713,
@@ -55073,7 +55073,7 @@
   },
   {
     "id": 22733,
-    "examine": "kids!"
+    "examine": " kids!"
   },
   {
     "id": 22734,
@@ -55441,7 +55441,7 @@
   },
   {
     "id": 22827,
-    "examine": "a hammer and a vice?"
+    "examine": " a hammer and a vice?"
   },
   {
     "id": 22828,
@@ -55689,7 +55689,7 @@
   },
   {
     "id": 22975,
-    "examine": "kids."
+    "examine": " kids."
   },
   {
     "id": 22976,
@@ -55709,7 +55709,7 @@
   },
   {
     "id": 23044,
-    "examine": "ready to be forged."
+    "examine": " ready to be forged."
   },
   {
     "id": 23045,
@@ -55841,7 +55841,7 @@
   },
   {
     "id": 23114,
-    "examine": "they sort of look like fish..."
+    "examine": " they sort of look like fish..."
   },
   {
     "id": 23115,
@@ -56165,111 +56165,111 @@
   },
   {
     "id": 23230,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23231,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23232,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23233,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23234,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23235,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23236,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23237,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23238,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23239,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23240,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23241,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23242,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23243,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23244,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23245,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23246,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23247,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23248,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23249,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23250,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23251,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23252,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23253,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23254,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23255,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23256,
-    "examine": "rotting longboat wreck."
+    "examine": " rotting longboat wreck."
   },
   {
     "id": 23271,
@@ -56661,7 +56661,7 @@
   },
   {
     "id": 23556,
-    "examine": "and then you fall in molten lava."
+    "examine": " and then you fall in molten lava."
   },
   {
     "id": 23557,
@@ -56977,7 +56977,7 @@
   },
   {
     "id": 23700,
-    "examine": "better keep your distance."
+    "examine": " better keep your distance."
   },
   {
     "id": 23701,
@@ -56993,7 +56993,7 @@
   },
   {
     "id": 23704,
-    "examine": "if you'd even want to!"
+    "examine": " if you'd even want to!"
   },
   {
     "id": 23705,
@@ -57005,7 +57005,7 @@
   },
   {
     "id": 23707,
-    "examine": "you may take a shortcut through this level."
+    "examine": " you may take a shortcut through this level."
   },
   {
     "id": 23708,
@@ -57065,7 +57065,7 @@
   },
   {
     "id": 23922,
-    "examine": "you may use this portal."
+    "examine": " you may use this portal."
   },
   {
     "id": 23927,
@@ -57109,7 +57109,7 @@
   },
   {
     "id": 23938,
-    "examine": "and Hammerstone hops."
+    "examine": " and Hammerstone hops."
   },
   {
     "id": 23939,
@@ -57345,7 +57345,7 @@
   },
   {
     "id": 24018,
-    "examine": "Falador."
+    "examine": " Falador."
   },
   {
     "id": 24019,
@@ -57397,7 +57397,7 @@
   },
   {
     "id": 24044,
-    "examine": "that's Saradomin."
+    "examine": " that's Saradomin."
   },
   {
     "id": 24049,
@@ -57573,7 +57573,7 @@
   },
   {
     "id": 24096,
-    "examine": "but still effective."
+    "examine": " but still effective."
   },
   {
     "id": 24098,
@@ -57601,7 +57601,7 @@
   },
   {
     "id": 24104,
-    "examine": "A carving of a figure from the history of GodzHell."
+    "examine": "A carving of a figure from the history of Gielinor."
   },
   {
     "id": 24105,
@@ -57701,7 +57701,7 @@
   },
   {
     "id": 24154,
-    "examine": "this assures you that you're worth it."
+    "examine": " this assures you that you're worth it."
   },
   {
     "id": 24156,
@@ -57885,7 +57885,7 @@
   },
   {
     "id": 24324,
-    "examine": "what could you possibly drive?"
+    "examine": " what could you possibly drive?"
   },
   {
     "id": 24325,
@@ -57917,7 +57917,7 @@
   },
   {
     "id": 24332,
-    "examine": "for tomorrow we die."
+    "examine": " for tomorrow we die."
   },
   {
     "id": 24333,
@@ -58441,7 +58441,7 @@
   },
   {
     "id": 24545,
-    "examine": "dating back to the early 4th Age."
+    "examine": " dating back to the early 4th Age."
   },
   {
     "id": 24546,
@@ -58457,7 +58457,7 @@
   },
   {
     "id": 24549,
-    "examine": "accurately dating the city of Saranthium."
+    "examine": " accurately dating the city of Saranthium."
   },
   {
     "id": 24550,
@@ -58501,7 +58501,7 @@
   },
   {
     "id": 24563,
-    "examine": "with flappy bits called doors."
+    "examine": " with flappy bits called doors."
   },
   {
     "id": 24564,
@@ -58733,7 +58733,7 @@
   },
   {
     "id": 24622,
-    "examine": "An early map of GodzHell."
+    "examine": "An early map of Gielinor."
   },
   {
     "id": 24624,
@@ -58817,7 +58817,7 @@
   },
   {
     "id": 24649,
-    "examine": "the demon slayer."
+    "examine": " the demon slayer."
   },
   {
     "id": 24650,
@@ -58833,7 +58833,7 @@
   },
   {
     "id": 24654,
-    "examine": "de-stoned."
+    "examine": " de-stoned."
   },
   {
     "id": 24655,
@@ -59337,7 +59337,7 @@
   },
   {
     "id": 24911,
-    "examine": "and Asgarnian hops."
+    "examine": " and Asgarnian hops."
   },
   {
     "id": 24912,
@@ -59357,7 +59357,7 @@
   },
   {
     "id": 24916,
-    "examine": "and Harralander."
+    "examine": " and Harralander."
   },
   {
     "id": 24917,
@@ -59377,7 +59377,7 @@
   },
   {
     "id": 24921,
-    "examine": "and Yanillian hops."
+    "examine": " and Yanillian hops."
   },
   {
     "id": 24922,
@@ -59397,7 +59397,7 @@
   },
   {
     "id": 24926,
-    "examine": "and Krandorian hops."
+    "examine": " and Krandorian hops."
   },
   {
     "id": 24927,
@@ -59417,7 +59417,7 @@
   },
   {
     "id": 24931,
-    "examine": "and Bittercap mushrooms."
+    "examine": " and Bittercap mushrooms."
   },
   {
     "id": 24932,
@@ -59437,7 +59437,7 @@
   },
   {
     "id": 24936,
-    "examine": "and oak roots."
+    "examine": " and oak roots."
   },
   {
     "id": 24937,
@@ -59457,7 +59457,7 @@
   },
   {
     "id": 24941,
-    "examine": "and chocolate dust."
+    "examine": " and chocolate dust."
   },
   {
     "id": 24942,
@@ -59477,7 +59477,7 @@
   },
   {
     "id": 24946,
-    "examine": "and Wildblood hops."
+    "examine": " and Wildblood hops."
   },
   {
     "id": 24947,
@@ -59737,7 +59737,7 @@
   },
   {
     "id": 25046,
-    "examine": "contains arcane knowledge."
+    "examine": " contains arcane knowledge."
   },
   {
     "id": 25047,
@@ -59761,7 +59761,7 @@
   },
   {
     "id": 25083,
-    "examine": "protruding from the floor."
+    "examine": " protruding from the floor."
   },
   {
     "id": 25084,
@@ -59929,7 +59929,7 @@
   },
   {
     "id": 25158,
-    "examine": "slimy lump of rock."
+    "examine": " slimy lump of rock."
   },
   {
     "id": 25159,
@@ -60117,7 +60117,7 @@
   },
   {
     "id": 25216,
-    "examine": "perhaps rideable."
+    "examine": " perhaps rideable."
   },
   {
     "id": 25252,
@@ -60281,11 +60281,11 @@
   },
   {
     "id": 25336,
-    "examine": "for stepping up."
+    "examine": " for stepping up."
   },
   {
     "id": 25338,
-    "examine": "for stepping down."
+    "examine": " for stepping down."
   },
   {
     "id": 25339,
@@ -60297,7 +60297,7 @@
   },
   {
     "id": 25341,
-    "examine": "sealed mithril door."
+    "examine": " sealed mithril door."
   },
   {
     "id": 25342,
@@ -60453,11 +60453,11 @@
   },
   {
     "id": 25420,
-    "examine": "sunny flower."
+    "examine": " sunny flower."
   },
   {
     "id": 25421,
-    "examine": "sunny flowers."
+    "examine": " sunny flowers."
   },
   {
     "id": 25422,
@@ -60465,7 +60465,7 @@
   },
   {
     "id": 25423,
-    "examine": "I just did."
+    "examine": " I just did."
   },
   {
     "id": 25424,
@@ -60473,11 +60473,11 @@
   },
   {
     "id": 25425,
-    "examine": "an axe could help me chop them down."
+    "examine": " an axe could help me chop them down."
   },
   {
     "id": 25426,
-    "examine": "an axe could help me chop them down."
+    "examine": " an axe could help me chop them down."
   },
   {
     "id": 25427,
@@ -60517,11 +60517,11 @@
   },
   {
     "id": 25440,
-    "examine": "stone goblin stove."
+    "examine": " stone goblin stove."
   },
   {
     "id": 25441,
-    "examine": "stone goblin stove."
+    "examine": " stone goblin stove."
   },
   {
     "id": 25442,
@@ -61037,7 +61037,7 @@
   },
   {
     "id": 25731,
-    "examine": "it's a clock."
+    "examine": " it's a clock."
   },
   {
     "id": 25732,
@@ -61073,7 +61073,7 @@
   },
   {
     "id": 25740,
-    "examine": "but I like this."
+    "examine": " but I like this."
   },
   {
     "id": 25741,
@@ -61125,7 +61125,7 @@
   },
   {
     "id": 25762,
-    "examine": "Bank of GodzHell."
+    "examine": "Bank of Gielinor."
   },
   {
     "id": 25763,
@@ -61321,7 +61321,7 @@
   },
   {
     "id": 25818,
-    "examine": "I can play this."
+    "examine": " I can play this."
   },
   {
     "id": 25819,
@@ -61673,7 +61673,7 @@
   },
   {
     "id": 26119,
-    "examine": "I might not be able to get back down."
+    "examine": " I might not be able to get back down."
   },
   {
     "id": 26120,
@@ -61765,19 +61765,19 @@
   },
   {
     "id": 26170,
-    "examine": "Eeeeew."
+    "examine": "Eww."
   },
   {
     "id": 26171,
-    "examine": "Eeeeew."
+    "examine": "Eww."
   },
   {
     "id": 26172,
-    "examine": "Eeeeew."
+    "examine": "Eww."
   },
   {
     "id": 26173,
-    "examine": "Eeeeew."
+    "examine": "Eww."
   },
   {
     "id": 26174,
@@ -61785,7 +61785,7 @@
   },
   {
     "id": 26175,
-    "examine": "hot rock."
+    "examine": " hot rock."
   },
   {
     "id": 26176,
@@ -61841,7 +61841,7 @@
   },
   {
     "id": 26199,
-    "examine": "good thing there's not a lot of steps needed to work this thing."
+    "examine": " good thing there's not a lot of steps needed to work this thing."
   },
   {
     "id": 26201,
@@ -62477,35 +62477,35 @@
   },
   {
     "id": 26400,
-    "examine": "but it might be possible to climb them anyway."
+    "examine": " but it might be possible to climb them anyway."
   },
   {
     "id": 26401,
-    "examine": "but it might be possible to climb them anyway."
+    "examine": " but it might be possible to climb them anyway."
   },
   {
     "id": 26402,
-    "examine": "but it might be possible to climb them anyway."
+    "examine": " but it might be possible to climb them anyway."
   },
   {
     "id": 26404,
-    "examine": "but it might be possible to climb them anyway."
+    "examine": " but it might be possible to climb them anyway."
   },
   {
     "id": 26405,
-    "examine": "but it might be possible to climb them anyway."
+    "examine": " but it might be possible to climb them anyway."
   },
   {
     "id": 26406,
-    "examine": "but it might be possible to climb them anyway."
+    "examine": " but it might be possible to climb them anyway."
   },
   {
     "id": 26415,
-    "examine": "if I am strong enough."
+    "examine": " if I am strong enough."
   },
   {
     "id": 26416,
-    "examine": "if I am strong enough."
+    "examine": " if I am strong enough."
   },
   {
     "id": 26417,
@@ -62585,27 +62585,27 @@
   },
   {
     "id": 26564,
-    "examine": "battered and bruised."
+    "examine": " battered and bruised."
   },
   {
     "id": 26565,
-    "examine": "battered and bruised."
+    "examine": " battered and bruised."
   },
   {
     "id": 26566,
-    "examine": "battered and bruised."
+    "examine": " battered and bruised."
   },
   {
     "id": 26567,
-    "examine": "yet none have returned."
+    "examine": " yet none have returned."
   },
   {
     "id": 26568,
-    "examine": "yet none have returned."
+    "examine": " yet none have returned."
   },
   {
     "id": 26569,
-    "examine": "yet none have returned."
+    "examine": " yet none have returned."
   },
   {
     "id": 26572,
@@ -62645,7 +62645,7 @@
   },
   {
     "id": 26633,
-    "examine": "nothing interesting about them... really."
+    "examine": " nothing interesting about them... really."
   },
   {
     "id": 26634,
@@ -62657,15 +62657,15 @@
   },
   {
     "id": 26642,
-    "examine": "step through here."
+    "examine": " step through here."
   },
   {
     "id": 26643,
-    "examine": "step through here."
+    "examine": " step through here."
   },
   {
     "id": 26644,
-    "examine": "step through here."
+    "examine": " step through here."
   },
   {
     "id": 26645,
@@ -62957,7 +62957,7 @@
   },
   {
     "id": 26766,
-    "examine": "but it's pretty dangerous out here too."
+    "examine": " but it's pretty dangerous out here too."
   },
   {
     "id": 26767,
@@ -63173,7 +63173,7 @@
   },
   {
     "id": 26832,
-    "examine": "plus 12 extras."
+    "examine": " plus 12 extras."
   },
   {
     "id": 26833,
@@ -63189,7 +63189,7 @@
   },
   {
     "id": 26836,
-    "examine": "I dare you!"
+    "examine": " I dare you!"
   },
   {
     "id": 26837,
@@ -63433,7 +63433,7 @@
   },
   {
     "id": 27064,
-    "examine": "but it might float."
+    "examine": " but it might float."
   },
   {
     "id": 27065,
@@ -64153,11 +64153,11 @@
   },
   {
     "id": 27443,
-    "examine": "but effective."
+    "examine": " but effective."
   },
   {
     "id": 27444,
-    "examine": "but effective."
+    "examine": " but effective."
   },
   {
     "id": 27445,
@@ -64285,7 +64285,7 @@
   },
   {
     "id": 27531,
-    "examine": "a state to which many people aspire."
+    "examine": " a state to which many people aspire."
   },
   {
     "id": 27532,
@@ -64745,7 +64745,7 @@
   },
   {
     "id": 27785,
-    "examine": "founder of Great Kourend."
+    "examine": " founder of Great Kourend."
   },
   {
     "id": 27851,
@@ -64821,19 +64821,19 @@
   },
   {
     "id": 27984,
-    "examine": "someone could probably cross here."
+    "examine": " someone could probably cross here."
   },
   {
     "id": 27985,
-    "examine": "someone could probably cross here."
+    "examine": " someone could probably cross here."
   },
   {
     "id": 27987,
-    "examine": "someone could probably climb down here."
+    "examine": " someone could probably climb down here."
   },
   {
     "id": 27988,
-    "examine": "someone could probably climb up here."
+    "examine": " someone could probably climb up here."
   },
   {
     "id": 27990,
@@ -66393,11 +66393,11 @@
   },
   {
     "id": 28408,
-    "examine": "blue substance."
+    "examine": " blue substance."
   },
   {
     "id": 28409,
-    "examine": "out of date blue substance."
+    "examine": " out of date blue substance."
   },
   {
     "id": 28411,
@@ -66877,11 +66877,11 @@
   },
   {
     "id": 28594,
-    "examine": "but it's secure."
+    "examine": " but it's secure."
   },
   {
     "id": 28595,
-    "examine": "but it's secure."
+    "examine": " but it's secure."
   },
   {
     "id": 28596,
@@ -67053,7 +67053,7 @@
   },
   {
     "id": 28656,
-    "examine": "leaving an opening."
+    "examine": " leaving an opening."
   },
   {
     "id": 28657,
@@ -67121,7 +67121,7 @@
   },
   {
     "id": 28675,
-    "examine": "slain in battle."
+    "examine": " slain in battle."
   },
   {
     "id": 28676,
@@ -67189,7 +67189,7 @@
   },
   {
     "id": 28723,
-    "examine": "she looks rich and dead."
+    "examine": " she looks rich and dead."
   },
   {
     "id": 28724,
@@ -67301,11 +67301,11 @@
   },
   {
     "id": 28783,
-    "examine": "perhaps you can pick the lock or find the key."
+    "examine": " perhaps you can pick the lock or find the key."
   },
   {
     "id": 28785,
-    "examine": "perhaps you can pick the lock."
+    "examine": " perhaps you can pick the lock."
   },
   {
     "id": 28786,
@@ -67341,11 +67341,11 @@
   },
   {
     "id": 28794,
-    "examine": "looks locked."
+    "examine": " looks locked."
   },
   {
     "id": 28795,
-    "examine": "looks locked."
+    "examine": " looks locked."
   },
   {
     "id": 28796,
@@ -67593,7 +67593,7 @@
   },
   {
     "id": 28922,
-    "examine": "perhaps there's something inside it."
+    "examine": " perhaps there's something inside it."
   },
   {
     "id": 28923,
@@ -68053,7 +68053,7 @@
   },
   {
     "id": 29150,
-    "examine": "cosmic and dark magic."
+    "examine": " cosmic and dark magic."
   },
   {
     "id": 29151,
@@ -68073,11 +68073,11 @@
   },
   {
     "id": 29155,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 29156,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 29157,
@@ -68393,11 +68393,11 @@
   },
   {
     "id": 29235,
-    "examine": "father of the Abyss!"
+    "examine": " father of the Abyss!"
   },
   {
     "id": 29236,
-    "examine": "Skotizo!"
+    "examine": " Skotizo!"
   },
   {
     "id": 29237,
@@ -68409,11 +68409,11 @@
   },
   {
     "id": 29239,
-    "examine": "run energy and prayer."
+    "examine": " run energy and prayer."
   },
   {
     "id": 29240,
-    "examine": "prayer and all stats."
+    "examine": " prayer and all stats."
   },
   {
     "id": 29241,
@@ -68577,7 +68577,7 @@
   },
   {
     "id": 29305,
-    "examine": "that's a crate."
+    "examine": " that's a crate."
   },
   {
     "id": 29306,
@@ -68609,7 +68609,7 @@
   },
   {
     "id": 29313,
-    "examine": "this brazier needs fixing."
+    "examine": " this brazier needs fixing."
   },
   {
     "id": 29314,
@@ -69309,7 +69309,7 @@
   },
   {
     "id": 29490,
-    "examine": "those are big spikes!"
+    "examine": " those are big spikes!"
   },
   {
     "id": 29491,
@@ -70105,7 +70105,7 @@
   },
   {
     "id": 29734,
-    "examine": "so good."
+    "examine": " so good."
   },
   {
     "id": 29735,
@@ -70293,7 +70293,7 @@
   },
   {
     "id": 29811,
-    "examine": "sculpted from the living rock."
+    "examine": " sculpted from the living rock."
   },
   {
     "id": 29834,
@@ -70401,7 +70401,7 @@
   },
   {
     "id": 29945,
-    "examine": "it seems."
+    "examine": " it seems."
   },
   {
     "id": 29946,
@@ -70461,19 +70461,19 @@
   },
   {
     "id": 29986,
-    "examine": "walls."
+    "examine": " walls."
   },
   {
     "id": 29987,
-    "examine": "walls."
+    "examine": " walls."
   },
   {
     "id": 29988,
-    "examine": "walls."
+    "examine": " walls."
   },
   {
     "id": 29989,
-    "examine": "walls."
+    "examine": " walls."
   },
   {
     "id": 29990,
@@ -70585,7 +70585,7 @@
   },
   {
     "id": 30019,
-    "examine": "but it's definitely hot."
+    "examine": " but it's definitely hot."
   },
   {
     "id": 30020,
@@ -70637,7 +70637,7 @@
   },
   {
     "id": 30035,
-    "examine": "sculpted from the living rock."
+    "examine": " sculpted from the living rock."
   },
   {
     "id": 30066,
@@ -70677,7 +70677,7 @@
   },
   {
     "id": 30087,
-    "examine": "but it's secure."
+    "examine": " but it's secure."
   },
   {
     "id": 30091,
@@ -70705,27 +70705,27 @@
   },
   {
     "id": 30097,
-    "examine": "mounted on a lectern."
+    "examine": " mounted on a lectern."
   },
   {
     "id": 30098,
-    "examine": "mounted on a lectern."
+    "examine": " mounted on a lectern."
   },
   {
     "id": 30099,
-    "examine": "mounted on a lectern."
+    "examine": " mounted on a lectern."
   },
   {
     "id": 30100,
-    "examine": "mounted on a lectern."
+    "examine": " mounted on a lectern."
   },
   {
     "id": 30101,
-    "examine": "mounted on a lectern."
+    "examine": " mounted on a lectern."
   },
   {
     "id": 30102,
-    "examine": "mounted on a lectern."
+    "examine": " mounted on a lectern."
   },
   {
     "id": 30103,
@@ -70977,11 +70977,11 @@
   },
   {
     "id": 30174,
-    "examine": "but it looks very narrow further in there."
+    "examine": " but it looks very narrow further in there."
   },
   {
     "id": 30175,
-    "examine": "but it looks very narrow further in there."
+    "examine": " but it looks very narrow further in there."
   },
   {
     "id": 30176,
@@ -71017,11 +71017,11 @@
   },
   {
     "id": 30189,
-    "examine": "carved from the rock of the cave."
+    "examine": " carved from the rock of the cave."
   },
   {
     "id": 30190,
-    "examine": "carved from the rock of the cave."
+    "examine": " carved from the rock of the cave."
   },
   {
     "id": 30191,
@@ -71029,7 +71029,7 @@
   },
   {
     "id": 30192,
-    "examine": "it works the other way too... right?"
+    "examine": " it works the other way too... right?"
   },
   {
     "id": 30193,
@@ -71137,11 +71137,11 @@
   },
   {
     "id": 30258,
-    "examine": "getting out shouldn't be an issue... I guess it will take me lower."
+    "examine": " getting out shouldn't be an issue... I guess it will take me lower."
   },
   {
     "id": 30259,
-    "examine": "getting out shouldn't be an issue... It may take me up a floor."
+    "examine": " getting out shouldn't be an issue... It may take me up a floor."
   },
   {
     "id": 30260,
@@ -71161,7 +71161,7 @@
   },
   {
     "id": 30269,
-    "examine": "drawing warmth from the volcano to prolong its life."
+    "examine": " drawing warmth from the volcano to prolong its life."
   },
   {
     "id": 30270,
@@ -71173,15 +71173,15 @@
   },
   {
     "id": 30274,
-    "examine": "solidified as a result of old age."
+    "examine": " solidified as a result of old age."
   },
   {
     "id": 30275,
-    "examine": "hardened due to growing old."
+    "examine": " hardened due to growing old."
   },
   {
     "id": 30276,
-    "examine": "cooled to rock form in old age."
+    "examine": " cooled to rock form in old age."
   },
   {
     "id": 30277,
@@ -71421,39 +71421,39 @@
   },
   {
     "id": 30419,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 30420,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 30421,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 30422,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 30423,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 30424,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 30425,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 30426,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 30427,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 30428,
@@ -71533,27 +71533,27 @@
   },
   {
     "id": 30447,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 30448,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 30449,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 30450,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 30451,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 30452,
-    "examine": "prune the tree with secateurs."
+    "examine": " prune the tree with secateurs."
   },
   {
     "id": 30453,
@@ -72009,7 +72009,7 @@
   },
   {
     "id": 30602,
-    "examine": "sort of."
+    "examine": " sort of."
   },
   {
     "id": 30603,
@@ -72109,7 +72109,7 @@
   },
   {
     "id": 30670,
-    "examine": "pay a toll?"
+    "examine": " pay a toll?"
   },
   {
     "id": 30671,
@@ -72117,11 +72117,11 @@
   },
   {
     "id": 30681,
-    "examine": "1 step at a time."
+    "examine": " 1 step at a time."
   },
   {
     "id": 30682,
-    "examine": "1 step at a time."
+    "examine": " 1 step at a time."
   },
   {
     "id": 30684,
@@ -72441,11 +72441,11 @@
   },
   {
     "id": 30845,
-    "examine": "for stepping up."
+    "examine": " for stepping up."
   },
   {
     "id": 30846,
-    "examine": "for stepping down."
+    "examine": " for stepping down."
   },
   {
     "id": 30847,
@@ -72461,7 +72461,7 @@
   },
   {
     "id": 30850,
-    "examine": "for stepping down."
+    "examine": " for stepping down."
   },
   {
     "id": 30851,
@@ -72501,7 +72501,7 @@
   },
   {
     "id": 30866,
-    "examine": "Chuck."
+    "examine": " Chuck."
   },
   {
     "id": 30867,
@@ -72521,7 +72521,7 @@
   },
   {
     "id": 30872,
-    "examine": "probably used by the ancient inhabitant of this island."
+    "examine": " probably used by the ancient inhabitant of this island."
   },
   {
     "id": 30873,
@@ -72537,7 +72537,7 @@
   },
   {
     "id": 30878,
-    "examine": "this is the exit."
+    "examine": " this is the exit."
   },
   {
     "id": 30896,
@@ -72601,7 +72601,7 @@
   },
   {
     "id": 30927,
-    "examine": "5 nails and a hammer."
+    "examine": " 5 nails and a hammer."
   },
   {
     "id": 30928,
@@ -72609,7 +72609,7 @@
   },
   {
     "id": 30929,
-    "examine": "5 nails and a hammer."
+    "examine": " 5 nails and a hammer."
   },
   {
     "id": 30930,
@@ -72617,7 +72617,7 @@
   },
   {
     "id": 30931,
-    "examine": "5 nails and a hammer."
+    "examine": " 5 nails and a hammer."
   },
   {
     "id": 30932,
@@ -72625,7 +72625,7 @@
   },
   {
     "id": 30933,
-    "examine": "a tinderbox and a hammer."
+    "examine": " a tinderbox and a hammer."
   },
   {
     "id": 30934,
@@ -72633,7 +72633,7 @@
   },
   {
     "id": 30935,
-    "examine": "5 nails and a hammer."
+    "examine": " 5 nails and a hammer."
   },
   {
     "id": 30936,
@@ -72641,7 +72641,7 @@
   },
   {
     "id": 30937,
-    "examine": "a rope and a hammer."
+    "examine": " a rope and a hammer."
   },
   {
     "id": 30938,
@@ -72665,7 +72665,7 @@
   },
   {
     "id": 30943,
-    "examine": "the symbols show of a pendant with a ruby jewel."
+    "examine": " the symbols show of a pendant with a ruby jewel."
   },
   {
     "id": 30944,
@@ -72717,7 +72717,7 @@
   },
   {
     "id": 30959,
-    "examine": "can't go over it... I better go through it."
+    "examine": " can't go over it... I better go through it."
   },
   {
     "id": 30960,
@@ -72725,15 +72725,15 @@
   },
   {
     "id": 30961,
-    "examine": "more like a curtain actually."
+    "examine": " more like a curtain actually."
   },
   {
     "id": 30962,
-    "examine": "can't go over it... I better go through it."
+    "examine": " can't go over it... I better go through it."
   },
   {
     "id": 30964,
-    "examine": "can't go over it... I better go through it."
+    "examine": " can't go over it... I better go through it."
   },
   {
     "id": 30966,
@@ -72741,11 +72741,11 @@
   },
   {
     "id": 30967,
-    "examine": "place your bowl here."
+    "examine": " place your bowl here."
   },
   {
     "id": 30968,
-    "examine": "place your bowl here."
+    "examine": " place your bowl here."
   },
   {
     "id": 30969,
@@ -72757,7 +72757,7 @@
   },
   {
     "id": 30971,
-    "examine": "certainly not your average chest."
+    "examine": " certainly not your average chest."
   },
   {
     "id": 30972,
@@ -72849,7 +72849,7 @@
   },
   {
     "id": 31035,
-    "examine": "but it still floats."
+    "examine": " but it still floats."
   },
   {
     "id": 31036,
@@ -72857,7 +72857,7 @@
   },
   {
     "id": 31037,
-    "examine": "like a piñata."
+    "examine": " like a piñata."
   },
   {
     "id": 31038,
@@ -73177,7 +73177,7 @@
   },
   {
     "id": 31118,
-    "examine": "wallop what a pitcher."
+    "examine": " wallop what a pitcher."
   },
   {
     "id": 31119,
@@ -73417,7 +73417,7 @@
   },
   {
     "id": 31178,
-    "examine": "foot print."
+    "examine": " foot print."
   },
   {
     "id": 31179,
@@ -73633,7 +73633,7 @@
   },
   {
     "id": 31232,
-    "examine": "gooooey."
+    "examine": " gooooey."
   },
   {
     "id": 31233,
@@ -73953,7 +73953,7 @@
   },
   {
     "id": 31571,
-    "examine": "green bush."
+    "examine": " green bush."
   },
   {
     "id": 31572,
@@ -74033,7 +74033,7 @@
   },
   {
     "id": 31619,
-    "examine": "who died saving GodzHell."
+    "examine": " who died saving Gielinor."
   },
   {
     "id": 31620,
@@ -74069,7 +74069,7 @@
   },
   {
     "id": 31628,
-    "examine": "fire!"
+    "examine": " fire!"
   },
   {
     "id": 31629,
@@ -74085,7 +74085,7 @@
   },
   {
     "id": 31632,
-    "examine": "but someone might want a better view."
+    "examine": " but someone might want a better view."
   },
   {
     "id": 31634,
@@ -74233,7 +74233,7 @@
   },
   {
     "id": 31714,
-    "examine": "the former ruler of Kourend."
+    "examine": " the former ruler of Kourend."
   },
   {
     "id": 31715,
@@ -74245,7 +74245,7 @@
   },
   {
     "id": 31717,
-    "examine": "I wonder why it was abandoned?"
+    "examine": " I wonder why it was abandoned?"
   },
   {
     "id": 31718,
@@ -74257,7 +74257,7 @@
   },
   {
     "id": 31721,
-    "examine": "carefully stored under this hut."
+    "examine": " carefully stored under this hut."
   },
   {
     "id": 31722,
@@ -74305,7 +74305,7 @@
   },
   {
     "id": 31749,
-    "examine": "Bank of GodzHell."
+    "examine": "Bank of Gielinor."
   },
   {
     "id": 31754,
@@ -74425,7 +74425,7 @@
   },
   {
     "id": 31806,
-    "examine": "this is the exit."
+    "examine": " this is the exit."
   },
   {
     "id": 31807,
@@ -74549,11 +74549,11 @@
   },
   {
     "id": 31844,
-    "examine": "can't go over it... I better go through it."
+    "examine": " can't go over it... I better go through it."
   },
   {
     "id": 31845,
-    "examine": "can't go over it... I better go through it."
+    "examine": " can't go over it... I better go through it."
   },
   {
     "id": 31846,
@@ -74585,19 +74585,19 @@
   },
   {
     "id": 31858,
-    "examine": "cosmic and dark magic."
+    "examine": " cosmic and dark magic."
   },
   {
     "id": 31859,
-    "examine": "cosmic and dark magic."
+    "examine": " cosmic and dark magic."
   },
   {
     "id": 31860,
-    "examine": "cosmic and dark magic."
+    "examine": " cosmic and dark magic."
   },
   {
     "id": 31861,
-    "examine": "cosmic and dark magic."
+    "examine": " cosmic and dark magic."
   },
   {
     "id": 31862,
@@ -74721,155 +74721,155 @@
   },
   {
     "id": 31900,
-    "examine": "2013."
+    "examine": " 2013."
   },
   {
     "id": 31901,
-    "examine": "2013."
+    "examine": " 2013."
   },
   {
     "id": 31902,
-    "examine": "2014."
+    "examine": " 2014."
   },
   {
     "id": 31903,
-    "examine": "2013."
+    "examine": " 2013."
   },
   {
     "id": 31904,
-    "examine": "2013."
+    "examine": " 2013."
   },
   {
     "id": 31905,
-    "examine": "2016."
+    "examine": " 2016."
   },
   {
     "id": 31906,
-    "examine": "2014."
+    "examine": " 2014."
   },
   {
     "id": 31907,
-    "examine": "2015."
+    "examine": " 2015."
   },
   {
     "id": 31908,
-    "examine": "2015"
+    "examine": " 2015"
   },
   {
     "id": 31909,
-    "examine": "2015."
+    "examine": " 2015."
   },
   {
     "id": 31910,
-    "examine": "2016."
+    "examine": " 2016."
   },
   {
     "id": 31911,
-    "examine": "2017."
+    "examine": " 2017."
   },
   {
     "id": 31912,
-    "examine": "2018."
+    "examine": " 2018."
   },
   {
     "id": 31913,
-    "examine": "2015."
+    "examine": " 2015."
   },
   {
     "id": 31914,
-    "examine": "2015."
+    "examine": " 2015."
   },
   {
     "id": 31915,
-    "examine": "2014."
+    "examine": " 2014."
   },
   {
     "id": 31916,
-    "examine": "2016."
+    "examine": " 2016."
   },
   {
     "id": 31917,
-    "examine": "2014."
+    "examine": " 2014."
   },
   {
     "id": 31918,
-    "examine": "2017."
+    "examine": " 2017."
   },
   {
     "id": 31919,
-    "examine": "2017."
+    "examine": " 2017."
   },
   {
     "id": 31920,
-    "examine": "2013."
+    "examine": " 2013."
   },
   {
     "id": 31921,
-    "examine": "2014."
+    "examine": " 2014."
   },
   {
     "id": 31922,
-    "examine": "2016."
+    "examine": " 2016."
   },
   {
     "id": 31923,
-    "examine": "2016."
+    "examine": " 2016."
   },
   {
     "id": 31924,
-    "examine": "2016."
+    "examine": " 2016."
   },
   {
     "id": 31925,
-    "examine": "2016."
+    "examine": " 2016."
   },
   {
     "id": 31926,
-    "examine": "2016."
+    "examine": " 2016."
   },
   {
     "id": 31927,
-    "examine": "2016."
+    "examine": " 2016."
   },
   {
     "id": 31928,
-    "examine": "2015."
+    "examine": " 2015."
   },
   {
     "id": 31929,
-    "examine": "2015."
+    "examine": " 2015."
   },
   {
     "id": 31930,
-    "examine": "2017."
+    "examine": " 2017."
   },
   {
     "id": 31931,
-    "examine": "2017."
+    "examine": " 2017."
   },
   {
     "id": 31932,
-    "examine": "2014."
+    "examine": " 2014."
   },
   {
     "id": 31933,
-    "examine": "2016."
+    "examine": " 2016."
   },
   {
     "id": 31934,
-    "examine": "2016."
+    "examine": " 2016."
   },
   {
     "id": 31935,
-    "examine": "2013. They were designed by the player BigRedJapan."
+    "examine": " 2013. They were designed by the player BigRedJapan."
   },
   {
     "id": 31936,
-    "examine": "2013."
+    "examine": " 2013."
   },
   {
     "id": 31939,
-    "examine": "2015."
+    "examine": " 2015."
   },
   {
     "id": 31940,
@@ -74877,11 +74877,11 @@
   },
   {
     "id": 31941,
-    "examine": "gushes forth."
+    "examine": " gushes forth."
   },
   {
     "id": 31942,
-    "examine": "gushes forth."
+    "examine": " gushes forth."
   },
   {
     "id": 31943,
@@ -74889,7 +74889,7 @@
   },
   {
     "id": 31944,
-    "examine": "champion!"
+    "examine": " champion!"
   },
   {
     "id": 31946,
@@ -74997,7 +74997,7 @@
   },
   {
     "id": 31975,
-    "examine": "lovely."
+    "examine": " lovely."
   },
   {
     "id": 31977,
@@ -75033,7 +75033,7 @@
   },
   {
     "id": 31985,
-    "examine": "the undead dragon!"
+    "examine": " the undead dragon!"
   },
   {
     "id": 31986,
@@ -75129,7 +75129,7 @@
   },
   {
     "id": 32052,
-    "examine": "sturdy door."
+    "examine": " sturdy door."
   },
   {
     "id": 32053,
@@ -75197,11 +75197,11 @@
   },
   {
     "id": 32081,
-    "examine": "1 step at a time."
+    "examine": " 1 step at a time."
   },
   {
     "id": 32082,
-    "examine": "1 step at a time."
+    "examine": " 1 step at a time."
   },
   {
     "id": 32083,
@@ -75217,11 +75217,11 @@
   },
   {
     "id": 32090,
-    "examine": "he's dead."
+    "examine": " he's dead."
   },
   {
     "id": 32091,
-    "examine": "he's dead."
+    "examine": " he's dead."
   },
   {
     "id": 32112,
@@ -75257,7 +75257,7 @@
   },
   {
     "id": 32125,
-    "examine": "big teeth."
+    "examine": " big teeth."
   },
   {
     "id": 32126,
@@ -75321,7 +75321,7 @@
   },
   {
     "id": 32154,
-    "examine": "it seems to be sleeping."
+    "examine": " it seems to be sleeping."
   },
   {
     "id": 32156,
@@ -75461,11 +75461,11 @@
   },
   {
     "id": 32211,
-    "examine": "for stepping down."
+    "examine": " for stepping down."
   },
   {
     "id": 32212,
-    "examine": "once slippery seem to be much less so now."
+    "examine": " once slippery seem to be much less so now."
   },
   {
     "id": 32213,
@@ -75477,11 +75477,11 @@
   },
   {
     "id": 32215,
-    "examine": "completely undamaged or corroded despite its age."
+    "examine": " completely undamaged or corroded despite its age."
   },
   {
     "id": 32216,
-    "examine": "completely undamaged or corroded despite its age."
+    "examine": " completely undamaged or corroded despite its age."
   },
   {
     "id": 32235,
@@ -75881,11 +75881,11 @@
   },
   {
     "id": 32467,
-    "examine": "and a friend."
+    "examine": " and a friend."
   },
   {
     "id": 32468,
-    "examine": "and a friend."
+    "examine": " and a friend."
   },
   {
     "id": 32479,
@@ -76037,7 +76037,7 @@
   },
   {
     "id": 32542,
-    "examine": "so good."
+    "examine": " so good."
   },
   {
     "id": 32543,
@@ -76229,7 +76229,7 @@
   },
   {
     "id": 32592,
-    "examine": "pale-looking excuse for a man."
+    "examine": " pale-looking excuse for a man."
   },
   {
     "id": 32593,
@@ -76293,7 +76293,7 @@
   },
   {
     "id": 32631,
-    "examine": "stone stove."
+    "examine": " stone stove."
   },
   {
     "id": 32632,
@@ -76309,7 +76309,7 @@
   },
   {
     "id": 32635,
-    "examine": "I can play this."
+    "examine": " I can play this."
   },
   {
     "id": 32636,
@@ -76441,11 +76441,11 @@
   },
   {
     "id": 32741,
-    "examine": "but didn't quite make it..."
+    "examine": " but didn't quite make it..."
   },
   {
     "id": 32742,
-    "examine": "but didn't quite make it..."
+    "examine": " but didn't quite make it..."
   },
   {
     "id": 32743,
@@ -76465,7 +76465,7 @@
   },
   {
     "id": 32755,
-    "examine": "there's no way out until the challenge is complete."
+    "examine": " there's no way out until the challenge is complete."
   },
   {
     "id": 32756,
@@ -76501,7 +76501,7 @@
   },
   {
     "id": 32940,
-    "examine": "how unfortunate!"
+    "examine": " how unfortunate!"
   },
   {
     "id": 32951,
@@ -76513,7 +76513,7 @@
   },
   {
     "id": 32957,
-    "examine": "glowing liquid."
+    "examine": " glowing liquid."
   },
   {
     "id": 32958,
@@ -76581,19 +76581,19 @@
   },
   {
     "id": 33000,
-    "examine": "perhaps there's something of interest here?"
+    "examine": " perhaps there's something of interest here?"
   },
   {
     "id": 33001,
-    "examine": "perhaps there's something of interest here?"
+    "examine": " perhaps there's something of interest here?"
   },
   {
     "id": 33002,
-    "examine": "perhaps there's something of interest here?"
+    "examine": " perhaps there's something of interest here?"
   },
   {
     "id": 33003,
-    "examine": "perhaps there's something of interest here?"
+    "examine": " perhaps there's something of interest here?"
   },
   {
     "id": 33011,
@@ -76613,7 +76613,7 @@
   },
   {
     "id": 33016,
-    "examine": "tightly closed."
+    "examine": " tightly closed."
   },
   {
     "id": 33020,
@@ -76833,11 +76833,11 @@
   },
   {
     "id": 33186,
-    "examine": "but perhaps useful."
+    "examine": " but perhaps useful."
   },
   {
     "id": 33187,
-    "examine": "if that's a concern."
+    "examine": " if that's a concern."
   },
   {
     "id": 33188,
@@ -76849,7 +76849,7 @@
   },
   {
     "id": 33190,
-    "examine": "not even as wide as My Arm."
+    "examine": " not even as wide as My Arm."
   },
   {
     "id": 33191,
@@ -76861,7 +76861,7 @@
   },
   {
     "id": 33193,
-    "examine": "nor My Arm neither."
+    "examine": " nor My Arm neither."
   },
   {
     "id": 33194,
@@ -76873,7 +76873,7 @@
   },
   {
     "id": 33196,
-    "examine": "better luck next time."
+    "examine": " better luck next time."
   },
   {
     "id": 33198,
@@ -76965,7 +76965,7 @@
   },
   {
     "id": 33232,
-    "examine": "otherwise known as a rock."
+    "examine": " otherwise known as a rock."
   },
   {
     "id": 33233,
@@ -76997,27 +76997,27 @@
   },
   {
     "id": 33240,
-    "examine": "forming a rough pathway."
+    "examine": " forming a rough pathway."
   },
   {
     "id": 33241,
-    "examine": "forming a rough pathway."
+    "examine": " forming a rough pathway."
   },
   {
     "id": 33242,
-    "examine": "forming a rough pathway."
+    "examine": " forming a rough pathway."
   },
   {
     "id": 33243,
-    "examine": "forming a rough pathway."
+    "examine": " forming a rough pathway."
   },
   {
     "id": 33244,
-    "examine": "forming a rough pathway."
+    "examine": " forming a rough pathway."
   },
   {
     "id": 33245,
-    "examine": "forming a rough pathway."
+    "examine": " forming a rough pathway."
   },
   {
     "id": 33246,
@@ -77069,7 +77069,7 @@
   },
   {
     "id": 33262,
-    "examine": "presumably."
+    "examine": " presumably."
   },
   {
     "id": 33263,
@@ -77085,7 +77085,7 @@
   },
   {
     "id": 33307,
-    "examine": "possibly used in some sort of ritual."
+    "examine": " possibly used in some sort of ritual."
   },
   {
     "id": 33308,
@@ -77761,7 +77761,7 @@
   },
   {
     "id": 33532,
-    "examine": "a level 2 and a level 1 energy disk."
+    "examine": " a level 2 and a level 1 energy disk."
   },
   {
     "id": 33533,
@@ -77777,7 +77777,7 @@
   },
   {
     "id": 33536,
-    "examine": "a level 2 and a level 1 energy disk."
+    "examine": " a level 2 and a level 1 energy disk."
   },
   {
     "id": 33537,
@@ -77785,15 +77785,15 @@
   },
   {
     "id": 33538,
-    "examine": "a level 3 and a level 1 energy disk."
+    "examine": " a level 3 and a level 1 energy disk."
   },
   {
     "id": 33539,
-    "examine": "a level 3 and a level 2 energy disk."
+    "examine": " a level 3 and a level 2 energy disk."
   },
   {
     "id": 33540,
-    "examine": "a level 2 and a level 1 energy disk."
+    "examine": " a level 2 and a level 1 energy disk."
   },
   {
     "id": 33541,
@@ -80857,19 +80857,19 @@
   },
   {
     "id": 34481,
-    "examine": "known as bluebells."
+    "examine": " known as bluebells."
   },
   {
     "id": 34482,
-    "examine": "known as bluebells."
+    "examine": " known as bluebells."
   },
   {
     "id": 34483,
-    "examine": "mostly herbaceous plants in the sunflower family."
+    "examine": " mostly herbaceous plants in the sunflower family."
   },
   {
     "id": 34484,
-    "examine": "mostly herbaceous plants in the sunflower family."
+    "examine": " mostly herbaceous plants in the sunflower family."
   },
   {
     "id": 34485,
@@ -80985,7 +80985,7 @@
   },
   {
     "id": 34548,
-    "examine": "it may do this above or below the Earth's surface."
+    "examine": " it may do this above or below the Earth's surface."
   },
   {
     "id": 34553,
@@ -81105,7 +81105,7 @@
   },
   {
     "id": 34666,
-    "examine": "dislodged from the wall nearby."
+    "examine": " dislodged from the wall nearby."
   },
   {
     "id": 34667,
@@ -81137,11 +81137,11 @@
   },
   {
     "id": 34677,
-    "examine": "2018."
+    "examine": " 2018."
   },
   {
     "id": 34681,
-    "examine": "2018."
+    "examine": " 2018."
   },
   {
     "id": 34682,
@@ -81149,23 +81149,23 @@
   },
   {
     "id": 34683,
-    "examine": "2018."
+    "examine": " 2018."
   },
   {
     "id": 34684,
-    "examine": "2019."
+    "examine": " 2019."
   },
   {
     "id": 34685,
-    "examine": "2019."
+    "examine": " 2019."
   },
   {
     "id": 34686,
-    "examine": "2018."
+    "examine": " 2018."
   },
   {
     "id": 34687,
-    "examine": "2018."
+    "examine": " 2018."
   },
   {
     "id": 34688,
@@ -81193,7 +81193,7 @@
   },
   {
     "id": 34727,
-    "examine": "weird place."
+    "examine": " weird place."
   },
   {
     "id": 34728,
@@ -81213,7 +81213,7 @@
   },
   {
     "id": 34732,
-    "examine": "that's a big glory."
+    "examine": " that's a big glory."
   },
   {
     "id": 34733,
@@ -81229,7 +81229,7 @@
   },
   {
     "id": 34741,
-    "examine": "someone could probably cross here."
+    "examine": " someone could probably cross here."
   },
   {
     "id": 34742,
@@ -81513,7 +81513,7 @@
   },
   {
     "id": 34836,
-    "examine": "tainted by the Shaeded Beast."
+    "examine": " tainted by the Shaeded Beast."
   },
   {
     "id": 34837,
@@ -81569,7 +81569,7 @@
   },
   {
     "id": 34851,
-    "examine": "the opposing sides of an old religion. There's a slot where something round might fit."
+    "examine": " the opposing sides of an old religion. There's a slot where something round might fit."
   },
   {
     "id": 34852,
@@ -81581,7 +81581,7 @@
   },
   {
     "id": 34854,
-    "examine": "definitely a wall."
+    "examine": " definitely a wall."
   },
   {
     "id": 34855,
@@ -81709,11 +81709,11 @@
   },
   {
     "id": 34899,
-    "examine": "cruelly slashed in half."
+    "examine": " cruelly slashed in half."
   },
   {
     "id": 34905,
-    "examine": "fog may kill you."
+    "examine": " fog may kill you."
   },
   {
     "id": 34907,
@@ -83025,51 +83025,51 @@
   },
   {
     "id": 35818,
-    "examine": "One of GodzHell's many citizens."
+    "examine": "One of Gielinor's many citizens."
   },
   {
     "id": 35819,
-    "examine": "One of GodzHell's many citizens."
+    "examine": "One of Gielinor's many citizens."
   },
   {
     "id": 35820,
-    "examine": "One of GodzHell's many citizens."
+    "examine": "One of Gielinor's many citizens."
   },
   {
     "id": 35821,
-    "examine": "One of GodzHell's many citizens."
+    "examine": "One of Gielinor's many citizens."
   },
   {
     "id": 35822,
-    "examine": "One of GodzHell's many citizens."
+    "examine": "One of Gielinor's many citizens."
   },
   {
     "id": 35823,
-    "examine": "One of GodzHell's many citizens."
+    "examine": "One of Gielinor's many citizens."
   },
   {
     "id": 35824,
-    "examine": "One of GodzHell's many citizens."
+    "examine": "One of Gielinor's many citizens."
   },
   {
     "id": 35825,
-    "examine": "One of GodzHell's many citizens."
+    "examine": "One of Gielinor's many citizens."
   },
   {
     "id": 35826,
-    "examine": "One of GodzHell's many citizens."
+    "examine": "One of Gielinor's many citizens."
   },
   {
     "id": 35827,
-    "examine": "One of GodzHell's many citizens."
+    "examine": "One of Gielinor's many citizens."
   },
   {
     "id": 35828,
-    "examine": "One of GodzHell's many citizens."
+    "examine": "One of Gielinor's many citizens."
   },
   {
     "id": 35829,
-    "examine": "One of GodzHell's many citizens."
+    "examine": "One of Gielinor's many citizens."
   },
   {
     "id": 35830,
@@ -83349,7 +83349,7 @@
   },
   {
     "id": 35914,
-    "examine": "hero of the elves."
+    "examine": " hero of the elves."
   },
   {
     "id": 35915,
@@ -83581,7 +83581,7 @@
   },
   {
     "id": 35975,
-    "examine": "if ever."
+    "examine": " if ever."
   },
   {
     "id": 35976,
@@ -83701,7 +83701,7 @@
   },
   {
     "id": 36072,
-    "examine": "if ever."
+    "examine": " if ever."
   },
   {
     "id": 36073,
@@ -83857,7 +83857,7 @@
   },
   {
     "id": 36215,
-    "examine": "fresh breeze flowing from here."
+    "examine": " fresh breeze flowing from here."
   },
   {
     "id": 36217,
@@ -83937,11 +83937,11 @@
   },
   {
     "id": 36387,
-    "examine": "spiralling around a great elven tree."
+    "examine": " spiralling around a great elven tree."
   },
   {
     "id": 36390,
-    "examine": "spiralling around a great elven tree."
+    "examine": " spiralling around a great elven tree."
   },
   {
     "id": 36490,
@@ -83977,7 +83977,7 @@
   },
   {
     "id": 36498,
-    "examine": "if you have coin."
+    "examine": " if you have coin."
   },
   {
     "id": 36499,
@@ -84001,7 +84001,7 @@
   },
   {
     "id": 36504,
-    "examine": "their labels seem to be in a different language."
+    "examine": " their labels seem to be in a different language."
   },
   {
     "id": 36505,
@@ -84113,35 +84113,35 @@
   },
   {
     "id": 36573,
-    "examine": "a clan of shamans and mystics."
+    "examine": " a clan of shamans and mystics."
   },
   {
     "id": 36574,
-    "examine": "a clan of warriors and hunters."
+    "examine": " a clan of warriors and hunters."
   },
   {
     "id": 36575,
-    "examine": "a clan of farmers and botanists."
+    "examine": " a clan of farmers and botanists."
   },
   {
     "id": 36576,
-    "examine": "a clan of spiritualists and monks."
+    "examine": " a clan of spiritualists and monks."
   },
   {
     "id": 36577,
-    "examine": "a clan of slayers and assassins."
+    "examine": " a clan of slayers and assassins."
   },
   {
     "id": 36578,
-    "examine": "a clan of builders and crystal singers."
+    "examine": " a clan of builders and crystal singers."
   },
   {
     "id": 36579,
-    "examine": "a clan of explorers and herbalists."
+    "examine": " a clan of explorers and herbalists."
   },
   {
     "id": 36580,
-    "examine": "a clan of miners and smiths."
+    "examine": " a clan of miners and smiths."
   },
   {
     "id": 36581,
@@ -84169,7 +84169,7 @@
   },
   {
     "id": 36589,
-    "examine": "I'll be able to collect it here."
+    "examine": " I'll be able to collect it here."
   },
   {
     "id": 36590,
@@ -84185,7 +84185,7 @@
   },
   {
     "id": 36593,
-    "examine": "but their memory lives on."
+    "examine": " but their memory lives on."
   },
   {
     "id": 36594,
@@ -84201,7 +84201,7 @@
   },
   {
     "id": 36597,
-    "examine": "fresh breeze flowing from here."
+    "examine": " fresh breeze flowing from here."
   },
   {
     "id": 36598,
@@ -84209,7 +84209,7 @@
   },
   {
     "id": 36600,
-    "examine": "Not safe for humans."
+    "examine": " Not safe for humans."
   },
   {
     "id": 36604,
@@ -84233,7 +84233,7 @@
   },
   {
     "id": 36609,
-    "examine": "it's a flagpole."
+    "examine": " it's a flagpole."
   },
   {
     "id": 36610,
@@ -84525,7 +84525,7 @@
   },
   {
     "id": 36691,
-    "examine": "fresh breeze flowing from here."
+    "examine": " fresh breeze flowing from here."
   },
   {
     "id": 36692,
@@ -84685,7 +84685,7 @@
   },
   {
     "id": 37405,
-    "examine": "this is where you buy new doors."
+    "examine": " this is where you buy new doors."
   },
   {
     "id": 37406,
@@ -84929,187 +84929,187 @@
   },
   {
     "id": 37501,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37502,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37503,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37504,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37505,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37506,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37507,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37508,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37509,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37510,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37511,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37512,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37513,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37514,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37515,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37516,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37517,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37518,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37519,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37520,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37521,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37522,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37523,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37524,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37525,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37526,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37527,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37528,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37529,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37530,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37531,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37532,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37533,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37534,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37535,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37536,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37537,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37538,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37539,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37540,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37541,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37542,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37543,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37544,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37545,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37546,
-    "examine": "emerald and dragonstone jewellery."
+    "examine": " emerald and dragonstone jewellery."
   },
   {
     "id": 37547,
@@ -85713,19 +85713,19 @@
   },
   {
     "id": 37965,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 37966,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 37967,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 37968,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 37969,
@@ -85737,19 +85737,19 @@
   },
   {
     "id": 37971,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 37972,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 37973,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 37974,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 37975,
@@ -85941,7 +85941,7 @@
   },
   {
     "id": 38034,
-    "examine": "used for restless victims."
+    "examine": " used for restless victims."
   },
   {
     "id": 38035,
@@ -85949,11 +85949,11 @@
   },
   {
     "id": 38036,
-    "examine": "looks old and dusty."
+    "examine": " looks old and dusty."
   },
   {
     "id": 38037,
-    "examine": "dusty and broken."
+    "examine": " dusty and broken."
   },
   {
     "id": 38038,
@@ -85993,7 +85993,7 @@
   },
   {
     "id": 38052,
-    "examine": "whoever they were."
+    "examine": " whoever they were."
   },
   {
     "id": 38053,
@@ -86045,7 +86045,7 @@
   },
   {
     "id": 38089,
-    "examine": "it's a sailboat."
+    "examine": " it's a sailboat."
   },
   {
     "id": 38091,
@@ -86141,7 +86141,7 @@
   },
   {
     "id": 38422,
-    "examine": "that symbol must've been heavy!"
+    "examine": " that symbol must've been heavy!"
   },
   {
     "id": 38423,
@@ -86157,7 +86157,7 @@
   },
   {
     "id": 38426,
-    "examine": "but the bottom's suspiciously hard to see..."
+    "examine": " but the bottom's suspiciously hard to see..."
   },
   {
     "id": 38427,
@@ -86489,11 +86489,11 @@
   },
   {
     "id": 38526,
-    "examine": "you can almost hear the roar."
+    "examine": " you can almost hear the roar."
   },
   {
     "id": 38527,
-    "examine": "you can almost hear the roar."
+    "examine": " you can almost hear the roar."
   },
   {
     "id": 38528,
@@ -86537,7 +86537,7 @@
   },
   {
     "id": 38538,
-    "examine": "what would it be called?"
+    "examine": " what would it be called?"
   },
   {
     "id": 38539,
@@ -86545,7 +86545,7 @@
   },
   {
     "id": 38540,
-    "examine": "what would it be called?"
+    "examine": " what would it be called?"
   },
   {
     "id": 38541,
@@ -86621,7 +86621,7 @@
   },
   {
     "id": 38562,
-    "examine": "I can't see in the dark!"
+    "examine": " I can't see in the dark!"
   },
   {
     "id": 38566,
@@ -86853,7 +86853,7 @@
   },
   {
     "id": 38804,
-    "examine": "perhaps those braziers are a clue?"
+    "examine": " perhaps those braziers are a clue?"
   },
   {
     "id": 38805,
@@ -87193,7 +87193,7 @@
   },
   {
     "id": 39163,
-    "examine": "tired and old!"
+    "examine": " tired and old!"
   },
   {
     "id": 39164,
@@ -87289,7 +87289,7 @@
   },
   {
     "id": 39311,
-    "examine": "that's a bench."
+    "examine": " that's a bench."
   },
   {
     "id": 39312,
@@ -87365,7 +87365,7 @@
   },
   {
     "id": 39441,
-    "examine": "what could you possibly drive?"
+    "examine": " what could you possibly drive?"
   },
   {
     "id": 39442,
@@ -87397,7 +87397,7 @@
   },
   {
     "id": 39449,
-    "examine": "for tomorrow we die."
+    "examine": " for tomorrow we die."
   },
   {
     "id": 39450,
@@ -87565,15 +87565,15 @@
   },
   {
     "id": 39535,
-    "examine": "but somehow different..."
+    "examine": " but somehow different..."
   },
   {
     "id": 39546,
-    "examine": "but the bottom's suspiciously hard to see..."
+    "examine": " but the bottom's suspiciously hard to see..."
   },
   {
     "id": 39547,
-    "examine": "but somehow different..."
+    "examine": " but somehow different..."
   },
   {
     "id": 39548,
@@ -87589,7 +87589,7 @@
   },
   {
     "id": 39570,
-    "examine": "even in death."
+    "examine": " even in death."
   },
   {
     "id": 39571,
@@ -87625,7 +87625,7 @@
   },
   {
     "id": 39579,
-    "examine": "then got very unlucky with their stuff."
+    "examine": " then got very unlucky with their stuff."
   },
   {
     "id": 39580,
@@ -87637,7 +87637,7 @@
   },
   {
     "id": 39608,
-    "examine": "laid to rest."
+    "examine": " laid to rest."
   },
   {
     "id": 39609,
@@ -87645,7 +87645,7 @@
   },
   {
     "id": 39610,
-    "examine": "fire!"
+    "examine": " fire!"
   },
   {
     "id": 39617,
@@ -87873,7 +87873,7 @@
   },
   {
     "id": 39696,
-    "examine": "those are sacks."
+    "examine": " those are sacks."
   },
   {
     "id": 39697,
@@ -88613,7 +88613,7 @@
   },
   {
     "id": 39922,
-    "examine": "really."
+    "examine": " really."
   },
   {
     "id": 39923,
@@ -88737,7 +88737,7 @@
   },
   {
     "id": 39953,
-    "examine": "but worse."
+    "examine": " but worse."
   },
   {
     "id": 39954,
@@ -88849,7 +88849,7 @@
   },
   {
     "id": 40016,
-    "examine": "bit scuffed though."
+    "examine": " bit scuffed though."
   },
   {
     "id": 40017,
@@ -88905,7 +88905,7 @@
   },
   {
     "id": 40030,
-    "examine": "even smaller now that it's broken."
+    "examine": " even smaller now that it's broken."
   },
   {
     "id": 40031,
@@ -89197,7 +89197,7 @@
   },
   {
     "id": 40120,
-    "examine": "bit unstable though."
+    "examine": " bit unstable though."
   },
   {
     "id": 40121,
@@ -89549,7 +89549,7 @@
   },
   {
     "id": 40232,
-    "examine": "but the occupant will be out of the damp."
+    "examine": " but the occupant will be out of the damp."
   },
   {
     "id": 40233,
@@ -89577,7 +89577,7 @@
   },
   {
     "id": 40245,
-    "examine": "fused with the rock and bound to the dark crystals."
+    "examine": " fused with the rock and bound to the dark crystals."
   },
   {
     "id": 40246,
@@ -89589,7 +89589,7 @@
   },
   {
     "id": 40248,
-    "examine": "molin' molin' molin'!"
+    "examine": " molin' molin' molin'!"
   },
   {
     "id": 40249,
@@ -89601,7 +89601,7 @@
   },
   {
     "id": 40251,
-    "examine": "a delicacy for ogres."
+    "examine": " a delicacy for ogres."
   },
   {
     "id": 40252,
@@ -89833,7 +89833,7 @@
   },
   {
     "id": 40359,
-    "examine": "the winner of the Crafty Construction Competition."
+    "examine": " the winner of the Crafty Construction Competition."
   },
   {
     "id": 40360,
@@ -90065,7 +90065,7 @@
   },
   {
     "id": 40433,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 40434,
@@ -90317,11 +90317,11 @@
   },
   {
     "id": 40715,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 40716,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 40723,
@@ -90341,7 +90341,7 @@
   },
   {
     "id": 40727,
-    "examine": "it probably isn't healthy."
+    "examine": " it probably isn't healthy."
   },
   {
     "id": 40728,
@@ -90421,7 +90421,7 @@
   },
   {
     "id": 40750,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 40751,
@@ -90429,7 +90429,7 @@
   },
   {
     "id": 40752,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 40753,
@@ -90785,11 +90785,11 @@
   },
   {
     "id": 40846,
-    "examine": "run energy and prayer."
+    "examine": " run energy and prayer."
   },
   {
     "id": 40847,
-    "examine": "prayer and all stats."
+    "examine": " prayer and all stats."
   },
   {
     "id": 40848,
@@ -90945,7 +90945,7 @@
   },
   {
     "id": 40894,
-    "examine": "but there are hardly any options at this point."
+    "examine": " but there are hardly any options at this point."
   },
   {
     "id": 40895,
@@ -91657,99 +91657,99 @@
   },
   {
     "id": 41131,
-    "examine": "A fancy rug displaying a map of GodzHell."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41132,
-    "examine": "A fancy rug displaying a map of GodzHell."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41133,
-    "examine": "A fancy rug displaying a map of GodzHell."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41134,
-    "examine": "A fancy rug displaying a map of GodzHell."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41135,
-    "examine": "A fancy rug displaying a map of GodzHell."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41136,
-    "examine": "A fancy rug displaying a map of GodzHell."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41137,
-    "examine": "A fancy rug displaying a map of GodzHell."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41138,
-    "examine": "A fancy rug displaying a map of GodzHell."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41139,
-    "examine": "A fancy rug displaying a map of GodzHell."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41140,
-    "examine": "A fancy rug displaying a map of GodzHell."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41141,
-    "examine": "A fancy rug displaying a map of GodzHell."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41142,
-    "examine": "A fancy rug displaying a map of GodzHell."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41143,
-    "examine": "A fancy rug displaying a map of GodzHell."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41144,
-    "examine": "A fancy rug displaying a map of GodzHell."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41145,
-    "examine": "A fancy rug displaying a map of GodzHell."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41146,
-    "examine": "A fancy rug displaying a map of GodzHell."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41147,
-    "examine": "A fancy rug displaying a map of GodzHell."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41148,
-    "examine": "A fancy rug displaying a map of GodzHell."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41149,
-    "examine": "A fancy rug displaying a map of GodzHell."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41150,
-    "examine": "A fancy rug displaying a map of GodzHell."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41151,
-    "examine": "A fancy rug displaying a map of GodzHell."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41152,
-    "examine": "A fancy rug displaying a map of GodzHell."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41153,
-    "examine": "A fancy rug displaying a map of GodzHell."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41154,
-    "examine": "A fancy rug displaying a map of GodzHell."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41155,
@@ -91857,7 +91857,7 @@
   },
   {
     "id": 41181,
-    "examine": "does this mean...?"
+    "examine": " does this mean...?"
   },
   {
     "id": 41182,
@@ -91949,43 +91949,43 @@
   },
   {
     "id": 41212,
-    "examine": "the lock is painted blood red."
+    "examine": " the lock is painted blood red."
   },
   {
     "id": 41213,
-    "examine": "the lock is painted brown."
+    "examine": " the lock is painted brown."
   },
   {
     "id": 41214,
-    "examine": "the lock is painted crimson."
+    "examine": " the lock is painted crimson."
   },
   {
     "id": 41215,
-    "examine": "the lock is painted black."
+    "examine": " the lock is painted black."
   },
   {
     "id": 41216,
-    "examine": "the lock is painted purple."
+    "examine": " the lock is painted purple."
   },
   {
     "id": 41217,
-    "examine": "the open lock is painted blood red."
+    "examine": " the open lock is painted blood red."
   },
   {
     "id": 41218,
-    "examine": "the open lock is painted brown."
+    "examine": " the open lock is painted brown."
   },
   {
     "id": 41219,
-    "examine": "the open lock is painted crimson."
+    "examine": " the open lock is painted crimson."
   },
   {
     "id": 41220,
-    "examine": "the open lock is painted black."
+    "examine": " the open lock is painted black."
   },
   {
     "id": 41221,
-    "examine": "the open lock is painted purple."
+    "examine": " the open lock is painted purple."
   },
   {
     "id": 41222,
@@ -92081,7 +92081,7 @@
   },
   {
     "id": 41294,
-    "examine": "thanks to Tempoross."
+    "examine": " thanks to Tempoross."
   },
   {
     "id": 41295,
@@ -92141,7 +92141,7 @@
   },
   {
     "id": 41311,
-    "examine": "but it'll do the job."
+    "examine": " but it'll do the job."
   },
   {
     "id": 41312,
@@ -92233,7 +92233,7 @@
   },
   {
     "id": 41412,
-    "examine": "barronite-fueled forge."
+    "examine": " barronite-fueled forge."
   },
   {
     "id": 41413,
@@ -92413,7 +92413,7 @@
   },
   {
     "id": 41481,
-    "examine": "barronite-fueled forge."
+    "examine": " barronite-fueled forge."
   },
   {
     "id": 41482,
@@ -92609,11 +92609,11 @@
   },
   {
     "id": 41610,
-    "examine": "that's definitely a bush."
+    "examine": " that's definitely a bush."
   },
   {
     "id": 41611,
-    "examine": "that's definitely a bush."
+    "examine": " that's definitely a bush."
   },
   {
     "id": 41613,
@@ -92697,7 +92697,7 @@
   },
   {
     "id": 41651,
-    "examine": "da da da dummm."
+    "examine": " da da da dummm."
   },
   {
     "id": 41652,
@@ -92705,7 +92705,7 @@
   },
   {
     "id": 41653,
-    "examine": "you might sink right into it and get your bum stuck."
+    "examine": " you might sink right into it and get your bum stuck."
   },
   {
     "id": 41654,
@@ -92893,7 +92893,7 @@
   },
   {
     "id": 41721,
-    "examine": "Bank of GodzHell."
+    "examine": "Bank of Gielinor."
   },
   {
     "id": 41723,
@@ -93585,7 +93585,7 @@
   },
   {
     "id": 41952,
-    "examine": "spilling into the streets."
+    "examine": " spilling into the streets."
   },
   {
     "id": 41953,
@@ -93869,11 +93869,11 @@
   },
   {
     "id": 42133,
-    "examine": "causing the lantern to sway and dance in the breeze."
+    "examine": " causing the lantern to sway and dance in the breeze."
   },
   {
     "id": 42134,
-    "examine": "causing the lantern to sway and dance in the breeze."
+    "examine": " causing the lantern to sway and dance in the breeze."
   },
   {
     "id": 42135,
@@ -93937,7 +93937,7 @@
   },
   {
     "id": 42150,
-    "examine": "it has a musty smell like its been in storage for a long time."
+    "examine": " it has a musty smell like its been in storage for a long time."
   },
   {
     "id": 42151,
@@ -93969,7 +93969,7 @@
   },
   {
     "id": 42158,
-    "examine": "It's locked tight. It probably contains someone elses valuable possessions."
+    "examine": "It's locked tight. It probably contains someone else's valuable possessions."
   },
   {
     "id": 42159,
@@ -93981,7 +93981,7 @@
   },
   {
     "id": 42161,
-    "examine": "so far..."
+    "examine": " so far..."
   },
   {
     "id": 42162,
@@ -94369,7 +94369,7 @@
   },
   {
     "id": 42343,
-    "examine": "founder of Great Kourend."
+    "examine": " founder of Great Kourend."
   },
   {
     "id": 42344,
@@ -94789,11 +94789,11 @@
   },
   {
     "id": 42632,
-    "examine": "right?"
+    "examine": " right?"
   },
   {
     "id": 42633,
-    "examine": "right?"
+    "examine": " right?"
   },
   {
     "id": 42641,
@@ -94833,7 +94833,7 @@
   },
   {
     "id": 42801,
-    "examine": "somehow."
+    "examine": " somehow."
   },
   {
     "id": 42802,
@@ -94909,11 +94909,11 @@
   },
   {
     "id": 42822,
-    "examine": "but together."
+    "examine": " but together."
   },
   {
     "id": 42823,
-    "examine": "but together."
+    "examine": " but together."
   },
   {
     "id": 42824,
@@ -94937,7 +94937,7 @@
   },
   {
     "id": 42829,
-    "examine": "A map of GodzHell."
+    "examine": "A map of Gielinor."
   },
   {
     "id": 42831,
@@ -94945,7 +94945,7 @@
   },
   {
     "id": 42832,
-    "examine": "One of the most common trees in GodzHell."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 42833,
@@ -94970,10 +94970,6 @@
   {
     "id": 42852,
     "examine": "For when you have far too much money."
-  },
-  {
-    "id": 42853,
-    "examine": "Perhaps you might like to go in this direction."
   },
   {
     "id": 42854,
@@ -95485,7 +95481,7 @@
   },
   {
     "id": 43028,
-    "examine": "unfortunately not working."
+    "examine": " unfortunately not working."
   },
   {
     "id": 43029,
@@ -95621,15 +95617,15 @@
   },
   {
     "id": 43129,
-    "examine": "or a tree?"
+    "examine": " or a tree?"
   },
   {
     "id": 43130,
-    "examine": "or a tree?"
+    "examine": " or a tree?"
   },
   {
     "id": 43131,
-    "examine": "or a tree?"
+    "examine": " or a tree?"
   },
   {
     "id": 43132,
@@ -95729,7 +95725,7 @@
   },
   {
     "id": 43248,
-    "examine": "but it is empty."
+    "examine": " but it is empty."
   },
   {
     "id": 43261,
@@ -95809,55 +95805,55 @@
   },
   {
     "id": 43487,
-    "examine": "To keep your group's most valueable possessions in... potentially"
+    "examine": "To store your group's most valuable possessions... potentially."
   },
   {
     "id": 43488,
-    "examine": "To keep your group's most valueable possessions in... potentially"
+    "examine": "To store your group's most valuable possessions... potentially."
   },
   {
     "id": 43489,
-    "examine": "To keep your group's most valueable possessions in... potentially"
+    "examine": "To store your group's most valuable possessions... potentially."
   },
   {
     "id": 43490,
-    "examine": "To keep your group's most valueable possessions in... potentially"
+    "examine": "To store your group's most valuable possessions... potentially."
   },
   {
     "id": 43491,
-    "examine": "To keep your group's most valueable possessions in... potentially"
+    "examine": "To store your group's most valuable possessions... potentially."
   },
   {
     "id": 43492,
-    "examine": "To keep your group's most valueable possessions in... potentially"
+    "examine": "To store your group's most valuable possessions... potentially."
   },
   {
     "id": 43493,
-    "examine": "To keep your group's most valueable possessions in... potentially"
+    "examine": "To store your group's most valuable possessions... potentially."
   },
   {
     "id": 43494,
-    "examine": "To keep your group's most valueable possessions in... potentially"
+    "examine": "To store your group's most valuable possessions... potentially."
   },
   {
     "id": 43495,
-    "examine": "To keep your group's most valueable possessions in... potentially"
+    "examine": "To store your group's most valuable possessions... potentially."
   },
   {
     "id": 43496,
-    "examine": "To keep your group's most valueable possessions in... potentially"
+    "examine": "To store your group's most valuable possessions... potentially."
   },
   {
     "id": 43497,
-    "examine": "To keep your group's most valueable possessions in... potentially"
+    "examine": "To store your group's most valuable possessions... potentially."
   },
   {
     "id": 43498,
-    "examine": "To keep your group's most valueable possessions in... potentially"
+    "examine": "To store your group's most valuable possessions... potentially."
   },
   {
     "id": 43499,
-    "examine": "To keep your group's most valueable possessions in... potentially"
+    "examine": "To store your group's most valuable possessions... potentially."
   },
   {
     "id": 43503,
@@ -95869,7 +95865,7 @@
   },
   {
     "id": 43508,
-    "examine": "I'm sorry.'"
+    "examine": " I'm sorry.'"
   },
   {
     "id": 43509,
@@ -96185,51 +96181,51 @@
   },
   {
     "id": 43701,
-    "examine": "the rift opens a passage to the Air Altar."
+    "examine": " the rift opens a passage to the Air Altar."
   },
   {
     "id": 43702,
-    "examine": "the rift opens a passage to the Water Altar."
+    "examine": " the rift opens a passage to the Water Altar."
   },
   {
     "id": 43703,
-    "examine": "the rift opens a passage to the Earth Altar."
+    "examine": " the rift opens a passage to the Earth Altar."
   },
   {
     "id": 43704,
-    "examine": "the rift opens a passage to the Fire Altar."
+    "examine": " the rift opens a passage to the Fire Altar."
   },
   {
     "id": 43705,
-    "examine": "the rift opens a passage to the Mind Altar."
+    "examine": " the rift opens a passage to the Mind Altar."
   },
   {
     "id": 43706,
-    "examine": "the rift opens a passage to the Chaos Altar."
+    "examine": " the rift opens a passage to the Chaos Altar."
   },
   {
     "id": 43707,
-    "examine": "the rift opens a passage to the Death Altar."
+    "examine": " the rift opens a passage to the Death Altar."
   },
   {
     "id": 43708,
-    "examine": "the rift opens a passage to the Blood Altar."
+    "examine": " the rift opens a passage to the Blood Altar."
   },
   {
     "id": 43709,
-    "examine": "the rift opens a passage to the Body Altar."
+    "examine": " the rift opens a passage to the Body Altar."
   },
   {
     "id": 43710,
-    "examine": "the rift opens a passage to the Cosmic Altar."
+    "examine": " the rift opens a passage to the Cosmic Altar."
   },
   {
     "id": 43711,
-    "examine": "the rift opens a passage to the Nature Altar."
+    "examine": " the rift opens a passage to the Nature Altar."
   },
   {
     "id": 43712,
-    "examine": "the rift opens a passage to the Law Altar."
+    "examine": " the rift opens a passage to the Law Altar."
   },
   {
     "id": 43713,
@@ -96285,11 +96281,11 @@
   },
   {
     "id": 43727,
-    "examine": "Perhaps I can use these to climb down?"
+    "examine": "Perhaps I can climb these."
   },
   {
     "id": 43728,
-    "examine": "Perhaps I can use these to climb down?"
+    "examine": "Perhaps I can climb these."
   },
   {
     "id": 43729,
@@ -96385,7 +96381,7 @@
   },
   {
     "id": 43754,
-    "examine": "pure essence and guardian fragments."
+    "examine": " pure essence and guardian fragments."
   },
   {
     "id": 43755,
@@ -96605,51 +96601,51 @@
   },
   {
     "id": 43809,
-    "examine": "the rift opens a passage to the Air Altar."
+    "examine": " the rift opens a passage to the Air Altar."
   },
   {
     "id": 43810,
-    "examine": "the rift opens a passage to the Water Altar."
+    "examine": " the rift opens a passage to the Water Altar."
   },
   {
     "id": 43811,
-    "examine": "the rift opens a passage to the Earth Altar."
+    "examine": " the rift opens a passage to the Earth Altar."
   },
   {
     "id": 43812,
-    "examine": "the rift opens a passage to the Fire Altar."
+    "examine": " the rift opens a passage to the Fire Altar."
   },
   {
     "id": 43813,
-    "examine": "the rift opens a passage to the Mind Altar."
+    "examine": " the rift opens a passage to the Mind Altar."
   },
   {
     "id": 43814,
-    "examine": "the rift opens a passage to the Chaos Altar."
+    "examine": " the rift opens a passage to the Chaos Altar."
   },
   {
     "id": 43815,
-    "examine": "the rift opens a passage to the Death Altar."
+    "examine": " the rift opens a passage to the Death Altar."
   },
   {
     "id": 43816,
-    "examine": "the rift opens a passage to the Blood Altar."
+    "examine": " the rift opens a passage to the Blood Altar."
   },
   {
     "id": 43817,
-    "examine": "the rift opens a passage to the Body Altar."
+    "examine": " the rift opens a passage to the Body Altar."
   },
   {
     "id": 43818,
-    "examine": "the rift opens a passage to the Cosmic Altar."
+    "examine": " the rift opens a passage to the Cosmic Altar."
   },
   {
     "id": 43819,
-    "examine": "the rift opens a passage to the Nature Altar."
+    "examine": " the rift opens a passage to the Nature Altar."
   },
   {
     "id": 43820,
-    "examine": "the rift opens a passage to the Law Altar."
+    "examine": " the rift opens a passage to the Law Altar."
   },
   {
     "id": 43821,
@@ -96682,6 +96678,46 @@
   {
     "id": 43849,
     "examine": "A mystical barrier."
+  },
+  {
+    "id": 43851,
+    "examine": "Better not eat them!"
+  },
+  {
+    "id": 43857,
+    "examine": "Looks like a large water-powered piece of machinery that's been left in disrepair."
+  },
+  {
+    "id": 43858,
+    "examine": "A large water-powered piece of machinery."
+  },
+  {
+    "id": 43860,
+    "examine": "Looks like a large water-powered piece of machinery that's been left in disrepair."
+  },
+  {
+    "id": 43861,
+    "examine": "A large water-powered piece of machinery."
+  },
+  {
+    "id": 43862,
+    "examine": "Looks like a large water-powered piece of machinery that's been left in disrepair."
+  },
+  {
+    "id": 43863,
+    "examine": "A large water-powered piece of machinery."
+  },
+  {
+    "id": 43864,
+    "examine": "Wonder what this was used for."
+  },
+  {
+    "id": 43865,
+    "examine": "Looks like it can hold a heavy load."
+  },
+  {
+    "id": 43866,
+    "examine": "For putting things in."
   },
   {
     "id": 43867,
@@ -96801,7 +96837,7 @@
   },
   {
     "id": 43919,
-    "examine": "there'll probably be a snake in here..."
+    "examine": " there'll probably be a snake in here..."
   },
   {
     "id": 43920,
@@ -97393,27 +97429,27 @@
   },
   {
     "id": 44143,
-    "examine": "but who am I to judge?"
+    "examine": " but who am I to judge?"
   },
   {
     "id": 44144,
-    "examine": "but who am I to judge?"
+    "examine": " but who am I to judge?"
   },
   {
     "id": 44145,
-    "examine": "but who am I to judge?"
+    "examine": " but who am I to judge?"
   },
   {
     "id": 44146,
-    "examine": "but who am I to judge?"
+    "examine": " but who am I to judge?"
   },
   {
     "id": 44147,
-    "examine": "but who am I to judge?"
+    "examine": " but who am I to judge?"
   },
   {
     "id": 44148,
-    "examine": "but who am I to judge?"
+    "examine": " but who am I to judge?"
   },
   {
     "id": 44204,
@@ -97585,7 +97621,7 @@
   },
   {
     "id": 44584,
-    "examine": "you can almost hear the roar."
+    "examine": " you can almost hear the roar."
   },
   {
     "id": 44585,
@@ -97594,5 +97630,289 @@
   {
     "id": 44586,
     "examine": "The heat distorts the light."
+  },
+  {
+    "id": 44601,
+    "examine": "I don't think I'd want to swim in that."
+  },
+  {
+    "id": 44602,
+    "examine": "A raging torrent."
+  },
+  {
+    "id": 44604,
+    "examine": "Some kind of rack? Maybe the giants used it to cook food."
+  },
+  {
+    "id": 44605,
+    "examine": "Looks heavy."
+  },
+  {
+    "id": 44606,
+    "examine": "Would probably hurt to stick my hand in there."
+  },
+  {
+    "id": 44607,
+    "examine": "Looks like a large water-powered piece of machinery that's been left in disrepair."
+  },
+  {
+    "id": 44608,
+    "examine": "Looks like a large water-powered piece of machinery that's been left in disrepair."
+  },
+  {
+    "id": 44609,
+    "examine": "Looks like a large water-powered piece of machinery that's been left in disrepair."
+  },
+  {
+    "id": 44610,
+    "examine": "You can feel the heat of the desert wafting through."
+  },
+  {
+    "id": 44611,
+    "examine": "Wonder what this was used for."
+  },
+  {
+    "id": 44612,
+    "examine": "Looks like can hold a heavy load."
+  },
+  {
+    "id": 44613,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 44614,
+    "examine": "I don't think I'd want to swim in that."
+  },
+  {
+    "id": 44615,
+    "examine": "A raging torrent."
+  },
+  {
+    "id": 44616,
+    "examine": "Some kind of rack? Maybe the giants used it to cook food."
+  },
+  {
+    "id": 44617,
+    "examine": "Looks heavy."
+  },
+  {
+    "id": 44619,
+    "examine": "A large industrial hammer powered by water."
+  },
+  {
+    "id": 44620,
+    "examine": "A large industrial grindstone powered by water."
+  },
+  {
+    "id": 44621,
+    "examine": "A large industrial polishing wheel powered by water."
+  },
+  {
+    "id": 44622,
+    "examine": "A big bucket."
+  },
+  {
+    "id": 44623,
+    "examine": "A big bucket."
+  },
+  {
+    "id": 44624,
+    "examine": "A big bucket."
+  },
+  {
+    "id": 44625,
+    "examine": "Looks like it can hold a heavy load."
+  },
+  {
+    "id": 44626,
+    "examine": "Looks like it can hold a heavy load."
+  },
+  {
+    "id": 44627,
+    "examine": "Looks like it can hold a heavy load."
+  },
+  {
+    "id": 44628,
+    "examine": "Looks like it can hold a heavy load."
+  },
+  {
+    "id": 44629,
+    "examine": "Looks like it can hold a heavy load."
+  },
+  {
+    "id": 44630,
+    "examine": "Hope my things don't get too hot up here."
+  },
+  {
+    "id": 44631,
+    "examine": "Dipping the preform here will heat it up."
+  },
+  {
+    "id": 44632,
+    "examine": "Dipping the preform here will cool it down."
+  },
+  {
+    "id": 44633,
+    "examine": "Looks like it'll keep a preform hot."
+  },
+  {
+    "id": 44634,
+    "examine": "Looks like it'll keep a preform hot."
+  },
+  {
+    "id": 44635,
+    "examine": "Ominous."
+  },
+  {
+    "id": 44636,
+    "examine": "You can feel the heat of the desert wafting through."
+  },
+  {
+    "id": 44637,
+    "examine": "Looks heavy."
+  },
+  {
+    "id": 44638,
+    "examine": "Looks heavy."
+  },
+  {
+    "id": 44663,
+    "examine": "A descent of water."
+  },
+  {
+    "id": 44683,
+    "examine": "A selection of moulds have been stacked here."
+  },
+  {
+    "id": 44726,
+    "examine": "Probably useful for putting things in."
+  },
+  {
+    "id": 44727,
+    "examine": "Cor blimey that's a big one."
+  },
+  {
+    "id": 44728,
+    "examine": "A wooden wheelbarrow."
+  },
+  {
+    "id": 44729,
+    "examine": "Useful for picking up hot things."
+  },
+  {
+    "id": 44761,
+    "examine": "Must be what powers these tools."
+  },
+  {
+    "id": 44762,
+    "examine": "Would probably hurt to stick my hand in there."
+  },
+  {
+    "id": 44763,
+    "examine": "Would probably hurt to stick my hand in there."
+  },
+  {
+    "id": 44772,
+    "examine": "44772"
+  },
+  {
+    "id": 44780,
+    "examine": "Collect the loot from your Wilderness Keys here."
+  },
+  {
+    "id": 44781,
+    "examine": "Contains the loot from one of your Wilderness Keys."
+  },
+  {
+    "id": 44784,
+    "examine": "The door is closed."
+  },
+  {
+    "id": 44785,
+    "examine": "The door is open."
+  },
+  {
+    "id": 44786,
+    "examine": "These flowers project an aura of life."
+  },
+  {
+    "id": 44787,
+    "examine": "These flowers project an aura of life."
+  },
+  {
+    "id": 44788,
+    "examine": "These flowers project an aura of healing."
+  },
+  {
+    "id": 44789,
+    "examine": "These flowers project an aura of healing."
+  },
+  {
+    "id": 44790,
+    "examine": "These flowers project an aura of healing."
+  },
+  {
+    "id": 44791,
+    "examine": "These flowers project an aura of sunlight."
+  },
+  {
+    "id": 44792,
+    "examine": "These flowers project an aura of sunlight."
+  },
+  {
+    "id": 44793,
+    "examine": "These flowers project an aura of nature."
+  },
+  {
+    "id": 44794,
+    "examine": "These flowers project an aura of nature."
+  },
+  {
+    "id": 44795,
+    "examine": "These flowers project an aura of nature."
+  },
+  {
+    "id": 44796,
+    "examine": "These flowers project an aura of serenity."
+  },
+  {
+    "id": 44797,
+    "examine": "These flowers project an aura of serenity."
+  },
+  {
+    "id": 44798,
+    "examine": "These flowers project an aura of spirit."
+  },
+  {
+    "id": 44799,
+    "examine": "These flowers project an aura of spirit."
+  },
+  {
+    "id": 44800,
+    "examine": "They don't have any colour."
+  },
+  {
+    "id": 44801,
+    "examine": "They don't have any colour."
+  },
+  {
+    "id": 44802,
+    "examine": "They don't have any colour."
+  },
+  {
+    "id": 44823,
+    "examine": "These flowers project an aura of life."
+  },
+  {
+    "id": 44824,
+    "examine": "These flowers project an aura of sunlight."
+  },
+  {
+    "id": 44825,
+    "examine": "These flowers project an aura of serenity."
+  },
+  {
+    "id": 44826,
+    "examine": "These flowers project an aura of spirit."
   }
 ]

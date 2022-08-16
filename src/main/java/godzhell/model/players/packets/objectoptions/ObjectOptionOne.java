@@ -466,6 +466,13 @@ public class ObjectOptionOne {
 		if (c.getRights().isOrInherits(Right.OWNER))
 			c.sendMessage("Clicked Object Option 1:  "+objectType+", Object name: "+def.getName()+", SizeX "+def.xLength()+", SizeY "+def.yLength());
 		switch (objectType) {
+			case 9662:
+				if(obX == 2979 && obY == 3241) {
+					c.getItems().addItem(ItemID.SPADE, 1);
+					c.sendMessage("You pick up the spade.");
+					Server.getGlobalObjects().add(new GlobalObject(-1, 2979, 3241, 0, 2, 10, 130, 9662));
+				}
+				break;
 			case 1727:
 				if(c.getX() == 3337 && c.getY() == 3896) {
 					c.getPA().movePlayer(3337, 3895, 0);

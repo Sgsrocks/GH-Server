@@ -277,19 +277,17 @@ public class Region {
 	 */
 	public static void addWorldObject(int id, int x, int y, int height, int face) {
 		Region region = getRegion(x, y);
-		if (region == null) {
-			return;
-		}
-		int regionId = region.id;
-		if (worldObjects.containsKey(regionId)) {
-			if (objectExists(regionId, id, x, y, height)) {
-				return;
+		if (region != null) {
+			int regionId = region.id;
+			if (worldObjects.containsKey(regionId)) {
+				if (!objectExists(regionId, id, x, y, height)) {
+					worldObjects.get(regionId).add(new WorldObject(id, x, y, height, face));
+				}
+			} else {
+				ArrayList<WorldObject> object = new ArrayList<>(1);
+				object.add(new WorldObject(id, x, y, height, face));
+				worldObjects.put(regionId, object);
 			}
-			worldObjects.get(regionId).add(new WorldObject(id, x, y, height, face));
-		} else {
-			ArrayList<WorldObject> object = new ArrayList<>(1);
-			object.add(new WorldObject(id, x, y, height, face));
-			worldObjects.put(regionId, object);
 		}
 	}
 
@@ -1060,8 +1058,8 @@ public class Region {
 			xLength = def.yLength();
 			yLength = def.xLength();
 		}
-		if ((def != null ? def.name : null) != null && def.name.toLowerCase().equalsIgnoreCase("web") && def.actions[0].toLowerCase().equalsIgnoreCase("slash")) {
-			//System.out.println(objectId+" "+x+" "+y+" "+direction+" "+height);
+		if ((def != null ? def.name : null) != null && def.name.toLowerCase().equalsIgnoreCase("spade") && def.actions[0].toLowerCase().equalsIgnoreCase("take")) {
+			//System.out.println(objectId+" "+x+" "+y+" "+direction+" "+height+" "+type);
 			//System.out.println(objectId+", ");
 				}
 		if (type == 22) {

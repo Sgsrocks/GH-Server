@@ -53010,5 +53010,125 @@
   {
     "id": 26994,
     "examine": "An amulet in the shape of an eye."
+  },
+  {
+    "id": 26996,
+    "examine": "The creature's soul is still in here. I could reanimate it with Expert Reanimation."
+  },
+  {
+    "id": 26997,
+    "examine": "The creature's soul is still in here. I could reanimate it with Expert Reanimation."
+  },
+  {
+    "id": 27000,
+    "examine": "A void knight top plucked from the shattered abyss."
+  },
+  {
+    "id": 27001,
+    "examine": "Void knight robes plucked from the shattered abyss."
+  },
+  {
+    "id": 27002,
+    "examine": "Void knight gloves plucked from the shattered abyss."
+  },
+  {
+    "id": 27003,
+    "examine": "An elite void knight top plucked from the shattered abyss."
+  },
+  {
+    "id": 27004,
+    "examine": "Elite void knight robes plucked from the shattered abyss."
+  },
+  {
+    "id": 27005,
+    "examine": "A mage helm plucked from the shattered abyss."
+  },
+  {
+    "id": 27006,
+    "examine": "A ranger helm plucked from the shattered abyss."
+  },
+  {
+    "id": 27007,
+    "examine": "A melee helm plucked from the shattered abyss."
+  },
+  {
+    "id": 27008,
+    "examine": "A defensive weapon trimmed with gold."
+  },
+  {
+    "id": 27009,
+    "examine": "A defensive weapon trimmed with gold."
+  },
+  {
+    "id": 27010,
+    "examine": "A giant piece of untempered metal."
+  },
+  {
+    "id": 27012,
+    "examine": "Looks like two ammo moulds roughly put together with a metal strip."
+  },
+  {
+    "id": 27014,
+    "examine": "Only Kovac knows what's gone into this."
+  },
+  {
+    "id": 27017,
+    "examine": "This makes smithing easier and more rewarding."
+  },
+  {
+    "id": 27019,
+    "examine": "Filled to the brim with ore."
+  },
+  {
+    "id": 27021,
+    "examine": "It takes a lot of guts to wield a blade this big."
+  },
+  {
+    "id": 27023,
+    "examine": "Is that a dwarven name stitched into the collar?"
+  },
+  {
+    "id": 27025,
+    "examine": "Is that a bit of dried blood on the waist?"
+  },
+  {
+    "id": 27027,
+    "examine": "They feel a size too small."
+  },
+  {
+    "id": 27029,
+    "examine": "They fit suprisingly well."
+  },
+  {
+    "id": 27031,
+    "examine": "They fit suprisingly well and are stuffed with a pair of ice gloves."
+  },
+  {
+    "id": 27033,
+    "examine": "A DEV TOOL."
+  },
+  {
+    "id": 27035,
+    "examine": "A crown made from six beautifully coloured flowers"
+  },
+  {
+    "id": 27037,
+    "examine": "A seed that can be planted to grow a Legendary Red Rose."
+  },
+  {
+    "id": 27038,
+    "examine": "A seed that can be planted to grow a Gorgeous Orange Lily."
+  },
+  {
+    "id": 27039,
+    "examine": "A seed that can be planted to grow a Beautiful Yellow Pansy."
+  },
+  {
+    "id": 27040,
+    "examine": "A seed that can be planted to grow a Tenacious Indigo Iris."
+  },
+  {
+    "id": 27041,
+    "examine": "A seed that can be planted to grow a Quality Violet Tulip."
   }
 ]

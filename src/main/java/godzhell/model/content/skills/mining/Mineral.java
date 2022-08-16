@@ -1,13 +1,13 @@
 package godzhell.model.content.skills.mining;
 
+import godzhell.definitions.ObjectID;
+import godzhell.util.Misc;
+import org.apache.commons.lang3.RandomUtils;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.EnumSet;
 import java.util.Set;
-
-import org.apache.commons.lang3.RandomUtils;
-
-import godzhell.util.Misc;
 
 /**
  * An enumeration of ore vein information.
@@ -16,18 +16,18 @@ import godzhell.util.Misc;
  * @date Feb 18, 2015, 5:14:50 PM
  */
 public enum Mineral {
-	CLAY(new int[] { 7487, 7454 }, "none", 1, 18, 0, 100, 15, 30000, true, generateExclusive(434)), 
-	COPPER(new int[] { 11161, 10943 }, "bronze", 1, 18, 100, 5, 15, 15000, true, generateExclusive(436)), 
-	TIN(new int[] { 11361, 11360 }, "bronze", 1, 18, 5, 100, 15, 15000, true, generateExclusive(438)), 
-	IRON(new int[] { 11364, 11365 }, "iron", 15, 35, 100, 8, 17, 14800, true, generateExclusive(440)), 
-	SILVER(new int[] { 11369 }, "silver", 20, 40, 100, 8, 17, 14800, true, generateExclusive(442)), 
-	COAL(new int[] { 11366, 11367 }, "none", 30, 50, 100, 15, 29, 14600, true, generateExclusive(453)), 
-	GOLD(new int[] { 11370, 11371 }, "gold", 40, 65, 100, 25, 32, 14200, true, generateExclusive(444)), 
-	MITHRIL(new int[] { 11372, 11373 }, "mithril", 55, 80, 100, 40, 35, 13800, true, generateExclusive(447)), 
-	ADAMANT(new int[] { 11374, 11375 }, "adamant", 70, 95, 100, 50, 37, 13200, true, generateExclusive(449)), 
-	RUNE(new int[] { 11376, 11377 }, "rune", 85, 125, 100, 100, 39, 12500, true, generateExclusive(451)), 
-	ESSENCE(new int[] { 34773 }, "none", 1, 5, -1, -1, 5, 15000, false, generateExclusive(-1)),
-	AMETHYST(new int[] { 11388, 11389 }, "none", 92, 140, 0, 100, 40, 11500, false, generateExclusive(21347)),
+	CLAY(new int[] { ObjectID.ROCKS_11363, ObjectID.ROCKS_11362 }, "none", 1, 18, 0, 100, 15, 30000, true, generateExclusive(434)),
+	COPPER(new int[] { ObjectID.ROCKS_11161, ObjectID.ROCKS_10943 }, "bronze", 1, 18, 100, 5, 15, 15000, true, generateExclusive(436)),
+	TIN(new int[] { ObjectID.ROCKS_11361, ObjectID.ROCKS_11360 }, "bronze", 1, 18, 5, 100, 15, 15000, true, generateExclusive(438)),
+	IRON(new int[] { ObjectID.ROCKS_11364, ObjectID.ROCKS_11365 }, "iron", 15, 35, 100, 8, 17, 14800, true, generateExclusive(440)),
+	SILVER(new int[] { ObjectID.ROCKS_11369 }, "silver", 20, 40, 100, 8, 17, 14800, true, generateExclusive(442)),
+	COAL(new int[] { ObjectID.ROCKS_11366, ObjectID.ROCKS_11367 }, "none", 30, 50, 100, 15, 29, 14600, true, generateExclusive(453)),
+	GOLD(new int[] { ObjectID.ROCKS_11370, ObjectID.ROCKS_11371 }, "gold", 40, 65, 100, 25, 32, 14200, true, generateExclusive(444)),
+	MITHRIL(new int[] { ObjectID.ROCKS_11372, ObjectID.ROCKS_11373 }, "mithril", 55, 80, 100, 40, 35, 13800, true, generateExclusive(447)),
+	ADAMANT(new int[] { ObjectID.ROCKS_11374, ObjectID.ROCKS_11375 }, "adamant", 70, 95, 100, 50, 37, 13200, true, generateExclusive(449)),
+	RUNE(new int[] { ObjectID.ROCKS_11376, ObjectID.ROCKS_11377 }, "rune", 85, 125, 100, 100, 39, 12500, true, generateExclusive(451)),
+	ESSENCE(new int[] { ObjectID.RUNE_ESSENCE_34773 }, "none", 1, 5, -1, -1, 5, 15000, false, generateExclusive(-1)),
+	AMETHYST(new int[] { ObjectID.CRYSTALS, ObjectID.CRYSTALS_11389 }, "none", 92, 140, 0, 100, 40, 11500, false, generateExclusive(21347)),
 	Crashed_Star1(new int[] { 41229 }, "star", 10, 11, 0, 100, 15, 10000, false, generateExclusive(-1)),
 	Crashed_Star2(new int[] { 41228 }, "star1", 20, 20, 0, 100, 15, 10000, false, generateExclusive(-1)),
 	Crashed_Star3(new int[] { 41227 }, "star2", 30, 23, 0, 100, 15, 10000, false, generateExclusive(-1)),

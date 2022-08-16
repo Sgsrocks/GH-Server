@@ -4339,6 +4339,34 @@ public class NPCHandler {
 				npcs[i].projectileId = 393;
 			}
 			break;
+			case NpcID.AIR_WIZARD:
+				npcs[i].attackType = CombatType.MAGE;
+				npcs[i].hitDelayTimer = 5;
+				npcs[i].gfx100(90);
+				npcs[i].projectileId = 91;
+				npcs[i].endGfx = 92;
+				break;
+			case NpcID.WATER_WIZARD:
+				npcs[i].attackType = CombatType.MAGE;
+				npcs[i].hitDelayTimer = 5;
+				npcs[i].gfx100(93);
+				npcs[i].projectileId = 94;
+				npcs[i].endGfx = 95;
+				break;
+			case NpcID.EARTH_WIZARD:
+				npcs[i].attackType = CombatType.MAGE;
+				npcs[i].hitDelayTimer = 5;
+				npcs[i].gfx100(96);
+				npcs[i].projectileId = 97;
+				npcs[i].endGfx = 98;
+				break;
+			case NpcID.FIRE_WIZARD:
+				npcs[i].attackType = CombatType.MAGE;
+				npcs[i].hitDelayTimer = 5;
+				npcs[i].gfx100(99);
+				npcs[i].projectileId = 100;
+				npcs[i].endGfx = 101;
+				break;
 			case 7706:
 					npcs[i].attackType = CombatType.RANGE;
 					npcs[i].hitDelayTimer = 5;
