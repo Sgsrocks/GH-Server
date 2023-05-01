@@ -128,7 +128,41 @@ public class UseItem {
 				}
 			}
 		}
-
+		//Handle coins <-> platinum tokens.
+		if (itemId == 995 && (def.getName().toLowerCase().equals("bank booth") || def.getName().toLowerCase().equals("bank chest"))) {
+			final int COIN_SIZE = c.getItems().getItemAmount(995);
+			if (COIN_SIZE < 1000) {
+				c.sendMessage("You must have atleast 1,000 coins to exchange for Platinum tokens.");
+				return;
+			}
+			final int PLATINUM_TOKEN_SIZE = c.getItems().getItemAmount(13204);
+			System.out.println((long)(PLATINUM_TOKEN_SIZE + (COIN_SIZE / 1000)));
+			if ((long)(PLATINUM_TOKEN_SIZE + (COIN_SIZE / 1000)) < 0) {
+				c.sendMessage("You can't do this as you will exceed the maximum value.");
+				return;
+			}
+			final int REMAINDER = COIN_SIZE % 1000;
+			if (REMAINDER != 0 && PLATINUM_TOKEN_SIZE == 0 && c.getItems().freeSlots() == 0) {
+				c.sendMessage("You don't have enough space in your inventory.");
+				return;
+			}
+			c.getItems().deleteItem(995, COIN_SIZE - REMAINDER);
+			c.getItems().addItem(13204, COIN_SIZE / 1000);
+			c.sendMessage("You exchange " + Misc.format(COIN_SIZE) + " Coins for " + Misc.format(c.getItems().getItemAmount(13204)) + " Platinum tokens.");
+			return;
+		}
+		if (itemId == 13204 && (def.getName().toLowerCase().equals("bank booth") || def.getName().toLowerCase().equals("bank chest"))) {
+			final int COIN_SIZE = c.getItems().getItemAmount(995);
+			final int PLATINUM_TOKEN_SIZE = c.getItems().getItemAmount(13204);
+			if ((PLATINUM_TOKEN_SIZE * 1000) < 0 || ((PLATINUM_TOKEN_SIZE * 1000) + COIN_SIZE) < 0) {
+				c.sendMessage("You can't do this as you will exceed the maximum value.");
+				return;
+			}
+			c.getItems().deleteItem(13204, PLATINUM_TOKEN_SIZE);
+			c.getItems().addItem(995, PLATINUM_TOKEN_SIZE * 1000);
+			c.sendMessage("You exchange " + Misc.format(PLATINUM_TOKEN_SIZE) + " Platinum tokens for " + Misc.format(c.getItems().getItemAmount(995)) + " Coins.");
+			return;
+		}
 		switch (objectID) {
 			case 29878://Geyser in raids used to fill up vials
 				if (itemId == 20800) {

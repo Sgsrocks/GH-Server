@@ -13,4 +13,9 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8" />
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="godzhell-server.main" options="--add-exports java.xml/com.sun.org.apache.bcel.internal.classfile=ALL-UNNAMED" />
+    </option>
+  </component>
 </project>

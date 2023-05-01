@@ -2,9 +2,9 @@ package godzhell.model.players;
 
 public final class Position {
 
-	private final int x;
+	private int x;
 	
-	private final int y;
+	private int y;
 	private int z;
 	private final int height;
 	
@@ -57,8 +57,25 @@ public final class Position {
 
 	public int getZ() {
 		// TODO Auto-generated method stub
-		return 0;
+		return height;
 	}
-	
-	
+
+
+	/**
+	 * Sets the X coordinate.
+	 *
+	 */
+	public void setX(int x2) {
+		this.x = x2;
+	}
+	/**
+	 * Sets the Y coordinate.
+	 *
+	 * @param y
+	 *            the Y coordinate
+	 */
+	public void setY(int y) {
+		this.y = y;
+	}
+
 }

@@ -21,6 +21,7 @@ import godzhell.model.content.skills.fletching.LogCutting;
 import godzhell.model.content.skills.smithing.Smelting;
 import godzhell.model.content.teleportation.Teleports;
 import godzhell.model.content.tradingpost.Listing;
+import godzhell.model.content.trails.Sextant;
 import godzhell.model.content.wogw.Wogw;
 import godzhell.model.items.GameItem;
 import godzhell.model.items.ItemAssistant;
@@ -83,7 +84,9 @@ public class ClickingButtons implements PacketType {
 		if (c.getExpLock().ExpLockClicking(c, actionButtonId)) {
 			return;
 		}
-
+		if (Sextant.handleSextantButtons(c, actionButtonId)) {
+			return;
+		}
 		if (c.getCollectionLog().handleActionButtons(c, actionButtonId)) {
 			return;
 		}

@@ -357,6 +357,7 @@ public final class ObjectDef {
 			anInt760 = aBoolean767 ? 1 : 0;
 	}
 
+
 	private ObjectDef() {
 		type = -1;
 	}

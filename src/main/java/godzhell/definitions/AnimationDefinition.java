@@ -1,24 +1,9 @@
 package godzhell.definitions;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.net.URL;
-import java.net.URLConnection;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.Arrays;
-
+import godzhell.util.Stream;
 import org.apache.commons.io.FileUtils;
 
-import godzhell.util.Stream;
+import java.io.File;
 
 /**
  * A class that loads & manages NPC configurations. 
@@ -143,6 +128,25 @@ public class AnimationDefinition {
 				for (int i = 0; i < len; i++) {
 					buffer.read24Int();
 				}
+			} else if (opcode == 14) {
+				skeletalId = buffer.readInt();
+			} else if (opcode == 15) {
+				int count = buffer.readUnsignedWord();
+				skeletalsoundEffect = new int[count];
+				skeletalsoundRange = new int[count];
+				for (int index = 0; index < count; ++index) {
+					skeletalsoundEffect[index] = buffer.readUnsignedWord();
+					skeletalsoundRange[index] = buffer.read24Int();
+				}
+			} else if (opcode == 16) {
+				skeletalRangeBegin = buffer.readUnsignedWord();
+				skeletalRangeEnd = buffer.readUnsignedWord();
+			} else if (opcode == 17) {
+				int count = buffer.readUnsignedByte();
+				unknown = new int[count];
+				for (int index = 0; index < count; ++index) {
+					unknown[index] = buffer.readUnsignedByte();
+				}
 			}
 		}
 
@@ -192,4 +196,10 @@ public class AnimationDefinition {
 		public int animatingPrecedence;
 		public int walkingPrecedence;
 		public int replayMode;
+	private int skeletalRangeBegin = -1;
+	private int skeletalRangeEnd = -1;
+	private int skeletalId = -1;
+	private int[] skeletalsoundEffect;
+	private int[] unknown;
+	private int[] skeletalsoundRange;
 }

@@ -1,6 +1,7 @@
 package godzhell.model.npcs.drops;
 
 import godzhell.Config;
+import godzhell.model.content.trails.ClueScroll;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.json.simple.JSONArray;
@@ -236,19 +237,7 @@ public class DropManager {
 			/**
 			 * Clue scrolls
 			 */
-			int chance = player.getRechargeItems().hasItem(13118) ? 142 : player.getRechargeItems().hasItem(13119) ? 135 : player.getRechargeItems().hasItem(13120) ? 120 : 150;
-			if (Misc.random(chance) == 1) {
-				//player.sendMessage("@pur@You sense a @red@clue scroll @pur@being dropped to the ground.");
-				if (npc.getDefinition().getNpcCombat() > 0 && npc.getDefinition().getNpcCombat() <= 70) {
-					Server.itemHandler.createGroundItem(player, 2677, location.getX(), location.getY(), location.getZ(), 1, player.getIndex());
-				}
-				if (npc.getDefinition().getNpcCombat() > 70 && npc.getDefinition().getNpcCombat() <= 110) {
-					Server.itemHandler.createGroundItem(player, 2801, location.getX(), location.getY(), location.getZ(), 1, player.getIndex());
-				}
-				if (npc.getDefinition().getNpcCombat() > 110) {
-					Server.itemHandler.createGroundItem(player, 2722, location.getX(), location.getY(), location.getZ(), 1, player.getIndex());
-				}
-			}
+			ClueScroll.dropClue(player, npc, location);
 
 
 			/**

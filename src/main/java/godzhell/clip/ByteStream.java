@@ -76,7 +76,7 @@ public class ByteStream {
 		int var1 = 0;
 
 		int var2;
-		for (var2 = this.readUSmart(); var2 == 32767; var2 = this.readUSmart()) {
+		for (var2 = this.get_unsignedsmart_byteorshort(); var2 == 32767; var2 = this.get_unsignedsmart_byteorshort()) {
 			var1 += 32767;
 		}
 
@@ -87,6 +87,25 @@ public class ByteStream {
 	public int readUSmart() {
 		int peek = buffer[offset] & 0xFF;
 		return peek < 128 ? this.getUByte() : this.getUShort() - 0x8000;
+	}
+	public int get_unsignedsmart_byteorshort() {
+		int peek = buffer[offset] & 0xFF;
+		return peek < 0x80 ? this.getUByte() : this.getUShort() - 0x8000;
+	}
+	public int method1606() {
+		int var2 = 0;
+
+		int var3;
+		for (var3 = this.readUShortSmart(); var3 == 32767; var3 = this.readUShortSmart()) {
+			var2 += 32767;
+		}
+
+		var2 += var3;
+		return var2;
+	}
+	public int readUShortSmart() {
+		int var2 = this.buffer[this.offset] & 255;
+		return var2 < 128 ? this.getUByte() : this.getUShort() - 32768;
 	}
 	public int readUnsignedByte() {
 		return buffer[offset++] & 0xff;

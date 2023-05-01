@@ -1,21 +1,22 @@
 package godzhell.model.content.skills.construction;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.annotations.Expose;
+import godzhell.event.CycleEvent;
+import godzhell.event.CycleEventContainer;
+import godzhell.event.CycleEventHandler;
+import godzhell.model.content.skills.construction.rooms.Default;
+import godzhell.model.content.skills.construction.rooms.Garden;
+import godzhell.model.content.skills.construction.rooms.Parlour;
+import godzhell.model.players.Player;
+import godzhell.util.Misc;
+
 import java.io.File;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.annotations.Expose;
-
-import godzhell.event.CycleEvent;
-import godzhell.event.CycleEventContainer;
-import godzhell.event.CycleEventHandler;
-import godzhell.model.players.Player;
-import godzhell.model.content.skills.construction.rooms.*;
-import godzhell.util.Misc;
 
 public class House {
 
@@ -248,7 +249,7 @@ public class House {
 	}
 	
 	public static House load(Player client) {
-		GsonBuilder builder = new GsonBuilder();
+			GsonBuilder builder = new GsonBuilder();
 		builder.excludeFieldsWithoutExposeAnnotation();
 		Gson gson = builder.create();
 		

@@ -28,7 +28,10 @@ public class ItemCacheDefinition {
 	 */
 	public static int ITEM_TOTAL = 30000;
     private String opcode150;
-
+    private byte field2142;
+    private byte field2157;
+    private byte field2158;
+    private int field2182;
     /**
 	 * Returns a {@link ItemCacheDefinition} for the specified ID.
 	 * @param i	the id of the Item to get the definition for
@@ -123,6 +126,7 @@ public class ItemCacheDefinition {
         ItemDefinition_Sub2_Sub1.itemDef(itemId, itemDef);
         ItemDefinition_Sub3.itemDef(itemId, itemDef);
         ItemDefinition_Sub4.itemDef(itemId, itemDef);
+        ItemDefinition_Sub5.itemDef(itemId, itemDef);
         switch (itemId) {
         }
     }
@@ -344,6 +348,10 @@ public class ItemCacheDefinition {
                 stackable = true;
             } else if (opcode == 12) {
                 value = buffer.readInt();
+            } else if(opcode == 13)
+                    this.field2142 = buffer.readSignedByte();
+                else if(opcode == 14) {
+                    this.field2157 = buffer.readSignedByte();
             } else if (opcode == 16) {
                 membersObject = true;
             } else if (opcode == 23) {
@@ -356,6 +364,8 @@ public class ItemCacheDefinition {
                 femaleTranslation = buffer.readSignedByte();
             } else if (opcode == 26) {
                 secondaryFemaleModel = buffer.readUnsignedWord();
+            } else if(opcode == 27){
+                    this.field2158 = buffer.readSignedByte();
             } else if (opcode >= 30 && opcode < 35) {
                 if (groundActions == null) {
                     groundActions = new String[5];
@@ -391,6 +401,8 @@ public class ItemCacheDefinition {
                 shiftClickIndex = buffer.readUnsignedByte();
             } else if (opcode == 65) {
                 searchable = true;
+            } else if (opcode == 75){
+                this.field2182 = buffer.readSignedWord();
             }  else if (opcode == 78) {
                 tertiaryMaleEquipmentModel = buffer.readUnsignedWord();
             } else if (opcode == 79) {

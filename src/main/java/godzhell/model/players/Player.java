@@ -55,7 +55,6 @@ import godzhell.model.content.skills.hunter.Hunter;
 import godzhell.model.content.skills.mining.Mining;
 import godzhell.model.content.skills.prayer.Prayer;
 import godzhell.model.content.skills.runecrafting.Runecrafting;
-import godzhell.model.content.skills.runecrafting.Tiaras;
 import godzhell.model.content.skills.slayer.Slayer;
 import godzhell.model.content.skills.smithing.Smelting;
 import godzhell.model.content.skills.smithing.Smithing;
@@ -69,6 +68,7 @@ import godzhell.model.content.teleportation.TeleportType1;
 import godzhell.model.content.teleportation.TeleportationInterface.TeleportData;
 import godzhell.model.content.teleportation.TeleportationInterface.TeleportType;
 import godzhell.model.content.titles.Titles;
+import godzhell.model.content.trails.ClueScroll;
 import godzhell.model.content.trails.RewardLevel;
 import godzhell.model.content.trails.TreasureTrails;
 import godzhell.model.content.traveling.DesertHeat;
@@ -185,6 +185,16 @@ public class Player extends Entity {
     public boolean fillingWater;
 	public int gfxTimer;
 	public boolean fillingSand;
+	public GameItem[] puzzleStoredItems = new GameItem[ClueScroll.PUZZLE_LENGTH];
+	public double sextantBarDegree;
+	public int sextantSunCoords;
+	public int rotationFactor;
+	public int sextantGlobalPiece;
+	public int sextantLandScapeCoords;
+	public int clue1Amount;
+	public int clue2Amount;
+	public int clue3Amount;
+	public int clue4Amount;
     // Collection log
 
 	private CollectionLog viewingCollectionLog;
@@ -965,6 +975,14 @@ public class Player extends Entity {
 		return spellId;
 	}
 
+	public int getEliteClueCounter() {
+		return counters[8];
+	}
+
+	public void setEliteClueCounter(int counters) {
+		this.counters[8] = counters;
+	}
+
 	public class TinterfaceText {
 		public int id;
 		public String currentState;
@@ -1397,7 +1415,7 @@ public class Player extends Entity {
 			outStream.writeByte(0);
 			getFriends().sendList();
 			getIgnores().sendList();
-			Tiaras.handleTiara(this, Item.HAT);
+			//Tiaras.handleTiara(this, Item.HAT);
 			getItems().addSpecialBar(playerEquipment[playerWeapon]);
 			saveTimer = Config.SAVE_TIMER;
 			saveCharacter = true;

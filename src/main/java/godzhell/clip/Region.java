@@ -1246,16 +1246,16 @@ public class Region {
 		}
 		int objectId = -1;
 		int incr;
-		while ((incr = str1.readUnsignedIntSmartShortCompat()) != 0) {
+		while ((incr = str1.method1606()) != 0) {
 			objectId += incr;
 			int location = 0;
 			int incr2;
-			while ((incr2 = str1.getUSmart()) != 0) {
+			while ((incr2 = str1.readUShortSmart()) != 0) {
 				location += incr2 - 1;
 				int localX = (location >> 6 & 0x3f);
 				int localY = (location & 0x3f);
 				int height = location >> 12;
-				int objectData = str1.getUByte();
+				int objectData = str1.readUShortSmart();
 				int type = objectData >> 2;
 				int direction = objectData & 0x3;
 				if (localX < 0 || localX >= 64 || localY < 0 || localY >= 64) {

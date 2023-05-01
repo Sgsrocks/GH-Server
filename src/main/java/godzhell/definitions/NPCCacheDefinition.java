@@ -24,6 +24,7 @@ public class NPCCacheDefinition {
 	 */
 	public static int NPC_TOTAL = 11474;
     private String opcode112;
+    private boolean aBoolean84;
 
     /**
 	 * Returns a {@link NPCCacheDefinition} for the specified ID.
@@ -201,12 +202,26 @@ public class NPCCacheDefinition {
                     }
                 }
                 morphisms[len + 1] = value;
+            } else if (opcode == 107){
+                aBoolean84 = false;
             } else if (opcode == 109) {
-            } else
-            if(opcode == 107 || opcode == 111) {
-            } else if (opcode == 112) {
-                opcode112 = str.readString();
-            
+                this.isClickable = false;
+            } else if(opcode == 111) {
+                this.aBool2190 = true;
+            } else if(opcode == 114) {
+                this.field1914 = str.readUnsignedWord();
+            } else if(opcode == 115) {
+                this.field1914 = str.readUnsignedWord();
+                this.field1919 = str.readUnsignedWord();
+                this.field1918 = str.readUnsignedWord();
+                this.field1938 = str.readUnsignedWord();
+            } else if(opcode == 116) {
+                this.field1920 = str.readUnsignedWord();
+            } else if(opcode == 117) {
+                this.field1920 = str.readUnsignedWord();
+                this.field1933 = str.readUnsignedWord();
+                this.field1922 = str.readUnsignedWord();
+                this.field1923 = str.readUnsignedWord();
             }
         } while(true);
     }
@@ -291,6 +306,8 @@ public class NPCCacheDefinition {
 
     private static int cacheIndex;
     private static Stream npcData;
+    private boolean isClickable = true;
+    private boolean aBool2190= false;
     public static int totalNpcs;
     public static int newTotalNpcs;
     private String name;
@@ -305,6 +322,14 @@ public class NPCCacheDefinition {
     private int size = 1;
     public int morphisms[];
     public int combatLevel;
+    public int field1914 = -1;
+    public int field1919 = -1;
+    public int field1918 = -1;
+    public int field1938 = -1;
+    public int field1920 = -1;
+    public int field1933 = -1;
+    public int field1922 = -1;
+    public int field1923 = -1;
     private int Category;
     private String examine;
 

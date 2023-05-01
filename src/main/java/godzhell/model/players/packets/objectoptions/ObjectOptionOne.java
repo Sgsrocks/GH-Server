@@ -37,6 +37,8 @@ import godzhell.model.content.skills.runecrafting.RuneCraftingActions;
 import godzhell.model.content.skills.woodcutting.Tree;
 import godzhell.model.content.skills.woodcutting.Woodcutting;
 import godzhell.model.content.tradingpost.Listing;
+import godzhell.model.content.trails.MapScrolls;
+import godzhell.model.content.trails.SearchScrolls;
 import godzhell.model.content.traveling.Desert;
 import godzhell.model.content.traveling.Sailing;
 import godzhell.model.content.wogw.Wogw;
@@ -439,7 +441,13 @@ public class ObjectOptionOne {
 				}
 		}
 		}
-
+		if (MapScrolls.handleCrate(c, obX, obY)) {
+			return;
+		}
+		if (SearchScrolls.handleObject(c, obX, obY)) {
+			c.sendMessage(""+object);
+			return;
+		}
 		final int[] HUNTER_OBJECTS = new int[] { 9373, 9377, 9379, 9375, 9348, 9380, 9385, 9344, 9345, 9383, 721 };
 		if (IntStream.of(HUNTER_OBJECTS).anyMatch(id -> objectType == id)) {
 			if (Hunter.pickup(c, object)) {

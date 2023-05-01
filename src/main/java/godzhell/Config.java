@@ -935,5 +935,5 @@ public static final int DONATOR_SHOP = 268;
 
 		public static boolean DOUBLE_EXP = false;
 
-    public static String UPDATE_MESSAGE = "Some npc animations has been fixed.";
+    public static String UPDATE_MESSAGE = "Clue Scrolls have been updated!";
 }

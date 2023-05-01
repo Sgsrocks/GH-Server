@@ -1,10 +1,8 @@
 package godzhell.model.players.packets;
 
-import java.util.Objects;
-import java.util.Optional;
-
 import godzhell.Config;
 import godzhell.Server;
+import godzhell.model.content.trails.Puzzle;
 import godzhell.model.items.GameItem;
 import godzhell.model.items.ItemCombination;
 import godzhell.model.items.ItemCombinations;
@@ -20,6 +18,9 @@ import godzhell.model.players.Player;
 import godzhell.model.players.PlayerSave;
 import godzhell.model.shops.ShopAssistant;
 
+import java.util.Objects;
+import java.util.Optional;
+
 /**
  * Drop Item Class
  **/
@@ -31,6 +32,8 @@ public class DropItem implements PacketType {
 		c.getInStream().readUnsignedByte();
 		c.getInStream().readUnsignedByte();
 		int slot = c.getInStream().readUnsignedWordA();
+		if(Puzzle.moveSlidingPiece(c, itemId))
+			return;
 		c.alchDelay = System.currentTimeMillis();
 		if (c.getPA().viewingOtherBank) {
 			c.getPA().resetOtherBank();

@@ -157,9 +157,9 @@ public class NPCHandler {
         try{
                 for(int i =0; i < NPCSpawns.getNPCSpawns().size(); i++){
                         NPCSpawns npc = NPCSpawns.getNPCSpawns().get(i);
-                        newNPC(npc.getNpcId(), npc.getXPos(), npc.getYPos(),npc.getHeight(),
-                                                npc.getWalkType(), npc.getHealth(), npc.getMaxHit(), npc.getAttack(),
-                                                npc.getDefence());
+							spawnNpc(npc.getNpcId(), npc.getXPos(), npc.getYPos(), npc.getHeight(),
+								npc.getWalkType(), npc.getHealth(), npc.getMaxHit(), npc.getAttack(),
+								npc.getDefence());
 
                 }
                 return true;
@@ -170,33 +170,25 @@ public class NPCHandler {
 	//x	y	height	walk	maxhit	attack	defence	desc
 		//Server.npcHandler.spawnNpc(c, npcType, absX, absY, heightLevel, 1, 120, 7, 70, 70, false, false);
 		try {
-			BufferedWriter out = new BufferedWriter(new FileWriter(".//Data/Spawn.txt", true));
+			BufferedWriter out = new BufferedWriter(new FileWriter(".//Data/Spawntest2.txt", true));
 		    try {
-		    	out.write("{");
+		    	out.write("  {");
 				out.newLine();
-				out.write("\"npcId\":"+npcType+",");
+				out.write("\"id\":"+npcType+",");
 				out.newLine();
-				out.write("\"xPos\":"+x+",");
+				out.write("    \"position\": {");
 				out.newLine();
-				out.write("\"yPos\":"+y+",");
+				out.write("      \"x\":"+x+",");
 				out.newLine();
-				out.write("\"height\":"+h+",");
+				out.write("      \"y\":"+y+",");
 				out.newLine();
-				out.write("\"walkType\":"+walktype+",");
+				out.write("      \"height\":"+h+"");
 				out.newLine();
-				out.write("\"health\":"+HP+",");
+				out.write("    },");;
 				out.newLine();
-				out.write("\"maxHit\":"+maxHit+",");
+				out.write("    \"walkingType\": \"WALK\"");
 				out.newLine();
-				out.write("\"attack\":"+attack+",");
-				out.newLine();
-				out.write("\"defence\":"+defence+",");
-				out.newLine();
-				out.write("\"combatLevel\":"+NPCCacheDefinition.forID(npcType).getCombatLevel()+",");
-				out.newLine();
-				out.write("\"name\":\\\""+NPCCacheDefinition.forID(npcType).getName()+"\\\"");
-				out.newLine();
-				out.write("},");
+				out.write("  },");;
 				out.newLine();
 		    } finally {
 				out.close();

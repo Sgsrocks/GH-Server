@@ -1,13 +1,11 @@
 package godzhell.model.players.packets.itemoptions;
 
 import godzhell.Server;
-import godzhell.definitions.ItemID;
+import godzhell.definitions.ItemCacheDefinition;
 import godzhell.model.content.DiceHandler;
 import godzhell.model.content.LootingBag.LootingBag;
 import godzhell.model.content.Packs;
 import godzhell.model.content.RunePouch;
-import godzhell.model.content.achievement.AchievementType;
-import godzhell.model.content.achievement.Achievements;
 import godzhell.model.content.barrows.Barrows;
 import godzhell.model.content.skills.hunter.Hunter;
 import godzhell.model.content.skills.hunter.trap.impl.BirdSnare;
@@ -17,8 +15,7 @@ import godzhell.model.content.skills.prayer.Prayer;
 import godzhell.model.content.skills.runecrafting.Pouches;
 import godzhell.model.content.skills.runecrafting.Pouches.Pouch;
 import godzhell.model.content.teleportation.TeleportTablets;
-import godzhell.model.content.trails.MasterClue;
-import godzhell.model.content.trails.RewardLevel;
+import godzhell.model.content.trails.*;
 import godzhell.model.items.ItemAssistant;
 import godzhell.model.multiplayer_session.MultiplayerSessionType;
 import godzhell.model.multiplayer_session.duel.DuelSession;
@@ -171,10 +168,37 @@ public class ItemOptionOne implements PacketType {
             c.getRunePouch().openRunePouch();
             return;
         }
+        ClueScroll.handleCasket(c, itemId);
+        if (ItemCacheDefinition.forID(itemId).getName().toLowerCase().contains("clue scroll") || ItemCacheDefinition.forID(itemId).getName().toLowerCase().contains("challenge scroll")) {
+            ClueScroll.cleanClueInterface(c);
+        }
+        if (Puzzle.loadClueInterface(c, itemId)) {
+            // c.sendMessage("clue id: "+itemId);
+            return;
+        }
+        if (MapScrolls.loadClueInterface(c, itemId)) {
+            //   c.sendMessage("clue id: "+itemId);
+            return;
+        }
+        if (SearchScrolls.loadClueInterface(c, itemId)) {
+            //   c.sendMessage("clue id: "+itemId);
+            return;
+        }
+        if (CoordinateScrolls.loadClueInterface(c, itemId)) {
+            //    c.sendMessage("clue id: "+itemId);
+            return;
+        }
+        if (DiggingScrolls.loadClueInterface(c, itemId)) {
+            // c.sendMessage("clue id: "+itemId);
+            return;
+        }
         switch (itemId) {
         case 6:
 			c.getCannon().setup();
-			break;   
+			break;
+            case 2574 : // sextant
+                Sextant.initializeRandomSextantInterface(c);
+                break;
             case 2697:
                 if (c.getItems().playerHasItem(2697, 1)) {
                     c.getItems().deleteItem(2697, 1);
@@ -592,55 +616,6 @@ public class ItemOptionOne implements PacketType {
                 c.getChristmasPresent().open();
                 return;
             }
-        if (itemId == ItemID.REWARD_CASKET_EASY) { // Easy Clue Scroll Casket
-            c.getItems().deleteItem(itemId, 1);
-            c.getTrails().addRewards(RewardLevel.EASY);
-            c.setEasyClueCounter(c.getEasyClueCounter() + 1);
-            c.sendMessage("@blu@You have completed " + c.getEasyClueCounter() + " easy Treasure Trails.");
-        }
-        if (itemId == ItemID.REWARD_CASKET_MEDIUM) { // Medium Clue Scroll Casket
-            c.getItems().deleteItem(itemId, 1);
-            c.getTrails().addRewards(RewardLevel.MEDIUM);
-            c.setMediumClueCounter(c.getMediumClueCounter() + 1);
-            c.sendMessage("@blu@You have completed " + c.getMediumClueCounter() + " medium Treasure Trails.");
-        }
-        if (itemId == ItemID.REWARD_CASKET_HARD) { // Hard Clue Scroll Casket
-            c.getItems().deleteItem(itemId, 1);
-            c.getTrails().addRewards(RewardLevel.HARD);
-            c.setHardClueCounter(c.getHardClueCounter() + 1);
-            c.sendMessage("@blu@You have completed " + c.getHardClueCounter() + " hard Treasure Trails.");
-        }
-        if (itemId == ItemID.REWARD_CASKET_MASTER) { // Master Clue Scroll Casket
-            if (c.getItems().playerHasItem(ItemID.REWARD_CASKET_MASTER)) {
-                c.getItems().deleteItem(itemId, 1);
-                c.getTrails().addRewards(RewardLevel.MASTER);
-                c.setMasterClueCounter(c.getMasterClueCounter() + 1);
-                c.sendMessage("@blu@You have completed " + c.getMasterClueCounter() + " master Treasure Trails.");
-                if (Misc.random(200) == 2 && c.getItems().getItemCount(19730, true) == 0 && c.summonId != 19730) {
-                    PlayerHandler.executeGlobalMessage("[<col=CC0000>Clue</col>] @cr20@ <col=255>" + c.playerName
-                            + "</col> hit the jackpot and got a <col=CC0000>Bloodhound</col> pet!");
-                    c.getItems().addItemUnderAnyCircumstance(19730, 1);
-                }
-            }
-        }
-        if (itemId == 2677) {
-            Achievements.increase(c, AchievementType.CLUES, 1);
-            c.getItems().deleteItem(itemId, 1);
-            c.getItems().addItem(ItemID.REWARD_CASKET_EASY, 1);
-            c.sendMessage("You've received a easy clue scroll casket.");
-        }
-        if (itemId == 2801) {
-            Achievements.increase(c, AchievementType.CLUES, 1);
-            c.getItems().deleteItem(itemId, 1);
-            c.getItems().addItem(ItemID.REWARD_CASKET_MEDIUM, 1);
-            c.sendMessage("You've receivedd a medium clue scroll casket.");
-        }
-        if (itemId == 2722) {
-            Achievements.increase(c, AchievementType.CLUES, 1);
-            c.getItems().deleteItem(itemId, 1);
-            c.getItems().addItem(ItemID.REWARD_CASKET_HARD, 1);
-            c.sendMessage("You've received a hard clue scroll casket.");
-        }
         /**
          * Master clue scroll
          */

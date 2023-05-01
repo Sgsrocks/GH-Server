@@ -14,6 +14,7 @@ public class ObjectOptionFive {
 		if (Server.getMultiplayerSessionListener().inAnySession(c)) {
 			return;
 		}
+		Construction.handleConstructionClick(c, objectType, obX, obY);
 		if (!Region.objectExists(objectType, obX, obY, c.heightLevel)) {
 			return;
 		}
@@ -23,7 +24,6 @@ public class ObjectOptionFive {
 		ObjectDef def = ObjectDef.getObjectDef(objectType);
 		if (c.getRights().isOrInherits(Right.OWNER))
 			c.sendMessage("Clicked Object Option 5:  "+objectType+", Object name: "+def.getName());
-		Construction.handleConstructionClick(c, objectType, obX, obY);
 		switch (objectType) {
 			case 5492:
 				if (c.getItems().playerHasItem(1523, 1)

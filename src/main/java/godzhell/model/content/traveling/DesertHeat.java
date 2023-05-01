@@ -45,7 +45,7 @@ public class DesertHeat {
 
     private static void doDamage(Player player) {
         player.sendMessage("You should get a waterskin for any traveling in the desert.");
-player.appendDamage(DAMAGE, Hitmark.HIT);
+        player.appendDamage(DAMAGE, Hitmark.HIT);
         player.getPlayerAssistant().refreshSkill(player.playerHitpoints);
     }
 

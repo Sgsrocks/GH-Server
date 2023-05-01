@@ -14,6 +14,7 @@ public class ShutdownHook extends Thread {
 	public void run() {
 		System.out.println("Successfully executed ShutdownHook");
 		Wogw.save();
+		System.gc();
 		bxp.save();
 	}
 }

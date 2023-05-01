@@ -4622,6 +4622,15 @@ public class PlayerAssistant {
 		c.outStream.endFrameVarSizeWord();
 	}
 
+	public void sendFrame230(int interfaceId, int rotation1, int rotation2, int zoom) { // i2 being negative logs you out, otherwise it doesn't log you out :O
+		c.getOutStream().createFrame(230);
+		c.getOutStream().writeWordA(zoom);
+		c.getOutStream().writeWord(interfaceId); // interface id?
+		c.getOutStream().writeWord(rotation1);
+		c.getOutStream().writeWordBigEndianA(rotation2); // junk? not sure
+		c.flushOutStream();
+	}
+
 
     /**
 	 *
